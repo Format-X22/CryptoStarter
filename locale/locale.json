@@ -1,17 +1,62 @@
 {
   "en": {
+    "main_menu": {
+      "home": "Home",
+      "ico": "ICO",
+      "docs": "Documents",
+      "timeline": "Roadmap",
+      "media": "Media",
+      "team": "Team",
+      "register": "Register your project"
+    }
   },
 
   "de": {
+    "main_menu": {
+      "home": "_EMPTY_",
+      "ico": "_EMPTY_",
+      "docs": "_EMPTY_",
+      "timeline": "_EMPTY_",
+      "media": "_EMPTY_",
+      "team": "_EMPTY_",
+      "register": "_EMPTY_"
+    }
   },
 
   "fr": {
+    "main_menu": {
+      "home": "_EMPTY_",
+      "ico": "_EMPTY_",
+      "docs": "_EMPTY_",
+      "timeline": "_EMPTY_",
+      "media": "_EMPTY_",
+      "team": "_EMPTY_",
+      "register": "_EMPTY_"
+    }
   },
 
   "ch": {
+    "main_menu": {
+      "home": "_EMPTY_",
+      "ico": "_EMPTY_",
+      "docs": "_EMPTY_",
+      "timeline": "_EMPTY_",
+      "media": "_EMPTY_",
+      "team": "_EMPTY_",
+      "register": "_EMPTY_"
+    }
   },
 
   "ar": {
+    "main_menu": {
+      "home": "_EMPTY_",
+      "ico": "_EMPTY_",
+      "docs": "_EMPTY_",
+      "timeline": "_EMPTY_",
+      "media": "_EMPTY_",
+      "team": "_EMPTY_",
+      "register": "_EMPTY_"
+    }
   },
 
   "ru": {
@@ -20,9 +65,9 @@
       "ico": "ICO",
       "docs": "Документы",
       "timeline": "Роадмап",
-      "media": "В прессе",
+      "media": "Пресса",
       "team": "Команда",
-      "register": "Регистрация"
+      "register": "Регистрация проекта"
     }
   }
 }
