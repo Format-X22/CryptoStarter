@@ -12,14 +12,45 @@ html
                 .navbar-header
                     +mobile-top-menu-toggle('top-menu-toggle')
                 #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
+                    //- TODO Logo
                     ul.nav.navbar-nav.navbar-right
                         +menu-item('#home',     erb('l.main_menu.home'))
                         +menu-item('#ico',      erb('l.main_menu.ico'))
                         +menu-item('#docs',     erb('l.main_menu.docs'))
-                        +menu-item('#timeline', erb('l.main_menu.timeline'))
+                        +menu-item('#roadmap',  erb('l.main_menu.timeline'))
                         +menu-item('#media',    erb('l.main_menu.media'))
                         +menu-item('#team',     erb('l.main_menu.team'))
                         +menu-item('#register', erb('l.main_menu.register'))
+                        //- TODO social
+        .cs-wow-header
+            //- TODO Wow header
+                
+        .container
+            #home.row
+                .col-md-12
+                    //- TODO About project
+            #ico.row
+                .col-md-12
+                    //- TODO ICO information
+            #docs.row
+                .col-md-12
+                    //- TODO Docs buttons
+            #roadmap.row
+                .col-md-12
+                    //- TODO Roadmap
+            #media.row
+                .col-md-12
+                    //- TODO Media block
+            #team.row
+                .col-md-12
+                    //- TODO Team block
+            #register.row
+                .col-md-12
+                    //- TODO Pre-Register form
+
+        footer.cs-footer
+            .container
+                //- TODO Footer
 
 
         script(src='js/jquery.js')
