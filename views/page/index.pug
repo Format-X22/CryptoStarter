@@ -3,15 +3,24 @@ include ../global/components.pug
 doctype html
 html
     head
+        meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
         link(href='css/theme.css' rel='stylesheet')
         link(href='css/all.css'   rel='stylesheet')
-        meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+        
+        link(rel='icon' type='image/png' href='img/logo_main_16.png' sizes='16x16')
+        link(rel='icon' type='image/png' href='img/logo_main_32.png' sizes='32x32')
+        link(rel='icon' type='image/png' href='img/logo_main_96.png' sizes='96x96')
+
+        link(rel='apple-touch-icon' href='img/logo_main_120.png')
+        link(rel='apple-touch-icon' href='img/logo_main_180.png' sizes='180x180')
+        link(rel='apple-touch-icon' href='img/logo_main_152.png' sizes='152x152')
+        link(rel='apple-touch-icon' href='img/logo_main_167.png' sizes='167x167')
     body
         nav.navbar.navbar-default.navbar-fixed-top
             .container
                 .navbar-header
                     a(href='#')
-                        img.cs-main_menu-logo(src='img/logo_main.svg')
+                        img.cs-main_menu-logo(src='img/logo_main_origin.svg')
                     +mobile-top-menu-toggle('top-menu-toggle')
                 #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
                     ul.nav.navbar-nav.navbar-right
