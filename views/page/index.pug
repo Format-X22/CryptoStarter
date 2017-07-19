@@ -1,0 +1,28 @@
+include ../global/components.pug
+
+doctype html
+html
+    head
+        link(href='css/theme.css' rel='stylesheet')
+        link(href='css/all.css'   rel='stylesheet')
+        meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    body
+        nav.navbar.navbar-default.navbar-fixed-top
+            .container
+                .navbar-header
+                    +mobile-top-menu-toggle('top-menu-toggle')
+                #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
+                    ul.nav.navbar-nav.navbar-right
+                        +menu-item('#home',     erb('l.main_menu.home'))
+                        +menu-item('#ico',      erb('l.main_menu.ico'))
+                        +menu-item('#docs',     erb('l.main_menu.docs'))
+                        +menu-item('#timeline', erb('l.main_menu.timeline'))
+                        +menu-item('#media',    erb('l.main_menu.media'))
+                        +menu-item('#team',     erb('l.main_menu.team'))
+                        +menu-item('#register', erb('l.main_menu.register'))
+
+
+        script(src='js/jquery.js')
+        script(src='js/bootstrap.js')
+        //
+        script(src='js/landing.js')
