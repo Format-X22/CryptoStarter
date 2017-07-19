@@ -10,9 +10,10 @@ html
         nav.navbar.navbar-default.navbar-fixed-top
             .container
                 .navbar-header
+                    a(href='#')
+                        img.cs-main_menu-logo(src='img/logo_main.svg')
                     +mobile-top-menu-toggle('top-menu-toggle')
                 #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
-                    //- TODO Logo
                     ul.nav.navbar-nav.navbar-right
                         +menu-item('#home',     erb('l.main_menu.home'))
                         +menu-item('#ico',      erb('l.main_menu.ico'))
