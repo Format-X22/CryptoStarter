@@ -128,8 +128,16 @@ mixin wow-slider-slide
             != erb('l.wow_slider.sub_text')
 
 mixin wow-slider
-    div#rev_slider_wrapper.rev_slider_wrapper.fullwidthbanner-container
+    div#rev_slider_wrapper.rev_slider_wrapper.fullwidthbanner-container.hidden-xs
         div#rev_slider.rev_slider.fullwidthabanner
             ul
                 +wow-slider-slide
                 +wow-slider-slide
+    div.container.visible-xs
+        .row
+            .col-xs-12.text-center
+                div.cs-wow-logo-name-mobile Crypto
+                    span.cs-brand-main-color Starter
+                div.cs-wow-main-text-mobile!= erb('l.wow_slider.main_text')
+                div.cs-wow-sub-text-mobile!= erb('l.wow_slider.sub_text')
+                hr
