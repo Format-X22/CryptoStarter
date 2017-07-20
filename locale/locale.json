@@ -8,6 +8,10 @@
       "media": "Media",
       "team": "Team",
       "register": "Register your project"
+    },
+    "wow_slider": {
+      "main_text": "Crowdfunding",
+      "sub_text": "Decentralized.Borderless.Tokenizable."
     }
   },
 
@@ -20,6 +24,10 @@
       "media": "_EMPTY_",
       "team": "_EMPTY_",
       "register": "_EMPTY_"
+    },
+    "wow_slider": {
+      "main_text": "_EMPTY_",
+      "sub_text": "_EMPTY_"
     }
   },
 
@@ -32,6 +40,10 @@
       "media": "_EMPTY_",
       "team": "_EMPTY_",
       "register": "_EMPTY_"
+    },
+    "wow_slider": {
+      "main_text": "_EMPTY_",
+      "sub_text": "_EMPTY_"
     }
   },
 
@@ -44,6 +56,10 @@
       "media": "_EMPTY_",
       "team": "_EMPTY_",
       "register": "_EMPTY_"
+    },
+    "wow_slider": {
+      "main_text": "_EMPTY_",
+      "sub_text": "_EMPTY_"
     }
   },
 
@@ -56,6 +72,10 @@
       "media": "_EMPTY_",
       "team": "_EMPTY_",
       "register": "_EMPTY_"
+    },
+    "wow_slider": {
+      "main_text": "_EMPTY_",
+      "sub_text": "_EMPTY_"
     }
   },
 
@@ -68,6 +88,10 @@
       "media": "Пресса",
       "team": "Команда",
       "register": "Регистрация проекта"
+    },
+    "wow_slider": {
+      "main_text": "Краудфандинг",
+      "sub_text": "Децентрализованный. Токинезированный. Без границ."
     }
   }
 }

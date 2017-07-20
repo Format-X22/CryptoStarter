@@ -80,7 +80,7 @@ mixin wow-slider-slide
             data-endelementdelay='0.1'
             data-endspeed='300'
         )
-            | CROWDFUNDING
+            span.text-uppercase!= erb('l.wow_slider.main_text')
 
         div.tp-caption.sfl.fadeout.zindex-5(
             data-x='center'
@@ -125,7 +125,7 @@ mixin wow-slider-slide
             data-endelementdelay='0.1'
             data-endspeed='300'
         )
-            | Decentralized.Borderless.Tokenizable.
+            != erb('l.wow_slider.sub_text')
 
 mixin wow-slider
     div#rev_slider_wrapper.rev_slider_wrapper.fullwidthbanner-container
