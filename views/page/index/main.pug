@@ -40,32 +40,32 @@ block body
         #ico.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title ICO
+                h2.cs-title!= erb('l.title.ico')
                 //- TODO ICO information
         #docs.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title White paper and documents
+                h2.cs-title!= erb('l.title.docs')
                 //- TODO Docs buttons
         #roadmap.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title Project roadmap
+                h2.cs-title!= erb('l.title.roadmap')
                 //- TODO Roadmap
         #media.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title Media about us
+                h2.cs-title!= erb('l.title.media')
                 //- TODO Media block
         #team.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title Team
+                h2.cs-title!= erb('l.title.team')
                 //- TODO Pre-Register form
         #register.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title Pre-register your project
+                h2.cs-title!= erb('l.title.register')
                 //- TODO Pre-Register form
 
     +footer

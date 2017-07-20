@@ -12,6 +12,14 @@
     "wow_slider": {
       "main_text": "Crowdfunding",
       "sub_text": "Decentralized.Borderless.Tokenizable."
+    },
+    "title": {
+      "ico": "ICO",
+      "docs": "White paper and documents",
+      "roadmap": "Project roadmap",
+      "media": "Media about us",
+      "team": "Team",
+      "register": "Pre-register your project"
     }
   },
 
@@ -28,6 +36,14 @@
     "wow_slider": {
       "main_text": "_EMPTY_",
       "sub_text": "_EMPTY_"
+    },
+    "title": {
+      "ico": "_EMPTY_",
+      "docs": "_EMPTY_",
+      "roadmap": "_EMPTY_",
+      "media": "_EMPTY_",
+      "team": "_EMPTY_",
+      "register": "_EMPTY_"
     }
   },
 
@@ -44,6 +60,14 @@
     "wow_slider": {
       "main_text": "_EMPTY_",
       "sub_text": "_EMPTY_"
+    },
+    "title": {
+      "ico": "_EMPTY_",
+      "docs": "_EMPTY_",
+      "roadmap": "_EMPTY_",
+      "media": "_EMPTY_",
+      "team": "_EMPTY_",
+      "register": "_EMPTY_"
     }
   },
 
@@ -60,6 +84,14 @@
     "wow_slider": {
       "main_text": "_EMPTY_",
       "sub_text": "_EMPTY_"
+    },
+    "title": {
+      "ico": "_EMPTY_",
+      "docs": "_EMPTY_",
+      "roadmap": "_EMPTY_",
+      "media": "_EMPTY_",
+      "team": "_EMPTY_",
+      "register": "_EMPTY_"
     }
   },
 
@@ -76,6 +108,14 @@
     "wow_slider": {
       "main_text": "_EMPTY_",
       "sub_text": "_EMPTY_"
+    },
+    "title": {
+      "ico": "_EMPTY_",
+      "docs": "_EMPTY_",
+      "roadmap": "_EMPTY_",
+      "media": "_EMPTY_",
+      "team": "_EMPTY_",
+      "register": "_EMPTY_"
     }
   },
 
@@ -92,6 +132,14 @@
     "wow_slider": {
       "main_text": "Краудфандинг",
       "sub_text": "Децентрализованный. Токинезированный. Без границ."
+    },
+    "title": {
+      "ico": "ICO",
+      "docs": "Документы",
+      "roadmap": "Роадмап",
+      "media": "Пресса о нас",
+      "team": "Команда",
+      "register": "Ранняя регистрация проекта"
     }
   }
 }
