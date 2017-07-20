@@ -1,4 +1,14 @@
-console.log('CryptoStarter console >>>');
+console.log(
+    '%c+',
+    'font-size: 1px;' +
+    'padding: 60px 60px;' +
+    'line-height: 120px;' +
+    'background: url("' + location.href +'img/logo/120.png") no-repeat;' +
+    'background-size: 120px 120px;' +
+    'color: transparent;'
+);
+
+console.log('CryptoStarter console >>');
 
 // Hello 2007 :D
 $(function () {
