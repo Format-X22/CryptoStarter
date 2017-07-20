@@ -84,4 +84,25 @@ h2.cs-title {
     .cs-footer .cs-copyright-col .cs-copyright {
       font-size: 150%; }
 
+.to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  transition: all .5s;
+  z-index: 999; }
+  .to-top:hover {
+    background-color: rgba(0, 0, 0, 0.4); }
+  .to-top .glyphicon {
+    line-height: 39px;
+    padding-left: 2px; }
+
 /*# sourceMappingURL=all.css.map */
