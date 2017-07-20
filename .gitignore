@@ -1,4 +1,4 @@
 Gemfile.lock
 .idea
 *.html
-!views/page/index.html
+!views/page/**/main.html

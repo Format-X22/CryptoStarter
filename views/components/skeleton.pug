@@ -1,0 +1,28 @@
+include base
+
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+
+        block head
+
+        link(href='css/theme.css' rel='stylesheet')
+        link(href='css/all.css'   rel='stylesheet')
+
+        link(rel='icon' type='image/png' href='img/logo/16.png' sizes='16x16')
+        link(rel='icon' type='image/png' href='img/logo/32.png' sizes='32x32')
+        link(rel='icon' type='image/png' href='img/logo/96.png' sizes='96x96')
+
+        link(rel='apple-touch-icon' href='img/logo/120.png')
+        link(rel='apple-touch-icon' href='img/logo/180.png' sizes='180x180')
+        link(rel='apple-touch-icon' href='img/logo/152.png' sizes='152x152')
+        link(rel='apple-touch-icon' href='img/logo/167.png' sizes='167x167')
+    body
+        block body
+
+        script(src='js/jquery.js')
+        script(src='js/bootstrap.js')
+
+        block scripts

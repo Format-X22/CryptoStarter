@@ -1,0 +1,64 @@
+extends ../../components/skeleton
+
+include wow-slider
+
+block head
+    meta(name='keywords'    content='CryptoStarter, crowdfunding, blockchain, IdeaCoin')
+    meta(name='description' content='CryptoStarter landing')
+    meta(name='author'      content='CryptoStarter')
+
+    link(href='css/wow-slider.css' rel='stylesheet')
+
+    title CryptoStarter
+
+block body
+    nav.navbar.navbar-default.navbar-fixed-top
+        .container
+            .navbar-header
+                a(href='#')
+                    img.cs-main_menu-logo(src='img/logo/origin.svg')
+                +mobile-top-menu-toggle('top-menu-toggle')
+            #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
+                ul.nav.navbar-nav.navbar-right
+                    +menu-item('#home',     erb('l.main_menu.home'))
+                    +menu-item('#ico',      erb('l.main_menu.ico'))
+                    +menu-item('#docs',     erb('l.main_menu.docs'))
+                    +menu-item('#roadmap',  erb('l.main_menu.timeline'))
+                    +menu-item('#media',    erb('l.main_menu.media'))
+                    +menu-item('#team',     erb('l.main_menu.team'))
+                    +menu-item('#register', erb('l.main_menu.register'))
+                    //- TODO social
+    .cs-wow-header
+        +wow-slider
+
+    .container
+        #home.row
+            .col-md-12
+                //- TODO About project
+        #ico.row
+            .col-md-12
+                //- TODO ICO information
+        #docs.row
+            .col-md-12
+                //- TODO Docs buttons
+        #roadmap.row
+            .col-md-12
+                //- TODO Roadmap
+        #media.row
+            .col-md-12
+                //- TODO Media block
+        #team.row
+            .col-md-12
+                //- TODO Team block
+        #register.row
+            .col-md-12
+                //- TODO Pre-Register form
+
+    footer.cs-footer
+        .container
+            //- TODO Footer
+
+block scripts
+    script(src='js/wow-slider-tools.js')
+    script(src='js/wow-slider.js')
+    script(src='js/landing.js')

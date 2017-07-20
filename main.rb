@@ -3,7 +3,7 @@ require 'sinatra'
 
 helpers do
 	def page(path, locale)
-		erb(File.read("views/page/#{path}.html"), locals: {l: locale})
+		erb(File.read("views/page/#{path}/main.html"), locals: {l: locale})
 	end
 
 	def success(data = {})
