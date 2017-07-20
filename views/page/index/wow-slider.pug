@@ -7,7 +7,7 @@ mixin wow-slider-slide
             data-bgrepeat='no-repeat'
         )
 
-        div.tp-caption.tp-fade.zindex-2(
+        .tp-caption.tp-fade.zindex-2(
             data-x='center'
             data-hoffset='0'
             data-y='center'
@@ -23,7 +23,7 @@ mixin wow-slider-slide
         )
             img(src='img/wow-slider/bg-blur.jpg')
 
-        div.tp-caption.cs-wow-logo-name.customin.fadeout.tp-resizeme.zindex-3(
+        .tp-caption.cs-wow-logo-name.customin.fadeout.tp-resizeme.zindex-3(
             data-x='center'
             data-hoffset='0'
             data-y='240'
@@ -53,7 +53,7 @@ mixin wow-slider-slide
             | Crypto
             span.cs-brand-main-color Starter
 
-        div.tp-caption.cs-wow-main-text.customin.tp-resizeme.zindex-4(
+        .tp-caption.cs-wow-main-text.customin.tp-resizeme.zindex-4(
             data-x='center'
             data-hoffset='4'
             data-y='339'
@@ -82,7 +82,7 @@ mixin wow-slider-slide
         )
             span.text-uppercase!= erb('l.wow_slider.main_text')
 
-        div.tp-caption.sfl.fadeout.zindex-5(
+        .tp-caption.sfl.fadeout.zindex-5(
             data-x='center'
             data-hoffset='-281'
             data-y='364'
@@ -97,7 +97,7 @@ mixin wow-slider-slide
         )
             img(src='img/wow-slider/left-dots.png')
 
-        div.tp-caption.sfr.fadeout.zindex-6(
+        .tp-caption.sfr.fadeout.zindex-6(
             data-x='center'
             data-hoffset='281'
             data-y='364'
@@ -112,7 +112,7 @@ mixin wow-slider-slide
         )
             img(src='img/wow-slider/right-dots.png')
 
-        div.tp-caption.cs-wow-sub-text.tp-fade.tp-resizeme.zindex-7(
+        .tp-caption.cs-wow-sub-text.tp-fade.tp-resizeme.zindex-7(
             data-x='center'
             data-hoffset='6'
             data-y='393'
@@ -128,16 +128,16 @@ mixin wow-slider-slide
             != erb('l.wow_slider.sub_text')
 
 mixin wow-slider
-    div#rev_slider_wrapper.rev_slider_wrapper.fullwidthbanner-container.hidden-xs
-        div#rev_slider.rev_slider.fullwidthabanner
+    #rev_slider_wrapper.rev_slider_wrapper.fullwidthbanner-container.hidden-xs
+        #rev_slider.rev_slider.fullwidthabanner
             ul
                 +wow-slider-slide
                 +wow-slider-slide
-    div.container.visible-xs
+    .container.visible-xs
         .row
             .col-xs-12.text-center
-                div.cs-wow-logo-name-mobile Crypto
+                .cs-wow-logo-name-mobile Crypto
                     span.cs-brand-main-color Starter
-                div.cs-wow-main-text-mobile!= erb('l.wow_slider.main_text')
-                div.cs-wow-sub-text-mobile!= erb('l.wow_slider.sub_text')
+                .cs-wow-main-text-mobile!= erb('l.wow_slider.main_text')
+                .cs-wow-sub-text-mobile!= erb('l.wow_slider.sub_text')
                 hr
