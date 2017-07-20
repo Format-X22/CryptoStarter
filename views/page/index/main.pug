@@ -1,6 +1,7 @@
 extends ../../components/skeleton
 
 include wow-slider
+include footer
 
 block head
     meta(name='keywords'    content='CryptoStarter, crowdfunding, blockchain, IdeaCoin')
@@ -67,9 +68,7 @@ block body
                 h2.cs-title Pre-register your project
                 //- TODO Pre-Register form
 
-    footer.cs-footer
-        .container
-            //- TODO Footer
+    +footer
 
 block scripts
     script(src='js/wow-slider-tools.js')

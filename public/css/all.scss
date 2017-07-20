@@ -98,5 +98,20 @@ h2.cs-title {
 }
 
 .cs-footer {
-	// TODO
+	background-color: #373a3f;
+	padding: 50px 0;
+	color: white;
+
+	a {
+		color: white;
+	}
+
+	.cs-copyright-col {
+		text-align: center;
+		padding-top: 40px;
+
+		.cs-copyright {
+			font-size: 150%;
+		}
+	}
 }
