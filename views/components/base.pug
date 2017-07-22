@@ -5,6 +5,15 @@
         return '<%= ' + code + ' %>';
     }
 
+    function make_locale_shortcut(prefix) {
+        return function () {
+            var args = Array.prototype.slice.call(arguments);
+            var mapped = args.map((val) => prefix + val);
+
+            return '"#{' + mapped.join('} #{') + '}"';
+        };
+    }
+
 //- BUTTONS
 
 mixin button(id, text)
@@ -59,13 +68,13 @@ mixin input(id, type, placeholder, label)
     .form-group&attributes(attributes)
         if label
             label(for=id)!= label
-        input.form-control(id=id type=type placeholder=placeholder)
+        input.form-control(id=id type=type placeholder!=placeholder)
         span.glyphicon.glyphicon-remove.form-control-feedback.hidden(aria-hidden='true')
 
 mixin input-outside-group(id, type, placeholder, label)
     if label
         label(for=id)!= label
-    input.form-control(id=id type=type placeholder=placeholder)&attributes(attributes)
+    input.form-control(id=id type=type placeholder!=placeholder)&attributes(attributes)
     span.glyphicon.glyphicon-remove.form-control-feedback.hidden(aria-hidden='true')
 
 mixin textarea(id, placeholder, label, rows)
@@ -73,7 +82,7 @@ mixin textarea(id, placeholder, label, rows)
     .form-group&attributes(attributes)
         if label
             label(for=id)!= label
-        textarea.form-control(id=id rows=rows placeholder=placeholder)
+        textarea.form-control(id=id rows=rows placeholder!=placeholder)
         span.glyphicon.glyphicon-remove.form-control-feedback.hidden(aria-hidden='true')
 
 //- MENUS AND TABS
@@ -133,10 +142,10 @@ mixin window-button-no-hide(id, text)
     +button(id, text)
 
 mixin window-button-ok(id)
-    +window-button(id+'-ok', 'Ok')
+    +window-button(id+'-ok', erb('l.component.ok'))
 
 mixin window-button-cancel(id)
-    +window-button(id+'-cancel', 'Cancel')
+    +window-button(id+'-cancel', erb('l.component.cancel'))
 
 mixin window-buttons-dialog(id)
     +window-button-ok(id)

@@ -28,7 +28,23 @@
     "roadmap_block": {},
     "media_block": {},
     "team_block": {},
-    "register_block": {}
+    "register_block": {
+      "hint_1": "_EMPTY_",
+      "hint_2": "_EMPTY_",
+      "project_name_label": "Project name",
+      "project_name_placeholder": "Your project name",
+      "email_label": "Contact email",
+      "email_placeholder": "Your project contact email",
+      "description_label": "Project description",
+      "description_placeholder": "Your project description",
+      "register_project_button": "Register",
+      "success_modal_title": "Success!",
+      "success_modal_text": "_EMPTY_"
+    },
+    "component": {
+      "ok": "Ok",
+      "cancel": "Cancel"
+    }
   },
 
   "de": {
@@ -43,7 +59,7 @@
       "register_footer": "_EMPTY_"
     },
     "wow_slider": {
-      "main_text": "_EMPTY_",
+      "main_text": "Crowdfunding",
       "sub_text": "_EMPTY_"
     },
     "title": {
@@ -60,7 +76,23 @@
     "roadmap_block": {},
     "media_block": {},
     "team_block": {},
-    "register_block": {}
+    "register_block": {
+      "hint_1": "_EMPTY_",
+      "hint_2": "_EMPTY_",
+      "project_name_label": "_EMPTY_",
+      "project_name_placeholder": "_EMPTY_",
+      "email_label": "_EMPTY_",
+      "email_placeholder": "_EMPTY_",
+      "description_label": "_EMPTY_",
+      "description_placeholder": "_EMPTY_",
+      "register_project_button": "_EMPTY_",
+      "success_modal_title": "_EMPTY_",
+      "success_modal_text": "_EMPTY_"
+    },
+    "component": {
+      "ok": "_EMPTY_",
+      "cancel": "_EMPTY_"
+    }
   },
 
   "fr": {
@@ -75,7 +107,7 @@
       "register_footer": "_EMPTY_"
     },
     "wow_slider": {
-      "main_text": "_EMPTY_",
+      "main_text": "Crowdfunding",
       "sub_text": "_EMPTY_"
     },
     "title": {
@@ -92,7 +124,23 @@
     "roadmap_block": {},
     "media_block": {},
     "team_block": {},
-    "register_block": {}
+    "register_block": {
+      "hint_1": "_EMPTY_",
+      "hint_2": "_EMPTY_",
+      "project_name_label": "_EMPTY_",
+      "project_name_placeholder": "_EMPTY_",
+      "email_label": "_EMPTY_",
+      "email_placeholder": "_EMPTY_",
+      "description_label": "_EMPTY_",
+      "description_placeholder": "_EMPTY_",
+      "register_project_button": "_EMPTY_",
+      "success_modal_title": "_EMPTY_",
+      "success_modal_text": "_EMPTY_"
+    },
+    "component": {
+      "ok": "_EMPTY_",
+      "cancel": "_EMPTY_"
+    }
   },
 
   "ch": {
@@ -107,7 +155,7 @@
       "register_footer": "_EMPTY_"
     },
     "wow_slider": {
-      "main_text": "_EMPTY_",
+      "main_text": "Crowdfunding",
       "sub_text": "_EMPTY_"
     },
     "title": {
@@ -124,7 +172,23 @@
     "roadmap_block": {},
     "media_block": {},
     "team_block": {},
-    "register_block": {}
+    "register_block": {
+      "hint_1": "_EMPTY_",
+      "hint_2": "_EMPTY_",
+      "project_name_label": "_EMPTY_",
+      "project_name_placeholder": "_EMPTY_",
+      "email_label": "_EMPTY_",
+      "email_placeholder": "_EMPTY_",
+      "description_label": "_EMPTY_",
+      "description_placeholder": "_EMPTY_",
+      "register_project_button": "_EMPTY_",
+      "success_modal_title": "_EMPTY_",
+      "success_modal_text": "_EMPTY_"
+    },
+    "component": {
+      "ok": "_EMPTY_",
+      "cancel": "_EMPTY_"
+    }
   },
 
   "ar": {
@@ -139,7 +203,7 @@
       "register_footer": "_EMPTY_"
     },
     "wow_slider": {
-      "main_text": "_EMPTY_",
+      "main_text": "Crowdfunding",
       "sub_text": "_EMPTY_"
     },
     "title": {
@@ -156,7 +220,23 @@
     "roadmap_block": {},
     "media_block": {},
     "team_block": {},
-    "register_block": {}
+    "register_block": {
+      "hint_1": "_EMPTY_",
+      "hint_2": "_EMPTY_",
+      "project_name_label": "_EMPTY_",
+      "project_name_placeholder": "_EMPTY_",
+      "email_label": "_EMPTY_",
+      "email_placeholder": "_EMPTY_",
+      "description_label": "_EMPTY_",
+      "description_placeholder": "_EMPTY_",
+      "register_project_button": "_EMPTY_",
+      "success_modal_title": "_EMPTY_",
+      "success_modal_text": "_EMPTY_"
+    },
+    "component": {
+      "ok": "_EMPTY_",
+      "cancel": "_EMPTY_"
+    }
   },
 
   "ru": {
@@ -171,7 +251,7 @@
       "register_footer": "Регистрация"
     },
     "wow_slider": {
-      "main_text": "Краудфандинг",
+      "main_text": "Crowdfunding",
       "sub_text": "Децентрализованный. Токинезированный. Без границ."
     },
     "title": {
@@ -180,7 +260,7 @@
       "roadmap": "Роадмап",
       "media": "Пресса о нас",
       "team": "Команда",
-      "register": "Ранняя регистрация проекта"
+      "register": "Регистрация проекта"
     },
     "present_block": {},
     "ico_block": {},
@@ -188,6 +268,22 @@
     "roadmap_block": {},
     "media_block": {},
     "team_block": {},
-    "register_block": {}
+    "register_block": {
+      "hint_1": "Вы можете зарегистрировать свой проект до финального запуска CryptoStarter.",
+      "hint_2": "Перед запуском мы оповестим вас и дадим доступ к сайту заранее, вы сможете оформить проект и появится на первых строчках сайта в день запуска CryptoStarter.",
+      "project_name_label": "Имя проекта",
+      "project_name_placeholder": "Имя вашего проекта",
+      "email_label": "Контактный Email",
+      "email_placeholder": "Контактный Email вашего проекта",
+      "description_label": "Описание проекта",
+      "description_placeholder": "Описание вашего проекта",
+      "register_project_button": "Зарегистрировать",
+      "success_modal_title": "Успешно!",
+      "success_modal_text": "Ваш проект успешно зарегистрирован. В течении суток на указанную почту вы получите письмо со всеми необходимыми данными."
+    },
+    "component": {
+      "ok": "Ок",
+      "cancel": "Отмена"
+    }
   }
 }

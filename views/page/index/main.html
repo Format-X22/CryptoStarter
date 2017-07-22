@@ -111,26 +111,30 @@
           <h2 class="cs-title"><%= l.title.register %></h2>
         </div>
       </div>
-      <div class="row">       </div>
+      <div class="row">       
+        <div class="col-md-6 col-md-offset-3">
+          <p><%= "#{l.register_block.hint_1} #{l.register_block.hint_2}" %></p>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <hr/>
           <div class="form-group">
             <div class="form-group">
-              <label for="project">Project name</label>
-              <input class="form-control" id="project" type="text" placeholder="Your project name"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="project"><%= "#{l.register_block.project_name_label}" %></label>
+              <input class="form-control" id="project" type="text" placeholder="<%= "#{l.register_block.project_name_placeholder}" %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
           </div>
           <div class="form-group">
             <div class="form-group">
-              <label for="mail">Contact email</label>
-              <input class="form-control" id="mail" type="email" placeholder="Your project contact email"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="mail"><%= "#{l.register_block.email_label}" %></label>
+              <input class="form-control" id="mail" type="email" placeholder="<%= "#{l.register_block.email_placeholder}" %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
           </div>
           <div class="form-group">
             <div class="form-group">
-              <label for="description">Project description</label>
-              <textarea class="form-control" id="description" rows="6" placeholder="Your project description"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="description"><%= "#{l.register_block.description_label}" %></label>
+              <textarea class="form-control" id="description" rows="6" placeholder="<%= "#{l.register_block.description_placeholder}" %>"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
           </div>
           <div class="form-group">
@@ -141,7 +145,7 @@
           </div>
           <hr/>
           <div class="form-group">
-            <button class="btn btn-default btn-primary btn-lg pull-right" id="send">Register
+            <button class="btn btn-default btn-primary pull-right" id="send"><%= "#{l.register_block.register_project_button}" %>
             </button>
           </div>
         </div>
@@ -150,14 +154,14 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 id="register-modal-title">Success!
+                <h4 id="register-modal-title"><%= "#{l.register_block.success_modal_title}" %>
                 </h4>
               </div>
               <div class="modal-body" id="register-modal-body">
-                <p>_SOME SUCCESS TEXT_</p>
+                <p><%= "#{l.register_block.success_modal_text}" %></p>
               </div>
               <div class="modal-footer" id="register-modal-footer">
-                <button class="btn btn-default" id="undefined-ok" data-dismiss="modal">Ok
+                <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
                 </button>
               </div>
             </div>
