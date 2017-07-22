@@ -1,5 +1,5 @@
 mixin wow-slider-slide
-    li(data-transition='random' data-slotamount='7' data-masterspeed='300')
+    li(data-transition='3dcurtain-vertical' data-slotamount='7' data-masterspeed='300')
         img(
             src='img/wow-slider/bg.jpg'
             data-bgposition='center top'
@@ -7,23 +7,7 @@ mixin wow-slider-slide
             data-bgrepeat='no-repeat'
         )
 
-        .tp-caption.tp-fade.zindex-2(
-            data-x='center'
-            data-hoffset='0'
-            data-y='center'
-            data-voffset='0'
-            data-speed='1000'
-            data-start='500'
-            data-easing='Linear.easeNone'
-            data-splitin='none'
-            data-splitout='none'
-            data-elementdelay='0.1'
-            data-endelementdelay='0.1'
-            data-endspeed='300'
-        )
-            img(src='img/wow-slider/bg-blur.jpg')
-
-        .tp-caption.cs-wow-logo-name.customin.fadeout.tp-resizeme.zindex-3(
+        .tp-caption.cs-wow-logo-name.customin.fadeout.tp-resizeme.zindex-2(
             data-x='center'
             data-hoffset='0'
             data-y='240'
@@ -42,7 +26,7 @@ mixin wow-slider-slide
                 'transformPerspective:600;' +
                 'transformOrigin:50% 50%;'
             data-speed='800'
-            data-start='2000'
+            data-start='1100'
             data-easing='Linear.easeNone'
             data-splitin='none'
             data-splitout='none'
@@ -53,7 +37,7 @@ mixin wow-slider-slide
             | Crypto
             span.cs-brand-main-color Starter
 
-        .tp-caption.cs-wow-main-text.customin.tp-resizeme.zindex-4(
+        .tp-caption.cs-wow-main-text.customin.tp-resizeme.zindex-3(
             data-x='center'
             data-hoffset='4'
             data-y='339'
@@ -72,7 +56,7 @@ mixin wow-slider-slide
                 'transformPerspective:600;' +
                 'transformOrigin:50% 50%;'
             data-speed='1000'
-            data-start='3000'
+            data-start='2500'
             data-easing='Power3.easeInOut'
             data-splitin='none'
             data-splitout='none'
@@ -82,12 +66,12 @@ mixin wow-slider-slide
         )
             span.text-uppercase!= erb('l.wow_slider.main_text')
 
-        .tp-caption.sfl.fadeout.zindex-5(
+        .tp-caption.sfl.fadeout.zindex-4(
             data-x='center'
             data-hoffset='-281'
             data-y='364'
             data-speed='300'
-            data-start='2500'
+            data-start='2200'
             data-easing='Linear.easeNone'
             data-splitin='none'
             data-splitout='none'
@@ -97,12 +81,12 @@ mixin wow-slider-slide
         )
             img(src='img/wow-slider/left-dots.png')
 
-        .tp-caption.sfr.fadeout.zindex-6(
+        .tp-caption.sfr.fadeout.zindex-5(
             data-x='center'
             data-hoffset='281'
             data-y='364'
             data-speed='300'
-            data-start='2501'
+            data-start='2201'
             data-easing='Linear.easeNone'
             data-splitin='none'
             data-splitout='none'
@@ -112,12 +96,12 @@ mixin wow-slider-slide
         )
             img(src='img/wow-slider/right-dots.png')
 
-        .tp-caption.cs-wow-sub-text.tp-fade.tp-resizeme.zindex-7(
+        .tp-caption.cs-wow-sub-text.tp-fade.tp-resizeme.zindex-6(
             data-x='center'
             data-hoffset='6'
             data-y='393'
             data-speed='300'
-            data-start='3500'
+            data-start='3000'
             data-easing='Power3.easeInOut'
             data-splitin='chars'
             data-splitout='none'
