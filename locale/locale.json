@@ -7,7 +7,8 @@
       "timeline": "Roadmap",
       "media": "Media",
       "team": "Team",
-      "register": "Register your project"
+      "register": "Register your project",
+      "register_footer": "Register"
     },
     "wow_slider": {
       "main_text": "Crowdfunding",
@@ -31,7 +32,8 @@
       "timeline": "_EMPTY_",
       "media": "_EMPTY_",
       "team": "_EMPTY_",
-      "register": "_EMPTY_"
+      "register": "_EMPTY_",
+      "register_footer": "_EMPTY_"
     },
     "wow_slider": {
       "main_text": "_EMPTY_",
@@ -55,7 +57,8 @@
       "timeline": "_EMPTY_",
       "media": "_EMPTY_",
       "team": "_EMPTY_",
-      "register": "_EMPTY_"
+      "register": "_EMPTY_",
+      "register_footer": "_EMPTY_"
     },
     "wow_slider": {
       "main_text": "_EMPTY_",
@@ -79,7 +82,8 @@
       "timeline": "_EMPTY_",
       "media": "_EMPTY_",
       "team": "_EMPTY_",
-      "register": "_EMPTY_"
+      "register": "_EMPTY_",
+      "register_footer": "_EMPTY_"
     },
     "wow_slider": {
       "main_text": "_EMPTY_",
@@ -103,7 +107,8 @@
       "timeline": "_EMPTY_",
       "media": "_EMPTY_",
       "team": "_EMPTY_",
-      "register": "_EMPTY_"
+      "register": "_EMPTY_",
+      "register_footer": "_EMPTY_"
     },
     "wow_slider": {
       "main_text": "_EMPTY_",
@@ -127,7 +132,8 @@
       "timeline": "Роадмап",
       "media": "Пресса",
       "team": "Команда",
-      "register": "Регистрация проекта"
+      "register": "Регистрация проекта",
+      "register_footer": "Регистрация"
     },
     "wow_slider": {
       "main_text": "Краудфандинг",
