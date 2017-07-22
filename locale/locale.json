@@ -21,7 +21,14 @@
       "media": "Media about us",
       "team": "Team",
       "register": "Pre-register your project"
-    }
+    },
+    "present_block": {},
+    "ico_block": {},
+    "docs_block": {},
+    "roadmap_block": {},
+    "media_block": {},
+    "team_block": {},
+    "register_block": {}
   },
 
   "de": {
@@ -46,7 +53,14 @@
       "media": "_EMPTY_",
       "team": "_EMPTY_",
       "register": "_EMPTY_"
-    }
+    },
+    "present_block": {},
+    "ico_block": {},
+    "docs_block": {},
+    "roadmap_block": {},
+    "media_block": {},
+    "team_block": {},
+    "register_block": {}
   },
 
   "fr": {
@@ -71,7 +85,14 @@
       "media": "_EMPTY_",
       "team": "_EMPTY_",
       "register": "_EMPTY_"
-    }
+    },
+    "present_block": {},
+    "ico_block": {},
+    "docs_block": {},
+    "roadmap_block": {},
+    "media_block": {},
+    "team_block": {},
+    "register_block": {}
   },
 
   "ch": {
@@ -96,7 +117,14 @@
       "media": "_EMPTY_",
       "team": "_EMPTY_",
       "register": "_EMPTY_"
-    }
+    },
+    "present_block": {},
+    "ico_block": {},
+    "docs_block": {},
+    "roadmap_block": {},
+    "media_block": {},
+    "team_block": {},
+    "register_block": {}
   },
 
   "ar": {
@@ -121,7 +149,14 @@
       "media": "_EMPTY_",
       "team": "_EMPTY_",
       "register": "_EMPTY_"
-    }
+    },
+    "present_block": {},
+    "ico_block": {},
+    "docs_block": {},
+    "roadmap_block": {},
+    "media_block": {},
+    "team_block": {},
+    "register_block": {}
   },
 
   "ru": {
@@ -146,6 +181,13 @@
       "media": "Пресса о нас",
       "team": "Команда",
       "register": "Ранняя регистрация проекта"
-    }
+    },
+    "present_block": {},
+    "ico_block": {},
+    "docs_block": {},
+    "roadmap_block": {},
+    "media_block": {},
+    "team_block": {},
+    "register_block": {}
   }
 }
