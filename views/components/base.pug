@@ -154,7 +154,7 @@ mixin window-buttons-dialog(id)
 //- OTHER
 
 mixin icon(type)
-    span(aria-hidden='true' class='glyphicon glyphicon-'+type)
+    span(aria-hidden='true' class='glyphicon glyphicon-'+type)&attributes(attributes)
 
 mixin mobile-top-menu-toggle(id)
     +button(id).navbar-toggle.collapsed(data-toggle='collapse' data-target='#top-menu')

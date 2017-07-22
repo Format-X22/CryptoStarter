@@ -1,6 +1,8 @@
 mixin media-block
     #media.row
         .col-md-12
+            .text-center
+                +icon('bullhorn').cs-block-title-icon
             .cs-title-line
             h2.cs-title!= erb('l.title.media')
             //- TODO Media block

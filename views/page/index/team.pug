@@ -1,6 +1,8 @@
 mixin team-block
     #team.row
         .col-md-12
+            .text-center
+                +icon('user').cs-block-title-icon
             .cs-title-line
             h2.cs-title!= erb('l.title.team')
     .row
