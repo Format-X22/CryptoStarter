@@ -1,29 +1,31 @@
 mixin register-block
-    .col-md-12
-        .cs-title-line
-        h2.cs-title!= erb('l.title.register')
+    #register.row
+        .col-md-12
+            .cs-title-line
+            h2.cs-title!= erb('l.title.register')
 
-    //- TODO add pre-register info
+    .row        
+        //- TODO add pre-register info
+    .row
+        .col-md-6.col-md-offset-3
+            hr
+            .form-group
+                +input('project', 'text', 'Your project name', 'Project name')
+            .form-group
+                +input('mail', 'email', 'Your project contact email', 'Contact email')
+            .form-group
+                +textarea('description', 'Your project description', 'Project description', 6)
+            .form-group
+                // Spam honey pot
+                +input('message').hidden
+            hr
+            .form-group
+                +button('send', 'Register').btn-primary.btn-lg.pull-right
 
-    .col-md-6.col-md-offset-3
-        hr
-        .form-group
-            +input('project', 'text', 'Your project name', 'Project name')
-        .form-group
-            +input('mail', 'email', 'Your project contact email', 'Contact email')
-        .form-group
-            +textarea('description', 'Your project description', 'Project description', 6)
-        .form-group
-            // Spam honey pot
-            +input('message').hidden
-        hr
-        .form-group
-            +button('send', 'Register').btn-primary.btn-lg.pull-right
-
-    - var id = 'register-modal';
-    +window(id)
-        +window-header(id, 'Success!')
-        +window-body(id)
-            p _SOME SUCCESS TEXT_
-        +window-footer(id)
-            +window-button-ok
+        - var id = 'register-modal';
+        +window(id)
+            +window-header(id, 'Success!')
+            +window-body(id)
+                p _SOME SUCCESS TEXT_
+            +window-footer(id)
+                +window-button-ok
