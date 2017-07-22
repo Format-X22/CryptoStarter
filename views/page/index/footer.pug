@@ -7,16 +7,12 @@ mixin footer
         .container
             .row
                 .col-md-12
-                    //- TODO social
-
-            .row
-                +footer-link('#ico',      'l.main_menu.ico')
-                +footer-link('#docs',     'l.main_menu.docs')
-                +footer-link('#roadmap',  'l.main_menu.timeline')
-                +footer-link('#media',    'l.main_menu.media')
-                +footer-link('#team',     'l.main_menu.team')
-                +footer-link('#register', 'l.main_menu.register_footer')
-
+                    .text-center
+                        a(href='#').cs-social.cs-linked-in
+                        a(href='#').cs-social.cs-facebook
+                        a(href='#').cs-social.cs-twitter
+                        a(href='#').cs-social.cs-telegram
+                        a(href='#').cs-social.cs-mail
             .row
                 .col-md-12.cs-copyright-col
                     span.cs-copyright Copyright Crypto

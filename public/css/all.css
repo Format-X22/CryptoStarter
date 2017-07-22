@@ -111,6 +111,28 @@ h2.cs-title {
     padding-top: 40px; }
     .cs-footer .cs-copyright-col .cs-copyright {
       font-size: 150%; }
+  .cs-footer .cs-social {
+    background: url("../img/social.svg") no-repeat;
+    background-size: 1000px;
+    width: 106px;
+    height: 106px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    opacity: 0.3;
+    transition: opacity 0.5s; }
+    .cs-footer .cs-social:hover {
+      opacity: 1; }
+    .cs-footer .cs-social.cs-linked-in {
+      background-position: -87px -376px; }
+    .cs-footer .cs-social.cs-facebook {
+      background-position: -229px -99px; }
+    .cs-footer .cs-social.cs-telegram {
+      background-position: -653px -656px; }
+    .cs-footer .cs-social.cs-twitter {
+      background-position: -795px -99px; }
+    .cs-footer .cs-social.cs-mail {
+      background-position: -653px -798px; }
 
 .to-top {
   position: fixed;

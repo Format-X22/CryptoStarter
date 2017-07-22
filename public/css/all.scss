@@ -154,6 +154,42 @@ h2.cs-title {
 			font-size: 150%;
 		}
 	}
+
+	.cs-social {
+		background: url('../img/social.svg') no-repeat;
+		background-size: 1000px;
+		width: 106px;
+		height: 106px;
+		display: inline-block;
+		margin-left: 20px;
+		margin-right: 20px;
+		opacity: 0.3;
+		transition: opacity 0.5s;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&.cs-linked-in {
+			background-position: -87px -376px;
+		}
+
+		&.cs-facebook {
+			background-position: -229px -99px;
+		}
+
+		&.cs-telegram {
+			background-position: -653px -656px;
+		}
+
+		&.cs-twitter {
+			background-position: -795px -99px;
+		}
+
+		&.cs-mail {
+			background-position: -653px -798px;
+		}
+	}
 }
 
 .to-top {
