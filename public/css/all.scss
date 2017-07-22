@@ -192,6 +192,12 @@ h2.cs-title {
 	}
 }
 
+@media (max-width: 767px) {
+	.cs-footer .cs-social {
+		opacity: 0.8;
+	}
+}
+
 .to-top {
 	position: fixed;
 	bottom: 50px;

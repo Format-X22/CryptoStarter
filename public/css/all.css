@@ -134,6 +134,9 @@ h2.cs-title {
     .cs-footer .cs-social.cs-mail {
       background-position: -653px -798px; }
 
+@media (max-width: 767px) {
+  .cs-footer .cs-social {
+    opacity: 0.8; } }
 .to-top {
   position: fixed;
   bottom: 50px;
