@@ -111,32 +111,7 @@ h2.cs-title {
     padding-top: 40px; }
     .cs-footer .cs-copyright-col .cs-copyright {
       font-size: 150%; }
-  .cs-footer .cs-social {
-    background: url("../img/social.svg") no-repeat;
-    background-size: 1000px;
-    width: 106px;
-    height: 106px;
-    display: inline-block;
-    margin-left: 20px;
-    margin-right: 20px;
-    opacity: 0.3;
-    transition: opacity 0.5s; }
-    .cs-footer .cs-social:hover {
-      opacity: 1; }
-    .cs-footer .cs-social.cs-linked-in {
-      background-position: -87px -376px; }
-    .cs-footer .cs-social.cs-facebook {
-      background-position: -229px -99px; }
-    .cs-footer .cs-social.cs-telegram {
-      background-position: -653px -656px; }
-    .cs-footer .cs-social.cs-twitter {
-      background-position: -795px -99px; }
-    .cs-footer .cs-social.cs-mail {
-      background-position: -653px -798px; }
 
-@media (max-width: 767px) {
-  .cs-footer .cs-social {
-    opacity: 0.8; } }
 .to-top {
   position: fixed;
   bottom: 50px;
@@ -157,5 +132,37 @@ h2.cs-title {
   .to-top .glyphicon {
     line-height: 39px;
     padding-left: 2px; }
+
+.cs-social {
+  background: url("../img/social.svg") no-repeat;
+  background-size: 1000px;
+  width: 106px;
+  height: 106px;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  opacity: 0.3;
+  transition: opacity 0.5s; }
+  .cs-social:hover {
+    opacity: 1; }
+  .cs-social.cs-linked-in {
+    background-position: -87px -376px; }
+  .cs-social.cs-facebook {
+    background-position: -229px -99px; }
+  .cs-social.cs-telegram {
+    background-position: -653px -656px; }
+  .cs-social.cs-twitter {
+    background-position: -795px -99px; }
+  .cs-social.cs-mail {
+    background-position: -653px -798px; }
+
+.cs-social-bright .cs-social {
+  opacity: 0.7; }
+  .cs-social-bright .cs-social:hover {
+    opacity: 1; }
+
+@media (max-width: 767px) {
+  .cs-footer .cs-social {
+    opacity: 0.8; } }
 
 /*# sourceMappingURL=all.css.map */
