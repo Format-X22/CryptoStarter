@@ -13,6 +13,9 @@ mixin register-block
             +input('mail', 'email', 'Your project contact email', 'Contact email')
         .form-group
             +textarea('description', 'Your project description', 'Project description', 6)
+        .form-group
+            // Spam honey pot
+            +input('message').hidden
         hr
         .form-group
             +button('send', 'Register').btn-primary.btn-lg.pull-right
