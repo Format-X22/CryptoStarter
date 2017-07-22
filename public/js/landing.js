@@ -1,9 +1,9 @@
 console.log(
     '%c+',
     'font-size: 1px;' +
-    'padding: 60px 60px;' +
+    'padding: 60px 59.5px;' +
     'line-height: 120px;' +
-    'background: url("' + location.href +'img/logo/120.png") no-repeat;' +
+    'background: url("' + location.href +'img/logo/120.png");' +
     'background-size: 120px 120px;' +
     'color: transparent;'
 );
@@ -74,6 +74,11 @@ $(function () {
         var toTopSpeed = 800;
 
         $(window).scroll(function() {
+            if (bodyAndHtml.width() < 767) {
+                toTop.fadeOut();
+                return;
+            }
+
             toTop.removeClass('hidden');
 
             if ($(this).scrollTop() > toTopEdge) {

@@ -2,6 +2,12 @@
 body {
   padding-top: 88px; }
 
+.tparrows {
+  display: none; }
+
+.tp-bannertimer {
+  display: none; }
+
 .cs-brand-main-color {
   color: #0dbff2; }
 
@@ -10,6 +16,19 @@ body {
   margin-top: 8px;
   margin-left: 20px; }
 
+@media (max-width: 767px) {
+  body {
+    padding-top: 55px; }
+
+  .navbar {
+    min-height: 45px; }
+
+  .cs-main_menu-logo {
+    width: 40px; }
+
+  .btn.navbar-toggle {
+    margin-top: 10px;
+    margin-bottom: 10px; } }
 .cs-wow-header .cs-wow-logo-name {
   font-size: 72px;
   line-height: 80px;
@@ -41,21 +60,26 @@ body {
   background-color: transparent;
   padding: 0 40px;
   border: 0 none white; }
-.cs-wow-header .cs-wow-logo-name-mobile {
-  font-family: 'PT Sans';
-  font-weight: 700;
-  font-size: 300%;
-  padding: 30px 0 0; }
-.cs-wow-header .cs-wow-main-text-mobile {
-  font-family: 'Roboto Condensed';
-  font-weight: 700;
-  font-size: 200%;
-  padding: 10px 0; }
-.cs-wow-header .cs-wow-sub-text-mobile {
-  font-family: 'Roboto Condensed';
-  font-weight: 300;
-  font-size: 130%;
-  padding: 10px 0; }
+.cs-wow-header .cs-wow-mobile-container {
+  background-color: #070825; }
+  .cs-wow-header .cs-wow-mobile-container .cs-wow-logo-name-mobile {
+    font-family: 'PT Sans';
+    font-weight: 700;
+    font-size: 300%;
+    padding: 30px 0 0;
+    color: white; }
+  .cs-wow-header .cs-wow-mobile-container .cs-wow-main-text-mobile {
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 200%;
+    padding: 10px 0;
+    color: white; }
+  .cs-wow-header .cs-wow-mobile-container .cs-wow-sub-text-mobile {
+    font-family: 'Roboto Condensed';
+    font-weight: 300;
+    font-size: 130%;
+    padding: 0 0 50px;
+    color: white; }
 
 .cs-title-line {
   display: block;
@@ -72,6 +96,9 @@ h2.cs-title {
   text-align: center;
   text-transform: uppercase; }
 
+@media (max-width: 767px) {
+  h2.cs-title {
+    font-size: 24px; } }
 .cs-footer {
   background-color: #373a3f;
   padding: 50px 0;
