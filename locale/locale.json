@@ -49,7 +49,7 @@
   "de": {
     "main_menu": {
       "home": "_EMPTY_",
-      "ico": "_EMPTY_",
+      "ico": "ICO",
       "docs": "_EMPTY_",
       "timeline": "_EMPTY_",
       "media": "_EMPTY_",
@@ -96,7 +96,7 @@
   "fr": {
     "main_menu": {
       "home": "_EMPTY_",
-      "ico": "_EMPTY_",
+      "ico": "ICO",
       "docs": "_EMPTY_",
       "timeline": "_EMPTY_",
       "media": "_EMPTY_",
@@ -143,7 +143,7 @@
   "ch": {
     "main_menu": {
       "home": "_EMPTY_",
-      "ico": "_EMPTY_",
+      "ico": "ICO",
       "docs": "_EMPTY_",
       "timeline": "_EMPTY_",
       "media": "_EMPTY_",
@@ -190,7 +190,7 @@
   "ar": {
     "main_menu": {
       "home": "_EMPTY_",
-      "ico": "_EMPTY_",
+      "ico": "ICO",
       "docs": "_EMPTY_",
       "timeline": "_EMPTY_",
       "media": "_EMPTY_",

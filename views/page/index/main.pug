@@ -3,6 +3,7 @@ extends ../../components/skeleton
 include wow-slider
 include footer
 include social-icons
+include langs
 
 include present
 include ico
@@ -37,7 +38,20 @@ block body
                     +menu-item('#media',    erb('l.main_menu.media'))
                     +menu-item('#team',     erb('l.main_menu.team'))
                     +menu-item('#register', erb('l.main_menu.register'))
-                    //- TODO social
+                    +langs.visible-xs
+                    li.dropdown.hidden-xs
+                        a.dropdown-toggle(
+                            href='#'
+                            data-toggle='dropdown'
+                            role='button'
+                            aria-haspopup='true'
+                            aria-expanded='false'
+                        )
+                            +icon('text-background')
+                            span.caret
+                        ul.dropdown-menu
+                            +langs
+
     .cs-wow-header
         +wow-slider
 
