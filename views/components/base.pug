@@ -55,14 +55,26 @@ mixin button-group-radio-button-icon(id, text, icon, textClass)
 
 //- INPUTS
 
-mixin input(id, type, placeholder)
+mixin input(id, type, placeholder, label)
     .form-group&attributes(attributes)
+        if label
+            label(for=id)!= label
         input.form-control(id=id type=type placeholder=placeholder)
         span.glyphicon.glyphicon-remove.form-control-feedback.hidden(aria-hidden='true')
 
-mixin input-outside-group(id, type, placeholder)
+mixin input-outside-group(id, type, placeholder, label)
+    if label
+        label(for=id)!= label
     input.form-control(id=id type=type placeholder=placeholder)&attributes(attributes)
     span.glyphicon.glyphicon-remove.form-control-feedback.hidden(aria-hidden='true')
+
+mixin textarea(id, placeholder, label, rows)
+    - rows = rows || 3
+    .form-group&attributes(attributes)
+        if label
+            label(for=id)!= label
+        textarea.form-control(id=id rows=rows placeholder=placeholder)
+        span.glyphicon.glyphicon-remove.form-control-feedback.hidden(aria-hidden='true')
 
 //- MENUS AND TABS
 

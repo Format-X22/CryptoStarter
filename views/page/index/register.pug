@@ -2,4 +2,25 @@ mixin register-block
     .col-md-12
         .cs-title-line
         h2.cs-title!= erb('l.title.register')
-    
+
+    //- TODO add pre-register info
+
+    .col-md-6.col-md-offset-3
+        hr
+        .form-group
+            +input('project', 'text', 'Your project name', 'Project name')
+        .form-group
+            +input('mail', 'email', 'Your project contact email', 'Contact email')
+        .form-group
+            +textarea('description', 'Your project description', 'Project description')
+        hr
+        .form-group
+            +button('send', 'Register').btn-primary.pull-right
+
+    - var id = 'register-modal';
+    +window(id)
+        +window-header(id, 'Success!')
+        +window-body(id)
+            p _SOME SUCCESS TEXT_
+        +window-footer(id)
+            +window-button-ok
