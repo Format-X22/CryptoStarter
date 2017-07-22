@@ -3,6 +3,14 @@ extends ../../components/skeleton
 include wow-slider
 include footer
 
+include present
+include ico
+include docs
+include roadmap
+include media
+include team
+include register
+
 block head
     meta(name='keywords'    content='CryptoStarter, crowdfunding, blockchain, IdeaCoin')
     meta(name='description' content='CryptoStarter landing')
@@ -35,38 +43,31 @@ block body
     .container
         #home.row
             .col-md-12
-                //- no title line
-                //- TODO About project
+                +present-block
         #ico.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title!= erb('l.title.ico')
-                //- TODO ICO information
+                +ico-block
         #docs.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title!= erb('l.title.docs')
-                //- TODO Docs buttons
+                +docs-block
         #roadmap.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title!= erb('l.title.roadmap')
-                //- TODO Roadmap
+                +roadmap-block
         #media.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title!= erb('l.title.media')
-                //- TODO Media block
+                +media-block
         #team.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title!= erb('l.title.team')
-                //- TODO Pre-Register form
+                +team-block
         #register.row
             .col-md-12
                 .cs-title-line
-                h2.cs-title!= erb('l.title.register')
-                //- TODO Pre-Register form
+                +register-block
 
     +footer
 
