@@ -12,7 +12,7 @@ mixin register-block
         .form-group
             +input('mail', 'email', 'Your project contact email', 'Contact email')
         .form-group
-            +textarea('description', 'Your project description', 'Project description')
+            +textarea('description', 'Your project description', 'Project description', 6)
         hr
         .form-group
             +button('send', 'Register').btn-primary.btn-lg.pull-right
