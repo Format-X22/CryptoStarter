@@ -152,12 +152,13 @@ h2.cs-title {
   .cs-social.cs-telegram {
     background-position: -653px -656px; }
   .cs-social.cs-twitter {
-    background-position: -795px -100px; }
+    background-position: -795px -99px; }
   .cs-social.cs-mail {
     background-position: -653px -797px; }
 
 .cs-social-bright .cs-social {
-  opacity: 0.7; }
+  opacity: 0.6;
+  transition: opacity 0.7s; }
   .cs-social-bright .cs-social:hover {
     opacity: 1; }
 
