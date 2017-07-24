@@ -112,15 +112,17 @@ mixin wow-slider-slide
             != erb('l.wow_slider.sub_text')
 
 mixin wow-slider
-    #rev_slider_wrapper.rev_slider_wrapper.fullwidthbanner-container.hidden-xs
-        #rev_slider.rev_slider.fullwidthabanner
-            ul
-                +wow-slider-slide
-                +wow-slider-slide
-    .container.visible-xs.cs-wow-mobile-container
-        .row
-            .col-xs-12.text-center
-                .cs-wow-logo-name-mobile Crypto
-                    span.cs-brand-main-color Starter
-                .cs-wow-main-text-mobile!= erb('l.wow_slider.main_text')
-                .cs-wow-sub-text-mobile!= erb('l.wow_slider.sub_text')
+    .cs-wow-header
+        #wow-fix-loader.cs-wow-fix-loader.hidden-xs
+        #wow-slider-wrapper.rev_slider_wrapper.fullwidthbanner-container.cs-wow-slider.hidden-xs
+            #wow-slider.rev_slider.fullwidthabanner
+                ul
+                    +wow-slider-slide
+                    +wow-slider-slide
+        .container.visible-xs.cs-wow-mobile-container
+            .row
+                .col-xs-12.text-center
+                    .cs-wow-logo-name-mobile Crypto
+                        span.cs-brand-main-color Starter
+                    .cs-wow-main-text-mobile!= erb('l.wow_slider.main_text')
+                    .cs-wow-sub-text-mobile!= erb('l.wow_slider.sub_text')

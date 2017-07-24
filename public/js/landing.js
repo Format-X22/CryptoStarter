@@ -15,11 +15,11 @@ console.log('CryptoStarter console >>');
 
 // Hello 2007 :D
 $(function () {
-    configureWowSlider();
+    setTimeout(initWowSlider, 250);
     initScrollToTop();
 
-    function configureWowSlider() {
-        $('#rev_slider').show().revolution(
+    function initWowSlider() {
+        $('#wow-slider').show().revolution(
             {
                 dottedOverlay: 'none',
                 delay: 9000,
@@ -68,6 +68,8 @@ $(function () {
                 fullScreenOffsetContainer: ''
             }
         );
+
+        $('#wow-fix-loader').hide();
     }
 
     function initScrollToTop() {
