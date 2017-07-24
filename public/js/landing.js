@@ -3,7 +3,10 @@ console.log(
     'font-size: 1px;' +
     'padding: 60px 59.5px;' +
     'line-height: 120px;' +
-    'background: url("' + location.href +'img/logo/120.png");' +
+    'background: url("' +
+        location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') +
+        '/img/logo/120.png' +
+    '");' +
     'background-size: 120px 120px;' +
     'color: transparent;'
 );
