@@ -1,3 +1,5 @@
+$brand-color: #0dbff2;
+
 @import url(
 	'https://fonts.googleapis.com/css?family=' +
 	'Roboto:300,300italic,400,400italic,500,500italic,700,700italic,900,900italic|' +
@@ -18,7 +20,7 @@ body {
 }
 
 .cs-brand-main-color {
-	color: #0dbff2;
+	color: $brand-color;
 }
 
 .cs-main_menu-logo {
@@ -245,5 +247,21 @@ h2.cs-title {
 @media (max-width: 767px) {
 	.cs-footer .cs-social {
 		opacity: 0.8;
+	}
+}
+
+.cs-roadmap-point {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 5px solid #f0f0f0;
+	border-radius: 20px;
+	padding: 18px 28px;
+
+	&.cs-roadmap-marked {
+		border: 5px solid $brand-color;
+	}
+
+	&.cs-roadmap-important {
+		border-color: rgb(166, 166, 166);
 	}
 }

@@ -176,5 +176,15 @@ h2.cs-title {
 @media (max-width: 767px) {
   .cs-footer .cs-social {
     opacity: 0.8; } }
+.cs-roadmap-point {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 5px solid #f0f0f0;
+  border-radius: 20px;
+  padding: 18px 28px; }
+  .cs-roadmap-point.cs-roadmap-marked {
+    border: 5px solid #0dbff2; }
+  .cs-roadmap-point.cs-roadmap-important {
+    border-color: #a6a6a6; }
 
 /*# sourceMappingURL=all.css.map */

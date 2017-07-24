@@ -1,8 +1,90 @@
+mixin roadmap-point(date, title, text, no_icon)
+    .cs-roadmap-point&attributes(attributes)
+        span.label.label-info.pull-right!= date
+        h4!= title
+        p!= text
+        block
+    div.text-center
+        unless no_icon
+            +icon('chevron-down')
+
 mixin roadmap-block
     #roadmap.row
         .col-md-12
             .text-center
-                +icon('road').cs-block-title-icon
+                +icon('map-marker').cs-block-title-icon
             .cs-title-line
             h2.cs-title!= erb('l.title.roadmap')
-            //- TODO Roadmap
+
+    .row
+        .col-md-4.col-md-offset-4
+            +roadmap-point(
+                '4 марта 2017',
+                'Старт проекта',
+                'Начало разработки платформы CryptoStarter.'
+            ).cs-roadmap-marked
+            +roadmap-point(
+                '10 апреля 2017',
+                'Альфа-версия',
+                'Ядро платформы CryptoStarter, ' +
+                'утверждение White Paper и MVP.'
+            ).cs-roadmap-marked
+            +roadmap-point(
+                '11 мая 2017',
+                'Альфа-версия 2',
+                'Нестабильная версия платформы CryptoStarter с основным функционалом.'
+            ).cs-roadmap-marked
+            +roadmap-point(
+                '3 июля 2017',
+                'Бета-версия',
+                'Платформа CryptoStarter с основным функционалом.'
+            ).cs-roadmap-marked
+            +roadmap-point(
+                '4-18 сентября 2017',
+                'Бета-версия 2',
+                'Платформа CryptoStarter с полным MVP функционалом.'
+            )
+            +roadmap-point(
+                '1-10 октября 2017',
+                'ICO',
+                'Предварительная продажа токенов.'
+            ).cs-roadmap-important
+            +roadmap-point(
+                '1 ноября 2017',
+                'Ранний доступ',
+                'К платформе получат доступ владельцы проектов, ' +
+                'которые решили зарегистрировать свои проекты до публичного запуска платформы CryptoStarter.'
+            )
+            +roadmap-point(
+                '15 ноября 2017',
+                'Релиз версии 1.0',
+                'Релиз платформы в MVP версии.'
+            )
+            +roadmap-point(
+                '15 ноября 2017',
+                'Post-ICO',
+                'Продажа токенов с сайта до момента выхода на первую биржу. ' +
+                'Стоимость монет на post-ICO будет удвоена относительно цены ICO.'
+            )
+            +roadmap-point(
+                'ноябрь-декабрь 2017',
+                'Выход на биржи',
+                'Старт торгов токенов на биржах. Завершение post-ICO.'
+            )
+            +roadmap-point(
+                'декабрь 2017',
+                'Релиз версии 2.0',
+                'В этой версии добавится поэтапное инвестирование и возрат средств через смарт-контракт.'
+            )
+            +roadmap-point(
+                'февраль-март 2018',
+                'Релиз версии 3.0',
+                'В этой версии добавятся перепродаваемые токены-фьючерсы для каждого зарегистрированного проекта, ' +
+                'а также возможность обмена и торговли ими внутри платформы CryptoStarter.'
+            )
+            +roadmap-point(
+                'май 2018',
+                'Релиз версии 4.0',
+                'В этой версии платформа приобретет полную децентрализацию, включая все данные сайта.',
+                true
+            )
