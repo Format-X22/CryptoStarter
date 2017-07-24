@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="170" height="170">
+    <desc iVinci="yes" version="4.6" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+    <g id="Layer1" name="Layer 1" opacity="1">
+        <g id="Shape1">
+            <desc shapeID="1" type="0" basicInfo-basicType="0" basicInfo-roundedRectRadius="12" basicInfo-polygonSides="6" basicInfo-starPoints="5" bounding="rect(-82.9002,-82.9027,165.8,165.805)" text="" font-familyName="" font-pixelSize="20" font-bold="0" font-underline="0" font-alignment="1" strokeStyle="0" markerStart="0" markerEnd="0" shadowEnabled="0" shadowOffsetX="0" shadowOffsetY="2" shadowBlur="4" shadowOpacity="160" blurEnabled="0" blurRadius="4" transform="matrix(1,0,0,1,85.0002,85.0002)" pers-center="0,0" pers-size="0,0" pers-start="0,0" pers-end="0,0" locked="0" mesh="" flag=""/>
+            <path id="shapePath1" d="M122.48,167.902 L47.51,167.902 C22.43,167.902 2.10005,147.57 2.10005,122.49 L2.10005,47.5105 C2.10005,22.4305 22.43,2.09749 47.51,2.09749 L122.48,2.09749 C147.56,2.09749 167.9,22.4305 167.9,47.5105 L167.9,122.49 C167.9,147.57 147.56,167.902 122.48,167.902 Z" style="stroke:none;fill-rule:evenodd;fill:#0dbff2;fill-opacity:1;"/>
+        </g>
+        <g id="Shape2">
+            <desc shapeID="2" type="0" basicInfo-basicType="0" basicInfo-roundedRectRadius="12" basicInfo-polygonSides="6" basicInfo-starPoints="5" bounding="rect(-51.3002,-44.1257,102.6,88.2513)" text="" font-familyName="" font-pixelSize="20" font-bold="0" font-underline="0" font-alignment="1" strokeStyle="0" markerStart="0" markerEnd="0" shadowEnabled="0" shadowOffsetX="0" shadowOffsetY="2" shadowBlur="4" shadowOpacity="160" blurEnabled="0" blurRadius="4" transform="matrix(1,0,0,1,85.0002,87.3793)" pers-center="0,0" pers-size="0,0" pers-start="0,0" pers-end="0,0" locked="0" mesh="" flag=""/>
+            <path id="shapePath2" d="M130.14,53.3245 L133.76,45.9645 L122.15,48.8045 C122.15,48.8045 110.7,39.4175 95.64,45.0575 C80.6001,50.7105 84.59,68.6975 84.59,68.6975 C84.59,68.6975 60.01,69.4445 38.56,47.9905 C38.56,47.9905 31.78,65.0845 46.3,74.1375 C46.3,74.1375 44.69,75.8175 38.26,74.9375 C38.26,74.9375 35.69,87.0845 52.82,93.4975 C52.82,93.4975 49.01,96.1105 42.44,96.5645 C42.44,96.5645 46.17,108.23 62.2,108.23 C62.2,108.23 52.55,118.121 33.7,120.377 C33.7,120.377 44.97,128.541 60.83,130.672 C74.02,132.442 93.06,132.297 108.74,120.938 C140.68,97.8045 127.5,63.2975 127.5,63.2975 L136.3,56.6975 L130.14,53.3245 Z" style="stroke:none;fill-rule:evenodd;fill:#ffffff;fill-opacity:1;"/>
+        </g>
+    </g>
+</svg>
