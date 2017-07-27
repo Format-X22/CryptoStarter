@@ -22,7 +22,15 @@ html
     body
         block body
 
-        script(src='js/jquery.js')
-        script(src='js/bootstrap.js')
+        script(src='js/lib/fixes.js')
+        script(src='js/lib/jquery.js')
+        script(src='js/lib/bootstrap.js')
+
+        - var id = 'error-modal'
+        +window(id)
+            +window-header(id, erb('l.error'))
+            +window-body(id)
+            +window-footer(id)
+                +window-button-ok
 
         block scripts
