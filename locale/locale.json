@@ -43,7 +43,8 @@
     "component": {
       "ok": "Ok",
       "cancel": "Cancel"
-    }
+    },
+    "error": "Error"
   },
 
   "de": {
@@ -90,7 +91,8 @@
     "component": {
       "ok": "_EMPTY_",
       "cancel": "_EMPTY_"
-    }
+    },
+    "error": "_EMPTY_"
   },
 
   "fr": {
@@ -137,7 +139,8 @@
     "component": {
       "ok": "_EMPTY_",
       "cancel": "_EMPTY_"
-    }
+    },
+    "error": "_EMPTY_"
   },
 
   "ch": {
@@ -184,7 +187,8 @@
     "component": {
       "ok": "_EMPTY_",
       "cancel": "_EMPTY_"
-    }
+    },
+    "error": "_EMPTY_"
   },
 
   "ar": {
@@ -231,7 +235,8 @@
     "component": {
       "ok": "_EMPTY_",
       "cancel": "_EMPTY_"
-    }
+    },
+    "error": "_EMPTY_"
   },
 
   "ru": {
@@ -278,6 +283,7 @@
     "component": {
       "ok": "Ок",
       "cancel": "Отмена"
-    }
+    },
+    "error": "Ошибка"
   }
 }
