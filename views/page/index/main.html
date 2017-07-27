@@ -257,8 +257,8 @@
           </div>
           <div class="form-group">
             <div class="form-group">
-              <label for="mail"><%= "#{l.register_block.email_label}" %></label>
-              <input class="form-control" id="mail" type="email" placeholder="<%= "#{l.register_block.email_placeholder}" %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="email"><%= "#{l.register_block.email_label}" %></label>
+              <input class="form-control" id="email" type="email" placeholder="<%= "#{l.register_block.email_placeholder}" %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
           </div>
           <div class="form-group">
@@ -313,10 +313,28 @@
     </footer>
     <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
     </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/wow-slider-tools.js"></script>
-    <script src="js/wow-slider.js"></script>
-    <script src="js/landing.js"></script>
+    <script src="js/lib/fixes.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="error-modal-title"><%= l.error %>
+            </h4>
+          </div>
+          <div class="modal-body" id="error-modal-body">
+          </div>
+          <div class="modal-footer" id="error-modal-footer">
+            <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/wow-slider-tools.js"></script>
+    <script src="js/lib/wow-slider.js"></script>
+    <script src="js/all.js"></script>
   </body>
 </html>
