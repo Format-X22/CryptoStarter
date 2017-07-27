@@ -7,10 +7,12 @@ helpers do
 	end
 
 	def success(data = {})
+		content_type :json
 		halt 200, {success: true, data: data}.to_json
 	end
 
 	def failure(message='Unknown error')
+		content_type :json
 		halt 200, {success: false, message: message}.to_json
 	end
 end
@@ -39,4 +41,10 @@ end
 
 get '/ru' do
 	page 'index', locale.ru
+end
+
+post '/api/pre-register' do
+	# TODO Register logic
+
+	success
 end
