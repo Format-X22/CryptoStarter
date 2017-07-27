@@ -1,10 +1,5 @@
 require 'UtilsPack'
 
-require 'json'
-require 'native'
-require 'promise'
-require 'opal/jquery/constants'
-
 class Landing
 
 	TO_TOP_EDGE = 100
