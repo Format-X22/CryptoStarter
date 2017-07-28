@@ -5,4 +5,12 @@ mixin docs-block
                 +icon('book').cs-block-title-icon
             .cs-title-line
             h2.cs-title!= erb('l.title.docs')
-            //- TODO Docs buttons
+
+            .well
+                
+                h4.text-center Документ, описывающий CryptoStarter и IdeaCoin
+                br
+                a(href='/docs/whitepaper.pdf' target='_BLANK')
+                    +button-with-icon('white-paper', 'Скачать White Paper', 'save-file').btn-primary.btn-lg.center-block
+                br
+                p.text-center PDF
