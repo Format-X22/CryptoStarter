@@ -22436,10 +22436,6 @@ Opal.modules["Landing"] = function(Opal) {
 
   Opal.add_stubs(['$require', '$map_elements', '$expose_plugins', '$init_scroll_to_top', '$init_pre_register', '$after', '$init_slider', '$[]', '$expose', '$on', '$<', '$width', '$effect', '$remove_class', '$>', '$scroll_top', '$animate', '$valid_tracker', '$length', '$value', '$try_send_registration', '$==', '$mark_invalid', '$post', '$handle_registration', '$ok?', '$json', '$modal', '$show_error', '$to_n', '$revolution', '$show', '$hide']);
   self.$require("UtilsPack");
-  self.$require("json");
-  self.$require("native");
-  self.$require("promise");
-  self.$require("opal/jquery/constants");
   return (function($base, $super) {
     function $Landing(){};
     var self = $Landing = $klass($base, $super, 'Landing', $Landing);

@@ -1,3 +1,10 @@
+mixin media-item(url, img, title, text)
+    a(href=url target='_BLANK')
+        .col-md-4.cs-media-item
+            img.img-thumbnail(src='img/media/' + img)
+            h2.text-center!= title
+            p.text-center!= text
+
 mixin media-block
     #media.row
         .col-md-12
@@ -5,4 +12,10 @@ mixin media-block
                 +icon('bullhorn').cs-block-title-icon
             .cs-title-line
             h2.cs-title!= erb('l.title.media')
-            //- TODO Media block
+    .row
+        +media-item('https://www.forbes.com/', 'forbes.svg', 'Forbes', 'Топ 10 самых богатейших компаний мира')
+        +media-item('https://www.forbes.com/', 'forbes.svg', 'Forbes', 'Топ 10 самых богатейших компаний мира')
+        +media-item('https://www.forbes.com/', 'forbes.svg', 'Forbes', 'Топ 10 самых богатейших компаний мира')
+        +media-item('https://www.forbes.com/', 'forbes.svg', 'Forbes', 'Топ 10 самых богатейших компаний мира')
+        +media-item('https://www.forbes.com/', 'forbes.svg', 'Forbes', 'Топ 10 самых богатейших компаний мира')
+        +media-item('https://www.forbes.com/', 'forbes.svg', 'Forbes', 'Топ 10 самых богатейших компаний мира')
