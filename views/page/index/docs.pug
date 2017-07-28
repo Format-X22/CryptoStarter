@@ -10,7 +10,10 @@ mixin docs-block
                 
                 h4.text-center Документ, описывающий CryptoStarter и IdeaCoin
                 br
-                a(href='/docs/whitepaper.pdf' target='_BLANK')
-                    +button-with-icon('white-paper', 'Скачать White Paper', 'save-file').btn-primary.btn-lg.center-block
+                .text-center
+                    a.btn.btn-primary.btn-lg(href='/docs/whitepaper.pdf' target='_BLANK' role='button')
+                        +icon('save-file')
+                        | &nbsp;
+                        | Скачать White Paper
                 br
                 p.text-center PDF
