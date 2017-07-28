@@ -22377,7 +22377,7 @@ Opal.modules["UtilsPack"] = function(Opal) {
 
   Opal.add_stubs(['$html=', '$[]', '$modal', '$call', '$*', '$on', '$unmark_invalid', '$mark_invalid', '$remove_class', '$children', '$add_class', '$parent']);
   return (function($base) {
-    var $Kernel, self = $Kernel = $module($base, 'Kernel');
+    var $UtilsPack, self = $UtilsPack = $module($base, 'UtilsPack');
 
     var def = self.$$proto, $scope = self.$$scope, TMP_1, TMP_2, TMP_3, TMP_5, TMP_6;
 
@@ -22434,7 +22434,7 @@ Opal.modules["Landing"] = function(Opal) {
   }
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $hash2 = Opal.hash2;
 
-  Opal.add_stubs(['$require', '$map_elements', '$expose_plugins', '$init_scroll_to_top', '$init_pre_register', '$after', '$init_slider', '$[]', '$expose', '$on', '$<', '$width', '$effect', '$remove_class', '$>', '$scroll_top', '$animate', '$valid_tracker', '$length', '$value', '$try_send_registration', '$==', '$mark_invalid', '$post', '$handle_registration', '$ok?', '$json', '$modal', '$show_error', '$to_n', '$revolution', '$show', '$hide']);
+  Opal.add_stubs(['$require', '$include', '$map_elements', '$expose_plugins', '$init_scroll_to_top', '$init_pre_register', '$after', '$init_slider', '$[]', '$expose', '$on', '$<', '$width', '$effect', '$remove_class', '$>', '$scroll_top', '$animate', '$valid_tracker', '$length', '$value', '$try_send_registration', '$==', '$mark_invalid', '$post', '$handle_registration', '$ok?', '$json', '$modal', '$show_error', '$to_n', '$revolution', '$show', '$hide']);
   self.$require("UtilsPack");
   return (function($base, $super) {
     function $Landing(){};
@@ -22443,6 +22443,8 @@ Opal.modules["Landing"] = function(Opal) {
     var def = self.$$proto, $scope = self.$$scope, TMP_2, TMP_3, TMP_4, TMP_7, TMP_12, TMP_14, TMP_15, TMP_16;
 
     def.js_window = def.to_top = def.project = def.email = def.description = def.send = def.message = def.register_modal = def.slider = def.slider_loader = nil;
+    self.$include($scope.get('UtilsPack'));
+
     Opal.cdecl($scope, 'TO_TOP_EDGE', 100);
 
     Opal.cdecl($scope, 'TO_TOP_SPEED', 800);

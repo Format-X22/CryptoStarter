@@ -1,8 +1,62 @@
+mixin ico-block-logo
+    img.cs-ico-img.center-block(src='/img/logo/origin.svg')
+    h2.text-center IdeaCoin
+
+mixin ico-faq-item(title, text)
+    h5!= title
+    p!= text
+
 mixin ico-block
+    - var ico_status = 'in' // before, in, after
+
     #ico.row
         .col-md-12
             .text-center
                 +icon('briefcase').cs-block-title-icon
             .cs-title-line
             h2.cs-title!= erb('l.title.ico')
-            //- TODO ICO information
+
+    if ico_status == 'before'
+        .row
+            .col-md-4.col-md-offset-2
+                p ICO_TEXT
+            .col-md-4
+                +ico-block-logo
+
+    if ico_status == 'in'
+        .row
+            .col-md-4.col-md-offset-2
+                p ICO_TEXT
+            .col-md-4
+                +ico-block-logo
+                .cs-buy-button
+                    +button('buy', 'Купить').btn-primary.btn-block.btn-lg
+        .row
+            .col-md-6.col-md-offset-3
+                +characteristic('earned', 'Инвестированно').cs-ico-progress
+                span.text-left.pull-left ~$1 400 000
+                span.text-right.pull-right ~$10 000 000
+
+    if ico_status == 'after'
+        .row
+            .col-md-4.col-md-offset-2
+                p ICO_TEXT
+            .col-md-4
+                +ico-block-logo
+
+    .row.cs-ico-faq-line
+        .col-md-8.col-md-offset-2
+            hr
+    .row.cs-ico-faq
+        .col-md-4.col-md-offset-2
+            +ico-faq-item('EMPTY', 'EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY')
+            +ico-faq-item('EMPTY', 'EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY')
+            +ico-faq-item('EMPTY', 'EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY')
+            +ico-faq-item('EMPTY', 'EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY')
+        .col-md-4
+            +ico-faq-item('EMPTY', 'EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY')
+            +ico-faq-item('EMPTY', 'EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY')
+            +ico-faq-item('EMPTY', 'EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY')
+            +ico-faq-item('EMPTY', 'EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY EMPTY')
+
+    +window('buy')
