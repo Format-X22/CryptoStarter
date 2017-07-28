@@ -1,6 +1,7 @@
 require 'UtilsPack'
 
 class Landing
+	include UtilsPack
 
 	TO_TOP_EDGE = 100
 	TO_TOP_SPEED = 800

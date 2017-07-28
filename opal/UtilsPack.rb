@@ -1,5 +1,4 @@
-# Opal can't include module to class, but we can modify Kernel
-module Kernel
+module UtilsPack
 
 	def show_error(text)
 		Element['#error-modal-body'].html = text
