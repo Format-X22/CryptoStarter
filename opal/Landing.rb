@@ -19,20 +19,22 @@ class Landing
 	end
 
 	def map_elements
-		@js_window = Element[`window`]
-		@body_and_html = Element['body, html']
-		@to_top = Element['#to-top']
-		@project = Element['#project']
-		@email = Element['#email']
-		@description = Element['#description']
-		@message = Element['#message']
-		@send = Element['#send']
-		@slider = Element['#wow-slider']
-		@slider_loader = Element['#wow-fix-loader']
-		@register_modal = Element['#register-modal']
-		@ico_confirm = Element['#ico-confirm']
-		@ico_data = Element['#ico-data']
-		@no_usa = Element['#no-usa']
+		e = Element
+
+		@js_window      = e[`window`]
+		@body_and_html  = e['body, html']
+		@to_top         = e['#to-top']
+		@project        = e['#project']
+		@email          = e['#email']
+		@description    = e['#description']
+		@message        = e['#message']
+		@send           = e['#send']
+		@slider         = e['#wow-slider']
+		@slider_loader  = e['#wow-fix-loader']
+		@register_modal = e['#register-modal']
+		@ico_confirm    = e['#ico-confirm']
+		@ico_data       = e['#ico-data']
+		@no_usa         = e['#no-usa']
 	end
 
 	def expose_plugins
