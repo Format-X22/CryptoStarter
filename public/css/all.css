@@ -8,6 +8,9 @@ body {
 .tp-bannertimer {
   display: none; }
 
+.cs-pointer {
+  cursor: pointer; }
+
 .cs-brand-main-color, .cs-block-title-icon {
   color: #0dbff2; }
 
@@ -214,5 +217,13 @@ h2.cs-title {
 
 .cs-ico-progress {
   margin-bottom: 0; }
+
+.cs-ico-instruction-logo {
+  margin-top: 25px; }
+  .cs-ico-instruction-logo img {
+    width: 50px;
+    height: 50px; }
+  .cs-ico-instruction-logo .title {
+    padding-left: 10px; }
 
 /*# sourceMappingURL=all.css.map */

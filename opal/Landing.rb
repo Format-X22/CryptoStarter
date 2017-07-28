@@ -11,6 +11,7 @@ class Landing
 		expose_plugins
 		init_scroll_to_top
 		init_pre_register
+		init_ico
 
 		after 0.250 do
 			init_slider
@@ -29,6 +30,9 @@ class Landing
 		@slider = Element['#wow-slider']
 		@slider_loader = Element['#wow-fix-loader']
 		@register_modal = Element['#register-modal']
+		@ico_confirm = Element['#ico-confirm']
+		@ico_data = Element['#ico-data']
+		@no_usa = Element['#no-usa']
 	end
 
 	def expose_plugins
@@ -144,6 +148,14 @@ class Landing
 
 		@slider.show.revolution(config)
 		@slider_loader.hide
+	end
+
+	def init_ico
+		@no_usa.on :click do
+			@ico_confirm.effect :fade_out do
+				@ico_data.effect :fade_in
+			end
+		end
 	end
 
 end

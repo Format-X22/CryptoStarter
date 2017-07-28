@@ -113,8 +113,81 @@
         <div class="col-md-4"><img class="cs-ico-img center-block" src="/img/logo/origin.svg"/>
           <h2 class="text-center">IdeaCoin</h2>
           <div class="cs-buy-button">
-            <button class="btn btn-default btn-primary btn-block btn-lg" id="buy">Купить
+            <button class="btn btn-default btn-primary btn-block btn-lg" id="buy" data-toggle="collapse" data-target="#buy-dialog" aria-expanded="false" aria-controls="buy-dialog">Купить
             </button>
+          </div>
+        </div>
+      </div>
+      <div class="row collapse" id="buy-dialog">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="well">
+            <div id="ico-confirm">
+              <h5>Соглашение</h5>
+              <label class="cs-pointer">
+                <div class="col-md-1">
+                  <input class="pull-right" id="no-usa" type="checkbox"/>
+                </div>
+                <div class="col-md-11"><span>
+                    Check here to confirm that you are not a U.S. citizen,
+                    resident or entity (a “U.S. Person”) nor are you purchasing
+                    IdeaCoin Tokens or signing on behalf of a U.S. Person.
+                    </span></div>
+              </label>
+            </div>
+            <div class="collapse" id="ico-data">
+              <h5>Адреса</h5>
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Контракт</label>
+                  <div class="col-sm-6">
+                    <p class="form-control-static">0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf</p>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-default" id="copy-contract">Копировать
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">ABI / JSON</label>
+                  <div class="col-sm-6">
+                    <p class="form-control-static">[{"constant":true,"inputs":[{"name":"","type":"uint256"},</p>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-default" id="copy-abi">Копировать
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <hr/>
+              <h5>Инструкция</h5>
+              <hr/>
+              <p class="cs-ico-instruction-logo"><img src="/img/ico/eth-wallet.svg"/><strong class="title">Ethereum Foundation Wallet</strong></p>
+              <p>Если вы хотите купить через Ethereum Foundation Wallet:
+                <ul>
+                  <li>Click Contracts</li>
+                  <li>Click Watch Contract</li>
+                  <li>For name, enter IdeaCoin</li>
+                  <li>For address and JSON Interface, enter the information above and click OK</li>
+                  <li>Click on your new contract</li>
+                  <li>Click ClaimAll from the function dropdown</li>
+                  <li>Click Execute and confirm transaction</li>
+                </ul>
+              </p>
+              <hr/>
+              <p class="cs-ico-instruction-logo"><img src="/img/ico/meth.svg"/><strong class="title">MyEtherWallet</strong></p>
+              <p>Если вы хотите купить через MyEtherWallet:
+                <ul>
+                  <li>For address and ABI / JSON Interface, enter the information above and click Access</li>
+                  <li>Click ClaimAll from the function dropdown</li>
+                  <li>Load in your wallet file and unlock it</li>
+                  <li>Click Write</li>
+                  <li>Set Amount to Send to 0 and Gas Limit to 3141592</li>
+                  <li>Click Generate Transaction</li>
+                </ul>
+              </p>
+              <hr/>
+              <p>Теперь IdeaCoin токены на вашем счету.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -123,7 +196,7 @@
           <h6>Инвестированно</h6>
           <div class="progress cs-ico-progress">
             <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" id="earned"></div>
-          </div><span class="text-left pull-left">~$1 400 000</span><span class="text-right pull-right">~$10 000 000</span>
+          </div><span class="text-left pull-left">~$1 400 000</span><span class="text-right pull-right">~$15 000 000</span>
         </div>
       </div>
       <div class="row cs-ico-faq-line">

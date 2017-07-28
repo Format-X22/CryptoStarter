@@ -30,12 +30,81 @@ mixin ico-block
             .col-md-4
                 +ico-block-logo
                 .cs-buy-button
-                    +button('buy', 'Купить').btn-primary.btn-block.btn-lg
+                    +button('buy', 'Купить')(
+                        data-toggle='collapse'
+                        data-target='#buy-dialog'
+                        aria-expanded='false'
+                        aria-controls='buy-dialog'
+                    ).btn-primary.btn-block.btn-lg
+        #buy-dialog.row.collapse
+            .col-md-8.col-md-offset-2
+                .well
+                    #ico-confirm
+                        h5 Соглашение
+                        label.cs-pointer
+                            .col-md-1
+                                input#no-usa.pull-right(type='checkbox')
+                            .col-md-11
+                                span.
+                                    Check here to confirm that you are not a U.S. citizen,
+                                    resident or entity (a “U.S. Person”) nor are you purchasing
+                                    IdeaCoin Tokens or signing on behalf of a U.S. Person.
+
+                    #ico-data.collapse
+                        h5 Адреса
+                        .form-horizontal
+                            .form-group
+                                label.col-sm-3.control-label Контракт
+                                .col-sm-6
+                                    p.form-control-static 0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf
+                                .col-sm-2
+                                    +button('copy-contract', 'Копировать')
+                            .form-group
+                                label.col-sm-3.control-label ABI / JSON
+                                .col-sm-6
+                                    p.form-control-static [{"constant":true,"inputs":[{"name":"","type":"uint256"},
+                                .col-sm-2
+                                    +button('copy-abi', 'Копировать')
+                        hr
+                        h5 Инструкция
+                        hr
+
+                        p.cs-ico-instruction-logo
+                            img(src='/img/ico/eth-wallet.svg')
+                            strong.title Ethereum Foundation Wallet
+
+                        p Если вы хотите купить через Ethereum Foundation Wallet:
+                            ul
+                                li Click Contracts
+                                li Click Watch Contract
+                                li For name, enter IdeaCoin
+                                li For address and JSON Interface, enter the information above and click OK
+                                li Click on your new contract
+                                li Click ClaimAll from the function dropdown
+                                li Click Execute and confirm transaction
+
+                        hr
+                        p.cs-ico-instruction-logo
+                            img(src='/img/ico/meth.svg')
+                            strong.title MyEtherWallet
+
+                        p Если вы хотите купить через MyEtherWallet:
+                            ul
+                                li For address and ABI / JSON Interface, enter the information above and click Access
+                                li Click ClaimAll from the function dropdown
+                                li Load in your wallet file and unlock it
+                                li Click Write
+                                li Set Amount to Send to 0 and Gas Limit to 3141592
+                                li Click Generate Transaction
+
+                        hr
+                        p Теперь IdeaCoin токены на вашем счету.
+                        
         .row
             .col-md-6.col-md-offset-3
                 +characteristic('earned', 'Инвестированно').cs-ico-progress
                 span.text-left.pull-left ~$1 400 000
-                span.text-right.pull-right ~$10 000 000
+                span.text-right.pull-right ~$15 000 000
 
     if ico_status == 'after'
         .row

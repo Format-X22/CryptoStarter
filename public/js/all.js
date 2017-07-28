@@ -22434,15 +22434,15 @@ Opal.modules["Landing"] = function(Opal) {
   }
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $hash2 = Opal.hash2;
 
-  Opal.add_stubs(['$require', '$include', '$map_elements', '$expose_plugins', '$init_scroll_to_top', '$init_pre_register', '$after', '$init_slider', '$[]', '$expose', '$on', '$<', '$width', '$effect', '$remove_class', '$>', '$scroll_top', '$animate', '$valid_tracker', '$length', '$value', '$try_send_registration', '$==', '$mark_invalid', '$post', '$handle_registration', '$ok?', '$json', '$modal', '$show_error', '$to_n', '$revolution', '$show', '$hide']);
+  Opal.add_stubs(['$require', '$include', '$map_elements', '$expose_plugins', '$init_scroll_to_top', '$init_pre_register', '$init_ico', '$after', '$init_slider', '$[]', '$expose', '$on', '$<', '$width', '$effect', '$remove_class', '$>', '$scroll_top', '$animate', '$valid_tracker', '$length', '$value', '$try_send_registration', '$==', '$mark_invalid', '$post', '$handle_registration', '$ok?', '$json', '$modal', '$show_error', '$to_n', '$revolution', '$show', '$hide']);
   self.$require("UtilsPack");
   return (function($base, $super) {
     function $Landing(){};
     var self = $Landing = $klass($base, $super, 'Landing', $Landing);
 
-    var def = self.$$proto, $scope = self.$$scope, TMP_2, TMP_3, TMP_4, TMP_7, TMP_12, TMP_14, TMP_15, TMP_16;
+    var def = self.$$proto, $scope = self.$$scope, TMP_2, TMP_3, TMP_4, TMP_7, TMP_12, TMP_14, TMP_15, TMP_16, TMP_19;
 
-    def.js_window = def.to_top = def.project = def.email = def.description = def.send = def.message = def.register_modal = def.slider = def.slider_loader = nil;
+    def.js_window = def.to_top = def.project = def.email = def.description = def.send = def.message = def.register_modal = def.slider = def.slider_loader = def.no_usa = nil;
     self.$include($scope.get('UtilsPack'));
 
     Opal.cdecl($scope, 'TO_TOP_EDGE', 100);
@@ -22456,6 +22456,7 @@ Opal.modules["Landing"] = function(Opal) {
       self.$expose_plugins();
       self.$init_scroll_to_top();
       self.$init_pre_register();
+      self.$init_ico();
       return ($a = ($b = self).$after, $a.$$p = (TMP_1 = function(){var self = TMP_1.$$s || this;
 
       return self.$init_slider()}, TMP_1.$$s = self, TMP_1.$$arity = 0, TMP_1), $a).call($b, 0.25);
@@ -22474,7 +22475,10 @@ Opal.modules["Landing"] = function(Opal) {
       self.send = $scope.get('Element')['$[]']("#send");
       self.slider = $scope.get('Element')['$[]']("#wow-slider");
       self.slider_loader = $scope.get('Element')['$[]']("#wow-fix-loader");
-      return self.register_modal = $scope.get('Element')['$[]']("#register-modal");
+      self.register_modal = $scope.get('Element')['$[]']("#register-modal");
+      self.ico_confirm = $scope.get('Element')['$[]']("#ico-confirm");
+      self.ico_data = $scope.get('Element')['$[]']("#ico-data");
+      return self.no_usa = $scope.get('Element')['$[]']("#no-usa");
     }, TMP_3.$$arity = 0);
 
     Opal.defn(self, '$expose_plugins', TMP_4 = function $$expose_plugins() {
@@ -22553,13 +22557,25 @@ if (request == null) request = nil;
       };
     }, TMP_15.$$arity = 1);
 
-    return (Opal.defn(self, '$init_slider', TMP_16 = function $$init_slider() {
+    Opal.defn(self, '$init_slider', TMP_16 = function $$init_slider() {
       var self = this, config = nil;
 
       config = $hash2(["dottedOverlay", "delay", "startwidth", "startheight", "hideThumbs", "thumbWidth", "thumbHeight", "thumbAmount", "navigationType", "touchenabled", "onHoverStop", "shadow", "fullWidth", "fullScreen", "spinner", "stopLoop", "stopAfterLoops", "stopAtSlide", "shuffle", "autoHeight", "forceFullWidth", "hideThumbsOnMobile", "hideBulletsOnMobile", "hideArrowsOnMobile", "hideThumbsUnderResolution", "hideSliderAtLimit", "hideCaptionAtLimit", "hideAllCaptionAtLilmit", "startWithSlide", "fullScreenOffsetContainer"], {"dottedOverlay": "none", "delay": 9000, "startwidth": 1170, "startheight": 700, "hideThumbs": 200, "thumbWidth": 100, "thumbHeight": 50, "thumbAmount": 1, "navigationType": "none", "touchenabled": "on", "onHoverStop": "on", "shadow": 0, "fullWidth": "on", "fullScreen": "off", "spinner": "spinner3", "stopLoop": "off", "stopAfterLoops": -1, "stopAtSlide": -1, "shuffle": "off", "autoHeight": "off", "forceFullWidth": "off", "hideThumbsOnMobile": "off", "hideBulletsOnMobile": "off", "hideArrowsOnMobile": "off", "hideThumbsUnderResolution": 0, "hideSliderAtLimit": 0, "hideCaptionAtLimit": 0, "hideAllCaptionAtLilmit": 0, "startWithSlide": 0, "fullScreenOffsetContainer": ""}).$to_n();
       self.slider.$show().$revolution(config);
       return self.slider_loader.$hide();
-    }, TMP_16.$$arity = 0), nil) && 'init_slider';
+    }, TMP_16.$$arity = 0);
+
+    return (Opal.defn(self, '$init_ico', TMP_19 = function $$init_ico() {
+      var $a, $b, TMP_17, self = this;
+
+      return ($a = ($b = self.no_usa).$on, $a.$$p = (TMP_17 = function(){var self = TMP_17.$$s || this, $c, $d, TMP_18;
+        if (self.ico_confirm == null) self.ico_confirm = nil;
+
+      return ($c = ($d = self.ico_confirm).$effect, $c.$$p = (TMP_18 = function(){var self = TMP_18.$$s || this;
+          if (self.ico_data == null) self.ico_data = nil;
+
+        return self.ico_data.$effect("fade_in")}, TMP_18.$$s = self, TMP_18.$$arity = 0, TMP_18), $c).call($d, "fade_out")}, TMP_17.$$s = self, TMP_17.$$arity = 0, TMP_17), $a).call($b, "click");
+    }, TMP_19.$$arity = 0), nil) && 'init_ico';
   })($scope.base, null);
 };
 
