@@ -91,6 +91,10 @@
       "text_8": "_EMPTY_"
     }
   },
+  "docs": {
+    "wp_title": "_EMPTY_",
+    "wp_download": "_EMPTY_"
+  },
   "component": {
     "ok": "_EMPTY_",
     "cancel": "_EMPTY_"

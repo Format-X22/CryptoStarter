@@ -91,6 +91,10 @@
       "text_8": "_EMPTY_"
     }
   },
+  "docs": {
+    "wp_title": "Документ, описывающий CryptoStarter и IdeaCoin",
+    "wp_download": "Скачать White Paper"
+  },
   "component": {
     "ok": "Ок",
     "cancel": "Отмена"

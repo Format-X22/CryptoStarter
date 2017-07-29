@@ -8,12 +8,12 @@ mixin docs-block
 
             .well
                 
-                h4.text-center Документ, описывающий CryptoStarter и IdeaCoin
+                h4.text-center!= erb('l.docs.wp_title')
                 br
                 .text-center
                     a.btn.btn-primary.btn-lg(href='/docs/whitepaper.pdf' target='_BLANK' role='button')
                         +icon('save-file')
                         | &nbsp;
-                        | Скачать White Paper
+                        != erb('l.docs.wp_download')
                 br
                 p.text-center PDF
