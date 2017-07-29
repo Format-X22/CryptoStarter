@@ -20,15 +20,8 @@
     "team": "Team",
     "register": "Pre-register your project"
   },
-  "present_block": {},
-  "ico_block": {},
-  "docs_block": {},
-  "roadmap_block": {},
-  "media_block": {},
-  "team_block": {},
-  "register_block": {
-    "hint_1": "_EMPTY_",
-    "hint_2": "_EMPTY_",
+  "register": {
+    "hint": "_EMPTY_",
     "project_name_label": "Project name",
     "project_name_placeholder": "Your project name",
     "email_label": "Contact email",

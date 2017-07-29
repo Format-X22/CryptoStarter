@@ -20,15 +20,8 @@
     "team": "_EMPTY_",
     "register": "_EMPTY_"
   },
-  "present_block": {},
-  "ico_block": {},
-  "docs_block": {},
-  "roadmap_block": {},
-  "media_block": {},
-  "team_block": {},
-  "register_block": {
-    "hint_1": "_EMPTY_",
-    "hint_2": "_EMPTY_",
+  "register": {
+    "hint": "_EMPTY_",
     "project_name_label": "_EMPTY_",
     "project_name_placeholder": "_EMPTY_",
     "email_label": "_EMPTY_",
