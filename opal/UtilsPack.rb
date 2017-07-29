@@ -6,9 +6,7 @@ module UtilsPack
 	end
 
 	def after(delay, &block)
-		`setTimeout(function () {
-			#{block.call};
-		}, #{delay * 1000})`
+		$$[:setTimeout].call(block, delay * 1000)
 	end
 
 	def valid_tracker(target, event, &cond)
