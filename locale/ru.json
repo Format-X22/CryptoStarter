@@ -1,0 +1,47 @@
+{
+  "main_menu": {
+    "home": "Главная",
+    "ico": "ICO",
+    "docs": "Документы",
+    "timeline": "Роадмап",
+    "media": "Пресса",
+    "team": "Команда",
+    "register": "Регистрация проекта"
+  },
+  "wow_slider": {
+    "main_text": "Crowdfunding",
+    "sub_text": "Децентрализованный. Токинезированный. Без границ."
+  },
+  "title": {
+    "ico": "ICO",
+    "docs": "Документы",
+    "roadmap": "Роадмап",
+    "media": "Пресса о нас",
+    "team": "Команда",
+    "register": "Регистрация проекта"
+  },
+  "present_block": {},
+  "ico_block": {},
+  "docs_block": {},
+  "roadmap_block": {},
+  "media_block": {},
+  "team_block": {},
+  "register_block": {
+    "hint_1": "Вы можете зарегистрировать свой проект до финального запуска CryptoStarter.",
+    "hint_2": "Перед запуском мы оповестим вас и дадим доступ к сайту заранее, вы сможете оформить проект и появится на первых строчках сайта в день запуска CryptoStarter.",
+    "project_name_label": "Имя проекта",
+    "project_name_placeholder": "Имя вашего проекта",
+    "email_label": "Контактный Email",
+    "email_placeholder": "Контактный Email вашего проекта",
+    "description_label": "Описание проекта",
+    "description_placeholder": "Описание вашего проекта",
+    "register_project_button": "Зарегистрировать",
+    "success_modal_title": "Успешно!",
+    "success_modal_text": "Ваш проект успешно зарегистрирован. В течении суток на указанную почту вы получите письмо со всеми необходимыми данными."
+  },
+  "component": {
+    "ok": "Ок",
+    "cancel": "Отмена"
+  },
+  "error": "Ошибка"
+}

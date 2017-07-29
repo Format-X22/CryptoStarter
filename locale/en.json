@@ -1,0 +1,47 @@
+{
+  "main_menu": {
+    "home": "Home",
+    "ico": "ICO",
+    "docs": "Documents",
+    "timeline": "Roadmap",
+    "media": "Media",
+    "team": "Team",
+    "register": "Register your project"
+  },
+  "wow_slider": {
+    "main_text": "Crowdfunding",
+    "sub_text": "Decentralized.Borderless.Tokenizable."
+  },
+  "title": {
+    "ico": "ICO",
+    "docs": "White paper and documents",
+    "roadmap": "Project roadmap",
+    "media": "Media about us",
+    "team": "Team",
+    "register": "Pre-register your project"
+  },
+  "present_block": {},
+  "ico_block": {},
+  "docs_block": {},
+  "roadmap_block": {},
+  "media_block": {},
+  "team_block": {},
+  "register_block": {
+    "hint_1": "_EMPTY_",
+    "hint_2": "_EMPTY_",
+    "project_name_label": "Project name",
+    "project_name_placeholder": "Your project name",
+    "email_label": "Contact email",
+    "email_placeholder": "Your project contact email",
+    "description_label": "Project description",
+    "description_placeholder": "Your project description",
+    "register_project_button": "Register",
+    "success_modal_title": "Success!",
+    "success_modal_text": "_EMPTY_"
+  },
+  "component": {
+    "ok": "Ok",
+    "cancel": "Cancel"
+  },
+  "error": "Error"
+}

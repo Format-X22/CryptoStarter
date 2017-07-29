@@ -17,7 +17,13 @@ helpers do
 	end
 end
 
-locale = RecursiveOpenStruct.new(JSON.parse(File.read('locale/locale.json')))
+locale = OpenStruct.new
+
+Dir['locale/*'].each do |path|
+	name = path.split('/').last.split('.').first
+	hash = JSON.parse(File.read(path))
+	locale[name] = RecursiveOpenStruct.new(hash)
+end
 
 get '/' do
 	page 'index', locale.en

@@ -1,0 +1,47 @@
+{
+  "main_menu": {
+    "home": "_EMPTY_",
+    "ico": "ICO",
+    "docs": "_EMPTY_",
+    "timeline": "_EMPTY_",
+    "media": "_EMPTY_",
+    "team": "_EMPTY_",
+    "register": "_EMPTY_"
+  },
+  "wow_slider": {
+    "main_text": "Crowdfunding",
+    "sub_text": "_EMPTY_"
+  },
+  "title": {
+    "ico": "_EMPTY_",
+    "docs": "_EMPTY_",
+    "roadmap": "_EMPTY_",
+    "media": "_EMPTY_",
+    "team": "_EMPTY_",
+    "register": "_EMPTY_"
+  },
+  "present_block": {},
+  "ico_block": {},
+  "docs_block": {},
+  "roadmap_block": {},
+  "media_block": {},
+  "team_block": {},
+  "register_block": {
+    "hint_1": "_EMPTY_",
+    "hint_2": "_EMPTY_",
+    "project_name_label": "_EMPTY_",
+    "project_name_placeholder": "_EMPTY_",
+    "email_label": "_EMPTY_",
+    "email_placeholder": "_EMPTY_",
+    "description_label": "_EMPTY_",
+    "description_placeholder": "_EMPTY_",
+    "register_project_button": "_EMPTY_",
+    "success_modal_title": "_EMPTY_",
+    "success_modal_text": "_EMPTY_"
+  },
+  "component": {
+    "ok": "_EMPTY_",
+    "cancel": "_EMPTY_"
+  },
+  "error": "_EMPTY_"
+}
