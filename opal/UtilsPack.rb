@@ -37,4 +37,11 @@ module UtilsPack
 			.add_class('hidden')
 	end
 
+	def js_new(func, *args, &block)
+		args.insert(0, `this`)
+		args << block if block
+
+		Native(`new (#{func}.bind.apply(#{func}, #{args}))`)
+	end
+
 end
