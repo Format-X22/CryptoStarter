@@ -1,3 +1,10 @@
+mixin team-person(name)
+    img.img-thumbnail(src='img/team/' + name + '.jpg')
+    h2.text-center!= erb('l.team.' + name + '_name')
+    p.text-center!= erb('l.team.' + name + '_description')
+    .cs-social-bright.text-center
+        block
+
 mixin team-block
     #team.row
         .col-md-12
@@ -7,8 +14,5 @@ mixin team-block
             h2.cs-title!= erb('l.title.team')
     .row
         .col-md-2.col-md-offset-3
-            img.img-thumbnail(src='img/team/oleg.jpg')
-            h2.text-center Oleg Pavlov
-            p.text-center Основатель, разработчик<br> web-части проекта.
-            .cs-social-bright.text-center
+            +team-person('oleg')
                 a.cs-social.cs-social-small.cs-linked-in(href='#')

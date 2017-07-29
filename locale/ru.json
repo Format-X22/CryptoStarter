@@ -88,6 +88,10 @@
     "wp_title": "Документ, описывающий CryptoStarter и IdeaCoin",
     "wp_download": "Скачать White Paper"
   },
+  "team": {
+    "oleg_name": "Олег Павлов",
+    "oleg_description": "Основатель, разработчик<br> web-части проекта."
+  },
   "component": {
     "ok": "Ок",
     "cancel": "Отмена"

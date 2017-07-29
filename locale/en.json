@@ -88,6 +88,10 @@
     "wp_title": "_EMPTY_",
     "wp_download": "_EMPTY_"
   },
+  "team": {
+    "oleg_name": "Oleg Pavlov",
+    "oleg_description": "_EMPTY_"
+  },
   "component": {
     "ok": "Ok",
     "cancel": "Cancel"
