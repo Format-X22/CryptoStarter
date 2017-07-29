@@ -39,6 +39,58 @@
     "success_modal_title": "_EMPTY_",
     "success_modal_text": "_EMPTY_"
   },
+  "ico": {
+    "info_before": "_EMPTY_",
+    "info_in": "_EMPTY_",
+    "info_after": "_EMPTY_",
+    "buy_button": "_EMPTY_",
+    "agreement_title": "_EMPTY_",
+    "agreement_no_usa": "_EMPTY_",
+    "address_list": "_EMPTY_",
+    "contract_title": "_EMPTY_",
+    "abi_json_title": "_EMPTY_",
+    "copy": "_EMPTY_",
+    "instruction_title": "_EMPTY_",
+    "by_eth_wallet": {
+      "title": "_EMPTY_",
+      "step_1": "_EMPTY_",
+      "step_2": "_EMPTY_",
+      "step_3": "_EMPTY_",
+      "step_4": "_EMPTY_",
+      "step_5": "_EMPTY_",
+      "step_6": "_EMPTY_",
+      "step_7": "_EMPTY_"
+    },
+    "by_meth": {
+      "title": "_EMPTY_",
+      "step_1": "_EMPTY_",
+      "step_2": "_EMPTY_",
+      "step_3": "_EMPTY_",
+      "step_4": "_EMPTY_",
+      "step_5": "_EMPTY_",
+      "step_6": "_EMPTY_"
+    },
+    "instruction_footer": "_EMPTY_",
+    "invested": "_EMPTY_",
+    "faq": {
+      "title_1": "_EMPTY_",
+      "text_1": "_EMPTY_",
+      "title_2": "_EMPTY_",
+      "text_2": "_EMPTY_",
+      "title_3": "_EMPTY_",
+      "text_3": "_EMPTY_",
+      "title_4": "_EMPTY_",
+      "text_4": "_EMPTY_",
+      "title_5": "_EMPTY_",
+      "text_5": "_EMPTY_",
+      "title_6": "_EMPTY_",
+      "text_6": "_EMPTY_",
+      "title_7": "_EMPTY_",
+      "text_7": "_EMPTY_",
+      "title_8": "_EMPTY_",
+      "text_8": "_EMPTY_"
+    }
+  },
   "component": {
     "ok": "_EMPTY_",
     "cancel": "_EMPTY_"

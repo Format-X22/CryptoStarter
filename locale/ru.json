@@ -39,6 +39,58 @@
     "success_modal_title": "Успешно!",
     "success_modal_text": "Ваш проект успешно зарегистрирован. В течении суток на указанную почту вы получите письмо со всеми необходимыми данными."
   },
+  "ico": {
+    "info_before": "_EMPTY_",
+    "info_in": "_EMPTY_",
+    "info_after": "_EMPTY_",
+    "buy_button": "Купить",
+    "agreement_title": "Соглашение",
+    "agreement_no_usa": "_EMPTY_",
+    "address_list": "Адреса",
+    "contract_title": "Контракт",
+    "abi_json_title": "ABI / JSON",
+    "copy": "Копировать",
+    "instruction_title": "Инструкция",
+    "by_eth_wallet": {
+      "title": "Если вы хотите купить через Ethereum Foundation Wallet:",
+      "step_1": "_EMPTY_",
+      "step_2": "_EMPTY_",
+      "step_3": "_EMPTY_",
+      "step_4": "_EMPTY_",
+      "step_5": "_EMPTY_",
+      "step_6": "_EMPTY_",
+      "step_7": "_EMPTY_"
+    },
+    "by_meth": {
+      "title": "Если вы хотите купить через MyEtherWallet:",
+      "step_1": "_EMPTY_",
+      "step_2": "_EMPTY_",
+      "step_3": "_EMPTY_",
+      "step_4": "_EMPTY_",
+      "step_5": "_EMPTY_",
+      "step_6": "_EMPTY_"
+    },
+    "instruction_footer": "Теперь IdeaCoin токены на вашем счету.",
+    "invested": "Инвестированно",
+    "faq": {
+      "title_1": "_EMPTY_",
+      "text_1": "_EMPTY_",
+      "title_2": "_EMPTY_",
+      "text_2": "_EMPTY_",
+      "title_3": "_EMPTY_",
+      "text_3": "_EMPTY_",
+      "title_4": "_EMPTY_",
+      "text_4": "_EMPTY_",
+      "title_5": "_EMPTY_",
+      "text_5": "_EMPTY_",
+      "title_6": "_EMPTY_",
+      "text_6": "_EMPTY_",
+      "title_7": "_EMPTY_",
+      "text_7": "_EMPTY_",
+      "title_8": "_EMPTY_",
+      "text_8": "_EMPTY_"
+    }
+  },
   "component": {
     "ok": "Ок",
     "cancel": "Отмена"
