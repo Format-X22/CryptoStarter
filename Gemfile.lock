@@ -16,6 +16,10 @@ GEM
     rack-protection (2.0.0)
       rack
     recursive-open-struct (1.0.5)
+    ruby_http_client (3.1.0)
+    sendgrid-ruby (5.0.0)
+      ruby_http_client (~> 3.0)
+      sinatra (>= 1.4.7, < 3)
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -35,6 +39,7 @@ DEPENDENCIES
   opal
   opal-jquery
   recursive-open-struct
+  sendgrid-ruby
   sinatra
 
 BUNDLED WITH

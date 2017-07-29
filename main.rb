@@ -1,7 +1,17 @@
 require 'recursive-open-struct'
 require 'sinatra'
+require 'sendgrid-ruby'
+
+include SendGrid
 
 helpers do
+
+	SEND_GRID = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+
+	def get_data
+		JSON.parse request.body.read
+	end
+
 	def page(path, locale)
 		erb(File.read("views/page/#{path}/main.html"), locals: {l: locale})
 	end
@@ -14,6 +24,17 @@ helpers do
 	def failure(message='Unknown error')
 		content_type :json
 		halt 200, {success: false, message: message}.to_json
+	end
+
+	def send_mail(to, title, text)
+		SEND_GRID.client.mail._('send').post(
+			request_body: Mail.new(
+				Email.new(email: 'no-reply@cryptostarter.io'),
+				title,
+				Email.new(email: to),
+				Content.new(type: 'text/plain', value: text)
+			).to_json
+		)
 	end
 end
 
@@ -50,7 +71,29 @@ get '/ru' do
 end
 
 post '/api/pre-register' do
-	# TODO Register logic
+	data = get_data
 
-	success
+	if data['message'].length > 0
+		# Silent ban
+		success
+		return
+	end
+
+	user_mail = send_mail(
+		data['email'],
+		'Success CryptoStarter pre-registration!',
+		'Your project successful registered in CryptoStarter project list!'
+	)
+
+	if user_mail.body.length == 0
+		send_mail(
+			ENV['TEAM_EMAIL'],
+			'CryptoStarter pre-register',
+			"Project data:\n\n#{data['project']}\n\n#{data['email']}\n\n#{data['description']}"
+		)
+
+		success
+	else
+		failure 'Invalid Email address.'
+	end
 end
