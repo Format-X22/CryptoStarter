@@ -139,7 +139,7 @@
                     <p class="form-control-static">0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf</p>
                   </div>
                   <div class="col-sm-2">
-                    <button class="btn btn-default" id="copy-contract"><%= l.ico.copy %>
+                    <button class="btn btn-default" id="copy-contract" data-clipboard-text="0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf"><%= l.ico.copy %>
                     </button>
                   </div>
                 </div>
@@ -149,7 +149,7 @@
                     <p class="form-control-static">[{"constant":true,"inputs":[{"name":"","type":"uint256"},</p>
                   </div>
                   <div class="col-sm-2">
-                    <button class="btn btn-default" id="copy-abi"><%= l.ico.copy %>
+                    <button class="btn btn-default" id="copy-abi" data-clipboard-text="[{&quot;constant&quot;:true,&quot;inputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;},"><%= l.ico.copy %>
                     </button>
                   </div>
                 </div>
@@ -489,6 +489,7 @@
     </div>
     <script src="js/lib/wow-slider-tools.js"></script>
     <script src="js/lib/wow-slider.js"></script>
+    <script src="js/lib/clipboard.js"></script>
     <script src="js/all.js"></script>
   </body>
 </html>

@@ -55,13 +55,23 @@ mixin ico-block
                                 .col-sm-6
                                     p.form-control-static 0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf
                                 .col-sm-2
-                                    +button('copy-contract', erb('l.ico.copy'))
+                                    +button(
+                                        'copy-contract',
+                                        erb('l.ico.copy')
+                                    )(
+                                        data-clipboard-text='0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf'
+                                    )
                             .form-group
                                 label.col-sm-3.control-label!= erb('l.ico.abi_json_title')
                                 .col-sm-6
                                     p.form-control-static [{"constant":true,"inputs":[{"name":"","type":"uint256"},
                                 .col-sm-2
-                                    +button('copy-abi', erb('l.ico.copy'))
+                                    +button(
+                                        'copy-abi',
+                                        erb('l.ico.copy')
+                                    )(
+                                        data-clipboard-text='[{"constant":true,"inputs":[{"name":"","type":"uint256"},'
+                                    )
                         hr
                         h5!= erb('l.ico.instruction_title')
                         hr
