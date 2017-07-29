@@ -92,6 +92,78 @@
     "oleg_name": "Oleg Pavlov",
     "oleg_description": "_EMPTY_"
   },
+  "roadmap": {
+    "start": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "alpha_1": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "alpha_2": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "beta_1": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "beta_2": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "ico": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "early": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "v1": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "post_ico": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "stock": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "v2": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "v3": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "frame": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "v4": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    }
+  },
   "component": {
     "ok": "Ok",
     "cancel": "Cancel"
