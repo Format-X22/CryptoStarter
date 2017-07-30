@@ -1,0 +1,31 @@
+Alexander Muzychenko
+Founder, Software Developer
+Participated in blockchain apps development for the last 3 years. 
+
+github.com/musichen
+linkedin.com/in/alexandermusichen
+alex.musichen@gmail.com
+
+Ostap Chervak
+Software Engineer
+github - https://github.com/katsick
+linkedin - https://www.linkedin.com/in/ostap-chervak-76564695/
+email  - chervakostap@gmail.com
+stack: ReactJS\ReactNative (Typescript/ES6-7), Angular2-5, Node (Express, NestJS, TypeORM), Python (Django, Flask)
+
+Diego Williams
+UX Advisor 
+
+
+Vladislav Dyachenko
+github github.com/wowinter13
+https://www.linkedin.com/in/%D0%B2%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2-%D0%B4%D1%8C%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE-14ab65b1/
+email vla-dy@yandex.ru
+stack  Python (ML), Ruby/Rails
+
+Sergery Antonov
+github.com/mostalt
+https://www.linkedin.com/in/sergey-antonov-467835138/
+mostalt.mail@gmail.com
+JS/Nodejs/Reactjs/Vuejs/Redux/Elixir/Phoenix
+
