@@ -5,4 +5,15 @@ mixin docs-block
                 +icon('book').cs-block-title-icon
             .cs-title-line
             h2.cs-title!= erb('l.title.docs')
-            //- TODO Docs buttons
+
+            .well
+                
+                h4.text-center!= erb('l.docs.wp_title')
+                br
+                .text-center
+                    a.btn.btn-primary.btn-lg(href='/docs/whitepaper.pdf' target='_BLANK' role='button')
+                        +icon('save-file')
+                        | &nbsp;
+                        != erb('l.docs.wp_download')
+                br
+                p.text-center PDF

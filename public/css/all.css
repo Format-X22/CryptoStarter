@@ -8,6 +8,9 @@ body {
 .tp-bannertimer {
   display: none; }
 
+.cs-pointer {
+  cursor: pointer; }
+
 .cs-brand-main-color, .cs-block-title-icon {
   color: #0dbff2; }
 
@@ -195,5 +198,32 @@ h2.cs-title {
     border: 5px solid #0dbff2; }
   .cs-roadmap-point.cs-roadmap-important {
     border-color: #a6a6a6; }
+
+.cs-media-item {
+  margin-bottom: 30px; }
+
+.cs-ico-img {
+  width: 200px;
+  height: 200px; }
+
+.cs-buy-button {
+  padding: 15px 50px; }
+
+.cs-ico-faq-line {
+  padding-top: 50px; }
+
+.cs-ico-faq {
+  padding-top: 50px; }
+
+.cs-ico-progress {
+  margin-bottom: 0; }
+
+.cs-ico-instruction-logo {
+  margin-top: 25px; }
+  .cs-ico-instruction-logo img {
+    width: 50px;
+    height: 50px; }
+  .cs-ico-instruction-logo .title {
+    padding-left: 10px; }
 
 /*# sourceMappingURL=all.css.map */

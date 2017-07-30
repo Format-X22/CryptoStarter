@@ -6,10 +6,9 @@ mixin register-block
             .cs-title-line
             h2.cs-title!= erb('l.title.register')
 
-    - var l = make_locale_shortcut('l.register_block.');
     .row        
         .col-md-6.col-md-offset-3
-            p!= erb(l('hint_1', 'hint_2'))
+            p!= erb('l.register.hint')
     .row
         .col-md-6.col-md-offset-3
             hr
@@ -17,21 +16,21 @@ mixin register-block
                 +input(
                     'project',
                     'text',
-                    erb(l('project_name_placeholder')),
-                    erb(l('project_name_label'))
+                    erb('l.register.project_name_placeholder'),
+                    erb('l.register.project_name_label')
                 )
             .form-group
                 +input(
-                    'mail',
                     'email',
-                    erb(l('email_placeholder')),
-                    erb(l('email_label'))
+                    'email',
+                    erb('l.register.email_placeholder'),
+                    erb('l.register.email_label')
                 )
             .form-group
                 +textarea(
                     'description',
-                    erb(l('description_placeholder')),
-                    erb(l('description_label')),
+                    erb('l.register.description_placeholder'),
+                    erb('l.register.description_label'),
                     6
                 )
             .form-group
@@ -39,12 +38,12 @@ mixin register-block
                 +input('message').hidden
             hr
             .form-group
-                +button('send', erb(l('register_project_button'))).btn-primary.pull-right
+                +button('send', erb('l.register.register_project_button')).btn-primary.pull-right
 
         - var id = 'register-modal';
         +window(id)
-            +window-header(id, erb(l('success_modal_title')))
+            +window-header(id, erb('l.register.success_modal_title'))
             +window-body(id)
-                p!= erb(l('success_modal_text'))
+                p!= erb('l.register.success_modal_text')
             +window-footer(id)
                 +window-button-ok

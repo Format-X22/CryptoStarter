@@ -1,0 +1,172 @@
+{
+  "main_menu": {
+    "home": "Home",
+    "ico": "ICO",
+    "docs": "Documents",
+    "timeline": "Roadmap",
+    "media": "Media",
+    "team": "Team",
+    "register": "Register your project"
+  },
+  "wow_slider": {
+    "main_text": "Crowdfunding",
+    "sub_text": "Decentralized.Borderless.Tokenizable."
+  },
+  "title": {
+    "ico": "ICO",
+    "docs": "White paper and documents",
+    "roadmap": "Project roadmap",
+    "media": "Media about us",
+    "team": "Team",
+    "register": "Pre-register your project"
+  },
+  "register": {
+    "hint": "_EMPTY_",
+    "project_name_label": "Project name",
+    "project_name_placeholder": "Your project name",
+    "email_label": "Contact email",
+    "email_placeholder": "Your project contact email",
+    "description_label": "Project description",
+    "description_placeholder": "Your project description",
+    "register_project_button": "Register",
+    "success_modal_title": "Success!",
+    "success_modal_text": "_EMPTY_"
+  },
+  "ico": {
+    "info_before": "_EMPTY_",
+    "info_in": "_EMPTY_",
+    "info_after": "_EMPTY_",
+    "buy_button": "_EMPTY_",
+    "agreement_title": "_EMPTY_",
+    "agreement_no_usa": "Check here to confirm that you are not a U.S. citizen, resident or entity (a “U.S. Person”) nor are you purchasing IdeaCoin Tokens or signing on behalf of a U.S. Person.",
+    "address_list": "_EMPTY_",
+    "contract_title": "_EMPTY_",
+    "abi_json_title": "_EMPTY_",
+    "copy": "_EMPTY_",
+    "instruction_title": "_EMPTY_",
+    "by_eth_wallet": {
+      "title": "_EMPTY_",
+      "step_1": "Click Contracts",
+      "step_2": "Click Watch Contract",
+      "step_3": "For name, enter IdeaCoin",
+      "step_4": "For address and JSON Interface, enter the information above and click OK",
+      "step_5": "Click on your new contract",
+      "step_6": "Click ClaimAll from the function dropdown",
+      "step_7": "Click Execute and confirm transaction"
+    },
+    "by_meth": {
+      "title": "_EMPTY_",
+      "step_1": "For address and ABI / JSON Interface, enter the information above and click Access",
+      "step_2": "Click ClaimAll from the function dropdown",
+      "step_3": "Load in your wallet file and unlock it",
+      "step_4": "Click Write",
+      "step_5": "Set Amount to Send to 0 and Gas Limit to 3141592",
+      "step_6": "Click Generate Transaction"
+    },
+    "instruction_footer": "_EMPTY_",
+    "invested": "_EMPTY_",
+    "faq": {
+      "title_1": "_EMPTY_",
+      "text_1": "_EMPTY_",
+      "title_2": "_EMPTY_",
+      "text_2": "_EMPTY_",
+      "title_3": "_EMPTY_",
+      "text_3": "_EMPTY_",
+      "title_4": "_EMPTY_",
+      "text_4": "_EMPTY_",
+      "title_5": "_EMPTY_",
+      "text_5": "_EMPTY_",
+      "title_6": "_EMPTY_",
+      "text_6": "_EMPTY_",
+      "title_7": "_EMPTY_",
+      "text_7": "_EMPTY_",
+      "title_8": "_EMPTY_",
+      "text_8": "_EMPTY_"
+    }
+  },
+  "docs": {
+    "wp_title": "_EMPTY_",
+    "wp_download": "_EMPTY_"
+  },
+  "team": {
+    "oleg_name": "Oleg Pavlov",
+    "oleg_description": "_EMPTY_"
+  },
+  "roadmap": {
+    "start": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "alpha_1": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "alpha_2": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "beta_1": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "beta_2": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "ico": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "early": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "v1": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "post_ico": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "stock": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "v2": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "v3": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "frame": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "v4": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    }
+  },
+  "component": {
+    "ok": "Ok",
+    "cancel": "Cancel"
+  },
+  "error": "Error"
+}

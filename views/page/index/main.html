@@ -106,12 +106,139 @@
           <h2 class="cs-title"><%= l.title.ico %></h2>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+          <p><%= l.ico.info_in %></p>
+        </div>
+        <div class="col-md-4"><img class="cs-ico-img center-block" src="/img/logo/origin.svg"/>
+          <h2 class="text-center">IdeaCoin</h2>
+          <div class="cs-buy-button">
+            <button class="btn btn-default btn-primary btn-block btn-lg" id="buy" data-toggle="collapse" data-target="#buy-dialog" aria-expanded="false" aria-controls="buy-dialog"><%= l.ico.buy_button %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row collapse" id="buy-dialog">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="well">
+            <div id="ico-confirm">
+              <h5><%= l.ico.agreement_title %></h5>
+              <label class="cs-pointer">
+                <div class="col-md-1">
+                  <input class="pull-right" id="no-usa" type="checkbox"/>
+                </div>
+                <div class="col-md-11"><span><%= l.ico.agreement_no_usa %></span></div>
+              </label>
+            </div>
+            <div class="collapse" id="ico-data">
+              <h5><%= l.ico.address_list %></h5>
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label"><%= l.ico.contract_title %></label>
+                  <div class="col-sm-6">
+                    <p class="form-control-static">0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf</p>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-default" id="copy-contract" data-clipboard-text="0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf"><%= l.ico.copy %>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label"><%= l.ico.abi_json_title %></label>
+                  <div class="col-sm-6">
+                    <p class="form-control-static">[{"constant":true,"inputs":[{"name":"","type":"uint256"},</p>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-default" id="copy-abi" data-clipboard-text="[{&quot;constant&quot;:true,&quot;inputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;},"><%= l.ico.copy %>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <hr/>
+              <h5><%= l.ico.instruction_title %></h5>
+              <hr/>
+              <p class="cs-ico-instruction-logo"><img src="/img/ico/eth-wallet.svg"/><strong class="title">Ethereum Foundation Wallet</strong></p>
+              <p><%= l.ico.by_eth_wallet.title %>
+                <ul>
+                  <li><%= l.ico.by_eth_wallet.step_1 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_2 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_3 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_4 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_5 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_6 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_7 %></li>
+                </ul>
+              </p>
+              <hr/>
+              <p class="cs-ico-instruction-logo"><img src="/img/ico/meth.svg"/><strong class="title">MyEtherWallet</strong></p>
+              <p><%= l.ico.by_meth.title %>
+                <ul>
+                  <li><%= l.ico.by_meth.step_1 %></li>
+                  <li><%= l.ico.by_meth.step_2 %></li>
+                  <li><%= l.ico.by_meth.step_3 %></li>
+                  <li><%= l.ico.by_meth.step_4 %></li>
+                  <li><%= l.ico.by_meth.step_5 %></li>
+                  <li><%= l.ico.by_meth.step_6 %></li>
+                </ul>
+              </p>
+              <hr/>
+              <p><%= l.ico.instruction_footer %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h6><%= l.ico.invested %></h6>
+          <div class="progress cs-ico-progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" id="earned"></div>
+          </div><span class="text-left pull-left">~$1 400 000</span><span class="text-right pull-right">~$15 000 000</span>
+        </div>
+      </div>
+      <div class="row cs-ico-faq-line">
+        <div class="col-md-8 col-md-offset-2">
+          <hr/>
+        </div>
+      </div>
+      <div class="row cs-ico-faq">
+        <div class="col-md-4 col-md-offset-2">
+          <h5><%= l.ico.faq.title_1 %></h5>
+          <p><%= l.ico.faq.text_1 %></p>
+          <h5><%= l.ico.faq.title_2 %></h5>
+          <p><%= l.ico.faq.text_2 %></p>
+          <h5><%= l.ico.faq.title_3 %></h5>
+          <p><%= l.ico.faq.text_3 %></p>
+          <h5><%= l.ico.faq.title_4 %></h5>
+          <p><%= l.ico.faq.text_4 %></p>
+        </div>
+        <div class="col-md-4">
+          <h5><%= l.ico.faq.title_5 %></h5>
+          <p><%= l.ico.faq.text_5 %></p>
+          <h5><%= l.ico.faq.title_6 %></h5>
+          <p><%= l.ico.faq.text_6 %></p>
+          <h5><%= l.ico.faq.title_7 %></h5>
+          <p><%= l.ico.faq.text_7 %></p>
+          <h5><%= l.ico.faq.title_8 %></h5>
+          <p><%= l.ico.faq.text_8 %></p>
+        </div>
+      </div>
+      <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="buy-title">
+        <div class="modal-dialog" role="dialog">
+          <div class="modal-content">
+          </div>
+        </div>
+      </div>
       <div class="row" id="docs">
         <div class="col-md-12">
           <div class="text-center"><span class="glyphicon glyphicon-book cs-block-title-icon" aria-hidden="true"></span>
           </div>
           <div class="cs-title-line"></div>
           <h2 class="cs-title"><%= l.title.docs %></h2>
+          <div class="well">
+            <h4 class="text-center"><%= l.docs.wp_title %></h4><br/>
+            <div class="text-center"><a class="btn btn-primary btn-lg" href="/docs/whitepaper.pdf" target="_BLANK" role="button"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>&nbsp;<%= l.docs.wp_download %></a></div><br/>
+            <p class="text-center">PDF</p>
+          </div>
         </div>
       </div>
       <div class="row" id="roadmap">
@@ -124,87 +251,87 @@
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right">4 марта 2017</span>
-            <h4>Старт проекта</h4>
-            <p>Начало разработки платформы CryptoStarter.</p>
+          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.start.date %></span>
+            <h4><%= l.roadmap.start.title %></h4>
+            <p><%= l.roadmap.start.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right">10 апреля 2017</span>
-            <h4>Альфа-версия</h4>
-            <p>Ядро платформы CryptoStarter, утверждение White Paper и MVP.</p>
+          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.alpha_1.date %></span>
+            <h4><%= l.roadmap.alpha_1.title %></h4>
+            <p><%= l.roadmap.alpha_1.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right">11 мая 2017</span>
-            <h4>Альфа-версия 2</h4>
-            <p>Нестабильная версия платформы CryptoStarter с основным функционалом.</p>
+          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.alpha_2.date %></span>
+            <h4><%= l.roadmap.alpha_2.title %></h4>
+            <p><%= l.roadmap.alpha_2.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right">3 июля 2017</span>
-            <h4>Бета-версия</h4>
-            <p>Платформа CryptoStarter с основным функционалом.</p>
+          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.beta_1.date %></span>
+            <h4><%= l.roadmap.beta_1.title %></h4>
+            <p><%= l.roadmap.beta_1.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">4-18 сентября 2017</span>
-            <h4>Бета-версия 2</h4>
-            <p>Платформа CryptoStarter с полным MVP функционалом.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.beta_2.date %></span>
+            <h4><%= l.roadmap.beta_2.title %></h4>
+            <p><%= l.roadmap.beta_2.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point cs-roadmap-important"><span class="label label-info pull-right">1-10 октября 2017</span>
-            <h4>ICO</h4>
-            <p>Предварительная продажа токенов.</p>
+          <div class="cs-roadmap-point cs-roadmap-important"><span class="label label-info pull-right"><%= l.roadmap.ico.date %></span>
+            <h4><%= l.roadmap.ico.title %></h4>
+            <p><%= l.roadmap.ico.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">1 ноября 2017</span>
-            <h4>Ранний доступ</h4>
-            <p>К платформе получат доступ владельцы проектов, которые решили зарегистрировать свои проекты до публичного запуска платформы CryptoStarter.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.early.date %></span>
+            <h4><%= l.roadmap.early.title %></h4>
+            <p><%= l.roadmap.early.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">15 ноября 2017</span>
-            <h4>Релиз версии 1.0</h4>
-            <p>Релиз платформы в MVP версии.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v1.date %></span>
+            <h4><%= l.roadmap.v1.title %></h4>
+            <p><%= l.roadmap.v1.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">15 ноября 2017</span>
-            <h4>Post-ICO</h4>
-            <p>Продажа токенов с сайта до момента выхода на первую биржу. Стоимость монет на post-ICO будет удвоена относительно цены ICO.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.post_ico.date %></span>
+            <h4><%= l.roadmap.post_ico.title %></h4>
+            <p><%= l.roadmap.post_ico.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">ноябрь-декабрь 2017</span>
-            <h4>Выход на биржи</h4>
-            <p>Старт торгов токенов на биржах. Завершение post-ICO.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.stock.date %></span>
+            <h4><%= l.roadmap.stock.title %></h4>
+            <p><%= l.roadmap.stock.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">декабрь 2017</span>
-            <h4>Релиз версии 2.0</h4>
-            <p>В этой версии добавится поэтапное инвестирование и возрат средств через смарт-контракт.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v2.date %></span>
+            <h4><%= l.roadmap.v2.title %></h4>
+            <p><%= l.roadmap.v2.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">февраль-март 2018</span>
-            <h4>Релиз версии 3.0</h4>
-            <p>В этой версии добавятся перепродаваемые токены-фьючерсы для каждого зарегистрированного проекта, а также возможность обмена и торговли ими внутри платформы CryptoStarter.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v3.date %></span>
+            <h4><%= l.roadmap.v3.title %></h4>
+            <p><%= l.roadmap.v3.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">апрель 2018</span>
-            <h4>CryptoStarter Frame</h4>
-            <p>Специальный виджет CryptoStarter для установки на любой сайт, позволяющий собирать платежи и выводить информацию по проекту где угодно.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.frame.date %></span>
+            <h4><%= l.roadmap.frame.title %></h4>
+            <p><%= l.roadmap.frame.description %></p>
           </div>
           <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
           </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right">июнь 2018</span>
-            <h4>Релиз версии 4.0</h4>
-            <p>В этой версии платформа приобретет полную децентрализацию, включая все данные сайта.</p>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v4.date %></span>
+            <h4><%= l.roadmap.v4.title %></h4>
+            <p><%= l.roadmap.v4.description %></p>
           </div>
           <div class="text-center">
           </div>
@@ -218,6 +345,32 @@
           <h2 class="cs-title"><%= l.title.media %></h2>
         </div>
       </div>
+      <div class="row"><a href="https://www.forbes.com/" target="_BLANK">
+          <div class="col-md-4 cs-media-item"><img class="img-thumbnail" src="img/media/forbes.svg"/>
+            <h2 class="text-center">Forbes</h2>
+            <p class="text-center">Топ 10 самых богатейших компаний мира</p>
+          </div></a><a href="https://www.forbes.com/" target="_BLANK">
+          <div class="col-md-4 cs-media-item"><img class="img-thumbnail" src="img/media/forbes.svg"/>
+            <h2 class="text-center">Forbes</h2>
+            <p class="text-center">Топ 10 самых богатейших компаний мира</p>
+          </div></a><a href="https://www.forbes.com/" target="_BLANK">
+          <div class="col-md-4 cs-media-item"><img class="img-thumbnail" src="img/media/forbes.svg"/>
+            <h2 class="text-center">Forbes</h2>
+            <p class="text-center">Топ 10 самых богатейших компаний мира</p>
+          </div></a><a href="https://www.forbes.com/" target="_BLANK">
+          <div class="col-md-4 cs-media-item"><img class="img-thumbnail" src="img/media/forbes.svg"/>
+            <h2 class="text-center">Forbes</h2>
+            <p class="text-center">Топ 10 самых богатейших компаний мира</p>
+          </div></a><a href="https://www.forbes.com/" target="_BLANK">
+          <div class="col-md-4 cs-media-item"><img class="img-thumbnail" src="img/media/forbes.svg"/>
+            <h2 class="text-center">Forbes</h2>
+            <p class="text-center">Топ 10 самых богатейших компаний мира</p>
+          </div></a><a href="https://www.forbes.com/" target="_BLANK">
+          <div class="col-md-4 cs-media-item"><img class="img-thumbnail" src="img/media/forbes.svg"/>
+            <h2 class="text-center">Forbes</h2>
+            <p class="text-center">Топ 10 самых богатейших компаний мира</p>
+          </div></a>
+      </div>
       <div class="row" id="team">
         <div class="col-md-12">
           <div class="text-center"><span class="glyphicon glyphicon-user cs-block-title-icon" aria-hidden="true"></span>
@@ -228,9 +381,10 @@
       </div>
       <div class="row">
         <div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/oleg.jpg"/>
-          <h2 class="text-center">Oleg Pavlov</h2>
-          <p class="text-center">Основатель, разработчик<br> web-части проекта.</p>
-          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="#"></a></div>
+          <h2 class="text-center"><%= l.team.oleg_name %></h2>
+          <p class="text-center"><%= l.team.oleg_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="#"></a>
+          </div>
         </div>
       </div>
       <div class="row" id="register">
@@ -243,7 +397,7 @@
       </div>
       <div class="row">       
         <div class="col-md-6 col-md-offset-3">
-          <p><%= "#{l.register_block.hint_1} #{l.register_block.hint_2}" %></p>
+          <p><%= l.register.hint %></p>
         </div>
       </div>
       <div class="row">
@@ -251,20 +405,20 @@
           <hr/>
           <div class="form-group">
             <div class="form-group">
-              <label for="project"><%= "#{l.register_block.project_name_label}" %></label>
-              <input class="form-control" id="project" type="text" placeholder="<%= "#{l.register_block.project_name_placeholder}" %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="project"><%= l.register.project_name_label %></label>
+              <input class="form-control" id="project" type="text" placeholder="<%= l.register.project_name_placeholder %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
           </div>
           <div class="form-group">
             <div class="form-group">
-              <label for="mail"><%= "#{l.register_block.email_label}" %></label>
-              <input class="form-control" id="mail" type="email" placeholder="<%= "#{l.register_block.email_placeholder}" %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="email"><%= l.register.email_label %></label>
+              <input class="form-control" id="email" type="email" placeholder="<%= l.register.email_placeholder %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
           </div>
           <div class="form-group">
             <div class="form-group">
-              <label for="description"><%= "#{l.register_block.description_label}" %></label>
-              <textarea class="form-control" id="description" rows="6" placeholder="<%= "#{l.register_block.description_placeholder}" %>"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="description"><%= l.register.description_label %></label>
+              <textarea class="form-control" id="description" rows="6" placeholder="<%= l.register.description_placeholder %>"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
           </div>
           <div class="form-group">
@@ -275,7 +429,7 @@
           </div>
           <hr/>
           <div class="form-group">
-            <button class="btn btn-default btn-primary pull-right" id="send"><%= "#{l.register_block.register_project_button}" %>
+            <button class="btn btn-default btn-primary pull-right" id="send"><%= l.register.register_project_button %>
             </button>
           </div>
         </div>
@@ -284,11 +438,11 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 id="register-modal-title"><%= "#{l.register_block.success_modal_title}" %>
+                <h4 id="register-modal-title"><%= l.register.success_modal_title %>
                 </h4>
               </div>
               <div class="modal-body" id="register-modal-body">
-                <p><%= "#{l.register_block.success_modal_text}" %></p>
+                <p><%= l.register.success_modal_text %></p>
               </div>
               <div class="modal-footer" id="register-modal-footer">
                 <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
@@ -313,10 +467,29 @@
     </footer>
     <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
     </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/wow-slider-tools.js"></script>
-    <script src="js/wow-slider.js"></script>
-    <script src="js/landing.js"></script>
+    <script src="js/lib/fixes.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="error-modal-title"><%= l.error %>
+            </h4>
+          </div>
+          <div class="modal-body" id="error-modal-body">
+          </div>
+          <div class="modal-footer" id="error-modal-footer">
+            <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/wow-slider-tools.js"></script>
+    <script src="js/lib/wow-slider.js"></script>
+    <script src="js/lib/clipboard.js"></script>
+    <script src="js/all.js"></script>
   </body>
 </html>
