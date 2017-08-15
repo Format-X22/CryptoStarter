@@ -90,7 +90,13 @@
   },
   "team": {
     "oleg_name": "Oleg Pavlov",
-    "oleg_description": "_EMPTY_"
+    "oleg_description": "Founder, Software Engineer Actively participated in blockchain projects for the last few years. ",
+    "alex_name": "Alexander Musichen",
+    "alex_description": "Founder, Software Engineer. Participated in blockchain apps development for the last 3 years. ",
+    "gregor_name": "Gregor Steiner",
+    "gregor_description": "Software Engineer. Expert in scalable systems architecture and in embedded systems. Blockchain enthusiast. ",
+    "ostap_name": "Ostap Chervak",
+    "ostap_description": "Software Engineer. Python JS expert, systems architect. Decentralized tech enthusiast. "
   },
   "roadmap": {
     "start": {
