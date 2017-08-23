@@ -12,16 +12,17 @@ mixin team-block
                 +icon('user').cs-block-title-icon
             .cs-title-line
             h2.cs-title!= erb('l.title.team')
-    .row
+    .row.cs-team-row
         .col-md-2.col-md-offset-3
             +team-person('oleg')
-                a.cs-social.cs-social-small.cs-linked-in(href='#')
-        .col-md-2.col-md-offset-3
+                a.cs-social.cs-social-small.cs-linked-in(href='https://www.linkedin.com/in/oleg-pavlov-8802a3113/')
+        .col-md-2.col-md-offset-2
             +team-person('alex')
                 a.cs-social.cs-social-small.cs-linked-in(href='#')
+    .row.cs-team-row
         .col-md-2.col-md-offset-3
             +team-person('gregor')
                 a.cs-social.cs-social-small.cs-linked-in(href='#')
-        .col-md-2.col-md-offset-3
+        .col-md-2.col-md-offset-2
             +team-person('ostap')
                 a.cs-social.cs-social-small.cs-linked-in(href='#')
