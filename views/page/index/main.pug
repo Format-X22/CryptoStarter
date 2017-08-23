@@ -23,6 +23,8 @@ block head
     title CryptoStarter
 
 block body
+    - var mediaBlock = false 
+
     nav.navbar.navbar-default.navbar-fixed-top
         .container
             .navbar-header
@@ -35,7 +37,8 @@ block body
                     +menu-item('#ico',      erb('l.main_menu.ico'))
                     +menu-item('#docs',     erb('l.main_menu.docs'))
                     +menu-item('#roadmap',  erb('l.main_menu.timeline'))
-                    +menu-item('#media',    erb('l.main_menu.media'))
+                    if mediaBlock
+                        +menu-item('#media',    erb('l.main_menu.media'))
                     +menu-item('#team',     erb('l.main_menu.team'))
                     +menu-item('#register', erb('l.main_menu.register'))
                     +langs.visible-xs
@@ -59,7 +62,8 @@ block body
         +ico-block
         +docs-block
         +roadmap-block
-        +media-block
+        if mediaBlock
+            +media-block
         +team-block
         +register-block
 
