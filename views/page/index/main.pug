@@ -4,14 +4,6 @@ include ../../components/social-icons
 include wow-slider
 include langs
 
-include present
-include ico
-include docs
-include roadmap
-include media
-include team
-include register
-
 block head
     meta(name='keywords'    content='CryptoStarter, crowdfunding, blockchain, IdeaCoin')
     meta(name='description' content='CryptoStarter landing')
@@ -33,13 +25,6 @@ block body
             #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
                 ul.nav.navbar-nav.navbar-right
                     +menu-item('#home',     erb('l.main_menu.home'))
-                    +menu-item('#ico',      erb('l.main_menu.ico'))
-                    +menu-item('#docs',     erb('l.main_menu.docs'))
-                    +menu-item('#roadmap',  erb('l.main_menu.timeline'))
-                    if mediaBlock
-                        +menu-item('#media',    erb('l.main_menu.media'))
-                    +menu-item('#team',     erb('l.main_menu.team'))
-                    +menu-item('#register', erb('l.main_menu.register'))
                     +langs.visible-xs
                     li.dropdown.hidden-xs
                         a.dropdown-toggle(
@@ -61,22 +46,21 @@ block body
             +tab('active-projects', 'Активные проекты').active
             +tab('prepared-projects', 'Скоро стартуют')
             +tab('done-projects', 'Завершенные проекты')
-
+            
         .tab-content.cs-project-tabs-content
-            +tab-panel('active-projects').hidden.active
-                .row
+            mixin projects-area
+                #loading.row
                     .col-md-12
-                        p 1
+                        p.text-center Загрузка...
+
+            +tab-panel('active-projects').hidden.active
+                +projects-area
 
             +tab-panel('prepared-projects').hidden
-                .row
-                    .col-md-12
-                        p 2
+                +projects-area
 
             +tab-panel('done-projects').hidden
-                .row
-                    .col-md-12
-                        p 3
+                +projects-area
 
 block scripts
     script(src='js/lib/wow-slider-tools.js')

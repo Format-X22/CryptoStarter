@@ -3,9 +3,6 @@ require 'UtilsPack'
 class RootPage
 	include UtilsPack
 
-	TO_TOP_EDGE = 100
-	TO_TOP_SPEED = 800
-
 	def initialize
 		map_elements
 		expose_plugins

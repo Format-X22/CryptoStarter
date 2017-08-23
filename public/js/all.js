@@ -22460,6 +22460,10 @@ Opal.modules["AllPages"] = function(Opal) {
     def.js_window = def.to_top = nil;
     self.$include($scope.get('UtilsPack'));
 
+    Opal.cdecl($scope, 'TO_TOP_EDGE', 100);
+
+    Opal.cdecl($scope, 'TO_TOP_SPEED', 800);
+
     Opal.defn(self, '$initialize', TMP_1 = function $$initialize() {
       var self = this;
 
@@ -22511,20 +22515,16 @@ Opal.modules["AllPages"] = function(Opal) {
 Opal.modules["RootPage"] = function(Opal) {
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $hash2 = Opal.hash2;
 
-  Opal.add_stubs(['$require', '$include', '$map_elements', '$expose_plugins', '$init_tabs', '$after', '$init_slider', '$[]', '$expose', '$each', '$remove_class', '$on', '$to_n', '$revolution', '$show', '$hide']);
+  Opal.add_stubs(['$require', '$include', '$map_elements', '$expose_plugins', '$init_tabs', '$after', '$init_slider', '$[]', '$expose', '$each', '$remove_class', '$to_n', '$revolution', '$show', '$hide']);
   self.$require("UtilsPack");
   return (function($base, $super) {
     function $RootPage(){};
     var self = $RootPage = $klass($base, $super, 'RootPage', $RootPage);
 
-    var def = self.$$proto, $scope = self.$$scope, TMP_2, TMP_3, TMP_4, TMP_7, TMP_8;
+    var def = self.$$proto, $scope = self.$$scope, TMP_2, TMP_3, TMP_4, TMP_6, TMP_7;
 
-    def.active_projects = def.prepared_projects = def.done_projects = def.project_tabs_btns = def.slider = def.slider_loader = nil;
+    def.active_projects = def.prepared_projects = def.done_projects = def.slider = def.slider_loader = nil;
     self.$include($scope.get('UtilsPack'));
-
-    Opal.cdecl($scope, 'TO_TOP_EDGE', 100);
-
-    Opal.cdecl($scope, 'TO_TOP_SPEED', 800);
 
     Opal.defn(self, '$initialize', TMP_2 = function $$initialize() {
       var $a, $b, TMP_1, self = this;
@@ -22556,24 +22556,21 @@ Opal.modules["RootPage"] = function(Opal) {
       return $scope.get('Element').$expose("tab");
     }, TMP_4.$$arity = 0);
 
-    Opal.defn(self, '$init_tabs', TMP_7 = function $$init_tabs() {
-      var $a, $b, TMP_5, $c, TMP_6, self = this;
+    Opal.defn(self, '$init_tabs', TMP_6 = function $$init_tabs() {
+      var $a, $b, TMP_5, self = this;
 
-      ($a = ($b = [self.active_projects, self.prepared_projects, self.done_projects]).$each, $a.$$p = (TMP_5 = function(tab){var self = TMP_5.$$s || this;
+      return ($a = ($b = [self.active_projects, self.prepared_projects, self.done_projects]).$each, $a.$$p = (TMP_5 = function(tab){var self = TMP_5.$$s || this;
 if (tab == null) tab = nil;
       return tab.$remove_class("hidden")}, TMP_5.$$s = self, TMP_5.$$arity = 1, TMP_5), $a).call($b);
-      return ($a = ($c = self.project_tabs_btns).$on, $a.$$p = (TMP_6 = function(event){var self = TMP_6.$$s || this;
-if (event == null) event = nil;
-      return nil}, TMP_6.$$s = self, TMP_6.$$arity = 1, TMP_6), $a).call($c, "click");
-    }, TMP_7.$$arity = 0);
+    }, TMP_6.$$arity = 0);
 
-    return (Opal.defn(self, '$init_slider', TMP_8 = function $$init_slider() {
+    return (Opal.defn(self, '$init_slider', TMP_7 = function $$init_slider() {
       var self = this, config = nil;
 
       config = $hash2(["dottedOverlay", "delay", "startwidth", "startheight", "hideThumbs", "thumbWidth", "thumbHeight", "thumbAmount", "navigationType", "touchenabled", "onHoverStop", "shadow", "fullWidth", "fullScreen", "spinner", "stopLoop", "stopAfterLoops", "stopAtSlide", "shuffle", "autoHeight", "forceFullWidth", "hideThumbsOnMobile", "hideBulletsOnMobile", "hideArrowsOnMobile", "hideThumbsUnderResolution", "hideSliderAtLimit", "hideCaptionAtLimit", "hideAllCaptionAtLilmit", "startWithSlide", "fullScreenOffsetContainer"], {"dottedOverlay": "none", "delay": 9000, "startwidth": 1170, "startheight": 700, "hideThumbs": 200, "thumbWidth": 100, "thumbHeight": 50, "thumbAmount": 1, "navigationType": "none", "touchenabled": "on", "onHoverStop": "on", "shadow": 0, "fullWidth": "on", "fullScreen": "off", "spinner": "spinner3", "stopLoop": "off", "stopAfterLoops": -1, "stopAtSlide": -1, "shuffle": "off", "autoHeight": "off", "forceFullWidth": "off", "hideThumbsOnMobile": "off", "hideBulletsOnMobile": "off", "hideArrowsOnMobile": "off", "hideThumbsUnderResolution": 0, "hideSliderAtLimit": 0, "hideCaptionAtLimit": 0, "hideAllCaptionAtLilmit": 0, "startWithSlide": 0, "fullScreenOffsetContainer": ""}).$to_n();
       self.slider.$show().$revolution(config);
       return self.slider_loader.$hide();
-    }, TMP_8.$$arity = 0), nil) && 'init_slider';
+    }, TMP_7.$$arity = 0), nil) && 'init_slider';
   })($scope.base, null);
 };
 
