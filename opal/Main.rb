@@ -9,5 +9,9 @@ require 'ConsoleSurprise'
 Document.ready? do
 	ConsoleSurprise.new
 	AllPages.new
-	RootPage.new
+
+	case $$[:location].pathname
+		when '/'
+			RootPage.new
+	end
 end

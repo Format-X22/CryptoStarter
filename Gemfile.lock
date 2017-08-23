@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     concurrent-ruby (1.0.5)
+    concurrent-ruby (1.0.5-java)
     hike (1.2.3)
     mustermann (1.0.0)
     opal (0.10.5)
@@ -31,6 +32,7 @@ GEM
     tilt (2.0.8)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
