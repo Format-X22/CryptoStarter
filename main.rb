@@ -6,7 +6,9 @@ include SendGrid
 
 helpers do
 
-	SEND_GRID = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+	if ENV['SENDGRID_API_KEY']
+		SEND_GRID = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+	end
 
 	def get_data
 		JSON.parse request.body.read
