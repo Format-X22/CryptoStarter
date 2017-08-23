@@ -158,27 +158,6 @@ class Landing
 				@ico_data.effect :fade_in
 			end
 		end
-
-		init_copy_button('copy-contract')
-		init_copy_button('copy-abi')
-	end
-
-	def init_copy_button(id)
-		selector = "##{id}"
-		button = Element[selector]
-		button_clip = js_new($$[:Clipboard], selector)
-
-		button_clip.on 'success', -> do
-			button.add_class('btn-success')
-
-			after 0.250 do
-				button.remove_class('btn-success')
-			end
-		end
-
-		button_clip.on 'error', -> do
-			button.add_class('btn-danger')
-		end
 	end
 
 end
