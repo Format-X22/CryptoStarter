@@ -188,45 +188,13 @@ h2.cs-title {
 @media (max-width: 767px) {
   .cs-footer .cs-social {
     opacity: 0.8; } }
-.cs-roadmap-point {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 5px solid #f0f0f0;
-  border-radius: 20px;
-  padding: 18px 28px; }
-  .cs-roadmap-point.cs-roadmap-marked {
-    border: 5px solid #0dbff2; }
-  .cs-roadmap-point.cs-roadmap-important {
-    border-color: #a6a6a6; }
+.cs-project-tabs {
+  margin-top: 30px; }
+  .cs-project-tabs li span {
+    padding-left: 15px;
+    padding-right: 15px; }
 
-.cs-media-item {
-  margin-bottom: 30px; }
-
-.cs-ico-img {
-  width: 200px;
-  height: 200px; }
-
-.cs-buy-button {
-  padding: 15px 50px; }
-
-.cs-ico-faq-line {
-  padding-top: 50px; }
-
-.cs-ico-faq {
-  padding-top: 50px; }
-
-.cs-ico-progress {
-  margin-bottom: 0; }
-
-.cs-ico-instruction-logo {
+.cs-project-tabs-content .tab-pane {
   margin-top: 25px; }
-  .cs-ico-instruction-logo img {
-    width: 50px;
-    height: 50px; }
-  .cs-ico-instruction-logo .title {
-    padding-left: 10px; }
-
-.cs-team-row {
-  margin-bottom: 35px; }
 
 /*# sourceMappingURL=all.css.map */

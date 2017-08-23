@@ -94,7 +94,8 @@ mixin menu-item(href, title)
 mixin tab(target, name, icon)
     li(role='presentation')&attributes(attributes)
         a(href='#'+target aria-controls=target role='tab' data-toggle='tab')
-            span.visible-xs.glyphicon(class='glyphicon-' + icon)
+            if icon
+                span.visible-xs.glyphicon(class='glyphicon-' + icon)
             span.hidden-xs!= name
 
 mixin tab-mobile(target, icon)

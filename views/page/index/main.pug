@@ -1,8 +1,7 @@
 extends ../../components/skeleton
+include ../../components/social-icons
 
 include wow-slider
-include footer
-include social-icons
 include langs
 
 include present
@@ -58,11 +57,26 @@ block body
     +wow-slider
 
     .container
-        // TODO
+        ul#project-tabs.cs-project-tabs.nav.nav-pills
+            +tab('active-projects', 'Активные проекты').active
+            +tab('prepared-projects', 'Скоро стартуют')
+            +tab('done-projects', 'Завершенные проекты')
 
-    +footer
+        .tab-content.cs-project-tabs-content
+            +tab-panel('active-projects').hidden.active
+                .row
+                    .col-md-12
+                        p 1
 
-    #to-top.to-top.hidden: +icon('chevron-up')
+            +tab-panel('prepared-projects').hidden
+                .row
+                    .col-md-12
+                        p 2
+
+            +tab-panel('done-projects').hidden
+                .row
+                    .col-md-12
+                        p 3
 
 block scripts
     script(src='js/lib/wow-slider-tools.js')

@@ -2,10 +2,12 @@ require 'opal'
 require 'native'
 require 'opal-jquery'
 
-require 'Landing'
+require 'AllPages'
+require 'RootPage'
 require 'ConsoleSurprise'
 
 Document.ready? do
 	ConsoleSurprise.new
-	Landing.new
+	AllPages.new
+	RootPage.new
 end

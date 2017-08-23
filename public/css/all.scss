@@ -267,60 +267,19 @@ h2.cs-title {
 	}
 }
 
-.cs-roadmap-point {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: 5px solid #f0f0f0;
-	border-radius: 20px;
-	padding: 18px 28px;
+.cs-project-tabs {
+	margin-top: 30px;
 
-	&.cs-roadmap-marked {
-		border: 5px solid $brand-color;
-	}
-
-	&.cs-roadmap-important {
-		border-color: rgb(166, 166, 166);
+	li span {
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 }
 
-.cs-media-item {
-	margin-bottom: 30px;
-}
+.cs-project-tabs-content {
 
-.cs-ico-img {
-	width: 200px;
-	height: 200px;
-}
-
-.cs-buy-button {
-	padding: 15px 50px;
-}
-
-.cs-ico-faq-line {
-	padding-top: 50px;
-}
-
-.cs-ico-faq {
-	padding-top: 50px;
-}
-
-.cs-ico-progress {
-	margin-bottom: 0;
-}
-
-.cs-ico-instruction-logo {
-	margin-top: 25px;
-
-	img {
-		width: 50px;
-		height: 50px;
+	.tab-pane {
+		margin-top: 25px;
 	}
 
-	.title {
-		padding-left: 10px;
-	}
-}
-
-.cs-team-row {
-	margin-bottom: 35px;
 }

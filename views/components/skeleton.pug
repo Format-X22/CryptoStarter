@@ -1,4 +1,5 @@
 include base
+include social-icons
 
 doctype html
 html
@@ -32,5 +33,18 @@ html
             +window-body(id)
             +window-footer(id)
                 +window-button-ok
+
+        footer.cs-footer
+            .container
+                .row
+                    .col-md-12
+                        +social-icons
+                .row
+                    .col-md-12.cs-copyright-col
+                        span.cs-copyright Copyright Crypto
+                            span.cs-brand-main-color Starter
+
+        #to-top.to-top.hidden
+            +icon('chevron-up')
 
         block scripts
