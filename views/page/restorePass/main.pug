@@ -1,12 +1,15 @@
 extends ../../components/skeleton
 
+include ../../components/auth
+
 block head
     // TODO
 
     link(href='css/auth.css' rel='stylesheet')
 
 block body
-    //
+    .container.cs-restore-form
+         +auth-form-header('Сброс пароля аккаунта CryptoStarter')
 
 block scripts
     //

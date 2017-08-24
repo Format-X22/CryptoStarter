@@ -1,10 +1,15 @@
 extends ../../components/skeleton
 
+include ../../components/auth
+
 block head
-    //
+    // TODO
+
+    link(href='css/auth.css' rel='stylesheet')
 
 block body
-    //
+    .container.cs-register-form
+        +auth-form-header('Регистрация в CryptoStarter')
 
 block scripts
     //
