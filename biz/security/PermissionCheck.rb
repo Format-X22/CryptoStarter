@@ -1,0 +1,3 @@
+class PermissionCheck
+	#
+end
