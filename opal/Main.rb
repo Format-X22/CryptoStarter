@@ -12,6 +12,7 @@ require 'page/ProfilePage'
 require 'page/ProjectPage'
 require 'page/RegisterPage'
 require 'page/RegisterProjectPage'
+require 'page/RestorePassPage'
 require 'util/ConsoleSurprise'
 
 Document.ready? do
@@ -26,6 +27,7 @@ Document.ready? do
 		when /^\/project/         then ProjectPage.new
 		when /^\/registerProject/ then RegisterProjectPage.new
 		when /^\/register/        then RegisterPage.new
+		when /^\/restorePass/     then RestorePassPage.new
 		else                           Error404Page.new
 	end
 end

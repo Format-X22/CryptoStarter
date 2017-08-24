@@ -1,0 +1,3 @@
+class RestorePassPage < AbstractPage
+	#
+end
