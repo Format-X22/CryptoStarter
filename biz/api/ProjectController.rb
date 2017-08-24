@@ -1,0 +1,3 @@
+class ProjectController < AbstractController
+	#
+end
