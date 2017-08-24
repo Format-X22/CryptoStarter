@@ -1,5 +1,7 @@
 extends ../../components/skeleton
 
+include ../../components/auth
+
 block head
     // TODO
 
@@ -11,8 +13,8 @@ block body
         .row
             .col-md-4.col-md-offset-2.cs-login-block
                 h2 Войти
-                +input('email', 'email',    'Адрес вашей электронной почты')
-                +input('pass',  'password', 'Ваш пароль')
+                +input('email',  'email',    'Адрес вашей электронной почты')
+                +input('pass',   'password', 'Ваш пароль')
                 +button('login', 'Войти').btn-lg.btn-block.btn-primary
                 p.pull-right
                     +button('forget', 'Забыли пароль?').btn-link
