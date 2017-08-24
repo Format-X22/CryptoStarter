@@ -1,6 +1,21 @@
-require 'recursive-open-struct'
 require 'sinatra'
+require 'mongoid'
+require 'recursive-open-struct'
 require 'sendgrid-ruby'
+
+require_relative 'biz/api/AbstractController'
+require_relative 'biz/api/AuthController'
+require_relative 'biz/api/BlockChainController'
+require_relative 'biz/api/ProjectController'
+require_relative 'biz/api/UserController'
+
+require_relative 'biz/model/ProjectModel'
+require_relative 'biz/model/UserModel'
+
+require_relative 'biz/security/PermissionCheck'
+require_relative 'biz/Router'
+
+### TODO
 
 include SendGrid
 
