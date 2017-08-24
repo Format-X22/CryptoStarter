@@ -2,7 +2,6 @@ extends ../../components/skeleton
 include ../../components/social-icons
 
 include wow-slider
-include langs
 include project
 
 block head
@@ -15,29 +14,6 @@ block head
     title CryptoStarter
 
 block body
-    nav.navbar.navbar-default.navbar-fixed-top
-        .container
-            .navbar-header
-                a(href='#')
-                    img.cs-main_menu-logo(src='img/logo/origin.svg')
-                +mobile-top-menu-toggle('top-menu-toggle')
-            #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
-                ul.nav.navbar-nav.navbar-right
-                    +menu-item('#home',     erb('l.main_menu.home'))
-                    +langs.visible-xs
-                    li.dropdown.hidden-xs
-                        a.dropdown-toggle(
-                            href='#'
-                            data-toggle='dropdown'
-                            role='button'
-                            aria-haspopup='true'
-                            aria-expanded='false'
-                        )
-                            +icon('text-background')
-                            span.caret
-                        ul.dropdown-menu
-                            +langs
-                            
     +wow-slider
 
     .container

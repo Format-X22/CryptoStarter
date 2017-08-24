@@ -1,4 +1,5 @@
 include base
+include langs
 include social-icons
 
 doctype html
@@ -21,6 +22,29 @@ html
         link(rel='apple-touch-icon' href='img/logo/152.png' sizes='152x152')
         link(rel='apple-touch-icon' href='img/logo/167.png' sizes='167x167')
     body
+        nav.navbar.navbar-default.navbar-fixed-top
+            .container
+                .navbar-header
+                    a(href='#')
+                        img.cs-main_menu-logo(src='img/logo/origin.svg')
+                    +mobile-top-menu-toggle('top-menu-toggle')
+                #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
+                    ul.nav.navbar-nav.navbar-right
+                        +menu-item('#home',     erb('l.main_menu.home'))
+                        +langs.visible-xs
+                        li.dropdown.hidden-xs
+                            a.dropdown-toggle(
+                            href='#'
+                            data-toggle='dropdown'
+                            role='button'
+                            aria-haspopup='true'
+                            aria-expanded='false'
+                            )
+                                +icon('text-background')
+                                span.caret
+                            ul.dropdown-menu
+                                +langs
+
         block body
 
         script(src='js/lib/fixes.js')
