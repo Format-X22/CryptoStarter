@@ -3,6 +3,7 @@ include ../../components/social-icons
 
 include wow-slider
 include langs
+include project
 
 block head
     meta(name='keywords'    content='CryptoStarter, crowdfunding, blockchain, IdeaCoin')
@@ -47,9 +48,13 @@ block body
             
         .tab-content.cs-project-tabs-content
             mixin projects-area
-                #loading.row
-                    .col-md-12
-                        p.text-center Загрузка...
+                .row
+                    .col-md-4
+                        +project
+                    .col-md-4
+                        +project
+                    .col-md-4
+                        +project
 
             +tab-panel('active-projects').hidden.active
                 +projects-area
@@ -59,6 +64,10 @@ block body
 
             +tab-panel('done-projects').hidden
                 +projects-area
+
+            #loading.row.cs-loading
+                .col-md-12
+                    p.text-center Загрузка...
 
 block scripts
     script(src='js/lib/wow-slider-tools.js')
