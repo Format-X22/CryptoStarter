@@ -9,7 +9,15 @@ block head
 
 block body
     .container.cs-restore-form
-         +auth-form-header('Сброс пароля аккаунта CryptoStarter')
+         +auth-form-header('Сброс пароля')
+         .row
+             .col-md-4.col-md-offset-4
+                 +input('email', 'email', 'Адрес электронной почты аккаунта')
+                 +button('login', 'Восстановить доступ').btn-block.btn-primary
+                 br
+                 .panel.panel-success.hidden
+                     .panel-heading Успешно!
+                     .panel-body Скоро вам придет письмо с новым паролем.
 
 block scripts
     //

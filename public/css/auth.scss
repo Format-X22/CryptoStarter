@@ -1,6 +1,10 @@
-.cs-login-form {
+.cs-auth-form {
 	margin-top: 30px;
 	margin-bottom: 90px;
+}
+
+.cs-login-form {
+	@extend .cs-auth-form;
 
 	.cs-login-block {
 		padding-right: 50px;
@@ -13,13 +17,13 @@
 }
 
 .cs-restore-form {
-	//
+	@extend .cs-auth-form;
 }
 
 .cs-register-form {
-	//
+	@extend .cs-auth-form;
 }
 
 .cs-register-project-form {
-	//
+	@extend .cs-auth-form;
 }
