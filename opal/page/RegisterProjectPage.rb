@@ -1,0 +1,3 @@
+class RegisterProjectPage < AbstractPage
+	#
+end

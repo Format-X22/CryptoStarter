@@ -1,0 +1,3 @@
+class LoginPage < AbstractPage
+	#
+end

@@ -1,0 +1,3 @@
+class AboutPage < AbstractPage
+	#
+end

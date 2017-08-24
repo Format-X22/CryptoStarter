@@ -1,7 +1,4 @@
-require 'UtilsPack'
-
-class RootPage
-	include UtilsPack
+class IndexPage < AbstractPage
 
 	def initialize
 		map_elements

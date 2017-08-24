@@ -1,7 +1,4 @@
-require 'UtilsPack'
-
-class AllPages
-	include UtilsPack
+class AllPages < AbstractPage
 
 	TO_TOP_EDGE = 100
 	TO_TOP_SPEED = 800
