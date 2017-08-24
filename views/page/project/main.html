@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!---->
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/logo/32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/logo/96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="img/logo/120.png">
+    <link rel="apple-touch-icon" href="img/logo/180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="img/logo/152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="img/logo/167.png" sizes="167x167">
+  </head>
+  <body>
+    <!---->
+    <script src="js/lib/fixes.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="error-modal-title"><%= l.error %>
+            </h4>
+          </div>
+          <div class="modal-body" id="error-modal-body">
+          </div>
+          <div class="modal-footer" id="error-modal-footer">
+            <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="cs-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center"><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-telegram" href="#"></a></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 cs-copyright-col"><span class="cs-copyright">Copyright Crypto<span class="cs-brand-main-color">Starter</span></span></div>
+        </div>
+      </div>
+    </footer>
+    <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    </div>
+    <!---->
+    <script src="js/all.js"></script>
+  </body>
+</html>
