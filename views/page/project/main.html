@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!---->
+    <!-- TODO-->
+    <link href="css/project.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
     <link href="css/all.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
@@ -44,7 +45,106 @@
         </div>
       </div>
     </nav>
-    <!---->
+    <div class="container cs-company">
+      <div class="row cs-title">
+        <div class="col-md-12">
+          <h1>Всемирный атлас кофе</h1><a href="#">by Oleg Pavlov</a>
+        </div>
+      </div>
+      <div class="row cs-header">
+        <div class="col-md-8 cs-image-col"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"></div>
+        <div class="col-md-4 cs-info-col">
+          <div class="cs-title-block">
+            <h2 class="cs-title">Прогресс</h2>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 66%;" id="earned"></div>
+            </div>
+          </div>
+          <div class="cs-details-block">
+            <h3>332 IDEA<small> собрано</small></h3>
+            <h3>122%<small> от минимальной суммы</small></h3>
+            <h3 id="some-sponsors">485<small> спонсоров</small></h3>
+            <h3>20 дней<small> осталось</small></h3>
+          </div>
+          <div class="cs-button-block">
+            <button class="btn btn-default btn-lg btn-primary btn-block" id="invest">Поддержать
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row cs-info">
+        <div class="col-md-12">
+          <hr>
+          <ul class="cs-tabs nav nav-pills" id="project-tabs">
+            <li class="active" role="presentation"><a href="#present" aria-controls="present" role="tab" data-toggle="tab"><span class="hidden-xs">Презентация</span></a></li>
+            <li role="presentation"><a href="#faq" aria-controls="faq" role="tab" data-toggle="tab"><span class="hidden-xs">Вопрос-Ответ</span></a></li>
+            <li role="presentation"><a href="#news" aria-controls="news" role="tab" data-toggle="tab"><span class="hidden-xs">Новости</span></a></li>
+            <li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab"><span class="hidden-xs">Комментарии</span></a></li>
+          </ul>
+        </div>
+        <!-- TODO hidden on start-->
+        <div class="tab-content cs-content">
+          <div class="tab-pane cs-content-inner active" id="present">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8">Большое объемное описание проекта с картинками</div>
+                <div class="col-md-4">
+                  <h4>Поддержи проект</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane cs-content-inner" id="faq">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5">
+                  <ul class="cs-tabs nav nav-pills nav-stacked" id="faq-tabs-en">
+                    <li class="active" role="presentation"><a href="#q1" aria-controls="q1" role="tab" data-toggle="tab"><span class="hidden-xs">Вопрос 1</span></a></li>
+                    <li role="presentation"><a href="#q2" aria-controls="q2" role="tab" data-toggle="tab"><span class="hidden-xs">Вопрос 2</span></a></li>
+                    <li role="presentation"><a href="#q3" aria-controls="q3" role="tab" data-toggle="tab"><span class="hidden-xs">Вопрос 3</span></a></li>
+                    <li role="presentation"><a href="#q4" aria-controls="q4" role="tab" data-toggle="tab"><span class="hidden-xs">Вопрос 4</span></a></li>
+                  </ul>
+                </div>
+                <div class="col-md-7">
+                  <div class="tab-content cs-faq-res">
+                    <div class="tab-pane active" id="q1">
+                      <div class="container-fluid">
+                        <p class="cs-faq">Ответ на вопрос 1, может быть длинным.</p>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="q2">
+                      <div class="container-fluid">
+                        <p class="cs-faq">Ответ на вопрос 2, может быть длинным.</p>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="q3">
+                      <div class="container-fluid">
+                        <p class="cs-faq">Ответ на вопрос 3, может быть длинным.</p>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="q4">
+                      <div class="container-fluid">
+                        <p class="cs-faq">Ответ на вопрос 4, может быть длинным.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane cs-content-inner" id="news">
+            <div class="container-fluid">
+              <p>3</p>
+            </div>
+          </div>
+          <div class="tab-pane cs-content-inner" id="comments">
+            <div class="container-fluid">
+              <p>4</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="js/lib/fixes.js"></script>
     <script src="js/lib/jquery.js"></script>
     <script src="js/lib/bootstrap.js"></script>

@@ -1,10 +1,78 @@
 extends ../../components/skeleton
 
 block head
-    //
+    // TODO
+
+    link(href='css/project.css' rel='stylesheet')
 
 block body
-    //
+    .container.cs-company
+        .row.cs-title
+            .col-md-12
+                h1 Всемирный атлас кофе
+                a(href='#') by Oleg Pavlov
+        .row.cs-header
+            .col-md-8.cs-image-col
+                img.cs-image(src='http://rgho.st/8tXGjMrw7/image.png')
+
+            .col-md-4.cs-info-col
+                .cs-title-block
+                    h2.cs-title Прогресс
+                    +characteristic('earned')
+                .cs-details-block
+                    h3 332 IDEA
+                        small  собрано
+                    h3 122%
+                        small  от минимальной суммы
+                    h3#some-sponsors 485
+                        small  спонсоров
+                    h3 20 дней
+                        small  осталось
+                .cs-button-block
+                    +button('invest', 'Поддержать').btn-lg.btn-primary.btn-block
+
+        .row.cs-info
+            .col-md-12
+                hr
+                ul#project-tabs.cs-tabs.nav.nav-pills
+                    +tab('present', 'Презентация').active
+                    +tab('faq', 'Вопрос-Ответ')
+                    +tab('news', 'Новости')
+                    +tab('comments', 'Комментарии')
+
+            // TODO hidden on start
+            .tab-content.cs-content
+                +tab-panel('present').cs-content-inner.active
+                    .row
+                        .col-md-8
+                            | Большое объемное описание проекта с картинками
+                        .col-md-4
+                            h4 Поддержи проект
+
+                +tab-panel('faq').cs-content-inner
+                    .row
+                        .col-md-5
+                            ul#faq-tabs-en.cs-tabs.nav.nav-pills.nav-stacked
+                                +tab('q1', 'Вопрос 1').active
+                                +tab('q2', 'Вопрос 2')
+                                +tab('q3', 'Вопрос 3')
+                                +tab('q4', 'Вопрос 4')
+                        .col-md-7
+                            .tab-content.cs-faq-res
+                                +tab-panel('q1').active
+                                    p.cs-faq Ответ на вопрос 1, может быть длинным.
+                                +tab-panel('q2')
+                                    p.cs-faq Ответ на вопрос 2, может быть длинным.
+                                +tab-panel('q3')
+                                    p.cs-faq Ответ на вопрос 3, может быть длинным.
+                                +tab-panel('q4')
+                                    p.cs-faq Ответ на вопрос 4, может быть длинным.
+
+                +tab-panel('news').cs-content-inner
+                    p 3
+
+                +tab-panel('comments').cs-content-inner
+                    p 4
 
 block scripts
     //

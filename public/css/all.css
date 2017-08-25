@@ -14,7 +14,7 @@ body {
 .cs-pointer {
   cursor: pointer; }
 
-.cs-brand-main-color, .cs-block-title-icon {
+.cs-brand-main-color {
   color: #0dbff2; }
 
 .cs-main_menu-logo {
@@ -96,28 +96,6 @@ body {
     padding: 0 0 50px;
     color: white; }
 
-.cs-title-line {
-  display: block;
-  width: 100%;
-  height: 10px;
-  margin: 9px 0 15px;
-  background: url(../img/title-line-label.png) center top no-repeat;
-  border-bottom: 1px solid #f0f0f0; }
-
-h2.cs-title {
-  font-size: 48px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  text-align: center;
-  text-transform: uppercase; }
-
-.cs-block-title-icon {
-  font-size: 48px;
-  padding-top: 48px; }
-
-@media (max-width: 767px) {
-  h2.cs-title {
-    font-size: 24px; } }
 .cs-footer {
   background-color: #070825;
   margin-top: 50px;
