@@ -85,6 +85,13 @@ mixin textarea(id, placeholder, label, rows)
         textarea.form-control(id=id rows=rows placeholder!=placeholder)
         span.glyphicon.glyphicon-remove.form-control-feedback.hidden(aria-hidden='true')
 
+mixin chechbox(id)
+    .checkbox&attributes(attributes)
+        label
+            input(id=id type='checkbox')
+            span
+                block
+
 //- MENUS AND TABS
 
 mixin menu-item(href, title)

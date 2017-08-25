@@ -22,6 +22,25 @@
 
 .cs-register-form {
 	@extend .cs-auth-form;
+
+	.cs-register-block {
+		padding-right: 50px;
+		border-right: 1px solid #eeeeee;
+	}
+
+	.cs-login-block {
+		padding-left: 50px;
+	}
+
+	.cs-term {
+		margin-top: 15px;
+		margin-bottom: 15px;
+
+		.cs-term-link {
+			color: #333333;
+			text-decoration: underline;
+		}
+	}
 }
 
 .cs-register-project-form {

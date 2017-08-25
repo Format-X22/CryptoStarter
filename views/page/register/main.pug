@@ -9,7 +9,21 @@ block head
 
 block body
     .container.cs-register-form
-        +auth-form-header('Регистрация в CryptoStarter')
+        +auth-form-header('Регистрация')
+        .row
+            .col-md-4.col-md-offset-2.cs-register-block
+                h2 Регистрация
+                +input('email',  'email',     'Адрес вашей электронной почты')
+                +input('pass',   'password',  'Ваш пароль')
+                +input('pass2',  'password2', 'Повторите пароль')
+                +chechbox('term').cs-term
+                    | Я согласен с 
+                    a.cs-term-link(href='#') условиями использования
+                +button('register', 'Зарегистрироваться').btn-lg.btn-block.btn-primary.cs-register
+            .col-md-4.cs-login-block
+                h2 Уже есть аккаунт?
+                p Вы можете войти.
+                +button('login', 'Войти').btn-lg.btn-block.btn-primary
 
 block scripts
     //
