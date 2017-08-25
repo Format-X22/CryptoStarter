@@ -28,6 +28,7 @@ Document.ready? do
 		when /^\/registerProject/ then RegisterProjectPage.new
 		when /^\/register/        then RegisterPage.new
 		when /^\/restorePass/     then RestorePassPage.new
+		when /^\/term/            then # do nothing
 		else                           Error404Page.new
 	end
 end
