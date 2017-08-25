@@ -1,4 +1,4 @@
-require '../util/UtilsPack'
+require_relative '../util/UtilsPack'
 
 class AbstractPage
 	include UtilsPack
