@@ -259,7 +259,35 @@ block body
                                     p 6
 
                 +tab-panel('comments').cs-content-inner
-                    p 4
+                    .row
+                        .col-md-8.col-md-offset-2
+                            .panel.panel-warning.hidden
+                                .panel-heading Комментарии доступны только для спонсоров.
+
+                            .cs-send-comment-block
+                                +textarea('comment', 'Комментарий...').cs-comment-area
+                                +button('send-comment', 'Отправить').pull-right.btn-primary.btn-sm
+                                .clearfix
+
+                            .panel.panel-primary
+                                .panel-body
+                                    span.label.label-primary.pull-right 10.10.2017
+                                    h5 Oleg Pavlov
+                                    p Знаковая книга о кофе одного из самых известных профессионалов индустрии.
+
+                            .panel.panel-primary
+                                .panel-body
+                                    span.label.label-primary.pull-right 10.10.2017
+                                    h5 Oleg Pavlov
+                                    p Знаковая книга о кофе одного из самых известных профессионалов индустрии.
+
+                            .panel.panel-primary
+                                .panel-body
+                                    span.label.label-primary.pull-right 10.10.2017
+                                    h5 Oleg Pavlov
+                                    p Знаковая книга о кофе одного из самых известных профессионалов индустрии.
+
+                            p.text-center Загрузка...
 
 block scripts
     //

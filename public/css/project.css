@@ -45,5 +45,9 @@
       border-bottom: 1px solid #eeeeee;
       padding-bottom: 15px;
       margin-bottom: 35px; }
+    .cs-company .cs-info .cs-content .cs-send-comment-block {
+      padding-bottom: 25px; }
+      .cs-company .cs-info .cs-content .cs-send-comment-block .cs-comment-area {
+        margin-bottom: 5px; }
 
 /*# sourceMappingURL=project.css.map */

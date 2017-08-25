@@ -81,7 +81,14 @@
 				padding-bottom: 15px;
 				margin-bottom: 35px;
 			}
-		}
 
+			.cs-send-comment-block {
+				padding-bottom: 25px;
+
+				.cs-comment-area {
+					margin-bottom: 5px;
+				}
+			}
+		}
 	}
 }
