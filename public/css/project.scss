@@ -61,6 +61,12 @@
 		}
 
 		.cs-content {
+
+			.cs-no-left-padding,
+			.cs-no-left-padding > .container-fluid {
+				padding-left: 0;
+			}
+
 			.cs-content-inner {
 				margin-top: 125px;
 			}
@@ -68,6 +74,12 @@
 			.cs-faq-res {
 				padding-top: 10px;
 				border-left: 2px solid #0dbff2;
+			}
+
+			.cs-news-item {
+				border-bottom: 1px solid #eeeeee;
+				padding-bottom: 15px;
+				margin-bottom: 35px;
 			}
 		}
 
