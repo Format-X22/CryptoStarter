@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,QAAS;EACR,WAAW,EAAE,IAAI;EAEjB,qBAAa;IACZ,KAAK,EAAE,GAAG;EAGX,wBAAgB;IACf,aAAa,EAAE,CAAC",
+"mappings": "AAAA,QAAS;EACR,WAAW,EAAE,IAAI;EAEjB,qBAAa;IACZ,KAAK,EAAE,GAAG;EAGX,wBAAgB;IACf,aAAa,EAAE,CAAC;;AAIlB,YAAa;EACZ,WAAW,EAAE,IAAI",
 "sources": ["project-constructor.scss"],
 "names": [],
 "file": "project-constructor.css"

@@ -47,7 +47,7 @@
     </nav>
     <div class="container">
       <div class="row cs-form">
-        <div class="col-md-6 col-md-offset-3"><img class="cs-top-logo center-block" src="img/logo/origin.svg">
+        <div class="col-md-8 col-md-offset-2"><img class="cs-top-logo center-block" src="img/logo/origin.svg">
           <h1 class="text-center">Проект на CryptoStarter</h1>
           <hr><br>
           <h2>Основная информация</h2>
@@ -70,18 +70,23 @@
           <hr>
           <div class="form-group cs-video-input">
             <label for="video">Видеоролик</label>
-            <input class="form-control" id="video" type="text" placeholder="Ссылка на видео на Youtube"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
-          </div>
-          <div><em><small>
-                При отсутствии видео будет установлена
-                картинка из основной информации о проекте</small></em></div><br>
+            <input class="form-control" id="video" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div><br>
           <h5><strong>Презентация проекта</strong></h5>
           <!-- TODO CKEditor 4-->
           <p>TODO CKEditor 4</p>
           <hr>
-          <button class="btn btn-default btn-primary" id="save">Сохранить без публикации
+          <button class="btn btn-default btn-primary" id="save-en">Сохранить без публикации
           </button>
-          <button class="btn btn-default btn-primary pull-right" id="pub">Опубликовать
+          <button class="btn btn-default btn-primary pull-right" id="pub-en">Опубликовать
+          </button>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="row cs-form-all">
+        <div class="col-md-8 col-md-offset-2">
+          <hr>
+          <button class="btn btn-default btn-primary pull-right" id="pub-en">Опубликовать (все языки)
           </button>
           <div class="clearfix"></div>
         </div>

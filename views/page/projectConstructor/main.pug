@@ -8,7 +8,7 @@ block head
 block body
     .container
         .row.cs-form
-            .col-md-6.col-md-offset-3
+            .col-md-8.col-md-offset-2
                 img(src='img/logo/origin.svg').cs-top-logo.center-block
                 h1.text-center Проект на CryptoStarter
                 hr
@@ -22,18 +22,21 @@ block body
                 hr
                 h2 Детальная информация
                 hr
-                +input('video', 'text', 'Ссылка на видео на Youtube', 'Видеоролик').cs-video-input
-                div: em: small.
-                    При отсутствии видео будет установлена
-                    картинка из основной информации о проекте
+                +input('video', 'file', '', 'Видеоролик').cs-video-input
                 br
                 h5: strong Презентация проекта
                 // TODO CKEditor 4
                 p TODO CKEditor 4
                 hr
-                +button('save', 'Сохранить без публикации').btn-primary
-                +button('pub', 'Опубликовать').btn-primary.pull-right
+                +button('save-en', 'Сохранить без публикации').btn-primary
+                +button('pub-en', 'Опубликовать').btn-primary.pull-right
                 .clearfix
+        .row.cs-form-all
+            .col-md-8.col-md-offset-2
+                hr
+                +button('pub-en', 'Опубликовать (все языки)').btn-primary.pull-right
+                .clearfix
+
 
 block scripts
     //
