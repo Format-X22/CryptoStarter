@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!---->
+    <!-- TODO-->
+    <link href="css/project-constructor.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
     <link href="css/all.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
@@ -44,7 +45,48 @@
         </div>
       </div>
     </nav>
-    <!---->
+    <div class="container">
+      <div class="row cs-form">
+        <div class="col-md-6 col-md-offset-3"><img class="cs-top-logo center-block" src="img/logo/origin.svg">
+          <h1 class="text-center">Проект на CryptoStarter</h1>
+          <hr><br>
+          <h2>Основная информация</h2>
+          <hr>
+          <!-- TODO Количество символов как ограничение-->
+          <div class="form-group">
+            <label for="name">Имя проекта</label>
+            <input class="form-control" id="name" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <div class="form-group">
+            <label for="name">Краткое описание проекта</label>
+            <textarea class="form-control" id="name" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <div class="form-group">
+            <label for="logo">Логотип для страницы поиска</label>
+            <input class="form-control" id="logo" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <hr>
+          <h2>Детальная информация</h2>
+          <hr>
+          <div class="form-group cs-video-input">
+            <label for="video">Видеоролик</label>
+            <input class="form-control" id="video" type="text" placeholder="Ссылка на видео на Youtube"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <div><em><small>
+                При отсутствии видео будет установлена
+                картинка из основной информации о проекте</small></em></div><br>
+          <h5><strong>Презентация проекта</strong></h5>
+          <!-- TODO CKEditor 4-->
+          <p>TODO CKEditor 4</p>
+          <hr>
+          <button class="btn btn-default btn-primary" id="save">Сохранить без публикации
+          </button>
+          <button class="btn btn-default btn-primary pull-right" id="pub">Опубликовать
+          </button>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
     <script src="js/lib/fixes.js"></script>
     <script src="js/lib/jquery.js"></script>
     <script src="js/lib/bootstrap.js"></script>

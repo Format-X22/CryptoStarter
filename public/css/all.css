@@ -17,6 +17,9 @@ body {
 .cs-brand-main-color {
   color: #0dbff2; }
 
+.cs-global-fix-btn-margin {
+  margin-right: 4px; }
+
 .cs-main_menu-logo {
   width: 70px;
   margin-top: 8px;
