@@ -4,6 +4,15 @@
     width: 25%; }
   .cs-form .cs-video-input {
     margin-bottom: 0; }
+  .cs-form .cs-faq-table {
+    margin-bottom: 0; }
+    .cs-form .cs-faq-table th {
+      vertical-align: bottom; }
+    .cs-form .cs-faq-table .form-group {
+      margin-bottom: 0; }
+    .cs-form .cs-faq-table .cs-qa-num {
+      font-weight: bold;
+      line-height: 250%; }
 
 .cs-form-all {
   padding-top: 20px; }

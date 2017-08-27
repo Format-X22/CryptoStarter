@@ -13,20 +13,56 @@ block body
                 h1.text-center Проект на CryptoStarter
                 hr
                 br
-                h2 Основная информация
+                +chechbox('text')
+                    em Не использовать этот язык
                 hr
-                // TODO Количество символов как ограничение
-                +input('name', 'text', '', 'Имя проекта')
-                +textarea('name', '', 'Краткое описание проекта')
-                +input('logo', 'file', '', 'Логотип для страницы поиска')
-                hr
-                h2 Детальная информация
-                hr
-                +input('video', 'file', '', 'Видеоролик').cs-video-input
-                br
-                h5: strong Презентация проекта
-                // TODO CKEditor 4
-                p TODO CKEditor 4
+                
+                .panel.panel-primary
+                    .panel-heading Основная информация
+                    .panel-body
+                        // TODO Количество символов как ограничение
+                        +input('name-en', 'text', '', 'Имя проекта')
+                        +textarea('short-en', '', 'Краткое описание проекта')
+                        +input('logo-en', 'file', '', 'Логотип для страницы поиска')
+
+                .panel.panel-primary
+                    .panel-heading Детальная информация
+                    .panel-body
+                        +input('video-en', 'file', '', 'Видеоролик').cs-video-input
+                        br
+                        h5: strong Презентация проекта
+                        // TODO CKEditor 4
+                        p TODO CKEditor 4
+
+                .panel.panel-primary
+                    .panel-heading
+                        .form-inline
+                            | Вопрос-Ответ
+                            +chechbox('text', true).pull-right
+                                em  Не использовать
+                    .panel-body
+                        table.table.cs-faq-table
+                            tr
+                                th #
+                                th Вопрос
+                                th Ответ
+                                th: +button-icon('add-faq-en', 'plus').btn-primary.pull-right
+                            tr
+                                td: span.cs-qa-num 1
+                                td: +input('faq-q-en-1', 'text', 'Вопрос')
+                                td: +input('faq-r-en-1', 'text', 'Ответ')
+                                td: +button-icon('faq-d-en-1', 'remove').btn-primary.pull-right
+                            tr
+                                td: span.cs-qa-num 2
+                                td: +input('faq-q-en-2', 'text', 'Вопрос')
+                                td: +input('faq-r-en-2', 'text', 'Ответ')
+                                td: +button-icon('faq-d-en-2', 'remove').btn-primary.pull-right
+                            tr
+                                td: span.cs-qa-num 3
+                                td: +input('faq-q-en-3', 'text', 'Вопрос')
+                                td: +input('faq-r-en-3', 'text', 'Ответ')
+                                td: +button-icon('faq-d-en-3', 'remove').btn-primary.pull-right
+
                 hr
                 +button('save-en', 'Сохранить без публикации').btn-primary
                 +button('pub-en', 'Опубликовать').btn-primary.pull-right
@@ -34,7 +70,7 @@ block body
         .row.cs-form-all
             .col-md-8.col-md-offset-2
                 hr
-                +button('pub-en', 'Опубликовать (все языки)').btn-primary.pull-right
+                +button('pub-all', 'Опубликовать (все языки)').btn-primary.pull-right
                 .clearfix
 
 
