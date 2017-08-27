@@ -1,3 +1,8 @@
+.cs-no-lang.checkbox {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
 .cs-form {
 	padding-top: 50px;
 
@@ -28,5 +33,9 @@
 }
 
 .cs-form-all {
-	padding-top: 20px;
+	padding-top: 35px;
+
+	hr {
+		margin-bottom: 10px;
+	}
 }

@@ -11,66 +11,82 @@ block body
             .col-md-8.col-md-offset-2
                 img(src='img/logo/origin.svg').cs-top-logo.center-block
                 h1.text-center Проект на CryptoStarter
-                hr
-                br
-                +chechbox('text')
+
+        .row.cs-form
+            .col-md-8.col-md-offset-2
+                +lang-tabs('lang')
+                +chechbox('text').cs-no-lang
                     em Не использовать этот язык
                 hr
-                
-                .panel.panel-primary
-                    .panel-heading Основная информация
-                    .panel-body
-                        // TODO Количество символов как ограничение
-                        +input('name-en', 'text', '', 'Имя проекта')
-                        +textarea('short-en', '', 'Краткое описание проекта')
-                        +input('logo-en', 'file', '', 'Логотип для страницы поиска')
 
-                .panel.panel-primary
-                    .panel-heading Детальная информация
-                    .panel-body
-                        +input('video-en', 'file', '', 'Видеоролик').cs-video-input
-                        br
-                        h5: strong Презентация проекта
-                        // TODO CKEditor 4
-                        p TODO CKEditor 4
+                .tab-content
+                    +tab-panel('lang-en').active
+                        .panel.panel-primary
+                            .panel-heading Основная информация
+                            .panel-body
+                                // TODO Количество символов как ограничение
+                                +input('name-en', 'text', '', 'Имя проекта')
+                                +textarea('short-en', '', 'Краткое описание проекта')
+                                +input('logo-en', 'file', '', 'Логотип для страницы поиска')
 
-                .panel.panel-primary
-                    .panel-heading
-                        .form-inline
-                            | Вопрос-Ответ
-                            +chechbox('text', true).pull-right
-                                em  Не использовать
-                    .panel-body
-                        table.table.cs-faq-table
-                            tr
-                                th #
-                                th Вопрос
-                                th Ответ
-                                th: +button-icon('add-faq-en', 'plus').btn-primary.pull-right
-                            tr
-                                td: span.cs-qa-num 1
-                                td: +input('faq-q-en-1', 'text', 'Вопрос')
-                                td: +input('faq-r-en-1', 'text', 'Ответ')
-                                td: +button-icon('faq-d-en-1', 'remove').btn-primary.pull-right
-                            tr
-                                td: span.cs-qa-num 2
-                                td: +input('faq-q-en-2', 'text', 'Вопрос')
-                                td: +input('faq-r-en-2', 'text', 'Ответ')
-                                td: +button-icon('faq-d-en-2', 'remove').btn-primary.pull-right
-                            tr
-                                td: span.cs-qa-num 3
-                                td: +input('faq-q-en-3', 'text', 'Вопрос')
-                                td: +input('faq-r-en-3', 'text', 'Ответ')
-                                td: +button-icon('faq-d-en-3', 'remove').btn-primary.pull-right
+                        .panel.panel-primary
+                            .panel-heading Детальная информация
+                            .panel-body
+                                +input('video-en', 'file', '', 'Видеоролик').cs-video-input
+                                br
+                                h5: strong Презентация проекта
+                                // TODO CKEditor 4
+                                p TODO CKEditor 4
 
-                hr
-                +button('save-en', 'Сохранить без публикации').btn-primary
-                +button('pub-en', 'Опубликовать').btn-primary.pull-right
-                .clearfix
+                        .panel.panel-primary
+                            .panel-heading
+                                .form-inline
+                                    | Вопрос-Ответ
+                                    +chechbox('text', true).pull-right
+                                        em  Не использовать
+                            .panel-body
+                                table.table.cs-faq-table
+                                    tr
+                                        th #
+                                        th Вопрос
+                                        th Ответ
+                                        th: +button-icon('add-faq-en', 'plus').btn-primary.pull-right
+                                    tr
+                                        td: span.cs-qa-num 1
+                                        td: +input('faq-q-en-1', 'text', 'Вопрос')
+                                        td: +input('faq-r-en-1', 'text', 'Ответ')
+                                        td: +button-icon('faq-d-en-1', 'remove').btn-primary.pull-right
+                                    tr
+                                        td: span.cs-qa-num 2
+                                        td: +input('faq-q-en-2', 'text', 'Вопрос')
+                                        td: +input('faq-r-en-2', 'text', 'Ответ')
+                                        td: +button-icon('faq-d-en-2', 'remove').btn-primary.pull-right
+                                    tr
+                                        td: span.cs-qa-num 3
+                                        td: +input('faq-q-en-3', 'text', 'Вопрос')
+                                        td: +input('faq-r-en-3', 'text', 'Ответ')
+                                        td: +button-icon('faq-d-en-3', 'remove').btn-primary.pull-right
+
+                        hr
+                        +button('save-en', 'Сохранить без публикации').btn-primary
+                        +button('pub-en', 'Опубликовать').btn-primary.pull-right
+                        .clearfix
+
+                    +tab-panel('lang-de')
+                        //
+                    +tab-panel('lang-fr')
+                        //
+                    +tab-panel('lang-ru')
+                        //
+                    +tab-panel('lang-ch')
+                        //
+                    +tab-panel('lang-ar')
+                        //
+
         .row.cs-form-all
             .col-md-8.col-md-offset-2
                 hr
-                +button('pub-all', 'Опубликовать (все языки)').btn-primary.pull-right
+                +button('pub-all', 'Опубликовать - все языки').btn-xs.btn-primary.pull-right
                 .clearfix
 
 

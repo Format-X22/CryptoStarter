@@ -1,15 +1,5 @@
 extends ../../components/skeleton
 
-mixin lang-tabs(prefix)
-    .col-md-1
-        ul#lang-tabs-present.nav.nav-pills.nav-stacked
-            +tab(prefix + '-en', 'ENG').active
-            +tab(prefix + '-de', 'DE')
-            +tab(prefix + '-fr', 'FR')
-            +tab(prefix + '-ru', 'РУС')
-            +tab(prefix + '-ch', '中文')
-            +tab(prefix + '-ar', 'لعربية')
-
 block head
     // TODO
 
@@ -54,10 +44,10 @@ block body
             .tab-content.cs-content
                 +tab-panel('present').cs-content-inner.active
                     .row
-                        +lang-tabs('present')
+                        +lang-tabs-column('present-lang')
                         .col-md-11
                             .tab-content
-                                +tab-panel('present-en').active
+                                +tab-panel('present-lang-en').active
                                     .row
                                         .col-md-8
                                             | EN Большое объемное описание проекта с картинками
@@ -117,31 +107,31 @@ block body
                                                     li по всему миру - 10.10.2018
                                                 hr
                                                 +button('buy-4', 'Купить').btn-primary.btn-block
-                                +tab-panel('present-de')
+                                +tab-panel('present-lang-de')
                                     .row
                                         .col-md-8
                                             | DE Большое объемное описание проекта с картинками
                                         .col-md-4
                                             h4 Поддержи проект
-                                +tab-panel('present-fr')
+                                +tab-panel('present-lang-fr')
                                     .row
                                         .col-md-8
                                             | FR Большое объемное описание проекта с картинками
                                         .col-md-4
                                             h4 Поддержи проект
-                                +tab-panel('present-ru')
+                                +tab-panel('present-lang-ru')
                                     .row
                                         .col-md-8
                                             | RU Большое объемное описание проекта с картинками
                                         .col-md-4
                                             h4 Поддержи проект
-                                +tab-panel('present-ch')
+                                +tab-panel('present-lang-ch')
                                     .row
                                         .col-md-8
                                             | CH Большое объемное описание проекта с картинками
                                         .col-md-4
                                             h4 Поддержи проект
-                                +tab-panel('present-ar')
+                                +tab-panel('present-lang-ar')
                                     .row
                                         .col-md-8
                                             | AR Большое объемное описание проекта с картинками
@@ -150,7 +140,7 @@ block body
 
                 +tab-panel('faq').cs-content-inner
                     .row
-                        +lang-tabs('faq')
+                        +lang-tabs-column('faq-lang')
                         .col-md-11.cs-faq-container.cs-no-left-padding
                             .tab-content.cs-no-left-padding
                                 +tab-panel('faq-en').active.cs-no-left-padding
@@ -258,7 +248,7 @@ block body
 
                 +tab-panel('news').cs-content-inner
                     .row
-                        +lang-tabs('news')
+                        +lang-tabs-column('news')
                         .col-md-6.col-md-offset-3
                             .tab-content
                                 +tab-panel('news-en').active
