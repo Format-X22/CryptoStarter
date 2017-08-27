@@ -1,10 +1,114 @@
 extends ../../components/skeleton
 
 block head
-    //
+    // TODO
+
+    link(href='css/profile.css' rel='stylesheet')
 
 block body
-    //
-
+    .container
+        .row
+            .col-md-8.col-md-offset-2
+                h1 Oleg Pavlov
+        .row
+            .col-md-3.col-md-offset-2
+                img.cs-photo(src='img/team/oleg.jpg')
+            .col-md-5
+                p Описание человека о себе, особо актуально для всяких разных запускаторов проектов
+        .row
+            .col-md-8.col-md-offset-2
+                hr
+                .text-center
+                    +button-with-icon('change-about', 'Редактировать профиль', 'user').btn-primary
+                    +button-with-icon('change-security', 'Настройки безопасности', 'lock').btn-primary
+                    +button-with-icon('create-project', 'Создать проект', 'plus').btn-primary
+                hr
+        .row
+            .col-md-8.col-md-offset-2
+                #change-about-form.well.hidden
+                    +input('user-name', 'text', 'Имя', 'Ваше имя')
+                    +textarea(
+                        'user-description',
+                        'В случае любви к анонимность - оставьте поле пустым',
+                        'Ваш рассказ о себе'
+                    )
+                    +input('user-photo', 'file', '', 'Ваше фото')
+                    hr
+                    +button('save-about', 'Сохранить').pull-right.btn-primary
+                    +button('cancel-about', 'Отменить').pull-right.cs-fix-btn-margin
+                    .clearfix
+                #change-security-form.well.hidden
+                    h5: strong Смена почты
+                    +input('new-email', 'email', 'Новая почта')
+                    +button('change-email', 'Сохранить').pull-right.btn-primary
+                    .clearfix
+                    hr
+                    h5: strong Смена пароля
+                    +input('current-pass', 'password', 'Текущий пароль')
+                    +input('new-pass', 'password', 'Новый пароль')
+                    +input('new-pass2', 'password', 'Новый пароль ещё раз')
+                    +button('change-password', 'Сохранить').pull-right.btn-primary
+                    .clearfix
+                    hr
+                    h5: strong Двухфакторная авторизация
+                    p TODO
+                    // TODO
+                    hr
+                    +button('close-security', 'Закрыть').pull-right
+                    .clearfix
+        .row
+            .col-md-8.col-md-offset-2
+                h3 Проекты
+                table.table
+                    tr
+                        th #
+                        th Проект
+                        th Описание
+                        th
+                    tr
+                        td 1
+                        td Всемирный атлас кофе
+                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td
+                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary
+                    tr
+                        td 2
+                        td Всемирный атлас кофе
+                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td
+                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary
+                    tr
+                        td 3
+                        td Всемирный атлас кофе
+                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td
+                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary
+                h3 Проспонсированно
+                table.table
+                    tr
+                        th #
+                        th Проект
+                        th Описание
+                    tr
+                        td 1
+                        td Всемирный атлас кофе
+                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                    tr
+                        td 2
+                        td Всемирный атлас кофе
+                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                    tr
+                        td 3
+                        td Всемирный атлас кофе
+                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                    tr
+                        td 4
+                        td Всемирный атлас кофе
+                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                    tr
+                        td 5
+                        td Всемирный атлас кофе
+                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        
 block scripts
     //

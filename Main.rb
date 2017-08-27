@@ -64,7 +64,7 @@ Dir['locale/*'].each do |path|
 end
 
 get '/' do
-	page 'index', locale.en
+	page 'profile', locale.en
 end
 
 get '/de' do
