@@ -81,7 +81,7 @@ contract DividendsEngine {
      * @notice Receive dividends for investors.
      * @return amount IDEA tokens amount
      **/
-    function receiveDividends(uint amount) private {
+    function receiveDividends(uint amount) internal {
         // TODO
     }
 }
