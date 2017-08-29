@@ -11,6 +11,7 @@ contract DividendsEngine {
     }
     Deposit[] internal investors;
     mapping(address => uint) internal investorsMap;
+    uint private reserve = 0; // Save tokens for next dividends receive
 
     /**
      * @notice Fire on transfer IDEA tokens to personal dividends account.
@@ -125,6 +126,30 @@ contract DividendsEngine {
      * @return amount IDEA tokens amount
      **/
     function receiveDividends(uint amount) internal {
-        // TODO
+        uint total = reserve;
+        address[] currentInvestors;
+
+        for(uint i = 0; i < investors.length; i++) {
+            Deposit current = investors[i];
+
+            if (current.amount > minInvest) {
+                currentInvestors.push(current.person);
+                total += current.amount;
+            }
+        }
+
+        for(uint i = 0; i < currentInvestors.length; i++) {
+            address person = currentInvestors[i];
+            uint fullAmount = investorsMap[person].amount;
+            uint forReserve = total % amount;
+            uint amount = (total - forReserve) / fullAmount;
+
+            reserve += forReserve;
+            investorsMap[person].amount += amount;
+
+            ReceiveDividends(person, amount);
+        }
+
+        TotalReceiveDividends(total - saved);
     }
 }
