@@ -16,14 +16,6 @@ contract IdeaCoin is DividendsEngine {
     // Events
     event Transfer(address indexed from, address indexed to, uint value);
 
-    // Dividends data
-    struct Deposit {
-        address person;
-        uint count;
-    }
-    Deposit[] private investors;
-    mapping(address => uint) private investorsMap;
-
     // Constructor
     function IdeaCoin() {
         owner = msg.sender;

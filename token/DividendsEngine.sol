@@ -2,6 +2,13 @@ pragma solidity ^0.4.16;
 
 contract DividendsEngine {
 
+    struct Deposit {
+        address person;
+        uint count;
+    }
+    Deposit[] internal investors;
+    mapping(address => uint) internal investorsMap;
+
     /**
      * @notice Fire on receive dividends to person.
      * @param to Account of person, activated dividends engine.
