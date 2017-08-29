@@ -1,6 +1,8 @@
 pragma solidity ^0.4.16;
 
-contract IdeaCoin {
+import 'DividendsEngine';
+
+contract IdeaCoin is DividendsEngine {
     // Public constants
     string public constant name = 'IdeaCoin';
     string public constant symbol = 'IDEA';
@@ -23,11 +25,15 @@ contract IdeaCoin {
     mapping(address => uint) private investorsMap;
 
     // Constructor
-    function IdeaCoin () {
+    function IdeaCoin() {
         owner = msg.sender;
         balances[owner] = totalSupply;
     }
 
+    /**
+     * @notice Get IDEA tokens balance for account
+     * @return balance IDEA tokens balance.
+     **/
     function balanceOf(address target) external constant returns (uint) {
         return balances[target];
     }
