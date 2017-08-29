@@ -2,12 +2,29 @@ pragma solidity ^0.4.16;
 
 contract DividendsEngine {
 
+    mapping(address => uint) internal balances;
+
+    uint constant minInvest = 10000;
     struct Deposit {
         address person;
-        uint count;
+        uint amount;
     }
     Deposit[] internal investors;
     mapping(address => uint) internal investorsMap;
+
+    /**
+     * @notice Fire on transfer IDEA tokens to personal dividends account.
+     * @param target Account address
+     * @param amount Amount of tokens
+     **/
+    event TransferToDividendsAccount(address target, uint amount);
+
+    /**
+     * @notice Fire on transfer IDEA tokens from personal dividends account.
+     * @param target Account address
+     * @param amount Amount of tokens
+     **/
+    event TransferFromDividendsAccount(address target, uint amount);
 
     /**
      * @notice Fire on receive dividends to person.
@@ -23,65 +40,84 @@ contract DividendsEngine {
     event TotalReceiveDividends(uint value);
 
     /**
-     * @notice Activate receive dividends on `amount` tokens amount
-     * and hold this amount of your account. Minimal amount is
-     * 10 000 IDEA tokens. If you already activate this -
-     * your tokens will be add to current hold and increase your profit.
-     * Earned dividends will be combines with you hold tokens and increase
-     * your profit automatic. You can get back your hold tokens with
-     * dividends in any time in any amount.
+     * @notice Transfer `amount` IDEA tokens to personal dividends account.
+     * When amount of dividends account will be `minInvest` or more IDEA
+     * tokens - you start earn dividends from CryptoStarter platform.
+     * On receive dividends your profit will be add to dividends account.
+     * You can transfer your tokens with dividends from dividends
+     * account to main account in any time in any amount.
      * @param amount IDEA tokens amount
      **/
-    function startReceiveDividends(uint amount) {
-        // TODO
+    function transferToDividendsAccount(uint amount) {
+        require(balances[msg.sender] >= amount);
+        require(amount > 0);
+
+        if (investorsMap[msg.sender]) {
+            balances[msg.sender] -= amount;
+            investors[investorsMap[msg.sender] - 1].amount += amount;
+        } else {
+            var deposit = new Deposit(msg.sender, amount);
+
+            investors.push(deposit);
+            investorsMap[msg.sender] = investors.length; // No bug, just avoid 0.
+        }
+
+        TransferToDividendsAccount(msg.sender, amount);
     }
 
     /**
-     * @notice Activate receive dividends on all your tokens amount
-     * and hold this amount of your account. Minimal amount is
-     * 10 000 IDEA tokens. If you already activate this -
-     * your tokens will be add to current hold and increase your profit.
-     * Earned dividends will be combines with you hold tokens and increase
-     * your profit automatic. You can get back your hold tokens with
-     * dividends in any time in any amount.
+     * @notice Transfer all your IDEA tokens to personal dividends account.
+     * When amount of dividends account will be `minInvest` or more IDEA
+     * tokens - you start earn dividends from CryptoStarter platform.
+     * On receive dividends your profit will be add to dividends account.
+     * You can transfer your tokens with dividends from dividends
+     * account to main account in any time in any amount.
      * @param amount IDEA tokens amount
      **/
-    function startReceiveDividendsOnAll() {
-        // TODO
+    function transferAllToDividendsAccount() {
+        transferToDividendsAccount(balances[msg.sender]);
     }
 
     /**
-     * @notice Stop receive dividends for `amount` hold tokens amount
-     * and get back it in your account.
+     * @notice Transfer `amount` IDEA tokens from your personal dividends account.
+     * See 'transferToDividendsAccount' hint.
      * @param amount IDEA tokens amount
      **/
-    function stopReceiveDividends(uint amount) {
-        // TODO
+    function transferFromDividendsAccount(uint amount) {
+        require(balanceOfDividendsAccount() >= amount);
+
+        investors[investorsMap[msg.sender] - 1].amount -= amount;
+        balances[msg.sender] += amount;
+
+        TransferFromDividendsAccount(msg.sender, amount);
     }
 
     /**
-     * @notice Stop receive dividends for all your hold tokens amount
-     * and get back it in your account.
-     * @param amount IDEA tokens amount
+     * @notice Transfer all your IDEA tokens from your personal dividends account.
+     * See 'transferAllToDividendsAccount' hint.
      **/
-    function stopReceiveDividendsOnAll() {
-        // TODO
+    function transferAllFromDividendsAccount() {
+        transferFromDividendsAccount(balanceOfDividendsAccount());
     }
 
     /**
-     * @notice Get hold tokens amount used for receive dividends.
+     * @notice Get balance of your personal dividends account.
+     * See 'transferToDividendsAccount' hint.
      * @return amount IDEA tokens amount
      **/
-    function balanceOfHoldOnDividends() returns (uint) {
-        // TODO
+    function balanceOfDividendsAccount() returns (uint) {
+        return balanceOfDividendsAccountBy(msg.sender);
     }
 
     /**
-     * @notice Get hold tokens amount used for receive dividends by account address.
+     * @notice Get balance of `target` dividends account.
+     * See 'transferToDividendsAccount' hint.
      * @return amount IDEA tokens amount
      **/
-    function balanceOfHoldOnDividendsBy(address target) returns (uint) {
-        // TODO
+    function balanceOfDividendsAccountBy(address target) returns (uint) {
+        require(investorsMap[target]);
+    
+        return investors[investorsMap[target] - 1].amount;
     }
 
     /**

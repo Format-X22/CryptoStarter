@@ -11,7 +11,7 @@ contract IdeaCoin is DividendsEngine {
 
     // Token data
     address public owner;
-    mapping(address => uint) private balances;
+    mapping(address => uint) internal balances;
 
     // Events
     event Transfer(address indexed from, address indexed to, uint value);
