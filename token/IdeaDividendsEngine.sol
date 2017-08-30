@@ -1,6 +1,6 @@
 pragma solidity ^0.4.16;
 
-contract DividendsEngine {
+contract IdeaDividendsEngine {
 
     mapping(address => uint) internal balances;
 
@@ -121,6 +121,8 @@ contract DividendsEngine {
         return investors[investorsMap[target] - 1].amount;
     }
 
+
+    // TODO - fix bugs
     /**
      * @notice Receive dividends for investors.
      * @return amount IDEA tokens amount

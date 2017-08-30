@@ -1,13 +1,14 @@
 pragma solidity ^0.4.16;
 
-import 'DividendsEngine';
+import 'IdeaDividendsEngine';
+import 'IdeaProjectsEngine';
 
-contract IdeaCoin is DividendsEngine {
+contract IdeaCoin is IdeaDividendsEngine, IdeaProjectsEngine {
     // Public constants
     string public constant name = 'IdeaCoin';
     string public constant symbol = 'IDEA';
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH
-    uint public constant totalSupply = 600000000; // 600 000 000
+    uint public constant totalSupply = 600000000 * 1000000000000000000; // 600 000 000 tokens
 
     // Token data
     address public owner;
