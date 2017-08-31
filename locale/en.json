@@ -96,7 +96,16 @@
     "gregor_name": "Gregor Steiner",
     "gregor_description": "Software Engineer.<br> Expert in scalable systems architecture and in embedded systems. Blockchain enthusiast.",
     "ostap_name": "Ostap Chervak",
-    "ostap_description": "Software Engineer.<br> Python JS expert, systems architect. Decentralized tech enthusiast."
+    "ostap_description": "Software Engineer.<br> Python JS expert, systems architect. Decentralized tech enthusiast.",
+
+    "oliver_name": "Oliver Tatzber",
+    "oliver_description": "Test and QA engineer.<br> Product QA expert.",
+    "diego_name": "Diego Williams",
+    "diego_description": "UX adviser, designer, developer.<br> UI and User Experience expert, frontend developer.",
+    "vladislav_name": "Vladislav Dyachenko",
+    "vladislav_description": "Software Engineer.<br> Python, Ethereum/Solidity expert, dapps developer, decentralized tech enthusiast.",
+    "sergey_name": "Sergey Antonov",
+    "sergey_description": "Software Engineer.<br> JS, Elixir, Phoenix, Ethereum/Solidity expert, decentralized tech enthusiast."
   },
   "roadmap": {
     "start": {
