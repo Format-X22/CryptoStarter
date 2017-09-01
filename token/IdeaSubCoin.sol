@@ -9,9 +9,21 @@ import 'IdeaBasicCoin';
  **/
 contract IdeaSubCoin is IdeaBasicCoin {
 
-    // Базовая информация
+    /**
+     * @notice Названия продукта (название монеты).
+     **/
     string public name;
+
+    /**
+     * @notice Аббривеатура продукта (аббривеатура монеты).
+     **/
     string public symbol;
+
+    /**
+     * @notice Мультипликатор размерности монеты.
+     * (В нашем случае нулевая так как дробление не уместно).
+     **/
+    uint8 public constant decimals = 0;
 
     /**
      * @notice Описание продукта.
@@ -127,14 +139,13 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @param Колчество, на которое необходимо увеличить лимит.
      **/
     function incLimit(uint _amount) public onlyProject {
-        require(limit > 0);
-        require(limit + _amount > limit);
+        limit.denyZero();
 
         if (limit == 0) {
             Limited();
         }
 
-        limit += _amount;
+        limit = limit.add(_amount);
 
         IncreaseLimit(_amount);
     }
@@ -144,10 +155,9 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @param Количество, на которое необходимо уменьшить лимит.
      **/
     function decLimit(uint _amount) public onlyProject {
-        require(limit > 0);
-        require(limit - _amount < limit);
+        limit.denyZero();
 
-        limit -= _amount;
+        limit = limit.sub(_amount);
 
         DecreaseLimit(_amount);
 
@@ -169,16 +179,15 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @param Количество токенов.
      **/
     function buy(address _account, uint _amount) public onlyProject {
-        require(supply + _amount > supply);
+        uint total = supply.add(_amount);
 
         if (limit != 0) {
-            require(supply + _amount < limit);
+            require(total <= limit);
         }
 
-        require(balances[_account] + _amount > balances[_account]);
-
-        totalSupply += _amount;
-        balances[_account] += _amount;
+        totalSupply = totalSupply.add(_amount);
+        balances[_account] = balances[_account].add(_amount);
+        tryCreateAccount(_account);
 
         Buy(_account, _amount);
     }
@@ -189,8 +198,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @param Адрес физической доставки.
      **/
     function setShipping(address _account, string _shipping) public onlyProject {
-        require(_account);
-        require(_shipping.length > 0);
+        _shipping.length.denyZero();
     
         shipping[_account] = _shipping;
     }
