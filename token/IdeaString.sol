@@ -3,14 +3,14 @@ pragma solidity ^0.4.16;
 /**
  * @notice Расширение типа string.
  **/
-contract IdeaString {
+library IdeaString {
 
     /**
      * @notice Активное вычисление длины строки.
      * @param str Исходная строка.
      * @return length Длина строки.
      **/
-    function length(string str) returns (uint length) {
+    function length(string str) constant internal returns (uint length) {
         for (uint i = 0; i < bytes(str).length; i++) {
             if (str[i] >> 7 == 0) {
                 i += 1;
@@ -32,7 +32,7 @@ contract IdeaString {
      * @notice Запрещаем длинну строки равную нулю.
      * @param str Исходная строка.
      **/
-    function denyEmpty(string str) {
+    function denyEmpty(string str) constant internal {
         require(str.length() > 0);
     }
 }
