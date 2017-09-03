@@ -69,7 +69,7 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @param _owner Аккаунт.
      * @return balance Баланс.
      **/
-    function balanceOf(address _owner) constant returns (uint balance) {
+    function balanceOf(address _owner) constant public returns (uint balance) {
         return balances[_owner];
     }
 
@@ -79,7 +79,7 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @param _value Количество.
      * @return success Результат.
      **/
-    function transfer(address _to, uint _value) returns (bool success) {
+    function transfer(address _to, uint _value) public returns (bool success) {
         _to.denyZero();
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -99,7 +99,7 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @param _value Количество.
      * @return success Результат.
      **/
-    function transferFrom(address _from, address _to, uint _value) returns (bool success) {
+    function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
         _to.denyZero();
 
         uint _allowance = allowed[_from][msg.sender];
@@ -120,7 +120,7 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @param _value Значение.
      * @return success Результат.
      **/
-    function approve(address _spender, uint _value) returns (bool success) {
+    function approve(address _spender, uint _value) public returns (bool success) {
         require((_value == 0) || (allowed[msg.sender][_spender] == 0));
 
         allowed[msg.sender][_spender] = _value;
@@ -136,7 +136,7 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @param _spender Получатель.
      * @return remaining Количество.
      **/
-    function allowance(address _owner, address _spender) constant returns (uint remaining) {
+    function allowance(address _owner, address _spender) constant public returns (uint remaining) {
         return allowed[_owner][_spender];
     }
 
@@ -146,7 +146,7 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @param _addedValue Значение.
      * @return success Результат.
      **/
-    function increaseApproval(address _spender, uint _addedValue) returns (bool success) {
+    function increaseApproval(address _spender, uint _addedValue) public returns (bool success) {
         allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
 
         Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
@@ -160,7 +160,7 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @param _subtractedValue Значение.
      * @return success Результат.
      **/
-    function decreaseApproval(address _spender, uint _subtractedValue) returns (bool success) {
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool success) {
         uint oldValue = allowed[msg.sender][_spender];
 
         if (_subtractedValue > oldValue) {

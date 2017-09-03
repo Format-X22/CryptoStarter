@@ -32,7 +32,7 @@ contract IdeaDividendsEngine {
      * быть нацело поделена между всеми участниками паевого фонда.
      * Эта сумма суммируется со следующим распределением дивидендов.
      **/
-    uint nextRoundReserve;
+    uint public nextRoundReserve;
 
     /**
      * @notice Совершен перевод с основного аккаунта на паевой.
@@ -72,7 +72,7 @@ contract IdeaDividendsEngine {
      * @param _owner Аккаунт.
      * @return balance Количество.
      **/
-    function pieBalanceOf(address _owner) public constant returns (uint balance) {
+    function pieBalanceOf(address _owner) constant public returns (uint balance) {
         return pieBalances[_owner];
     }
 
@@ -80,7 +80,7 @@ contract IdeaDividendsEngine {
      * @notice Получить общее количество токенов в паевом фонде. 
      * @return supply Количество.
      **/
-    function pieCurrentSupply() public constant returns (uint supply) {
+    function pieCurrentSupply() constant public returns (uint supply) {
         // TODO
     }
 
