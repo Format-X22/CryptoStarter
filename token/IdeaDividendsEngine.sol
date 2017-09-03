@@ -92,7 +92,7 @@ contract IdeaDividendsEngine {
      * @param _amount Количество.
      * @return success Результат.
      **/
-    function transferToPie(_amount) public returns (bool success) {
+    function transferToPie(uint _amount) public returns (bool success) {
         // TODO
     }
 
@@ -115,7 +115,7 @@ contract IdeaDividendsEngine {
      * @param _amount Количество.
      * @return success Результат.
      **/
-    function transferFromPie(_amount) public returns (bool success) {
+    function transferFromPie(uint _amount) public returns (bool success) {
         // TODO
     }
 
