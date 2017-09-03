@@ -35,6 +35,6 @@ library IdeaString {
      * @param str Исходная строка.
      **/
     function denyEmpty(string str) constant internal {
-        require(length(str) > 0);
+        require(bytes(str).length > 0);
     }
 }
