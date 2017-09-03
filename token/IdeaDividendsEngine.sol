@@ -1,5 +1,8 @@
 pragma solidity ^0.4.16;
 
+/**
+ * @notice Механизм распределения дивидендов.
+ **/
 contract IdeaDividendsEngine {
 
     mapping(address => uint) internal balances;
@@ -14,42 +17,41 @@ contract IdeaDividendsEngine {
     uint private reserve = 0; // Save tokens for next dividends receive
 
     /**
-     * @notice Fire on transfer IDEA tokens to personal dividends account.
-     * @param target Account address
-     * @param amount Amount of tokens
+     * @notice Токены переведены с основного аккаунта на паевой аккаунт.
+     * @param target Аккаунт.
+     * @param amount Количество.
      **/
-    event TransferToDividendsAccount(address target, uint amount);
+    event TransferToPieAccount(address target, uint amount);
 
     /**
-     * @notice Fire on transfer IDEA tokens from personal dividends account.
-     * @param target Account address
-     * @param amount Amount of tokens
+     * @notice Токены переведены с паевого аккаунта на основной аккаунт.
+     * @param target Аккаунт.
+     * @param amount Количество.
      **/
-    event TransferFromDividendsAccount(address target, uint amount);
+    event TransferFromPieAccount(address target, uint amount);
 
     /**
-     * @notice Fire on receive dividends to person.
-     * @param to Account of person, activated dividends engine.
-     * @param value Amount of dividends.
+     * @notice Дивиденды начислены.
+     * @param to Аккаунт.
+     * @param value Количество.
      **/
     event ReceiveDividends(address indexed to, uint value);
 
     /**
-     * @notice Fire on receive dividends to all.
-     * @param value Amount of total dividends.
+     * @notice Дивиденды начислены всем.
+     * @param value Количество.
      **/
     event TotalReceiveDividends(uint value);
 
     /**
-     * @notice Transfer `amount` IDEA tokens to personal dividends account.
-     * When amount of dividends account will be `minInvest` or more IDEA
-     * tokens - you start earn dividends from CryptoStarter platform.
-     * On receive dividends your profit will be add to dividends account.
-     * You can transfer your tokens with dividends from dividends
-     * account to main account in any time in any amount.
-     * @param amount IDEA tokens amount
+     * @notice Перевод токенов с основного аккаунта на паевой аккаунт.
+     * Для включения механизма начисления на счету паевого аккаунта
+     * должно быть не менее 10 000 токенов. Чем больше сумма - тем больший
+     * процент дивидендов будет начислен - по принципу паевого фонда.
+     * Дивиденды будут начисляться на паевой аккаунт.
+     * @param amount Количество.
      **/
-    function transferToDividendsAccount(uint amount) {
+    function transferToPieAccount(uint amount) {
         require(balances[msg.sender] >= amount);
         require(amount > 0);
 
@@ -63,70 +65,60 @@ contract IdeaDividendsEngine {
             investorsMap[msg.sender] = investors.length; // No bug, just avoid 0.
         }
 
-        TransferToDividendsAccount(msg.sender, amount);
+        TransferToPieAccount(msg.sender, amount);
     }
 
     /**
-     * @notice Transfer all your IDEA tokens to personal dividends account.
-     * When amount of dividends account will be `minInvest` or more IDEA
-     * tokens - you start earn dividends from CryptoStarter platform.
-     * On receive dividends your profit will be add to dividends account.
-     * You can transfer your tokens with dividends from dividends
-     * account to main account in any time in any amount.
-     * @param amount IDEA tokens amount
+     * Аналог transferToPieAccount, но в данном случае будут
+     * переведены все средсва что есть на счету.
      **/
-    function transferAllToDividendsAccount() {
-        transferToDividendsAccount(balances[msg.sender]);
+    function transferAllToPieAccount() {
+        transferToPieAccount(balances[msg.sender]);
     }
 
     /**
-     * @notice Transfer `amount` IDEA tokens from your personal dividends account.
-     * See 'transferToDividendsAccount' hint.
-     * @param amount IDEA tokens amount
+     * @notice Перевод токенов с паевого аккаунта на основной аккаунт.
+     * Если на счету паевого аккаунта останется меньше 10 000 токенов -
+     * начисление дивидендов будет остановлено.
+     * @param amount Количество.
      **/
-    function transferFromDividendsAccount(uint amount) {
-        require(balanceOfDividendsAccount() >= amount);
+    function transferFromPieAccount(uint amount) {
+        require(balanceOfPieAccount() >= amount);
 
         investors[investorsMap[msg.sender] - 1].amount -= amount;
         balances[msg.sender] += amount;
 
-        TransferFromDividendsAccount(msg.sender, amount);
+        TransferFromPieAccount(msg.sender, amount);
     }
 
     /**
-     * @notice Transfer all your IDEA tokens from your personal dividends account.
-     * See 'transferAllToDividendsAccount' hint.
+     * Аналог transferToPieAccount, но в данном случае будут
+     * переведены все средсва что есть на счету.
      **/
-    function transferAllFromDividendsAccount() {
-        transferFromDividendsAccount(balanceOfDividendsAccount());
+    function transferFromPieAccount() {
+        transferFromPieAccount(balanceOfPieAccount());
     }
 
     /**
-     * @notice Get balance of your personal dividends account.
-     * See 'transferToDividendsAccount' hint.
-     * @return amount IDEA tokens amount
+     * @notice Получение текущего баланса паевого аккаунта.
+     * @return amount Количество.
      **/
-    function balanceOfDividendsAccount() returns (uint) {
-        return balanceOfDividendsAccountBy(msg.sender);
+    function balanceOfPieAccount() returns (uint amount) {
+        return balanceOfPieAccountBy(msg.sender);
     }
 
     /**
-     * @notice Get balance of `target` dividends account.
-     * See 'transferToDividendsAccount' hint.
-     * @return amount IDEA tokens amount
+     * @notice Получение текущего баланса паевого аккаунта по указанному адресу.
+     * @param target Целевой адрес.
+     * @return amount Количество.
      **/
-    function balanceOfDividendsAccountBy(address target) returns (uint) {
+    function balanceOfPieAccountBy(address target) returns (uint amount) {
         require(investorsMap[target]);
     
         return investors[investorsMap[target] - 1].amount;
     }
 
-
     // TODO - fix bugs
-    /**
-     * @notice Receive dividends for investors.
-     * @return amount IDEA tokens amount
-     **/
     function receiveDividends(uint amount) internal {
         uint total = reserve;
         address[] currentInvestors;

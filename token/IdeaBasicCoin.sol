@@ -51,24 +51,24 @@ contract IdeaBasicCoin {
 
     /**
      * @notice Совершен перевод.
-     * @param Отправитель.
-     * @param Получатель.
-     * @param Количество.
+     * @param from Отправитель.
+     * @param to Получатель.
+     * @param value Количество.
      **/
     event Transfer(address indexed from, address indexed to, uint value);
 
     /**
      * @notice Разрешен расход.
-     * @param Владелец.
-     * @param Получатель.
-     * @param Количество.
+     * @param owner Владелец.
+     * @param spender Получатель.
+     * @param value Количество.
      **/
     event Approval(address indexed owner, address indexed spender, uint value);
 
     /**
      * @notice Проверить баланс аккаунта.
-     * @param Аккаунт.
-     * @return Баланс.
+     * @param _owner Аккаунт.
+     * @return balance Баланс.
      **/
     function balanceOf(address _owner) constant returns (uint balance) {
         return balances[_owner];
@@ -76,9 +76,9 @@ contract IdeaBasicCoin {
 
     /**
      * @notice Совершить перевод на указанный адрес.
-     * @param Получатель.
-     * @param Количество.
-     * @return Результат.
+     * @param _to Получатель.
+     * @param _value Количество.
+     * @return success Результат.
      **/
     function transfer(address _to, uint _value) returns (bool success) {
         require(_to != address(0));
@@ -95,10 +95,10 @@ contract IdeaBasicCoin {
     /**
      * @notice Совершить перевод с одного адреса на другой.
      * Для этого дейтвия сначала должен быть разрешен расход.
-     * @param Отправитель.
-     * @param Получатель.
-     * @param Количество.
-     * @return Результат.
+     * @param _from Отправитель.
+     * @param _to Получатель.
+     * @param _value Количество.
+     * @return success Результат.
      **/
     function transferFrom(address _from, address _to, uint _value) returns (bool success) {
         require(_to != address(0));
@@ -117,9 +117,9 @@ contract IdeaBasicCoin {
 
     /**
      * @notice Разрешить расход указанному адресу.
-     * @param Получатель.
-     * @param Значение.
-     * @return Результат.
+     * @param _spender Получатель.
+     * @param _value Значение.
+     * @return success Результат.
      **/
     function approve(address _spender, uint _value) returns (bool success) {
         require((_value == 0) || (allowed[msg.sender][_spender] == 0));
@@ -133,9 +133,9 @@ contract IdeaBasicCoin {
 
     /**
      * @notice Проверить количество, разрешенное к расходу.
-     * @param Владелец.
-     * @param Получатель.
-     * @return Количество.
+     * @param _owner Владелец.
+     * @param _spender Получатель.
+     * @return remaining Количество.
      **/
     function allowance(address _owner, address _spender) constant returns (uint remaining) {
         return allowed[_owner][_spender];
@@ -143,9 +143,9 @@ contract IdeaBasicCoin {
 
     /**
      * @notice Увеличить разрешенный расход.
-     * @param Получатель.
-     * @param Значение.
-     * @return Результат.
+     * @param _spender Получатель.
+     * @param _addedValue Значение.
+     * @return success Результат.
      **/
     function increaseApproval(address _spender, uint _addedValue) returns (bool success) {
         allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
@@ -157,9 +157,9 @@ contract IdeaBasicCoin {
 
     /**
      * @notice Уменьшить разрешенный расход.
-     * @param Получатель.
-     * @param Значение.
-     * @return Результат.
+     * @param _spender Получатель.
+     * @param _subtractedValue Значение.
+     * @return success Результат.
      **/
     function decreaseApproval(address _spender, uint _subtractedValue) returns (bool success) {
         uint oldValue = allowed[msg.sender][_spender];
@@ -177,12 +177,12 @@ contract IdeaBasicCoin {
 
     /**
      * @notice Создание аккаунта в случае если такой адрес ещё не зарегистрирован.
-     * @param Адрес.
+     * @param _account Адрес.
      **/
     function tryCreateAccount(address _account) internal {
         if (balances[_account] == 0 && !accountsMap[_account]) {
             accounts.push(_account);
-            accountsUsed[_account] = true;
+            accountsMap[_account] = true;
         }
     }
 }

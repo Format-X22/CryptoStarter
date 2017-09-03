@@ -28,7 +28,7 @@ contract IdeaCoin is IdeaBasicCoin, IdeaDividendsEngine, IdeaProjectsEngine, Ide
     /**
      * @notice Общее количество монет.
      **/
-    uint public constant totalSupply = 600000000 * 100000000; // 600 000 000 IDEA
+    uint public constant totalSupply = 600000000; // 600 000 000 IDEA
 
     /**
      * @notice Владелец IdeaCoin.
@@ -41,6 +41,7 @@ contract IdeaCoin is IdeaBasicCoin, IdeaDividendsEngine, IdeaProjectsEngine, Ide
     function IdeaCoin() {
         owner = msg.sender;
         balances[owner] = totalSupply;
+        totalSupply = totalSupply ** decimals;
         tryCreateAccount(msg.sender);
     }
 }

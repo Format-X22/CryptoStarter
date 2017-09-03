@@ -7,11 +7,11 @@ library IdeaUint {
 
     /**
      * @notice Безопасное сложение.
-     * @param Исходное число.
-     * @param Модификатор.
-     * @return Результат.
+     * @param a Исходное число.
+     * @param b Модификатор.
+     * @return result Результат.
      **/
-    function add(uint a, uint b) internal returns (uint result) {
+    function add(uint a, uint b) constant internal returns (uint result) {
         uint c = a + b;
 
         assert(c >= a);
@@ -21,11 +21,11 @@ library IdeaUint {
 
     /**
      * @notice Безопасное вычитание.
-     * @param Исходное число.
-     * @param Модификатор.
-     * @return Результат.
+     * @param a Исходное число.
+     * @param b Модификатор.
+     * @return result Результат.
      **/
-    function sub(uint a, uint b) internal returns (uint result) {
+    function sub(uint a, uint b) constant internal returns (uint result) {
         uint c = a - b;
 
         assert(b <= a);
@@ -35,11 +35,11 @@ library IdeaUint {
 
     /**
      * @notice Безопасное умножение.
-     * @param Исходное число.
-     * @param Модификатор.
-     * @return Результат.
+     * @param a Исходное число.
+     * @param b Модификатор.
+     * @return result Результат.
      **/
-    function mul(uint a, uint b) internal returns (uint result) {
+    function mul(uint a, uint b) constant internal returns (uint result) {
         uint c = a * b;
 
         assert(a == 0 || c / a == b);
@@ -49,11 +49,11 @@ library IdeaUint {
 
     /**
      * @notice Безопасное деление.
-     * @param Исходное число.
-     * @param Модификатор.
-     * @return Результат.
+     * @param a Исходное число.
+     * @param b Модификатор.
+     * @return result Результат.
      **/
-    function div(uint a, uint b) internal returns (uint result) {
+    function div(uint a, uint b) constant internal returns (uint result) {
         uint c = a / b;
 
         // No 'assert' for current Solidity version.
@@ -63,9 +63,9 @@ library IdeaUint {
 
     /**
      * @notice Запрещаем числу быть нулем.
-     * @param Исходное число.
+     * @param a Исходное число.
      **/
-    function denyZero(uint a) internal {
+    function denyZero(uint a) constant internal {
         require(a > 0);
     }
 }
