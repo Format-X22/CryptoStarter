@@ -1,28 +1,27 @@
 pragma solidity ^0.4.16;
 
-import 'IdeaUint';
+import './lib/IdeaTypeBind.sol';
 
 /**
  * @notice Базовая монета проекта.
  * Совместима с ERC20 стандартом.
  **/
-contract IdeaBasicCoin {
-    using IdeaUint for uint;
+contract IdeaBasicCoin is IdeaTypeBind {
 
     /**
      * @notice Имя монеты.
      **/
-    string public constant name;
+    string public name;
 
     /**
      * @notice Аббривеатура монеты.
      **/
-    string public constant symbol;
+    string public symbol;
 
     /**
      * @notice Мультипликатор размерности монеты.
      **/
-    uint8 public constant decimals;
+    uint8 public decimals;
 
     /**
      * @notice Общее количество монет.
@@ -81,7 +80,7 @@ contract IdeaBasicCoin {
      * @return success Результат.
      **/
     function transfer(address _to, uint _value) returns (bool success) {
-        require(_to != address(0));
+        _to.denyZero();
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -101,7 +100,7 @@ contract IdeaBasicCoin {
      * @return success Результат.
      **/
     function transferFrom(address _from, address _to, uint _value) returns (bool success) {
-        require(_to != address(0));
+        _to.denyZero();
 
         uint _allowance = allowed[_from][msg.sender];
 

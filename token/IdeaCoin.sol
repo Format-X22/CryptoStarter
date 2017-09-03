@@ -1,34 +1,14 @@
 pragma solidity ^0.4.16;
 
-import 'IdeaBasicCoin';
-import 'IdeaDividendsEngine';
-import 'IdeaProjectsEngine';
-import 'IdeaIco';
+import './IdeaBasicCoin.sol';
+import './IdeaDividendsEngine.sol';
+import './IdeaProjectsEngine.sol';
+import './IdeaIco.sol';
 
 /**
  * @notice IdeaCoin (IDEA) - непосредственно сама монета.
  **/
 contract IdeaCoin is IdeaBasicCoin, IdeaDividendsEngine, IdeaProjectsEngine, IdeaIco {
-
-    /**
-     * @notice Имя монеты.
-     **/
-    string public constant name = 'IdeaCoin';
-
-    /**
-     * @notice Аббривеатура монеты.
-     **/
-    string public constant symbol = 'IDEA';
-
-    /**
-     * @notice Мультипликатор размерности монеты.
-     **/
-    uint8 public constant decimals = 8;
-
-    /**
-     * @notice Общее количество монет.
-     **/
-    uint public constant totalSupply = 600000000; // 600 000 000 IDEA
 
     /**
      * @notice Владелец IdeaCoin.
@@ -39,9 +19,14 @@ contract IdeaCoin is IdeaBasicCoin, IdeaDividendsEngine, IdeaProjectsEngine, Ide
      * @notice Конструктор.
      **/
     function IdeaCoin() {
+        name = 'IdeaCoin';
+        symbol = 'IDEA';
+        decimals = 8;
+        uint supply = 600000000; // 600 000 000 IDEA
+        totalSupply = supply ** decimals;
+
         owner = msg.sender;
         balances[owner] = totalSupply;
-        totalSupply = totalSupply ** decimals;
         tryCreateAccount(msg.sender);
     }
 }

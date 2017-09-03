@@ -1,6 +1,6 @@
 pragma solidity ^0.4.16;
 
-import 'IdeaBasicCoin';
+import './IdeaBasicCoin.sol';
 
 /**
  * @notice Контракт саб-монеты IdeaCoin.
@@ -60,15 +60,15 @@ contract IdeaSubCoin is IdeaBasicCoin {
 
     /**
      * @notice Лимит продуктов, доступных к продаже, был увеличен.
-     * @param Колчество.
+     * @param amount Колчество.
      **/
-    event IncreaseLimit(uint _amount);
+    event IncreaseLimit(uint amount);
 
     /**
      * @notice Лимит продуктов, доступных к продаже, был уменьшен.
-     * @param Количество.
+     * @param amount Количество.
      **/
-    event DecreaseLimit(uint _amount);
+    event DecreaseLimit(uint amount);
 
     /**
      * @notice Теперь продукты ограничены в количестве.
@@ -83,8 +83,8 @@ contract IdeaSubCoin is IdeaBasicCoin {
     /**
      * @notice Произведена покупка токенов за IDEA токены.
      * Эвент возможен только в период первичных продаж.
-     * @param Аккаунт покупателя.
-     * @param Количество.
+     * @param account Аккаунт покупателя.
+     * @param amount Количество.
      **/
     event Buy(address account, uint amount);
 
@@ -106,11 +106,11 @@ contract IdeaSubCoin is IdeaBasicCoin {
         uint _price,
         uint _limit
     ) {
-        require(_owner);
-        require(_name);
-        require(_symbol);
-        require(_description);
-        require(_price);
+        _owner.denyZero();
+        _name.denyEmpty();
+        _symbol.denyEmpty();
+        _description.denyEmpty();
+        _price.denyZero();
 
         owner = _owner;
         name = _name;
@@ -123,7 +123,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
 
     // Отключаем возможность пересылать эфир на адрес контракта.
     function() payable {
-        throw;
+        revert();
     }
 
     /**
@@ -179,7 +179,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @param _amount Количество токенов.
      **/
     function buy(address _account, uint _amount) public onlyProject {
-        uint total = supply.add(_amount);
+        uint total = totalSupply.add(_amount);
 
         if (limit != 0) {
             require(total <= limit);
@@ -198,7 +198,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @param _shipping Адрес физической доставки.
      **/
     function setShipping(address _account, string _shipping) public onlyProject {
-        _shipping.length.denyZero();
+        _shipping.length().denyZero();
     
         shipping[_account] = _shipping;
     }
