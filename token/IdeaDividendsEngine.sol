@@ -6,6 +6,11 @@ pragma solidity ^0.4.16;
 contract IdeaDividendsEngine {
 
     /**
+     * @notice Получить общее количество токенов в паевом фонде.
+     **/
+    uint public pieSupply;
+
+    /**
      * @notice Минимальное количество IDEA токенов на паевом
      * аккаунте для получения дивидендов.
      **/
@@ -77,14 +82,6 @@ contract IdeaDividendsEngine {
     }
 
     /**
-     * @notice Получить общее количество токенов в паевом фонде. 
-     * @return supply Количество.
-     **/
-    function pieCurrentSupply() constant public returns (uint supply) {
-        // TODO
-    }
-
-    /**
      * @notice Перевод средств с основного аккаунта на паевой.
      * Для получения дивидендов баланс паевого аккаунта должен быть
      * больше чем 10 000 токенов. Дивиденды будут начисляться на
@@ -93,7 +90,12 @@ contract IdeaDividendsEngine {
      * @return success Результат.
      **/
     function transferToPie(uint _amount) public returns (bool success) {
-        // TODO
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        pieBalances[msg.sender] = pieBalances[msg.sender].add(_amount);
+
+        TransferToPie(msg.sender, _amount);
+
+        return true;
     }
 
     /**
@@ -104,7 +106,7 @@ contract IdeaDividendsEngine {
      * @return success Результат.
      **/
     function transferToPieAll() public returns (bool success) {
-        // TODO
+        return transferToPie(balances[msg.sender]);
     }
 
     /**
@@ -116,7 +118,12 @@ contract IdeaDividendsEngine {
      * @return success Результат.
      **/
     function transferFromPie(uint _amount) public returns (bool success) {
-        // TODO
+        pieBalances[msg.sender] = pieBalances[msg.sender].sub(_amount);
+        balances[msg.sender] = balances[msg.sender].add(_amount);
+
+        TransferFromPie(msg.sender, _amount);
+
+        return true;
     }
 
     /**
@@ -127,7 +134,7 @@ contract IdeaDividendsEngine {
      * @return success Результат.
      **/
     function transferFromPieAll() public returns (bool success) {
-        // TODO
+        return transferFromPie(pieBalances[msg.sender]);
     }
 
     /**
