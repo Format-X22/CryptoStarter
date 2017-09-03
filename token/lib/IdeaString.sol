@@ -8,23 +8,25 @@ library IdeaString {
     /**
      * @notice Активное вычисление длины строки.
      * @param str Исходная строка.
-     * @return length Длина строки.
+     * @return _length Длина строки.
      **/
-    function length(string str) constant internal returns (uint length) {
-        for (uint i = 0; i < bytes(str).length; i++) {
-            if (str[i] >> 7 == 0) {
+    function length(string str) constant internal returns (uint _length) {
+        bytes memory str_bytes = bytes(str);
+
+        for (uint i = 0; i < str_bytes.length; i++) {
+            if (str_bytes[i] >> 7 == 0) {
                 i += 1;
-            } else if (str[i] >> 5 == 0x6) {
+            } else if (str_bytes[i] >> 5 == 0x6) {
                 i += 2;
-            } else if (str[i] >> 4 == 0xE) {
+            } else if (str_bytes[i] >> 4 == 0xE) {
                 i += 3;
-            } else if (str[i] >> 3 == 0x1E) {
+            } else if (str_bytes[i] >> 3 == 0x1E) {
                 i += 4;
             } else {
                 i += 1; // Add +1 for safety
             }
 
-            length++;
+            _length++;
         }
     }
 
@@ -33,6 +35,6 @@ library IdeaString {
      * @param str Исходная строка.
      **/
     function denyEmpty(string str) constant internal {
-        require(str.length() > 0);
+        require(length(str) > 0);
     }
 }
