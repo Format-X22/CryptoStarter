@@ -14,7 +14,7 @@ contract IdeaDividendsEngine {
      * @notice Минимальное количество IDEA токенов на паевом
      * аккаунте для получения дивидендов.
      **/
-    uint16 public constant minAmountForDividends = 10000; // 10 000 IDEA
+    uint16 public constant minBalanceForDividends = 10000; // 10 000 IDEA
 
     /**
      * @notice Балансы паевых аккаунтов.
@@ -92,6 +92,7 @@ contract IdeaDividendsEngine {
     function transferToPie(uint _amount) public returns (bool success) {
         balances[msg.sender] = balances[msg.sender].sub(_amount);
         pieBalances[msg.sender] = pieBalances[msg.sender].add(_amount);
+        tryCreatePieAccount(msg.sender);
 
         TransferToPie(msg.sender, _amount);
 
@@ -142,6 +143,43 @@ contract IdeaDividendsEngine {
      * @param _amount Количество.
      **/
     function receiveDividends(uint _amount) internal {
-        // TODO
+        uint pieSize = nextRoundReserve;
+        uint[0] activatedAccounts;
+
+        nextRoundReserve = 0;
+
+        for (uint i = 0; i < pieAccounts.length; i += 1) {
+            var balance = pieBalances[pieAccounts[i]];
+
+            if (balance >= minBalanceForDividends ** decimals) {
+                pieSize = pieSize.add(balance);
+                activatedAccounts.push(pieAccounts[i]);
+            }
+        }
+
+        for (uint j = 0; j < activatedAccounts.length; j += 1) {
+            uint account = activatedAccounts[j];
+            uint reserve = (_amount * pieBalances[account]) % pieSize;
+            uint dividends = (_amount - reserve) * pieBalances[account] / pieSize;
+
+            nextRoundReserve = nextRoundReserve.add(reserve);
+            pieBalances[account] = pieBalances[account].add(dividends);
+
+            DividendsReceived(account, dividends);
+        }
+
+        TotalDividendsReceived(_amount - nextRoundReserve);
+        DividendsToNextRound(nextRoundReserve);
+    }
+
+    /**
+     * @notice Создание паевого аккаунта в случае если такой адрес ещё не зарегистрирован.
+     * @param _account Адрес.
+     **/
+    function tryCreatePieAccount(address _account) internal {
+        if (pieBalances[_account] == 0 && !pieAccountsMap[_account]) {
+            pieAccounts.push(_account);
+            pieAccountsMap[_account] = true;
+        }
     }
 }
