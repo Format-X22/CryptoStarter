@@ -144,7 +144,7 @@ contract IdeaDividendsEngine {
      **/
     function receiveDividends(uint _amount) internal {
         uint pieSize = nextRoundReserve;
-        uint[0] activatedAccounts;
+        uint[0] memory activatedAccounts;
 
         nextRoundReserve = 0;
 
