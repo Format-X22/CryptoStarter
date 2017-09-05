@@ -245,38 +245,43 @@ contract IdeaProject {
 
     /**
      * @notice Установка имени проекта.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name
      **/
-    function setName(string _name) {
+    function setName(string _name) public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Установка описания проекта.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _description
      **/
-    function setDescription(string _description) {
+    function setDescription(string _description) public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Установка значения неоходимых инвестиций.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _value
      **/
-    function setRequired(uint _value) {
+    function setRequired(uint _value) public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Установка значения времени сбора средств.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _days
      **/
-    function setRequiredDays(uint _days) {
+    function setRequiredDays(uint _days) public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Создания продукта, предлагаемого проектом.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name Имя продукта.
      * @param _symbol Символ продукта.
      * @param _description Описание продукта.
@@ -290,7 +295,7 @@ contract IdeaProject {
         string _description,
         uint _price,
         uint _limit
-    ) returns (address _productAddress) {
+    ) onlyState(States.Initial) public onlyEngine returns (address _productAddress) {
         // TODO
     }
 
@@ -299,7 +304,7 @@ contract IdeaProject {
      * @param _name Имя продукта.
      * @return _address Адрес продукта.
      **/
-    function getProductAddressByName(string _name) returns (address _address) {
+    function getProductAddressByName(string _name) constant public onlyEngine returns (address _address) {
         // TODO
     }
 
@@ -308,30 +313,33 @@ contract IdeaProject {
      * из склеенных имен продуктов, разделенных разделителем в виде вертикальной черы '|'.
      * @return _stringWithSplitter Результат.
      **/
-    function getAllProductsNames() returns (string _stringWithSplitter) {
+    function getAllProductsNames() constant public onlyEngine returns (string _stringWithSplitter) {
         // TODO
     }
 
     /**
      * @notice Уничтожить продукт.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _address Адрес продукта.
      **/
-    function destroyProduct(address _address) {
+    function destroyProduct(address _address) public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Уничтожить продукт по имени.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name Имя продукта.
      **/
-    function destroyProductByName(string _name) {
+    function destroyProductByName(string _name) public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Уничтожить все продукты.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyAllProducts() {
+    function destroyAllProducts() public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
@@ -339,6 +347,7 @@ contract IdeaProject {
      * @notice Создать этап работы.
      * Суммарно должно быть не более 10 этапов (`maxWorkStages`),
      * а также сумма процентов всех этапов должна быть равна 100%.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name Имя этапа.
      * @param _description Описание этапа.
      * @param _percent Процент средств от общего бюджета.
@@ -349,21 +358,23 @@ contract IdeaProject {
         string _description,
         uint _percent,
         uint _stageDays
-    ) {
+    ) public onlyState(States.Initial) {
         // TODO
     }
 
     /**
      * @notice Уничтожить последний созданный этап.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyLastStage() {
+    function destroyLastStage() public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Уничтожить все этапы.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyAllStages() {
+    function destroyAllStages() public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
@@ -371,28 +382,37 @@ contract IdeaProject {
      * @notice Перевести проект в состояние 'Coming'
      * и заблокировать возможность внесения изменений.
      **/
-    function markAsComingAndFreeze() {
+    function markAsComingAndFreeze() public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Запустить сбор средств.
+     * Остановить сбор будет нельзя. При успешном сборе проект перейдет
+     * в состояние начала работ и будут начислены средства за первый этап.
+     * В случае не сбора средств за необходимое время - проект будет закрыт,
+     * а средства вернуться на счета инвесторов.
      **/
-    function startFunding() {
+    function startFunding() public onlyState(States.Coming) onlyEngine {
         // TODO
     }
 
     /**
      * @notice Пометить текущий этап работ как выполненый.
+     * Это запустит очередной этап голосования за выдачу следующего
+     * транша средств для реализации следующего этапа работ.
+     * В случае если это последний этап - будет вызван метод 'projectDone'.
      **/
-    function stageDone() {
+    function stageDone() public onlyState(States.Workflow) onlyEngine {
         // TODO
     }
 
     /**
-     * @notice Пометить проект как завершенный.
+     * @notice Пометить проект как завершенный. Проект должен находится
+     * на последнем этапе работ. Также это означает что стартует доставка
+     * готовой продукции.
      **/
-    function projectDone() {
+    function projectDone() public onlyState(States.Workflow) onlyEngine {
         // TODO
     }
 
@@ -400,7 +420,7 @@ contract IdeaProject {
      * @notice Вывести средства, полученные на текущий этап работы.
      * Средства поступят на счет владельца проекта.
      **/
-    function withdraw() {
+    function withdraw() public onlyState(States.Workflow) onlyEngine {
         // TODO
     }
 
