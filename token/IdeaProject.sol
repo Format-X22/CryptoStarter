@@ -51,9 +51,14 @@ contract IdeaProject {
     uint public earned;
 
     /**
-     * @notice
+     * @notice Список продуктов проекта.
      **/
     address[] public products;
+
+    /**
+     * @notice Соответствие имени продукта адресу продукта.
+     **/
+    mapping(string => address) public productsByName;
 
     /**
      * @notice Варианты состояния проекта.
@@ -102,8 +107,8 @@ contract IdeaProject {
     struct WorkStage {
         string name;        // Имя этапа.
         string description; // Описание этапа.
-        uint percent;       // Процент средств от общего бюджета.
-        uint stageDays;     // Количество дней выполнения этапа.
+        uint8 percent;      // Процент средств от общего бюджета.
+        uint8 stageDays;    // Количество дней выполнения этапа.
     }
 
     /**
@@ -120,6 +125,22 @@ contract IdeaProject {
      * @notice Максимальное разрешенное количество этапов работ.
      **/
     uint8 constant public maxWorkStages = 10;
+
+    /**
+     * @notice Минимальное разрешенное количество времени на выполнение этапа.
+     **/
+    uint8 constant public minWorkStageDays = 10;
+
+    /**
+     * @notice Максимальное разрешенное количество времени на выполнение этапа
+     * (для указания в описании этапа, время может быть продлено голосованием).
+     **/
+    uint8 constant public maxWorkStageDays = 100;
+
+    /**
+     * @notice Текущее количество процентов всех этапов.
+     **/
+    uint public currentWorkStagePercent;
 
     /**
      * @notice Состояние проекта изменено.
@@ -249,7 +270,9 @@ contract IdeaProject {
      * @param _name
      **/
     function setName(string _name) public onlyState(States.Initial) onlyEngine {
-        // TODO
+        _name.denyEmpty();
+
+        name = _name;
     }
 
     /**
@@ -258,16 +281,20 @@ contract IdeaProject {
      * @param _description
      **/
     function setDescription(string _description) public onlyState(States.Initial) onlyEngine {
-        // TODO
+        _description.denyEmpty();
+
+        description = _description;
     }
 
     /**
      * @notice Установка значения неоходимых инвестиций.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _value
+     * @param _required
      **/
-    function setRequired(uint _value) public onlyState(States.Initial) onlyEngine {
-        // TODO
+    function setRequired(uint _required) public onlyState(States.Initial) onlyEngine {
+        _required.denyZero();
+
+        required = _required;
     }
 
     /**
@@ -275,8 +302,10 @@ contract IdeaProject {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _days
      **/
-    function setRequiredDays(uint _days) public onlyState(States.Initial) onlyEngine {
-        // TODO
+    function setRequiredDays(uint _requiredDays) public onlyState(States.Initial) onlyEngine {
+        _requiredDays.denyZero();
+
+        requiredDays = _requiredDays;
     }
 
     /**
@@ -296,16 +325,21 @@ contract IdeaProject {
         uint _price,
         uint _limit
     ) onlyState(States.Initial) public onlyEngine returns (address _productAddress) {
-        // TODO
+        var product = new IdeaSubCoin(this, _name, _symbol, _description, _price, _limit);
+
+        products.push(product);
+        productsByName[_name] = address(product);
+
+        return address(product);
     }
 
     /**
      * @notice Получение адреса продукта по имени продукта.
      * @param _name Имя продукта.
-     * @return _address Адрес продукта.
+     * @return _address Адрес продукта, в случае отсутствия будет возвращен нулевой адрес.
      **/
     function getProductAddressByName(string _name) constant public onlyEngine returns (address _address) {
-        // TODO
+        return productsByName[_name];
     }
 
     /**
@@ -314,7 +348,13 @@ contract IdeaProject {
      * @return _stringWithSplitter Результат.
      **/
     function getAllProductsNames() constant public onlyEngine returns (string _stringWithSplitter) {
-        // TODO
+        string _stringWithSplitter;
+
+        for (uint i = 0; i < products.length - 1; i += 1) {
+            _stringWithSplitter += products[i].name() + '|';
+        }
+
+        _stringWithSplitter += products[products.length - 1].name();
     }
 
     /**
@@ -340,7 +380,9 @@ contract IdeaProject {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
     function destroyAllProducts() public onlyState(States.Initial) onlyEngine {
-        // TODO
+        // TODO - destroy sub coins contracts
+
+        delete products;
     }
 
     /**
@@ -352,21 +394,38 @@ contract IdeaProject {
      * @param _description Описание этапа.
      * @param _percent Процент средств от общего бюджета.
      * @param _stageDays Количество дней выполнения этапа.
+     * Количество должно быть не менее 10 и не более 100 дней.
      **/
-    function makeStage(
+    function makeWorkStage(
         string _name,
         string _description,
-        uint _percent,
-        uint _stageDays
+        uint8 _percent,
+        uint8 _stageDays
     ) public onlyState(States.Initial) {
-        // TODO
+        _name.denyEmpty();
+        _description.denyEmpty();
+        require(_stageDays >= minWorkStageDays);
+        require(_stageDays <= maxWorkStageDays);
+    
+        if (currentWorkStagePercent.add(_stageDays) > 100) {
+            revert();
+        } else {
+            currentWorkStagePercent = currentWorkStagePercent.add(_stageDays);
+        }
+
+        workStages.push(Stage(
+            _name,
+            _description,
+            _percent,
+            _stageDays
+        ));
     }
 
     /**
      * @notice Уничтожить последний созданный этап.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyLastStage() public onlyState(States.Initial) onlyEngine {
+    function destroyLastWorkStage() public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
@@ -374,7 +433,7 @@ contract IdeaProject {
      * @notice Уничтожить все этапы.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyAllStages() public onlyState(States.Initial) onlyEngine {
+    function destroyAllWorkStages() public onlyState(States.Initial) onlyEngine {
         // TODO
     }
 
