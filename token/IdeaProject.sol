@@ -38,12 +38,12 @@ contract IdeaProject {
     /**
      * @notice Минимальное разрешенное количество дней сбора инвестиций.
      **/
-    uint8 constant public minSaleDays = 10;
+    uint8 constant public minRequiredDays = 10;
 
     /**
      * @notice Максимальное разрешенное количество дней сбора инвестиций.
      **/
-    uint8 constant public maxSaleDays = 100;
+    uint8 constant public maxRequiredDays = 100;
 
     /**
      * @notice Количество собранных инвестиций.
@@ -120,4 +120,58 @@ contract IdeaProject {
      **/
     uint8 constant public maxWorkStages = 10;
 
+    /**
+     * @notice Конструктор.
+     * @param _owner Владелец проекта.
+     * @param _name Имя проекта.
+     * @param _description Описание проекта.
+     * @param _required Необходимое количество инвестиций в IDEA.
+     * @param _requiredDays Количество дней сбора инвестиций.
+     * Должно быть в диапазоне от `minRequiredDays` до `maxRequiredDays`.
+     **/
+    function IdeaProject(
+        address _owner,
+        string _name,
+        string _description,
+        uint _required,
+        uint _requiredDays
+    ) {
+        _owner.denyZero();
+        _name.denyEmpty();
+        _description.denyEmpty();
+        _required.denyZero();
+
+        require(_requiredDays >= minRequiredDays);
+        require(_requiredDays <= maxRequiredDays);
+
+        engine = msg.sender;
+        owner = _owner;
+        name = _name;
+        description = _description;
+        required = _required;
+        requiredDays = _requiredDays;
+    }
+
+    // Отключаем возможность пересылать эфир на адрес контракта.
+    function() payable {
+        revert();
+    }
+
+    /**
+     * @notice Разрешаем исполнять метод только в указанном состоянии.
+     * @param _state Состояние.
+     **/
+    modifier onlyState(States _state) {
+        require(state = _state);
+        _;
+    }
+
+    /**
+     * @notice Ограничивает возможность исполнения метода только контрактом-движком.
+     * @param _state Состояние.
+     **/
+    modifier onlyEngine() {
+        require(msg.sender = engine);
+        _;
+    }
 }
