@@ -81,10 +81,10 @@ contract IdeaProject {
 
         // Проект завершен, в момент установки состояния замораживается список доставки
         // и владельцы находятся в ожидании получения готовой продукции.
-        Done,
+        SuccessDone,
 
         // Проект не собрал необходимые инвестиции и деньги вернулись инвесторам
-        Fail,
+        FundingFail,
 
         // На одном из этапов проект был оценен инвесторами как провальный,
         // инвесторы получили оставшиеся деньги назад, проект закрылся
@@ -119,6 +119,73 @@ contract IdeaProject {
      * @notice Максимальное разрешенное количество этапов работ.
      **/
     uint8 constant public maxWorkStages = 10;
+
+    /**
+     * @notice Состояние проекта изменено.
+     * @param state Состояние.
+     **/
+    event StateChanged(States indexed state);
+
+    /**
+     * @notice Проект помечен как скоро стартующий.
+     **/
+    event ProjectIsComing();
+
+    /**
+     * @notice Проект начал собирать инвестиции.
+     **/
+    event StartFunding();
+
+    /**
+     * @notice Проект закончил собирать инвестиции.
+     **/
+    event EndFunding();
+
+    /**
+     * @notice Работа по проекту начата.
+     **/
+    event StartWork();
+
+    /**
+     * @notice Начат этап работ.
+     * @param stage Номер этапа.
+     **/
+    event StartWorkStage(uint indexed stage);
+
+    /**
+     * @notice Закончен этап работ.
+     * @param stage Номер этапа.
+     **/
+    event EndWorkStage(uint indexed stage);
+
+    /**
+     * @notice Начато голосование за следующий этап.
+     * @param finishedStage Номер завершенного этапа.
+     * @param nextStage Номер предстоящего этапа.
+     **/
+    event StartVoting(uint indexed finishedStage, uint indexed nextStage);
+
+    /**
+     * @notice Проект успешно завершен.
+     **/
+    event ProjectSuccessDone();
+
+    /**
+     * @notice Начата доставка.
+     **/
+    event ShippingStarted();
+
+    /**
+     * @notice Проект провален, не достаточное количество инвестиций.
+     **/
+    event FundingFail();
+
+    /**
+     * @notice Проект провален на этапе работы.
+     * @param finishedStage Номер завершенного этапа.
+     * @param notStartedStage Номер не состоявшегося этапа.
+     **/
+    event ProjectWorkFail(uint indexed finishedStage, uint indexed notStartedStage);
 
     /**
      * @notice Конструктор.
