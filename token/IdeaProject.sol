@@ -100,9 +100,10 @@ contract IdeaProject {
      * @notice Структура этапа работ.
      **/
     struct WorkStage {
-        string name;
-        string description;
-        uint percent;
+        string name;        // Имя этапа.
+        string description; // Описание этапа.
+        uint percent;       // Процент средств от общего бюджета.
+        uint stageDays;     // Количество дней выполнения этапа.
     }
 
     /**
@@ -241,4 +242,167 @@ contract IdeaProject {
         require(msg.sender = engine);
         _;
     }
+
+    /**
+     * @notice Установка имени проекта.
+     * @param _name
+     **/
+    function setName(string _name) {
+        // TODO
+    }
+
+    /**
+     * @notice Установка описания проекта.
+     * @param _description
+     **/
+    function setDescription(string _description) {
+        // TODO
+    }
+
+    /**
+     * @notice Установка значения неоходимых инвестиций.
+     * @param _value
+     **/
+    function setRequired(uint _value) {
+        // TODO
+    }
+
+    /**
+     * @notice Установка значения времени сбора средств.
+     * @param _days
+     **/
+    function setRequiredDays(uint _days) {
+        // TODO
+    }
+
+    /**
+     * @notice Создания продукта, предлагаемого проектом.
+     * @param _name Имя продукта.
+     * @param _symbol Символ продукта.
+     * @param _description Описание продукта.
+     * @param _price Цена продукта в IDEA токенах.
+     * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
+     * @return _productAddress Адрес экземпляра контракта продукта.
+     **/
+    function makeProduct(
+        string _name,
+        string _symbol,
+        string _description,
+        uint _price,
+        uint _limit
+    ) returns (address _productAddress) {
+        // TODO
+    }
+
+    /**
+     * @notice Получение адреса продукта по имени продукта.
+     * @param _name Имя продукта.
+     * @return _address Адрес продукта.
+     **/
+    function getProductAddressByName(string _name) returns (address _address) {
+        // TODO
+    }
+
+    /**
+     * @notice Получение всех имен продуктов. Результатом вычислений будет строка
+     * из склеенных имен продуктов, разделенных разделителем в виде вертикальной черы '|'.
+     * @return _stringWithSplitter Результат.
+     **/
+    function getAllProductsNames() returns (string _stringWithSplitter) {
+        // TODO
+    }
+
+    /**
+     * @notice Уничтожить продукт.
+     * @param _address Адрес продукта.
+     **/
+    function destroyProduct(address _address) {
+        // TODO
+    }
+
+    /**
+     * @notice Уничтожить продукт по имени.
+     * @param _name Имя продукта.
+     **/
+    function destroyProductByName(string _name) {
+        // TODO
+    }
+
+    /**
+     * @notice Уничтожить все продукты.
+     **/
+    function destroyAllProducts() {
+        // TODO
+    }
+
+    /**
+     * @notice Создать этап работы.
+     * Суммарно должно быть не более 10 этапов (`maxWorkStages`),
+     * а также сумма процентов всех этапов должна быть равна 100%.
+     * @param _name Имя этапа.
+     * @param _description Описание этапа.
+     * @param _percent Процент средств от общего бюджета.
+     * @param _stageDays Количество дней выполнения этапа.
+     **/
+    function makeStage(
+        string _name,
+        string _description,
+        uint _percent,
+        uint _stageDays
+    ) {
+        // TODO
+    }
+
+    /**
+     * @notice Уничтожить последний созданный этап.
+     **/
+    function destroyLastStage() {
+        // TODO
+    }
+
+    /**
+     * @notice Уничтожить все этапы.
+     **/
+    function destroyAllStages() {
+        // TODO
+    }
+
+    /**
+     * @notice Перевести проект в состояние 'Coming'
+     * и заблокировать возможность внесения изменений.
+     **/
+    function markAsComingAndFreeze() {
+        // TODO
+    }
+
+    /**
+     * @notice Запустить сбор средств.
+     **/
+    function startFunding() {
+        // TODO
+    }
+
+    /**
+     * @notice Пометить текущий этап работ как выполненый.
+     **/
+    function stageDone() {
+        // TODO
+    }
+
+    /**
+     * @notice Пометить проект как завершенный.
+     **/
+    function projectDone() {
+        // TODO
+    }
+
+    /**
+     * @notice Вывести средства, полученные на текущий этап работы.
+     * Средства поступят на счет владельца проекта.
+     **/
+    function withdraw() {
+        // TODO
+    }
+
+    // TODO Voting for stage done and more time for stage
 }
