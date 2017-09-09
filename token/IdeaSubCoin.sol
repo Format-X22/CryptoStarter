@@ -203,4 +203,12 @@ contract IdeaSubCoin is IdeaBasicCoin {
         shipping[_account] = _shipping;
     }
 
+    /**
+     * @notice Уничтожает продукт.
+     * Используется на этапе конфигурирования проекта.
+     **/
+    function destroy() public onlyProject {
+        selfdestruct();
+    }
+
 }
