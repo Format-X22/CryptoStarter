@@ -51,6 +51,24 @@ contract IdeaProject {
     uint public earned;
 
     /**
+     * @notice Сумма, доступная для вывода в рамках текущего этапа работы.
+     * В случае если прошлый транш не был выведен - суммируется с предыдущим.
+     **/
+    uint public tranche;
+
+    /**
+     * @notice Остаток, образовавшийся в процессе деления не нацело суммы транша.
+     * Будет суммирован с траншем последнего этапа.
+     **/
+    uint public trancheRemainder;
+
+    /**
+     * @notice Баланс каждого инвестора, необходим для определения кешбека
+     * в случае провала проекта.
+     **/
+    mapping(address => uint) public investorBalance;
+
+    /**
      * @notice Список продуктов проекта.
      **/
     address[] public products;
@@ -98,6 +116,8 @@ contract IdeaProject {
 
     /**
      * @notice Текущее состояние проекта.
+     * Смена состояния происходит не мгновенно по причине особенностей
+     * работы Ethereum, однако это не влияет на логику работы контракта.
      **/
     States public state = States.Initial;
 
@@ -144,6 +164,8 @@ contract IdeaProject {
 
     /**
      * @notice Состояние проекта изменено.
+     * Смена состояния происходит не мгновенно по причине особенностей
+     * работы Ethereum, однако это не влияет на логику работы контракта.
      * @param state Состояние.
      **/
     event StateChanged(States indexed state);
@@ -159,55 +181,9 @@ contract IdeaProject {
     event StartFunding();
 
     /**
-     * @notice Проект закончил собирать инвестиции.
-     **/
-    event EndFunding();
-
-    /**
-     * @notice Работа по проекту начата.
-     **/
-    event StartWork();
-
-    /**
-     * @notice Начат этап работ.
-     * @param stage Номер этапа.
-     **/
-    event StartWorkStage(uint indexed stage);
-
-    /**
-     * @notice Закончен этап работ.
-     * @param stage Номер этапа.
-     **/
-    event EndWorkStage(uint indexed stage);
-
-    /**
-     * @notice Начато голосование за следующий этап.
-     * @param finishedStage Номер завершенного этапа.
-     * @param nextStage Номер предстоящего этапа.
-     **/
-    event StartVoting(uint indexed finishedStage, uint indexed nextStage);
-
-    /**
      * @notice Проект успешно завершен.
      **/
     event ProjectSuccessDone();
-
-    /**
-     * @notice Начата доставка.
-     **/
-    event ShippingStarted();
-
-    /**
-     * @notice Проект провален, не достаточное количество инвестиций.
-     **/
-    event FundingFail();
-
-    /**
-     * @notice Проект провален на этапе работы.
-     * @param finishedStage Номер завершенного этапа.
-     * @param notStartedStage Номер не состоявшегося этапа.
-     **/
-    event ProjectWorkFail(uint indexed finishedStage, uint indexed notStartedStage);
 
     /**
      * @notice Конструктор.
@@ -251,7 +227,7 @@ contract IdeaProject {
      * @param _state Состояние.
      **/
     modifier onlyState(States _state) {
-        require(state = _state);
+        require(state == _state);
         _;
     }
 
@@ -260,7 +236,7 @@ contract IdeaProject {
      * @param _state Состояние.
      **/
     modifier onlyEngine() {
-        require(msg.sender = engine);
+        require(msg.sender == engine);
         _;
     }
 
@@ -443,6 +419,8 @@ contract IdeaProject {
      **/
     function markAsComingAndFreeze() public onlyState(States.Initial) onlyEngine {
         // TODO
+
+        state = States.Coming;
     }
 
     /**
@@ -454,6 +432,8 @@ contract IdeaProject {
      **/
     function startFunding() public onlyState(States.Coming) onlyEngine {
         // TODO
+
+        state = States.Funding;
     }
 
     /**
@@ -472,14 +452,48 @@ contract IdeaProject {
      * готовой продукции.
      **/
     function projectDone() public onlyState(States.Workflow) onlyEngine {
+        require(workStage == workStages.length - 1);
+
         // TODO
+
+        state = States.SuccessDone;
     }
 
     /**
      * @notice Вывести средства, полученные на текущий этап работы.
      * Средства поступят на счет владельца проекта.
      **/
-    function withdraw() public onlyState(States.Workflow) onlyEngine {
+    function withdraw() public onlyEngine {
+        require(
+            state == States.Funding ||
+            state == States.Workflow ||
+            state == States.SuccessDone
+        );
+
+        if (state == States.Funding) {
+            // TODO State to workflow or funding fail
+        }
+
+        // TODO
+    }
+
+    /**
+     * @notice Вывести средства назад в случае провала проекта.
+     * Если проект был провален на одном из этапов - средства вернуться
+     * в соответствии с оставшимся процентом.
+     **/
+    function cashBack() public onlyEngine {
+        require(
+            state == States.Funding ||
+            state == States.Workflow ||
+            state == States.FundingFail ||
+            state == States.WorkFail
+        );
+
+        if (state == States.Funding || state == States.Workflow) {
+            // TODO State to funding fail or work fail
+        }
+
         // TODO
     }
 
