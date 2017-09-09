@@ -341,7 +341,7 @@ contract IdeaProject is IdeaTypeBind {
     function getAllProductsNames() constant public onlyEngine returns (string _stringWithSplitter) {
         string _stringWithSplitter;
 
-        for (uint i = 0; i < products.length; i += 1) {
+        for (uint i = 0; i < products.length - 1; i += 1) {  // (length - 1) not a bug
             _stringWithSplitter += products[i].name() + '|';
         }
 
