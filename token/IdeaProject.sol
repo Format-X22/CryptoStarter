@@ -48,6 +48,11 @@ contract IdeaProject is IdeaTypeBind {
     uint8 constant public maxRequiredDays = 100;
 
     /**
+     * @notice Время окончания сбора инвестиций.
+     **/
+    uint public fundingEndTime;
+
+    /**
      * @notice Количество собранных инвестиций.
      **/
     uint public earned;
@@ -184,8 +189,9 @@ contract IdeaProject is IdeaTypeBind {
 
     /**
      * @notice Проект начал собирать инвестиции.
+     * @param time Время завершения сбора инвестиций в виде UNIX-таймштампа.
      **/
-    event StartFunding();
+    event StartFunding(uint indexed time);
 
     /**
      * @notice Проект успешно завершен.
@@ -335,7 +341,7 @@ contract IdeaProject is IdeaTypeBind {
     function getAllProductsNames() constant public onlyEngine returns (string _stringWithSplitter) {
         string _stringWithSplitter;
 
-        for (uint i = 0; i < products.length - 1; i += 1) {
+        for (uint i = 0; i < products.length; i += 1) {
             _stringWithSplitter += products[i].name() + '|';
         }
 
@@ -352,6 +358,18 @@ contract IdeaProject is IdeaTypeBind {
         IdeaSubCoin(products[products.length - 1]).destroy();
 
         products.length = products.length - 1;
+    }
+
+    /**
+     * @notice Уничтожить все продукты.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     **/
+    function destroyAllProducts() public onlyState(States.Initial) onlyEngine {
+        for (uint8 i = 0; i < products.length; i += 1) {
+            IdeaSubCoin(products[i]).destroy();
+        }
+
+        delete products;
     }
 
     /**
@@ -434,9 +452,11 @@ contract IdeaProject is IdeaTypeBind {
      * а средства вернуться на счета инвесторов.
      **/
     function startFunding() public onlyState(States.Coming) onlyEngine {
-        // TODO
-
         state = States.Funding;
+
+        fundingEndTime = now + requiredDays * 1 days;
+    
+        StartFunding(now);
     }
 
     /**
@@ -457,7 +477,7 @@ contract IdeaProject is IdeaTypeBind {
     function projectDone() public onlyState(States.Workflow) onlyEngine {
         require(workStage == workStages.length - 1);
 
-        // TODO
+        ProjectSuccessDone();
 
         state = States.SuccessDone;
     }
