@@ -81,6 +81,11 @@ contract IdeaProject is IdeaTypeBind {
     mapping(string => address) public productsByName;
 
     /**
+     * @notice Максимальное разрешенное количество продуктов у одного проекта.
+     **/
+    uint8 constant maxProducts = 25;
+
+    /**
      * @notice Варианты состояния проекта.
      **/
     enum States {
@@ -303,7 +308,9 @@ contract IdeaProject is IdeaTypeBind {
         uint _price,
         uint _limit
     ) onlyState(States.Initial) public onlyEngine returns (address _productAddress) {
-        var product = new IdeaSubCoin(this, _name, _symbol, _description, _price, _limit);
+        require(products.length <= maxProducts);
+
+        IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _description, _price, _limit);
 
         products.push(product);
         productsByName[_name] = address(product);
@@ -336,31 +343,15 @@ contract IdeaProject is IdeaTypeBind {
     }
 
     /**
-     * @notice Уничтожить продукт.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _address Адрес продукта.
-     **/
-    function destroyProduct(address _address) public onlyState(States.Initial) onlyEngine {
-        // TODO
-    }
-
-    /**
-     * @notice Уничтожить продукт по имени.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _name Имя продукта.
-     **/
-    function destroyProductByName(string _name) public onlyState(States.Initial) onlyEngine {
-        // TODO
-    }
-
-    /**
-     * @notice Уничтожить все продукты.
+     * @notice Уничтожить последний созданный продукт.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyAllProducts() public onlyState(States.Initial) onlyEngine {
-        // TODO - destroy sub coins contracts
+    function destroyLastProduct() public onlyState(States.Initial) onlyEngine {
+        require(products.length > 0);
 
-        delete products;
+        IdeaSubCoin(products[products.length - 1]).destroy();
+
+        products.length = products.length - 1;
     }
 
     /**
@@ -380,6 +371,7 @@ contract IdeaProject is IdeaTypeBind {
         uint8 _percent,
         uint8 _stageDays
     ) public onlyState(States.Initial) {
+        require(workStages.length <= maxWorkStages);
         _name.denyEmpty();
         _description.denyEmpty();
         require(_stageDays >= minWorkStageDays);
@@ -426,6 +418,7 @@ contract IdeaProject is IdeaTypeBind {
      * и заблокировать возможность внесения изменений.
      **/
     function markAsComingAndFreeze() public onlyState(States.Initial) onlyEngine {
+        require(products.length > 0);
         require(currentWorkStagePercent == 100);
 
         state = States.Coming;
