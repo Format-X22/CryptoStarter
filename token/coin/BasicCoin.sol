@@ -1,6 +1,6 @@
 pragma solidity ^0.4.16;
 
-import './lib/IdeaTypeBind.sol';
+import '../type/IdeaTypeBind.sol';
 
 /**
  * @notice Базовая монета проекта.

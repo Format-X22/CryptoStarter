@@ -1,6 +1,6 @@
 pragma solidity ^0.4.16;
 
-import './IdeaBasicCoin.sol';
+import './BasicCoin.sol';
 
 /**
  * @notice Контракт саб-монеты IdeaCoin.

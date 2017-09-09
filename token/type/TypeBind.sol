@@ -1,8 +1,8 @@
 pragma solidity ^0.4.16;
 
-import './IdeaUint.sol';
-import './IdeaString.sol';
-import './IdeaAddress.sol';
+import './Uint.sol';
+import './String.sol';
+import './Address.sol';
 
 contract IdeaTypeBind {
     using IdeaUint for uint;

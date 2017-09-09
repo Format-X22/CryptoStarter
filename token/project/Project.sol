@@ -1,19 +1,19 @@
 pragma solidity ^0.4.16;
 
-import './lib/IdeaTypeBind.sol';
-import './IdeaProjectVoting.sol';
-import './IdeaProjectProducts.sol';
-import './IdeaProjectStates.sol';
-import './IdeaProjectWorkStages.sol';
+import './type/IdeaTypeBind.sol';
+import './Voting.sol';
+import './Products.sol';
+import './States.sol';
+import './WorkStages.sol';
 
 /**
  * @notice Контракт краудфайндинг-проекта.
  **/
 contract IdeaProject is
-    IdeaProjectProducts,
-    IdeaProjectStates,
-    IdeaProjectWorkStages,
-    IdeaProjectVoting,
+    IdeaProducts,
+    IdeaStates,
+    IdeaWorkStages,
+    IdeaVoting,
     IdeaTypeBind
 {
 

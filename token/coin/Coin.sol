@@ -1,9 +1,9 @@
 pragma solidity ^0.4.16;
 
-import './IdeaBasicCoin.sol';
-import './IdeaDividendsEngine.sol';
-import './IdeaProjectsEngine.sol';
-import './IdeaIco.sol';
+import './BasicCoin.sol';
+import './DividendsEngine.sol';
+import './ProjectsEngine.sol';
+import './Ico.sol';
 
 /**
  * @notice IdeaCoin (IDEA) - непосредственно сама монета.

@@ -4,7 +4,7 @@ pragma solidity ^0.4.16;
  * @notice Часть контракта краудфайндинг-проекта,
  * отвечающая за систему состояний проекта.
  **/
-contract IdeaProjectStates {
+contract IdeaStates {
 
     /**
      * @notice Варианты состояния проекта.

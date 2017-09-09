@@ -4,7 +4,7 @@ pragma solidity ^0.4.16;
  * @notice Часть контракта краудфайндинг-проекта,
  * отвечающая за систему этапов работы.
  **/
-contract IdeaProjectWorkStages {
+contract IdeaWorkStages {
 
     /**
      * @notice Структура этапа работ.

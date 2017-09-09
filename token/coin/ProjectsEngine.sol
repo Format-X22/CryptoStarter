@@ -1,7 +1,7 @@
 pragma solidity ^0.4.16;
 
-import './IdeaProject.sol';
-import './IdeaSubCoin.sol';
+import '../project/Project.sol';
+import './SubCoin.sol';
 
 /**
  * @notice Механизм краудфайндинга.
