@@ -1,9 +1,11 @@
 pragma solidity ^0.4.16;
 
+import './lib/IdeaTypeBind.sol';
+
 /**
  * @notice Контракт краудфайндинг-проекта.
  **/
-contract IdeaProject {
+contract IdeaProject is IdeaTypeBind {
 
     /**
      * @notice Имя проекта.
@@ -402,7 +404,12 @@ contract IdeaProject {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
     function destroyLastWorkStage() public onlyState(States.Initial) onlyEngine {
-        // TODO
+        require(workStages.length > 0);
+
+        uint8 lastPercent = workStages[workStages.length - 1].percent;
+
+        currentWorkStagePercent = currentWorkStagePercent.sub(lastPercent);
+        workStages.length = workStages.length - 1;
     }
 
     /**
@@ -410,7 +417,8 @@ contract IdeaProject {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
     function destroyAllWorkStages() public onlyState(States.Initial) onlyEngine {
-        // TODO
+        currentWorkStagePercent = 0;
+        delete workStages;
     }
 
     /**
@@ -418,9 +426,11 @@ contract IdeaProject {
      * и заблокировать возможность внесения изменений.
      **/
     function markAsComingAndFreeze() public onlyState(States.Initial) onlyEngine {
-        // TODO
+        require(currentWorkStagePercent == 100);
 
         state = States.Coming;
+    
+        ProjectIsComing();
     }
 
     /**
