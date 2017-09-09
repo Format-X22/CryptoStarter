@@ -1,4 +1,4 @@
-pragma solidity ^0.4.16;
+pragma solidity ^0.4.15;
 
 import './BasicCoin.sol';
 
@@ -60,15 +60,15 @@ contract IdeaSubCoin is IdeaBasicCoin {
 
     /**
      * @notice Лимит продуктов, доступных к продаже, был увеличен.
-     * @param amount Колчество.
+     * @param _amount Колчество.
      **/
-    event IncreaseLimit(uint amount);
+    event IncreaseLimit(uint _amount);
 
     /**
      * @notice Лимит продуктов, доступных к продаже, был уменьшен.
-     * @param amount Количество.
+     * @param _amount Количество.
      **/
-    event DecreaseLimit(uint amount);
+    event DecreaseLimit(uint _amount);
 
     /**
      * @notice Теперь продукты ограничены в количестве.
@@ -83,10 +83,10 @@ contract IdeaSubCoin is IdeaBasicCoin {
     /**
      * @notice Произведена покупка токенов за IDEA токены.
      * Эвент возможен только в период первичных продаж.
-     * @param account Аккаунт покупателя.
-     * @param amount Количество.
+     * @param _account Аккаунт покупателя.
+     * @param _amount Количество.
      **/
-    event Buy(address account, uint amount);
+    event Buy(address indexed _account, uint _amount);
 
     /**
      * @notice Конструктор.

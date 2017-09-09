@@ -1,6 +1,6 @@
-pragma solidity ^0.4.16;
+pragma solidity ^0.4.15;
 
-import '../type/IdeaTypeBind.sol';
+import './type/TypeBind.sol';
 
 /**
  * @notice Базовая монета проекта.
@@ -50,19 +50,19 @@ contract IdeaBasicCoin is IdeaTypeBind {
 
     /**
      * @notice Совершен перевод.
-     * @param from Отправитель.
-     * @param to Получатель.
-     * @param value Количество.
+     * @param _from Отправитель.
+     * @param _to Получатель.
+     * @param _value Количество.
      **/
-    event Transfer(address indexed from, address indexed to, uint value);
+    event Transfer(address indexed _from, address indexed _to, uint _value);
 
     /**
      * @notice Разрешен расход.
-     * @param owner Владелец.
-     * @param spender Получатель.
-     * @param value Количество.
+     * @param _owner Владелец.
+     * @param _spender Получатель.
+     * @param _value Количество.
      **/
-    event Approval(address indexed owner, address indexed spender, uint value);
+    event Approval(address indexed _owner, address indexed _spender, uint _value);
 
     /**
      * @notice Проверить баланс аккаунта.

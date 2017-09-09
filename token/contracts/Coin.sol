@@ -1,9 +1,35 @@
-pragma solidity ^0.4.16;
+pragma solidity ^0.4.15;
+
+import './BasicCoin.sol';
 
 /**
- * @notice Механизм распределения дивидендов.
+ * @notice IdeaCoin (IDEA) - непосредственно сама монета.
  **/
-contract IdeaDividendsEngine {
+contract IdeaCoin is IdeaBasicCoin {
+
+    /**
+     * @notice Владелец IdeaCoin.
+     **/
+    address public owner;
+
+    /**
+     * @notice Конструктор.
+     **/
+    function IdeaCoin() {
+        name = 'IdeaCoin';
+        symbol = 'IDEA';
+        decimals = 8;
+        uint supply = 600000000; // 600 000 000 IDEA
+        totalSupply = supply ** decimals;
+
+        owner = msg.sender;
+        balances[owner] = totalSupply;
+        tryCreateAccount(msg.sender);
+    }
+
+    // ===                          ===
+    // === DIVIDENDS ENGINE SECTION ===
+    // ===                          ===
 
     /**
      * @notice Получить общее количество токенов в паевом фонде.
@@ -41,36 +67,36 @@ contract IdeaDividendsEngine {
 
     /**
      * @notice Совершен перевод с основного аккаунта на паевой.
-     * @param account Аккаунт.
-     * @param value Количество.
+     * @param _account Аккаунт.
+     * @param _value Количество.
      **/
-    event TransferToPie(address indexed account, uint value);
+    event TransferToPie(address indexed _account, uint _value);
 
     /**
      * @notice Совершен перевод с паевого аккаунта на основной.
-     * @param account Аккаунт.
-     * @param value Количество.
+     * @param _account Аккаунт.
+     * @param _value Количество.
      **/
-    event TransferFromPie(address indexed account, uint value);
+    event TransferFromPie(address indexed _account, uint _value);
 
     /**
      * @notice Начислены дивиденды на паевой аккаунт.
-     * @param to Аккаунт.
-     * @param value Количество.
+     * @param _to Аккаунт.
+     * @param _value Количество.
      **/
-    event DividendsReceived(address indexed to, uint value);
+    event DividendsReceived(address indexed _to, uint _value);
 
     /**
      * @notice Сумма всех дивидендов в этом раунде.
-     * @param value Количество.
+     * @param _value Количество.
      **/
-    event TotalDividendsReceived(uint value);
+    event TotalDividendsReceived(uint _value);
 
     /**
      * @notice Сумма, что будет распределена в следующем раунде раздачи дивидендов.
-     * @param value Количество.
+     * @param _value Количество.
      **/
-    event DividendsToNextRound(uint value);
+    event DividendsToNextRound(uint _value);
 
     /**
      * @notice Проверить баланс паевого аккаунта.
@@ -143,33 +169,51 @@ contract IdeaDividendsEngine {
      * @param _amount Количество.
      **/
     function receiveDividends(uint _amount) internal {
-        uint pieSize = nextRoundReserve;
-        uint[0] memory activatedAccounts;
+        uint minBalance = minBalanceForDividends ** decimals;
+        uint pieSize = nextRoundReserve + calcPieSize(minBalance);
 
-        nextRoundReserve = 0;
-
-        for (uint i = 0; i < pieAccounts.length; i += 1) {
-            var balance = pieBalances[pieAccounts[i]];
-
-            if (balance >= minBalanceForDividends ** decimals) {
-                pieSize = pieSize.add(balance);
-                activatedAccounts.push(pieAccounts[i]);
-            }
-        }
-
-        for (uint j = 0; j < activatedAccounts.length; j += 1) {
-            uint account = activatedAccounts[j];
-            uint reserve = (_amount * pieBalances[account]) % pieSize;
-            uint dividends = (_amount - reserve) * pieBalances[account] / pieSize;
-
-            nextRoundReserve = nextRoundReserve.add(reserve);
-            pieBalances[account] = pieBalances[account].add(dividends);
-
-            DividendsReceived(account, dividends);
-        }
+        accrueDividends(minBalance, pieSize, _amount);
 
         TotalDividendsReceived(_amount - nextRoundReserve);
         DividendsToNextRound(nextRoundReserve);
+    }
+
+    /**
+     * @notice TODO
+     * @param _minBalance TODO
+     * @return _pieSize TODO
+     **/
+    function calcPieSize(uint _minBalance) internal returns (uint _pieSize) {
+        for (uint i = 0; i < pieAccounts.length; i += 1) {
+            var balance = pieBalances[pieAccounts[i]];
+
+            if (balance >= _minBalance) {
+                _pieSize = _pieSize.add(balance);
+            }
+        }
+    }
+
+    /**
+     * @notice TODO
+     * @param _minBalance TODO
+     * @param _pieSize TODO
+     * @param _amount TODO
+     **/
+    function accrueDividends(uint _minBalance, uint _pieSize, uint _amount) internal {
+        for (uint i = 0; i < pieAccounts.length; i += 1) {
+            uint account = pieAccounts[i];
+            uint balance = pieBalances[pieAccounts[i]];
+
+            if (balance >= _minBalance) {
+                uint reserve = (_amount * balance) % _pieSize;
+                uint dividends = (_amount - reserve) * balance / _pieSize;
+
+                nextRoundReserve = nextRoundReserve.add(reserve);
+                pieBalances[account] = balance.add(dividends);
+
+                DividendsReceived(account, dividends);
+            }
+        }
     }
 
     /**
@@ -182,4 +226,16 @@ contract IdeaDividendsEngine {
             pieAccountsMap[_account] = true;
         }
     }
+
+    // ===                         ===
+    // === PROJECTS ENGINE SECTION ===
+    // ===                         ===
+
+    // TODO
+
+    // ===             ===
+    // === ICO SECTION ===
+    // ===             ===
+
+    // TODO
 }
