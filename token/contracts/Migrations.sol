@@ -1,23 +1,54 @@
 pragma solidity ^0.4.15;
 
+/**
+ * @notice Контракт миграции, совместимый с Truffle.
+ **/
 contract Migrations {
+
+    /**
+     * @notice Владелец контракта.
+     **/
     address public owner;
+
+    /**
+     * @notice Идентификатор последней миграции.
+     **/
     uint public last_completed_migration;
 
-    modifier restricted() {
-        if (msg.sender == owner) _;
-    }
-
+    /**
+     * @notice Конструктор.
+     **/
     function Migrations() {
         owner = msg.sender;
     }
 
-    function setCompleted(uint completed) restricted {
+    // Отключаем возможность пересылать эфир на адрес контракта.
+    function() payable {
+        revert();
+    }
+
+    /**
+     * @notice Разрешить действие только владельцу контракта.
+     **/
+    modifier onlyOwner() {
+        if (msg.sender == owner) {
+            _;
+        }
+    }
+
+    /**
+     * @notice Пометить миграцию завершенной.
+     **/
+    function setCompleted(uint completed) onlyOwner {
         last_completed_migration = completed;
     }
 
-    function upgrade(address new_address) restricted {
+    /**
+     * @notice Запуск миграции.
+     **/
+    function upgrade(address new_address) onlyOwner {
         Migrations upgraded = Migrations(new_address);
+
         upgraded.setCompleted(last_completed_migration);
     }
 }
