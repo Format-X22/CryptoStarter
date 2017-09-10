@@ -200,7 +200,9 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _amount TODO
      **/
     function accrueDividends(uint _minBalance, uint _pieSize, uint _amount) internal {
-        for (uint i = 0; i < pieAccounts.length; i += 1) {
+        // TODO Fix later
+
+        /*for (uint i = 0; i < pieAccounts.length; i += 1) {
             uint account = pieAccounts[i];
             uint balance = pieBalances[pieAccounts[i]];
 
@@ -213,7 +215,7 @@ contract IdeaCoin is IdeaBasicCoin {
 
                 DividendsReceived(account, dividends);
             }
-        }
+        }*/
     }
 
     /**

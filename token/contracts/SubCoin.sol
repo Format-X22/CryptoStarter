@@ -26,11 +26,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
     uint8 public constant decimals = 0;
 
     /**
-     * @notice Описание продукта.
-     **/
-    string public description;
-
-    /**
      * @notice Максимальный лимит продаж.
      * Значение равное нулю (0) означает что лимита нет.
      **/
@@ -93,7 +88,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @param _owner Владелец продуктов.
      * @param _name Имя продукта.
      * @param _symbol Символ продукта.
-     * @param _description Описание продукта.
      * @param _price Цена продукта в IDEA токенах.
      * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
      * Лимиты можно изменить в любой момент.
@@ -102,20 +96,17 @@ contract IdeaSubCoin is IdeaBasicCoin {
         address _owner,
         string _name,
         string _symbol,
-        string _description,
         uint _price,
         uint _limit
     ) {
         _owner.denyZero();
         _name.denyEmpty();
         _symbol.denyEmpty();
-        _description.denyEmpty();
         _price.denyZero();
 
         owner = _owner;
         name = _name;
         symbol = _symbol;
-        description = _description;
         price = _price;
         limit = _limit;
         project = msg.sender;

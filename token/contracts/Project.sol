@@ -14,11 +14,6 @@ contract IdeaProject is IdeaTypeBind {
     string public name;
 
     /**
-     * @notice Описание проекта.
-     **/
-    string public description;
-
-    /**
      * @notice Адрес движка-инициатора.
      **/
     address public engine;
@@ -80,7 +75,6 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Конструктор.
      * @param _owner Владелец проекта.
      * @param _name Имя проекта.
-     * @param _description Описание проекта.
      * @param _required Необходимое количество инвестиций в IDEA.
      * @param _requiredDays Количество дней сбора инвестиций.
      * Должно быть в диапазоне от `minRequiredDays` до `maxRequiredDays`.
@@ -88,13 +82,11 @@ contract IdeaProject is IdeaTypeBind {
     function IdeaProject(
         address _owner,
         string _name,
-        string _description,
         uint _required,
         uint _requiredDays
     ) {
         _owner.denyZero();
         _name.denyEmpty();
-        _description.denyEmpty();
         _required.denyZero();
 
         require(_requiredDays >= minRequiredDays);
@@ -103,7 +95,6 @@ contract IdeaProject is IdeaTypeBind {
         engine = msg.sender;
         owner = _owner;
         name = _name;
-        description = _description;
         required = _required;
         requiredDays = _requiredDays;
     }
@@ -130,17 +121,6 @@ contract IdeaProject is IdeaTypeBind {
         _name.denyEmpty();
 
         name = _name;
-    }
-
-    /**
-     * @notice Установка описания проекта.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _description Новое описание.
-     **/
-    function setDescription(string _description) public onlyState(States.Initial) onlyEngine {
-        _description.denyEmpty();
-
-        description = _description;
     }
 
     /**
@@ -333,7 +313,6 @@ contract IdeaProject is IdeaTypeBind {
      **/
     struct WorkStage {
         string name;        // Имя этапа.
-        string description; // Описание этапа.
         uint8 percent;      // Процент средств от общего бюджета.
         uint8 stageDays;    // Количество дней выполнения этапа.
     }
@@ -375,20 +354,17 @@ contract IdeaProject is IdeaTypeBind {
      * а также сумма процентов всех этапов должна быть равна 100%.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name Имя этапа.
-     * @param _description Описание этапа.
      * @param _percent Процент средств от общего бюджета.
      * @param _stageDays Количество дней выполнения этапа.
      * Количество должно быть не менее 10 и не более 100 дней.
      **/
     function makeWorkStage(
         string _name,
-        string _description,
         uint8 _percent,
         uint8 _stageDays
     ) public onlyState(States.Initial) {
         require(workStages.length <= maxWorkStages);
         _name.denyEmpty();
-        _description.denyEmpty();
         require(_stageDays >= minWorkStageDays);
         require(_stageDays <= maxWorkStageDays);
 
@@ -400,7 +376,6 @@ contract IdeaProject is IdeaTypeBind {
 
         workStages.push(WorkStage(
             _name,
-            _description,
             _percent,
             _stageDays
         ));
@@ -462,7 +437,6 @@ contract IdeaProject is IdeaTypeBind {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name Имя продукта.
      * @param _symbol Символ продукта.
-     * @param _description Описание продукта.
      * @param _price Цена продукта в IDEA токенах.
      * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
      * @return _productAddress Адрес экземпляра контракта продукта.
@@ -470,13 +444,12 @@ contract IdeaProject is IdeaTypeBind {
     function makeProduct(
         string _name,
         string _symbol,
-        string _description,
         uint _price,
         uint _limit
     ) onlyState(States.Initial) public onlyEngine returns (address _productAddress) {
         require(products.length <= maxProducts);
 
-        IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _description, _price, _limit);
+        IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
 
         products.push(product);
         productsByName[_name] = address(product);
