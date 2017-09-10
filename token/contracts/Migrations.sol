@@ -31,9 +31,8 @@ contract Migrations {
      * @notice Разрешить действие только владельцу контракта.
      **/
     modifier onlyOwner() {
-        if (msg.sender == owner) {
-            _;
-        }
+        require(msg.sender == owner);
+        _;
     }
 
     /**
