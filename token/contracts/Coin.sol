@@ -179,9 +179,9 @@ contract IdeaCoin is IdeaBasicCoin {
     }
 
     /**
-     * @notice TODO
-     * @param _minBalance TODO
-     * @return _pieSize TODO
+     * @notice Вычисление размера средств паевого фонда.
+     * @param _minBalance Минимальный баланс для учета средств.
+     * @return _pieSize Размер.
      **/
     function calcPieSize(uint _minBalance) internal returns (uint _pieSize) {
         for (uint i = 0; i < pieAccounts.length; i += 1) {
@@ -194,17 +194,15 @@ contract IdeaCoin is IdeaBasicCoin {
     }
 
     /**
-     * @notice TODO
-     * @param _minBalance TODO
-     * @param _pieSize TODO
-     * @param _amount TODO
+     * @notice Непосредственно начисление дивидендов.
+     * @param _minBalance Минимальный баланс для учета средств.
+     * @param _pieSize Размер паевого фонда.
+     * @param _amount Количество дивидендов суммарно.
      **/
     function accrueDividends(uint _minBalance, uint _pieSize, uint _amount) internal {
-        // TODO Fix later
-
-        /*for (uint i = 0; i < pieAccounts.length; i += 1) {
-            uint account = pieAccounts[i];
-            uint balance = pieBalances[pieAccounts[i]];
+        for (uint i = 0; i < pieAccounts.length; i += 1) {
+            address account = pieAccounts[i];
+            uint balance = pieBalances[account];
 
             if (balance >= _minBalance) {
                 uint reserve = (_amount * balance) % _pieSize;
@@ -215,7 +213,7 @@ contract IdeaCoin is IdeaBasicCoin {
 
                 DividendsReceived(account, dividends);
             }
-        }*/
+        }
     }
 
     /**

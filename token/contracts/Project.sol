@@ -423,11 +423,6 @@ contract IdeaProject is IdeaTypeBind {
     address[] public products;
 
     /**
-     * @notice Соответствие имени продукта адресу продукта.
-     **/
-    mapping(string => address) public productsByName;
-
-    /**
      * @notice Максимальное разрешенное количество продуктов у одного проекта.
      **/
     uint8 constant maxProducts = 25;
@@ -451,36 +446,17 @@ contract IdeaProject is IdeaTypeBind {
 
         IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
 
-        products.push(product);
-        productsByName[_name] = address(product);
+        products.push(address(product));
 
         return address(product);
     }
 
     /**
-     * @notice Получение адреса продукта по имени продукта.
-     * @param _name Имя продукта.
-     * @return _address Адрес продукта, в случае отсутствия будет возвращен нулевой адрес.
+     * @notice Получение всех адресов продуктов.
+     * @return _result Результат.
      **/
-    function getProductAddressByName(string _name) constant public onlyEngine returns (address _address) {
-        return productsByName[_name];
-    }
-
-    /**
-     * @notice Получение всех имен продуктов. Результатом вычислений будет строка
-     * из склеенных имен продуктов, разделенных разделителем в виде вертикальной черы '|'.
-     * @return _stringWithSplitter Результат.
-     **/
-    function getAllProductsNames() constant public onlyEngine returns (string _stringWithSplitter) {
-        string memory splitter = '|';
-
-        for (uint i = 0; i < products.length - 1; i += 1) {  // (length - 1) not a bug
-            uint name = bytes(IdeaSubCoin(products[i]).name()).length;
-
-            _stringWithSplitter += name + splitter;
-        }
-
-        _stringWithSplitter += products[products.length - 1].name();
+    function getAllProductsAddresses() constant public onlyEngine returns (address[] _result) {
+        return products;
     }
 
     /**

@@ -199,7 +199,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * Используется на этапе конфигурирования проекта.
      **/
     function destroy() public onlyProject {
-        selfdestruct();
+        selfdestruct(owner);
     }
 
 }
