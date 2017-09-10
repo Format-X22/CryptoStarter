@@ -18,13 +18,18 @@ contract IdeaCoin is IdeaBasicCoin {
     function IdeaCoin() {
         name = 'IdeaCoin';
         symbol = 'IDEA';
-        decimals = 8;
+        decimals = 18;
         uint supply = 600000000; // 600 000 000 IDEA
         totalSupply = supply ** decimals;
 
         owner = msg.sender;
         balances[owner] = totalSupply;
         tryCreateAccount(msg.sender);
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
     }
 
     // ===                          ===
@@ -237,5 +242,160 @@ contract IdeaCoin is IdeaBasicCoin {
     // === ICO SECTION ===
     // ===             ===
 
-    // TODO
+    /**
+     * @notice TODO
+     **/
+    uint public earnedEthWei;
+
+    /**
+     * @notice TODO
+     **/
+    uint public earnedIdeaWei;
+
+    /**
+     * @notice TODO
+     **/
+    uint public maxCoinsForPreIco = 20000; // 20 000 IDEA
+
+    /**
+     * @notice TODO
+     **/
+    uint public maxCoinsForIco = 200000; // 200 000 IDEA
+
+    /**
+     * @notice TODO
+     **/
+    uint public maxCoinsForPostIco = 80000; // 80 000 IDEA
+
+    /**
+     * @notice TODO
+     **/
+    uint public minEtherForPreIcoBuy = 20;
+
+    /**
+     * @notice TODO
+     **/
+    enum IcoStates {
+        Coming,
+        PreIco,
+        Ico,
+        PostIco,
+        Done,
+        Waiting
+    }
+
+    /**
+     * @notice TODO
+     **/
+    IsoStates icoState = IcoStates.Coming;
+
+    /**
+     * @notice TODO
+     **/
+    uint icoStartTimestamp;
+
+    /**
+     * @notice TODO
+     **/
+    function() payable {
+        uint tokens;
+        bool moreThenPreIcoMin = msg.value > minEtherForPreIcoBuy * 1 ether;
+
+        if (icoState == IcoStates.PreIco && moreThenPreIcoMin) {
+
+            tokens = msg.value * 1500;                              // bonus +50% (PRE ICO)
+            balances[msg.sender] += tokens;
+
+        } else if (icoState == IcoStates.Ico) {
+            uint elapsed = now - icoStartTimestamp;
+
+            if (elapsed <= 1 days) {
+
+                tokens = msg.value * 1250;                          // bonus +25% (ICO FIRST DAY)
+                balances[msg.sender] = tokens;
+
+            } else if (elapsed <= 6 days && elapsed > 1 days) {
+
+                tokens = msg.value * 1150;                          // bonus +15% (ICO TIER 1)
+                balances[msg.sender] = tokens;
+
+            } else if (elapsed <= 11 days && elapsed > 6 days) {
+
+                tokens = msg.value * 1100;                          // bonus +10% (ICO TIER 2)
+                balances[msg.sender] = tokens;
+
+            } else if (elapsed <= 16 days && elapsed > 11 days) {
+
+                tokens = msg.value * 1050;                          // bonus +5%  (ICO TIER 3)
+                balances[msg.sender] = tokens;
+
+            } else {
+
+                tokens = msg.value * 1000;                          // bonus +0%  (ICO OTHER DAYS)
+                balances[msg.sender] = tokens;
+
+            }
+
+        } else if (icoState == IcoStates.PostIco) {
+
+            tokens = msg.value * 500;                              // bonus -50% (POST ICO PRICE)
+            balances[msg.sender] = tokens;
+
+        } else {
+            revert();
+        }
+
+        earnedEthWei += msg.value;
+        earnedIdeaWei += tokens;
+    }
+
+    /**
+     * @notice Перевод контракта в режим PreICO.
+     **/
+    function startPreIco() public onlyOwner {
+        icoState = IcoStates.PreIco;
+    }
+
+    /**
+     * @notice TODO
+     **/
+    function stopPreIco() public onlyOwner {
+        // TODO burn
+    }
+
+    /**
+     * @notice Перевод контракта в режим ICO.
+     **/
+    function startIco() public onlyOwner {
+        icoState = IcoStates.Ico;
+        icoStartTimestamp = now;
+    }
+
+    /**
+     * @notice TODO
+     **/
+    function stopIco() public onlyOwner {
+        // TODO burn
+    }
+
+    /**
+     * @notice Перевод контракта в режим PostICO.
+     **/
+    function startPostIco() public onlyOwner {
+        icoState = IcoStates.PostIco;
+    }
+
+    /**
+     * @notice TODO
+     **/
+    function stopPostIco() public onlyOwner {
+        // TODO burn
+    }
+
+    /**
+     * @notice Вывод собранных монет.
+     **/
+    function withdrawEther() public onlyOwner {
+        this.transfer(owner);
+    }
 }
