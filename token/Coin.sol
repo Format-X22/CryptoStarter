@@ -32,6 +32,232 @@ contract IdeaCoin is IdeaBasicCoin {
         _;
     }
 
+    // ===             ===
+    // === ICO SECTION ===
+    // ===             ===
+
+    /**
+     * @notice Максимальное количество монет, разрешенных к продаже на PreICO.
+     * Не проданное будет сожжено в двойном размере от общего количества монет.
+     **/
+    uint constant public maxCoinsForPreIco = 20000; // 20 000 IDEA
+
+    /**
+     * @notice Максимальное количество монет, разрешенных к продаже на ICO.
+     * Не проданное будет сожжено в двойном размере от общего количества монет.
+     **/
+    uint constant public maxCoinsForIco = 200000; // 200 000 IDEA
+
+    /**
+     * @notice Максимальное количество монет, разрешенных к продаже на PostICO.
+     * Не проданное будет сожжено в двойном размере от общего количества монет.
+     **/
+    uint constant public maxCoinsForPostIco = 77000; // 77 000 IDEA
+
+    /**
+     * @notice Минимальное количество монет ETH за которое производится продажа
+     * монет IDEA на PreICO.
+     **/
+    uint constant public minEtherForPreIcoBuy = 20;
+
+    /**
+     * @notice Количество собранного на всех этапах ICO монет ETH в размерности WEI.
+     **/
+    uint public earnedEthWei;
+
+    /**
+     * @notice Количество проданных на всех этапах ICO монет IDEA в размерности WEI.
+     **/
+    uint public soldIdeaWei;
+
+    /**
+     * @notice Количество проданных на этапе PreICO монет IDEA в размерности WEI.
+     **/
+    uint public soldIdeaWeiPreIco;
+
+    /**
+     * @notice Количество проданных на этапе ICO монет IDEA в размерности WEI.
+     **/
+    uint public soldIdeaWeiIco;
+
+    /**
+     * @notice Количество проданных на этапе PostICO монет IDEA в размерности WEI.
+     **/
+    uint public soldIdeaWeiPostIco;
+
+    /**
+     * @notice Состояния ICO.
+     **/
+    enum IcoStates {
+        Coming,        // Продажи ещё не начинались.
+        PreIco,        // Идет процесс предварительной продажи с высоким бонусом, но высоким порогов входа.
+        Ico,           // Идет основной процесс продажи.
+        PostIco,       // Продажи закончились и идет временная продажа монет с сайта сервиса.
+        Done,          // Все продажи успешно завершились.
+        Waiting        // Один из этапов продаж завершился и идет ожидание следующего.
+    }
+
+    /**
+     * @notice Текущее состояние ICO.
+     **/
+    IsoStates icoState = IcoStates.Coming;
+
+    /**
+     * @notice Время старта основного этапа ICO.
+     **/
+    uint icoStartTimestamp;
+
+    /**
+     * @notice Произведена покупка монет IDEA за монеты ETH.
+     * @param _account Аккаунт покупателя.
+     * @param _eth Количество монет ETH.
+     * @param _idea Количество монет IDEA.
+     **/
+    event Buy(address indexed _account, uint _eth, uint _idea);
+
+    /**
+     * @notice Сожжено некоторое количество монет IDEA.
+     * Происходит после завершения очередного этапа ICO.
+     * @param _amount Количество.
+     **/
+    event Burned(uint _amount);
+
+    /**
+     * @notice Функция продажи монет, работающая в момент пересылки монет на адрес контракта.
+     * Отправить ETH можно только в процессе проведения ICO, в иных случаях монеты будут
+     * возвращены автоматически.
+     **/
+    function() payable {
+        uint tokens;
+        bool moreThenPreIcoMin = msg.value > minEtherForPreIcoBuy * 1 ether;
+
+        if (icoState == IcoStates.PreIco && moreThenPreIcoMin && soldIdeaWeiPreIco <= maxCoinsForPreIco ** decimals) {
+
+            tokens = msg.value * 1500;                              // bonus +50% (PRE ICO)
+            balances[msg.sender] += tokens;
+            soldIdeaWeiPreIco += tokens;
+
+        } else if (icoState == IcoStates.Ico && soldIdeaWeiIco <= maxCoinsForIco ** decimals) {
+            uint elapsed = now - icoStartTimestamp;
+
+            if (elapsed <= 1 days) {
+
+                tokens = msg.value * 1250;                          // bonus +25% (ICO FIRST DAY)
+                balances[msg.sender] = tokens;
+
+            } else if (elapsed <= 6 days && elapsed > 1 days) {
+
+                tokens = msg.value * 1150;                          // bonus +15% (ICO TIER 1)
+                balances[msg.sender] = tokens;
+
+            } else if (elapsed <= 11 days && elapsed > 6 days) {
+
+                tokens = msg.value * 1100;                          // bonus +10% (ICO TIER 2)
+                balances[msg.sender] = tokens;
+
+            } else if (elapsed <= 16 days && elapsed > 11 days) {
+
+                tokens = msg.value * 1050;                          // bonus +5%  (ICO TIER 3)
+                balances[msg.sender] = tokens;
+
+            } else {
+
+                tokens = msg.value * 1000;                          // bonus +0%  (ICO OTHER DAYS)
+                balances[msg.sender] = tokens;
+
+            }
+
+            soldIdeaWeiIco += tokens;
+
+        } else if (icoState == IcoStates.PostIco && soldIdeaWeiPostIco <= maxCoinsForPostIco ** decimals) {
+
+            tokens = msg.value * 500;                              // bonus -50% (POST ICO PRICE)
+            balances[msg.sender] = tokens;
+            soldIdeaWeiPostIco += tokens;
+
+        } else {
+            revert();
+        }
+
+        earnedEthWei += msg.value;
+        soldIdeaWei += tokens;
+
+        Buy(msg.sender, msg.value, tokens);
+    }
+
+    /**
+     * @notice Перевод контракта в режим PreICO.
+     **/
+    function startPreIco() public onlyOwner {
+        icoState = IcoStates.PreIco;
+    }
+
+    /**
+     * @notice Остановка PreICO продаж и сжигание не проданных
+     * монет в двойном объеме.
+     **/
+    function stopPreIcoAndBurn() public onlyOwner {
+        stopAnyIcoAndBurn(
+            (maxCoinsForPreIco ** decimals - soldIdeaWeiPreIco) * 2
+        );
+    }
+
+    /**
+     * @notice Перевод контракта в режим ICO.
+     **/
+    function startIco() public onlyOwner {
+        icoState = IcoStates.Ico;
+        icoStartTimestamp = now;
+    }
+
+    /**
+     * @notice Остановка ICO продаж и сжигание не проданных
+     * монет в двойном объеме.
+     **/
+    function stopIcoAndBurn() public onlyOwner {
+        stopAnyIcoAndBurn(
+            (maxCoinsForIco ** decimals - soldIdeaWeiIco) * 2
+        );
+    }
+
+    /**
+     * @notice Перевод контракта в режим PostICO.
+     **/
+    function startPostIco() public onlyOwner {
+        icoState = IcoStates.PostIco;
+    }
+
+    /**
+     * @notice Остановка PostICO продаж и сжигание не проданных
+     * монет в двойном объеме.
+     **/
+    function stopPostIcoAndBurn() public onlyOwner {
+        stopAnyIcoAndBurn(
+            (maxCoinsForPostIco ** decimals - soldIdeaWeiPostIco) * 2
+        );
+    }
+
+    /**
+     * @notice Остановка любого этапа ICO продаж и сжигание указанного количества монет.
+     * Универсальная функция, вызываемая другими функциями.
+     * @param _burn Количество монет для сжигания.
+     **/
+    function stopAnyIcoAndBurn(uint _burn) internal onlyOwner {
+        icoState = IcoStates.Waiting;
+
+        balances[owner] = balances[owner].sub(_burn);
+        totalSupply = totalSupply.sub(_burn);
+
+        Burn(_burn);
+    }
+
+    /**
+     * @notice Вывод собранных монет.
+     **/
+    function withdrawEther() public onlyOwner {
+        this.transfer(owner);
+    }
+
     // ===                          ===
     // === DIVIDENDS ENGINE SECTION ===
     // ===                          ===
@@ -238,164 +464,4 @@ contract IdeaCoin is IdeaBasicCoin {
 
     // TODO
 
-    // ===             ===
-    // === ICO SECTION ===
-    // ===             ===
-
-    /**
-     * @notice TODO
-     **/
-    uint public earnedEthWei;
-
-    /**
-     * @notice TODO
-     **/
-    uint public earnedIdeaWei;
-
-    /**
-     * @notice TODO
-     **/
-    uint public maxCoinsForPreIco = 20000; // 20 000 IDEA
-
-    /**
-     * @notice TODO
-     **/
-    uint public maxCoinsForIco = 200000; // 200 000 IDEA
-
-    /**
-     * @notice TODO
-     **/
-    uint public maxCoinsForPostIco = 80000; // 80 000 IDEA
-
-    /**
-     * @notice TODO
-     **/
-    uint public minEtherForPreIcoBuy = 20;
-
-    /**
-     * @notice TODO
-     **/
-    enum IcoStates {
-        Coming,
-        PreIco,
-        Ico,
-        PostIco,
-        Done,
-        Waiting
-    }
-
-    /**
-     * @notice TODO
-     **/
-    IsoStates icoState = IcoStates.Coming;
-
-    /**
-     * @notice TODO
-     **/
-    uint icoStartTimestamp;
-
-    /**
-     * @notice TODO
-     **/
-    function() payable {
-        uint tokens;
-        bool moreThenPreIcoMin = msg.value > minEtherForPreIcoBuy * 1 ether;
-
-        if (icoState == IcoStates.PreIco && moreThenPreIcoMin) {
-
-            tokens = msg.value * 1500;                              // bonus +50% (PRE ICO)
-            balances[msg.sender] += tokens;
-
-        } else if (icoState == IcoStates.Ico) {
-            uint elapsed = now - icoStartTimestamp;
-
-            if (elapsed <= 1 days) {
-
-                tokens = msg.value * 1250;                          // bonus +25% (ICO FIRST DAY)
-                balances[msg.sender] = tokens;
-
-            } else if (elapsed <= 6 days && elapsed > 1 days) {
-
-                tokens = msg.value * 1150;                          // bonus +15% (ICO TIER 1)
-                balances[msg.sender] = tokens;
-
-            } else if (elapsed <= 11 days && elapsed > 6 days) {
-
-                tokens = msg.value * 1100;                          // bonus +10% (ICO TIER 2)
-                balances[msg.sender] = tokens;
-
-            } else if (elapsed <= 16 days && elapsed > 11 days) {
-
-                tokens = msg.value * 1050;                          // bonus +5%  (ICO TIER 3)
-                balances[msg.sender] = tokens;
-
-            } else {
-
-                tokens = msg.value * 1000;                          // bonus +0%  (ICO OTHER DAYS)
-                balances[msg.sender] = tokens;
-
-            }
-
-        } else if (icoState == IcoStates.PostIco) {
-
-            tokens = msg.value * 500;                              // bonus -50% (POST ICO PRICE)
-            balances[msg.sender] = tokens;
-
-        } else {
-            revert();
-        }
-
-        earnedEthWei += msg.value;
-        earnedIdeaWei += tokens;
-    }
-
-    /**
-     * @notice Перевод контракта в режим PreICO.
-     **/
-    function startPreIco() public onlyOwner {
-        icoState = IcoStates.PreIco;
-    }
-
-    /**
-     * @notice TODO
-     **/
-    function stopPreIco() public onlyOwner {
-        // TODO burn
-    }
-
-    /**
-     * @notice Перевод контракта в режим ICO.
-     **/
-    function startIco() public onlyOwner {
-        icoState = IcoStates.Ico;
-        icoStartTimestamp = now;
-    }
-
-    /**
-     * @notice TODO
-     **/
-    function stopIco() public onlyOwner {
-        // TODO burn
-    }
-
-    /**
-     * @notice Перевод контракта в режим PostICO.
-     **/
-    function startPostIco() public onlyOwner {
-        icoState = IcoStates.PostIco;
-    }
-
-    /**
-     * @notice TODO
-     **/
-    function stopPostIco() public onlyOwner {
-        // TODO burn
-    }
-
-    /**
-     * @notice Вывод собранных монет.
-     **/
-    function withdrawEther() public onlyOwner {
-        this.transfer(owner);
-    }
 }
