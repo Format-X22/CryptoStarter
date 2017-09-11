@@ -219,9 +219,8 @@ contract IdeaProject is IdeaTypeBind {
     /**
      * @notice Проект провален на одном из этапов работы по реализации проекта.
      * Эвент вызывается с запозданием относительно фактического события.
-     * @param _stage Номер этапа что был признан провальным, отсчет с 0.
      **/
-    event ProjectWorkFail(uint8 _stage);
+    event ProjectWorkFail();
 
     /**
      * @notice Разрешаем исполнять метод только в указанном состоянии.
@@ -256,6 +255,7 @@ contract IdeaProject is IdeaTypeBind {
         state = States.Funding;
 
         fundingEndTime = now + requiredDays * 1 days;
+        calcLastWorkStageStart();
 
         StartFunding(now);
     }
@@ -266,7 +266,7 @@ contract IdeaProject is IdeaTypeBind {
      * готовой продукции.
      **/
     function projectDone() public onlyState(States.Workflow) onlyEngine {
-        require(workStage == workStages.length - 1); // TODO проверка на этап другим способом.
+        require(now > lastWorkStageStartTimestamp);
 
         ProjectSuccessDone();
 
@@ -288,7 +288,7 @@ contract IdeaProject is IdeaTypeBind {
     function projectWorkFail() public onlyState(States.Funding) onlyEngine {
         state = States.WorkFail;
 
-        ProjectWorkFail(workStage); // TODO рассчет значения текущего этапа работ.
+        ProjectWorkFail();
     }
 
     // ===                     ===
@@ -329,6 +329,11 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Текущее количество процентов всех этапов.
      **/
     uint public currentWorkStagePercent;
+
+    /**
+     * @notice Время старта последнего этапа работ.
+     **/
+    uint internal lastWorkStageStartTimestamp;
 
     /**
      * @notice Создать этап работы.
@@ -383,6 +388,18 @@ contract IdeaProject is IdeaTypeBind {
     function destroyAllWorkStages() public onlyState(States.Initial) onlyEngine {
         currentWorkStagePercent = 0;
         delete workStages;
+    }
+
+    /**
+     * @notice Вычисление начала последнего этапа работ.
+     **/
+    function calcLastStageStart() internal {
+        lastWorkStageStartTimestamp = fundingEndTime;
+
+        // (length - 1) not a bug
+        for (uint8 i; i < workStages.length - 1; i += 1) {
+            lastWorkStageStartTimestamp += workStages[i].stageDays * 1 days;
+        }
     }
 
     // ===                  ===
