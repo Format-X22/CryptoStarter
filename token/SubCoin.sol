@@ -32,8 +32,9 @@ contract IdeaSubCoin is IdeaBasicCoin {
     uint public limit;
 
     /**
-     * @notice Цена за продукт в IDEA токенах, установленная владельцем проекта.
-     * Значение используется только в момент первичной продажи.
+     * @notice Цена за продукт в IDEA токенах в размерности WEI,
+     * установленная владельцем проекта. Значение используется
+     * только в момент первичной продажи и при голосовании.
      **/
     uint public price;
 
@@ -123,6 +124,39 @@ contract IdeaSubCoin is IdeaBasicCoin {
     modifier onlyProject() {
         require(msg.sender == project);
         _;
+    }
+
+    /**
+     * @notice Совершить перевод на указанный адрес.
+     * @param _to Получатель.
+     * @param _value Количество.
+     * @return success Результат.
+     **/
+    function transfer(address _to, uint _value) public returns (bool success) {
+        bool result = super.transfer(_to, _value);
+
+        if (result) {
+            IdeaProject(project).updateVotesOnTransfer(msg.sender, _to, _value * price);
+        }
+
+        return result;
+    }
+
+    /**
+     * @notice Совершить перевод с одного адреса на другой.
+     * @param _from Отправитель.
+     * @param _to Получатель.
+     * @param _value Количество.
+     * @return success Результат.
+     **/
+    function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
+        bool result = super.transferFrom(_from, _to, _value);
+
+        if (result) {
+            IdeaProject(project).updateVotesOnTransfer(_from, _to, _value * price);
+        }
+
+        return result;
     }
 
     /**

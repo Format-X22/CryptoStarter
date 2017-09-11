@@ -464,4 +464,51 @@ contract IdeaCoin is IdeaBasicCoin {
 
     // TODO
 
+    /**
+     * @notice Вывести средства, полученные на текущий этап работы.
+     * Средства поступят на счет владельца проекта.
+     **/
+    function withdraw() public onlyEngine {
+        require(
+        state == States.Funding ||
+        state == States.Workflow ||
+        state == States.SuccessDone
+        );
+
+        if (state == States.Funding) {
+            // TODO State to workflow or funding fail
+        }
+
+        if (state == States.Workflow || state == States.SuccessDone) {
+            // TODO
+        }
+    }
+
+    /**
+     * @notice Вывести средства назад в случае провала проекта.
+     * Если проект был провален на одном из этапов - средства вернуться
+     * в соответствии с оставшимся процентом.
+     **/
+    function cashBack() public onlyEngine {
+        require(
+        state == States.Funding ||
+        state == States.Workflow ||
+        state == States.FundingFail ||
+        state == States.WorkFail
+        );
+
+        if (state == States.Funding || state == States.Workflow) {
+            // TODO State to funding fail or work fail
+        }
+
+        if (state == States.FundingFail) {
+            // TODO
+        }
+
+        if (state == States.WorkFail) {
+            // TODO
+        }
+    }
+
+
 }

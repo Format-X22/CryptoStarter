@@ -66,12 +66,6 @@ contract IdeaProject is IdeaTypeBind {
     uint public trancheRemainder;
 
     /**
-     * @notice Баланс каждого инвестора, необходим для определения кешбека
-     * в случае провала проекта.
-     **/
-    mapping(address => uint) public investorBalance;
-
-    /**
      * @notice Конструктор.
      * @param _owner Владелец проекта.
      * @param _name Имя проекта.
@@ -143,44 +137,6 @@ contract IdeaProject is IdeaTypeBind {
         _requiredDays.denyZero();
 
         requiredDays = _requiredDays;
-    }
-
-    /**
-     * @notice Вывести средства, полученные на текущий этап работы.
-     * Средства поступят на счет владельца проекта.
-     **/
-    function withdraw() public onlyEngine {
-        require(
-            state == States.Funding ||
-            state == States.Workflow ||
-            state == States.SuccessDone
-        );
-
-        if (state == States.Funding) {
-            // TODO State to workflow or funding fail
-        }
-
-        // TODO
-    }
-
-    /**
-     * @notice Вывести средства назад в случае провала проекта.
-     * Если проект был провален на одном из этапов - средства вернуться
-     * в соответствии с оставшимся процентом.
-     **/
-    function cashBack() public onlyEngine {
-        require(
-            state == States.Funding ||
-            state == States.Workflow ||
-            state == States.FundingFail ||
-            state == States.WorkFail
-        );
-
-        if (state == States.Funding || state == States.Workflow) {
-            // TODO State to funding fail or work fail
-        }
-
-        // TODO
     }
 
     // ===                ===
@@ -255,6 +211,19 @@ contract IdeaProject is IdeaTypeBind {
     event ProjectSuccessDone();
 
     /**
+     * @notice Проект провален на этапе сбора средств.
+     * Эвент вызывается с запозданием относительно фактического события.
+     **/
+    event ProjectFundingFail();
+
+    /**
+     * @notice Проект провален на одном из этапов работы по реализации проекта.
+     * Эвент вызывается с запозданием относительно фактического события.
+     * @param _stage Номер этапа что был признан провальным, отсчет с 0.
+     **/
+    event ProjectWorkFail(uint8 _stage);
+
+    /**
      * @notice Разрешаем исполнять метод только в указанном состоянии.
      * @param _state Состояние.
      **/
@@ -297,11 +266,29 @@ contract IdeaProject is IdeaTypeBind {
      * готовой продукции.
      **/
     function projectDone() public onlyState(States.Workflow) onlyEngine {
-        require(workStage == workStages.length - 1);
+        require(workStage == workStages.length - 1); // TODO проверка на этап другим способом.
 
         ProjectSuccessDone();
 
         state = States.SuccessDone;
+    }
+
+    /**
+     * @notice Пометить проект как провалившийся на этапе сбора средств.
+     **/
+    function projectFundingFail() public onlyState(States.Funding) onlyEngine {
+        state = States.FundingFail;
+
+        ProjectFundingFail();
+    }
+
+    /**
+     * @notice Пометить проект как провалившийся на этапе работы над реализацией проекта.
+     **/
+    function projectWorkFail() public onlyState(States.Funding) onlyEngine {
+        state = States.WorkFail;
+
+        ProjectWorkFail(workStage); // TODO рассчет значения текущего этапа работ.
     }
 
     // ===                     ===
@@ -321,11 +308,6 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Список этапов работ.
      **/
     WorkStage[] public workStages;
-
-    /**
-     * @notice Номер текущего этапа работ.
-     **/
-    uint8 public workStage;
 
     /**
      * @notice Максимальное разрешенное количество этапов работ.
@@ -403,16 +385,6 @@ contract IdeaProject is IdeaTypeBind {
         delete workStages;
     }
 
-    /**
-     * @notice Пометить текущий этап работ как выполненый.
-     * Это запустит очередной этап голосования за выдачу следующего
-     * транша средств для реализации следующего этапа работ.
-     * В случае если это последний этап - будет вызван метод 'projectDone'.
-     **/
-    function stageDone() public onlyState(States.Workflow) onlyEngine {
-        // TODO
-    }
-
     // ===                  ===
     // === PRODUCTS SECTION ===
     // ===                  ===
@@ -421,6 +393,11 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Список продуктов проекта.
      **/
     address[] public products;
+
+    /**
+     * @notice Соотношение адреса продукта к идентификатору списка 'products'.
+     **/
+    mapping(address => uint8) public productsIdByAddress;
 
     /**
      * @notice Максимальное разрешенное количество продуктов у одного проекта.
@@ -432,7 +409,7 @@ contract IdeaProject is IdeaTypeBind {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name Имя продукта.
      * @param _symbol Символ продукта.
-     * @param _price Цена продукта в IDEA токенах.
+     * @param _price Цена продукта в IDEA токенах в размерности WEI.
      * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
      * @return _productAddress Адрес экземпляра контракта продукта.
      **/
@@ -447,6 +424,7 @@ contract IdeaProject is IdeaTypeBind {
         IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
 
         products.push(address(product));
+        productsIdByAddress[address(product)] = products.length - 1;
 
         return address(product);
     }
@@ -488,24 +466,73 @@ contract IdeaProject is IdeaTypeBind {
     // ===                ===
 
     /**
-     * @notice TODO
+     * @notice Процент голосов отданных за возврат денег инветорам.
+     * Голоса хранятся в виде массива, где индекс массива соответствует индексу
+     * этапа работы. Значение хранится в виде числа процентов, возведенных в 10 степень,
+     * то есть число 10000000000 соответствует 1% головов за возврат средств.
+     * Смотри также метод 'voteForCashBack'.
      **/
-    function voteForNextTranche() {
-        //
+    uint[] public cashBackVotes;
+
+    /**
+     * @notice Соответствие процента веса голоса аккаунту инвестора.
+     * В обычном случае это будет 0 или 100, в некоторох других - смотри
+     * метод 'voteForCashBackInPercentOfWeight'.
+     **/
+    mapping(address => uint8) public cashBackWeight;
+
+    /**
+     * @notice Разрешить действие только от котракта продукта, принадлежащего этому проекту.
+     **/
+    modifier onlyProduct() {
+        // TODO
     }
 
     /**
-     * @notice TODO
+     * @notice Отдать голос за прекращение проекта и возврат средств.
+     * Голосовать можно в любой момент, также можно отменить голос воспользовавшись
+     * методом 'cancelVoteForCashBack'. Вес голоса зависит от количества вложенных средств.
+     * Перед началом нового этапа работ и выдачей очередного транша создателю проекта -
+     * происходит проверка на голоса за возврат. Если голосов, с учетом их веса, суммарно
+     * оказалось больше 50% общего веса голосов - проект помечается как провальный,
+     * владелец проекта не получает транш, а инвесторы могут забрать оставшиеся средства
+     * пропорционально вложениям.
      **/
-    function voteForMoreTime() {
-        //
+    function voteForCashBack() public onlyEngine {
+        // TODO
     }
 
     /**
-     * @notice TODO
+     * @notice Отменить голос за возврат средст.
+     * Смотри подробности в описании метода 'voteForCashBack'.
      **/
-    function voteForCashBack() {
-        //
+    function cancelVoteForCashBack() public onlyEngine {
+        // TODO
+    }
+
+    /**
+     * @notice Аналог метода 'voteForCashBack', но позволяющий
+     * голосовать не всем весом. Подобное может использоваться для
+     * фондов, хранящих средства нескольких клиентов.
+     * Вызов этого метода повторно с другим значением процента
+     * редактирует вес голоса, установка значения на 0 эквивалентна
+     * вызову метода 'cancelVoteForCashBack'.
+     * @param _percent Необходимый процент от 0 до 100.
+     **/
+    function voteForCashBackInPercentOfWeight(uint8 _percent) public onlyEngine {
+        // TODO
+    }
+
+    /**
+     * @notice Корректирует значения голосов за возвврат средств при переводе
+     * монет в одном из продуктов проекта.
+     * Смотри также 'voteForCashBack'.
+     * @param _from Отправитель.
+     * @param _to Получатель.
+     * @param _idea Номинальная стоимость в IDEA.
+     **/
+    function updateVotesOnTransfer(address _from, address _to, uint _idea) public onlyProduct {
+        // TODO
     }
 
 }
