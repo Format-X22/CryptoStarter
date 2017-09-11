@@ -136,7 +136,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
         bool result = super.transfer(_to, _value);
 
         if (result) {
-            IdeaProject(project).updateVotesOnTransfer(msg.sender, _to, _value * price);
+            IdeaProject(project).updateVotesOnTransfer(msg.sender, _to);
         }
 
         return result;
@@ -153,7 +153,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
         bool result = super.transferFrom(_from, _to, _value);
 
         if (result) {
-            IdeaProject(project).updateVotesOnTransfer(_from, _to, _value * price);
+            IdeaProject(project).updateVotesOnTransfer(_from, _to);
         }
 
         return result;

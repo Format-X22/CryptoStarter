@@ -422,6 +422,25 @@ contract IdeaProject is IdeaTypeBind {
     uint8 constant maxProducts = 25;
 
     /**
+     * @notice Разрешить действие только от котракта продукта, принадлежащего этому проекту.
+     **/
+    modifier onlyProduct() {
+        bool permissionGranted;
+
+        for (uint8 i; i < products.length; i += 1) {
+            if (msg.sender == products[i]) {
+                permissionGranted = true;
+            }
+        }
+
+        if (permissionGranted) {
+            _;
+        } else {
+            revert();
+        }
+    }
+
+    /**
      * @notice Создания продукта, предлагаемого проектом.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name Имя продукта.
@@ -484,12 +503,11 @@ contract IdeaProject is IdeaTypeBind {
 
     /**
      * @notice Процент голосов отданных за возврат денег инветорам.
-     * Голоса хранятся в виде массива, где индекс массива соответствует индексу
-     * этапа работы. Значение хранится в виде числа процентов, возведенных в 10 степень,
+     * Значение хранится в виде числа процентов, возведенных в 10 степень,
      * то есть число 10000000000 соответствует 1% головов за возврат средств.
      * Смотри также метод 'voteForCashBack'.
      **/
-    uint[] public cashBackVotes;
+    uint public cashBackVotes;
 
     /**
      * @notice Соответствие процента веса голоса аккаунту инвестора.
@@ -497,13 +515,6 @@ contract IdeaProject is IdeaTypeBind {
      * метод 'voteForCashBackInPercentOfWeight'.
      **/
     mapping(address => uint8) public cashBackWeight;
-
-    /**
-     * @notice Разрешить действие только от котракта продукта, принадлежащего этому проекту.
-     **/
-    modifier onlyProduct() {
-        // TODO
-    }
 
     /**
      * @notice Отдать голос за прекращение проекта и возврат средств.
@@ -514,17 +525,19 @@ contract IdeaProject is IdeaTypeBind {
      * оказалось больше 50% общего веса голосов - проект помечается как провальный,
      * владелец проекта не получает транш, а инвесторы могут забрать оставшиеся средства
      * пропорционально вложениям.
+     * @param _account Аккаунт.
      **/
-    function voteForCashBack() public onlyEngine {
-        // TODO
+    function voteForCashBack(address _account) public onlyEngine {
+        voteForCashBackInPercentOfWeight(_account, 100);
     }
 
     /**
      * @notice Отменить голос за возврат средст.
      * Смотри подробности в описании метода 'voteForCashBack'.
+     * @param _account Аккаунт.
      **/
-    function cancelVoteForCashBack() public onlyEngine {
-        // TODO
+    function cancelVoteForCashBack(address _account) public onlyEngine {
+        voteForCashBackInPercentOfWeight(_account, 0);
     }
 
     /**
@@ -534,10 +547,23 @@ contract IdeaProject is IdeaTypeBind {
      * Вызов этого метода повторно с другим значением процента
      * редактирует вес голоса, установка значения на 0 эквивалентна
      * вызову метода 'cancelVoteForCashBack'.
+     * @param _account Аккаунт.
      * @param _percent Необходимый процент от 0 до 100.
      **/
-    function voteForCashBackInPercentOfWeight(uint8 _percent) public onlyEngine {
-        // TODO
+    function voteForCashBackInPercentOfWeight(address _account, uint8 _percent) public onlyEngine {
+        uint8 currentWeight = cashBackWeight[_account];
+
+        uint supply;
+        uint part;
+
+        for (uint8 i; i < products.length; i += 1) {
+            supply += products[i].totalSupply();
+            part += products[i].balanceOf(_account);
+        }
+
+        cashBackVotes += ((part ** 10) / supply) * (_percent - currentWeight);
+
+        cashBackWeight[_account] = _percent;
     }
 
     /**
@@ -546,10 +572,10 @@ contract IdeaProject is IdeaTypeBind {
      * Смотри также 'voteForCashBack'.
      * @param _from Отправитель.
      * @param _to Получатель.
-     * @param _idea Номинальная стоимость в IDEA.
      **/
     function updateVotesOnTransfer(address _from, address _to, uint _idea) public onlyProduct {
-        // TODO
+        voteForCashBackInPercentOfWeight(_from, cashBackWeight[_account]);
+        voteForCashBackInPercentOfWeight(_to, cashBackWeight[_account]);
     }
 
 }
