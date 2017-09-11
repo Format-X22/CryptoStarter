@@ -19,7 +19,7 @@ contract IdeaCoin is IdeaBasicCoin {
         name = 'IdeaCoin';
         symbol = 'IDEA';
         decimals = 18;
-        uint supply = 200000000; // 200 000 000 IDEA
+        uint supply = 100000000; // 100 000 000 IDEA
         totalSupply = supply ** decimals;
 
         owner = msg.sender;
@@ -40,19 +40,19 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Максимальное количество монет, разрешенных к продаже на PreICO.
      * Не проданное будет сожжено в двойном размере от общего количества монет.
      **/
-    uint constant public maxCoinsForPreIco = 5000000; // 5 000 000 IDEA
+    uint constant public maxCoinsForPreIco = 2500000; // 2 500 000 IDEA
 
     /**
      * @notice Максимальное количество монет, разрешенных к продаже на ICO.
      * Не проданное будет сожжено в двойном размере от общего количества монет.
      **/
-    uint constant public maxCoinsForIco = 70000000; // 70 000 000 IDEA
+    uint constant public maxCoinsForIco = 35000000; // 35 000 000 IDEA
 
     /**
      * @notice Максимальное количество монет, разрешенных к продаже на PostICO.
      * Не проданное будет сожжено в двойном размере от общего количества монет.
      **/
-    uint constant public maxCoinsForPostIco = 24000000; // 24 000 000 IDEA
+    uint constant public maxCoinsForPostIco = 12000000; // 12 000 000 IDEA
 
     /**
      * @notice Минимальное количество монет ETH за которое производится продажа
