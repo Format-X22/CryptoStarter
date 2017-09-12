@@ -466,36 +466,71 @@ contract IdeaCoin is IdeaBasicCoin {
     // === PROJECTS ENGINE SECTION ===
     // ===                         ===
 
+    /**
+     * @notice Список всех проектов в системе IdeaCoin.
+     **/
     address[] public projects;
 
+    /**
+     * @notice Создан новый проект в системе IdeaCoin.
+     * @param _address Адрес контракта. 
+     * @param _name Имя проекта.
+     * @param _required Необходимое количество инвестиций в IDEA.
+     * @param _requiredDays Количество дней сбора инвестиций.
+     **/
+    event ProjectCreated(address indexed _address, string indexed _name, uint _required, uint _requiredDays);
+
+    /**
+     * @notice Разрешение исполнять метод только владельцу проекта.
+     **/
     modifier onlyProjectOwner(address _project) {
         require(msg.sender == IdeaProject(_project).owner());
         _;
     }
 
+    /**
+     * @notice Разрешение исполнять метод только владельцу продукта.
+     **/
     modifier onlyProductOwner(address _product) {
         require(msg.sender == IdeaSubCoin(_product).owner());
         _;
     }
 
-    function makeProject() public {
-        //
+    /**
+     * @notice Создание проекта в системе IdeaCoin.
+     * @param _name Имя проекта.
+     * @param _required Необходимое количество инвестиций в IDEA.
+     * @param _requiredDays Количество дней сбора инвестиций.
+     * Должно быть в диапазоне от 10 до 100.
+     **/
+    function makeProject(string _name, uint _required, uint _requiredDays) public returns (address _address) {
+        IdeaProject project = new IdeaProject(
+            msg.sender,
+            _name,
+            _required,
+            _requiredDays
+        );
+        _address = address(project);
+        
+        projects.push(project);
+
+        ProjectCreated(_address, _name, _required, _requiredDays);
     }
 
+    /**
+     * @notice Получение списка всех проектов IdeaCoin.
+     **/
     function getAllProjects() constant public returns (address[] _result) {
         return projects;
     }
 
-    function getAllMyProjects() constant public {
-        //
-    }
-
-    function getAllProducts(address _project) constant public {
-        //
-    }
-
-    function getAllMyProducts(address _project) constant public {
-        //
+    /**
+     * @notice Получение списка всех продуктов проекта.
+     * @dev Короткий алиас к 'getAllProjectProductsAddresses' для консистентности.
+     * @param _project Проект.
+     **/
+    function getAllProducts(address _project) constant public returns (address[] _result) {
+        return getAllProjectProductsAddresses(_project);
     }
 
     // ===                         ===
@@ -565,7 +600,7 @@ contract IdeaCoin is IdeaBasicCoin {
 
     /**
      * @notice Создать этап работы.
-     * Суммарно должно быть не более 10 этапов (`maxWorkStages`),
+     * Суммарно должно быть не более 10 этапов,
      * а также сумма процентов всех этапов должна быть равна 100%.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _project Проект.
