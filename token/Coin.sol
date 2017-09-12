@@ -728,13 +728,25 @@ contract IdeaCoin is IdeaBasicCoin {
      * Средства поступят на счет владельца проекта.
      * @param _project Проект.
      **/
-    function withdrawFromProject(address _project) public onlyProjectOwner(_project) returns (bool _success) {
+    function withdrawFromProject(
+        address _project,
+        uint8 _stage
+    ) public onlyProjectOwner(_project) returns (bool _success) {
         IdeaProject project = IdeaProject(_project);
+        uint sum;
 
         updateStateFundingFailIfNeed(_project);
 
         if (project.isInWorkflowState() || project.isInSuccessDoneState()) {
-            // TODO
+            sum = project.withdraw(_stage);
+
+            if (sum > 0) {
+                balances[msg.sender] = balances[msg.sender].add(sum);
+
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }

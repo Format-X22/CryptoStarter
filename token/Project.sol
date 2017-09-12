@@ -499,6 +499,17 @@ contract IdeaProject is IdeaTypeBind {
         }
     }
 
+    /**
+     * @notice Вывести средства за указанный этап работ.
+     * @param _stage Этап.
+     * @return _sum Количество.
+     **/
+    function withdraw(uint8 _stage) public onlyEngine returns (uint _sum) {
+        _sum = workStages[_stage].sum;
+
+        workStages[_stage].sum = 0;
+    }
+
     // ===                  ===
     // === PRODUCTS SECTION ===
     // ===                  ===
