@@ -492,6 +492,157 @@ contract IdeaCoin is IdeaBasicCoin {
     // === CONTROL PROJECT SECTION ===
     // ===                         ===
 
+    /**
+     * @notice Установка имени проекта.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _name Новое имя.
+     **/
+    function setName(string _name) public onlyState(States.Initial) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Установка значения неоходимых инвестиций.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _required Значение.
+     **/
+    function setRequired(uint _required) public onlyState(States.Initial) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Установка значения времени сбора средств.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _requiredDays Количество дней.
+     **/
+    function setRequiredDays(uint _requiredDays) public onlyState(States.Initial) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Перевести проект в состояние 'Coming'
+     * и заблокировать возможность внесения изменений.
+     **/
+    function markAsComingAndFreeze() public onlyState(States.Initial) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Запустить сбор средств.
+     * Остановить сбор будет нельзя. При успешном сборе проект перейдет
+     * в состояние начала работ и будут начислены средства за первый этап.
+     * В случае не сбора средств за необходимое время - проект будет закрыт,
+     * а средства вернуться на счета инвесторов.
+     **/
+    function startFunding() public onlyState(States.Coming) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Пометить проект как завершенный. Проект должен находится
+     * на последнем этапе работ. Также это означает что стартует доставка
+     * готовой продукции.
+     **/
+    function projectDone() public onlyState(States.Workflow) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Уничтожить последний созданный этап.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     **/
+    function destroyLastWorkStage() public onlyState(States.Initial) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Уничтожить все этапы.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     **/
+    function destroyAllWorkStages() public onlyState(States.Initial) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Создания продукта, предлагаемого проектом.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _name Имя продукта.
+     * @param _symbol Символ продукта.
+     * @param _price Цена продукта в IDEA токенах в размерности WEI.
+     * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
+     * @return _productAddress Адрес экземпляра контракта продукта.
+     **/
+    function makeProduct(
+        string _name,
+        string _symbol,
+        uint _price,
+        uint _limit
+    ) onlyState(States.Initial) public onlyEngine returns (address _productAddress) {
+        //
+    }
+
+    /**
+     * @notice Получение всех адресов продуктов.
+     * @return _result Результат.
+     **/
+    function getAllProductsAddresses() constant public onlyEngine returns (address[] _result) {
+        //
+    }
+
+    /**
+     * @notice Уничтожить последний созданный продукт.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     **/
+    function destroyLastProduct() public onlyState(States.Initial) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Уничтожить все продукты.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     **/
+    function destroyAllProducts() public onlyState(States.Initial) onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Отдать голос за прекращение проекта и возврат средств.
+     * Голосовать можно в любой момент, также можно отменить голос воспользовавшись
+     * методом 'cancelVoteForCashBack'. Вес голоса зависит от количества вложенных средств.
+     * Перед началом нового этапа работ и выдачей очередного транша создателю проекта -
+     * происходит проверка на голоса за возврат. Если голосов, с учетом их веса, суммарно
+     * оказалось больше 50% общего веса голосов - проект помечается как провальный,
+     * владелец проекта не получает транш, а инвесторы могут забрать оставшиеся средства
+     * пропорционально вложениям.
+     * @param _account Аккаунт.
+     **/
+    function voteForCashBack(address _account) public onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Отменить голос за возврат средст.
+     * Смотри подробности в описании метода 'voteForCashBack'.
+     * @param _account Аккаунт.
+     **/
+    function cancelVoteForCashBack(address _account) public onlyEngine {
+        //
+    }
+
+    /**
+     * @notice Аналог метода 'voteForCashBack', но позволяющий
+     * голосовать не всем весом. Подобное может использоваться для
+     * фондов, хранящих средства нескольких клиентов.
+     * Вызов этого метода повторно с другим значением процента
+     * редактирует вес голоса, установка значения на 0 эквивалентна
+     * вызову метода 'cancelVoteForCashBack'.
+     * @param _account Аккаунт.
+     * @param _percent Необходимый процент от 0 до 100.
+     **/
+    function voteForCashBackInPercentOfWeight(address _account, uint8 _percent) public onlyEngine {
+        //
+    }
+
     // TODO Разрешать вызов кешбека и виздрава только в случае соответствующих состояний проекта
 
     /**
@@ -544,10 +695,47 @@ contract IdeaCoin is IdeaBasicCoin {
     // === CONTROL PRODUCT (SUB-COIN) SECTION ===
     // ===                                    ===
 
-    function buyProduct(address _product, uint _amount) {
+    /**
+     * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
+     * @param _amount Колчество, на которое необходимо увеличить лимит.
+     **/
+    function incLimit(uint _amount) public onlyProject {
         //
     }
 
-    // TODO
+    /**
+     * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
+     * @param _amount Количество, на которое необходимо уменьшить лимит.
+     **/
+    function decLimit(uint _amount) public onlyProject {
+        //
+    }
+
+    /**
+     * @notice Делает количество продуктов безлимитным.
+     **/
+    function makeUnlimited() public onlyProject {
+        //
+    }
+
+    /**
+     * @notice Производит покупку токенов продукта.
+     * @param _account Аккаунт покупателя.
+     * @param _amount Количество токенов.
+     **/
+    function buy(address _account, uint _amount) public onlyProject {
+        //
+    }
+
+    /**
+     * @notice Устанавливает адрес физической доставки товара.
+     * @param _account Аккаунт покупателя.
+     * @param _shipping Адрес физической доставки.
+     **/
+    function setShipping(address _account, string _shipping) public onlyProject {
+        //
+    }
+
+    
 
 }
