@@ -497,7 +497,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _name Новое имя.
      **/
-    function setName(string _name) public onlyState(States.Initial) onlyEngine {
+    function setProjectName(string _name) public {
         //
     }
 
@@ -506,7 +506,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _required Значение.
      **/
-    function setRequired(uint _required) public onlyState(States.Initial) onlyEngine {
+    function setProjectRequired(uint _required) public {
         //
     }
 
@@ -515,7 +515,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      * @param _requiredDays Количество дней.
      **/
-    function setRequiredDays(uint _requiredDays) public onlyState(States.Initial) onlyEngine {
+    function setProjectRequiredDays(uint _requiredDays) public {
         //
     }
 
@@ -523,7 +523,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Перевести проект в состояние 'Coming'
      * и заблокировать возможность внесения изменений.
      **/
-    function markAsComingAndFreeze() public onlyState(States.Initial) onlyEngine {
+    function markProjectAsComingAndFreeze() public {
         //
     }
 
@@ -534,7 +534,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * В случае не сбора средств за необходимое время - проект будет закрыт,
      * а средства вернуться на счета инвесторов.
      **/
-    function startFunding() public onlyState(States.Coming) onlyEngine {
+    function startProjectFunding() public {
         //
     }
 
@@ -543,7 +543,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * на последнем этапе работ. Также это означает что стартует доставка
      * готовой продукции.
      **/
-    function projectDone() public onlyState(States.Workflow) onlyEngine {
+    function projectDone() public {
         //
     }
 
@@ -551,7 +551,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Уничтожить последний созданный этап.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyLastWorkStage() public onlyState(States.Initial) onlyEngine {
+    function destroyProjectLastWorkStage() public {
         //
     }
 
@@ -559,7 +559,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Уничтожить все этапы.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyAllWorkStages() public onlyState(States.Initial) onlyEngine {
+    function destroyAllProjectWorkStages() public {
         //
     }
 
@@ -572,12 +572,12 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
      * @return _productAddress Адрес экземпляра контракта продукта.
      **/
-    function makeProduct(
+    function makeProjectProduct(
         string _name,
         string _symbol,
         uint _price,
         uint _limit
-    ) onlyState(States.Initial) public onlyEngine returns (address _productAddress) {
+    ) onlyState(States.Initial) public returns (address _productAddress) {
         //
     }
 
@@ -585,7 +585,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Получение всех адресов продуктов.
      * @return _result Результат.
      **/
-    function getAllProductsAddresses() constant public onlyEngine returns (address[] _result) {
+    function getAllProjectProductsAddresses() constant public returns (address[] _result) {
         //
     }
 
@@ -593,7 +593,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Уничтожить последний созданный продукт.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyLastProduct() public onlyState(States.Initial) onlyEngine {
+    function destroyProjectLastProduct() public {
         //
     }
 
@@ -601,7 +601,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Уничтожить все продукты.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
      **/
-    function destroyAllProducts() public onlyState(States.Initial) onlyEngine {
+    function destroyAllProjectProducts() public {
         //
     }
 
@@ -616,7 +616,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * пропорционально вложениям.
      * @param _account Аккаунт.
      **/
-    function voteForCashBack(address _account) public onlyEngine {
+    function voteForCashBack(address _account) public {
         //
     }
 
@@ -625,7 +625,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * Смотри подробности в описании метода 'voteForCashBack'.
      * @param _account Аккаунт.
      **/
-    function cancelVoteForCashBack(address _account) public onlyEngine {
+    function cancelVoteForCashBack(address _account) public {
         //
     }
 
@@ -639,7 +639,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _account Аккаунт.
      * @param _percent Необходимый процент от 0 до 100.
      **/
-    function voteForCashBackInPercentOfWeight(address _account, uint8 _percent) public onlyEngine {
+    function voteForCashBackInPercentOfWeight(address _account, uint8 _percent) public {
         //
     }
 
@@ -649,7 +649,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Вывести средства, полученные на текущий этап работы.
      * Средства поступят на счет владельца проекта.
      **/
-    function withdraw() public onlyEngine {
+    function withdrawFromProject() public {
         require(
             state == States.Funding ||
             state == States.Workflow ||
@@ -670,7 +670,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * Если проект был провален на одном из этапов - средства вернуться
      * в соответствии с оставшимся процентом.
      **/
-    function cashBack() public onlyEngine {
+    function cashBackFromProject() public {
         require(
                 state == States.Funding ||
                 state == States.Workflow ||
@@ -699,7 +699,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
      * @param _amount Колчество, на которое необходимо увеличить лимит.
      **/
-    function incLimit(uint _amount) public onlyProject {
+    function incProductLimit(uint _amount) public {
         //
     }
 
@@ -707,14 +707,14 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
      * @param _amount Количество, на которое необходимо уменьшить лимит.
      **/
-    function decLimit(uint _amount) public onlyProject {
+    function decProductLimit(uint _amount) public {
         //
     }
 
     /**
      * @notice Делает количество продуктов безлимитным.
      **/
-    function makeUnlimited() public onlyProject {
+    function makeProductUnlimited() public {
         //
     }
 
@@ -723,7 +723,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _account Аккаунт покупателя.
      * @param _amount Количество токенов.
      **/
-    function buy(address _account, uint _amount) public onlyProject {
+    function buyProduct(address _account, uint _amount) public {
         //
     }
 
@@ -732,10 +732,8 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _account Аккаунт покупателя.
      * @param _shipping Адрес физической доставки.
      **/
-    function setShipping(address _account, string _shipping) public onlyProject {
+    function setProductShipping(address _account, string _shipping) public {
         //
     }
-
-    
 
 }

@@ -586,7 +586,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
      * @param _amount Колчество, на которое необходимо увеличить лимит.
      **/
-    function incLimit(uint _amount) public onlyProject {
+    function incProductLimit(uint _amount) public onlyState(States.Initial) onlyEngine {
         //
     }
 
@@ -594,14 +594,14 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
      * @param _amount Количество, на которое необходимо уменьшить лимит.
      **/
-    function decLimit(uint _amount) public onlyProject {
+    function decProductLimit(uint _amount) public onlyState(States.Initial) onlyEngine {
         //
     }
 
     /**
      * @notice Делает количество продуктов безлимитным.
      **/
-    function makeUnlimited() public onlyProject {
+    function makeProductUnlimited() public onlyState(States.Initial) onlyEngine {
         //
     }
 
@@ -610,7 +610,7 @@ contract IdeaProject is IdeaTypeBind {
      * @param _account Аккаунт покупателя.
      * @param _amount Количество токенов.
      **/
-    function buy(address _account, uint _amount) public onlyProject {
+    function buyProduct(address _account, uint _amount) public onlyState(States.Funding) onlyEngine {
         //
     }
 
@@ -619,7 +619,7 @@ contract IdeaProject is IdeaTypeBind {
      * @param _account Аккаунт покупателя.
      * @param _shipping Адрес физической доставки.
      **/
-    function setShipping(address _account, string _shipping) public onlyProject {
+    function setProductShipping(address _account, string _shipping) public onlyEngine {
         //
     }
 
