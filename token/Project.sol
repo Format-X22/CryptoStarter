@@ -199,23 +199,20 @@ contract IdeaProject is IdeaTypeBind {
     States public state = States.Initial;
 
     /**
-     * @notice Состояние проекта изменено.
-     * Смена состояния происходит не мгновенно по причине особенностей
-     * работы Ethereum, однако это не влияет на логику работы контракта.
-     * @param _state Состояние.
-     **/
-    event StateChanged(States indexed _state);
-
-    /**
      * @notice Проект помечен как скоро стартующий.
      **/
     event ProjectIsComing();
 
     /**
      * @notice Проект начал собирать инвестиции.
-     * @param _time Время завершения сбора инвестиций в виде UNIX-таймштампа.
+     * @param _end Время завершения сбора инвестиций в виде UNIX-таймштампа.
      **/
-    event StartFunding(uint _time);
+    event StartFunding(uint _end);
+
+    /**
+     * @notice Начата работа по реализации проекта.
+     **/
+    event StartWork();
 
     /**
      * @notice Проект успешно завершен.
@@ -326,7 +323,16 @@ contract IdeaProject is IdeaTypeBind {
         fundingEndTime = now + requiredDays * 1 days;
         calcLastWorkStageStart();
 
-        StartFunding(now);
+        StartFunding(fundingEndTime);
+    }
+
+    /**
+     * @notice Установить состояние проекта на факт начала работ по его реализации.
+     **/
+    function projectWorkStarted() public onlyState(States.Funding) onlyEngine {
+        state = States.Workflow;
+
+        StartWork();
     }
 
     /**

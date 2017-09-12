@@ -728,19 +728,15 @@ contract IdeaCoin is IdeaBasicCoin {
      * Средства поступят на счет владельца проекта.
      * @param _project Проект.
      **/
-    function withdrawFromProject(address _project) public onlyProjectOwner(_project) {
-        require(
-            state == States.Funding ||
-            state == States.Workflow ||
-            state == States.SuccessDone
-        );
+    function withdrawFromProject(address _project) public onlyProjectOwner(_project) returns (bool _success) {
+        IdeaProject project = IdeaProject(_project);
 
-        if (state == States.Funding) {
-            // TODO State to workflow or funding fail
-        }
+        updateStateFundingFailIfNeed(_project);
 
-        if (state == States.Workflow || state == States.SuccessDone) {
+        if (project.isInWorkflowState() || project.isInSuccessDoneState()) {
             // TODO
+        } else {
+            return false;
         }
     }
 
@@ -755,7 +751,7 @@ contract IdeaCoin is IdeaBasicCoin {
         IdeaProject project = IdeaProject(_project);
         uint sum;
 
-        updateStateFundingFailIfNeed(_project);
+        updateFundingStateIfNeed(_project);
 
         if (
             project.inFundingFailState() ||
@@ -770,18 +766,21 @@ contract IdeaCoin is IdeaBasicCoin {
     }
 
     /**
-     * @notice При необходимости обновить состояние проекта до не успешного сбора инвестиций.
+     * @notice При необходимости обновить состояние проекта относительно сбора инвестиций.
      * @param _project Проект.
      **/
-    function updateStateFundingFailIfNeed(address _project) internal {
+    function updateFundingStateIfNeed(address _project) internal {
         IdeaProject project = IdeaProject(_project);
 
         if (
             project.inFundingState() &&
-            now > project.fundingEndTime() &&
-            project.earned() < project.required()
+            now > project.fundingEndTime()
         ) {
-            project.projectFundingFail();
+            if (project.earned() >= project.required()) {
+                project.projectWorkStarted();
+            } else {
+                project.projectFundingFail();
+            }
         }
     }
 
