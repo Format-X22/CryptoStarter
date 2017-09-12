@@ -66,6 +66,11 @@ contract IdeaProject is IdeaTypeBind {
     uint public trancheRemainder;
 
     /**
+     * @notice Соответствие аккаунта и факта того что деньги были возвращены.
+     **/
+    mapping(address => bool) public isCashBack;
+
+    /**
      * @notice Количество собранных инвестиций увеличено.
      * Вызывается в момент покупки любого из продуктов проекта.
      * @param _idea Количество токенов в размерности WEI.
@@ -589,6 +594,8 @@ contract IdeaProject is IdeaTypeBind {
      * @return _sum Сумма.
      **/
     function calcInvesting(address _account) public onlyEngine returns (uint _sum) {
+        require(!isCashBack[_account]);
+
         for (uint8 i = 0; i < products.length; i += 1) {
             IdeaSubCoin product = IdeaSubCoin(products[i]);
 
@@ -598,6 +605,8 @@ contract IdeaProject is IdeaTypeBind {
         if (isInWorkFailState()) {
             _sum = _sum.mul(100 - failInvestPercents).div(100);
         }
+
+        isCashBack[_account] = true;
     }
 
     // ===                ===

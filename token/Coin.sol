@@ -723,8 +723,6 @@ contract IdeaCoin is IdeaBasicCoin {
         IdeaProject(_project).voteForCashBackInPercentOfWeight(msg.sender);
     }
 
-    // TODO Разрешать вызов кешбека и виздрава только в случае соответствующих состояний проекта
-
     /**
      * @notice Вывести средства, полученные на текущий этап работы.
      * Средства поступят на счет владельца проекта.
@@ -757,13 +755,7 @@ contract IdeaCoin is IdeaBasicCoin {
         IdeaProject project = IdeaProject(_project);
         uint sum;
 
-        if (
-            project.inFundingState() &&
-            now > project.fundingEndTime() &&
-            project.earned() < project.required()
-        ) {
-            project.projectFundingFail();
-        }
+        updateStateFundingFailIfNeed(_project);
 
         if (
             project.inFundingFailState() ||
@@ -774,6 +766,22 @@ contract IdeaCoin is IdeaBasicCoin {
             return true;
         } else {
             return false;
+        }
+    }
+
+    /**
+     * @notice При необходимости обновить состояние проекта до не успешного сбора инвестиций.
+     * @param _project Проект.
+     **/
+    function updateStateFundingFailIfNeed(address _project) internal {
+        IdeaProject project = IdeaProject(_project);
+
+        if (
+            project.inFundingState() &&
+            now > project.fundingEndTime() &&
+            project.earned() < project.required()
+        ) {
+            project.projectFundingFail();
         }
     }
 
