@@ -751,25 +751,29 @@ contract IdeaCoin is IdeaBasicCoin {
      * Если проект был провален на одном из этапов - средства вернуться
      * в соответствии с оставшимся процентом.
      * @param _project Проект.
+     * @return _success Успешность запроса.
      **/
-    function cashBackFromProject(address _project) public {
-        require(
-                state == States.Funding ||
-                state == States.Workflow ||
-                state == States.FundingFail ||
-                state == States.WorkFail
-        );
+    function cashBackFromProject(address _project) public returns (bool _success) {
+        IdeaProject project = IdeaProject(_project);
+        uint sum;
 
-        if (state == States.Funding || state == States.Workflow) {
-            // TODO State to funding fail or work fail
+        if (
+            project.inFundingState() &&
+            now > project.fundingEndTime() &&
+            project.earned() < project.required()
+        ) {
+            project.projectFundingFail();
         }
 
-        if (state == States.FundingFail) {
-            // TODO
-        }
+        if (
+            project.inFundingFailState() ||
+            project.inWorkFailState()
+        ) {
+            balances[msg.sender] = balances[msg.sender].add(project.calcInvesting(msg.sender));
 
-        if (state == States.WorkFail) {
-            // TODO
+            return true;
+        } else {
+            return false;
         }
     }
 

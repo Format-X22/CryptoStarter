@@ -76,7 +76,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Конструктор.
      * @param _owner Владелец проекта.
      * @param _name Имя проекта.
-     * @param _required Необходимое количество инвестиций в IDEA.
+     * @param _required Необходимое количество инвестиций в IDEA в размерности WEI.
      * @param _requiredDays Количество дней сбора инвестиций.
      * Должно быть в диапазоне от `minRequiredDays` до `maxRequiredDays`.
      **/
@@ -239,6 +239,62 @@ contract IdeaProject is IdeaTypeBind {
     }
 
     /**
+     * @notice Находится ли проект в начально состоянии.
+     * @param _result Результат проверки.
+     **/
+    function isInitialState() public returns (bool _result) {
+        return state == States.Initial;
+    }
+
+    /**
+     * @notice Находится ли проект в состоянии ожидания старта.
+     * @param _result Результат проверки.
+     **/
+    function isComingState() public returns (bool _result) {
+        return state == States.Coming;
+    }
+
+    /**
+     * @notice Находится ли проект в состоянии сбора средств.
+     * @param _result Результат проверки.
+     **/
+    function isFundingState() public returns (bool _result) {
+        return state == States.Funding;
+    }
+
+    /**
+     * @notice Находится ли проект в состоянии работы по реализации проекта.
+     * @param _result Результат проверки.
+     **/
+    function isWorkflowState() public returns (bool _result) {
+        return state == States.Workflow;
+    }
+
+    /**
+     * @notice Находится ли проект в состоянии успешного завершения.
+     * @param _result Результат проверки.
+     **/
+    function isSuccessDoneState() public returns (bool _result) {
+        return state == States.SuccessDone;
+    }
+
+    /**
+     * @notice Находится ли проект в состоянии не успешного сбора средств.
+     * @param _result Результат проверки.
+     **/
+    function isFundingFailState() public returns (bool _result) {
+        return state == States.FundingFail;
+    }
+
+    /**
+     * @notice Находится ли проект в состоянии не успешной реализации.
+     * @param _result Результат проверки.
+     **/
+    function isWorkFailState() public returns (bool _result) {
+        return state == States.WorkFail;
+    }
+
+    /**
      * @notice Перевести проект в состояние 'Coming'
      * и заблокировать возможность внесения изменений.
      **/
@@ -292,7 +348,7 @@ contract IdeaProject is IdeaTypeBind {
     /**
      * @notice Пометить проект как провалившийся на этапе работы над реализацией проекта.
      **/
-    function projectWorkFail() public onlyState(States.Funding) onlyEngine {
+    function projectWorkFail() internal {
         state = States.WorkFail;
 
         ProjectWorkFail();
@@ -504,6 +560,21 @@ contract IdeaProject is IdeaTypeBind {
         delete products;
     }
 
+    /**
+     * @notice Вычисление неизрасходованных инвестиций, принидлежащих аккаунту.
+     * @param _account Аккаунт.
+     * @return _sum Сумма.
+     **/
+    function calcInvesting(address _account) public onlyEngine returns (uint _sum) {
+        for (uint8 i = 0; i < products.length; i += 1) {
+            IdeaSubCoin product = IdeaSubCoin(products[i]);
+
+            _sum = sum.add(product.balanceOf(_account) * product.price());
+        }
+
+        // TODO calc percent
+    }
+
     // ===                ===
     // === VOTING SECTION ===
     // ===                ===
@@ -534,7 +605,7 @@ contract IdeaProject is IdeaTypeBind {
      * пропорционально вложениям.
      * @param _account Аккаунт.
      **/
-    function voteForCashBack(address _account) public onlyEngine {
+    function voteForCashBack(address _account) public onlyState(States.Workflow) onlyEngine {
         voteForCashBackInPercentOfWeight(_account, 100);
     }
 
@@ -543,7 +614,7 @@ contract IdeaProject is IdeaTypeBind {
      * Смотри подробности в описании метода 'voteForCashBack'.
      * @param _account Аккаунт.
      **/
-    function cancelVoteForCashBack(address _account) public onlyEngine {
+    function cancelVoteForCashBack(address _account) public onlyState(States.Workflow) onlyEngine {
         voteForCashBackInPercentOfWeight(_account, 0);
     }
 
@@ -557,9 +628,12 @@ contract IdeaProject is IdeaTypeBind {
      * @param _account Аккаунт.
      * @param _percent Необходимый процент от 0 до 100.
      **/
-    function voteForCashBackInPercentOfWeight(address _account, uint8 _percent) public onlyEngine {
-        uint8 currentWeight = cashBackWeight[_account];
+    function voteForCashBackInPercentOfWeight(
+        address _account,
+        uint8 _percent
+    ) public onlyState(States.Workflow) onlyEngine {
 
+        uint8 currentWeight = cashBackWeight[_account];
         uint supply;
         uint part;
 
@@ -569,8 +643,11 @@ contract IdeaProject is IdeaTypeBind {
         }
 
         cashBackVotes += ((part ** 10) / supply) * (_percent - currentWeight);
-
         cashBackWeight[_account] = _percent;
+
+        if (cashBackVotes > 50 ** 10) {
+            projectWorkFail();
+        }
     }
 
     /**
@@ -581,8 +658,10 @@ contract IdeaProject is IdeaTypeBind {
      * @param _to Получатель.
      **/
     function updateVotesOnTransfer(address _from, address _to, uint _idea) public onlyProduct {
-        voteForCashBackInPercentOfWeight(_from, cashBackWeight[_account]);
-        voteForCashBackInPercentOfWeight(_to, cashBackWeight[_account]);
+        if (state == States.Workflow) {
+            voteForCashBackInPercentOfWeight(_from, cashBackWeight[_account]);
+            voteForCashBackInPercentOfWeight(_to, cashBackWeight[_account]);
+        }
     }
 
     // ===                         ===
