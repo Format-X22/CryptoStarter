@@ -54,18 +54,6 @@ contract IdeaProject is IdeaTypeBind {
     uint public earned;
 
     /**
-     * @notice Сумма, доступная для вывода в рамках текущего этапа работы.
-     * В случае если прошлый транш не был выведен - суммируется с предыдущим.
-     **/
-    uint public tranche;
-
-    /**
-     * @notice Остаток, образовавшийся в процессе деления не нацело суммы транша.
-     * Будет суммирован с траншем последнего этапа.
-     **/
-    uint public trancheRemainder;
-
-    /**
      * @notice Соответствие аккаунта и факта того что деньги были возвращены.
      **/
     mapping(address => bool) public isCashBack;
@@ -305,7 +293,21 @@ contract IdeaProject is IdeaTypeBind {
         require(products.length > 0);
         require(currentWorkStagePercent == 100);
 
+        uint raw;
+        uint reserve;
+        uint reserveTotal;
+
         state = States.Coming;
+
+        for (uint8 i; i < workStages.length; i += 1) {
+            raw = required.mul(workStages[i].percent);
+            reserve = raw % 100;
+            reserveTotal = reserveTotal.add(reserve);
+
+            workStages[i].sum = raw.sub(reserve).div(100);
+        }
+    
+        workStages[workStages.length - 1].sum = workStages[workStages.length - 1].sum.add(reserveTotal);
 
         ProjectIsComing();
     }
@@ -388,6 +390,9 @@ contract IdeaProject is IdeaTypeBind {
         string name;        // Имя этапа.
         uint8 percent;      // Процент средств от общего бюджета.
         uint8 stageDays;    // Количество дней выполнения этапа.
+        uint sum;           /* Сумма, доступная для вывода с момента
+                               начала этапа в случае если проект
+                               не был признан провалившимся. */
     }
 
     /**
