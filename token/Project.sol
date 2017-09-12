@@ -584,42 +584,51 @@ contract IdeaProject is IdeaTypeBind {
 
     /**
      * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
+     * @param _product Продукт.
      * @param _amount Колчество, на которое необходимо увеличить лимит.
      **/
-    function incProductLimit(uint _amount) public onlyState(States.Initial) onlyEngine {
+    function incProductLimit(address _product, uint _amount) public onlyState(States.Initial) onlyEngine {
         //
     }
 
     /**
      * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
+     * @param _product Продукт.
      * @param _amount Количество, на которое необходимо уменьшить лимит.
      **/
-    function decProductLimit(uint _amount) public onlyState(States.Initial) onlyEngine {
+    function decProductLimit(address _product, uint _amount) public onlyState(States.Initial) onlyEngine {
         //
     }
 
     /**
      * @notice Делает количество продуктов безлимитным.
+     * @param _product Продукт.
      **/
-    function makeProductUnlimited() public onlyState(States.Initial) onlyEngine {
+    function makeProductUnlimited(address _product) public onlyState(States.Initial) onlyEngine {
         //
     }
 
     /**
      * @notice Производит покупку токенов продукта.
+     * @param _product Продукт.
      * @param _account Аккаунт покупателя.
      * @param _amount Количество токенов.
      **/
-    function buyProduct(address _account, uint _amount) public onlyState(States.Funding) onlyEngine {
+    function buyProduct(
+        address _product,
+        address _account,
+        uint _amount
+    ) public onlyState(States.Funding) onlyEngine {
         //
     }
 
     /**
      * @notice Устанавливает адрес физической доставки товара.
+     * @param _product Продукт.
      * @param _account Аккаунт покупателя.
      * @param _shipping Адрес физической доставки.
      **/
-    function setProductShipping(address _account, string _shipping) public onlyEngine {
+    function setProductShipping(address _product, address _account, string _shipping) public onlyEngine {
         //
     }
 

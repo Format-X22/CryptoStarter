@@ -468,7 +468,17 @@ contract IdeaCoin is IdeaBasicCoin {
 
     address[] public projects;
 
-    function makeProject() {
+    modifier onlyProjectOwner(address _project) {
+        require(msg.sender == IdeaProject(_project).owner());
+        _;
+    }
+
+    modifier onlyProductOwner(address _product) {
+        require(msg.sender == IdeaSubCoin(_product).owner());
+        _;
+    }
+
+    function makeProject() public {
         //
     }
 
@@ -476,15 +486,15 @@ contract IdeaCoin is IdeaBasicCoin {
         return projects;
     }
 
-    function getAllMyProjects() {
+    function getAllMyProjects() constant public {
         //
     }
 
-    function getAllProducts(address _project) {
+    function getAllProducts(address _project) constant public {
         //
     }
 
-    function getAllMyProducts(address _project) {
+    function getAllMyProducts(address _project) constant public {
         //
     }
 
@@ -495,35 +505,39 @@ contract IdeaCoin is IdeaBasicCoin {
     /**
      * @notice Установка имени проекта.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
      * @param _name Новое имя.
      **/
-    function setProjectName(string _name) public {
+    function setProjectName(address _project, string _name) public onlyProjectOwner(_project) {
         //
     }
 
     /**
      * @notice Установка значения неоходимых инвестиций.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
      * @param _required Значение.
      **/
-    function setProjectRequired(uint _required) public {
+    function setProjectRequired(address _project, uint _required) public onlyProjectOwner(_project) {
         //
     }
 
     /**
      * @notice Установка значения времени сбора средств.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
      * @param _requiredDays Количество дней.
      **/
-    function setProjectRequiredDays(uint _requiredDays) public {
+    function setProjectRequiredDays(address _project, uint _requiredDays) public onlyProjectOwner(_project) {
         //
     }
 
     /**
      * @notice Перевести проект в состояние 'Coming'
      * и заблокировать возможность внесения изменений.
+     * @param _project Проект.
      **/
-    function markProjectAsComingAndFreeze() public {
+    function markProjectAsComingAndFreeze(address _project) public onlyProjectOwner(_project) {
         //
     }
 
@@ -533,8 +547,9 @@ contract IdeaCoin is IdeaBasicCoin {
      * в состояние начала работ и будут начислены средства за первый этап.
      * В случае не сбора средств за необходимое время - проект будет закрыт,
      * а средства вернуться на счета инвесторов.
+     * @param _project Проект.
      **/
-    function startProjectFunding() public {
+    function startProjectFunding(address _project) public onlyProjectOwner(_project) {
         //
     }
 
@@ -542,30 +557,34 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Пометить проект как завершенный. Проект должен находится
      * на последнем этапе работ. Также это означает что стартует доставка
      * готовой продукции.
+     * @param _project Проект.
      **/
-    function projectDone() public {
+    function projectDone(address _project) public onlyProjectOwner(_project) {
         //
     }
 
     /**
      * @notice Уничтожить последний созданный этап.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
      **/
-    function destroyProjectLastWorkStage() public {
+    function destroyProjectLastWorkStage(address _project) public onlyProjectOwner(_project) {
         //
     }
 
     /**
      * @notice Уничтожить все этапы.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
      **/
-    function destroyAllProjectWorkStages() public {
+    function destroyAllProjectWorkStages(address _project) public onlyProjectOwner(_project) {
         //
     }
 
     /**
      * @notice Создания продукта, предлагаемого проектом.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
      * @param _name Имя продукта.
      * @param _symbol Символ продукта.
      * @param _price Цена продукта в IDEA токенах в размерности WEI.
@@ -573,35 +592,41 @@ contract IdeaCoin is IdeaBasicCoin {
      * @return _productAddress Адрес экземпляра контракта продукта.
      **/
     function makeProjectProduct(
+        address _project,
         string _name,
         string _symbol,
         uint _price,
         uint _limit
-    ) onlyState(States.Initial) public returns (address _productAddress) {
+    ) onlyState(States.Initial) public onlyProjectOwner(_project) returns (address _productAddress) {
         //
     }
 
     /**
      * @notice Получение всех адресов продуктов.
+     * @param _project Проект.
      * @return _result Результат.
      **/
-    function getAllProjectProductsAddresses() constant public returns (address[] _result) {
+    function getAllProjectProductsAddresses(
+        address _project
+    ) constant public onlyProjectOwner(_project) returns (address[] _result) {
         //
     }
 
     /**
      * @notice Уничтожить последний созданный продукт.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
      **/
-    function destroyProjectLastProduct() public {
+    function destroyProjectLastProduct(address _project) public onlyProjectOwner(_project) {
         //
     }
 
     /**
      * @notice Уничтожить все продукты.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
      **/
-    function destroyAllProjectProducts() public {
+    function destroyAllProjectProducts(address _project) public onlyProjectOwner(_project) {
         //
     }
 
@@ -614,18 +639,18 @@ contract IdeaCoin is IdeaBasicCoin {
      * оказалось больше 50% общего веса голосов - проект помечается как провальный,
      * владелец проекта не получает транш, а инвесторы могут забрать оставшиеся средства
      * пропорционально вложениям.
-     * @param _account Аккаунт.
+     * @param _project Проект.
      **/
-    function voteForCashBack(address _account) public {
+    function voteForCashBack(address _project) public {
         //
     }
 
     /**
      * @notice Отменить голос за возврат средст.
      * Смотри подробности в описании метода 'voteForCashBack'.
-     * @param _account Аккаунт.
+     * @param _project Проект.
      **/
-    function cancelVoteForCashBack(address _account) public {
+    function cancelVoteForCashBack(address _project) public {
         //
     }
 
@@ -636,10 +661,10 @@ contract IdeaCoin is IdeaBasicCoin {
      * Вызов этого метода повторно с другим значением процента
      * редактирует вес голоса, установка значения на 0 эквивалентна
      * вызову метода 'cancelVoteForCashBack'.
-     * @param _account Аккаунт.
+     * @param _project Проект.
      * @param _percent Необходимый процент от 0 до 100.
      **/
-    function voteForCashBackInPercentOfWeight(address _account, uint8 _percent) public {
+    function voteForCashBackInPercentOfWeight(address _project, uint8 _percent) public {
         //
     }
 
@@ -648,8 +673,9 @@ contract IdeaCoin is IdeaBasicCoin {
     /**
      * @notice Вывести средства, полученные на текущий этап работы.
      * Средства поступят на счет владельца проекта.
+     * @param _project Проект.
      **/
-    function withdrawFromProject() public {
+    function withdrawFromProject(address _project) public onlyProjectOwner(_project) {
         require(
             state == States.Funding ||
             state == States.Workflow ||
@@ -669,8 +695,9 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Вывести средства назад в случае провала проекта.
      * Если проект был провален на одном из этапов - средства вернуться
      * в соответствии с оставшимся процентом.
+     * @param _project Проект.
      **/
-    function cashBackFromProject() public {
+    function cashBackFromProject(address _project) public {
         require(
                 state == States.Funding ||
                 state == States.Workflow ||
@@ -697,42 +724,45 @@ contract IdeaCoin is IdeaBasicCoin {
 
     /**
      * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
+     * @param _product Продукт.
      * @param _amount Колчество, на которое необходимо увеличить лимит.
      **/
-    function incProductLimit(uint _amount) public {
+    function incProductLimit(address _product, uint _amount) public onlyProductOwner(_product) {
         //
     }
 
     /**
      * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
+     * @param _product Продукт.
      * @param _amount Количество, на которое необходимо уменьшить лимит.
      **/
-    function decProductLimit(uint _amount) public {
+    function decProductLimit(address _product, uint _amount) public onlyProductOwner(_product) {
         //
     }
 
     /**
      * @notice Делает количество продуктов безлимитным.
+     * @param _product Продукт.
      **/
-    function makeProductUnlimited() public {
+    function makeProductUnlimited(address _product) public onlyProductOwner(_product) {
         //
     }
 
     /**
      * @notice Производит покупку токенов продукта.
-     * @param _account Аккаунт покупателя.
+     * @param _product Продукт.
      * @param _amount Количество токенов.
      **/
-    function buyProduct(address _account, uint _amount) public {
+    function buyProduct(address _product, uint _amount) public {
         //
     }
 
     /**
      * @notice Устанавливает адрес физической доставки товара.
-     * @param _account Аккаунт покупателя.
+     * @param _product Продукт.
      * @param _shipping Адрес физической доставки.
      **/
-    function setProductShipping(address _account, string _shipping) public {
+    function setProductShipping(address _product, string _shipping) public {
         //
     }
 
