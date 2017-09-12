@@ -741,7 +741,8 @@ contract IdeaCoin is IdeaBasicCoin {
             sum = project.withdraw(_stage);
 
             if (sum > 0) {
-                balances[msg.sender] = balances[msg.sender].add(sum);
+
+                receiveTrancheAndDividends(sum);
 
                 return true;
             } else {
@@ -750,6 +751,20 @@ contract IdeaCoin is IdeaBasicCoin {
         } else {
             return false;
         }
+    }
+
+    /**
+     * @notice Начисление транша автору проекта и дивидендов участникам паевого фонда.
+     * Двивиденды равны 3,5% от суммы транша.
+     * @param _sum Общая сумма.
+     **/
+    function receiveTrancheAndDividends(uint _sum) internal {
+        uint raw = _sum * (1000 - 35);
+        uint reserve = raw % 1000;
+        uint tranche = (raw - reserve) / 1000;
+
+        balances[msg.sender] = balances[msg.sender].add(tranche);
+        receiveDividends(_sum - tranche);
     }
 
     /**
