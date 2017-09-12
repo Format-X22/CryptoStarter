@@ -226,8 +226,9 @@ contract IdeaProject is IdeaTypeBind {
     /**
      * @notice Проект провален на одном из этапов работы по реализации проекта.
      * Эвент вызывается с запозданием относительно фактического события.
+     * @param _stage Номер этапа, на котором проект провалился.
      **/
-    event ProjectWorkFail();
+    event ProjectWorkFail(uint8 _stage);
 
     /**
      * @notice Разрешаем исполнять метод только в указанном состоянии.
@@ -349,9 +350,20 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Пометить проект как провалившийся на этапе работы над реализацией проекта.
      **/
     function projectWorkFail() internal {
+        uint failTime = fundingEndTime;
+
         state = States.WorkFail;
 
-        ProjectWorkFail();
+        for (uint8 i; i < workStages.length; i += 1) {
+            failTime = failTime.add(workStages[i].stageDays * 1 days);
+            failInvestPercents = failInvestPercents.add(workStages[i].percent);
+
+            if (failTime > now) {
+                failStage = i;
+            }
+        }
+
+        ProjectWorkFail(failStage);
     }
 
     // ===                     ===
@@ -397,6 +409,17 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Время старта последнего этапа работ.
      **/
     uint internal lastWorkStageStartTimestamp;
+
+    /**
+     * @notice Этап работ, который провалился, отсчет с 0.
+     * Значение -1 указывает на отсутствие такого этапа.
+     **/
+    int8 failStage = -1;
+
+    /**
+     * @notice Количество потерянны инвестиций в процентах.
+     **/
+    uint failInvestPercents;
 
     /**
      * @notice Создать этап работы.
@@ -572,7 +595,9 @@ contract IdeaProject is IdeaTypeBind {
             _sum = sum.add(product.balanceOf(_account) * product.price());
         }
 
-        // TODO calc percent
+        if (isInWorkFailState()) {
+            _sum = _sum.mul(100 - failInvestPercents).div(100);
+        }
     }
 
     // ===                ===
@@ -658,7 +683,7 @@ contract IdeaProject is IdeaTypeBind {
      * @param _to Получатель.
      **/
     function updateVotesOnTransfer(address _from, address _to, uint _idea) public onlyProduct {
-        if (state == States.Workflow) {
+        if (isInWorkflowState()) {
             voteForCashBackInPercentOfWeight(_from, cashBackWeight[_account]);
             voteForCashBackInPercentOfWeight(_to, cashBackWeight[_account]);
         }
