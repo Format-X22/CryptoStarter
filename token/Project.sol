@@ -66,6 +66,13 @@ contract IdeaProject is IdeaTypeBind {
     uint public trancheRemainder;
 
     /**
+     * @notice Количество собранных инвестиций увеличено.
+     * Вызывается в момент покупки любого из продуктов проекта.
+     * @param _idea Количество токенов в размерности WEI.
+     **/
+    event EarnIncreased(uint _idea);
+
+    /**
      * @notice Конструктор.
      * @param _owner Владелец проекта.
      * @param _name Имя проекта.
@@ -454,7 +461,7 @@ contract IdeaProject is IdeaTypeBind {
         string _symbol,
         uint _price,
         uint _limit
-    ) onlyState(States.Initial) public onlyEngine returns (address _productAddress) {
+    ) public onlyState(States.Initial) onlyEngine returns (address _productAddress) {
         require(products.length <= maxProducts);
 
         IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
@@ -587,8 +594,11 @@ contract IdeaProject is IdeaTypeBind {
      * @param _product Продукт.
      * @param _amount Колчество, на которое необходимо увеличить лимит.
      **/
-    function incProductLimit(address _product, uint _amount) public onlyState(States.Initial) onlyEngine {
-        //
+    function incProductLimit(
+        address _product,
+        uint _amount
+    ) public onlyState(States.Initial) onlyProduct onlyEngine {
+        IdeaSubCoin(_product).incLimit(_amount);
     }
 
     /**
@@ -596,16 +606,21 @@ contract IdeaProject is IdeaTypeBind {
      * @param _product Продукт.
      * @param _amount Количество, на которое необходимо уменьшить лимит.
      **/
-    function decProductLimit(address _product, uint _amount) public onlyState(States.Initial) onlyEngine {
-        //
+    function decProductLimit(
+        address _product,
+        uint _amount
+    ) public onlyState(States.Initial) onlyProduct onlyEngine {
+        IdeaSubCoin(_product).decLimit(_amount);
     }
 
     /**
      * @notice Делает количество продуктов безлимитным.
      * @param _product Продукт.
      **/
-    function makeProductUnlimited(address _product) public onlyState(States.Initial) onlyEngine {
-        //
+    function makeProductUnlimited(
+        address _product
+    ) public onlyState(States.Initial) onlyProduct onlyEngine {
+        IdeaSubCoin(_product).makeUnlimited(_amount);
     }
 
     /**
@@ -618,8 +633,14 @@ contract IdeaProject is IdeaTypeBind {
         address _product,
         address _account,
         uint _amount
-    ) public onlyState(States.Funding) onlyEngine {
-        //
+    ) public onlyState(States.Funding) onlyProduct onlyEngine {
+        IdeaSubCoin coin = IdeaSubCoin(_product);
+        uint idea = _amount * coin.price();
+
+        coin.buy(_account, _amount);
+        earned.add(idea);
+
+        EarnIncreased(idea);
     }
 
     /**
@@ -628,8 +649,12 @@ contract IdeaProject is IdeaTypeBind {
      * @param _account Аккаунт покупателя.
      * @param _shipping Адрес физической доставки.
      **/
-    function setProductShipping(address _product, address _account, string _shipping) public onlyEngine {
-        //
+    function setProductShipping(
+        address _product,
+        address _account,
+        string _shipping
+    ) public onlyProduct onlyEngine {
+        IdeaSubCoin(_product).setShipping(_amount);
     }
 
 }

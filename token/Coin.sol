@@ -509,7 +509,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _name Новое имя.
      **/
     function setProjectName(address _project, string _name) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).setName(_name);
     }
 
     /**
@@ -519,7 +519,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _required Значение.
      **/
     function setProjectRequired(address _project, uint _required) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).setRequired(_required);
     }
 
     /**
@@ -529,7 +529,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _requiredDays Количество дней.
      **/
     function setProjectRequiredDays(address _project, uint _requiredDays) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).setRequiredDays(_requiredDays);
     }
 
     /**
@@ -538,7 +538,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function markProjectAsComingAndFreeze(address _project) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).markAsComingAndFreeze();
     }
 
     /**
@@ -550,7 +550,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function startProjectFunding(address _project) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).startFunding();
     }
 
     /**
@@ -560,7 +560,27 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function projectDone(address _project) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).projectDone();
+    }
+
+    /**
+     * @notice Создать этап работы.
+     * Суммарно должно быть не более 10 этапов (`maxWorkStages`),
+     * а также сумма процентов всех этапов должна быть равна 100%.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _project Проект.
+     * @param _name Имя этапа.
+     * @param _percent Процент средств от общего бюджета.
+     * @param _stageDays Количество дней выполнения этапа.
+     * Количество должно быть не менее 10 и не более 100 дней.
+     **/
+    function makeProjectWorkStage(
+        address _project,
+        string _name,
+        uint8 _percent,
+        uint8 _stageDays
+    ) public onlyProjectOwner(_project) {
+        IdeaProject(_project).makeProjectWorkStage(_name, _percent, _stageDays);
     }
 
     /**
@@ -569,7 +589,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function destroyProjectLastWorkStage(address _project) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).destroyLastWorkStage();
     }
 
     /**
@@ -578,7 +598,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function destroyAllProjectWorkStages(address _project) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).destroyAllWorkStages();
     }
 
     /**
@@ -597,8 +617,8 @@ contract IdeaCoin is IdeaBasicCoin {
         string _symbol,
         uint _price,
         uint _limit
-    ) onlyState(States.Initial) public onlyProjectOwner(_project) returns (address _productAddress) {
-        //
+    ) public onlyProjectOwner(_project) returns (address _productAddress) {
+        return IdeaProject(_project).makeProduct(_name, _symbol, _price, _limit);
     }
 
     /**
@@ -609,7 +629,7 @@ contract IdeaCoin is IdeaBasicCoin {
     function getAllProjectProductsAddresses(
         address _project
     ) constant public onlyProjectOwner(_project) returns (address[] _result) {
-        //
+        return IdeaProject(_project).getAllProductsAddresses();
     }
 
     /**
@@ -618,7 +638,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function destroyProjectLastProduct(address _project) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).destroyLastProduct();
     }
 
     /**
@@ -627,7 +647,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function destroyAllProjectProducts(address _project) public onlyProjectOwner(_project) {
-        //
+        IdeaProject(_project).destroyAllProducts();
     }
 
     /**
@@ -642,7 +662,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function voteForCashBack(address _project) public {
-        //
+        IdeaProject(_project).voteForCashBack(msg.sender);
     }
 
     /**
@@ -651,7 +671,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function cancelVoteForCashBack(address _project) public {
-        //
+        IdeaProject(_project).cancelVoteForCashBack(msg.sender);
     }
 
     /**
@@ -665,7 +685,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _percent Необходимый процент от 0 до 100.
      **/
     function voteForCashBackInPercentOfWeight(address _project, uint8 _percent) public {
-        //
+        IdeaProject(_project).voteForCashBackInPercentOfWeight(msg.sender);
     }
 
     // TODO Разрешать вызов кешбека и виздрава только в случае соответствующих состояний проекта
@@ -728,7 +748,9 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _amount Колчество, на которое необходимо увеличить лимит.
      **/
     function incProductLimit(address _product, uint _amount) public onlyProductOwner(_product) {
-        //
+        IdeaProject(
+            IdeaSubCoin(_product).project()
+        ).incProductLimit(_product, _amount);
     }
 
     /**
@@ -737,7 +759,9 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _amount Количество, на которое необходимо уменьшить лимит.
      **/
     function decProductLimit(address _product, uint _amount) public onlyProductOwner(_product) {
-        //
+        IdeaProject(
+            IdeaSubCoin(_product).project()
+        ).decProductLimit(_product, _amount);
     }
 
     /**
@@ -745,7 +769,9 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _product Продукт.
      **/
     function makeProductUnlimited(address _product) public onlyProductOwner(_product) {
-        //
+        IdeaProject(
+            IdeaSubCoin(_product).project()
+        ).makeProductUnlimited(_product);
     }
 
     /**
@@ -754,7 +780,12 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _amount Количество токенов.
      **/
     function buyProduct(address _product, uint _amount) public {
-        //
+        IdeaSubCoin coin = IdeaSubCoin(_product);
+        IdeaProject project = coin.project();
+        uint newBalance = balances[msg.sender].sub(_amount * coin.price());
+
+        project.buyProduct(_product, msg.sender, _amount);
+        balances[msg.sender] = newBalance();
     }
 
     /**
@@ -763,7 +794,9 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _shipping Адрес физической доставки.
      **/
     function setProductShipping(address _product, string _shipping) public {
-        //
+        IdeaProject(
+            IdeaSubCoin(_product).project()
+        ).setProductShipping(_product, msg.sender, _shipping);
     }
 
 }
