@@ -4,6 +4,10 @@ import './BasicCoin.sol';
 
 /**
  * @notice IdeaCoin (IDEA) - непосредственно сама монета.
+ * Также яляется единым центром управления проектами и их продуктами.
+ * Исключением является только функциональность продуктов (саб-монет)
+ * как непосредственно монет - они являются полноценными монетами стандарта ERC20
+ * и могут работать автономно.
  **/
 contract IdeaCoin is IdeaBasicCoin {
 
@@ -462,7 +466,31 @@ contract IdeaCoin is IdeaBasicCoin {
     // === PROJECTS ENGINE SECTION ===
     // ===                         ===
 
-    // TODO
+    address[] public projects;
+
+    function makeProject() {
+        //
+    }
+
+    function getAllProjects() constant public returns (address[] _result) {
+        return projects;
+    }
+
+    function getAllMyProjects() {
+        //
+    }
+
+    function getAllProducts(address _project) {
+        //
+    }
+
+    function getAllMyProducts(address _project) {
+        //
+    }
+
+    // ===                         ===
+    // === CONTROL PROJECT SECTION ===
+    // ===                         ===
 
     // TODO Разрешать вызов кешбека и виздрава только в случае соответствующих состояний проекта
 
@@ -472,9 +500,9 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function withdraw() public onlyEngine {
         require(
-        state == States.Funding ||
-        state == States.Workflow ||
-        state == States.SuccessDone
+            state == States.Funding ||
+            state == States.Workflow ||
+            state == States.SuccessDone
         );
 
         if (state == States.Funding) {
@@ -493,10 +521,10 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function cashBack() public onlyEngine {
         require(
-        state == States.Funding ||
-        state == States.Workflow ||
-        state == States.FundingFail ||
-        state == States.WorkFail
+                state == States.Funding ||
+                state == States.Workflow ||
+                state == States.FundingFail ||
+                state == States.WorkFail
         );
 
         if (state == States.Funding || state == States.Workflow) {
@@ -512,5 +540,14 @@ contract IdeaCoin is IdeaBasicCoin {
         }
     }
 
+    // ===                                    ===
+    // === CONTROL PRODUCT (SUB-COIN) SECTION ===
+    // ===                                    ===
+
+    function buyProduct(address _product, uint _amount) {
+        //
+    }
+
+    // TODO
 
 }
