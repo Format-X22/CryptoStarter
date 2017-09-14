@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.4.16;
 
 import './Uint.sol';
 import './String.sol';
