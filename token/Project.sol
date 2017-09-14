@@ -233,7 +233,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Находится ли проект в начально состоянии.
      * @param _result Результат проверки.
      **/
-    function isInitialState() public returns (bool _result) {
+    function isInitialState() constant public returns (bool _result) {
         return state == States.Initial;
     }
 
@@ -241,7 +241,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Находится ли проект в состоянии ожидания старта.
      * @param _result Результат проверки.
      **/
-    function isComingState() public returns (bool _result) {
+    function isComingState() constant public returns (bool _result) {
         return state == States.Coming;
     }
 
@@ -249,7 +249,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Находится ли проект в состоянии сбора средств.
      * @param _result Результат проверки.
      **/
-    function isFundingState() public returns (bool _result) {
+    function isFundingState() constant public returns (bool _result) {
         return state == States.Funding;
     }
 
@@ -257,7 +257,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Находится ли проект в состоянии работы по реализации проекта.
      * @param _result Результат проверки.
      **/
-    function isWorkflowState() public returns (bool _result) {
+    function isWorkflowState() constant public returns (bool _result) {
         return state == States.Workflow;
     }
 
@@ -265,7 +265,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Находится ли проект в состоянии успешного завершения.
      * @param _result Результат проверки.
      **/
-    function isSuccessDoneState() public returns (bool _result) {
+    function isSuccessDoneState() constant public returns (bool _result) {
         return state == States.SuccessDone;
     }
 
@@ -273,7 +273,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Находится ли проект в состоянии не успешного сбора средств.
      * @param _result Результат проверки.
      **/
-    function isFundingFailState() public returns (bool _result) {
+    function isFundingFailState() constant public returns (bool _result) {
         return state == States.FundingFail;
     }
 
@@ -281,7 +281,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Находится ли проект в состоянии не успешной реализации.
      * @param _result Результат проверки.
      **/
-    function isWorkFailState() public returns (bool _result) {
+    function isWorkFailState() constant public returns (bool _result) {
         return state == States.WorkFail;
     }
 
@@ -372,11 +372,11 @@ contract IdeaProject is IdeaTypeBind {
             failInvestPercents = failInvestPercents.add(workStages[i].percent);
 
             if (failTime > now) {
-                failStage = i;
+                failStage = int8(i);
             }
         }
 
-        ProjectWorkFail(failStage);
+        ProjectWorkFail(uint8(failStage));
     }
 
     // ===                     ===
@@ -466,7 +466,8 @@ contract IdeaProject is IdeaTypeBind {
         workStages.push(WorkStage(
             _name,
             _percent,
-            _stageDays
+            _stageDays,
+            0
         ));
     }
 
@@ -495,7 +496,7 @@ contract IdeaProject is IdeaTypeBind {
     /**
      * @notice Вычисление начала последнего этапа работ.
      **/
-    function calcLastStageStart() internal {
+    function calcLastWorkStageStart() internal {
         lastWorkStageStartTimestamp = fundingEndTime;
 
         // (length - 1) not a bug
@@ -573,7 +574,7 @@ contract IdeaProject is IdeaTypeBind {
         IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
 
         products.push(address(product));
-        productsIdByAddress[address(product)] = products.length - 1;
+        productsIdByAddress[address(product)] = uint8(products.length - 1);
 
         return address(product);
     }
@@ -621,10 +622,10 @@ contract IdeaProject is IdeaTypeBind {
         for (uint8 i = 0; i < products.length; i += 1) {
             IdeaSubCoin product = IdeaSubCoin(products[i]);
 
-            _sum = sum.add(product.balanceOf(_account) * product.price());
+            _sum = _sum.add(product.balanceOf(_account) * product.price());
         }
 
-        if (isInWorkFailState()) {
+        if (isWorkFailState()) {
             _sum = _sum.mul(100 - failInvestPercents).div(100);
         }
 
@@ -694,8 +695,8 @@ contract IdeaProject is IdeaTypeBind {
         uint part;
 
         for (uint8 i; i < products.length; i += 1) {
-            supply += products[i].totalSupply();
-            part += products[i].balanceOf(_account);
+            supply += IdeaSubCoin(products[i]).totalSupply();
+            part += IdeaSubCoin(products[i]).balanceOf(_account);
         }
 
         cashBackVotes += ((part ** 10) / supply) * (_percent - currentWeight);
@@ -713,10 +714,10 @@ contract IdeaProject is IdeaTypeBind {
      * @param _from Отправитель.
      * @param _to Получатель.
      **/
-    function updateVotesOnTransfer(address _from, address _to, uint _idea) public onlyProduct {
-        if (isInWorkflowState()) {
-            voteForCashBackInPercentOfWeight(_from, cashBackWeight[_account]);
-            voteForCashBackInPercentOfWeight(_to, cashBackWeight[_account]);
+    function updateVotesOnTransfer(address _from, address _to) public onlyProduct {
+        if (isWorkflowState()) {
+            voteForCashBackInPercentOfWeight(_from, cashBackWeight[_from]);
+            voteForCashBackInPercentOfWeight(_to, cashBackWeight[_to]);
         }
     }
 
@@ -755,7 +756,7 @@ contract IdeaProject is IdeaTypeBind {
     function makeProductUnlimited(
         address _product
     ) public onlyState(States.Initial) onlyProduct onlyEngine {
-        IdeaSubCoin(_product).makeUnlimited(_amount);
+        IdeaSubCoin(_product).makeUnlimited();
     }
 
     /**
@@ -789,7 +790,7 @@ contract IdeaProject is IdeaTypeBind {
         address _account,
         string _shipping
     ) public onlyProduct onlyEngine {
-        IdeaSubCoin(_product).setShipping(_amount);
+        IdeaSubCoin(_product).setShipping(_account, _shipping);
     }
 
 }

@@ -1,6 +1,7 @@
 pragma solidity ^0.4.15;
 
 import './BasicCoin.sol';
+import './Project.sol';
 
 /**
  * @notice IdeaCoin (IDEA) - непосредственно сама монета.
@@ -104,7 +105,7 @@ contract IdeaCoin is IdeaBasicCoin {
     /**
      * @notice Текущее состояние ICO.
      **/
-    IsoStates icoState = IcoStates.Coming;
+    IcoStates icoState = IcoStates.Coming;
 
     /**
      * @notice Время старта основного этапа ICO.
@@ -252,14 +253,14 @@ contract IdeaCoin is IdeaBasicCoin {
         balances[owner] = balances[owner].sub(_burn);
         totalSupply = totalSupply.sub(_burn);
 
-        Burn(_burn);
+        Burned(_burn);
     }
 
     /**
      * @notice Вывод собранных монет.
      **/
     function withdrawEther() public onlyOwner {
-        this.transfer(owner);
+        owner.transfer(this.balance);
     }
 
     // ===                          ===
@@ -418,7 +419,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _minBalance Минимальный баланс для учета средств.
      * @return _pieSize Размер.
      **/
-    function calcPieSize(uint _minBalance) internal returns (uint _pieSize) {
+    function calcPieSize(uint _minBalance) constant internal returns (uint _pieSize) {
         for (uint i = 0; i < pieAccounts.length; i += 1) {
             var balance = pieBalances[pieAccounts[i]];
 
@@ -524,14 +525,6 @@ contract IdeaCoin is IdeaBasicCoin {
         return projects;
     }
 
-    /**
-     * @notice Получение списка всех продуктов проекта.
-     * @dev Короткий алиас к 'getAllProjectProductsAddresses' для консистентности.
-     * @param _project Проект.
-     **/
-    function getAllProducts(address _project) constant public returns (address[] _result) {
-        return getAllProjectProductsAddresses(_project);
-    }
 
     // ===                         ===
     // === CONTROL PROJECT SECTION ===
@@ -615,7 +608,7 @@ contract IdeaCoin is IdeaBasicCoin {
         uint8 _percent,
         uint8 _stageDays
     ) public onlyProjectOwner(_project) {
-        IdeaProject(_project).makeProjectWorkStage(_name, _percent, _stageDays);
+        IdeaProject(_project).makeWorkStage(_name, _percent, _stageDays);
     }
 
     /**
@@ -654,17 +647,6 @@ contract IdeaCoin is IdeaBasicCoin {
         uint _limit
     ) public onlyProjectOwner(_project) returns (address _productAddress) {
         return IdeaProject(_project).makeProduct(_name, _symbol, _price, _limit);
-    }
-
-    /**
-     * @notice Получение всех адресов продуктов.
-     * @param _project Проект.
-     * @return _result Результат.
-     **/
-    function getAllProjectProductsAddresses(
-        address _project
-    ) constant public onlyProjectOwner(_project) returns (address[] _result) {
-        return IdeaProject(_project).getAllProductsAddresses();
     }
 
     /**
@@ -720,7 +702,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _percent Необходимый процент от 0 до 100.
      **/
     function voteForCashBackInPercentOfWeight(address _project, uint8 _percent) public {
-        IdeaProject(_project).voteForCashBackInPercentOfWeight(msg.sender);
+        IdeaProject(_project).voteForCashBackInPercentOfWeight(msg.sender, _percent);
     }
 
     /**
@@ -735,9 +717,9 @@ contract IdeaCoin is IdeaBasicCoin {
         IdeaProject project = IdeaProject(_project);
         uint sum;
 
-        updateStateFundingFailIfNeed(_project);
+        updateFundingStateIfNeed(_project);
 
-        if (project.isInWorkflowState() || project.isInSuccessDoneState()) {
+        if (project.isWorkflowState() || project.isSuccessDoneState()) {
             sum = project.withdraw(_stage);
 
             if (sum > 0) {
@@ -776,13 +758,12 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function cashBackFromProject(address _project) public returns (bool _success) {
         IdeaProject project = IdeaProject(_project);
-        uint sum;
 
         updateFundingStateIfNeed(_project);
 
         if (
-            project.inFundingFailState() ||
-            project.inWorkFailState()
+            project.isFundingFailState() ||
+            project.isWorkFailState()
         ) {
             balances[msg.sender] = balances[msg.sender].add(project.calcInvesting(msg.sender));
 
@@ -800,7 +781,7 @@ contract IdeaCoin is IdeaBasicCoin {
         IdeaProject project = IdeaProject(_project);
 
         if (
-            project.inFundingState() &&
+            project.isFundingState() &&
             now > project.fundingEndTime()
         ) {
             if (project.earned() >= project.required()) {
@@ -854,11 +835,11 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function buyProduct(address _product, uint _amount) public {
         IdeaSubCoin coin = IdeaSubCoin(_product);
-        IdeaProject project = coin.project();
+        IdeaProject project = IdeaProject(coin.project());
         uint newBalance = balances[msg.sender].sub(_amount * coin.price());
 
         project.buyProduct(_product, msg.sender, _amount);
-        balances[msg.sender] = newBalance();
+        balances[msg.sender] = newBalance;
     }
 
     /**

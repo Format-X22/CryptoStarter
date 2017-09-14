@@ -1,6 +1,7 @@
 pragma solidity ^0.4.15;
 
 import './BasicCoin.sol';
+import './Project.sol';
 
 /**
  * @notice Контракт саб-монеты IdeaCoin.
