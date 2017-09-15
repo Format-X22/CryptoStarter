@@ -55,35 +55,10 @@ contract IdeaSubCoin is IdeaBasicCoin {
      **/
     mapping(address => string) public shipping;
 
-    /**
-     * @notice Лимит продуктов, доступных к продаже, был увеличен.
-     * @param _amount Колчество.
-     **/
-    event IncreaseLimit(uint _amount);
-
-    /**
-     * @notice Лимит продуктов, доступных к продаже, был уменьшен.
-     * @param _amount Количество.
-     **/
-    event DecreaseLimit(uint _amount);
-
-    /**
-     * @notice Теперь продукты ограничены в количестве.
-     **/
-    event Limited();
-
-    /**
-     * @notice Теперь продукты не ограничены в количестве.
-     **/
-    event Unlimited();
-
-    /**
-     * @notice Произведена покупка токенов за IDEA токены.
-     * Эвент возможен только в период первичных продаж.
-     * @param _account Аккаунт покупателя.
-     * @param _amount Количество.
-     **/
-    event Buy(address indexed _account, uint _amount);
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
 
     /**
      * @notice Конструктор.
@@ -101,9 +76,8 @@ contract IdeaSubCoin is IdeaBasicCoin {
         uint _price,
         uint _limit
     ) {
-        _owner.denyZero();
-        _name.denyEmpty();
-        _symbol.denyEmpty();
+        require(bytes(_name).length > 0);
+        require(bytes(_symbol).length > 0);
         _price.denyZero();
 
         owner = _owner;
@@ -112,11 +86,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
         price = _price;
         limit = _limit;
         project = msg.sender;
-    }
-
-    // Отключаем возможность пересылать эфир на адрес контракта.
-    function() payable {
-        revert();
     }
 
     /**
@@ -164,47 +133,27 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
      * @param _amount Колчество, на которое необходимо увеличить лимит.
      **/
-    function incLimit(uint _amount) public onlyProject {
+    function incLimit(uint _amount) public onlyOwner {
         limit.denyZero();
 
-        if (limit == 0) {
-            Limited();
-        }
-
         limit = limit.add(_amount);
-
-        IncreaseLimit(_amount);
     }
 
     /**
      * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
      * @param _amount Количество, на которое необходимо уменьшить лимит.
      **/
-    function decLimit(uint _amount) public onlyProject {
+    function decLimit(uint _amount) public onlyOwner {
         limit.denyZero();
 
         limit = limit.sub(_amount);
-
-        DecreaseLimit(_amount);
-
-        if (limit == 0) {
-            Unlimited();
-        }
-    }
-
-    /**
-     * @notice Делает количество продуктов безлимитным.
-     **/
-    function makeUnlimited() public onlyProject {
-        limit = 0;
     }
 
     /**
      * @notice Производит покупку токенов продукта.
-     * @param _account Аккаунт покупателя.
      * @param _amount Количество токенов.
      **/
-    function buy(address _account, uint _amount) public onlyProject {
+    function buy(uint _amount) public onlyProject {
         uint total = totalSupply.add(_amount);
 
         if (limit != 0) {
@@ -212,29 +161,18 @@ contract IdeaSubCoin is IdeaBasicCoin {
         }
 
         totalSupply = totalSupply.add(_amount);
-        balances[_account] = balances[_account].add(_amount);
-        tryCreateAccount(_account);
-
-        Buy(_account, _amount);
+        balances[msg.sender] = balances[msg.sender].add(_amount);
+        tryCreateAccount(msg.sender);
     }
 
     /**
      * @notice Устанавливает адрес физической доставки товара.
-     * @param _account Аккаунт покупателя.
      * @param _shipping Адрес физической доставки.
      **/
-    function setShipping(address _account, string _shipping) public onlyProject {
-        _shipping.length().denyZero();
+    function setShipping(string _shipping) public onlyProject {
+        require(bytes(_shipping).length > 0);
     
-        shipping[_account] = _shipping;
-    }
-
-    /**
-     * @notice Уничтожает продукт.
-     * Используется на этапе конфигурирования проекта.
-     **/
-    function destroy() public onlyProject {
-        selfdestruct(owner);
+        shipping[msg.sender] = _shipping;
     }
 
 }

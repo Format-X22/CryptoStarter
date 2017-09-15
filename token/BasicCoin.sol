@@ -1,12 +1,13 @@
 pragma solidity ^0.4.16;
 
-import './type/TypeBind.sol';
+import './Uint.sol';
 
 /**
  * @notice Базовая монета проекта.
  * Совместима с ERC20 стандартом.
  **/
-contract IdeaBasicCoin is IdeaTypeBind {
+contract IdeaBasicCoin {
+    using IdeaUint for uint;
 
     /**
      * @notice Имя монеты.
@@ -80,8 +81,6 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @return success Результат.
      **/
     function transfer(address _to, uint _value) public returns (bool success) {
-        _to.denyZero();
-
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
         tryCreateAccount(_to);
@@ -100,8 +99,6 @@ contract IdeaBasicCoin is IdeaTypeBind {
      * @return success Результат.
      **/
     function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
-        _to.denyZero();
-
         uint _allowance = allowed[_from][msg.sender];
 
         balances[_from] = balances[_from].sub(_value);

@@ -1,12 +1,13 @@
 pragma solidity ^0.4.16;
 
-import './type/TypeBind.sol';
 import './SubCoin.sol';
+import './Uint.sol';
 
 /**
  * @notice Контракт краудфайндинг-проекта.
  **/
-contract IdeaProject is IdeaTypeBind {
+contract IdeaProject {
+    using IdeaUint for uint;
 
     /**
      * @notice Имя проекта.
@@ -58,12 +59,6 @@ contract IdeaProject is IdeaTypeBind {
      **/
     mapping(address => bool) public isCashBack;
 
-    /**
-     * @notice Количество собранных инвестиций увеличено.
-     * Вызывается в момент покупки любого из продуктов проекта.
-     * @param _idea Количество токенов в размерности WEI.
-     **/
-    event EarnIncreased(uint _idea);
 
     /**
      * @notice Конструктор.
@@ -79,8 +74,7 @@ contract IdeaProject is IdeaTypeBind {
         uint _required,
         uint _requiredDays
     ) {
-        _owner.denyZero();
-        _name.denyEmpty();
+        require(bytes(_name).length > 0);
         _required.denyZero();
 
         require(_requiredDays >= minRequiredDays);
@@ -93,9 +87,9 @@ contract IdeaProject is IdeaTypeBind {
         requiredDays = _requiredDays;
     }
 
-    // Отключаем возможность пересылать эфир на адрес контракта.
-    function() payable {
-        revert();
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
     }
 
     /**
@@ -104,39 +98,6 @@ contract IdeaProject is IdeaTypeBind {
     modifier onlyEngine() {
         require(msg.sender == engine);
         _;
-    }
-
-    /**
-     * @notice Установка имени проекта.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _name Новое имя.
-     **/
-    function setName(string _name) public onlyState(States.Initial) onlyEngine {
-        _name.denyEmpty();
-
-        name = _name;
-    }
-
-    /**
-     * @notice Установка значения неоходимых инвестиций.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _required Значение.
-     **/
-    function setRequired(uint _required) public onlyState(States.Initial) onlyEngine {
-        _required.denyZero();
-
-        required = _required;
-    }
-
-    /**
-     * @notice Установка значения времени сбора средств.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _requiredDays Количество дней.
-     **/
-    function setRequiredDays(uint _requiredDays) public onlyState(States.Initial) onlyEngine {
-        _requiredDays.denyZero();
-
-        requiredDays = _requiredDays;
     }
 
     // ===                ===
@@ -185,40 +146,6 @@ contract IdeaProject is IdeaTypeBind {
      * работы Ethereum, однако это не влияет на логику работы контракта.
      **/
     States public state = States.Initial;
-
-    /**
-     * @notice Проект помечен как скоро стартующий.
-     **/
-    event ProjectIsComing();
-
-    /**
-     * @notice Проект начал собирать инвестиции.
-     * @param _end Время завершения сбора инвестиций в виде UNIX-таймштампа.
-     **/
-    event StartFunding(uint _end);
-
-    /**
-     * @notice Начата работа по реализации проекта.
-     **/
-    event StartWork();
-
-    /**
-     * @notice Проект успешно завершен.
-     **/
-    event ProjectSuccessDone();
-
-    /**
-     * @notice Проект провален на этапе сбора средств.
-     * Эвент вызывается с запозданием относительно фактического события.
-     **/
-    event ProjectFundingFail();
-
-    /**
-     * @notice Проект провален на одном из этапов работы по реализации проекта.
-     * Эвент вызывается с запозданием относительно фактического события.
-     * @param _stage Номер этапа, на котором проект провалился.
-     **/
-    event ProjectWorkFail(uint8 _stage);
 
     /**
      * @notice Разрешаем исполнять метод только в указанном состоянии.
@@ -289,7 +216,7 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Перевести проект в состояние 'Coming'
      * и заблокировать возможность внесения изменений.
      **/
-    function markAsComingAndFreeze() public onlyState(States.Initial) onlyEngine {
+    function markAsComingAndFreeze() public onlyState(States.Initial) onlyOwner {
         require(products.length > 0);
         require(currentWorkStagePercent == 100);
 
@@ -308,8 +235,6 @@ contract IdeaProject is IdeaTypeBind {
         }
     
         workStages[workStages.length - 1].sum = workStages[workStages.length - 1].sum.add(reserveTotal);
-
-        ProjectIsComing();
     }
 
     /**
@@ -319,13 +244,11 @@ contract IdeaProject is IdeaTypeBind {
      * В случае не сбора средств за необходимое время - проект будет закрыт,
      * а средства вернуться на счета инвесторов.
      **/
-    function startFunding() public onlyState(States.Coming) onlyEngine {
+    function startFunding() public onlyState(States.Coming) onlyOwner {
         state = States.Funding;
 
         fundingEndTime = now + requiredDays * 1 days;
         calcLastWorkStageStart();
-
-        StartFunding(fundingEndTime);
     }
 
     /**
@@ -333,8 +256,6 @@ contract IdeaProject is IdeaTypeBind {
      **/
     function projectWorkStarted() public onlyState(States.Funding) onlyEngine {
         state = States.Workflow;
-
-        StartWork();
     }
 
     /**
@@ -342,10 +263,8 @@ contract IdeaProject is IdeaTypeBind {
      * на последнем этапе работ. Также это означает что стартует доставка
      * готовой продукции.
      **/
-    function projectDone() public onlyState(States.Workflow) onlyEngine {
+    function projectDone() public onlyState(States.Workflow) onlyOwner {
         require(now > lastWorkStageStartTimestamp);
-
-        ProjectSuccessDone();
 
         state = States.SuccessDone;
     }
@@ -355,8 +274,6 @@ contract IdeaProject is IdeaTypeBind {
      **/
     function projectFundingFail() public onlyState(States.Funding) onlyEngine {
         state = States.FundingFail;
-
-        ProjectFundingFail();
     }
 
     /**
@@ -375,8 +292,6 @@ contract IdeaProject is IdeaTypeBind {
                 failStage = int8(i);
             }
         }
-
-        ProjectWorkFail(uint8(failStage));
     }
 
     // ===                     ===
@@ -387,7 +302,6 @@ contract IdeaProject is IdeaTypeBind {
      * @notice Структура этапа работ.
      **/
     struct WorkStage {
-        string name;        // Имя этапа.
         uint8 percent;      // Процент средств от общего бюджета.
         uint8 stageDays;    // Количество дней выполнения этапа.
         uint sum;           /* Сумма, доступная для вывода с момента
@@ -442,18 +356,15 @@ contract IdeaProject is IdeaTypeBind {
      * Суммарно должно быть не более 10 этапов (`maxWorkStages`),
      * а также сумма процентов всех этапов должна быть равна 100%.
      * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _name Имя этапа.
      * @param _percent Процент средств от общего бюджета.
      * @param _stageDays Количество дней выполнения этапа.
      * Количество должно быть не менее 10 и не более 100 дней.
      **/
     function makeWorkStage(
-        string _name,
         uint8 _percent,
         uint8 _stageDays
     ) public onlyState(States.Initial) {
         require(workStages.length <= maxWorkStages);
-        _name.denyEmpty();
         require(_stageDays >= minWorkStageDays);
         require(_stageDays <= maxWorkStageDays);
 
@@ -464,33 +375,10 @@ contract IdeaProject is IdeaTypeBind {
         }
 
         workStages.push(WorkStage(
-            _name,
             _percent,
             _stageDays,
             0
         ));
-    }
-
-    /**
-     * @notice Уничтожить последний созданный этап.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     **/
-    function destroyLastWorkStage() public onlyState(States.Initial) onlyEngine {
-        require(workStages.length > 0);
-
-        uint8 lastPercent = workStages[workStages.length - 1].percent;
-
-        currentWorkStagePercent = currentWorkStagePercent.sub(lastPercent);
-        workStages.length = workStages.length - 1;
-    }
-
-    /**
-     * @notice Уничтожить все этапы.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     **/
-    function destroyAllWorkStages() public onlyState(States.Initial) onlyEngine {
-        currentWorkStagePercent = 0;
-        delete workStages;
     }
 
     /**
@@ -577,38 +465,6 @@ contract IdeaProject is IdeaTypeBind {
         productsIdByAddress[address(product)] = uint8(products.length - 1);
 
         return address(product);
-    }
-
-    /**
-     * @notice Получение всех адресов продуктов.
-     * @return _result Результат.
-     **/
-    function getAllProductsAddresses() constant public onlyEngine returns (address[] _result) {
-        return products;
-    }
-
-    /**
-     * @notice Уничтожить последний созданный продукт.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     **/
-    function destroyLastProduct() public onlyState(States.Initial) onlyEngine {
-        require(products.length > 0);
-
-        IdeaSubCoin(products[products.length - 1]).destroy();
-
-        products.length = products.length - 1;
-    }
-
-    /**
-     * @notice Уничтожить все продукты.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     **/
-    function destroyAllProducts() public onlyState(States.Initial) onlyEngine {
-        for (uint8 i = 0; i < products.length; i += 1) {
-            IdeaSubCoin(products[i]).destroy();
-        }
-
-        delete products;
     }
 
     /**
@@ -719,78 +575,6 @@ contract IdeaProject is IdeaTypeBind {
             voteForCashBackInPercentOfWeight(_from, cashBackWeight[_from]);
             voteForCashBackInPercentOfWeight(_to, cashBackWeight[_to]);
         }
-    }
-
-    // ===                         ===
-    // === CONTROL PRODUCT SECTION ===
-    // ===                         ===
-
-    /**
-     * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
-     * @param _product Продукт.
-     * @param _amount Колчество, на которое необходимо увеличить лимит.
-     **/
-    function incProductLimit(
-        address _product,
-        uint _amount
-    ) public onlyState(States.Initial) onlyProduct onlyEngine {
-        IdeaSubCoin(_product).incLimit(_amount);
-    }
-
-    /**
-     * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
-     * @param _product Продукт.
-     * @param _amount Количество, на которое необходимо уменьшить лимит.
-     **/
-    function decProductLimit(
-        address _product,
-        uint _amount
-    ) public onlyState(States.Initial) onlyProduct onlyEngine {
-        IdeaSubCoin(_product).decLimit(_amount);
-    }
-
-    /**
-     * @notice Делает количество продуктов безлимитным.
-     * @param _product Продукт.
-     **/
-    function makeProductUnlimited(
-        address _product
-    ) public onlyState(States.Initial) onlyProduct onlyEngine {
-        IdeaSubCoin(_product).makeUnlimited();
-    }
-
-    /**
-     * @notice Производит покупку токенов продукта.
-     * @param _product Продукт.
-     * @param _account Аккаунт покупателя.
-     * @param _amount Количество токенов.
-     **/
-    function buyProduct(
-        address _product,
-        address _account,
-        uint _amount
-    ) public onlyState(States.Funding) onlyProduct onlyEngine {
-        IdeaSubCoin coin = IdeaSubCoin(_product);
-        uint idea = _amount * coin.price();
-
-        coin.buy(_account, _amount);
-        earned.add(idea);
-
-        EarnIncreased(idea);
-    }
-
-    /**
-     * @notice Устанавливает адрес физической доставки товара.
-     * @param _product Продукт.
-     * @param _account Аккаунт покупателя.
-     * @param _shipping Адрес физической доставки.
-     **/
-    function setProductShipping(
-        address _product,
-        address _account,
-        string _shipping
-    ) public onlyProduct onlyEngine {
-        IdeaSubCoin(_product).setShipping(_account, _shipping);
     }
 
 }

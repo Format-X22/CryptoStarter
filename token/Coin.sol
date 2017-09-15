@@ -113,21 +113,6 @@ contract IdeaCoin is IdeaBasicCoin {
     uint icoStartTimestamp;
 
     /**
-     * @notice Произведена покупка монет IDEA за монеты ETH.
-     * @param _account Аккаунт покупателя.
-     * @param _eth Количество монет ETH.
-     * @param _idea Количество монет IDEA.
-     **/
-    event Buy(address indexed _account, uint _eth, uint _idea);
-
-    /**
-     * @notice Сожжено некоторое количество монет IDEA.
-     * Происходит после завершения очередного этапа ICO.
-     * @param _amount Количество.
-     **/
-    event Burned(uint _amount);
-
-    /**
      * @notice Функция продажи монет, работающая в момент пересылки монет на адрес контракта.
      * Отправить ETH можно только в процессе проведения ICO, в иных случаях монеты будут
      * возвращены автоматически.
@@ -186,8 +171,6 @@ contract IdeaCoin is IdeaBasicCoin {
 
         earnedEthWei += msg.value;
         soldIdeaWei += tokens;
-
-        Buy(msg.sender, msg.value, tokens);
     }
 
     /**
@@ -252,8 +235,6 @@ contract IdeaCoin is IdeaBasicCoin {
 
         balances[owner] = balances[owner].sub(_burn);
         totalSupply = totalSupply.sub(_burn);
-
-        Burned(_burn);
     }
 
     /**
@@ -302,39 +283,6 @@ contract IdeaCoin is IdeaBasicCoin {
     uint public nextRoundReserve;
 
     /**
-     * @notice Совершен перевод с основного аккаунта на паевой.
-     * @param _account Аккаунт.
-     * @param _value Количество.
-     **/
-    event TransferToPie(address indexed _account, uint _value);
-
-    /**
-     * @notice Совершен перевод с паевого аккаунта на основной.
-     * @param _account Аккаунт.
-     * @param _value Количество.
-     **/
-    event TransferFromPie(address indexed _account, uint _value);
-
-    /**
-     * @notice Начислены дивиденды на паевой аккаунт.
-     * @param _to Аккаунт.
-     * @param _value Количество.
-     **/
-    event DividendsReceived(address indexed _to, uint _value);
-
-    /**
-     * @notice Сумма всех дивидендов в этом раунде.
-     * @param _value Количество.
-     **/
-    event TotalDividendsReceived(uint _value);
-
-    /**
-     * @notice Сумма, что будет распределена в следующем раунде раздачи дивидендов.
-     * @param _value Количество.
-     **/
-    event DividendsToNextRound(uint _value);
-
-    /**
      * @notice Проверить баланс паевого аккаунта.
      * @param _owner Аккаунт.
      * @return balance Количество.
@@ -355,8 +303,6 @@ contract IdeaCoin is IdeaBasicCoin {
         balances[msg.sender] = balances[msg.sender].sub(_amount);
         pieBalances[msg.sender] = pieBalances[msg.sender].add(_amount);
         tryCreatePieAccount(msg.sender);
-
-        TransferToPie(msg.sender, _amount);
 
         return true;
     }
@@ -384,8 +330,6 @@ contract IdeaCoin is IdeaBasicCoin {
         pieBalances[msg.sender] = pieBalances[msg.sender].sub(_amount);
         balances[msg.sender] = balances[msg.sender].add(_amount);
 
-        TransferFromPie(msg.sender, _amount);
-
         return true;
     }
 
@@ -409,9 +353,6 @@ contract IdeaCoin is IdeaBasicCoin {
         uint pieSize = nextRoundReserve + calcPieSize(minBalance);
 
         accrueDividends(minBalance, pieSize, _amount);
-
-        TotalDividendsReceived(_amount - nextRoundReserve);
-        DividendsToNextRound(nextRoundReserve);
     }
 
     /**
@@ -446,8 +387,6 @@ contract IdeaCoin is IdeaBasicCoin {
 
                 nextRoundReserve = nextRoundReserve.add(reserve);
                 pieBalances[account] = balance.add(dividends);
-
-                DividendsReceived(account, dividends);
             }
         }
     }
@@ -473,27 +412,10 @@ contract IdeaCoin is IdeaBasicCoin {
     address[] public projects;
 
     /**
-     * @notice Создан новый проект в системе IdeaCoin.
-     * @param _address Адрес контракта. 
-     * @param _name Имя проекта.
-     * @param _required Необходимое количество инвестиций в IDEA.
-     * @param _requiredDays Количество дней сбора инвестиций.
-     **/
-    event ProjectCreated(address indexed _address, string indexed _name, uint _required, uint _requiredDays);
-
-    /**
      * @notice Разрешение исполнять метод только владельцу проекта.
      **/
     modifier onlyProjectOwner(address _project) {
         require(msg.sender == IdeaProject(_project).owner());
-        _;
-    }
-
-    /**
-     * @notice Разрешение исполнять метод только владельцу продукта.
-     **/
-    modifier onlyProductOwner(address _product) {
-        require(msg.sender == IdeaSubCoin(_product).owner());
         _;
     }
 
@@ -514,196 +436,12 @@ contract IdeaCoin is IdeaBasicCoin {
         _address = address(project);
         
         projects.push(project);
-
-        ProjectCreated(_address, _name, _required, _requiredDays);
-    }
-
-    /**
-     * @notice Получение списка всех проектов IdeaCoin.
-     **/
-    function getAllProjects() constant public returns (address[] _result) {
-        return projects;
     }
 
 
     // ===                         ===
     // === CONTROL PROJECT SECTION ===
     // ===                         ===
-
-    /**
-     * @notice Установка имени проекта.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     * @param _name Новое имя.
-     **/
-    function setProjectName(address _project, string _name) public onlyProjectOwner(_project) {
-        IdeaProject(_project).setName(_name);
-    }
-
-    /**
-     * @notice Установка значения неоходимых инвестиций.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     * @param _required Значение.
-     **/
-    function setProjectRequired(address _project, uint _required) public onlyProjectOwner(_project) {
-        IdeaProject(_project).setRequired(_required);
-    }
-
-    /**
-     * @notice Установка значения времени сбора средств.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     * @param _requiredDays Количество дней.
-     **/
-    function setProjectRequiredDays(address _project, uint _requiredDays) public onlyProjectOwner(_project) {
-        IdeaProject(_project).setRequiredDays(_requiredDays);
-    }
-
-    /**
-     * @notice Перевести проект в состояние 'Coming'
-     * и заблокировать возможность внесения изменений.
-     * @param _project Проект.
-     **/
-    function markProjectAsComingAndFreeze(address _project) public onlyProjectOwner(_project) {
-        IdeaProject(_project).markAsComingAndFreeze();
-    }
-
-    /**
-     * @notice Запустить сбор средств.
-     * Остановить сбор будет нельзя. При успешном сборе проект перейдет
-     * в состояние начала работ и будут начислены средства за первый этап.
-     * В случае не сбора средств за необходимое время - проект будет закрыт,
-     * а средства вернуться на счета инвесторов.
-     * @param _project Проект.
-     **/
-    function startProjectFunding(address _project) public onlyProjectOwner(_project) {
-        IdeaProject(_project).startFunding();
-    }
-
-    /**
-     * @notice Пометить проект как завершенный. Проект должен находится
-     * на последнем этапе работ. Также это означает что стартует доставка
-     * готовой продукции.
-     * @param _project Проект.
-     **/
-    function projectDone(address _project) public onlyProjectOwner(_project) {
-        IdeaProject(_project).projectDone();
-    }
-
-    /**
-     * @notice Создать этап работы.
-     * Суммарно должно быть не более 10 этапов,
-     * а также сумма процентов всех этапов должна быть равна 100%.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     * @param _name Имя этапа.
-     * @param _percent Процент средств от общего бюджета.
-     * @param _stageDays Количество дней выполнения этапа.
-     * Количество должно быть не менее 10 и не более 100 дней.
-     **/
-    function makeProjectWorkStage(
-        address _project,
-        string _name,
-        uint8 _percent,
-        uint8 _stageDays
-    ) public onlyProjectOwner(_project) {
-        IdeaProject(_project).makeWorkStage(_name, _percent, _stageDays);
-    }
-
-    /**
-     * @notice Уничтожить последний созданный этап.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     **/
-    function destroyProjectLastWorkStage(address _project) public onlyProjectOwner(_project) {
-        IdeaProject(_project).destroyLastWorkStage();
-    }
-
-    /**
-     * @notice Уничтожить все этапы.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     **/
-    function destroyAllProjectWorkStages(address _project) public onlyProjectOwner(_project) {
-        IdeaProject(_project).destroyAllWorkStages();
-    }
-
-    /**
-     * @notice Создания продукта, предлагаемого проектом.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     * @param _name Имя продукта.
-     * @param _symbol Символ продукта.
-     * @param _price Цена продукта в IDEA токенах в размерности WEI.
-     * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
-     * @return _productAddress Адрес экземпляра контракта продукта.
-     **/
-    function makeProjectProduct(
-        address _project,
-        string _name,
-        string _symbol,
-        uint _price,
-        uint _limit
-    ) public onlyProjectOwner(_project) returns (address _productAddress) {
-        return IdeaProject(_project).makeProduct(_name, _symbol, _price, _limit);
-    }
-
-    /**
-     * @notice Уничтожить последний созданный продукт.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     **/
-    function destroyProjectLastProduct(address _project) public onlyProjectOwner(_project) {
-        IdeaProject(_project).destroyLastProduct();
-    }
-
-    /**
-     * @notice Уничтожить все продукты.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _project Проект.
-     **/
-    function destroyAllProjectProducts(address _project) public onlyProjectOwner(_project) {
-        IdeaProject(_project).destroyAllProducts();
-    }
-
-    /**
-     * @notice Отдать голос за прекращение проекта и возврат средств.
-     * Голосовать можно в любой момент, также можно отменить голос воспользовавшись
-     * методом 'cancelVoteForCashBack'. Вес голоса зависит от количества вложенных средств.
-     * Перед началом нового этапа работ и выдачей очередного транша создателю проекта -
-     * происходит проверка на голоса за возврат. Если голосов, с учетом их веса, суммарно
-     * оказалось больше 50% общего веса голосов - проект помечается как провальный,
-     * владелец проекта не получает транш, а инвесторы могут забрать оставшиеся средства
-     * пропорционально вложениям.
-     * @param _project Проект.
-     **/
-    function voteForCashBack(address _project) public {
-        IdeaProject(_project).voteForCashBack(msg.sender);
-    }
-
-    /**
-     * @notice Отменить голос за возврат средст.
-     * Смотри подробности в описании метода 'voteForCashBack'.
-     * @param _project Проект.
-     **/
-    function cancelVoteForCashBack(address _project) public {
-        IdeaProject(_project).cancelVoteForCashBack(msg.sender);
-    }
-
-    /**
-     * @notice Аналог метода 'voteForCashBack', но позволяющий
-     * голосовать не всем весом. Подобное может использоваться для
-     * фондов, хранящих средства нескольких клиентов.
-     * Вызов этого метода повторно с другим значением процента
-     * редактирует вес голоса, установка значения на 0 эквивалентна
-     * вызову метода 'cancelVoteForCashBack'.
-     * @param _project Проект.
-     * @param _percent Необходимый процент от 0 до 100.
-     **/
-    function voteForCashBackInPercentOfWeight(address _project, uint8 _percent) public {
-        IdeaProject(_project).voteForCashBackInPercentOfWeight(msg.sender, _percent);
-    }
 
     /**
      * @notice Вывести средства, полученные на текущий этап работы.
@@ -790,67 +528,6 @@ contract IdeaCoin is IdeaBasicCoin {
                 project.projectFundingFail();
             }
         }
-    }
-
-    // ===                                    ===
-    // === CONTROL PRODUCT (SUB-COIN) SECTION ===
-    // ===                                    ===
-
-    /**
-     * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
-     * @param _product Продукт.
-     * @param _amount Колчество, на которое необходимо увеличить лимит.
-     **/
-    function incProductLimit(address _product, uint _amount) public onlyProductOwner(_product) {
-        IdeaProject(
-            IdeaSubCoin(_product).project()
-        ).incProductLimit(_product, _amount);
-    }
-
-    /**
-     * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
-     * @param _product Продукт.
-     * @param _amount Количество, на которое необходимо уменьшить лимит.
-     **/
-    function decProductLimit(address _product, uint _amount) public onlyProductOwner(_product) {
-        IdeaProject(
-            IdeaSubCoin(_product).project()
-        ).decProductLimit(_product, _amount);
-    }
-
-    /**
-     * @notice Делает количество продуктов безлимитным.
-     * @param _product Продукт.
-     **/
-    function makeProductUnlimited(address _product) public onlyProductOwner(_product) {
-        IdeaProject(
-            IdeaSubCoin(_product).project()
-        ).makeProductUnlimited(_product);
-    }
-
-    /**
-     * @notice Производит покупку токенов продукта.
-     * @param _product Продукт.
-     * @param _amount Количество токенов.
-     **/
-    function buyProduct(address _product, uint _amount) public {
-        IdeaSubCoin coin = IdeaSubCoin(_product);
-        IdeaProject project = IdeaProject(coin.project());
-        uint newBalance = balances[msg.sender].sub(_amount * coin.price());
-
-        project.buyProduct(_product, msg.sender, _amount);
-        balances[msg.sender] = newBalance;
-    }
-
-    /**
-     * @notice Устанавливает адрес физической доставки товара.
-     * @param _product Продукт.
-     * @param _shipping Адрес физической доставки.
-     **/
-    function setProductShipping(address _product, string _shipping) public {
-        IdeaProject(
-            IdeaSubCoin(_product).project()
-        ).setProductShipping(_product, msg.sender, _shipping);
     }
 
 }
