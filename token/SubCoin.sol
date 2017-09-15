@@ -55,11 +55,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
      **/
     mapping(address => string) public shipping;
 
-    modifier onlyOwner() {
-        require(msg.sender == owner);
-        _;
-    }
-
     /**
      * @notice Конструктор.
      * @param _owner Владелец продуктов.
@@ -76,9 +71,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
         uint _price,
         uint _limit
     ) {
-        require(bytes(_name).length > 0);
-        require(bytes(_symbol).length > 0);
-        _price.denyZero();
+        require(_price != 0);
 
         owner = _owner;
         name = _name;
@@ -127,26 +120,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
         }
 
         return result;
-    }
-
-    /**
-     * @notice Увеличение максимального лимита количества продуктов, доступных к продаже.
-     * @param _amount Колчество, на которое необходимо увеличить лимит.
-     **/
-    function incLimit(uint _amount) public onlyOwner {
-        limit.denyZero();
-
-        limit = limit.add(_amount);
-    }
-
-    /**
-     * @notice Уменьшение максимального лимита количества продуктов, доступных к продаже.
-     * @param _amount Количество, на которое необходимо уменьшить лимит.
-     **/
-    function decLimit(uint _amount) public onlyOwner {
-        limit.denyZero();
-
-        limit = limit.sub(_amount);
     }
 
     /**

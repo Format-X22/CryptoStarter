@@ -60,12 +60,4 @@ library IdeaUint {
 
         return c;
     }
-
-    /**
-     * @notice Запрещаем числу быть нулем.
-     * @param a Исходное число.
-     **/
-    function denyZero(uint a) constant internal {
-        require(a > 0);
-    }
 }

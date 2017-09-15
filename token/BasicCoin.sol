@@ -49,6 +49,13 @@ contract IdeaBasicCoin {
      **/
     mapping(address => bool) internal accountsMap;
 
+    address public owner;
+
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
     /**
      * @notice Совершен перевод.
      * @param _from Отправитель.

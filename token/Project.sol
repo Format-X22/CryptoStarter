@@ -35,16 +35,6 @@ contract IdeaProject {
     uint public requiredDays;
 
     /**
-     * @notice Минимальное разрешенное количество дней сбора инвестиций.
-     **/
-    uint8 constant public minRequiredDays = 10;
-
-    /**
-     * @notice Максимальное разрешенное количество дней сбора инвестиций.
-     **/
-    uint8 constant public maxRequiredDays = 100;
-
-    /**
      * @notice Время окончания сбора инвестиций.
      **/
     uint public fundingEndTime;
@@ -75,10 +65,10 @@ contract IdeaProject {
         uint _requiredDays
     ) {
         require(bytes(_name).length > 0);
-        _required.denyZero();
+        require(_required != 0);
 
-        require(_requiredDays >= minRequiredDays);
-        require(_requiredDays <= maxRequiredDays);
+        require(_requiredDays >= 10);
+        require(_requiredDays <= 100);
 
         engine = msg.sender;
         owner = _owner;
@@ -157,22 +147,6 @@ contract IdeaProject {
     }
 
     /**
-     * @notice Находится ли проект в начально состоянии.
-     * @param _result Результат проверки.
-     **/
-    function isInitialState() constant public returns (bool _result) {
-        return state == States.Initial;
-    }
-
-    /**
-     * @notice Находится ли проект в состоянии ожидания старта.
-     * @param _result Результат проверки.
-     **/
-    function isComingState() constant public returns (bool _result) {
-        return state == States.Coming;
-    }
-
-    /**
      * @notice Находится ли проект в состоянии сбора средств.
      * @param _result Результат проверки.
      **/
@@ -247,7 +221,7 @@ contract IdeaProject {
     function startFunding() public onlyState(States.Coming) onlyOwner {
         state = States.Funding;
 
-        fundingEndTime = now + requiredDays * 1 days;
+        fundingEndTime = uint64(now + requiredDays * 1 days);
         calcLastWorkStageStart();
     }
 
@@ -315,22 +289,6 @@ contract IdeaProject {
     WorkStage[] public workStages;
 
     /**
-     * @notice Максимальное разрешенное количество этапов работ.
-     **/
-    uint8 constant public maxWorkStages = 10;
-
-    /**
-     * @notice Минимальное разрешенное количество времени на выполнение этапа.
-     **/
-    uint8 constant public minWorkStageDays = 10;
-
-    /**
-     * @notice Максимальное разрешенное количество времени на выполнение этапа
-     * (для указания в описании этапа, время может быть продлено голосованием).
-     **/
-    uint8 constant public maxWorkStageDays = 100;
-
-    /**
      * @notice Текущее количество процентов всех этапов.
      **/
     uint public currentWorkStagePercent;
@@ -364,9 +322,9 @@ contract IdeaProject {
         uint8 _percent,
         uint8 _stageDays
     ) public onlyState(States.Initial) {
-        require(workStages.length <= maxWorkStages);
-        require(_stageDays >= minWorkStageDays);
-        require(_stageDays <= maxWorkStageDays);
+        require(workStages.length <= 10);
+        require(_stageDays >= 10);
+        require(_stageDays <= 100);
 
         if (currentWorkStagePercent.add(_stageDays) > 100) {
             revert();
@@ -414,16 +372,6 @@ contract IdeaProject {
     address[] public products;
 
     /**
-     * @notice Соотношение адреса продукта к идентификатору списка 'products'.
-     **/
-    mapping(address => uint8) public productsIdByAddress;
-
-    /**
-     * @notice Максимальное разрешенное количество продуктов у одного проекта.
-     **/
-    uint8 constant maxProducts = 25;
-
-    /**
      * @notice Разрешить действие только от котракта продукта, принадлежащего этому проекту.
      **/
     modifier onlyProduct() {
@@ -457,12 +405,11 @@ contract IdeaProject {
         uint _price,
         uint _limit
     ) public onlyState(States.Initial) onlyEngine returns (address _productAddress) {
-        require(products.length <= maxProducts);
+        require(products.length <= 25);
 
         IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
 
         products.push(address(product));
-        productsIdByAddress[address(product)] = uint8(products.length - 1);
 
         return address(product);
     }
@@ -544,7 +491,7 @@ contract IdeaProject {
     function voteForCashBackInPercentOfWeight(
         address _account,
         uint8 _percent
-    ) public onlyState(States.Workflow) onlyEngine {
+    ) public onlyState(States.Workflow) {
 
         uint8 currentWeight = cashBackWeight[_account];
         uint supply;

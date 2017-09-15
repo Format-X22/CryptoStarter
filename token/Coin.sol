@@ -24,46 +24,16 @@ contract IdeaCoin is IdeaBasicCoin {
         name = 'IdeaCoin';
         symbol = 'IDEA';
         decimals = 18;
-        uint supply = 100000000; // 100 000 000 IDEA
-        totalSupply = supply ** decimals;
+        totalSupply = 100000000000000000000000000; // 100 000 000 IDEA
 
         owner = msg.sender;
         balances[owner] = totalSupply;
         tryCreateAccount(msg.sender);
     }
 
-    modifier onlyOwner() {
-        require(msg.sender == owner);
-        _;
-    }
-
     // ===             ===
     // === ICO SECTION ===
     // ===             ===
-
-    /**
-     * @notice Максимальное количество монет, разрешенных к продаже на PreICO.
-     * Не проданное будет сожжено в двойном размере от общего количества монет.
-     **/
-    uint constant public maxCoinsForPreIco = 2500000; // 2 500 000 IDEA
-
-    /**
-     * @notice Максимальное количество монет, разрешенных к продаже на ICO.
-     * Не проданное будет сожжено в двойном размере от общего количества монет.
-     **/
-    uint constant public maxCoinsForIco = 35000000; // 35 000 000 IDEA
-
-    /**
-     * @notice Максимальное количество монет, разрешенных к продаже на PostICO.
-     * Не проданное будет сожжено в двойном размере от общего количества монет.
-     **/
-    uint constant public maxCoinsForPostIco = 12000000; // 12 000 000 IDEA
-
-    /**
-     * @notice Минимальное количество монет ETH за которое производится продажа
-     * монет IDEA на PreICO.
-     **/
-    uint constant public minEtherForPreIcoBuy = 20;
 
     /**
      * @notice Количество собранного на всех этапах ICO монет ETH в размерности WEI.
@@ -119,15 +89,15 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function() payable {
         uint tokens;
-        bool moreThenPreIcoMin = msg.value > minEtherForPreIcoBuy * 1 ether;
+        bool moreThenPreIcoMin = msg.value > 20000000000000000000;
 
-        if (icoState == IcoStates.PreIco && moreThenPreIcoMin && soldIdeaWeiPreIco <= maxCoinsForPreIco ** decimals) {
+        if (icoState == IcoStates.PreIco && moreThenPreIcoMin && soldIdeaWeiPreIco <= 2500000000000000000000000) {
 
             tokens = msg.value * 1500;                              // bonus +50% (PRE ICO)
             balances[msg.sender] += tokens;
             soldIdeaWeiPreIco += tokens;
 
-        } else if (icoState == IcoStates.Ico && soldIdeaWeiIco <= maxCoinsForIco ** decimals) {
+        } else if (icoState == IcoStates.Ico && soldIdeaWeiIco <= 35000000000000000000000000) {
             uint elapsed = now - icoStartTimestamp;
 
             if (elapsed <= 1 days) {
@@ -159,7 +129,7 @@ contract IdeaCoin is IdeaBasicCoin {
 
             soldIdeaWeiIco += tokens;
 
-        } else if (icoState == IcoStates.PostIco && soldIdeaWeiPostIco <= maxCoinsForPostIco ** decimals) {
+        } else if (icoState == IcoStates.PostIco && soldIdeaWeiPostIco <= 12000000000000000000000000) {
 
             tokens = msg.value * 500;                              // bonus -50% (POST ICO PRICE)
             balances[msg.sender] = tokens;
@@ -186,7 +156,7 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function stopPreIcoAndBurn() public onlyOwner {
         stopAnyIcoAndBurn(
-            (maxCoinsForPreIco ** decimals - soldIdeaWeiPreIco) * 2
+            (2500000000000000000000000 - soldIdeaWeiPreIco) * 2
         );
     }
 
@@ -204,7 +174,7 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function stopIcoAndBurn() public onlyOwner {
         stopAnyIcoAndBurn(
-            (maxCoinsForIco ** decimals - soldIdeaWeiIco) * 2
+            (35000000000000000000000000 - soldIdeaWeiIco) * 2
         );
     }
 
@@ -221,7 +191,7 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function stopPostIcoAndBurn() public onlyOwner {
         stopAnyIcoAndBurn(
-            (maxCoinsForPostIco ** decimals - soldIdeaWeiPostIco) * 2
+            (12000000000000000000000000 - soldIdeaWeiPostIco) * 2
         );
     }
 
@@ -252,12 +222,6 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Получить общее количество токенов в паевом фонде.
      **/
     uint public pieSupply;
-
-    /**
-     * @notice Минимальное количество IDEA токенов на паевом
-     * аккаунте для получения дивидендов.
-     **/
-    uint16 public constant minBalanceForDividends = 10000; // 10 000 IDEA
 
     /**
      * @notice Балансы паевых аккаунтов.
@@ -349,7 +313,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _amount Количество.
      **/
     function receiveDividends(uint _amount) internal {
-        uint minBalance = minBalanceForDividends ** decimals;
+        uint minBalance = 10000000000000000000000;
         uint pieSize = nextRoundReserve + calcPieSize(minBalance);
 
         accrueDividends(minBalance, pieSize, _amount);
@@ -435,7 +399,7 @@ contract IdeaCoin is IdeaBasicCoin {
         );
         _address = address(project);
         
-        projects.push(project);
+        projects.push(address(project));
     }
 
 
@@ -479,7 +443,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _sum Общая сумма.
      **/
     function receiveTrancheAndDividends(uint _sum) internal {
-        uint raw = _sum * (1000 - 35);
+        uint raw = _sum * 965;
         uint reserve = raw % 1000;
         uint tranche = (raw - reserve) / 1000;
 
@@ -529,5 +493,4 @@ contract IdeaCoin is IdeaBasicCoin {
             }
         }
     }
-
 }
