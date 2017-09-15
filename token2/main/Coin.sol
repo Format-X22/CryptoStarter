@@ -1,5 +1,7 @@
 pragma solidity ^0.4.16;
 
-contract IdeaMainCoin {
+import '../coin/Basic';
+
+contract IdeaMainCoin is IdeaCoinBasic {
     //
 }
