@@ -49,6 +49,11 @@ contract IdeaCoinBasic is IdeaTypeAll {
     mapping(address => bool) internal accountsMap;
 
     /**
+     * @notice Владелец контракта.
+     **/
+    address public owner;
+
+    /**
      * @notice Совершен перевод.
      * @param _from Отправитель.
      * @param _to Получатель.
@@ -63,6 +68,15 @@ contract IdeaCoinBasic is IdeaTypeAll {
      * @param _value Количество.
      **/
     event Approval(address indexed _owner, address indexed _spender, uint _value);
+
+
+    /**
+     * @notice Разрешение действия только владельцу контракта.
+     **/
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
 
     /**
      * @notice Проверить баланс аккаунта.
