@@ -6,7 +6,7 @@ import '../type/All.sol';
  * @notice Базовая монета проекта.
  * Совместима с ERC20 стандартом.
  **/
-contract IdeaBasicCoin is IdeaTypeAll {
+contract IdeaCoinBasic is IdeaTypeAll {
 
     /**
      * @notice Имя монеты.
