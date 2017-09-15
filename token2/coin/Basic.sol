@@ -1,12 +1,12 @@
 pragma solidity ^0.4.16;
 
-import './type/TypeBind.sol';
+import '../type/All.sol';
 
 /**
  * @notice Базовая монета проекта.
  * Совместима с ERC20 стандартом.
  **/
-contract IdeaBasicCoin is IdeaTypeBind {
+contract IdeaBasicCoin is IdeaTypeAll {
 
     /**
      * @notice Имя монеты.

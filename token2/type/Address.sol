@@ -3,7 +3,7 @@ pragma solidity ^0.4.16;
 /**
  * @notice Расширение типа address.
  **/
-library IdeaAddress {
+library IdeaTypeAddress {
 
     /**
      * @notice Запрещаем адресу быть нулевым.
