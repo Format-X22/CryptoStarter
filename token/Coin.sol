@@ -41,29 +41,13 @@ contract IdeaCoin is IdeaBasicCoin {
     // === ICO SECTION ===
     // ===             ===
 
-    /**
-     * @notice Максимальное количество монет, разрешенных к продаже на PreICO.
-     * Не проданное будет сожжено в двойном размере от общего количества монет.
-     **/
-    uint constant public maxCoinsForPreIco = 2500000; // 2 500 000 IDEA
 
-    /**
-     * @notice Максимальное количество монет, разрешенных к продаже на ICO.
-     * Не проданное будет сожжено в двойном размере от общего количества монет.
-     **/
-    uint constant public maxCoinsForIco = 35000000; // 35 000 000 IDEA
 
-    /**
-     * @notice Максимальное количество монет, разрешенных к продаже на PostICO.
-     * Не проданное будет сожжено в двойном размере от общего количества монет.
-     **/
-    uint constant public maxCoinsForPostIco = 12000000; // 12 000 000 IDEA
 
-    /**
-     * @notice Минимальное количество монет ETH за которое производится продажа
-     * монет IDEA на PreICO.
-     **/
-    uint constant public minEtherForPreIcoBuy = 20;
+
+
+
+
 
     /**
      * @notice Количество собранного на всех этапах ICO монет ETH в размерности WEI.
@@ -272,11 +256,7 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     uint public pieSupply;
 
-    /**
-     * @notice Минимальное количество IDEA токенов на паевом
-     * аккаунте для получения дивидендов.
-     **/
-    uint16 public constant minBalanceForDividends = 10000; // 10 000 IDEA
+
 
     /**
      * @notice Балансы паевых аккаунтов.

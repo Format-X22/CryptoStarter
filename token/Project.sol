@@ -33,15 +33,6 @@ contract IdeaProject is IdeaTypeBind {
      **/
     uint public requiredDays;
 
-    /**
-     * @notice Минимальное разрешенное количество дней сбора инвестиций.
-     **/
-    uint8 constant public minRequiredDays = 10;
-
-    /**
-     * @notice Максимальное разрешенное количество дней сбора инвестиций.
-     **/
-    uint8 constant public maxRequiredDays = 100;
 
     /**
      * @notice Время окончания сбора инвестиций.
@@ -400,21 +391,7 @@ contract IdeaProject is IdeaTypeBind {
      **/
     WorkStage[] public workStages;
 
-    /**
-     * @notice Максимальное разрешенное количество этапов работ.
-     **/
-    uint8 constant public maxWorkStages = 10;
 
-    /**
-     * @notice Минимальное разрешенное количество времени на выполнение этапа.
-     **/
-    uint8 constant public minWorkStageDays = 10;
-
-    /**
-     * @notice Максимальное разрешенное количество времени на выполнение этапа
-     * (для указания в описании этапа, время может быть продлено голосованием).
-     **/
-    uint8 constant public maxWorkStageDays = 100;
 
     /**
      * @notice Текущее количество процентов всех этапов.
@@ -530,10 +507,7 @@ contract IdeaProject is IdeaTypeBind {
      **/
     mapping(address => uint8) public productsIdByAddress;
 
-    /**
-     * @notice Максимальное разрешенное количество продуктов у одного проекта.
-     **/
-    uint8 constant maxProducts = 25;
+
 
     /**
      * @notice Разрешить действие только от котракта продукта, принадлежащего этому проекту.
