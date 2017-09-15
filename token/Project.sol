@@ -8,46 +8,8 @@ import './SubCoin.sol';
  **/
 contract IdeaProject is IdeaTypeBind {
 
-    /**
-     * @notice Имя проекта.
-     **/
-    string public name;
 
-    /**
-     * @notice Адрес движка-инициатора.
-     **/
-    address public engine;
-
-    /**
-     * @notice Аккаунт владельца.
-     **/
-    address public owner;
-
-    /**
-     * @notice Количество необходимых инвестиций.
-     **/
-    uint public required;
-
-    /**
-     * @notice Количество дней сбора инвестиций.
-     **/
-    uint public requiredDays;
-
-
-    /**
-     * @notice Время окончания сбора инвестиций.
-     **/
-    uint public fundingEndTime;
-
-    /**
-     * @notice Количество собранных инвестиций.
-     **/
-    uint public earned;
-
-    /**
-     * @notice Соответствие аккаунта и факта того что деньги были возвращены.
-     **/
-    mapping(address => bool) public isCashBack;
+   
 
     /**
      * @notice Количество собранных инвестиций увеличено.

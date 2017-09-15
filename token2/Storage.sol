@@ -95,6 +95,46 @@ contract IdeaStorage {
      **/
     address[] public projects;
 
-    
+    /**
+     * @notice Имена проектов.
+     **/
+    string[] public names;
+
+    /**
+     * @notice Аккаунты владельцев.
+     **/
+    address[] public owners;
+
+    /**
+     * @notice Количества необходимых инвестиций.
+     **/
+    uint[] public requires;
+
+    /**
+     * @notice Количества дней сбора инвестиций.
+     **/
+    uint[] public requiresDays;
+
+
+    /**
+     * @notice Времена окончания сбора инвестиций.
+     **/
+    uint[] public fundingEndTimes;
+
+    /**
+     * @notice Количества собранных инвестиций.
+     **/
+    uint[] public earned;
+
+    /**
+    * @notice Соответствие аккаунта и факта того что деньги были возвращены.
+    **/
+    mapping(address => mapping(uint => bool)) public isCashBack;
+
+    // ===                         ===
+    // === PROJECTS STATES SECTION ===
+    // ===                         ===
+
+    //
 
 }
