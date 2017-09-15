@@ -3,7 +3,7 @@ pragma solidity ^0.4.13;
 /**
  * @notice Расширение типа uint.
  **/
-library IdeaUint is IdeaBasic {
+library IdeaUint {
 
     /**
      * @notice Безопасное сложение.
