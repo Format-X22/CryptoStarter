@@ -158,6 +158,7 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (2500000000000000000000000 - soldIdeaWeiPreIco) * 2
         );
+        balances[owner] = balances[owner].sub(soldIdeaWeiPreIco);
     }
 
     /**
@@ -176,6 +177,7 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (35000000000000000000000000 - soldIdeaWeiIco) * 2
         );
+        balances[owner] = balances[owner].sub(soldIdeaWeiIco);
     }
 
     /**
@@ -193,6 +195,7 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (12000000000000000000000000 - soldIdeaWeiPostIco) * 2
         );
+        balances[owner] = balances[owner].sub(soldIdeaWeiPostIco);
     }
 
     /**
