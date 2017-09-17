@@ -5,10 +5,6 @@ import './Project.sol';
 
 /**
  * @notice IdeaCoin (IDEA) - непосредственно сама монета.
- * Также яляется единым центром управления проектами и их продуктами.
- * Исключением является только функциональность продуктов (саб-монет)
- * как непосредственно монет - они являются полноценными монетами стандарта ERC20
- * и могут работать автономно.
  **/
 contract IdeaCoin is IdeaBasicCoin {
 
@@ -64,18 +60,17 @@ contract IdeaCoin is IdeaBasicCoin {
      * @notice Состояния ICO.
      **/
     enum IcoStates {
-        Coming,        // Продажи ещё не начинались.
+        Coming,        // Продажи ещё не начинались или ожидается следующий этап.
         PreIco,        // Идет процесс предварительной продажи с высоким бонусом, но высоким порогов входа.
         Ico,           // Идет основной процесс продажи.
         PostIco,       // Продажи закончились и идет временная продажа монет с сайта сервиса.
-        Done,          // Все продажи успешно завершились.
-        Waiting        // Один из этапов продаж завершился и идет ожидание следующего.
+        Done          // Все продажи успешно завершились.
     }
 
     /**
      * @notice Текущее состояние ICO.
      **/
-    IcoStates icoState = IcoStates.Coming;
+    IcoStates icoState;
 
     /**
      * @notice Время старта основного этапа ICO.
@@ -204,7 +199,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _burn Количество монет для сжигания.
      **/
     function stopAnyIcoAndBurn(uint _burn) internal onlyOwner {
-        icoState = IcoStates.Waiting;
+        icoState = IcoStates.Coming;
 
         balances[owner] = balances[owner].sub(_burn);
         totalSupply = totalSupply.sub(_burn);
@@ -379,14 +374,6 @@ contract IdeaCoin is IdeaBasicCoin {
     address[] public projects;
 
     /**
-     * @notice Разрешение исполнять метод только владельцу проекта.
-     **/
-    modifier onlyProjectOwner(address _project) {
-        require(msg.sender == IdeaProject(_project).owner());
-        _;
-    }
-
-    /**
      * @notice Создание проекта в системе IdeaCoin.
      * @param _name Имя проекта.
      * @param _required Необходимое количество инвестиций в IDEA.
@@ -415,10 +402,9 @@ contract IdeaCoin is IdeaBasicCoin {
      * Средства поступят на счет владельца проекта.
      * @param _project Проект.
      **/
-    function withdrawFromProject(
-        address _project,
-        uint8 _stage
-    ) public onlyProjectOwner(_project) returns (bool _success) {
+    function withdrawFromProject(address _project, uint8 _stage) public returns (bool _success) {
+        require(msg.sender == IdeaProject(_project).owner());
+
         IdeaProject project = IdeaProject(_project);
         uint sum;
 

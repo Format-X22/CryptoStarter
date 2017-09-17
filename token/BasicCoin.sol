@@ -49,8 +49,14 @@ contract IdeaBasicCoin {
      **/
     mapping(address => bool) internal accountsMap;
 
+    /**
+     * @notice Владелец монеты.
+     **/
     address public owner;
 
+    /**
+     * @notice Разрешить действие только владельцу монеты.
+     **/
     modifier onlyOwner() {
         require(msg.sender == owner);
         _;
