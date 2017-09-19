@@ -1,3 +1,0 @@
-class PermissionCheck
-	#
-end
