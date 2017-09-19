@@ -168,5 +168,10 @@
     "ok": "_EMPTY_",
     "cancel": "_EMPTY_"
   },
-  "error": "_EMPTY_"
+  "error": "_EMPTY_",
+  "error404": {
+    "page_title": "_EMPTY_",
+    "header": "_EMPTY_",
+    "to_main": "_EMPTY_"
+  }
 }

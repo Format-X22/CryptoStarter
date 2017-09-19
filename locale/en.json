@@ -174,5 +174,10 @@
     "ok": "Ok",
     "cancel": "Cancel"
   },
-  "error": "Error"
+  "error": "Error",
+  "error404": {
+    "page_title": "_EMPTY_",
+    "header": "_EMPTY_",
+    "to_main": "_EMPTY_"
+  }
 }

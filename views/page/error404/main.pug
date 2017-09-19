@@ -1,10 +1,17 @@
 extends ../../components/skeleton
 
 block head
-    //
+    title!= erb('l.error404.page_title')
 
 block body
-    //
+    .container
+        .row
+            .col-md-6.col-md-offset-3
+                img(src='img/logo/origin.svg' width='35%').center-block
+                h1.text-center 404
+                p.text-center!= erb('l.error404.header')
+                p.text-center
+                    a(href='/')!= erb('l.error404.to_main')
 
 block scripts
-    //
+    //- no scripts
