@@ -39,6 +39,7 @@ block body
                     +tab('faq', 'Вопрос-Ответ')
                     +tab('news', 'Новости')
                     +tab('comments', 'Комментарии')
+                    +tab('exchange', 'Обменник')
 
             // TODO hidden on start
             .tab-content.cs-content
@@ -47,6 +48,14 @@ block body
                         .col-md-8
                             | Большое объемное описание проекта с картинками
                         .col-md-4
+                            .well.cs-project-item
+                                p
+                                    strong.
+                                        Проект завершил сбор средств, но вы всё ещё можете получить один из товаров,
+                                        воспользуйтесь обменником.
+                                    hr
+                                    +button('exchange-link-btn', 'Обменник').btn-primary.btn-block
+                            hr
                             .well.cs-project-item
                                 span.label.label-primary.pull-right Куплено 25
                                 h4 1 IDEA
@@ -59,7 +68,10 @@ block body
                                 ul
                                     li по России - 10.10.2018
                                 hr
-                                +button('buy-1', 'Купить').btn-primary.btn-block
+                                +button('buy-1', '<s>Купить</s>').btn-primary.btn-block.disabled
+                                hr
+                                em Сбор средст завершился, но, возможно, что-то ещё осталось в
+                                    a(href='#')  обменнике.
                             .well.cs-project-item
                                 span.label.label-primary.pull-right Куплено 18
                                 h4 1.1 IDEA
@@ -196,6 +208,9 @@ block body
                                     p Знаковая книга о кофе одного из самых известных профессионалов индустрии.
 
                             p.text-center Загрузка...
+
+                +tab-panel('exchange').cs-content-inner
+                    // TODO
 
 block scripts
     //

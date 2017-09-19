@@ -80,6 +80,7 @@
             <li role="presentation"><a href="#faq" aria-controls="faq" role="tab" data-toggle="tab"><span class="hidden-xs">Вопрос-Ответ</span></a></li>
             <li role="presentation"><a href="#news" aria-controls="news" role="tab" data-toggle="tab"><span class="hidden-xs">Новости</span></a></li>
             <li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab"><span class="hidden-xs">Комментарии</span></a></li>
+            <li role="presentation"><a href="#exchange" aria-controls="exchange" role="tab" data-toggle="tab"><span class="hidden-xs">Обменник</span></a></li>
           </ul>
         </div>
         <!-- TODO hidden on start-->
@@ -89,6 +90,16 @@
               <div class="row">
                 <div class="col-md-8">Большое объемное описание проекта с картинками</div>
                 <div class="col-md-4">
+                  <div class="well cs-project-item">
+                    <p><strong>
+                        Проект завершил сбор средств, но вы всё ещё можете получить один из товаров,
+                        воспользуйтесь обменником.</strong>
+                      <hr>
+                      <button class="btn btn-default btn-primary btn-block" id="exchange-link-btn">Обменник
+                      </button>
+                    </p>
+                  </div>
+                  <hr>
                   <div class="well cs-project-item"><span class="label label-primary pull-right">Куплено 25</span>
                     <h4>1 IDEA</h4>
                     <hr>
@@ -100,8 +111,9 @@
                       <li>по России - 10.10.2018</li>
                     </ul>
                     <hr>
-                    <button class="btn btn-default btn-primary btn-block" id="buy-1">Купить
+                    <button class="btn btn-default btn-primary btn-block disabled" id="buy-1"><s>Купить</s>
                     </button>
+                    <hr><em>Сбор средст завершился, но, возможно, что-то ещё осталось в<a href="#"> обменнике.</a></em>
                   </div>
                   <div class="well cs-project-item"><span class="label label-primary pull-right">Куплено 18</span>
                     <h4>1.1 IDEA</h4>
@@ -275,6 +287,10 @@
                   <p class="text-center">Загрузка...</p>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="tab-pane cs-content-inner" id="exchange">
+            <div class="container-fluid">
             </div>
           </div>
         </div>
