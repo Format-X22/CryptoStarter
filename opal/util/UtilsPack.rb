@@ -18,8 +18,10 @@ module UtilsPack
 	def valid_marker(target, &cond)
 		if cond.call
 			unmark_invalid target
+			true
 		else
 			mark_invalid target
+			false
 		end
 	end
 
