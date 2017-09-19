@@ -16,10 +16,12 @@ class RegisterPage < AbstractPage
 	end
 
 	def make_handlers
+		on_enter_key @email, @pass, @pass2 do
+			try_register
+		end
+
 		@register_btn.on :click do
-			if email_valid and pass_valid and term_valid
-				try_register
-			end
+			try_register
 		end
 	end
 
@@ -46,12 +48,14 @@ class RegisterPage < AbstractPage
 	end
 
 	def try_register
-		call_api({
-			action: 'register',
-			email: @email.value,
-			pass: @pass.value
-		}) do
-			$$.location.href = '/profile'
+		if email_valid and pass_valid and term_valid
+			call_api({
+				action: 'register',
+				email: @email.value,
+				pass: @pass.value
+			}) do
+				$$.location.href = '/profile'
+			end
 		end
 	end
 end

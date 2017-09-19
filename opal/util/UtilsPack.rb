@@ -59,6 +59,16 @@ module UtilsPack
 		end
 	end
 
+	def on_enter_key(*targets, &callback)
+		targets.each do |target|
+			target.on :keypress do |event|
+				if event.which == 13
+					callback.call
+				end
+			end
+		end
+	end
+
 	def call_api(payload, &callback)
 		HTTP.post '/api', payload: payload do |request|
 			if request.ok? and request.json['success']

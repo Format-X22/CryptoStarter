@@ -13,10 +13,12 @@ class RestorePassPage < AbstractPage
 	end
 
 	def make_handlers
+		on_enter_key @email do
+			try_restore
+		end
+
 		@restore_btn.on :click do
-			if email_valid
-				try_restore
-			end
+			try_restore
 		end
 	end
 
@@ -28,11 +30,13 @@ class RestorePassPage < AbstractPage
 	end
 
 	def try_restore
-		call_api({
-			action: 'restore_pass',
-			email: @email.value
-		}) do
-			$$.location.href = '/login'
+		if email_valid
+			call_api({
+				action: 'restore_pass',
+				email: @email.value
+			}) do
+				$$.location.href = '/login'
+			end
 		end
 	end
 
