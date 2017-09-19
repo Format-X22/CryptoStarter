@@ -44,263 +44,127 @@ block body
             .tab-content.cs-content
                 +tab-panel('present').cs-content-inner.active
                     .row
-                        +lang-tabs-column('present-lang')
-                        .col-md-11
-                            .tab-content
-                                +tab-panel('present-lang-en').active
-                                    .row
-                                        .col-md-8
-                                            | EN Большое объемное описание проекта с картинками
-                                        .col-md-4
-                                            .well.cs-project-item
-                                                span.label.label-primary.pull-right Куплено 25
-                                                h4 1 IDEA
-                                                hr
-                                                p Книга "Всемирный атлас кофе" с доставкой по РФ.
-                                                strong Включает:
-                                                ul
-                                                    li Книга в 1 экземпляре
-                                                strong Доставка:
-                                                ul
-                                                    li по России - 10.10.2018
-                                                hr
-                                                +button('buy-1', 'Купить').btn-primary.btn-block
-                                            .well.cs-project-item
-                                                span.label.label-primary.pull-right Куплено 18
-                                                h4 1.1 IDEA
-                                                hr
-                                                p Книга "Всемирный атлас кофе" с доставкой по всему миру.
-                                                strong Включает:
-                                                ul
-                                                    li Книга в 1 экземпляре
-                                                strong Доставка:
-                                                ul
-                                                    li по всему миру - 10.10.2018
-                                                hr
-                                                +button('buy-2', 'Купить').btn-primary.btn-block
-                                            .well.cs-project-item
-                                                span.label.label-primary.pull-right Куплено 2
-                                                h4 2 IDEA
-                                                hr
-                                                p Книга "Всемирный атлас кофе" с доставкой по всему миру.
-                                                strong Включает:
-                                                ul
-                                                    li Книга в 1 экземпляре
-                                                    li Подпись автора на книге
-                                                strong Доставка:
-                                                ul
-                                                    li по всему миру - 10.10.2018
-                                                hr
-                                                .cs-limit
-                                                    span.label.label-warning Осталось 8 из 10
-                                                +button('buy-3', 'Купить').btn-primary.btn-block
-                                            .well.cs-project-item
-                                                span.label.label-primary.pull-right Куплено 6
-                                                h4 8 IDEA
-                                                hr
-                                                p 10 книг "Всемирный атлас кофе" по специальной оптовой цене.
-                                                strong Включает:
-                                                ul
-                                                    li Книга в 10 экземплярах
-                                                strong Доставка:
-                                                ul
-                                                    li по всему миру - 10.10.2018
-                                                hr
-                                                +button('buy-4', 'Купить').btn-primary.btn-block
-                                +tab-panel('present-lang-de')
-                                    .row
-                                        .col-md-8
-                                            | DE Большое объемное описание проекта с картинками
-                                        .col-md-4
-                                            h4 Поддержи проект
-                                +tab-panel('present-lang-fr')
-                                    .row
-                                        .col-md-8
-                                            | FR Большое объемное описание проекта с картинками
-                                        .col-md-4
-                                            h4 Поддержи проект
-                                +tab-panel('present-lang-ru')
-                                    .row
-                                        .col-md-8
-                                            | RU Большое объемное описание проекта с картинками
-                                        .col-md-4
-                                            h4 Поддержи проект
-                                +tab-panel('present-lang-ch')
-                                    .row
-                                        .col-md-8
-                                            | CH Большое объемное описание проекта с картинками
-                                        .col-md-4
-                                            h4 Поддержи проект
-                                +tab-panel('present-lang-ar')
-                                    .row
-                                        .col-md-8
-                                            | AR Большое объемное описание проекта с картинками
-                                        .col-md-4
-                                            h4 Поддержи проект
+                        .col-md-8
+                            | Большое объемное описание проекта с картинками
+                        .col-md-4
+                            .well.cs-project-item
+                                span.label.label-primary.pull-right Куплено 25
+                                h4 1 IDEA
+                                hr
+                                p Книга "Всемирный атлас кофе" с доставкой по РФ.
+                                strong Включает:
+                                ul
+                                    li Книга в 1 экземпляре
+                                strong Доставка:
+                                ul
+                                    li по России - 10.10.2018
+                                hr
+                                +button('buy-1', 'Купить').btn-primary.btn-block
+                            .well.cs-project-item
+                                span.label.label-primary.pull-right Куплено 18
+                                h4 1.1 IDEA
+                                hr
+                                p Книга "Всемирный атлас кофе" с доставкой по всему миру.
+                                strong Включает:
+                                ul
+                                    li Книга в 1 экземпляре
+                                strong Доставка:
+                                ul
+                                    li по всему миру - 10.10.2018
+                                hr
+                                +button('buy-2', 'Купить').btn-primary.btn-block
+                            .well.cs-project-item
+                                span.label.label-primary.pull-right Куплено 2
+                                h4 2 IDEA
+                                hr
+                                p Книга "Всемирный атлас кофе" с доставкой по всему миру.
+                                strong Включает:
+                                ul
+                                    li Книга в 1 экземпляре
+                                    li Подпись автора на книге
+                                strong Доставка:
+                                ul
+                                    li по всему миру - 10.10.2018
+                                hr
+                                .cs-limit
+                                    span.label.label-warning Осталось 8 из 10
+                                +button('buy-3', 'Купить').btn-primary.btn-block
+                            .well.cs-project-item
+                                span.label.label-primary.pull-right Куплено 6
+                                h4 8 IDEA
+                                hr
+                                p 10 книг "Всемирный атлас кофе" по специальной оптовой цене.
+                                strong Включает:
+                                ul
+                                    li Книга в 10 экземплярах
+                                strong Доставка:
+                                ul
+                                    li по всему миру - 10.10.2018
+                                hr
+                                +button('buy-4', 'Купить').btn-primary.btn-block
+                                    
 
                 +tab-panel('faq').cs-content-inner
                     .row
-                        +lang-tabs-column('faq-lang')
-                        .col-md-11.cs-faq-container.cs-no-left-padding
-                            .tab-content.cs-no-left-padding
-                                +tab-panel('faq-en').active.cs-no-left-padding
-                                    .col-md-5.cs-no-left-padding
-                                        ul#faq-tabs-en.nav.nav-pills.nav-stacked
-                                            +tab('q1', 'Вопрос 1').active
-                                            +tab('q2', 'Вопрос 2')
-                                            +tab('q3', 'Вопрос 3')
-                                            +tab('q4', 'Вопрос 4')
-                                    .col-md-7
-                                        .tab-content.cs-faq-res
-                                            +tab-panel('q1').active
-                                                p.cs-faq Ответ на вопрос 1, может быть длинным EN.
-                                            +tab-panel('q2')
-                                                p.cs-faq Ответ на вопрос 2, может быть длинным.
-                                            +tab-panel('q3')
-                                                p.cs-faq Ответ на вопрос 3, может быть длинным.
-                                            +tab-panel('q4')
-                                                p.cs-faq Ответ на вопрос 4, может быть длинным.
-                                +tab-panel('faq-de').cs-no-left-padding
-                                    .col-md-5.cs-no-left-padding
-                                        ul#faq-tabs-de.nav.nav-pills.nav-stacked
-                                            +tab('q1', 'Вопрос 1').active
-                                            +tab('q2', 'Вопрос 2')
-                                            +tab('q3', 'Вопрос 3')
-                                            +tab('q4', 'Вопрос 4')
-                                    .col-md-7
-                                        .tab-content.cs-faq-res
-                                            +tab-panel('q1').active
-                                                p.cs-faq Ответ на вопрос 1, может быть длинным DE.
-                                            +tab-panel('q2')
-                                                p.cs-faq Ответ на вопрос 2, может быть длинным.
-                                            +tab-panel('q3')
-                                                p.cs-faq Ответ на вопрос 3, может быть длинным.
-                                            +tab-panel('q4')
-                                                p.cs-faq Ответ на вопрос 4, может быть длинным.
-                                +tab-panel('faq-fr').cs-no-left-padding
-                                    .col-md-5.cs-no-left-padding
-                                        ul#faq-tabs-fr.nav.nav-pills.nav-stacked
-                                            +tab('q1', 'Вопрос 1').active
-                                            +tab('q2', 'Вопрос 2')
-                                            +tab('q3', 'Вопрос 3')
-                                            +tab('q4', 'Вопрос 4')
-                                    .col-md-7
-                                        .tab-content.cs-faq-res
-                                            +tab-panel('q1').active
-                                                p.cs-faq Ответ на вопрос 1, может быть длинным FR.
-                                            +tab-panel('q2')
-                                                p.cs-faq Ответ на вопрос 2, может быть длинным.
-                                            +tab-panel('q3')
-                                                p.cs-faq Ответ на вопрос 3, может быть длинным.
-                                            +tab-panel('q4')
-                                                p.cs-faq Ответ на вопрос 4, может быть длинным.
-                                +tab-panel('faq-ru').cs-no-left-padding
-                                    .col-md-5.cs-no-left-padding
-                                        ul#faq-tabs-ru.nav.nav-pills.nav-stacked
-                                            +tab('q1', 'Вопрос 1').active
-                                            +tab('q2', 'Вопрос 2')
-                                            +tab('q3', 'Вопрос 3')
-                                            +tab('q4', 'Вопрос 4')
-                                    .col-md-7
-                                        .tab-content.cs-faq-res
-                                            +tab-panel('q1').active
-                                                p.cs-faq Ответ на вопрос 1, может быть длинным RU.
-                                            +tab-panel('q2')
-                                                p.cs-faq Ответ на вопрос 2, может быть длинным.
-                                            +tab-panel('q3')
-                                                p.cs-faq Ответ на вопрос 3, может быть длинным.
-                                            +tab-panel('q4')
-                                                p.cs-faq Ответ на вопрос 4, может быть длинным.
-                                +tab-panel('faq-ch').cs-no-left-padding
-                                    .col-md-5.cs-no-left-padding
-                                        ul#faq-tabs-ch.nav.nav-pills.nav-stacked
-                                            +tab('q1', 'Вопрос 1').active
-                                            +tab('q2', 'Вопрос 2')
-                                            +tab('q3', 'Вопрос 3')
-                                            +tab('q4', 'Вопрос 4')
-                                    .col-md-7
-                                        .tab-content.cs-faq-res
-                                            +tab-panel('q1').active
-                                                p.cs-faq Ответ на вопрос 1, может быть длинным CH.
-                                            +tab-panel('q2')
-                                                p.cs-faq Ответ на вопрос 2, может быть длинным.
-                                            +tab-panel('q3')
-                                                p.cs-faq Ответ на вопрос 3, может быть длинным.
-                                            +tab-panel('q4')
-                                                p.cs-faq Ответ на вопрос 4, может быть длинным.
-                                +tab-panel('faq-ar').cs-no-left-padding
-                                    .col-md-5.cs-no-left-padding
-                                        ul#faq-tabs-ar.nav.nav-pills.nav-stacked
-                                            +tab('q1', 'Вопрос 1').active
-                                            +tab('q2', 'Вопрос 2')
-                                            +tab('q3', 'Вопрос 3')
-                                            +tab('q4', 'Вопрос 4')
-                                    .col-md-7
-                                        .tab-content.cs-faq-res
-                                            +tab-panel('q1').active
-                                                p.cs-faq Ответ на вопрос 1, может быть длинным AR.
-                                            +tab-panel('q2')
-                                                p.cs-faq Ответ на вопрос 2, может быть длинным.
-                                            +tab-panel('q3')
-                                                p.cs-faq Ответ на вопрос 3, может быть длинным.
-                                            +tab-panel('q4')
-                                                p.cs-faq Ответ на вопрос 4, может быть длинным.
+                        .col-md-5
+                            ul.nav.nav-pills.nav-stacked
+                                +tab('q1', 'Вопрос 1').active
+                                +tab('q2', 'Вопрос 2')
+                                +tab('q3', 'Вопрос 3')
+                                +tab('q4', 'Вопрос 4')
+                        .col-md-7
+                            .tab-content.cs-faq-res
+                                +tab-panel('q1').active
+                                    p.cs-faq Ответ на вопрос 1, может быть длинным.
+                                +tab-panel('q2')
+                                    p.cs-faq Ответ на вопрос 2, может быть длинным.
+                                +tab-panel('q3')
+                                    p.cs-faq Ответ на вопрос 3, может быть длинным.
+                                +tab-panel('q4')
+                                    p.cs-faq Ответ на вопрос 4, может быть длинным.
+                                    
 
                 +tab-panel('news').cs-content-inner
                     .row
-                        +lang-tabs-column('news')
                         .col-md-6.col-md-offset-3
-                            .tab-content
-                                +tab-panel('news-en').active
-                                    .cs-news-item
-                                        span.label.label-primary.pull-right 10.10.2017
-                                        h3 100 тысяч на издание книги уже собрали, но это не предел!
-                                        p.
-                                            Друзья, мы собрали первые сто тысяч рублей!
-                                            Спасибо за поддержку! Но останавливаться рано!
-                                            Предзаказ на книгу можно оформить до самого конца проекта
-                                            20 сентября 2017, и чем больше книг будет заказано,
-                                            тем больший тираж книги будет издан.
-                                            А значит знания о мире кофе от одного из ведущих
-                                            профессионалов индустрии станут доступнее!
-                                            Расскажите о нашем проекте в социальных сетях.
+                            .cs-news-item
+                                span.label.label-primary.pull-right 10.10.2017
+                                h3 100 тысяч на издание книги уже собрали, но это не предел!
+                                p.
+                                    Друзья, мы собрали первые сто тысяч рублей!
+                                    Спасибо за поддержку! Но останавливаться рано!
+                                    Предзаказ на книгу можно оформить до самого конца проекта
+                                    20 сентября 2017, и чем больше книг будет заказано,
+                                    тем больший тираж книги будет издан.
+                                    А значит знания о мире кофе от одного из ведущих
+                                    профессионалов индустрии станут доступнее!
+                                    Расскажите о нашем проекте в социальных сетях.
 
-                                    .cs-news-item
-                                        span.label.label-primary.pull-right 10.10.2017
-                                        h3 100 тысяч на издание книги уже собрали, но это не предел!
-                                        p.
-                                            Друзья, мы собрали первые сто тысяч рублей!
-                                            Спасибо за поддержку! Но останавливаться рано!
-                                            Предзаказ на книгу можно оформить до самого конца проекта
-                                            20 сентября 2017, и чем больше книг будет заказано,
-                                            тем больший тираж книги будет издан.
-                                            А значит знания о мире кофе от одного из ведущих
-                                            профессионалов индустрии станут доступнее!
-                                            Расскажите о нашем проекте в социальных сетях.
+                            .cs-news-item
+                                span.label.label-primary.pull-right 10.10.2017
+                                h3 100 тысяч на издание книги уже собрали, но это не предел!
+                                p.
+                                    Друзья, мы собрали первые сто тысяч рублей!
+                                    Спасибо за поддержку! Но останавливаться рано!
+                                    Предзаказ на книгу можно оформить до самого конца проекта
+                                    20 сентября 2017, и чем больше книг будет заказано,
+                                    тем больший тираж книги будет издан.
+                                    А значит знания о мире кофе от одного из ведущих
+                                    профессионалов индустрии станут доступнее!
+                                    Расскажите о нашем проекте в социальных сетях.
 
-                                    .cs-news-item
-                                        span.label.label-primary.pull-right 10.10.2017
-                                        h3 100 тысяч на издание книги уже собрали, но это не предел!
-                                        p.
-                                            Друзья, мы собрали первые сто тысяч рублей!
-                                            Спасибо за поддержку! Но останавливаться рано!
-                                            Предзаказ на книгу можно оформить до самого конца проекта
-                                            20 сентября 2017, и чем больше книг будет заказано,
-                                            тем больший тираж книги будет издан.
-                                            А значит знания о мире кофе от одного из ведущих
-                                            профессионалов индустрии станут доступнее!
-                                            Расскажите о нашем проекте в социальных сетях.
-                                        
-                                +tab-panel('news-de')
-                                    p 2
-                                +tab-panel('news-fr')
-                                    p 3
-                                +tab-panel('news-ru')
-                                    p 4
-                                +tab-panel('news-ch')
-                                    p 5
-                                +tab-panel('news-ar')
-                                    p 6
+                            .cs-news-item
+                                span.label.label-primary.pull-right 10.10.2017
+                                h3 100 тысяч на издание книги уже собрали, но это не предел!
+                                p.
+                                    Друзья, мы собрали первые сто тысяч рублей!
+                                    Спасибо за поддержку! Но останавливаться рано!
+                                    Предзаказ на книгу можно оформить до самого конца проекта
+                                    20 сентября 2017, и чем больше книг будет заказано,
+                                    тем больший тираж книги будет издан.
+                                    А значит знания о мире кофе от одного из ведущих
+                                    профессионалов индустрии станут доступнее!
+                                    Расскажите о нашем проекте в социальных сетях.
 
                 +tab-panel('comments').cs-content-inner
                     .row

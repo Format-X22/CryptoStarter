@@ -33,9 +33,6 @@
     .cs-company .cs-info .cs-tabs li span {
       padding-left: 15px;
       padding-right: 15px; }
-    .cs-company .cs-info .cs-content .cs-no-left-padding,
-    .cs-company .cs-info .cs-content .cs-no-left-padding > .container-fluid {
-      padding-left: 0; }
     .cs-company .cs-info .cs-content .cs-content-inner {
       margin-top: 125px; }
     .cs-company .cs-info .cs-content .cs-faq-res {
