@@ -18,13 +18,13 @@ Document.ready? do
 	AllPages.new
 
 	case $$[:location].pathname
-		when /^\//                then IndexPage.new
 		when /^\/login/           then LoginPage.new
 		when /^\/profile/         then ProfilePage.new
 		when /^\/project/         then ProjectPage.new
 		when /^\/registerProject/ then RegisterProjectPage.new
 		when /^\/register/        then RegisterPage.new
 		when /^\/restorePass/     then RestorePassPage.new
+		when /^\//                then IndexPage.new
 		else                      # do nothing
 	end
 end
