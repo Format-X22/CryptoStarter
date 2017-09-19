@@ -57,6 +57,16 @@ module UtilsPack
 		end
 	end
 
+	def call_api(payload, &callback)
+		HTTP.post '/api', payload: payload do |request|
+			if request.ok? and request.json['success']
+				callback.call request.json
+			else
+				show_error "Request error - #{request.json['message'] || 'Connection or Server internal'}"
+			end
+		end
+	end
+
 	def js_new(func, *args, &block)
 		args.insert(0, `this`)
 		args << block if block

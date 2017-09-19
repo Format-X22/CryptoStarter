@@ -18,7 +18,7 @@ class RegisterPage < AbstractPage
 	def make_handlers
 		@register_btn.on :click do
 			if email_valid and pass_valid and term_valid
-				send_register_request
+				try_register
 			end
 		end
 	end
@@ -45,7 +45,13 @@ class RegisterPage < AbstractPage
 		end
 	end
 
-	def send_register_request
-		# TODO
+	def try_register
+		call_api({
+			action: 'register',
+			email: @email.value,
+			pass: @pass.value
+		}) do
+			$$.location.href = '/profile'
+		end
 	end
 end

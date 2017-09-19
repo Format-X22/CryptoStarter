@@ -16,7 +16,7 @@ class LoginPage < AbstractPage
 	def make_handlers
 		@login_btn.on :click do
 			if email_valid and pass_valid
-				send_login_request
+				try_login
 			end
 		end
 	end
@@ -34,8 +34,14 @@ class LoginPage < AbstractPage
 		end
 	end
 
-	def send_login_request
-		# TODO
+	def try_login
+		call_api({
+			action: 'login',
+			email: @email.value,
+			pass: @pass.value
+		}) do
+			$$.location.href = '/profile'
+		end
 	end
 
 end
