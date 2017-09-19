@@ -15,14 +15,8 @@ not_found do
 	page 'error404'
 end
 
-post '/api/auth' do
+post '/api' do
 	# TODO
-end
 
-post '/api/user' do
-	# TODO
-end
-
-post '/api/project' do
-	# TODO
+	success
 end
