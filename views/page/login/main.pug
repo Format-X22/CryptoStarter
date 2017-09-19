@@ -17,11 +17,11 @@ block body
                 +input('pass',   'password', 'Ваш пароль')
                 +button('login', 'Войти').btn-lg.btn-block.btn-primary
                 p.pull-right
-                    +button('forget', 'Забыли пароль?').btn-link
+                    +button-link('forget', '/restorePass', 'Забыли пароль?').btn-link
             .col-md-4.cs-register-block
                 h2 Нет аккаунта?
                 p Ещё не зарегистрировались? Вы можете сделать это сейчас.
-                +button('register', 'Регистрация').btn-lg.btn-block.btn-primary
+                +button-link('register', '/register', 'Регистрация').btn-lg.btn-block.btn-primary
 
 block scripts
     //

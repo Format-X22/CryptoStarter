@@ -18,12 +18,12 @@ block body
                 +input('pass2',  'password2', 'Повторите пароль')
                 +chechbox('term').cs-term
                     | Я согласен с 
-                    a.cs-term-link(href='#') условиями использования
+                    a.cs-term-link(href='/term' target='_BLANK') условиями использования
                 +button('register', 'Зарегистрироваться').btn-lg.btn-block.btn-primary.cs-register
             .col-md-4.cs-login-block
                 h2 Уже есть аккаунт?
                 p Вы можете войти.
-                +button('login', 'Войти').btn-lg.btn-block.btn-primary
+                +button-link('login', '/login', 'Войти').btn-lg.btn-block.btn-primary
 
 block scripts
     //

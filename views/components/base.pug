@@ -20,6 +20,10 @@ mixin button(id, text)
     button.btn.btn-default(id=id)&attributes(attributes)!= text
         block
 
+mixin button-link(id, href, text)
+    a.btn.btn-default(id=id, href=href)&attributes(attributes)!= text
+    block
+
 mixin button-icon(id, icon)
     button.btn.btn-default(id=id)&attributes(attributes)
         +icon(icon)
