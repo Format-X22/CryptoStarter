@@ -6,11 +6,46 @@ class RegisterPage < AbstractPage
 	end
 
 	def map_elements
-		#
+		e = Element
+
+		@email = e['#email']
+		@pass = e['#pass']
+		@pass2 = e['#pass2']
+		@term = e['#term']
+		@register_btn = e['#register']
 	end
 
 	def make_handlers
-		#
+		@register_btn.on :click do
+			if email_valid and pass_valid and term_valid
+				send_register_request
+			end
+		end
 	end
 
+	def email_valid
+		valid_marker @email do
+			(0..150) === @email.value.length and
+			/.+@.+/ === @email.value
+		end
+	end
+
+	def pass_valid
+		valid_marker @pass do
+			(8..150) === @pass.value.length
+		end
+		valid_marker @pass2 do
+			@pass2.value == @pass.value
+		end
+	end
+
+	def term_valid
+		valid_marker @term do
+			@term.is(':checked')
+		end
+	end
+
+	def send_register_request
+		# TODO
+	end
 end
