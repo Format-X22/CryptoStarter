@@ -70,12 +70,12 @@ contract IdeaCoin is IdeaBasicCoin {
     /**
      * @notice Текущее состояние ICO.
      **/
-    IcoStates icoState;
+    IcoStates public icoState;
 
     /**
      * @notice Время старта основного этапа ICO.
      **/
-    uint icoStartTimestamp;
+    uint public icoStartTimestamp;
 
     /**
      * @notice Функция продажи монет, работающая в момент пересылки монет на адрес контракта.
@@ -198,7 +198,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * Универсальная функция, вызываемая другими функциями.
      * @param _burn Количество монет для сжигания.
      **/
-    function stopAnyIcoAndBurn(uint _burn) internal onlyOwner {
+    function stopAnyIcoAndBurn(uint _burn) internal {
         icoState = IcoStates.Coming;
 
         balances[owner] = balances[owner].sub(_burn);
@@ -217,14 +217,9 @@ contract IdeaCoin is IdeaBasicCoin {
     // ===                          ===
 
     /**
-     * @notice Получить общее количество токенов в паевом фонде.
-     **/
-    uint public pieSupply;
-
-    /**
      * @notice Балансы паевых аккаунтов.
      **/
-    mapping(address => uint) pieBalances;
+    mapping(address => uint) public pieBalances;
 
     /**
      * @notice Список адресов всех известных паевых аккаунтов.
@@ -270,17 +265,6 @@ contract IdeaCoin is IdeaBasicCoin {
     }
 
     /**
-     * @notice Перевод всех средств с основного аккаунта на паевой.
-     * Для получения дивидендов баланс паевого аккаунта должен быть
-     * больше чем 10 000 токенов. Дивиденды будут начисляться на
-     * паевой аккаунт.
-     * @return success Результат.
-     **/
-    function transferToPieAll() public returns (bool success) {
-        return transferToPie(balances[msg.sender]);
-    }
-
-    /**
      * @notice Перевод средств с паевого аккаунта на основной.
      * Для получения дивидендов баланс паевого аккаунта должен быть
      * больше чем 10 000 токенов. Дивиденды будут начисляться на
@@ -293,17 +277,6 @@ contract IdeaCoin is IdeaBasicCoin {
         balances[msg.sender] = balances[msg.sender].add(_amount);
 
         return true;
-    }
-
-    /**
-     * @notice Перевод всех средств с паевого аккаунта на основной.
-     * Для получения дивидендов баланс паевого аккаунта должен быть
-     * больше чем 10 000 токенов. Дивиденды будут начисляться на
-     * паевой аккаунт.
-     * @return success Результат.
-     **/
-    function transferFromPieAll() public returns (bool success) {
-        return transferFromPie(pieBalances[msg.sender]);
     }
 
     /**

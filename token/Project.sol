@@ -77,6 +77,9 @@ contract IdeaProject {
         requiredDays = _requiredDays;
     }
 
+    /**
+     * @notice Разрешить действие только владельцу монеты.
+     **/
     modifier onlyOwner() {
         require(msg.sender == owner);
         _;
@@ -302,12 +305,12 @@ contract IdeaProject {
      * @notice Этап работ, который провалился, отсчет с 0.
      * Значение -1 указывает на отсутствие такого этапа.
      **/
-    int8 failStage = -1;
+    int8 public failStage = -1;
 
     /**
      * @notice Количество потерянны инвестиций в процентах.
      **/
-    uint failInvestPercents;
+    uint public failInvestPercents;
 
     /**
      * @notice Создать этап работы.
@@ -360,79 +363,6 @@ contract IdeaProject {
         _sum = workStages[_stage].sum;
 
         workStages[_stage].sum = 0;
-    }
-
-    // ===                  ===
-    // === PRODUCTS SECTION ===
-    // ===                  ===
-
-    /**
-     * @notice Список продуктов проекта.
-     **/
-    address[] public products;
-
-    /**
-     * @notice Разрешить действие только от котракта продукта, принадлежащего этому проекту.
-     **/
-    modifier onlyProduct() {
-        bool permissionGranted;
-
-        for (uint8 i; i < products.length; i += 1) {
-            if (msg.sender == products[i]) {
-                permissionGranted = true;
-            }
-        }
-
-        if (permissionGranted) {
-            _;
-        } else {
-            revert();
-        }
-    }
-
-    /**
-     * @notice Создания продукта, предлагаемого проектом.
-     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
-     * @param _name Имя продукта.
-     * @param _symbol Символ продукта.
-     * @param _price Цена продукта в IDEA токенах в размерности WEI.
-     * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
-     * @return _productAddress Адрес экземпляра контракта продукта.
-     **/
-    function makeProduct(
-        string _name,
-        string _symbol,
-        uint _price,
-        uint _limit
-    ) public onlyState(States.Initial) onlyEngine returns (address _productAddress) {
-        require(products.length <= 25);
-
-        IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
-
-        products.push(address(product));
-
-        return address(product);
-    }
-
-    /**
-     * @notice Вычисление неизрасходованных инвестиций, принидлежащих аккаунту.
-     * @param _account Аккаунт.
-     * @return _sum Сумма.
-     **/
-    function calcInvesting(address _account) public onlyEngine returns (uint _sum) {
-        require(!isCashBack[_account]);
-
-        for (uint8 i = 0; i < products.length; i += 1) {
-            IdeaSubCoin product = IdeaSubCoin(products[i]);
-
-            _sum = _sum.add(product.balanceOf(_account) * product.price());
-        }
-
-        if (isWorkFailState()) {
-            _sum = _sum.mul(100 - failInvestPercents).div(100);
-        }
-
-        isCashBack[_account] = true;
     }
 
     // ===                ===
@@ -524,4 +454,76 @@ contract IdeaProject {
         }
     }
 
+    // ===                  ===
+    // === PRODUCTS SECTION ===
+    // ===                  ===
+
+    /**
+     * @notice Список продуктов проекта.
+     **/
+    address[] public products;
+
+    /**
+     * @notice Разрешить действие только от котракта продукта, принадлежащего этому проекту.
+     **/
+    modifier onlyProduct() {
+        bool permissionGranted;
+
+        for (uint8 i; i < products.length; i += 1) {
+            if (msg.sender == products[i]) {
+                permissionGranted = true;
+            }
+        }
+
+        if (permissionGranted) {
+            _;
+        } else {
+            revert();
+        }
+    }
+
+    /**
+     * @notice Создания продукта, предлагаемого проектом.
+     * Этот метод можно вызывать только до пометки проекта как 'Coming'.
+     * @param _name Имя продукта.
+     * @param _symbol Символ продукта.
+     * @param _price Цена продукта в IDEA токенах в размерности WEI.
+     * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
+     * @return _productAddress Адрес экземпляра контракта продукта.
+     **/
+    function makeProduct(
+        string _name,
+        string _symbol,
+        uint _price,
+        uint _limit
+    ) public onlyState(States.Initial) onlyEngine returns (address _productAddress) {
+        require(products.length <= 25);
+
+        IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
+
+        products.push(address(product));
+
+        return address(product);
+    }
+
+    /**
+     * @notice Вычисление неизрасходованных инвестиций, принидлежащих аккаунту.
+     * @param _account Аккаунт.
+     * @return _sum Сумма.
+     **/
+    function calcInvesting(address _account) public onlyEngine returns (uint _sum) {
+        require(!isCashBack[_account]);
+
+        for (uint8 i = 0; i < products.length; i += 1) {
+            IdeaSubCoin product = IdeaSubCoin(products[i]);
+
+            _sum = _sum.add(product.balanceOf(_account) * product.price());
+        }
+
+        if (isWorkFailState()) {
+            _sum = _sum.mul(100 - failInvestPercents).div(100);
+        }
+
+        isCashBack[_account] = true;
+    }
 }
