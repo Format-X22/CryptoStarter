@@ -4,8 +4,6 @@ require 'opal-jquery'
 
 require 'page/AbstractPage'
 require 'page/AllPages'
-require 'page/AboutPage'
-require 'page/Error404Page'
 require 'page/IndexPage'
 require 'page/LoginPage'
 require 'page/ProfilePage'
@@ -21,14 +19,12 @@ Document.ready? do
 
 	case $$[:location].pathname
 		when /^\//                then IndexPage.new
-		when /^\/about/           then AboutPage.new
 		when /^\/login/           then LoginPage.new
 		when /^\/profile/         then ProfilePage.new
 		when /^\/project/         then ProjectPage.new
 		when /^\/registerProject/ then RegisterProjectPage.new
 		when /^\/register/        then RegisterPage.new
 		when /^\/restorePass/     then RestorePassPage.new
-		when /^\/term/            then # do nothing
-		else                           Error404Page.new
+		else                      # do nothing
 	end
 end
