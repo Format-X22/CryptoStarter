@@ -1,3 +1,0 @@
-class BlockChainController < AbstractController
-	#
-end
