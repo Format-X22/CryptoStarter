@@ -24,8 +24,8 @@ class RestorePassPage < AbstractPage
 
 	def email_valid
 		valid_marker @email do
-			(0..150) === @email.value.length and
-			/.+@.+/ === @email.value
+			(5..150) === @email.value.length and
+			/.+@.+\..+/ === @email.value
 		end
 	end
 
