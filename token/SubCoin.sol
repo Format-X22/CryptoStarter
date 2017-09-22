@@ -40,11 +40,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
     uint public price;
 
     /**
-     * @notice Владелец продуктов.
-     **/
-    address public owner;
-
-    /**
      * @notice Адрес контракта проекта, которому принадлежат продукты.
      **/
     address public project;

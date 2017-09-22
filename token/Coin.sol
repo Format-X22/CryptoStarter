@@ -9,18 +9,13 @@ import './Project.sol';
 contract IdeaCoin is IdeaBasicCoin {
 
     /**
-     * @notice Владелец IdeaCoin.
-     **/
-    address public owner;
-
-    /**
      * @notice Конструктор.
      **/
     function IdeaCoin() {
         name = 'IdeaCoin';
         symbol = 'IDEA';
         decimals = 18;
-        totalSupply = 100000000000000000000000000; // 100 000 000 IDEA
+        totalSupply = 100000000 ether; // 100 000 000 IDEA
 
         owner = msg.sender;
         balances[owner] = totalSupply;
@@ -84,50 +79,50 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function() payable {
         uint tokens;
-        bool moreThenPreIcoMin = msg.value > 20000000000000000000;
+        bool moreThenPreIcoMin = msg.value >= 20 ether;
 
-        if (icoState == IcoStates.PreIco && moreThenPreIcoMin && soldIdeaWeiPreIco <= 2500000000000000000000000) {
+        if (icoState == IcoStates.PreIco && moreThenPreIcoMin && soldIdeaWeiPreIco <= 2500000 ether) {
 
             tokens = msg.value * 1500;                              // bonus +50% (PRE ICO)
             balances[msg.sender] += tokens;
             soldIdeaWeiPreIco += tokens;
 
-        } else if (icoState == IcoStates.Ico && soldIdeaWeiIco <= 35000000000000000000000000) {
+        } else if (icoState == IcoStates.Ico && soldIdeaWeiIco <= 35000000 ether) {
             uint elapsed = now - icoStartTimestamp;
 
             if (elapsed <= 1 days) {
 
                 tokens = msg.value * 1250;                          // bonus +25% (ICO FIRST DAY)
-                balances[msg.sender] = tokens;
+                balances[msg.sender] += tokens;
 
             } else if (elapsed <= 6 days && elapsed > 1 days) {
 
                 tokens = msg.value * 1150;                          // bonus +15% (ICO TIER 1)
-                balances[msg.sender] = tokens;
+                balances[msg.sender] += tokens;
 
             } else if (elapsed <= 11 days && elapsed > 6 days) {
 
                 tokens = msg.value * 1100;                          // bonus +10% (ICO TIER 2)
-                balances[msg.sender] = tokens;
+                balances[msg.sender] += tokens;
 
             } else if (elapsed <= 16 days && elapsed > 11 days) {
 
                 tokens = msg.value * 1050;                          // bonus +5%  (ICO TIER 3)
-                balances[msg.sender] = tokens;
+                balances[msg.sender] += tokens;
 
             } else {
 
                 tokens = msg.value * 1000;                          // bonus +0%  (ICO OTHER DAYS)
-                balances[msg.sender] = tokens;
+                balances[msg.sender] += tokens;
 
             }
 
             soldIdeaWeiIco += tokens;
 
-        } else if (icoState == IcoStates.PostIco && soldIdeaWeiPostIco <= 12000000000000000000000000) {
+        } else if (icoState == IcoStates.PostIco && soldIdeaWeiPostIco <= 12000000 ether) {
 
             tokens = msg.value * 500;                              // bonus -50% (POST ICO PRICE)
-            balances[msg.sender] = tokens;
+            balances[msg.sender] += tokens;
             soldIdeaWeiPostIco += tokens;
 
         } else {
@@ -151,7 +146,7 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function stopPreIcoAndBurn() public onlyOwner {
         stopAnyIcoAndBurn(
-            (2500000000000000000000000 - soldIdeaWeiPreIco) * 2
+            (2500000 ether - soldIdeaWeiPreIco) * 2
         );
         balances[owner] = balances[owner].sub(soldIdeaWeiPreIco);
     }
@@ -170,7 +165,7 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function stopIcoAndBurn() public onlyOwner {
         stopAnyIcoAndBurn(
-            (35000000000000000000000000 - soldIdeaWeiIco) * 2
+            (35000000 ether - soldIdeaWeiIco) * 2
         );
         balances[owner] = balances[owner].sub(soldIdeaWeiIco);
     }
@@ -188,7 +183,7 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function stopPostIcoAndBurn() public onlyOwner {
         stopAnyIcoAndBurn(
-            (12000000000000000000000000 - soldIdeaWeiPostIco) * 2
+            (12000000 ether - soldIdeaWeiPostIco) * 2
         );
         balances[owner] = balances[owner].sub(soldIdeaWeiPostIco);
     }
@@ -284,7 +279,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _amount Количество.
      **/
     function receiveDividends(uint _amount) internal {
-        uint minBalance = 10000000000000000000000;
+        uint minBalance = 10000 ether;
         uint pieSize = nextRoundReserve + calcPieSize(minBalance);
 
         accrueDividends(minBalance, pieSize, _amount);
