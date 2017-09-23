@@ -326,7 +326,7 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _account Адрес.
      **/
     function tryCreatePieAccount(address _account) internal {
-        if (pieBalances[_account] == 0 && !pieAccountsMap[_account]) {
+        if (!pieAccountsMap[_account]) {
             pieAccounts.push(_account);
             pieAccountsMap[_account] = true;
         }

@@ -189,7 +189,7 @@ contract IdeaBasicCoin {
      * @param _account Адрес.
      **/
     function tryCreateAccount(address _account) internal {
-        if (balances[_account] == 0 && !accountsMap[_account]) {
+        if (!accountsMap[_account]) {
             accounts.push(_account);
             accountsMap[_account] = true;
         }
