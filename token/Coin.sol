@@ -280,9 +280,10 @@ contract IdeaCoin is IdeaBasicCoin {
      **/
     function receiveDividends(uint _amount) internal {
         uint minBalance = 10000 ether;
-        uint pieSize = nextRoundReserve + calcPieSize(minBalance);
+        uint pieSize = calcPieSize(minBalance);
+        uint amount = nextRoundReserve + _amount;
 
-        accrueDividends(minBalance, pieSize, _amount);
+        accrueDividends(minBalance, pieSize, amount);
     }
 
     /**
@@ -307,18 +308,21 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _amount Количество дивидендов суммарно.
      **/
     function accrueDividends(uint _minBalance, uint _pieSize, uint _amount) internal {
+        uint accrued;
+
         for (uint i = 0; i < pieAccounts.length; i += 1) {
             address account = pieAccounts[i];
             uint balance = pieBalances[account];
 
             if (balance >= _minBalance) {
-                uint reserve = (_amount * balance) % _pieSize;
-                uint dividends = (_amount - reserve) * balance / _pieSize;
+                uint dividends = (balance * _amount) / _pieSize;
 
-                nextRoundReserve = nextRoundReserve.add(reserve);
+                accrued = accrued.add(dividends);
                 pieBalances[account] = balance.add(dividends);
             }
         }
+
+        nextRoundReserve = _amount.sub(accrued);
     }
 
     /**
