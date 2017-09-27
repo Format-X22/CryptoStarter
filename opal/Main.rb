@@ -24,7 +24,7 @@ Document.ready? do
 		when /^\/registerProject/ then RegisterProjectPage.new
 		when /^\/register/        then RegisterPage.new
 		when /^\/restorePass/     then RestorePassPage.new
-		when /^\//                then IndexPage.new
+		when /^\/$/               then IndexPage.new
 		else                      # do nothing
 	end
 end
