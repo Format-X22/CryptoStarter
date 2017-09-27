@@ -496,7 +496,7 @@ contract IdeaProject {
         string _symbol,
         uint _price,
         uint _limit
-    ) public onlyState(States.Initial) onlyEngine returns (address _productAddress) {
+    ) public onlyState(States.Initial) onlyOwner returns (address _productAddress) {
         require(products.length <= 25);
 
         IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
