@@ -12,6 +12,7 @@ end
 helpers do
 
 	def lang
-		$locale[params['lang']] or $locale['en']
+		$locale['ru']
+		#$locale[params['lang']] or $locale['en']
 	end
 end
