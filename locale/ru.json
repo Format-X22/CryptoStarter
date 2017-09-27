@@ -1,12 +1,11 @@
 {
   "main_menu": {
     "home": "Главная",
-    "ico": "ICO",
-    "docs": "Документы",
-    "timeline": "Роадмап",
-    "media": "Пресса",
-    "team": "Команда",
-    "register": "Регистрация проекта"
+    "about": "О нас",
+    "login": "Войти",
+    "register": "Регистрация",
+    "register_project": "Регистрация проекта",
+    "term": "Соглашение"
   },
   "wow_slider": {
     "main_text": "Crowdfunding",

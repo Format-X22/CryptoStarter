@@ -1,12 +1,11 @@
 {
   "main_menu": {
     "home": "_EMPTY_",
-    "ico": "ICO",
-    "docs": "_EMPTY_",
-    "timeline": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "about": "_EMPTY_",
+    "login": "_EMPTY_",
+    "register": "_EMPTY_",
+    "register_project": "_EMPTY_",
+    "term": "_EMPTY_"
   },
   "wow_slider": {
     "main_text": "Crowdfunding",

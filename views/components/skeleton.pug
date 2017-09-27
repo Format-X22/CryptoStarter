@@ -31,7 +31,12 @@ html
                     +mobile-top-menu-toggle('top-menu-toggle')
                 #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
                     ul.nav.navbar-nav.navbar-right
-                        +menu-item('#home',     erb('l.main_menu.home'))
+                        +menu-item('/',                erb('l.main_menu.home'))
+                        +menu-item('/registerProject', erb('l.main_menu.register_project'))
+                        +menu-item('/about',           erb('l.main_menu.about'))
+                        +menu-item('/term',            erb('l.main_menu.term'))
+                        +menu-item('/login',           erb('l.main_menu.login'))
+                        +menu-item('/register',        erb('l.main_menu.register'))
                         +langs.visible-xs
                         li.dropdown.hidden-xs
                             a.dropdown-toggle(
