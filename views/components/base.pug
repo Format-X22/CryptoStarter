@@ -184,7 +184,7 @@ mixin mobile-top-menu-toggle(id)
         span.icon-bar
 
 mixin characteristic-bar(size)
-    .progress-bar(role='progressbar' style!='width: '+size+'%')&attributes(attributes)
+    .progress-bar(role='progressbar' style!='width: '+(size || 75)+'%')&attributes(attributes)
 
 mixin characteristic(id, size, name)
     if name
