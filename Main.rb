@@ -1,9 +1,9 @@
 require 'sinatra'
-#require 'mongoid'
+require 'mongoid'
 require 'i18n'
-#require 'require_all'
-#require_all 'biz'
+require 'require_all'
+require_all 'biz'
 
 I18n.default_locale = :en
 
-#Mongoid.load!('./mongoid.yml', :development)
+Mongoid.load!('./mongoid.yml', :development)
