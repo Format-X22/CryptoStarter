@@ -5,6 +5,10 @@
         return '<%= ' + code + ' %>';
     }
 
+    function erb_cond(cond) {
+        return '<% ' + cond + ' %>';
+    }
+
     function make_locale_shortcut(prefix) {
         return function () {
             var args = Array.prototype.slice.call(arguments);
@@ -179,14 +183,14 @@ mixin mobile-top-menu-toggle(id)
         span.icon-bar
         span.icon-bar
 
-mixin characteristic-bar
-    .progress-bar(role='progressbar' style='width: 66%')&attributes(attributes)
+mixin characteristic-bar(size)
+    .progress-bar(role='progressbar' style!='width: '+size+'%')&attributes(attributes)
 
-mixin characteristic(id, name)
+mixin characteristic(id, size, name)
     if name
         h6!=name
     .progress&attributes(attributes)
-        +characteristic-bar()(id=id)
+        +characteristic-bar(size)(id!=id + '-bar')
 
 mixin characteristic-large(id, name, type)
     - type = type || 'info'

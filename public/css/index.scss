@@ -134,4 +134,20 @@
 			box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.15);
 		}
 	}
+
+	.cs-link-wrap {
+		color: #333333;
+		text-decoration: none;
+
+		&:hover {
+			color: #333333;
+			text-decoration: none;
+		}
+	}
+
+	.cs-title,
+	.cs-description {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }

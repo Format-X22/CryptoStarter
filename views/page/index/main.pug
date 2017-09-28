@@ -24,27 +24,30 @@ block body
             +tab('done-projects', 'Завершенные проекты')
             
         .tab-content.cs-project-tabs-content
-            mixin projects-area
+            mixin projects-area(collection)
                 .row
+                    != erb_cond('d.' + collection + '.each do |project|')
                     .col-md-4
-                        +project
-                    .col-md-4
-                        +project
-                    .col-md-4
-                        +project
+                        +project(
+                            erb('project.id'),
+                            erb('project.img'),
+                            erb('project.title'),
+                            erb('project.description'),
+                            erb('project.progress'),
+                            erb('project.count'),
+                            erb('project.percent'),
+                            erb('project.days')
+                        )
+                    != erb_cond('end')
 
             +tab-panel('active-projects').hidden.active
-                +projects-area
+                +projects-area('active_projects')
 
             +tab-panel('prepared-projects').hidden
-                +projects-area
+                +projects-area('prepared_projects')
 
             +tab-panel('done-projects').hidden
-                +projects-area
-
-            #loading.row.cs-loading
-                .col-md-12
-                    p.text-center Загрузка...
+                +projects-area('done_projects')
 
 block scripts
     script(src='js/lib/wow-slider-tools.js')

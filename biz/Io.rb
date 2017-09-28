@@ -1,14 +1,20 @@
+require 'ostruct'
+
 helpers do
 
-	def page(path)
+	def page(path, data = {})
 		page = File.read("./views/page/#{path}/main.html")
 
-		erb(page, locals: {l: lang, auth_data: auth_data})
+		erb(page, locals: {
+			l: lang,
+			d: OpenStruct.new(data),
+			a: auth_data
+		})
 	end
 
-	def inner_page(path, redirect_path)
+	def inner_page(path, redirect_path, data = {})
 		if logged_in?
-			page path
+			page path, data
 		else
 			redirect "/#{redirect_path}"
 		end

@@ -96,5 +96,15 @@
     .cs-project .cs-earned .progress {
       -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.15);
       box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.15); }
+  .cs-project .cs-link-wrap {
+    color: #333333;
+    text-decoration: none; }
+    .cs-project .cs-link-wrap:hover {
+      color: #333333;
+      text-decoration: none; }
+  .cs-project .cs-title,
+  .cs-project .cs-description {
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 /*# sourceMappingURL=index.css.map */

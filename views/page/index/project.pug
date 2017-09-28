@@ -1,21 +1,24 @@
-mixin project
-    .well.cs-project
-        img.cs-image(src='http://rgho.st/8tXGjMrw7/image.png')
-        .cs-info
-            h4 Всемирный атлас кофе
-            p Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
-            .cs-earned
-                +characteristic('project-' + Math.random())
-                .row
-                    .col-md-4.text-center
-                        b 332 IDEA
-                        br
-                        span собрано
-                    .col-md-4.text-center
-                        b 122%
-                        br
-                        span от суммы
-                    .col-md-4.text-center
-                        b 20 дней
-                        br
-                        span осталось
+mixin project(id, img, title, description, progress, count, percent, days)
+    .well.cs-project(id!=id)
+        a(href!='/project-' + id).cs-link-wrap
+            img.cs-image(src!=img)
+            .cs-info
+                h4.cs-title!= title
+                p.cs-description!= description
+                .cs-earned
+                    +characteristic('progress-' + id, progress)
+                    .row
+                        .col-md-4.text-center
+                            b!= count + ' IDEA'
+                            br
+                            span собрано
+                        .col-md-4.text-center
+                            b!= percent + '%'
+                            br
+                            span от суммы
+                        .col-md-4.text-center
+                            if days !== '0'
+                                b!= days + ' дней'
+                                br
+                                span осталось
+                                

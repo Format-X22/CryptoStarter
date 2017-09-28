@@ -97,187 +97,74 @@
       <div class="tab-content cs-project-tabs-content">
         <div class="tab-pane hidden active" id="active-projects">
           <div class="container-fluid">
-                    <div class="row">
+                    <div class="row"><% d.active_projects.each do |project| %>
                       <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.21395332485414653"></div>
+                        <div class="well cs-project" id="<%= project.id %>"><a class="cs-link-wrap" href="/project-<%= project.id %>"><img class="cs-image" src="<%= project.img %>"/>
+                            <div class="cs-info">
+                              <h4 class="cs-title"><%= project.title %></h4>
+                              <p class="cs-description"><%= project.description %></p>
+                              <div class="cs-earned">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span>собрано</span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span>от суммы</span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> дней</b><br/><span>осталось</span>
+                                  </div>
+                                </div>
                               </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.7865997546906622"></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.5760248885251786"></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                            </div></a></div>
+                      </div><% end %>
                     </div>
           </div>
         </div>
         <div class="tab-pane hidden" id="prepared-projects">
           <div class="container-fluid">
-                    <div class="row">
+                    <div class="row"><% d.prepared_projects.each do |project| %>
                       <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.311565457643894"></div>
+                        <div class="well cs-project" id="<%= project.id %>"><a class="cs-link-wrap" href="/project-<%= project.id %>"><img class="cs-image" src="<%= project.img %>"/>
+                            <div class="cs-info">
+                              <h4 class="cs-title"><%= project.title %></h4>
+                              <p class="cs-description"><%= project.description %></p>
+                              <div class="cs-earned">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span>собрано</span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span>от суммы</span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> дней</b><br/><span>осталось</span>
+                                  </div>
+                                </div>
                               </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.58236226833036"></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.3318808165226086"></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                            </div></a></div>
+                      </div><% end %>
                     </div>
           </div>
         </div>
         <div class="tab-pane hidden" id="done-projects">
           <div class="container-fluid">
-                    <div class="row">
+                    <div class="row"><% d.done_projects.each do |project| %>
                       <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.8159624424721579"></div>
+                        <div class="well cs-project" id="<%= project.id %>"><a class="cs-link-wrap" href="/project-<%= project.id %>"><img class="cs-image" src="<%= project.img %>"/>
+                            <div class="cs-info">
+                              <h4 class="cs-title"><%= project.title %></h4>
+                              <p class="cs-description"><%= project.description %></p>
+                              <div class="cs-earned">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span>собрано</span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span>от суммы</span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> дней</b><br/><span>осталось</span>
+                                  </div>
+                                </div>
                               </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.17745923529202656"></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="well cs-project"><img class="cs-image" src="http://rgho.st/8tXGjMrw7/image.png"/>
-                          <div class="cs-info">
-                            <h4>Всемирный атлас кофе</h4>
-                            <p>Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.</p>
-                            <div class="cs-earned">
-                              <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 66%;" id="project-0.7563730925525807"></div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4 text-center"><b>332 IDEA</b><br/><span>собрано</span></div>
-                                <div class="col-md-4 text-center"><b>122%</b><br/><span>от суммы</span></div>
-                                <div class="col-md-4 text-center"><b>20 дней</b><br/><span>осталось</span></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                            </div></a></div>
+                      </div><% end %>
                     </div>
-          </div>
-        </div>
-        <div class="row cs-loading" id="loading">
-          <div class="col-md-12">
-            <p class="text-center">Загрузка...</p>
           </div>
         </div>
       </div>
