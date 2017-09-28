@@ -61,6 +61,37 @@
           <hr/>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="form-group">
+            <label for="name">Имя проекта</label>
+            <input class="form-control" id="name" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <div class="form-group">
+            <label for="short">Краткое описание проекта</label>
+            <textarea class="form-control" id="short" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Адрес вашей электронной почты</label>
+            <input class="form-control" id="email" type="email" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <div class="form-group">
+            <label for="pass">Ваш пароль</label>
+            <input class="form-control" id="pass" type="password" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <div class="form-group">
+            <label for="pass2">Повторите пароль</label>
+            <input class="form-control" id="pass2" type="password" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+          </div>
+          <div class="checkbox cs-term">
+            <label>
+              <input id="term" type="checkbox"/><span>Я согласен с <a class="cs-term-link" href="/term" target="_BLANK">условиями использования</a></span>
+            </label>
+          </div>
+          <button class="btn btn-default btn-lg btn-block btn-primary cs-register" id="register">Зарегистрировать проект
+          </button>
+        </div>
+      </div>
     </div>
     <script src="js/lib/fixes.js"></script>
     <script src="js/lib/jquery.js"></script>

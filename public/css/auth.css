@@ -13,10 +13,13 @@
   border-right: 1px solid #eeeeee; }
 .cs-register-form .cs-login-block {
   padding-left: 50px; }
-.cs-register-form .cs-term {
+
+.cs-register-form .cs-term,
+.cs-register-project-form .cs-term {
   margin-top: 15px;
   margin-bottom: 15px; }
-  .cs-register-form .cs-term .cs-term-link {
+  .cs-register-form .cs-term .cs-term-link,
+  .cs-register-project-form .cs-term .cs-term-link {
     color: #333333;
     text-decoration: underline; }
 

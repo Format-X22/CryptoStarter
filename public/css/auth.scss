@@ -31,18 +31,19 @@
 	.cs-login-block {
 		padding-left: 50px;
 	}
-
-	.cs-term {
-		margin-top: 15px;
-		margin-bottom: 15px;
-
-		.cs-term-link {
-			color: #333333;
-			text-decoration: underline;
-		}
-	}
 }
 
 .cs-register-project-form {
 	@extend .cs-auth-form;
+}
+
+.cs-register-form .cs-term,
+.cs-register-project-form .cs-term {
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+	.cs-term-link {
+		color: #333333;
+		text-decoration: underline;
+	}
 }
