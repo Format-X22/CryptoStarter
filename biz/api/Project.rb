@@ -8,7 +8,7 @@ helpers do
 		count.times do |i|
 			result.push OpenStruct.new({
 				id: i + offset,
-				img: 'http://rgho.st/8tXGjMrw7/image.png',
+				img: '/img/project_stub.jpeg',
 				title: 'Всемирный атлас кофе',
 				description: 'Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.',
 				progress: '75',
