@@ -6,4 +6,4 @@ require_all 'biz'
 
 I18n.default_locale = :en
 
-Mongoid.load!('./mongoid.yml', :development)
+#Mongoid.load!('./mongoid.yml', :development)
