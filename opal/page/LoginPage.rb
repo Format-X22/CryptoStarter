@@ -23,6 +23,18 @@ class LoginPage < AbstractPage
 		end
 	end
 
+	def try_login
+		if email_valid and pass_valid
+			call_api({
+				action: 'login',
+				email: @email.value,
+				pass: @pass.value
+			}) do
+				$$.location.href = '/profile'
+			end
+		end
+	end
+
 	def email_valid
 		valid_marker @email do
 			(5..150) === @email.value.length and
@@ -33,18 +45,6 @@ class LoginPage < AbstractPage
 	def pass_valid
 		valid_marker @pass do
 			(8..150) === @pass.value.length
-		end
-	end
-
-	def try_login
-		if email_valid and pass_valid
-			call_api({
-				action: 'login',
-				email: @email.value,
-				pass: @pass.value
-			}) do
-				$$.location.href = '/profile'
-			end
 		end
 	end
 
