@@ -28,4 +28,14 @@
   .cs-form-all hr {
     margin-bottom: 10px; }
 
+@media (max-width: 767px) {
+  .cs-form .cs-save-buttons .btn {
+    width: 100%;
+    margin-top: 25px; }
+  .cs-form .cs-faq-use {
+    margin-top: 0; }
+    .cs-form .cs-faq-use input {
+      position: relative !important;
+      margin-left: 10px !important; } }
+
 /*# sourceMappingURL=project-constructor.css.map */

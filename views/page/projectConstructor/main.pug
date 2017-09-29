@@ -1,6 +1,9 @@
 extends ../../components/skeleton
 
 mixin project-constructor(lang)
+    +chechbox('no-use-lang-' + lang).cs-no-lang
+        em Не использовать этот язык
+    hr
     .panel.panel-primary
         .panel-heading Основная информация
         .panel-body
@@ -21,7 +24,7 @@ mixin project-constructor(lang)
         .panel-heading
             .form-inline
                 | Вопрос-Ответ
-                +chechbox('faq-use-'+lang, true).pull-right
+                +chechbox('faq-use-'+lang, true).pull-right.cs-faq-use
                     em  Не использовать
         .panel-body
             table.table.cs-faq-table
@@ -68,9 +71,10 @@ mixin project-constructor(lang)
                     td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
 
     hr
-    +button('save-'+lang, 'Сохранить без публикации').btn-primary
-    +button('pub-'+lang, 'Опубликовать').btn-primary.pull-right
-    .clearfix
+    .cs-save-buttons
+        +button('save-'+lang, 'Сохранить без публикации').btn-primary
+        +button('pub-'+lang, 'Опубликовать').btn-primary.pull-right
+        .clearfix
 
 block head
     // TODO
@@ -87,10 +91,6 @@ block body
         .row.cs-form
             .col-md-8.col-md-offset-2
                 +lang-tabs('lang')
-                +chechbox('text').cs-no-lang
-                    em Не использовать этот язык
-                hr
-
                 .tab-content
                     each lang, index in ['en', 'de', 'fr', 'ru', 'ch', 'ar']
                         if index == 0
