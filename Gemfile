@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'sinatra/cookies'
 gem 'recursive-open-struct'
 gem 'opal'
 gem 'opal-jquery'
