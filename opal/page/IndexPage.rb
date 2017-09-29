@@ -18,7 +18,6 @@ class IndexPage < AbstractPage
 		@active_projects   = e['#active-projects']
 		@prepared_projects = e['#prepared-projects']
 		@done_projects     = e['#done-projects']
-		@project_tabs_btns = e['#project-tabs a']
 	end
 
 	def expose_plugins

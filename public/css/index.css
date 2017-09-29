@@ -71,6 +71,10 @@
     padding-left: 15px;
     padding-right: 15px; }
 
+@media (max-width: 767px) {
+  .cs-project-tabs li {
+    width: 32%;
+    text-align: center; } }
 .cs-project-tabs-content .tab-pane {
   margin-top: 25px; }
 .cs-project-tabs-content .cs-loading {
@@ -102,9 +106,18 @@
     .cs-project .cs-link-wrap:hover {
       color: #333333;
       text-decoration: none; }
+  .cs-project .cs-title {
+    max-height: 19px; }
+  .cs-project .cs-description {
+    max-height: 80px; }
   .cs-project .cs-title,
   .cs-project .cs-description {
     overflow: hidden;
     text-overflow: ellipsis; }
+
+@media (max-width: 767px) {
+  .cs-project .cs-earned .col-md-4 {
+    display: inline-block;
+    width: 32%; } }
 
 /*# sourceMappingURL=index.css.map */

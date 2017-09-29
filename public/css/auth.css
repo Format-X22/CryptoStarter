@@ -23,4 +23,12 @@
     color: #333333;
     text-decoration: underline; }
 
+@media (max-width: 767px) {
+  .cs-login-form .cs-register-block,
+  .cs-login-form .cs-login-block,
+  .cs-register-form .cs-login-block,
+  .cs-register-form .cs-register-block {
+    padding-left: 15px;
+    padding-right: 15px; } }
+
 /*# sourceMappingURL=auth.css.map */

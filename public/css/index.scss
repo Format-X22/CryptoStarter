@@ -95,6 +95,13 @@
 	}
 }
 
+@media (max-width: 767px) {
+	.cs-project-tabs li {
+		width: 32%;
+		text-align: center;
+	}
+}
+
 .cs-project-tabs-content {
 
 	.tab-pane {
@@ -145,9 +152,24 @@
 		}
 	}
 
+	.cs-title {
+		max-height: 19px;
+	}
+
+	.cs-description {
+		max-height: 80px;
+	}
+
 	.cs-title,
 	.cs-description {
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+}
+
+@media (max-width: 767px) {
+	.cs-project .cs-earned .col-md-4 {
+		display: inline-block;
+		width: 32%;
 	}
 }

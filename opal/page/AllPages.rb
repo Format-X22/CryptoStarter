@@ -23,10 +23,6 @@ class AllPages < AbstractPage
 
 	def init_scroll_to_top
 		@js_window.on :scroll do
-			if @body_and_html.width < 767
-				@to_top.effect :fade_out
-			end
-
 			@to_top.remove_class 'hidden'
 
 			if @js_window.scroll_top > TO_TOP_EDGE

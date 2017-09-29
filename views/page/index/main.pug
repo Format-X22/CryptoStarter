@@ -18,10 +18,10 @@ block body
     +wow-slider
 
     .container
-        ul#project-tabs.cs-project-tabs.nav.nav-pills
-            +tab('active-projects', 'Активные проекты').active
-            +tab('prepared-projects', 'Скоро стартуют')
-            +tab('done-projects', 'Завершенные проекты')
+        ul.cs-project-tabs.nav.nav-pills
+            +tab('active-projects', 'Активные проекты', 'flash').active
+            +tab('prepared-projects', 'Скоро стартуют', 'time')
+            +tab('done-projects', 'Завершенные проекты', 'ok-circle')
             
         .tab-content.cs-project-tabs-content
             mixin projects-area(collection)

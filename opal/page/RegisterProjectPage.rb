@@ -36,7 +36,7 @@ class RegisterProjectPage < AbstractPage
 				email: @email.value,
 				pass: @pass.value
 			}) do
-				$$.location.href = '/projectConstructor'
+				$$.location.href = '/projectConstructor-first'
 			end
 		end
 	end
