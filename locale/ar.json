@@ -19,18 +19,6 @@
     "team": "_EMPTY_",
     "register": "_EMPTY_"
   },
-  "register": {
-    "hint": "_EMPTY_",
-    "project_name_label": "_EMPTY_",
-    "project_name_placeholder": "_EMPTY_",
-    "email_label": "_EMPTY_",
-    "email_placeholder": "_EMPTY_",
-    "description_label": "_EMPTY_",
-    "description_placeholder": "_EMPTY_",
-    "register_project_button": "_EMPTY_",
-    "success_modal_title": "_EMPTY_",
-    "success_modal_text": "_EMPTY_"
-  },
   "ico": {
     "info_before": "_EMPTY_",
     "info_in": "_EMPTY_",
@@ -172,5 +160,12 @@
     "page_title": "_EMPTY_",
     "header": "_EMPTY_",
     "to_main": "_EMPTY_"
-  }
+  },
+  "about": {},
+  "index": {},
+  "auth": {},
+  "profile": {},
+  "project": {},
+  "constructor": {},
+  "term": {}
 }

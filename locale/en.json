@@ -19,18 +19,6 @@
     "team": "Team",
     "register": "Pre-register your project"
   },
-  "register": {
-    "hint": "_EMPTY_",
-    "project_name_label": "Project name",
-    "project_name_placeholder": "Your project name",
-    "email_label": "Contact email",
-    "email_placeholder": "Your project contact email",
-    "description_label": "Project description",
-    "description_placeholder": "Your project description",
-    "register_project_button": "Register",
-    "success_modal_title": "Success!",
-    "success_modal_text": "_EMPTY_"
-  },
   "ico": {
     "info_before": "_EMPTY_",
     "info_in": "_EMPTY_",
@@ -178,5 +166,12 @@
     "page_title": "_EMPTY_",
     "header": "_EMPTY_",
     "to_main": "_EMPTY_"
-  }
+  },
+  "about": {},
+  "index": {},
+  "auth": {},
+  "profile": {},
+  "project": {},
+  "constructor": {},
+  "term": {}
 }

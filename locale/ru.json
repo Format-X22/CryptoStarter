@@ -19,18 +19,6 @@
     "team": "Команда",
     "register": "Регистрация проекта"
   },
-  "register": {
-    "hint": "Вы можете зарегистрировать свой проект до финального запуска CryptoStarter. Перед запуском мы оповестим вас и дадим доступ к сайту заранее, вы сможете оформить проект и появится на первых строчках сайта в день запуска CryptoStarter.",
-    "project_name_label": "Имя проекта",
-    "project_name_placeholder": "Имя вашего проекта",
-    "email_label": "Контактный Email",
-    "email_placeholder": "Контактный Email вашего проекта",
-    "description_label": "Описание проекта",
-    "description_placeholder": "Описание вашего проекта",
-    "register_project_button": "Зарегистрировать",
-    "success_modal_title": "Успешно!",
-    "success_modal_text": "Ваш проект успешно зарегистрирован. В течении суток на указанную почту вы получите письмо со всеми необходимыми данными."
-  },
   "ico": {
     "info_before": "_EMPTY_",
     "info_in": "_EMPTY_",
@@ -178,5 +166,12 @@
     "page_title": "Ошибка 404",
     "header": "Такой страницы не существует",
     "to_main": "Перейти на главную"
-  }
+  },
+  "about": {},
+  "index": {},
+  "auth": {},
+  "profile": {},
+  "project": {},
+  "constructor": {},
+  "term": {}
 }
