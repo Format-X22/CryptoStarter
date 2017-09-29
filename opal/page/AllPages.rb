@@ -5,6 +5,7 @@ class AllPages < AbstractPage
 
 	def initialize
 		map_elements
+		make_handlers
 		expose_plugins
 		init_scroll_to_top
 	end
@@ -15,10 +16,21 @@ class AllPages < AbstractPage
 		@js_window      = e[`window`]
 		@body_and_html  = e['body, html']
 		@to_top         = e['#to-top']
+		@main_langs     = e['#main-langs .main-lang']
 	end
 
 	def expose_plugins
 		Element.expose :modal
+	end
+
+	def make_handlers
+		@main_langs.on :click do |event|
+			lang_link = event.current_target.children('a')
+			lang = lang_link.attr('href').sub('#', '')
+
+			$$.document.cookie = "lang=#{lang}"
+			$$.location.reload
+		end
 	end
 
 	def init_scroll_to_top

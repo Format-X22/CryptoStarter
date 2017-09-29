@@ -1,4 +1,5 @@
 require 'sinatra'
+require "sinatra/cookies"
 require 'mongoid'
 require 'i18n'
 require 'require_all'

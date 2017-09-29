@@ -22503,16 +22503,16 @@ Opal.modules["page/AllPages"] = function(Opal) {
   function $rb_gt(lhs, rhs) {
     return (typeof(lhs) === 'number' && typeof(rhs) === 'number') ? lhs > rhs : lhs['$>'](rhs);
   }
-  var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $hash2 = Opal.hash2;
+  var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $gvars = Opal.gvars, $hash2 = Opal.hash2;
 
-  Opal.add_stubs(['$map_elements', '$expose_plugins', '$init_scroll_to_top', '$[]', '$expose', '$on', '$remove_class', '$>', '$scroll_top', '$effect', '$animate']);
+  Opal.add_stubs(['$map_elements', '$make_handlers', '$expose_plugins', '$init_scroll_to_top', '$[]', '$expose', '$on', '$children', '$current_target', '$sub', '$attr', '$cookie=', '$document', '$reload', '$location', '$remove_class', '$>', '$scroll_top', '$effect', '$animate']);
   return (function($base, $super) {
     function $AllPages(){};
     var self = $AllPages = $klass($base, $super, 'AllPages', $AllPages);
 
-    var def = self.$$proto, $scope = self.$$scope, TMP_1, TMP_2, TMP_3, TMP_6;
+    var def = self.$$proto, $scope = self.$$scope, TMP_1, TMP_2, TMP_3, TMP_5, TMP_8;
 
-    def.js_window = def.to_top = nil;
+    def.main_langs = def.js_window = def.to_top = nil;
     Opal.cdecl($scope, 'TO_TOP_EDGE', 100);
 
     Opal.cdecl($scope, 'TO_TOP_SPEED', 800);
@@ -22521,6 +22521,7 @@ Opal.modules["page/AllPages"] = function(Opal) {
       var self = this;
 
       self.$map_elements();
+      self.$make_handlers();
       self.$expose_plugins();
       return self.$init_scroll_to_top();
     }, TMP_1.$$arity = 0);
@@ -22531,7 +22532,8 @@ Opal.modules["page/AllPages"] = function(Opal) {
       e = $scope.get('Element');
       self.js_window = e['$[]'](window);
       self.body_and_html = e['$[]']("body, html");
-      return self.to_top = e['$[]']("#to-top");
+      self.to_top = e['$[]']("#to-top");
+      return self.main_langs = e['$[]']("#main-langs .main-lang");
     }, TMP_2.$$arity = 0);
 
     Opal.defn(self, '$expose_plugins', TMP_3 = function $$expose_plugins() {
@@ -22540,10 +22542,22 @@ Opal.modules["page/AllPages"] = function(Opal) {
       return $scope.get('Element').$expose("modal");
     }, TMP_3.$$arity = 0);
 
-    return (Opal.defn(self, '$init_scroll_to_top', TMP_6 = function $$init_scroll_to_top() {
-      var $a, $b, TMP_4, $c, TMP_5, self = this;
+    Opal.defn(self, '$make_handlers', TMP_5 = function $$make_handlers() {
+      var $a, $b, TMP_4, self = this;
 
-      ($a = ($b = self.js_window).$on, $a.$$p = (TMP_4 = function(){var self = TMP_4.$$s || this, $c;
+      return ($a = ($b = self.main_langs).$on, $a.$$p = (TMP_4 = function(event){var self = TMP_4.$$s || this, $c, $d, lang_link = nil, lang = nil;
+        if ($gvars.$ == null) $gvars.$ = nil;
+if (event == null) event = nil;
+      lang_link = event.$current_target().$children("a");
+        lang = lang_link.$attr("href").$sub("#", "");
+        (($c = ["lang=" + (lang)]), $d = $gvars.$.$document(), $d['$cookie='].apply($d, $c), $c[$c.length-1]);
+        return $gvars.$.$location().$reload();}, TMP_4.$$s = self, TMP_4.$$arity = 1, TMP_4), $a).call($b, "click");
+    }, TMP_5.$$arity = 0);
+
+    return (Opal.defn(self, '$init_scroll_to_top', TMP_8 = function $$init_scroll_to_top() {
+      var $a, $b, TMP_6, $c, TMP_7, self = this;
+
+      ($a = ($b = self.js_window).$on, $a.$$p = (TMP_6 = function(){var self = TMP_6.$$s || this, $c;
         if (self.to_top == null) self.to_top = nil;
         if (self.js_window == null) self.js_window = nil;
 
@@ -22552,12 +22566,12 @@ Opal.modules["page/AllPages"] = function(Opal) {
           return self.to_top.$effect("fade_in")
           } else {
           return self.to_top.$effect("fade_out")
-        };}, TMP_4.$$s = self, TMP_4.$$arity = 0, TMP_4), $a).call($b, "scroll");
-      return ($a = ($c = self.to_top).$on, $a.$$p = (TMP_5 = function(){var self = TMP_5.$$s || this;
+        };}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($b, "scroll");
+      return ($a = ($c = self.to_top).$on, $a.$$p = (TMP_7 = function(){var self = TMP_7.$$s || this;
         if (self.body_and_html == null) self.body_and_html = nil;
 
-      return self.body_and_html.$animate($hash2(["scrollTop"], {"scrollTop": 0}), $scope.get('TO_TOP_SPEED'))}, TMP_5.$$s = self, TMP_5.$$arity = 0, TMP_5), $a).call($c, "click");
-    }, TMP_6.$$arity = 0), nil) && 'init_scroll_to_top';
+      return self.body_and_html.$animate($hash2(["scrollTop"], {"scrollTop": 0}), $scope.get('TO_TOP_SPEED'))}, TMP_7.$$s = self, TMP_7.$$arity = 0, TMP_7), $a).call($c, "click");
+    }, TMP_8.$$arity = 0), nil) && 'init_scroll_to_top';
   })($scope.base, $scope.get('AbstractPage'))
 };
 

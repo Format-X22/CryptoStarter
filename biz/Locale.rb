@@ -13,6 +13,7 @@ helpers do
 
 	def lang
 		$locale['ru']
-		#$locale[params['lang']] or $locale['en']
+
+		#$locale[cookies[:lang]] or $locale['en']  TODO
 	end
 end
