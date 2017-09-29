@@ -53,7 +53,7 @@
     <div class="container cs-company">
       <div class="row cs-title">
         <div class="col-md-12">
-          <h1>Всемирный атлас кофе</h1><a href="#">by Oleg Pavlov</a>
+          <h1>Всемирный атлас кофе</h1><a href="/profile">by Oleg Pavlov</a>
         </div>
       </div>
       <div class="row cs-header">
@@ -93,18 +93,40 @@
           <div class="tab-pane cs-content-inner active" id="present">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-8">Большое объемное описание проекта с картинками</div>
-                <div class="col-md-4">
-                  <div class="well cs-project-item">
-                    <p><strong>
-                        Проект завершил сбор средств, но вы всё ещё можете получить один из товаров,
-                        воспользуйтесь обменником.</strong>
-                      <hr>
-                      <button class="btn btn-default btn-primary btn-block" id="exchange-link-btn">Обменник
-                      </button>
-                    </p>
-                  </div>
-                  <hr>
+                <div class="col-md-7">
+                  <p style="padding-left: 20px; color: gray;"><em>
+                      Все годы, которые я нахожусь в кофейной индустрии, мне хотелось найти пособие,
+                      давшее бы мне всю необходимую информацию о кофе, его происхождении, вкусе, в общем,
+                      обо всем, что подтолкнуло бы меня к покупке. Я хочу помочь людям разобраться.
+                      Резкая популяризация спешалти кофе не дала четкого понимания для обычного потребителя.
+                      Люди покупают дорогой кофе, заваривают его дома особыми способами, платят больше
+                      за чашку в кофейнях, но все равно не понимают различий. В кофейной сфере стало все
+                      так запутанно, и я хочу, чтобы книга немного прояснила ситуацию.</em><br><br><em>Джеймс Хоффманн</em></p><br>
+                  <p>
+                    Здесь вы можете оформить предзаказ на книгу Джеймса Хоффманна "Всемирный атлас кофе"
+                    по максимально низкой цене и внести свой вклад в развитие кофейной индустрии
+                    в России. Чем больше книг будет заказано в этом проекте, тем больший тираж книги
+                    будет издан. А значит знания о мире кофе от одного из ведущих профессионалов
+                    индустрии станут доступнее. Предзаказ открыт до 20 сентября 2017 года.
+                    
+                  </p><br>
+                  <h4>О книге</h4>
+                  <p>
+                    «Всемирный атлас кофе» приглашает читателя в кругосветное путешествие в мир кофе. Вы узнаете всё о его происхождении, о странах - производителях и культурах, где кофе стал образом жизни. Атлас раскроет всемирный опыт употребления кофе: способы обработки зерен и методы приготовления напитков.
+                    
+                  </p>
+                  <p>
+                    Растения рода Coffea выращивают более 70 стран мира. Кофейный пояс охватывает экваториальную Латинскую Америку, Юго-Восточную Азию и Африку. В Колумбии, Эфиопии и Гондурасе кофе занимает первое место по экспорту и жизненно важен для экономики.
+                    
+                  </p><br><br><img src="/img/book-demo.png" width="50%"><br><br><br>
+                  <p>«Всемирный атлас кофе» структурировано рассказывает о трех аспектах:</p>
+                  <ul>
+                    <li>Путь производства кофе - от маленького зерна, брошенного в землю, до собранного урожая, обработки, обжарки и получения готового напитка.</li>
+                    <li>История употребления кофе - способы его заваривания, тонкости выбора помола и воды.</li>
+                    <li>Информация о производителях - характерная для каждой страны история кофейной культуры, устройство плантаций, способ обработки зерен и вкусовой профайл.</li>
+                  </ul>
+                </div>
+                <div class="col-md-4 col-md-offset-1">
                   <div class="well cs-project-item"><span class="label label-primary pull-right">Куплено 25</span>
                     <h4>1 IDEA</h4>
                     <hr>
@@ -116,9 +138,8 @@
                       <li>по России - 10.10.2018</li>
                     </ul>
                     <hr>
-                    <button class="btn btn-default btn-primary btn-block disabled" id="buy-1"><s>Купить</s>
+                    <button class="btn btn-default btn-primary btn-block" id="buy-1">Купить
                     </button>
-                    <hr><em>Сбор средст завершился, но, возможно, что-то ещё осталось в<a href="#"> обменнике.</a></em>
                   </div>
                   <div class="well cs-project-item"><span class="label label-primary pull-right">Куплено 18</span>
                     <h4>1.1 IDEA</h4>
@@ -260,10 +281,10 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                  <div class="panel panel-warning hidden">
-                    <div class="panel-heading">Комментарии доступны только для спонсоров.</div>
+                  <div class="panel panel-warning">
+                    <div class="panel-heading">Комментарии доступны только для поддержавших проект.</div>
                   </div>
-                  <div class="cs-send-comment-block">
+                  <div class="cs-send-comment-block hidden">
                     <div class="form-group cs-comment-area">
                       <textarea class="form-control" id="comment" rows="3" placeholder="Комментарий..."></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
@@ -289,14 +310,17 @@
                       <p>Знаковая книга о кофе одного из самых известных профессионалов индустрии.</p>
                     </div>
                   </div>
-                  <p class="text-center">Загрузка...</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="tab-pane cs-content-inner" id="exchange">
             <div class="container-fluid">
-              <!-- TODO-->
+              <div class="row">
+                <div class="col-md-12">
+                  <h3>В демо-версии обменник не доступен.</h3>
+                </div>
+              </div>
             </div>
           </div>
         </div>
