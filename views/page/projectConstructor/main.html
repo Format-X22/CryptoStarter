@@ -97,12 +97,10 @@
                   <div class="panel-heading">Детальная информация</div>
                   <div class="panel-body">
                     <div class="form-group cs-video-input">
-                      <label for="video-en">Видеоролик</label>
+                      <label for="video-en">Видеоролик (необязательно)</label>
                       <input class="form-control" id="video-en" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
-                    </div><br>
-                    <h5><strong>Презентация проекта</strong></h5>
-                    <!-- TODO CKEditor 4-->
-                    <p>TODO CKEditor 4</p>
+                    </div><br/>
+                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
                   </div>
                 </div>
                 <div class="panel panel-primary">
@@ -110,7 +108,7 @@
                     <div class="form-inline">Вопрос-Ответ
                       <div class="checkbox pull-right">
                         <label><span><em> Не использовать</em></span>
-                          <input id="text" type="checkbox"/>
+                          <input id="faq-use-en" type="checkbox"/>
                         </label>
                       </div>
                     </div>
@@ -180,7 +178,7 @@
                     </table>
                   </div>
                 </div>
-                <hr>
+                <hr/>
                 <button class="btn btn-default btn-primary" id="save-en">Сохранить без публикации
                 </button>
                 <button class="btn btn-default btn-primary pull-right" id="pub-en">Опубликовать
@@ -190,27 +188,567 @@
             </div>
             <div class="tab-pane" id="lang-de">
               <div class="container-fluid">
-                <!---->
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-de">Имя проекта</label>
+                      <input class="form-control" id="name-de" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-de">Краткое описание проекта</label>
+                      <textarea class="form-control" id="short-de" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-de">Логотип для страницы поиска</label>
+                      <input class="form-control" id="logo-de" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-de">Видеоролик (необязательно)</label>
+                      <input class="form-control" id="video-de" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline">Вопрос-Ответ
+                      <div class="checkbox pull-right">
+                        <label><span><em> Не использовать</em></span>
+                          <input id="faq-use-de" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th>Вопрос</th>
+                        <th>Ответ</th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-de"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-de-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-de-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-de-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-de-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-de-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-de-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <button class="btn btn-default btn-primary" id="save-de">Сохранить без публикации
+                </button>
+                <button class="btn btn-default btn-primary pull-right" id="pub-de">Опубликовать
+                </button>
+                <div class="clearfix"></div>
               </div>
             </div>
             <div class="tab-pane" id="lang-fr">
               <div class="container-fluid">
-                <!---->
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-fr">Имя проекта</label>
+                      <input class="form-control" id="name-fr" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-fr">Краткое описание проекта</label>
+                      <textarea class="form-control" id="short-fr" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-fr">Логотип для страницы поиска</label>
+                      <input class="form-control" id="logo-fr" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-fr">Видеоролик (необязательно)</label>
+                      <input class="form-control" id="video-fr" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline">Вопрос-Ответ
+                      <div class="checkbox pull-right">
+                        <label><span><em> Не использовать</em></span>
+                          <input id="faq-use-fr" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th>Вопрос</th>
+                        <th>Ответ</th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-fr"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-fr-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-fr-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-fr-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-fr-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-fr-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-fr-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <button class="btn btn-default btn-primary" id="save-fr">Сохранить без публикации
+                </button>
+                <button class="btn btn-default btn-primary pull-right" id="pub-fr">Опубликовать
+                </button>
+                <div class="clearfix"></div>
               </div>
             </div>
             <div class="tab-pane" id="lang-ru">
               <div class="container-fluid">
-                <!---->
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-ru">Имя проекта</label>
+                      <input class="form-control" id="name-ru" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-ru">Краткое описание проекта</label>
+                      <textarea class="form-control" id="short-ru" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-ru">Логотип для страницы поиска</label>
+                      <input class="form-control" id="logo-ru" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-ru">Видеоролик (необязательно)</label>
+                      <input class="form-control" id="video-ru" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline">Вопрос-Ответ
+                      <div class="checkbox pull-right">
+                        <label><span><em> Не использовать</em></span>
+                          <input id="faq-use-ru" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th>Вопрос</th>
+                        <th>Ответ</th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ru"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ru-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ru-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ru-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ru-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ru-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ru-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <button class="btn btn-default btn-primary" id="save-ru">Сохранить без публикации
+                </button>
+                <button class="btn btn-default btn-primary pull-right" id="pub-ru">Опубликовать
+                </button>
+                <div class="clearfix"></div>
               </div>
             </div>
             <div class="tab-pane" id="lang-ch">
               <div class="container-fluid">
-                <!---->
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-ch">Имя проекта</label>
+                      <input class="form-control" id="name-ch" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-ch">Краткое описание проекта</label>
+                      <textarea class="form-control" id="short-ch" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-ch">Логотип для страницы поиска</label>
+                      <input class="form-control" id="logo-ch" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-ch">Видеоролик (необязательно)</label>
+                      <input class="form-control" id="video-ch" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline">Вопрос-Ответ
+                      <div class="checkbox pull-right">
+                        <label><span><em> Не использовать</em></span>
+                          <input id="faq-use-ch" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th>Вопрос</th>
+                        <th>Ответ</th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ch"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ch-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ch-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ch-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ch-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ch-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ch-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <button class="btn btn-default btn-primary" id="save-ch">Сохранить без публикации
+                </button>
+                <button class="btn btn-default btn-primary pull-right" id="pub-ch">Опубликовать
+                </button>
+                <div class="clearfix"></div>
               </div>
             </div>
             <div class="tab-pane" id="lang-ar">
               <div class="container-fluid">
-                <!---->
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-ar">Имя проекта</label>
+                      <input class="form-control" id="name-ar" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-ar">Краткое описание проекта</label>
+                      <textarea class="form-control" id="short-ar" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-ar">Логотип для страницы поиска</label>
+                      <input class="form-control" id="logo-ar" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-ar">Видеоролик (необязательно)</label>
+                      <input class="form-control" id="video-ar" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline">Вопрос-Ответ
+                      <div class="checkbox pull-right">
+                        <label><span><em> Не использовать</em></span>
+                          <input id="faq-use-ar" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th>Вопрос</th>
+                        <th>Ответ</th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ar-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ar-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ar-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ar-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-qa-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ar-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ar-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <button class="btn btn-default btn-primary" id="save-ar">Сохранить без публикации
+                </button>
+                <button class="btn btn-default btn-primary pull-right" id="pub-ar">Опубликовать
+                </button>
+                <div class="clearfix"></div>
               </div>
             </div>
           </div>

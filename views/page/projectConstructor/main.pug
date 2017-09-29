@@ -1,5 +1,56 @@
 extends ../../components/skeleton
 
+mixin project-constructor(lang)
+    .panel.panel-primary
+        .panel-heading Основная информация
+        .panel-body
+            // TODO Количество символов как ограничение
+            +input('name-'+lang, 'text', '', 'Имя проекта')
+            +textarea('short-'+lang, '', 'Краткое описание проекта')
+            +input('logo-'+lang, 'file', '', 'Логотип для страницы поиска')
+
+    .panel.panel-primary
+        .panel-heading Детальная информация
+        .panel-body
+            +input('video-'+lang, 'file', '', 'Видеоролик (необязательно)').cs-video-input
+            br
+            h5: strong Презентация проекта
+            em ..здесь будет расположен многофункциональный редактор текста...
+
+    .panel.panel-primary
+        .panel-heading
+            .form-inline
+                | Вопрос-Ответ
+                +chechbox('faq-use-'+lang, true).pull-right
+                    em  Не использовать
+        .panel-body
+            table.table.cs-faq-table
+                tr
+                    th #
+                    th Вопрос
+                    th Ответ
+                    th: +button-icon('add-faq-'+lang, 'plus').btn-primary.pull-right
+                tr
+                    td: span.cs-qa-num 1
+                    td: +input('faq-q-'+lang+'-1', 'text', 'Вопрос')
+                    td: +input('faq-r-'+lang+'-1', 'text', 'Ответ')
+                    td: +button-icon('faq-d-'+lang+'-1', 'remove').btn-primary.pull-right
+                tr
+                    td: span.cs-qa-num 2
+                    td: +input('faq-q-'+lang+'-2', 'text', 'Вопрос')
+                    td: +input('faq-r-'+lang+'-2', 'text', 'Ответ')
+                    td: +button-icon('faq-d-'+lang+'-2', 'remove').btn-primary.pull-right
+                tr
+                    td: span.cs-qa-num 3
+                    td: +input('faq-q-'+lang+'-3', 'text', 'Вопрос')
+                    td: +input('faq-r-'+lang+'-3', 'text', 'Ответ')
+                    td: +button-icon('faq-d-'+lang+'-3', 'remove').btn-primary.pull-right
+
+    hr
+    +button('save-'+lang, 'Сохранить без публикации').btn-primary
+    +button('pub-'+lang, 'Опубликовать').btn-primary.pull-right
+    .clearfix
+
 block head
     // TODO
 
@@ -20,68 +71,13 @@ block body
                 hr
 
                 .tab-content
-                    +tab-panel('lang-en').active
-                        .panel.panel-primary
-                            .panel-heading Основная информация
-                            .panel-body
-                                // TODO Количество символов как ограничение
-                                +input('name-en', 'text', '', 'Имя проекта')
-                                +textarea('short-en', '', 'Краткое описание проекта')
-                                +input('logo-en', 'file', '', 'Логотип для страницы поиска')
-
-                        .panel.panel-primary
-                            .panel-heading Детальная информация
-                            .panel-body
-                                +input('video-en', 'file', '', 'Видеоролик').cs-video-input
-                                br
-                                h5: strong Презентация проекта
-                                // TODO CKEditor 4
-                                p TODO CKEditor 4
-
-                        .panel.panel-primary
-                            .panel-heading
-                                .form-inline
-                                    | Вопрос-Ответ
-                                    +chechbox('text', true).pull-right
-                                        em  Не использовать
-                            .panel-body
-                                table.table.cs-faq-table
-                                    tr
-                                        th #
-                                        th Вопрос
-                                        th Ответ
-                                        th: +button-icon('add-faq-en', 'plus').btn-primary.pull-right
-                                    tr
-                                        td: span.cs-qa-num 1
-                                        td: +input('faq-q-en-1', 'text', 'Вопрос')
-                                        td: +input('faq-r-en-1', 'text', 'Ответ')
-                                        td: +button-icon('faq-d-en-1', 'remove').btn-primary.pull-right
-                                    tr
-                                        td: span.cs-qa-num 2
-                                        td: +input('faq-q-en-2', 'text', 'Вопрос')
-                                        td: +input('faq-r-en-2', 'text', 'Ответ')
-                                        td: +button-icon('faq-d-en-2', 'remove').btn-primary.pull-right
-                                    tr
-                                        td: span.cs-qa-num 3
-                                        td: +input('faq-q-en-3', 'text', 'Вопрос')
-                                        td: +input('faq-r-en-3', 'text', 'Ответ')
-                                        td: +button-icon('faq-d-en-3', 'remove').btn-primary.pull-right
-
-                        hr
-                        +button('save-en', 'Сохранить без публикации').btn-primary
-                        +button('pub-en', 'Опубликовать').btn-primary.pull-right
-                        .clearfix
-
-                    +tab-panel('lang-de')
-                        //
-                    +tab-panel('lang-fr')
-                        //
-                    +tab-panel('lang-ru')
-                        //
-                    +tab-panel('lang-ch')
-                        //
-                    +tab-panel('lang-ar')
-                        //
+                    each lang, index in ['en', 'de', 'fr', 'ru', 'ch', 'ar']
+                        if index == 0
+                            +tab-panel('lang-'+lang).active
+                                +project-constructor(lang)
+                        else
+                            +tab-panel('lang-'+lang)
+                                +project-constructor(lang)
 
         .row.cs-form-all
             .col-md-8.col-md-offset-2
