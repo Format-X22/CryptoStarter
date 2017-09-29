@@ -17,6 +17,7 @@ block body
 
             .col-md-4.cs-info-col
                 .cs-title-block
+                    hr.visible-xs
                     h2.cs-title Прогресс
                     +characteristic('earned')
                 .cs-details-block
@@ -35,11 +36,11 @@ block body
             .col-md-12
                 hr
                 ul#project-tabs.cs-tabs.nav.nav-pills
-                    +tab('present', 'Презентация').active
-                    +tab('faq', 'Вопрос-Ответ')
-                    +tab('news', 'Новости')
-                    +tab('comments', 'Комментарии')
-                    +tab('exchange', 'Обменник')
+                    +tab('present', 'Презентация', 'text-color').active
+                    +tab('faq', 'Вопрос-Ответ', 'info-sign')
+                    +tab('news', 'Новости', 'certificate')
+                    +tab('comments', 'Комментарии', 'comment')
+                    +tab('exchange', 'Обменник', 'retweet')
 
             // TODO hidden on start
             .tab-content.cs-content
@@ -101,7 +102,7 @@ block body
                                     кофейной культуры, устройство плантаций, способ обработки зерен и
                                     вкусовой профайл.
 
-                        .col-md-4.col-md-offset-1
+                        .col-md-4.col-md-offset-1.cs-products
                             //-.well.cs-project-item  TODO - exchange
                                 p
                                     strong.
@@ -174,11 +175,11 @@ block body
                     .row
                         .col-md-5
                             ul.nav.nav-pills.nav-stacked
-                                +tab('q1', 'Вопрос 1').active
-                                +tab('q2', 'Вопрос 2')
-                                +tab('q3', 'Вопрос 3')
-                                +tab('q4', 'Вопрос 4')
-                        .col-md-7
+                                +tab('q1', 'Вопрос 1', null, true).active
+                                +tab('q2', 'Вопрос 2', null, true)
+                                +tab('q3', 'Вопрос 3', null, true)
+                                +tab('q4', 'Вопрос 4', null, true)
+                        .col-md-7.cs-faq-res-col
                             .tab-content.cs-faq-res
                                 +tab-panel('q1').active
                                     p.cs-faq Ответ на вопрос 1, может быть длинным.

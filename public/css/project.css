@@ -49,4 +49,25 @@
     .cs-company .cs-info .cs-content .cs-limit {
       margin-bottom: 10px; }
 
+@media (max-width: 767px) {
+  .cs-company .cs-header {
+    height: auto; }
+    .cs-company .cs-header .cs-info-col {
+      margin-top: 20px;
+      border-left: 0; }
+  .cs-company .cs-info {
+    margin-top: 15px; }
+    .cs-company .cs-info .cs-tabs li {
+      width: 19%;
+      text-align: center; }
+      .cs-company .cs-info .cs-tabs li span {
+        padding-left: 0;
+        padding-right: 0; }
+    .cs-company .cs-info .cs-content .cs-content-inner {
+      margin-top: 25px; }
+      .cs-company .cs-info .cs-content .cs-content-inner .cs-faq-res-col {
+        padding-top: 10px; }
+    .cs-company .cs-info .cs-products {
+      margin-top: 50px; } }
+
 /*# sourceMappingURL=project.css.map */

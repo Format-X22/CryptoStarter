@@ -111,12 +111,15 @@ mixin menu-item(href, title)
     li&attributes(attributes)
         a(href=href)!= title
 
-mixin tab(target, name, icon)
+mixin tab(target, name, icon, alwaysText)
     li(role='presentation')&attributes(attributes)
         a(href='#'+target aria-controls=target role='tab' data-toggle='tab')
             if icon
                 span.visible-xs.glyphicon(class='glyphicon-' + icon)
-            span.hidden-xs!= name
+            if alwaysText
+                span!= name
+            else
+                span.hidden-xs!= name
 
 mixin tab-mobile(target, icon)
     li.visible-xs(role='presentation')&attributes(attributes)
