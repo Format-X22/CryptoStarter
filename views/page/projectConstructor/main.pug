@@ -31,20 +31,41 @@ mixin project-constructor(lang)
                     th Ответ
                     th: +button-icon('add-faq-'+lang, 'plus').btn-primary.pull-right
                 tr
-                    td: span.cs-qa-num 1
+                    td: span.cs-num 1
                     td: +input('faq-q-'+lang+'-1', 'text', 'Вопрос')
                     td: +input('faq-r-'+lang+'-1', 'text', 'Ответ')
                     td: +button-icon('faq-d-'+lang+'-1', 'remove').btn-primary.pull-right
                 tr
-                    td: span.cs-qa-num 2
+                    td: span.cs-num 2
                     td: +input('faq-q-'+lang+'-2', 'text', 'Вопрос')
                     td: +input('faq-r-'+lang+'-2', 'text', 'Ответ')
                     td: +button-icon('faq-d-'+lang+'-2', 'remove').btn-primary.pull-right
                 tr
-                    td: span.cs-qa-num 3
+                    td: span.cs-num 3
                     td: +input('faq-q-'+lang+'-3', 'text', 'Вопрос')
                     td: +input('faq-r-'+lang+'-3', 'text', 'Ответ')
                     td: +button-icon('faq-d-'+lang+'-3', 'remove').btn-primary.pull-right
+
+    .panel.panel-primary
+        .panel-heading Новости
+        .panel-body
+            table.table.cs-news-table
+                tr
+                    th #
+                    th Заголовок
+                    th: +button-icon('add-faq-' + lang, 'plus').btn-primary.pull-right
+                tr
+                    td: span.cs-num 1
+                    td: span Заголовок первой новости
+                    td: +button-icon('faq-d-' + lang + '-1', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 2
+                    td: span Заголовок второй новости
+                    td: +button-icon('faq-d-' + lang + '-2', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 3
+                    td: span Заголовок третьей новости
+                    td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
 
     hr
     +button('save-'+lang, 'Сохранить без публикации').btn-primary

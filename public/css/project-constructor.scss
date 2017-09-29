@@ -15,17 +15,27 @@
 	}
 
 	.cs-faq-table {
+		
+		.form-group {
+			margin-bottom: 0;
+		}
+	}
+
+	.cs-news-table {
+		td {
+			vertical-align: middle;
+		}
+	}
+
+	.cs-faq-table,
+	.cs-news-table {
 		margin-bottom: 0;
 
 		th {
 			vertical-align: bottom;
 		}
 
-		.form-group {
-			margin-bottom: 0;
-		}
-
-		.cs-qa-num {
+		.cs-num {
 			font-weight: bold;
 			line-height: 250%;
 		}
