@@ -14,9 +14,7 @@ block body
             .col-md-3.col-md-offset-2
                 img.cs-photo(src='img/team/oleg.jpg')
             .col-md-5
-                p.cs-about.
-                    Пару слов о себе. Почему бы не написать пару слов о себе. Почему бы не написать пару слов о
-                    себе в этой графе о себе. Пару слов о себе в этой графе. Пару слов о себе.
+                p.cs-about!= erb('l.demo.profile_about')
         .row.cs-main-controls
             .col-md-8.col-md-offset-2
                 hr
@@ -53,7 +51,7 @@ block body
                     .clearfix
                     hr
                     h5: strong!= erb('l.profile.two_fa_title')
-                    p Здесь будет возможность активировать 2х-факторную авторизацию от Google.
+                    p!= erb('l.demo.two_fa')
                     hr
                     +button('close-security', erb('l.profile.close')).pull-right
                     .clearfix
@@ -68,20 +66,20 @@ block body
                         th
                     tr
                         td 1
-                        td Всемирный атлас кофе
-                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td!= erb('l.demo.project_title')
+                        td!= erb('l.demo.project_desc')
                         td
                             +button-icon('edit-project-1', 'pencil').btn-primary.cs-edit
                     tr
                         td 2
-                        td Всемирный атлас кофе
-                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td!= erb('l.demo.project_title')
+                        td!= erb('l.demo.project_desc')
                         td
                             +button-icon('edit-project-2', 'pencil').btn-primary.cs-edit
                     tr
                         td 3
-                        td Всемирный атлас кофе
-                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td!= erb('l.demo.project_title')
+                        td!= erb('l.demo.project_desc')
                         td
                             +button-icon('edit-project-3', 'pencil').btn-primary.cs-edit
 
@@ -93,24 +91,24 @@ block body
                         th!= erb('l.profile.project_description_th')
                     tr
                         td 1
-                        td Всемирный атлас кофе
-                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td!= erb('l.demo.project_title')
+                        td!= erb('l.demo.project_desc')
                     tr
                         td 2
-                        td Всемирный атлас кофе
-                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td!= erb('l.demo.project_title')
+                        td!= erb('l.demo.project_desc')
                     tr
                         td 3
-                        td Всемирный атлас кофе
-                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td!= erb('l.demo.project_title')
+                        td!= erb('l.demo.project_desc')
                     tr
                         td 4
-                        td Всемирный атлас кофе
-                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td!= erb('l.demo.project_title')
+                        td!= erb('l.demo.project_desc')
                     tr
                         td 5
-                        td Всемирный атлас кофе
-                        td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
+                        td!= erb('l.demo.project_title')
+                        td!= erb('l.demo.project_desc')
                         
 block scripts
     //
