@@ -34,11 +34,11 @@ get '/term' do
 	page 'term'
 end
 
-get '/profile' do
+get '/profile-:id' do
 	inner_page 'profile', 'login'
 end
 
-get '/projectConstructor' do
+get '/projectConstructor-:id' do
 	inner_page 'projectConstructor', 'login'
 end
 

@@ -21,13 +21,13 @@ block body
             .col-md-8.col-md-offset-2
                 hr
                 .text-center
-                    +button-with-icon('change-about', 'Редактировать профиль', 'user').btn-primary
-                    +button-with-icon('change-security', 'Настройки безопасности', 'lock').btn-primary
+                    +button-with-icon('edit-profile', 'Редактировать профиль', 'user').btn-primary
+                    +button-with-icon('edit-security', 'Настройки безопасности', 'lock').btn-primary
                     +button-with-icon('create-project', 'Создать проект', 'plus').btn-primary
                 hr
         .row
             .col-md-8.col-md-offset-2
-                #change-about-form.well.hidden
+                #edit-profile-form.well.hidden
                     +input('user-name', 'text', 'Имя', 'Ваше имя')
                     +textarea(
                         'user-description',
@@ -39,7 +39,7 @@ block body
                     +button('save-about', 'Сохранить').pull-right.btn-primary
                     +button('cancel-about', 'Отменить').pull-right.cs-global-fix-btn-margin
                     .clearfix
-                #change-security-form.well.hidden
+                #edit-security-form.well.hidden
                     h5: strong Смена почты
                     +input('new-email', 'email', 'Новая почта')
                     +button('change-email', 'Сохранить').pull-right.btn-primary
@@ -53,8 +53,7 @@ block body
                     .clearfix
                     hr
                     h5: strong Двухфакторная авторизация
-                    p TODO
-                    // TODO
+                    p Здесь будет возможность активировать 2х-факторную авторизацию от Google.
                     hr
                     +button('close-security', 'Закрыть').pull-right
                     .clearfix
@@ -72,19 +71,19 @@ block body
                         td Всемирный атлас кофе
                         td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
                         td
-                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary.cs-edit
+                            +button-icon('edit-project-1', 'pencil').btn-primary.cs-edit
                     tr
                         td 2
                         td Всемирный атлас кофе
                         td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
                         td
-                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary.cs-edit
+                            +button-icon('edit-project-2', 'pencil').btn-primary.cs-edit
                     tr
                         td 3
                         td Всемирный атлас кофе
                         td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
                         td
-                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary.cs-edit
+                            +button-icon('edit-project-3', 'pencil').btn-primary.cs-edit
                 h3 Проспонсированно
                 table.table
                     tr

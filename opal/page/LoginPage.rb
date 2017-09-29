@@ -30,7 +30,7 @@ class LoginPage < AbstractPage
 				email: @email.value,
 				pass: @pass.value
 			}) do
-				$$.location.href = '/profile'
+				$$.location.href = '/profile-self'
 			end
 		end
 	end
