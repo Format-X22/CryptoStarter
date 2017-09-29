@@ -14,7 +14,9 @@ block body
             .col-md-3.col-md-offset-2
                 img.cs-photo(src='img/team/oleg.jpg')
             .col-md-5
-                p Описание человека о себе, особо актуально для всяких разных запускаторов проектов
+                p.
+                    Пару слов о себе. Почему бы не написать пару слов о себе. Почему бы не написать пару слов о
+                    себе в этой графе о себе. Пару слов о себе в этой графе. Пару слов о себе.
         .row
             .col-md-8.col-md-offset-2
                 hr
@@ -59,7 +61,7 @@ block body
         .row
             .col-md-8.col-md-offset-2
                 h3 Проекты
-                table.table
+                table#projects-table.table
                     tr
                         th #
                         th Проект
@@ -70,19 +72,19 @@ block body
                         td Всемирный атлас кофе
                         td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
                         td
-                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary
+                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary.cs-edit
                     tr
                         td 2
                         td Всемирный атлас кофе
                         td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
                         td
-                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary
+                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary.cs-edit
                     tr
                         td 3
                         td Всемирный атлас кофе
                         td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
                         td
-                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary
+                            +button-icon('edit-project' + Math.random(), 'pencil').btn-primary.cs-edit
                 h3 Проспонсированно
                 table.table
                     tr
