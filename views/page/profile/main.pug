@@ -6,7 +6,7 @@ block head
     link(href='css/profile.css' rel='stylesheet')
 
 block body
-    .container
+    .container.cs-profile
         .row
             .col-md-8.col-md-offset-2
                 h1 Oleg Pavlov
@@ -14,10 +14,10 @@ block body
             .col-md-3.col-md-offset-2
                 img.cs-photo(src='img/team/oleg.jpg')
             .col-md-5
-                p.
+                p.cs-about.
                     Пару слов о себе. Почему бы не написать пару слов о себе. Почему бы не написать пару слов о
                     себе в этой графе о себе. Пару слов о себе в этой графе. Пару слов о себе.
-        .row
+        .row.cs-main-controls
             .col-md-8.col-md-offset-2
                 hr
                 .text-center
@@ -25,7 +25,7 @@ block body
                     +button-with-icon('edit-security', 'Настройки безопасности', 'lock').btn-primary
                     +button-with-icon('create-project', 'Создать проект', 'plus').btn-primary
                 hr
-        .row
+        .row#main-edit-forms
             .col-md-8.col-md-offset-2
                 #edit-profile-form.well.hidden
                     +input('user-name', 'text', 'Имя', 'Ваше имя')
