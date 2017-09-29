@@ -11,14 +11,14 @@ mixin project(id, img, title, description, progress, count, percent, days)
                         .col-md-4.text-center
                             b!= count + ' IDEA'
                             br
-                            span собрано
+                            span!= erb('l.index.earned')
                         .col-md-4.text-center
                             b!= percent + '%'
                             br
-                            span от суммы
+                            span!= erb('l.index.sum')
                         .col-md-4.text-center
                             if days !== '0'
-                                b!= days + ' дней'
+                                b!= days + ' ' + erb('l.index.days')
                                 br
-                                span осталось
+                                span!= erb('l.index.left')
                                 

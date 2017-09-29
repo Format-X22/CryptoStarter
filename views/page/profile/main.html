@@ -69,11 +69,11 @@
         <div class="col-md-8 col-md-offset-2">
           <hr>
           <div class="text-center">
-            <button class="btn btn-default btn-primary" id="edit-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;Редактировать профиль
+            <button class="btn btn-default btn-primary" id="edit-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;<%= l.profile.edit_profile %>
             </button>
-            <button class="btn btn-default btn-primary" id="edit-security"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>&nbsp;&nbsp;Настройки безопасности
+            <button class="btn btn-default btn-primary" id="edit-security"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>&nbsp;&nbsp;<%= l.profile.edit_security %>
             </button>
-            <button class="btn btn-default btn-primary" id="create-project"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;&nbsp;Создать проект
+            <button class="btn btn-default btn-primary" id="create-project"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;&nbsp;<%= l.profile.create_project %>
             </button>
           </div>
           <hr>
@@ -83,51 +83,51 @@
         <div class="col-md-8 col-md-offset-2">
           <div class="well hidden" id="edit-profile-form">
             <div class="form-group">
-              <label for="user-name">Ваше имя</label>
-              <input class="form-control" id="user-name" type="text" placeholder="Имя"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="user-name"><%= l.profile.user_name_label %></label>
+              <input class="form-control" id="user-name" type="text" placeholder="<%= l.profile.user_name_cap %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
             <div class="form-group">
-              <label for="user-description">Ваш рассказ о себе</label>
-              <textarea class="form-control" id="user-description" rows="3" placeholder="В случае любви к анонимность - оставьте поле пустым"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <label for="user-description"><%= l.profile.user_description_label %></label>
+              <textarea class="form-control" id="user-description" rows="3" placeholder="<%= l.profile.user_description_cap %>"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
             <div class="form-group">
-              <label for="user-photo">Ваше фото</label>
+              <label for="user-photo"><%= l.profile.user_photo %></label>
               <input class="form-control" id="user-photo" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
             <hr>
-            <button class="btn btn-default pull-right btn-primary" id="save-about">Сохранить
+            <button class="btn btn-default pull-right btn-primary" id="save-about"><%= l.profile.save %>
             </button>
-            <button class="btn btn-default pull-right cs-global-fix-btn-margin" id="cancel-about">Отменить
+            <button class="btn btn-default pull-right cs-global-fix-btn-margin" id="cancel-about"><%= l.profile.cancel %>
             </button>
             <div class="clearfix"></div>
           </div>
           <div class="well hidden" id="edit-security-form">
-            <h5><strong>Смена почты</strong></h5>
+            <h5><strong><%= l.profile.change_email_title %></strong></h5>
             <div class="form-group">
-              <input class="form-control" id="new-email" type="email" placeholder="Новая почта"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <input class="form-control" id="new-email" type="email" placeholder="<%= l.profile.new_email %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
-            <button class="btn btn-default pull-right btn-primary" id="change-email">Сохранить
+            <button class="btn btn-default pull-right btn-primary" id="change-email"><%= l.profile.save %>
             </button>
             <div class="clearfix"></div>
             <hr>
-            <h5><strong>Смена пароля</strong></h5>
+            <h5><strong><%= l.profile.change_pass_title %></strong></h5>
             <div class="form-group">
-              <input class="form-control" id="current-pass" type="password" placeholder="Текущий пароль"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <input class="form-control" id="current-pass" type="password" placeholder="<%= l.profile.current_pass %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
             <div class="form-group">
-              <input class="form-control" id="new-pass" type="password" placeholder="Новый пароль"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <input class="form-control" id="new-pass" type="password" placeholder="<%= l.profile.new_pass %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
             <div class="form-group">
-              <input class="form-control" id="new-pass2" type="password" placeholder="Новый пароль ещё раз"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+              <input class="form-control" id="new-pass2" type="password" placeholder="<%= l.profile.new_pass_again %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
             </div>
-            <button class="btn btn-default pull-right btn-primary" id="change-password">Сохранить
+            <button class="btn btn-default pull-right btn-primary" id="change-password"><%= l.profile.save %>
             </button>
             <div class="clearfix"></div>
             <hr>
-            <h5><strong>Двухфакторная авторизация</strong></h5>
+            <h5><strong><%= l.profile.two_fa_title %></strong></h5>
             <p>Здесь будет возможность активировать 2х-факторную авторизацию от Google.</p>
             <hr>
-            <button class="btn btn-default pull-right" id="close-security">Закрыть
+            <button class="btn btn-default pull-right" id="close-security"><%= l.profile.close %>
             </button>
             <div class="clearfix"></div>
           </div>
@@ -135,12 +135,12 @@
       </div>
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h3>Проекты</h3>
+          <h3><%= l.profile.projects %></h3>
           <table class="table" id="projects-table">
             <tr>
               <th>#</th>
-              <th>Проект</th>
-              <th>Описание</th>
+              <th><%= l.profile.project_th %></th>
+              <th><%= l.profile.project_description_th %></th>
               <th></th>
             </tr>
             <tr>
@@ -171,12 +171,12 @@
               </td>
             </tr>
           </table>
-          <h3>Проспонсированно</h3>
+          <h3><%= l.profile.sponsored %></h3>
           <table class="table">
             <tr>
               <th>#</th>
-              <th>Проект</th>
-              <th>Описание</th>
+              <th><%= l.profile.project_th %></th>
+              <th><%= l.profile.project_description_th %></th>
             </tr>
             <tr>
               <td>1</td>

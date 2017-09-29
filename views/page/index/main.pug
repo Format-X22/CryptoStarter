@@ -5,23 +5,19 @@ include wow-slider
 include project
 
 block head
-    meta(name='keywords'    content='CryptoStarter, crowdfunding, blockchain, IdeaCoin')
-    meta(name='description' content='CryptoStarter landing')
-    meta(name='author'      content='CryptoStarter')
+    //
 
     link(href='css/index.css' rel='stylesheet')
     link(href='css/wow-slider.css' rel='stylesheet')
-
-    title CryptoStarter
 
 block body
     +wow-slider
 
     .container
         ul.cs-project-tabs.nav.nav-pills
-            +tab('active-projects', 'Активные проекты', 'flash').active
-            +tab('prepared-projects', 'Скоро стартуют', 'time')
-            +tab('done-projects', 'Завершенные проекты', 'ok-circle')
+            +tab('active-projects', erb('l.index.active_projects'), 'flash').active
+            +tab('prepared-projects', erb('l.index.prepared_projects'), 'time')
+            +tab('done-projects', erb('l.index.done_projects'), 'ok-circle')
             
         .tab-content.cs-project-tabs-content
             mixin projects-area(collection)

@@ -168,10 +168,52 @@
     "to_main": "Перейти на главную"
   },
   "about": {},
-  "index": {},
-  "auth": {},
-  "profile": {},
+  "index": {
+    "active_projects": "Активные проекты",
+    "prepared_projects": "Скоро стартуют",
+    "done_projects": "Завершенные проекты",
+    "earned": "собрано",
+    "sum": "от суммы",
+    "days": "дней",
+    "left": "осталось"
+  },
+  "auth": {
+    "login_total_form_title": "Вход в CryptoStarter",
+    "login_form_title": "Войти",
+    "email": "Адрес вашей электронной почты",
+    "pass": "Ваш пароль",
+    "login": "Войти",
+    "restore_q": "Забыли пароль?",
+    "no_acc_q_title": "Нет аккаунта?",
+    "no_acc_q_desc": "Ещё не зарегистрировались? Вы можете сделать это сейчас.",
+    "register": "Регистрация"
+  },
+  "profile": {
+    "edit_profile": "Редактировать профиль",
+    "edit_security": "Настройки безопасности",
+    "create_project": "Создать проект",
+    "user_name_cap": "Имя",
+    "user_name_label": "Ваше имя",
+    "user_description_cap": "В случае любви к анонимность - оставьте поле пустым",
+    "user_description_label": "Ваш рассказ о себе",
+    "user_photo": "Ваше фото",
+    "save": "Сохранить",
+    "cancel": "Отменить",
+    "change_email_title": "Смена почты",
+    "new_email": "Новая почта",
+    "change_pass_title": "Смена пароля",
+    "current_pass": "Текущий пароль",
+    "new_pass": "Новый пароль",
+    "new_pass_again": "Новый пароль ещё раз",
+    "two_fa_title": "Двухфакторная авторизация",
+    "close": "Закрыть",
+    "projects": "Проекты",
+    "project_th": "Проект",
+    "project_description_th": "Описание",
+    "sponsored": "Проспонсированно"
+  },
   "project": {},
   "constructor": {},
-  "term": {}
+  "term": {},
+  "demo": {}
 }

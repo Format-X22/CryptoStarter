@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="CryptoStarter, crowdfunding, blockchain, IdeaCoin">
-    <meta name="description" content="CryptoStarter landing">
-    <meta name="author" content="CryptoStarter">
+    <!---->
     <link href="css/index.css" rel="stylesheet">
     <link href="css/wow-slider.css" rel="stylesheet">
-    <title>CryptoStarter</title>
     <link href="css/theme.css" rel="stylesheet">
     <link href="css/all.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
@@ -90,9 +87,9 @@
     </div>
     <div class="container">
       <ul class="cs-project-tabs nav nav-pills">
-        <li class="active" role="presentation"><a href="#active-projects" aria-controls="active-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-flash"></span><span class="hidden-xs">Активные проекты</span></a></li>
-        <li role="presentation"><a href="#prepared-projects" aria-controls="prepared-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-time"></span><span class="hidden-xs">Скоро стартуют</span></a></li>
-        <li role="presentation"><a href="#done-projects" aria-controls="done-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-ok-circle"></span><span class="hidden-xs">Завершенные проекты</span></a></li>
+        <li class="active" role="presentation"><a href="#active-projects" aria-controls="active-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-flash"></span><span class="hidden-xs"><%= l.index.active_projects %></span></a></li>
+        <li role="presentation"><a href="#prepared-projects" aria-controls="prepared-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-time"></span><span class="hidden-xs"><%= l.index.prepared_projects %></span></a></li>
+        <li role="presentation"><a href="#done-projects" aria-controls="done-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-ok-circle"></span><span class="hidden-xs"><%= l.index.done_projects %></span></a></li>
       </ul>
       <div class="tab-content cs-project-tabs-content">
         <div class="tab-pane hidden active" id="active-projects">
@@ -108,9 +105,9 @@
                                   <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span>собрано</span></div>
-                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span>от суммы</span></div>
-                                  <div class="col-md-4 text-center"><b><%= project.days %> дней</b><br/><span>осталось</span>
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span><%= l.index.earned %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span><%= l.index.sum %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> <%= l.index.days %></b><br/><span><%= l.index.left %></span>
                                   </div>
                                 </div>
                               </div>
@@ -132,9 +129,9 @@
                                   <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span>собрано</span></div>
-                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span>от суммы</span></div>
-                                  <div class="col-md-4 text-center"><b><%= project.days %> дней</b><br/><span>осталось</span>
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span><%= l.index.earned %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span><%= l.index.sum %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> <%= l.index.days %></b><br/><span><%= l.index.left %></span>
                                   </div>
                                 </div>
                               </div>
@@ -156,9 +153,9 @@
                                   <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span>собрано</span></div>
-                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span>от суммы</span></div>
-                                  <div class="col-md-4 text-center"><b><%= project.days %> дней</b><br/><span>осталось</span>
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span><%= l.index.earned %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span><%= l.index.sum %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> <%= l.index.days %></b><br/><span><%= l.index.left %></span>
                                   </div>
                                 </div>
                               </div>

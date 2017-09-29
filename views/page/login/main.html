@@ -53,7 +53,7 @@
     <div class="container cs-login-form">
       <div class="row">
         <div class="col-md-6 col-md-offset-3"><img class="center-block" src="img/logo/origin.svg" width="35%"/>
-          <h1 class="text-center">Вход в CryptoStarter</h1>
+          <h1 class="text-center"><%= l.auth.login_total_form_title %></h1>
         </div>
       </div>
       <div class="row">
@@ -63,23 +63,23 @@
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-2 cs-login-block">
-          <h2>Войти</h2>
+          <h2><%= l.auth.login_form_title %></h2>
           <div class="form-group">
-            <input class="form-control" id="email" type="email" placeholder="Адрес вашей электронной почты"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+            <input class="form-control" id="email" type="email" placeholder="<%= l.auth.email %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
           </div>
           <div class="form-group">
-            <input class="form-control" id="pass" type="password" placeholder="Ваш пароль"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+            <input class="form-control" id="pass" type="password" placeholder="<%= l.auth.pass %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
           </div>
-          <button class="btn btn-default btn-lg btn-block btn-primary" id="login">Войти
+          <button class="btn btn-default btn-lg btn-block btn-primary" id="login"><%= l.auth.login %>
           </button>
-          <p class="pull-right"><a class="btn btn-default btn-link" id="forget" href="/restorePass">Забыли пароль?</a>
+          <p class="pull-right"><a class="btn btn-default btn-link" id="forget" href="/restorePass"><%= l.auth.restore_q %></a>
           </p>
         </div>
         <div class="clearfix visible-xs"></div>
         <hr class="visible-xs">
         <div class="col-md-4 cs-register-block">
-          <h2>Нет аккаунта?</h2>
-          <p>Ещё не зарегистрировались? Вы можете сделать это сейчас.</p><a class="btn btn-default btn-lg btn-block btn-primary" id="register" href="/register">Регистрация</a>
+          <h2><%= l.auth.no_acc_q_title %></h2>
+          <p><%= l.auth.no_acc_q_desc %></p><a class="btn btn-default btn-lg btn-block btn-primary" id="register" href="/register"><%= l.auth.register %></a>
         </div>
       </div>
     </div>

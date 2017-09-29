@@ -21,50 +21,50 @@ block body
             .col-md-8.col-md-offset-2
                 hr
                 .text-center
-                    +button-with-icon('edit-profile', 'Редактировать профиль', 'user').btn-primary
-                    +button-with-icon('edit-security', 'Настройки безопасности', 'lock').btn-primary
-                    +button-with-icon('create-project', 'Создать проект', 'plus').btn-primary
+                    +button-with-icon('edit-profile', erb('l.profile.edit_profile'), 'user').btn-primary
+                    +button-with-icon('edit-security', erb('l.profile.edit_security'), 'lock').btn-primary
+                    +button-with-icon('create-project', erb('l.profile.create_project'), 'plus').btn-primary
                 hr
         .row#main-edit-forms
             .col-md-8.col-md-offset-2
                 #edit-profile-form.well.hidden
-                    +input('user-name', 'text', 'Имя', 'Ваше имя')
+                    +input('user-name', 'text', erb('l.profile.user_name_cap'), erb('l.profile.user_name_label'))
                     +textarea(
                         'user-description',
-                        'В случае любви к анонимность - оставьте поле пустым',
-                        'Ваш рассказ о себе'
+                        erb('l.profile.user_description_cap'),
+                        erb('l.profile.user_description_label')
                     )
-                    +input('user-photo', 'file', '', 'Ваше фото')
+                    +input('user-photo', 'file', '', erb('l.profile.user_photo'))
                     hr
-                    +button('save-about', 'Сохранить').pull-right.btn-primary
-                    +button('cancel-about', 'Отменить').pull-right.cs-global-fix-btn-margin
+                    +button('save-about', erb('l.profile.save')).pull-right.btn-primary
+                    +button('cancel-about', erb('l.profile.cancel')).pull-right.cs-global-fix-btn-margin
                     .clearfix
                 #edit-security-form.well.hidden
-                    h5: strong Смена почты
-                    +input('new-email', 'email', 'Новая почта')
-                    +button('change-email', 'Сохранить').pull-right.btn-primary
+                    h5: strong!= erb('l.profile.change_email_title')
+                    +input('new-email', 'email', erb('l.profile.new_email'))
+                    +button('change-email', erb('l.profile.save')).pull-right.btn-primary
                     .clearfix
                     hr
-                    h5: strong Смена пароля
-                    +input('current-pass', 'password', 'Текущий пароль')
-                    +input('new-pass', 'password', 'Новый пароль')
-                    +input('new-pass2', 'password', 'Новый пароль ещё раз')
-                    +button('change-password', 'Сохранить').pull-right.btn-primary
+                    h5: strong!= erb('l.profile.change_pass_title')
+                    +input('current-pass', 'password', erb('l.profile.current_pass'))
+                    +input('new-pass', 'password', erb('l.profile.new_pass'))
+                    +input('new-pass2', 'password', erb('l.profile.new_pass_again'))
+                    +button('change-password', erb('l.profile.save')).pull-right.btn-primary
                     .clearfix
                     hr
-                    h5: strong Двухфакторная авторизация
+                    h5: strong!= erb('l.profile.two_fa_title')
                     p Здесь будет возможность активировать 2х-факторную авторизацию от Google.
                     hr
-                    +button('close-security', 'Закрыть').pull-right
+                    +button('close-security', erb('l.profile.close')).pull-right
                     .clearfix
         .row
             .col-md-8.col-md-offset-2
-                h3 Проекты
+                h3!= erb('l.profile.projects')
                 table#projects-table.table
                     tr
                         th #
-                        th Проект
-                        th Описание
+                        th!= erb('l.profile.project_th')
+                        th!= erb('l.profile.project_description_th')
                         th
                     tr
                         td 1
@@ -84,12 +84,13 @@ block body
                         td Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.
                         td
                             +button-icon('edit-project-3', 'pencil').btn-primary.cs-edit
-                h3 Проспонсированно
+
+                h3!= erb('l.profile.sponsored')
                 table.table
                     tr
                         th #
-                        th Проект
-                        th Описание
+                        th!= erb('l.profile.project_th')
+                        th!= erb('l.profile.project_description_th')
                     tr
                         td 1
                         td Всемирный атлас кофе
