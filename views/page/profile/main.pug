@@ -60,7 +60,7 @@ block body
                 h3!= erb('l.profile.projects')
                 table#projects-table.table
                     tr
-                        th Адрес
+                        th!= erb('l.profile.address')
                         th!= erb('l.profile.project_th')
                         th!= erb('l.profile.project_description_th')
                         th
@@ -86,7 +86,7 @@ block body
                 h3!= erb('l.profile.sponsored')
                 table.table
                     tr
-                        th Адрес
+                        th!= erb('l.profile.address')
                         th!= erb('l.profile.project_th')
                         th!= erb('l.profile.project_description_th')
                     tr

@@ -213,7 +213,8 @@
     "projects": "Проекты",
     "project_th": "Проект",
     "project_description_th": "Описание",
-    "sponsored": "Проспонсированно"
+    "sponsored": "Проспонсированно",
+    "address": "Адрес"
   },
   "project": {
     "progress": "Прогресс",
