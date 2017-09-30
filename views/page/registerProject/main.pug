@@ -9,18 +9,18 @@ block head
 
 block body
     .container.cs-register-project-form
-        +auth-form-header('Регистрация проекта в CryptoStarter')
+        +auth-form-header(erb('l.auth.register_project_total_form_title'))
         .row
             .col-md-6.col-md-offset-3
-                +input('name', 'text', '', 'Имя проекта')
-                +textarea('short', '', 'Краткое описание проекта')
-                +input('email', 'email', '', 'Адрес вашей электронной почты')
-                +input('pass', 'password', '', 'Ваш пароль')
-                +input('pass2', 'password', '', 'Повторите пароль')
+                +input('name', 'text', '', erb('l.auth.project_name'))
+                +textarea('short', '', erb('l.auth.project_desc'))
+                +input('email', 'email', '', erb('l.auth.email'))
+                +input('pass', 'password', '', erb('l.auth.pass'))
+                +input('pass2', 'password', '', erb('l.auth.pass_again'))
                 +chechbox('term').cs-term
-                    | Я согласен с 
-                    a.cs-term-link(href='/term' target='_BLANK') условиями использования
-                +button('register', 'Зарегистрировать проект').btn-lg.btn-block.btn-primary.cs-register
+                    != erb('l.auth.term_accept')
+                    a.cs-term-link(href='/term' target='_BLANK')!= ' ' + erb('l.auth.terms')
+                +button('register', erb('l.auth.register_project')).btn-lg.btn-block.btn-primary.cs-register
 
 block scripts
     //

@@ -197,7 +197,11 @@
     "terms": "условиями использования",
     "register_send": "Зарегистрироваться",
     "already_acc": "Уже есть аккаунт?",
-    "can_login": "Вы можете войти."
+    "can_login": "Вы можете войти.",
+    "register_project_total_form_title": "Регистрация проекта в CryptoStarter",
+    "project_name": "Имя проекта",
+    "project_desc": "Краткое описание проекта",
+    "register_project": "Зарегистрировать проект"
   },
   "profile": {
     "edit_profile": "Редактировать профиль",
