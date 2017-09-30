@@ -9,8 +9,8 @@ helpers do
 			result.push OpenStruct.new({
 				id: i + offset,
 				img: '/img/project_stub.jpeg',
-				title: 'Всемирный атлас кофе',
-				description: 'Знаковая книга о кофе одного из самых известных и передовых профессионалов индустрии.',
+				title: $locale[cookies[:lang] || 'ru'].demo.project_title, # TODO - en
+				description: $locale[cookies[:lang] || 'ru'].demo.project_desc, # TODO - en,
 				progress: '75',
 				count: '332',
 				percent: '75',
