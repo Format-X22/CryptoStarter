@@ -53,7 +53,7 @@
     <div class="container">
       <div class="row cs-form">
         <div class="col-md-8 col-md-offset-2"><img class="cs-top-logo center-block" src="img/logo/origin.svg">
-          <h1 class="text-center">Проект на CryptoStarter</h1>
+          <h1 class="text-center"><%= l.constructor.title %></h1>
         </div>
       </div>
       <div class="row cs-form">
@@ -71,43 +71,43 @@
               <div class="container-fluid">
                 <div class="checkbox cs-no-lang">
                   <label>
-                    <input id="no-use-lang-en" type="checkbox"/><span><em>Не использовать этот язык</em></span>
+                    <input id="no-use-lang-en" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
                   </label>
                 </div>
                 <hr/>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
                   <div class="panel-body">
                     <!-- TODO Количество символов как ограничение-->
                     <div class="form-group">
-                      <label for="name-en">Имя проекта</label>
+                      <label for="name-en"><%= l.constructor.project_name %></label>
                       <input class="form-control" id="name-en" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="short-en">Краткое описание проекта</label>
+                      <label for="short-en"><%= l.constructor.short_desc %></label>
                       <textarea class="form-control" id="short-en" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="logo-en">Логотип для страницы поиска</label>
+                      <label for="logo-en"><%= l.constructor.logo %></label>
                       <input class="form-control" id="logo-en" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-heading"><%= l.constructor.details %></div>
                   <div class="panel-body">
                     <div class="form-group cs-video-input">
-                      <label for="video-en">Видеоролик (необязательно)</label>
+                      <label for="video-en"><%= l.constructor.video %></label>
                       <input class="form-control" id="video-en" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div><br/>
-                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
                   </div>
                 </div>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                    <div class="form-inline">Вопрос-Ответ
+                    <div class="form-inline"><%= l.constructor.faq %>
                       <div class="checkbox pull-right cs-faq-use">
-                        <label><span><em> Не использовать</em></span>
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
                           <input id="faq-use-en" type="checkbox"/>
                         </label>
                       </div>
@@ -117,8 +117,8 @@
                     <table class="table cs-faq-table">
                       <tr>
                         <th>#</th>
-                        <th>Вопрос</th>
-                        <th>Ответ</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-en"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -128,12 +128,12 @@
                         <td><span class="cs-num">1</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-en-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-en-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-en-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-en-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -145,12 +145,12 @@
                         <td><span class="cs-num">2</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-en-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-en-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-en-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-en-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -162,12 +162,12 @@
                         <td><span class="cs-num">3</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-en-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-en-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-en-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-en-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -179,12 +179,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Новости</div>
+                  <div class="panel-heading"><%= l.constructor.news %></div>
                   <div class="panel-body">
                     <table class="table cs-news-table">
                       <tr>
                         <th>#</th>
-                        <th>Заголовок</th>
+                        <th><%= l.constructor.news_header %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-en"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -192,7 +192,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">1</span></td>
-                        <td><span>Заголовок первой новости</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-en-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -200,7 +200,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">2</span></td>
-                        <td><span>Заголовок второй новости</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-en-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -208,7 +208,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">3</span></td>
-                        <td><span>Заголовок третьей новости</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-en-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -218,12 +218,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Продукты</div>
+                  <div class="panel-heading"><%= l.constructor.products %></div>
                   <div class="panel-body">
                     <table class="table cs-products-table">
                       <tr>
-                        <th>Адрес</th>
-                        <th>Наименование</th>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-en"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -231,7 +231,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по РФ.</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-en-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -239,7 +239,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-en-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -247,7 +247,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-en-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -255,7 +255,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>10 книг \"Всемирный атлас кофе\" по специальной оптовой цене.</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-en-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -266,9 +266,9 @@
                 </div>
                 <hr/>
                 <div class="cs-save-buttons">
-                  <button class="btn btn-default btn-primary" id="save-en">Сохранить без публикации
+                  <button class="btn btn-default btn-primary" id="save-en"><%= l.constructor.save_no_public %>
                   </button>
-                  <button class="btn btn-default btn-primary pull-right" id="pub-en">Опубликовать
+                  <button class="btn btn-default btn-primary pull-right" id="pub-en"><%= l.constructor.publish %>
                   </button>
                   <div class="clearfix"></div>
                 </div>
@@ -278,43 +278,43 @@
               <div class="container-fluid">
                 <div class="checkbox cs-no-lang">
                   <label>
-                    <input id="no-use-lang-de" type="checkbox"/><span><em>Не использовать этот язык</em></span>
+                    <input id="no-use-lang-de" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
                   </label>
                 </div>
                 <hr/>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
                   <div class="panel-body">
                     <!-- TODO Количество символов как ограничение-->
                     <div class="form-group">
-                      <label for="name-de">Имя проекта</label>
+                      <label for="name-de"><%= l.constructor.project_name %></label>
                       <input class="form-control" id="name-de" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="short-de">Краткое описание проекта</label>
+                      <label for="short-de"><%= l.constructor.short_desc %></label>
                       <textarea class="form-control" id="short-de" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="logo-de">Логотип для страницы поиска</label>
+                      <label for="logo-de"><%= l.constructor.logo %></label>
                       <input class="form-control" id="logo-de" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-heading"><%= l.constructor.details %></div>
                   <div class="panel-body">
                     <div class="form-group cs-video-input">
-                      <label for="video-de">Видеоролик (необязательно)</label>
+                      <label for="video-de"><%= l.constructor.video %></label>
                       <input class="form-control" id="video-de" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div><br/>
-                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
                   </div>
                 </div>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                    <div class="form-inline">Вопрос-Ответ
+                    <div class="form-inline"><%= l.constructor.faq %>
                       <div class="checkbox pull-right cs-faq-use">
-                        <label><span><em> Не использовать</em></span>
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
                           <input id="faq-use-de" type="checkbox"/>
                         </label>
                       </div>
@@ -324,8 +324,8 @@
                     <table class="table cs-faq-table">
                       <tr>
                         <th>#</th>
-                        <th>Вопрос</th>
-                        <th>Ответ</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-de"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -335,12 +335,12 @@
                         <td><span class="cs-num">1</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-de-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-de-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-de-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-de-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -352,12 +352,12 @@
                         <td><span class="cs-num">2</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-de-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-de-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-de-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-de-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -369,12 +369,12 @@
                         <td><span class="cs-num">3</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-de-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-de-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-de-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-de-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -386,12 +386,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Новости</div>
+                  <div class="panel-heading"><%= l.constructor.news %></div>
                   <div class="panel-body">
                     <table class="table cs-news-table">
                       <tr>
                         <th>#</th>
-                        <th>Заголовок</th>
+                        <th><%= l.constructor.news_header %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-de"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -399,7 +399,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">1</span></td>
-                        <td><span>Заголовок первой новости</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-de-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -407,7 +407,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">2</span></td>
-                        <td><span>Заголовок второй новости</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-de-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -415,7 +415,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">3</span></td>
-                        <td><span>Заголовок третьей новости</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-de-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -425,12 +425,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Продукты</div>
+                  <div class="panel-heading"><%= l.constructor.products %></div>
                   <div class="panel-body">
                     <table class="table cs-products-table">
                       <tr>
-                        <th>Адрес</th>
-                        <th>Наименование</th>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-de"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -438,7 +438,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по РФ.</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-de-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -446,7 +446,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-de-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -454,7 +454,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-de-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -462,7 +462,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>10 книг \"Всемирный атлас кофе\" по специальной оптовой цене.</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-de-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -473,9 +473,9 @@
                 </div>
                 <hr/>
                 <div class="cs-save-buttons">
-                  <button class="btn btn-default btn-primary" id="save-de">Сохранить без публикации
+                  <button class="btn btn-default btn-primary" id="save-de"><%= l.constructor.save_no_public %>
                   </button>
-                  <button class="btn btn-default btn-primary pull-right" id="pub-de">Опубликовать
+                  <button class="btn btn-default btn-primary pull-right" id="pub-de"><%= l.constructor.publish %>
                   </button>
                   <div class="clearfix"></div>
                 </div>
@@ -485,43 +485,43 @@
               <div class="container-fluid">
                 <div class="checkbox cs-no-lang">
                   <label>
-                    <input id="no-use-lang-fr" type="checkbox"/><span><em>Не использовать этот язык</em></span>
+                    <input id="no-use-lang-fr" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
                   </label>
                 </div>
                 <hr/>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
                   <div class="panel-body">
                     <!-- TODO Количество символов как ограничение-->
                     <div class="form-group">
-                      <label for="name-fr">Имя проекта</label>
+                      <label for="name-fr"><%= l.constructor.project_name %></label>
                       <input class="form-control" id="name-fr" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="short-fr">Краткое описание проекта</label>
+                      <label for="short-fr"><%= l.constructor.short_desc %></label>
                       <textarea class="form-control" id="short-fr" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="logo-fr">Логотип для страницы поиска</label>
+                      <label for="logo-fr"><%= l.constructor.logo %></label>
                       <input class="form-control" id="logo-fr" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-heading"><%= l.constructor.details %></div>
                   <div class="panel-body">
                     <div class="form-group cs-video-input">
-                      <label for="video-fr">Видеоролик (необязательно)</label>
+                      <label for="video-fr"><%= l.constructor.video %></label>
                       <input class="form-control" id="video-fr" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div><br/>
-                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
                   </div>
                 </div>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                    <div class="form-inline">Вопрос-Ответ
+                    <div class="form-inline"><%= l.constructor.faq %>
                       <div class="checkbox pull-right cs-faq-use">
-                        <label><span><em> Не использовать</em></span>
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
                           <input id="faq-use-fr" type="checkbox"/>
                         </label>
                       </div>
@@ -531,8 +531,8 @@
                     <table class="table cs-faq-table">
                       <tr>
                         <th>#</th>
-                        <th>Вопрос</th>
-                        <th>Ответ</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-fr"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -542,12 +542,12 @@
                         <td><span class="cs-num">1</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-fr-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-fr-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-fr-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-fr-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -559,12 +559,12 @@
                         <td><span class="cs-num">2</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-fr-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-fr-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-fr-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-fr-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -576,12 +576,12 @@
                         <td><span class="cs-num">3</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-fr-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-fr-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-fr-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-fr-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -593,12 +593,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Новости</div>
+                  <div class="panel-heading"><%= l.constructor.news %></div>
                   <div class="panel-body">
                     <table class="table cs-news-table">
                       <tr>
                         <th>#</th>
-                        <th>Заголовок</th>
+                        <th><%= l.constructor.news_header %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-fr"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -606,7 +606,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">1</span></td>
-                        <td><span>Заголовок первой новости</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -614,7 +614,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">2</span></td>
-                        <td><span>Заголовок второй новости</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -622,7 +622,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">3</span></td>
-                        <td><span>Заголовок третьей новости</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -632,12 +632,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Продукты</div>
+                  <div class="panel-heading"><%= l.constructor.products %></div>
                   <div class="panel-body">
                     <table class="table cs-products-table">
                       <tr>
-                        <th>Адрес</th>
-                        <th>Наименование</th>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-fr"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -645,7 +645,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по РФ.</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -653,7 +653,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -661,7 +661,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -669,7 +669,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>10 книг \"Всемирный атлас кофе\" по специальной оптовой цене.</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -680,9 +680,9 @@
                 </div>
                 <hr/>
                 <div class="cs-save-buttons">
-                  <button class="btn btn-default btn-primary" id="save-fr">Сохранить без публикации
+                  <button class="btn btn-default btn-primary" id="save-fr"><%= l.constructor.save_no_public %>
                   </button>
-                  <button class="btn btn-default btn-primary pull-right" id="pub-fr">Опубликовать
+                  <button class="btn btn-default btn-primary pull-right" id="pub-fr"><%= l.constructor.publish %>
                   </button>
                   <div class="clearfix"></div>
                 </div>
@@ -692,43 +692,43 @@
               <div class="container-fluid">
                 <div class="checkbox cs-no-lang">
                   <label>
-                    <input id="no-use-lang-ru" type="checkbox"/><span><em>Не использовать этот язык</em></span>
+                    <input id="no-use-lang-ru" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
                   </label>
                 </div>
                 <hr/>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
                   <div class="panel-body">
                     <!-- TODO Количество символов как ограничение-->
                     <div class="form-group">
-                      <label for="name-ru">Имя проекта</label>
+                      <label for="name-ru"><%= l.constructor.project_name %></label>
                       <input class="form-control" id="name-ru" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="short-ru">Краткое описание проекта</label>
+                      <label for="short-ru"><%= l.constructor.short_desc %></label>
                       <textarea class="form-control" id="short-ru" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="logo-ru">Логотип для страницы поиска</label>
+                      <label for="logo-ru"><%= l.constructor.logo %></label>
                       <input class="form-control" id="logo-ru" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-heading"><%= l.constructor.details %></div>
                   <div class="panel-body">
                     <div class="form-group cs-video-input">
-                      <label for="video-ru">Видеоролик (необязательно)</label>
+                      <label for="video-ru"><%= l.constructor.video %></label>
                       <input class="form-control" id="video-ru" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div><br/>
-                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
                   </div>
                 </div>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                    <div class="form-inline">Вопрос-Ответ
+                    <div class="form-inline"><%= l.constructor.faq %>
                       <div class="checkbox pull-right cs-faq-use">
-                        <label><span><em> Не использовать</em></span>
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
                           <input id="faq-use-ru" type="checkbox"/>
                         </label>
                       </div>
@@ -738,8 +738,8 @@
                     <table class="table cs-faq-table">
                       <tr>
                         <th>#</th>
-                        <th>Вопрос</th>
-                        <th>Ответ</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ru"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -749,12 +749,12 @@
                         <td><span class="cs-num">1</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ru-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ru-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ru-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ru-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -766,12 +766,12 @@
                         <td><span class="cs-num">2</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ru-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ru-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ru-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ru-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -783,12 +783,12 @@
                         <td><span class="cs-num">3</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ru-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ru-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ru-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ru-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -800,12 +800,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Новости</div>
+                  <div class="panel-heading"><%= l.constructor.news %></div>
                   <div class="panel-body">
                     <table class="table cs-news-table">
                       <tr>
                         <th>#</th>
-                        <th>Заголовок</th>
+                        <th><%= l.constructor.news_header %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ru"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -813,7 +813,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">1</span></td>
-                        <td><span>Заголовок первой новости</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -821,7 +821,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">2</span></td>
-                        <td><span>Заголовок второй новости</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -829,7 +829,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">3</span></td>
-                        <td><span>Заголовок третьей новости</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -839,12 +839,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Продукты</div>
+                  <div class="panel-heading"><%= l.constructor.products %></div>
                   <div class="panel-body">
                     <table class="table cs-products-table">
                       <tr>
-                        <th>Адрес</th>
-                        <th>Наименование</th>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ru"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -852,7 +852,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по РФ.</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -860,7 +860,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -868,7 +868,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -876,7 +876,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>10 книг \"Всемирный атлас кофе\" по специальной оптовой цене.</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -887,9 +887,9 @@
                 </div>
                 <hr/>
                 <div class="cs-save-buttons">
-                  <button class="btn btn-default btn-primary" id="save-ru">Сохранить без публикации
+                  <button class="btn btn-default btn-primary" id="save-ru"><%= l.constructor.save_no_public %>
                   </button>
-                  <button class="btn btn-default btn-primary pull-right" id="pub-ru">Опубликовать
+                  <button class="btn btn-default btn-primary pull-right" id="pub-ru"><%= l.constructor.publish %>
                   </button>
                   <div class="clearfix"></div>
                 </div>
@@ -899,43 +899,43 @@
               <div class="container-fluid">
                 <div class="checkbox cs-no-lang">
                   <label>
-                    <input id="no-use-lang-ch" type="checkbox"/><span><em>Не использовать этот язык</em></span>
+                    <input id="no-use-lang-ch" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
                   </label>
                 </div>
                 <hr/>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
                   <div class="panel-body">
                     <!-- TODO Количество символов как ограничение-->
                     <div class="form-group">
-                      <label for="name-ch">Имя проекта</label>
+                      <label for="name-ch"><%= l.constructor.project_name %></label>
                       <input class="form-control" id="name-ch" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="short-ch">Краткое описание проекта</label>
+                      <label for="short-ch"><%= l.constructor.short_desc %></label>
                       <textarea class="form-control" id="short-ch" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="logo-ch">Логотип для страницы поиска</label>
+                      <label for="logo-ch"><%= l.constructor.logo %></label>
                       <input class="form-control" id="logo-ch" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-heading"><%= l.constructor.details %></div>
                   <div class="panel-body">
                     <div class="form-group cs-video-input">
-                      <label for="video-ch">Видеоролик (необязательно)</label>
+                      <label for="video-ch"><%= l.constructor.video %></label>
                       <input class="form-control" id="video-ch" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div><br/>
-                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
                   </div>
                 </div>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                    <div class="form-inline">Вопрос-Ответ
+                    <div class="form-inline"><%= l.constructor.faq %>
                       <div class="checkbox pull-right cs-faq-use">
-                        <label><span><em> Не использовать</em></span>
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
                           <input id="faq-use-ch" type="checkbox"/>
                         </label>
                       </div>
@@ -945,8 +945,8 @@
                     <table class="table cs-faq-table">
                       <tr>
                         <th>#</th>
-                        <th>Вопрос</th>
-                        <th>Ответ</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ch"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -956,12 +956,12 @@
                         <td><span class="cs-num">1</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ch-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ch-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ch-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ch-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -973,12 +973,12 @@
                         <td><span class="cs-num">2</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ch-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ch-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ch-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ch-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -990,12 +990,12 @@
                         <td><span class="cs-num">3</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ch-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ch-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ch-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ch-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -1007,12 +1007,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Новости</div>
+                  <div class="panel-heading"><%= l.constructor.news %></div>
                   <div class="panel-body">
                     <table class="table cs-news-table">
                       <tr>
                         <th>#</th>
-                        <th>Заголовок</th>
+                        <th><%= l.constructor.news_header %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ch"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -1020,7 +1020,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">1</span></td>
-                        <td><span>Заголовок первой новости</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1028,7 +1028,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">2</span></td>
-                        <td><span>Заголовок второй новости</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1036,7 +1036,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">3</span></td>
-                        <td><span>Заголовок третьей новости</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1046,12 +1046,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Продукты</div>
+                  <div class="panel-heading"><%= l.constructor.products %></div>
                   <div class="panel-body">
                     <table class="table cs-products-table">
                       <tr>
-                        <th>Адрес</th>
-                        <th>Наименование</th>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ch"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -1059,7 +1059,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по РФ.</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1067,7 +1067,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1075,7 +1075,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1083,7 +1083,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>10 книг \"Всемирный атлас кофе\" по специальной оптовой цене.</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1094,9 +1094,9 @@
                 </div>
                 <hr/>
                 <div class="cs-save-buttons">
-                  <button class="btn btn-default btn-primary" id="save-ch">Сохранить без публикации
+                  <button class="btn btn-default btn-primary" id="save-ch"><%= l.constructor.save_no_public %>
                   </button>
-                  <button class="btn btn-default btn-primary pull-right" id="pub-ch">Опубликовать
+                  <button class="btn btn-default btn-primary pull-right" id="pub-ch"><%= l.constructor.publish %>
                   </button>
                   <div class="clearfix"></div>
                 </div>
@@ -1106,43 +1106,43 @@
               <div class="container-fluid">
                 <div class="checkbox cs-no-lang">
                   <label>
-                    <input id="no-use-lang-ar" type="checkbox"/><span><em>Не использовать этот язык</em></span>
+                    <input id="no-use-lang-ar" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
                   </label>
                 </div>
                 <hr/>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Основная информация</div>
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
                   <div class="panel-body">
                     <!-- TODO Количество символов как ограничение-->
                     <div class="form-group">
-                      <label for="name-ar">Имя проекта</label>
+                      <label for="name-ar"><%= l.constructor.project_name %></label>
                       <input class="form-control" id="name-ar" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="short-ar">Краткое описание проекта</label>
+                      <label for="short-ar"><%= l.constructor.short_desc %></label>
                       <textarea class="form-control" id="short-ar" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                     <div class="form-group">
-                      <label for="logo-ar">Логотип для страницы поиска</label>
+                      <label for="logo-ar"><%= l.constructor.logo %></label>
                       <input class="form-control" id="logo-ar" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Детальная информация</div>
+                  <div class="panel-heading"><%= l.constructor.details %></div>
                   <div class="panel-body">
                     <div class="form-group cs-video-input">
-                      <label for="video-ar">Видеоролик (необязательно)</label>
+                      <label for="video-ar"><%= l.constructor.video %></label>
                       <input class="form-control" id="video-ar" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                     </div><br/>
-                    <h5><strong>Презентация проекта</strong></h5><em>..здесь будет расположен многофункциональный редактор текста...</em>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
                   </div>
                 </div>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
-                    <div class="form-inline">Вопрос-Ответ
+                    <div class="form-inline"><%= l.constructor.faq %>
                       <div class="checkbox pull-right cs-faq-use">
-                        <label><span><em> Не использовать</em></span>
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
                           <input id="faq-use-ar" type="checkbox"/>
                         </label>
                       </div>
@@ -1152,8 +1152,8 @@
                     <table class="table cs-faq-table">
                       <tr>
                         <th>#</th>
-                        <th>Вопрос</th>
-                        <th>Ответ</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -1163,12 +1163,12 @@
                         <td><span class="cs-num">1</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ar-1" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ar-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ar-1" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ar-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -1180,12 +1180,12 @@
                         <td><span class="cs-num">2</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ar-2" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ar-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ar-2" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ar-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -1197,12 +1197,12 @@
                         <td><span class="cs-num">3</span></td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-q-ar-3" type="text" placeholder="Вопрос"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-q-ar-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
                           <div class="form-group">
-                            <input class="form-control" id="faq-r-ar-3" type="text" placeholder="Ответ"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                            <input class="form-control" id="faq-r-ar-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
                           </div>
                         </td>
                         <td>
@@ -1214,12 +1214,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Новости</div>
+                  <div class="panel-heading"><%= l.constructor.news %></div>
                   <div class="panel-body">
                     <table class="table cs-news-table">
                       <tr>
                         <th>#</th>
-                        <th>Заголовок</th>
+                        <th><%= l.constructor.news_header %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -1227,7 +1227,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">1</span></td>
-                        <td><span>Заголовок первой новости</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1235,7 +1235,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">2</span></td>
-                        <td><span>Заголовок второй новости</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1243,7 +1243,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">3</span></td>
-                        <td><span>Заголовок третьей новости</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1253,12 +1253,12 @@
                   </div>
                 </div>
                 <div class="panel panel-primary">
-                  <div class="panel-heading">Продукты</div>
+                  <div class="panel-heading"><%= l.constructor.products %></div>
                   <div class="panel-body">
                     <table class="table cs-products-table">
                       <tr>
-                        <th>Адрес</th>
-                        <th>Наименование</th>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
                         <th>
                           <button class="btn btn-default btn-primary pull-right" id="add-faq-ar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                           </button>
@@ -1266,7 +1266,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по РФ.</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1274,7 +1274,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1282,7 +1282,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>Книга \"Всемирный атлас кофе\" с доставкой по всему миру.</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1290,7 +1290,7 @@
                       </tr>
                       <tr>
                         <td><span class="cs-num">0x374...</span></td>
-                        <td><span>10 книг \"Всемирный атлас кофе\" по специальной оптовой цене.</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
                         <td>
                           <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                           </button>
@@ -1301,9 +1301,9 @@
                 </div>
                 <hr/>
                 <div class="cs-save-buttons">
-                  <button class="btn btn-default btn-primary" id="save-ar">Сохранить без публикации
+                  <button class="btn btn-default btn-primary" id="save-ar"><%= l.constructor.save_no_public %>
                   </button>
-                  <button class="btn btn-default btn-primary pull-right" id="pub-ar">Опубликовать
+                  <button class="btn btn-default btn-primary pull-right" id="pub-ar"><%= l.constructor.publish %>
                   </button>
                   <div class="clearfix"></div>
                 </div>
@@ -1315,7 +1315,7 @@
       <div class="row cs-form-all">
         <div class="col-md-8 col-md-offset-2">
           <hr>
-          <button class="btn btn-default btn-xs btn-primary pull-right" id="pub-all">Опубликовать сразу все языки
+          <button class="btn btn-default btn-xs btn-primary pull-right" id="pub-all"><%= l.constructor.publish_all %>
           </button>
           <div class="clearfix"></div>
         </div>

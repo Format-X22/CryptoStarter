@@ -2,103 +2,103 @@ extends ../../components/skeleton
 
 mixin project-constructor(lang)
     +chechbox('no-use-lang-' + lang).cs-no-lang
-        em Не использовать этот язык
+        em!= erb('l.constructor.dont_use_lang')
     hr
     .panel.panel-primary
-        .panel-heading Основная информация
+        .panel-heading!= erb('l.constructor.main_info')
         .panel-body
             // TODO Количество символов как ограничение
-            +input('name-'+lang, 'text', '', 'Имя проекта')
-            +textarea('short-'+lang, '', 'Краткое описание проекта')
-            +input('logo-'+lang, 'file', '', 'Логотип для страницы поиска')
+            +input('name-'+lang, 'text', '', erb('l.constructor.project_name'))
+            +textarea('short-'+lang, '', erb('l.constructor.short_desc'))
+            +input('logo-'+lang, 'file', '', erb('l.constructor.logo'))
 
     .panel.panel-primary
-        .panel-heading Детальная информация
+        .panel-heading!= erb('l.constructor.details')
         .panel-body
-            +input('video-'+lang, 'file', '', 'Видеоролик (необязательно)').cs-video-input
+            +input('video-'+lang, 'file', '', erb('l.constructor.video')).cs-video-input
             br
-            h5: strong Презентация проекта
-            em ..здесь будет расположен многофункциональный редактор текста...
+            h5: strong!= erb('l.constructor.presentation')
+            em!= erb('l.demo.constructor_presentation')
 
     .panel.panel-primary
         .panel-heading
             .form-inline
-                | Вопрос-Ответ
+                != erb('l.constructor.faq')
                 +chechbox('faq-use-'+lang, true).pull-right.cs-faq-use
-                    em  Не использовать
+                    em!= erb('l.constructor.dont_use_faq')
         .panel-body
             table.table.cs-faq-table
                 tr
                     th #
-                    th Вопрос
-                    th Ответ
+                    th!= erb('l.constructor.faq_q')
+                    th!= erb('l.constructor.faq_a')
                     th: +button-icon('add-faq-'+lang, 'plus').btn-primary.pull-right
                 tr
                     td: span.cs-num 1
-                    td: +input('faq-q-'+lang+'-1', 'text', 'Вопрос')
-                    td: +input('faq-r-'+lang+'-1', 'text', 'Ответ')
+                    td: +input('faq-q-'+lang+'-1', 'text', erb('l.constructor.faq_q'))
+                    td: +input('faq-r-'+lang+'-1', 'text', erb('l.constructor.faq_a'))
                     td: +button-icon('faq-d-'+lang+'-1', 'remove').btn-primary.pull-right
                 tr
                     td: span.cs-num 2
-                    td: +input('faq-q-'+lang+'-2', 'text', 'Вопрос')
-                    td: +input('faq-r-'+lang+'-2', 'text', 'Ответ')
+                    td: +input('faq-q-'+lang+'-2', 'text', erb('l.constructor.faq_q'))
+                    td: +input('faq-r-'+lang+'-2', 'text', erb('l.constructor.faq_a'))
                     td: +button-icon('faq-d-'+lang+'-2', 'remove').btn-primary.pull-right
                 tr
                     td: span.cs-num 3
-                    td: +input('faq-q-'+lang+'-3', 'text', 'Вопрос')
-                    td: +input('faq-r-'+lang+'-3', 'text', 'Ответ')
+                    td: +input('faq-q-'+lang+'-3', 'text', erb('l.constructor.faq_q'))
+                    td: +input('faq-r-'+lang+'-3', 'text', erb('l.constructor.faq_a'))
                     td: +button-icon('faq-d-'+lang+'-3', 'remove').btn-primary.pull-right
 
     .panel.panel-primary
-        .panel-heading Новости
+        .panel-heading!= erb('l.constructor.news')
         .panel-body
             table.table.cs-news-table
                 tr
                     th #
-                    th Заголовок
+                    th!= erb('l.constructor.news_header')
                     th: +button-icon('add-faq-' + lang, 'plus').btn-primary.pull-right
                 tr
                     td: span.cs-num 1
-                    td: span Заголовок первой новости
+                    td: span!= erb('l.demo.constructor_news_1')
                     td: +button-icon('faq-d-' + lang + '-1', 'pencil').btn-primary.pull-right
                 tr
                     td: span.cs-num 2
-                    td: span Заголовок второй новости
+                    td: span!= erb('l.demo.constructor_news_2')
                     td: +button-icon('faq-d-' + lang + '-2', 'pencil').btn-primary.pull-right
                 tr
                     td: span.cs-num 3
-                    td: span Заголовок третьей новости
+                    td: span!= erb('l.demo.constructor_news_3')
                     td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
 
     .panel.panel-primary
-        .panel-heading Продукты
+        .panel-heading!= erb('l.constructor.products')
         .panel-body
             table.table.cs-products-table
                 tr
-                    th Адрес
-                    th Наименование
+                    th!= erb('l.constructor.address')
+                    th!= erb('l.constructor.product_name')
                     th: +button-icon('add-faq-' + lang, 'plus').btn-primary.pull-right
                 tr
                     td: span.cs-num 0x374...
-                    td: span Книга \"Всемирный атлас кофе\" с доставкой по РФ.
+                    td: span!= erb('l.demo.product_1_desc')
                     td: +button-icon('faq-d-' + lang + '-1', 'pencil').btn-primary.pull-right
                 tr
                     td: span.cs-num 0x374...
-                    td: span Книга \"Всемирный атлас кофе\" с доставкой по всему миру.
+                    td: span!= erb('l.demo.product_2_desc')
                     td: +button-icon('faq-d-' + lang + '-2', 'pencil').btn-primary.pull-right
                 tr
                     td: span.cs-num 0x374...
-                    td: span Книга \"Всемирный атлас кофе\" с доставкой по всему миру.
+                    td: span!= erb('l.demo.product_3_desc')
                     td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
                 tr
                     td: span.cs-num 0x374...
-                    td: span 10 книг \"Всемирный атлас кофе\" по специальной оптовой цене.
+                    td: span!= erb('l.demo.product_4_desc')
                     td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
 
     hr
     .cs-save-buttons
-        +button('save-'+lang, 'Сохранить без публикации').btn-primary
-        +button('pub-'+lang, 'Опубликовать').btn-primary.pull-right
+        +button('save-'+lang, erb('l.constructor.save_no_public')).btn-primary
+        +button('pub-'+lang, erb('l.constructor.publish')).btn-primary.pull-right
         .clearfix
 
 block head
@@ -111,7 +111,7 @@ block body
         .row.cs-form
             .col-md-8.col-md-offset-2
                 img(src='img/logo/origin.svg').cs-top-logo.center-block
-                h1.text-center Проект на CryptoStarter
+                h1.text-center!= erb('l.constructor.title')
 
         .row.cs-form
             .col-md-8.col-md-offset-2
@@ -128,9 +128,8 @@ block body
         .row.cs-form-all
             .col-md-8.col-md-offset-2
                 hr
-                +button('pub-all', 'Опубликовать сразу все языки').btn-xs.btn-primary.pull-right
+                +button('pub-all', erb('l.constructor.publish_all')).btn-xs.btn-primary.pull-right
                 .clearfix
-
-
+                    
 block scripts
     //
