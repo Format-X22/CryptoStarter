@@ -189,7 +189,15 @@
     "register": "Регистрация",
     "restore_title": "Сброс пароля",
     "restore_email": "Адрес электронной почты аккаунта",
-    "restore_send": "Восстановить доступ"
+    "restore_send": "Восстановить доступ",
+    "register_total_form_title": "Регистрация в CryptoStarter",
+    "register_form_title": "Регистрация",
+    "pass_again": "Повторите пароль",
+    "term_accept": "Я согласен с",
+    "terms": "условиями использования",
+    "register_send": "Зарегистрироваться",
+    "already_acc": "Уже есть аккаунт?",
+    "can_login": "Вы можете войти."
   },
   "profile": {
     "edit_profile": "Редактировать профиль",
