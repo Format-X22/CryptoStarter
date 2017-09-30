@@ -3,6 +3,13 @@
 	max-height: 500px;
 }
 
+.cs-profile {
+	.cs-num {
+		font-weight: bold;
+		cursor: pointer;
+	}
+}
+
 @media (max-width: 767px) {
 	.cs-profile {
 		.cs-about {

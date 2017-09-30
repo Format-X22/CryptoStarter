@@ -26,7 +26,8 @@
     .cs-form .cs-news-table .cs-num,
     .cs-form .cs-products-table .cs-num {
       font-weight: bold;
-      line-height: 250%; }
+      line-height: 250%;
+      cursor: pointer; }
 
 .cs-form-all {
   padding-top: 35px; }
