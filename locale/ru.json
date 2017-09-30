@@ -90,13 +90,13 @@
   },
   "team": {
     "oleg_name": "Олег Павлов",
-    "oleg_description": "Основатель, разработчик web-части проекта. Активный участник блокчейн проектов в последние годы. ",
+    "oleg_description": "_EMPTY_",
     "alex_name": "Александр Музыченко",
-    "alex_description": "Основатель, разработчик blockchain-части проекта, смарт контрактов, участвовал в разработке блокчейн приложений в посление 3 года. ",
+    "alex_description": "_EMPTY_",
     "gregor_name": "Грегор Штайнер",
-    "gregor_description": "Разработчик. Эксперт по масштабируемым системам, а также по embedded systems. Blockchain энтузиаст. ",
+    "gregor_description": "_EMPTY_",
     "ostap_name": "Остап Червак",
-    "ostap_description": "Разработчик. Python JS эксперт, архитектор масштабируемых систем. Энтузиаст децентрализированных технологий. "
+    "ostap_description": "_EMPTY_"
   },
   "roadmap": {
     "start": {

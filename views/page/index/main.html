@@ -1,1 +1,508 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="CryptoStarter, crowdfunding, blockchain, IdeaCoin"><meta name="description" content="CryptoStarter landing"><meta name="author" content="CryptoStarter"><link href="css/wow-slider.css" rel="stylesheet"><title>CryptoStarter</title><link href="css/theme.css" rel="stylesheet"><link href="css/all.css" rel="stylesheet"><link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16"><link rel="icon" type="image/png" href="img/logo/32.png" sizes="32x32"><link rel="icon" type="image/png" href="img/logo/96.png" sizes="96x96"><link rel="apple-touch-icon" href="img/logo/120.png"><link rel="apple-touch-icon" href="img/logo/180.png" sizes="180x180"><link rel="apple-touch-icon" href="img/logo/152.png" sizes="152x152"><link rel="apple-touch-icon" href="img/logo/167.png" sizes="167x167"></head><body><nav class="navbar navbar-default navbar-fixed-top"><div class="container"><div class="navbar-header"><a href="#"><img class="cs-main_menu-logo" src="img/logo/origin.svg"></a><button class="btn btn-default navbar-toggle collapsed" id="top-menu-toggle" data-toggle="collapse" data-target="#top-menu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div><div class="navbar-collapse collapse navbar-responsive-collapse" id="top-menu"><ul class="nav navbar-nav navbar-right"><li><a href="#home"><%= l.main_menu.home %></a></li><li><a href="#ico"><%= l.main_menu.ico %></a></li><li><a href="#docs"><%= l.main_menu.docs %></a></li><li><a href="#roadmap"><%= l.main_menu.timeline %></a></li><li><a href="#team"><%= l.main_menu.team %></a></li><li><a href="#register"><%= l.main_menu.register %></a></li><li class="visible-xs"><a href="/">ENG</a></li><li class="visible-xs"><a href="/de">DE</a></li><li class="visible-xs"><a href="/fr">FR</a></li><li class="visible-xs"><a href="/ru">РУС</a></li><li class="visible-xs"><a href="/ch">中文</a></li><li class="visible-xs"><a href="/ar">لعربية</a></li><li class="dropdown hidden-xs"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-text-background" aria-hidden="true"></span><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/">ENG</a></li><li><a href="/de">DE</a></li><li><a href="/fr">FR</a></li><li><a href="/ru">РУС</a></li><li><a href="/ch">中文</a></li><li><a href="/ar">لعربية</a></li></ul></li></ul></div></div></nav><div class="cs-wow-header"><div class="cs-wow-fix-loader hidden-xs" id="wow-fix-loader"></div><div class="rev_slider_wrapper fullwidthbanner-container cs-wow-slider hidden-xs" id="wow-slider-wrapper"><div class="rev_slider fullwidthabanner" id="wow-slider"><ul><li data-transition="3dcurtain-vertical" data-slotamount="7" data-masterspeed="300"><img src="img/wow-slider/bg.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"/><div class="tp-caption cs-wow-logo-name customin fadeout tp-resizeme zindex-2" data-x="center" data-hoffset="0" data-y="240" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="800" data-start="1100" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">Crypto<span class="cs-brand-main-color">Starter</span></div><div class="tp-caption cs-wow-main-text customin tp-resizeme zindex-3" data-x="center" data-hoffset="4" data-y="339" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:6;scaleY:6;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1000" data-start="2500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><span class="text-uppercase"><%= l.wow_slider.main_text %></span></div><div class="tp-caption sfl fadeout zindex-4" data-x="center" data-hoffset="-281" data-y="364" data-speed="300" data-start="2200" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><img src="img/wow-slider/left-dots.png"/></div><div class="tp-caption sfr fadeout zindex-5" data-x="center" data-hoffset="281" data-y="364" data-speed="300" data-start="2201" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><img src="img/wow-slider/right-dots.png"/></div><div class="tp-caption cs-wow-sub-text tp-fade tp-resizeme zindex-6" data-x="center" data-hoffset="6" data-y="393" data-speed="300" data-start="3000" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><%= l.wow_slider.sub_text %></div></li><li data-transition="3dcurtain-vertical" data-slotamount="7" data-masterspeed="300"><img src="img/wow-slider/bg.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"/><div class="tp-caption cs-wow-logo-name customin fadeout tp-resizeme zindex-2" data-x="center" data-hoffset="0" data-y="240" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="800" data-start="1100" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">Crypto<span class="cs-brand-main-color">Starter</span></div><div class="tp-caption cs-wow-main-text customin tp-resizeme zindex-3" data-x="center" data-hoffset="4" data-y="339" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:6;scaleY:6;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1000" data-start="2500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><span class="text-uppercase"><%= l.wow_slider.main_text %></span></div><div class="tp-caption sfl fadeout zindex-4" data-x="center" data-hoffset="-281" data-y="364" data-speed="300" data-start="2200" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><img src="img/wow-slider/left-dots.png"/></div><div class="tp-caption sfr fadeout zindex-5" data-x="center" data-hoffset="281" data-y="364" data-speed="300" data-start="2201" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><img src="img/wow-slider/right-dots.png"/></div><div class="tp-caption cs-wow-sub-text tp-fade tp-resizeme zindex-6" data-x="center" data-hoffset="6" data-y="393" data-speed="300" data-start="3000" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><%= l.wow_slider.sub_text %></div></li></ul></div></div><div class="container visible-xs cs-wow-mobile-container"><div class="row"><div class="col-xs-12 text-center"><div class="cs-wow-logo-name-mobile">Crypto<span class="cs-brand-main-color">Starter</span></div><div class="cs-wow-main-text-mobile"><%= l.wow_slider.main_text %></div><div class="cs-wow-sub-text-mobile"><%= l.wow_slider.sub_text %></div></div></div></div></div><div class="container"><div class="row" id="home"><div class="col-md-12"></div></div><div class="row"><div class="col-md-12"><hr/><div class="text-center cs-social-bright"><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-telegram" href="#"></a></div></div></div><div class="row" id="ico"><div class="col-md-12"><div class="text-center"><span class="glyphicon glyphicon-briefcase cs-block-title-icon" aria-hidden="true"></span></div><div class="cs-title-line"></div><h2 class="cs-title"><%= l.title.ico %></h2></div></div><div class="row"><div class="col-md-4 col-md-offset-2"><p><%= l.ico.info_in %></p></div><div class="col-md-4"><img class="cs-ico-img center-block" src="/img/logo/origin.svg"/><h2 class="text-center">IdeaCoin</h2><div class="cs-buy-button"><button class="btn btn-default btn-primary btn-block btn-lg" id="buy" data-toggle="collapse" data-target="#buy-dialog" aria-expanded="false" aria-controls="buy-dialog"><%= l.ico.buy_button %></button></div></div></div><div class="row collapse" id="buy-dialog"><div class="col-md-8 col-md-offset-2"><div class="well"><div id="ico-confirm"><h5><%= l.ico.agreement_title %></h5><label class="cs-pointer"><div class="col-md-1"><input class="pull-right" id="no-usa" type="checkbox"/></div><div class="col-md-11"><span><%= l.ico.agreement_no_usa %></span></div></label></div><div class="collapse" id="ico-data"><h5><%= l.ico.address_list %></h5><div class="form-horizontal"><div class="form-group"><label class="col-sm-3 control-label"><%= l.ico.contract_title %></label><div class="col-sm-6"><p class="form-control-static">0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf</p></div><div class="col-sm-2"><button class="btn btn-default" id="copy-contract" data-clipboard-text="0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf"><%= l.ico.copy %></button></div></div><div class="form-group"><label class="col-sm-3 control-label"><%= l.ico.abi_json_title %></label><div class="col-sm-6"><p class="form-control-static">[{"constant":true,"inputs":[{"name":"","type":"uint256"},</p></div><div class="col-sm-2"><button class="btn btn-default" id="copy-abi" data-clipboard-text="[{&quot;constant&quot;:true,&quot;inputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;},"><%= l.ico.copy %></button></div></div></div><hr/><h5><%= l.ico.instruction_title %></h5><hr/><p class="cs-ico-instruction-logo"><img src="/img/ico/eth-wallet.svg"/><strong class="title">Ethereum Foundation Wallet</strong></p><p><%= l.ico.by_eth_wallet.title %><ul><li><%= l.ico.by_eth_wallet.step_1 %></li><li><%= l.ico.by_eth_wallet.step_2 %></li><li><%= l.ico.by_eth_wallet.step_3 %></li><li><%= l.ico.by_eth_wallet.step_4 %></li><li><%= l.ico.by_eth_wallet.step_5 %></li><li><%= l.ico.by_eth_wallet.step_6 %></li><li><%= l.ico.by_eth_wallet.step_7 %></li></ul></p><hr/><p class="cs-ico-instruction-logo"><img src="/img/ico/meth.svg"/><strong class="title">MyEtherWallet</strong></p><p><%= l.ico.by_meth.title %><ul><li><%= l.ico.by_meth.step_1 %></li><li><%= l.ico.by_meth.step_2 %></li><li><%= l.ico.by_meth.step_3 %></li><li><%= l.ico.by_meth.step_4 %></li><li><%= l.ico.by_meth.step_5 %></li><li><%= l.ico.by_meth.step_6 %></li></ul></p><hr/><p><%= l.ico.instruction_footer %></p></div></div></div></div><div class="row"><div class="col-md-6 col-md-offset-3"><h6><%= l.ico.invested %></h6><div class="progress cs-ico-progress"><div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" id="earned"></div></div><span class="text-left pull-left">~$1 400 000</span><span class="text-right pull-right">~$15 000 000</span></div></div><div class="row cs-ico-faq-line"><div class="col-md-8 col-md-offset-2"><hr/></div></div><div class="row cs-ico-faq"><div class="col-md-4 col-md-offset-2"><h5><%= l.ico.faq.title_1 %></h5><p><%= l.ico.faq.text_1 %></p><h5><%= l.ico.faq.title_2 %></h5><p><%= l.ico.faq.text_2 %></p><h5><%= l.ico.faq.title_3 %></h5><p><%= l.ico.faq.text_3 %></p><h5><%= l.ico.faq.title_4 %></h5><p><%= l.ico.faq.text_4 %></p></div><div class="col-md-4"><h5><%= l.ico.faq.title_5 %></h5><p><%= l.ico.faq.text_5 %></p><h5><%= l.ico.faq.title_6 %></h5><p><%= l.ico.faq.text_6 %></p><h5><%= l.ico.faq.title_7 %></h5><p><%= l.ico.faq.text_7 %></p><h5><%= l.ico.faq.title_8 %></h5><p><%= l.ico.faq.text_8 %></p></div></div><div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="buy-title"><div class="modal-dialog" role="dialog"><div class="modal-content"></div></div></div><div class="row" id="docs"><div class="col-md-12"><div class="text-center"><span class="glyphicon glyphicon-book cs-block-title-icon" aria-hidden="true"></span></div><div class="cs-title-line"></div><h2 class="cs-title"><%= l.title.docs %></h2><div class="well"><h4 class="text-center"><%= l.docs.wp_title %></h4><br/><div class="text-center"><a class="btn btn-primary btn-lg" href="/docs/whitepaper.pdf" target="_BLANK" role="button"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>&nbsp;<%= l.docs.wp_download %></a></div><br/><p class="text-center">PDF</p></div></div></div><div class="row" id="roadmap"><div class="col-md-12"><div class="text-center"><span class="glyphicon glyphicon-map-marker cs-block-title-icon" aria-hidden="true"></span></div><div class="cs-title-line"></div><h2 class="cs-title"><%= l.title.roadmap %></h2></div></div><div class="row"><div class="col-md-4 col-md-offset-4"><div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.start.date %></span><h4><%= l.roadmap.start.title %></h4><p><%= l.roadmap.start.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.alpha_1.date %></span><h4><%= l.roadmap.alpha_1.title %></h4><p><%= l.roadmap.alpha_1.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.alpha_2.date %></span><h4><%= l.roadmap.alpha_2.title %></h4><p><%= l.roadmap.alpha_2.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.beta_1.date %></span><h4><%= l.roadmap.beta_1.title %></h4><p><%= l.roadmap.beta_1.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.beta_2.date %></span><h4><%= l.roadmap.beta_2.title %></h4><p><%= l.roadmap.beta_2.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point cs-roadmap-important"><span class="label label-info pull-right"><%= l.roadmap.ico.date %></span><h4><%= l.roadmap.ico.title %></h4><p><%= l.roadmap.ico.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.early.date %></span><h4><%= l.roadmap.early.title %></h4><p><%= l.roadmap.early.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v1.date %></span><h4><%= l.roadmap.v1.title %></h4><p><%= l.roadmap.v1.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.post_ico.date %></span><h4><%= l.roadmap.post_ico.title %></h4><p><%= l.roadmap.post_ico.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.stock.date %></span><h4><%= l.roadmap.stock.title %></h4><p><%= l.roadmap.stock.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v2.date %></span><h4><%= l.roadmap.v2.title %></h4><p><%= l.roadmap.v2.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v3.date %></span><h4><%= l.roadmap.v3.title %></h4><p><%= l.roadmap.v3.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.frame.date %></span><h4><%= l.roadmap.frame.title %></h4><p><%= l.roadmap.frame.description %></p></div><div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div><div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v4.date %></span><h4><%= l.roadmap.v4.title %></h4><p><%= l.roadmap.v4.description %></p></div><div class="text-center"></div></div></div><div class="row" id="team"><div class="col-md-12"><div class="text-center"><span class="glyphicon glyphicon-user cs-block-title-icon" aria-hidden="true"></span></div><div class="cs-title-line"></div><h2 class="cs-title"><%= l.title.team %></h2></div></div><div class="row cs-team-row"><div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/oleg.jpg"/><h2 class="text-center"><%= l.team.oleg_name %></h2><p class="text-center"><%= l.team.oleg_description %></p><div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/oleg-pavlov-8802a3113/"></a></div></div><div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/alex.jpg"/><h2 class="text-center"><%= l.team.alex_name %></h2><p class="text-center"><%= l.team.alex_description %></p><div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/alexandermusichen"></a></div></div></div><div class="row cs-team-row"><div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/gregor.jpg"/><h2 class="text-center"><%= l.team.gregor_name %></h2><p class="text-center"><%= l.team.gregor_description %></p><div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://at.linkedin.com/in/gregor-steiner-66aa2b7"></a></div></div><div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/ostap.jpg"/><h2 class="text-center"><%= l.team.ostap_name %></h2><p class="text-center"><%= l.team.ostap_description %></p><div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/ostap-chervak-76564695"></a></div></div></div><div class="row cs-team-row"><div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/oliver.jpg"/><h2 class="text-center"><%= l.team.oliver_name %></h2><p class="text-center"><%= l.team.oliver_description %></p><div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="#"></a></div></div><div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/diego.jpg"/><h2 class="text-center"><%= l.team.diego_name %></h2><p class="text-center"><%= l.team.diego_description %></p><div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="#"></a></div></div></div><div class="row cs-team-row"><div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/vladislav.jpg"/><h2 class="text-center"><%= l.team.vladislav_name %></h2><p class="text-center"><%= l.team.vladislav_description %></p><div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/%D0%B2%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2-%D0%B4%D1%8C%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE-14ab65b1/"></a></div></div><div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/sergey.jpg"/><h2 class="text-center"><%= l.team.sergey_name %></h2><p class="text-center"><%= l.team.sergey_description %></p><div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/sergey-antonov-467835138/"></a></div></div></div><div class="row" id="register"><div class="col-md-12"><div class="text-center"><span class="glyphicon glyphicon-th-large cs-block-title-icon" aria-hidden="true"></span></div><div class="cs-title-line"></div><h2 class="cs-title"><%= l.title.register %></h2></div></div><div class="row">       <div class="col-md-6 col-md-offset-3"><p><%= l.register.hint %></p></div></div><div class="row"><div class="col-md-6 col-md-offset-3"><hr/><div class="form-group"><div class="form-group"><label for="project"><%= l.register.project_name_label %></label><input class="form-control" id="project" type="text" placeholder="<%= l.register.project_name_placeholder %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span></div></div><div class="form-group"><div class="form-group"><label for="email"><%= l.register.email_label %></label><input class="form-control" id="email" type="email" placeholder="<%= l.register.email_placeholder %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span></div></div><div class="form-group"><div class="form-group"><label for="description"><%= l.register.description_label %></label><textarea class="form-control" id="description" rows="6" placeholder="<%= l.register.description_placeholder %>"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span></div></div><div class="form-group"><!-- Spam honey pot--><div class="form-group hidden"><input class="form-control" id="message"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span></div></div><hr/><div class="form-group"><button class="btn btn-default btn-primary pull-right" id="send"><%= l.register.register_project_button %></button></div></div><div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="register-modal-title"><div class="modal-dialog" role="dialog"><div class="modal-content"><div class="modal-header"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 id="register-modal-title"><%= l.register.success_modal_title %></h4></div><div class="modal-body" id="register-modal-body"><p><%= l.register.success_modal_text %></p></div><div class="modal-footer" id="register-modal-footer"><button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %></button></div></div></div></div></div></div><footer class="cs-footer"><div class="container"><div class="row"><div class="col-md-12"><div class="text-center"><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-telegram" href="#"></a></div></div></div><div class="row"><div class="col-md-12 cs-copyright-col"><span class="cs-copyright">Copyright Crypto<span class="cs-brand-main-color">Starter</span></span></div></div></div></footer><div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div><script src="js/lib/fixes.js"></script><script src="js/lib/jquery.js"></script><script src="js/lib/bootstrap.js"></script><div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title"><div class="modal-dialog" role="dialog"><div class="modal-content"><div class="modal-header"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 id="error-modal-title"><%= l.error %></h4></div><div class="modal-body" id="error-modal-body"></div><div class="modal-footer" id="error-modal-footer"><button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %></button></div></div></div></div><script src="js/lib/wow-slider-tools.js"></script><script src="js/lib/wow-slider.js"></script><script src="js/lib/clipboard.js"></script><script src="js/all.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="CryptoStarter, crowdfunding, blockchain, IdeaCoin">
+    <meta name="description" content="CryptoStarter landing">
+    <meta name="author" content="CryptoStarter">
+    <link href="css/wow-slider.css" rel="stylesheet">
+    <title>CryptoStarter</title>
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/logo/32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/logo/96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="img/logo/120.png">
+    <link rel="apple-touch-icon" href="img/logo/180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="img/logo/152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="img/logo/167.png" sizes="167x167">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header"><a href="#"><img class="cs-main_menu-logo" src="img/logo/origin.svg"></a>
+          <button class="btn btn-default navbar-toggle collapsed" id="top-menu-toggle" data-toggle="collapse" data-target="#top-menu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse" id="top-menu">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#home"><%= l.main_menu.home %></a></li>
+            <li><a href="#ico"><%= l.main_menu.ico %></a></li>
+            <li><a href="#docs"><%= l.main_menu.docs %></a></li>
+            <li><a href="#roadmap"><%= l.main_menu.timeline %></a></li>
+            <li><a href="#team"><%= l.main_menu.team %></a></li>
+            <li><a href="#register"><%= l.main_menu.register %></a></li>
+            <li class="visible-xs"><a href="/">ENG</a></li>
+            <li class="visible-xs"><a href="/de">DE</a></li>
+            <li class="visible-xs"><a href="/fr">FR</a></li>
+            <li class="visible-xs"><a href="/ru">РУС</a></li>
+            <li class="visible-xs"><a href="/ch">中文</a></li>
+            <li class="visible-xs"><a href="/ar">لعربية</a></li>
+            <li class="dropdown hidden-xs"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/img/flag.png" height="18px"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/">ENG</a></li>
+                <li><a href="/de">DE</a></li>
+                <li><a href="/fr">FR</a></li>
+                <li><a href="/ru">РУС</a></li>
+                <li><a href="/ch">中文</a></li>
+                <li><a href="/ar">لعربية</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="cs-wow-header">
+      <div class="cs-wow-fix-loader hidden-xs" id="wow-fix-loader"></div>
+      <div class="rev_slider_wrapper fullwidthbanner-container cs-wow-slider hidden-xs" id="wow-slider-wrapper">
+        <div class="rev_slider fullwidthabanner" id="wow-slider">
+          <ul>
+            <li data-transition="3dcurtain-vertical" data-slotamount="7" data-masterspeed="300"><img src="img/wow-slider/bg.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"/>
+              <div class="tp-caption cs-wow-logo-name customin fadeout tp-resizeme zindex-2" data-x="center" data-hoffset="0" data-y="240" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="800" data-start="1100" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">Crypto<span class="cs-brand-main-color">Starter</span></div>
+              <div class="tp-caption cs-wow-main-text customin tp-resizeme zindex-3" data-x="center" data-hoffset="4" data-y="339" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:6;scaleY:6;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1000" data-start="2500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><span class="text-uppercase"><%= l.wow_slider.main_text %></span></div>
+              <div class="tp-caption sfl fadeout zindex-4" data-x="center" data-hoffset="-281" data-y="364" data-speed="300" data-start="2200" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><img src="img/wow-slider/left-dots.png"/></div>
+              <div class="tp-caption sfr fadeout zindex-5" data-x="center" data-hoffset="281" data-y="364" data-speed="300" data-start="2201" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><img src="img/wow-slider/right-dots.png"/></div>
+              <div class="tp-caption cs-wow-sub-text tp-fade tp-resizeme zindex-6" data-x="center" data-hoffset="6" data-y="393" data-speed="300" data-start="3000" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><%= l.wow_slider.sub_text %>
+              </div>
+            </li>
+            <li data-transition="3dcurtain-vertical" data-slotamount="7" data-masterspeed="300"><img src="img/wow-slider/bg.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"/>
+              <div class="tp-caption cs-wow-logo-name customin fadeout tp-resizeme zindex-2" data-x="center" data-hoffset="0" data-y="240" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="800" data-start="1100" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300">Crypto<span class="cs-brand-main-color">Starter</span></div>
+              <div class="tp-caption cs-wow-main-text customin tp-resizeme zindex-3" data-x="center" data-hoffset="4" data-y="339" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:6;scaleY:6;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1000" data-start="2500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><span class="text-uppercase"><%= l.wow_slider.main_text %></span></div>
+              <div class="tp-caption sfl fadeout zindex-4" data-x="center" data-hoffset="-281" data-y="364" data-speed="300" data-start="2200" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><img src="img/wow-slider/left-dots.png"/></div>
+              <div class="tp-caption sfr fadeout zindex-5" data-x="center" data-hoffset="281" data-y="364" data-speed="300" data-start="2201" data-easing="Linear.easeNone" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><img src="img/wow-slider/right-dots.png"/></div>
+              <div class="tp-caption cs-wow-sub-text tp-fade tp-resizeme zindex-6" data-x="center" data-hoffset="6" data-y="393" data-speed="300" data-start="3000" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"><%= l.wow_slider.sub_text %>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container visible-xs cs-wow-mobile-container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <div class="cs-wow-logo-name-mobile">Crypto<span class="cs-brand-main-color">Starter</span></div>
+            <div class="cs-wow-main-text-mobile"><%= l.wow_slider.main_text %></div>
+            <div class="cs-wow-sub-text-mobile"><%= l.wow_slider.sub_text %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row" id="home">
+        <div class="col-md-12"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr/>
+          <div class="text-center cs-social-bright"><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-telegram" href="#"></a></div>
+        </div>
+      </div>
+      <div class="row" id="ico">
+        <div class="col-md-12">
+          <div class="text-center"><span class="glyphicon glyphicon-briefcase cs-block-title-icon" aria-hidden="true"></span>
+          </div>
+          <div class="cs-title-line"></div>
+          <h2 class="cs-title"><%= l.title.ico %></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+          <p><%= l.ico.info_in %></p>
+        </div>
+        <div class="col-md-4"><img class="cs-ico-img center-block" src="/img/logo/origin.svg"/>
+          <h2 class="text-center">IdeaCoin</h2>
+          <div class="cs-buy-button">
+            <button class="btn btn-default btn-primary btn-block btn-lg" id="buy" data-toggle="collapse" data-target="#buy-dialog" aria-expanded="false" aria-controls="buy-dialog"><%= l.ico.buy_button %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row collapse" id="buy-dialog">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="well">
+            <div id="ico-confirm">
+              <h5><%= l.ico.agreement_title %></h5>
+              <label class="cs-pointer">
+                <div class="col-md-1">
+                  <input class="pull-right" id="no-usa" type="checkbox"/>
+                </div>
+                <div class="col-md-11"><span><%= l.ico.agreement_no_usa %></span></div>
+              </label>
+            </div>
+            <div class="collapse" id="ico-data">
+              <h5><%= l.ico.address_list %></h5>
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label"><%= l.ico.contract_title %></label>
+                  <div class="col-sm-6">
+                    <p class="form-control-static">0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf</p>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-default" id="copy-contract" data-clipboard-text="0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf"><%= l.ico.copy %>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label"><%= l.ico.abi_json_title %></label>
+                  <div class="col-sm-6">
+                    <p class="form-control-static">[{"constant":true,"inputs":[{"name":"","type":"uint256"},</p>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-default" id="copy-abi" data-clipboard-text="[{&quot;constant&quot;:true,&quot;inputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;},"><%= l.ico.copy %>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <hr/>
+              <h5><%= l.ico.instruction_title %></h5>
+              <hr/>
+              <p class="cs-ico-instruction-logo"><img src="/img/ico/eth-wallet.svg"/><strong class="title">Ethereum Foundation Wallet</strong></p>
+              <p><%= l.ico.by_eth_wallet.title %>
+                <ul>
+                  <li><%= l.ico.by_eth_wallet.step_1 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_2 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_3 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_4 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_5 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_6 %></li>
+                  <li><%= l.ico.by_eth_wallet.step_7 %></li>
+                </ul>
+              </p>
+              <hr/>
+              <p class="cs-ico-instruction-logo"><img src="/img/ico/meth.svg"/><strong class="title">MyEtherWallet</strong></p>
+              <p><%= l.ico.by_meth.title %>
+                <ul>
+                  <li><%= l.ico.by_meth.step_1 %></li>
+                  <li><%= l.ico.by_meth.step_2 %></li>
+                  <li><%= l.ico.by_meth.step_3 %></li>
+                  <li><%= l.ico.by_meth.step_4 %></li>
+                  <li><%= l.ico.by_meth.step_5 %></li>
+                  <li><%= l.ico.by_meth.step_6 %></li>
+                </ul>
+              </p>
+              <hr/>
+              <p><%= l.ico.instruction_footer %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h6><%= l.ico.invested %></h6>
+          <div class="progress cs-ico-progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" id="earned"></div>
+          </div><span class="text-left pull-left">~$1 400 000</span><span class="text-right pull-right">~$15 000 000</span>
+        </div>
+      </div>
+      <div class="row cs-ico-faq-line">
+        <div class="col-md-8 col-md-offset-2">
+          <hr/>
+        </div>
+      </div>
+      <div class="row cs-ico-faq">
+        <div class="col-md-4 col-md-offset-2">
+          <h5><%= l.ico.faq.title_1 %></h5>
+          <p><%= l.ico.faq.text_1 %></p>
+          <h5><%= l.ico.faq.title_2 %></h5>
+          <p><%= l.ico.faq.text_2 %></p>
+          <h5><%= l.ico.faq.title_3 %></h5>
+          <p><%= l.ico.faq.text_3 %></p>
+          <h5><%= l.ico.faq.title_4 %></h5>
+          <p><%= l.ico.faq.text_4 %></p>
+        </div>
+        <div class="col-md-4">
+          <h5><%= l.ico.faq.title_5 %></h5>
+          <p><%= l.ico.faq.text_5 %></p>
+          <h5><%= l.ico.faq.title_6 %></h5>
+          <p><%= l.ico.faq.text_6 %></p>
+          <h5><%= l.ico.faq.title_7 %></h5>
+          <p><%= l.ico.faq.text_7 %></p>
+          <h5><%= l.ico.faq.title_8 %></h5>
+          <p><%= l.ico.faq.text_8 %></p>
+        </div>
+      </div>
+      <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="buy-title">
+        <div class="modal-dialog" role="dialog">
+          <div class="modal-content">
+          </div>
+        </div>
+      </div>
+      <div class="row" id="docs">
+        <div class="col-md-12">
+          <div class="text-center"><span class="glyphicon glyphicon-book cs-block-title-icon" aria-hidden="true"></span>
+          </div>
+          <div class="cs-title-line"></div>
+          <h2 class="cs-title"><%= l.title.docs %></h2>
+          <div class="well">
+            <h4 class="text-center"><%= l.docs.wp_title %></h4><br/>
+            <div class="text-center"><a class="btn btn-primary btn-lg" href="/docs/whitepaper.pdf" target="_BLANK" role="button"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>&nbsp;<%= l.docs.wp_download %></a></div><br/>
+            <p class="text-center">PDF</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="roadmap">
+        <div class="col-md-12">
+          <div class="text-center"><span class="glyphicon glyphicon-map-marker cs-block-title-icon" aria-hidden="true"></span>
+          </div>
+          <div class="cs-title-line"></div>
+          <h2 class="cs-title"><%= l.title.roadmap %></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.start.date %></span>
+            <h4><%= l.roadmap.start.title %></h4>
+            <p><%= l.roadmap.start.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.alpha_1.date %></span>
+            <h4><%= l.roadmap.alpha_1.title %></h4>
+            <p><%= l.roadmap.alpha_1.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.alpha_2.date %></span>
+            <h4><%= l.roadmap.alpha_2.title %></h4>
+            <p><%= l.roadmap.alpha_2.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.beta_1.date %></span>
+            <h4><%= l.roadmap.beta_1.title %></h4>
+            <p><%= l.roadmap.beta_1.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.beta_2.date %></span>
+            <h4><%= l.roadmap.beta_2.title %></h4>
+            <p><%= l.roadmap.beta_2.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point cs-roadmap-important"><span class="label label-info pull-right"><%= l.roadmap.ico.date %></span>
+            <h4><%= l.roadmap.ico.title %></h4>
+            <p><%= l.roadmap.ico.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.early.date %></span>
+            <h4><%= l.roadmap.early.title %></h4>
+            <p><%= l.roadmap.early.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v1.date %></span>
+            <h4><%= l.roadmap.v1.title %></h4>
+            <p><%= l.roadmap.v1.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.post_ico.date %></span>
+            <h4><%= l.roadmap.post_ico.title %></h4>
+            <p><%= l.roadmap.post_ico.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.stock.date %></span>
+            <h4><%= l.roadmap.stock.title %></h4>
+            <p><%= l.roadmap.stock.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v2.date %></span>
+            <h4><%= l.roadmap.v2.title %></h4>
+            <p><%= l.roadmap.v2.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v3.date %></span>
+            <h4><%= l.roadmap.v3.title %></h4>
+            <p><%= l.roadmap.v3.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.frame.date %></span>
+            <h4><%= l.roadmap.frame.title %></h4>
+            <p><%= l.roadmap.frame.description %></p>
+          </div>
+          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          </div>
+          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v4.date %></span>
+            <h4><%= l.roadmap.v4.title %></h4>
+            <p><%= l.roadmap.v4.description %></p>
+          </div>
+          <div class="text-center">
+          </div>
+        </div>
+      </div>
+      <div class="row" id="team">
+        <div class="col-md-12">
+          <div class="text-center"><span class="glyphicon glyphicon-user cs-block-title-icon" aria-hidden="true"></span>
+          </div>
+          <div class="cs-title-line"></div>
+          <h2 class="cs-title"><%= l.title.team %></h2>
+        </div>
+      </div>
+      <div class="row cs-team-row">
+        <div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/oleg.jpg"/>
+          <h2 class="text-center"><%= l.team.oleg_name %></h2>
+          <p class="text-center"><%= l.team.oleg_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/oleg-pavlov-8802a3113/"></a>
+          </div>
+        </div>
+        <div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/alex.jpg"/>
+          <h2 class="text-center"><%= l.team.alex_name %></h2>
+          <p class="text-center"><%= l.team.alex_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/alexandermusichen/"></a>
+          </div>
+        </div>
+      </div>
+      <div class="row cs-team-row">
+        <div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/gregor.jpg"/>
+          <h2 class="text-center"><%= l.team.gregor_name %></h2>
+          <p class="text-center"><%= l.team.gregor_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/gregor-steiner-66aa2b7/"></a>
+          </div>
+        </div>
+        <div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/ostap.jpg"/>
+          <h2 class="text-center"><%= l.team.ostap_name %></h2>
+          <p class="text-center"><%= l.team.ostap_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/ostap-chervak-76564695/"></a>
+          </div>
+        </div>
+      </div>
+      <div class="row cs-team-row">
+        <div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/oliver.jpg"/>
+          <h2 class="text-center"><%= l.team.oliver_name %></h2>
+          <p class="text-center"><%= l.team.oliver_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href=""></a>
+          </div>
+        </div>
+        <div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/diego.jpg"/>
+          <h2 class="text-center"><%= l.team.diego_name %></h2>
+          <p class="text-center"><%= l.team.diego_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/diegoaguilarmontano/"></a>
+          </div>
+        </div>
+      </div>
+      <div class="row cs-team-row">
+        <div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/vladislav.jpg"/>
+          <h2 class="text-center"><%= l.team.vladislav_name %></h2>
+          <p class="text-center"><%= l.team.vladislav_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/%D0%B2%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2-%D0%B4%D1%8C%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE-14ab65b1/"></a>
+          </div>
+        </div>
+        <div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/sergey.jpg"/>
+          <h2 class="text-center"><%= l.team.sergey_name %></h2>
+          <p class="text-center"><%= l.team.sergey_description %></p>
+          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/sergey-antonov-467835138/"></a>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="register">
+        <div class="col-md-12">
+          <div class="text-center"><span class="glyphicon glyphicon-th-large cs-block-title-icon" aria-hidden="true"></span>
+          </div>
+          <div class="cs-title-line"></div>
+          <h2 class="cs-title"><%= l.title.register %></h2>
+        </div>
+      </div>
+      <div class="row">       
+        <div class="col-md-6 col-md-offset-3">
+          <p><%= l.register.hint %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <hr/>
+          <div class="form-group">
+            <div class="form-group">
+              <label for="project"><%= l.register.project_name_label %></label>
+              <input class="form-control" id="project" type="text" placeholder="<%= l.register.project_name_placeholder %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group">
+              <label for="email"><%= l.register.email_label %></label>
+              <input class="form-control" id="email" type="email" placeholder="<%= l.register.email_placeholder %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group">
+              <label for="description"><%= l.register.description_label %></label>
+              <textarea class="form-control" id="description" rows="6" placeholder="<%= l.register.description_placeholder %>"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <!-- Spam honey pot-->
+            <div class="form-group hidden">
+              <input class="form-control" id="message"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+            </div>
+          </div>
+          <hr/>
+          <div class="form-group">
+            <button class="btn btn-default btn-primary pull-right" id="send"><%= l.register.register_project_button %>
+            </button>
+          </div>
+        </div>
+        <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="register-modal-title">
+          <div class="modal-dialog" role="dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 id="register-modal-title"><%= l.register.success_modal_title %>
+                </h4>
+              </div>
+              <div class="modal-body" id="register-modal-body">
+                <p><%= l.register.success_modal_text %></p>
+              </div>
+              <div class="modal-footer" id="register-modal-footer">
+                <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="cs-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center"><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-telegram" href="#"></a></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 cs-copyright-col"><span class="cs-copyright">Copyright Crypto<span class="cs-brand-main-color">Starter</span></span></div>
+        </div>
+      </div>
+    </footer>
+    <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    </div>
+    <script src="js/lib/fixes.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="error-modal-title"><%= l.error %>
+            </h4>
+          </div>
+          <div class="modal-body" id="error-modal-body">
+          </div>
+          <div class="modal-footer" id="error-modal-footer">
+            <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/wow-slider-tools.js"></script>
+    <script src="js/lib/wow-slider.js"></script>
+    <script src="js/lib/clipboard.js"></script>
+    <script src="js/all.js"></script>
+  </body>
+</html>
