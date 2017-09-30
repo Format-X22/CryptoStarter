@@ -27,8 +27,15 @@
 		}
 	}
 
+	.cs-products-table {
+		td {
+			vertical-align: middle;
+		}
+	}
+
 	.cs-faq-table,
-	.cs-news-table {
+	.cs-news-table,
+	.cs-products-table {
 		margin-bottom: 0;
 
 		th {

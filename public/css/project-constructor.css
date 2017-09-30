@@ -12,14 +12,19 @@
     margin-bottom: 0; }
   .cs-form .cs-news-table td {
     vertical-align: middle; }
+  .cs-form .cs-products-table td {
+    vertical-align: middle; }
   .cs-form .cs-faq-table,
-  .cs-form .cs-news-table {
+  .cs-form .cs-news-table,
+  .cs-form .cs-products-table {
     margin-bottom: 0; }
     .cs-form .cs-faq-table th,
-    .cs-form .cs-news-table th {
+    .cs-form .cs-news-table th,
+    .cs-form .cs-products-table th {
       vertical-align: bottom; }
     .cs-form .cs-faq-table .cs-num,
-    .cs-form .cs-news-table .cs-num {
+    .cs-form .cs-news-table .cs-num,
+    .cs-form .cs-products-table .cs-num {
       font-weight: bold;
       line-height: 250%; }
 

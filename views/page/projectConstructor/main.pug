@@ -70,6 +70,31 @@ mixin project-constructor(lang)
                     td: span Заголовок третьей новости
                     td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
 
+    .panel.panel-primary
+        .panel-heading Продукты
+        .panel-body
+            table.table.cs-products-table
+                tr
+                    th Адрес
+                    th Наименование
+                    th: +button-icon('add-faq-' + lang, 'plus').btn-primary.pull-right
+                tr
+                    td: span.cs-num 0x374...
+                    td: span Книга \"Всемирный атлас кофе\" с доставкой по РФ.
+                    td: +button-icon('faq-d-' + lang + '-1', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 0x374...
+                    td: span Книга \"Всемирный атлас кофе\" с доставкой по всему миру.
+                    td: +button-icon('faq-d-' + lang + '-2', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 0x374...
+                    td: span Книга \"Всемирный атлас кофе\" с доставкой по всему миру.
+                    td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 0x374...
+                    td: span 10 книг \"Всемирный атлас кофе\" по специальной оптовой цене.
+                    td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
+
     hr
     .cs-save-buttons
         +button('save-'+lang, 'Сохранить без публикации').btn-primary
