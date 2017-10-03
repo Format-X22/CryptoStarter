@@ -1,7 +1,6 @@
 pragma solidity ^0.4.16;
 
 import './BasicCoin.sol';
-import './Project.sol';
 
 /**
  * @notice IdeaCoin (IDEA) - непосредственно сама монета.
@@ -346,6 +345,19 @@ contract IdeaCoin is IdeaBasicCoin {
     address[] public projects;
 
     /**
+     * @notice Агент для работы с проектами.
+     **/
+    address projectAgent;
+
+    /**
+     * @notice Установить агента проектов.
+     * @param _project Проект.
+     **/
+    function setProjectAgent(address _project) public onlyOwner {
+        projectAgent = _project;
+    }
+
+    /**
      * @notice Создание проекта в системе IdeaCoin.
      * @param _name Имя проекта.
      * @param _required Необходимое количество инвестиций в IDEA.
@@ -353,21 +365,10 @@ contract IdeaCoin is IdeaBasicCoin {
      * Должно быть в диапазоне от 10 до 100.
      **/
     function makeProject(string _name, uint _required, uint _requiredDays) public returns (address _address) {
-        IdeaProject project = new IdeaProject(
-            msg.sender,
-            _name,
-            _required,
-            _requiredDays
-        );
-        _address = address(project);
-        
-        projects.push(address(project));
+        _address = ProjectAgent(projectAgent).makeProject(msg.sender, _name, _required, _requiredDays);
+
+        projects.push(_address);
     }
-
-
-    // ===                         ===
-    // === CONTROL PROJECT SECTION ===
-    // ===                         ===
 
     /**
      * @notice Вывести средства, полученные на текущий этап работы.
@@ -375,26 +376,27 @@ contract IdeaCoin is IdeaBasicCoin {
      * @param _project Проект.
      **/
     function withdrawFromProject(address _project, uint8 _stage) public returns (bool _success) {
-        require(msg.sender == IdeaProject(_project).owner());
+        uint _value;
+        (_success, _value) = ProjectAgent(projectAgent).withdrawFromProject(msg.sender, _project, _stage);
 
-        IdeaProject project = IdeaProject(_project);
-        uint sum;
+        if (_success) {
+            receiveTrancheAndDividends(_value);
+        }
+    }
 
-        updateFundingStateIfNeed(_project);
+    /**
+     * @notice Вывести средства назад в случае провала проекта.
+     * Если проект был провален на одном из этапов - средства вернуться
+     * в соответствии с оставшимся процентом.
+     * @param _project Проект.
+     * @return _success Успешность запроса.
+     **/
+    function cashBackFromProject(address _project) public returns (bool _success) {
+        uint _value;
+        (_success, _value) = ProjectAgent(projectAgent).cashBackFromProject(msg.sender, _project);
 
-        if (project.isWorkflowState() || project.isSuccessDoneState()) {
-            sum = project.withdraw(_stage);
-
-            if (sum > 0) {
-
-                receiveTrancheAndDividends(sum);
-
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
+        if (_success) {
+            balances[msg.sender] = balances[msg.sender].add(_value);
         }
     }
 
@@ -411,47 +413,10 @@ contract IdeaCoin is IdeaBasicCoin {
         balances[msg.sender] = balances[msg.sender].add(tranche);
         receiveDividends(_sum - tranche);
     }
+}
 
-    /**
-     * @notice Вывести средства назад в случае провала проекта.
-     * Если проект был провален на одном из этапов - средства вернуться
-     * в соответствии с оставшимся процентом.
-     * @param _project Проект.
-     * @return _success Успешность запроса.
-     **/
-    function cashBackFromProject(address _project) public returns (bool _success) {
-        IdeaProject project = IdeaProject(_project);
-
-        updateFundingStateIfNeed(_project);
-
-        if (
-            project.isFundingFailState() ||
-            project.isWorkFailState()
-        ) {
-            balances[msg.sender] = balances[msg.sender].add(project.calcInvesting(msg.sender));
-
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * @notice При необходимости обновить состояние проекта относительно сбора инвестиций.
-     * @param _project Проект.
-     **/
-    function updateFundingStateIfNeed(address _project) internal {
-        IdeaProject project = IdeaProject(_project);
-
-        if (
-            project.isFundingState() &&
-            now > project.fundingEndTime()
-        ) {
-            if (project.earned() >= project.required()) {
-                project.projectWorkStarted();
-            } else {
-                project.projectFundingFail();
-            }
-        }
-    }
+interface ProjectAgent {
+    function makeProject(address a, string b, uint c, uint d) public returns (address e);
+    function withdrawFromProject(address f, address g, uint8 h) public returns (bool i, uint j);
+    function cashBackFromProject(address k, address l) public returns (bool m, uint n);
 }
