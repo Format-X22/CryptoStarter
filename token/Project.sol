@@ -1,4 +1,4 @@
-pragma solidity ^0.4.16;
+pragma solidity ^0.4.17;
 
 import './SubCoin.sol';
 import './Uint.sol';
@@ -499,7 +499,7 @@ contract IdeaProject {
     ) public onlyState(States.Initial) onlyOwner returns (address _productAddress) {
         require(products.length <= 25);
 
-        IdeaSubCoin product = new IdeaSubCoin(this, _name, _symbol, _price, _limit);
+        IdeaSubCoin product = new IdeaSubCoin(address(this), _name, _symbol, _price, _limit);
 
         products.push(address(product));
 
