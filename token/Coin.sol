@@ -130,6 +130,8 @@ contract IdeaCoin is IdeaBasicCoin {
 
         earnedEthWei += msg.value;
         soldIdeaWei += tokens;
+
+        tryCreateAccount(msg.sender);
     }
 
     /**
@@ -347,7 +349,7 @@ contract IdeaCoin is IdeaBasicCoin {
     /**
      * @notice Агент для работы с проектами.
      **/
-    address projectAgent;
+    address public projectAgent;
 
     /**
      * @notice Установить агента проектов.

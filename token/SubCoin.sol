@@ -121,7 +121,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @notice Производит покупку токенов продукта.
      * @param _amount Количество токенов.
      **/
-    function buy(uint _amount) public onlyProject {
+    function buy(uint _amount) public onlyProject { // TODO Покупать через основную монету и вычитать из баланса
         uint total = totalSupply.add(_amount);
 
         if (limit != 0) {
@@ -137,7 +137,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @notice Устанавливает адрес физической доставки товара.
      * @param _shipping Адрес физической доставки.
      **/
-    function setShipping(string _shipping) public onlyProject {
+    function setShipping(string _shipping) public {
         require(bytes(_shipping).length > 0);
     
         shipping[msg.sender] = _shipping;

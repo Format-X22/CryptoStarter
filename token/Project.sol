@@ -329,10 +329,10 @@ contract IdeaProject {
         require(_stageDays >= 10);
         require(_stageDays <= 100);
 
-        if (currentWorkStagePercent.add(_stageDays) > 100) {
+        if (currentWorkStagePercent.add(_percent) > 100) {
             revert();
         } else {
-            currentWorkStagePercent = currentWorkStagePercent.add(_stageDays);
+            currentWorkStagePercent = currentWorkStagePercent.add(_percent);
         }
 
         workStages.push(WorkStage(
@@ -499,7 +499,7 @@ contract IdeaProject {
     ) public onlyState(States.Initial) onlyOwner returns (address _productAddress) {
         require(products.length <= 25);
 
-        IdeaSubCoin product = new IdeaSubCoin(address(this), _name, _symbol, _price, _limit);
+        IdeaSubCoin product = new IdeaSubCoin(msg.sender, _name, _symbol, _price, _limit);
 
         products.push(address(product));
 
