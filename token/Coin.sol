@@ -58,7 +58,7 @@ contract IdeaCoin is IdeaBasicCoin {
         PreIco,        // Идет процесс предварительной продажи с высоким бонусом, но высоким порогов входа.
         Ico,           // Идет основной процесс продажи.
         PostIco,       // Продажи закончились и идет временная продажа монет с сайта сервиса.
-        Done          // Все продажи успешно завершились.
+        Done           // Все продажи успешно завершились.
     }
 
     /**
@@ -415,10 +415,29 @@ contract IdeaCoin is IdeaBasicCoin {
         balances[msg.sender] = balances[msg.sender].add(tranche);
         receiveDividends(_sum - tranche);
     }
+
+    /**
+     * @notice Покупка указанного продукта.
+     * @param _product Продукт.
+     * @param _amount Количество.
+     **/
+    function buyProduct(address _product, uint _amount) public {
+        ProjectAgent _agent = ProjectAgent(projectAgent);
+
+        uint _price = _agent.getProductPrice(_product);
+    
+        balances[msg.sender] = balances[msg.sender].sub(_price * _amount);
+        _agent.buyProduct(_product, msg.sender, _amount);
+    }
 }
 
 interface ProjectAgent {
     function makeProject(address a, string b, uint c, uint d) public returns (address e);
     function withdrawFromProject(address f, address g, uint8 h) public returns (bool i, uint j);
     function cashBackFromProject(address k, address l) public returns (bool m, uint n);
+    function getProductPrice(address o) public returns (uint p);
+    function buyProduct(address q, address r, uint s) public;
 }
+
+// (Etherscan hint)
+// See projects engine part on our github or site (cryptostarter.io)

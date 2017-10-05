@@ -499,7 +499,7 @@ contract IdeaProject {
     ) public onlyState(States.Initial) onlyOwner returns (address _productAddress) {
         require(products.length <= 25);
 
-        IdeaSubCoin product = new IdeaSubCoin(msg.sender, _name, _symbol, _price, _limit);
+        IdeaSubCoin product = new IdeaSubCoin(msg.sender, _name, _symbol, _price, _limit, engine);
 
         products.push(address(product));
 

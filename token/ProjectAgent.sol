@@ -1,6 +1,7 @@
 pragma solidity ^0.4.17;
 
 import './Project.sol';
+import './SubCoin.sol';
 
 contract ProjectAgent {
 
@@ -148,5 +149,24 @@ contract ProjectAgent {
                 project.projectFundingFail();
             }
         }
+    }
+
+    /**
+     * @notice Получение цены указанного продукта.
+     * @param _product Продукт.
+     * @return _price Цена.
+     **/
+    function getProductPrice(address _product) public constant onlyCoin returns (uint _price) {
+        return IdeaSubCoin(_product).price();
+    }
+
+    /**
+     * @notice Покупка указанного продукта для покупателя.
+     * @param _product Продукт.
+     * @param _account Аккаунт.
+     * @param _amount Количество.
+     **/
+    function buyProduct(address _product, address _account, uint _amount) public onlyCoin {
+        IdeaSubCoin(_product).buy(_account, _amount);
     }
 }

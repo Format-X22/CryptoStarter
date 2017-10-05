@@ -45,6 +45,11 @@ contract IdeaSubCoin is IdeaBasicCoin {
     address public project;
 
     /**
+     * @notice Адрес движка-инициатора.
+     **/
+    address public engine;
+
+    /**
      * @notice Хранилище соответствий между адресом аккаунта и физическим
      * адресом доставки. Может отстутствовать.
      **/
@@ -57,6 +62,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
      * @param _symbol Символ продукта.
      * @param _price Цена продукта в IDEA токенах.
      * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
+     * @param _engine Адрес движка-инициатора.
      * Лимиты можно изменить в любой момент.
      **/
     function IdeaSubCoin(
@@ -64,7 +70,8 @@ contract IdeaSubCoin is IdeaBasicCoin {
         string _name,
         string _symbol,
         uint _price,
-        uint _limit
+        uint _limit,
+        address _engine
     ) {
         require(_price != 0);
 
@@ -74,6 +81,7 @@ contract IdeaSubCoin is IdeaBasicCoin {
         price = _price;
         limit = _limit;
         project = msg.sender;
+        engine = _engine;
     }
 
     /**
@@ -81,6 +89,14 @@ contract IdeaSubCoin is IdeaBasicCoin {
      **/
     modifier onlyProject() {
         require(msg.sender == project);
+        _;
+    }
+
+    /**
+     * @notice Ограничивает возможность исполнения метода только контрактом-движком.
+     **/
+    modifier onlyEngine() {
+        require(msg.sender == engine);
         _;
     }
 
@@ -119,9 +135,10 @@ contract IdeaSubCoin is IdeaBasicCoin {
 
     /**
      * @notice Производит покупку токенов продукта.
+     * @param _account Аккаунт.
      * @param _amount Количество токенов.
      **/
-    function buy(uint _amount) public onlyProject { // TODO Покупать через основную монету и вычитать из баланса
+    function buy(address _account, uint _amount) public onlyEngine {
         uint total = totalSupply.add(_amount);
 
         if (limit != 0) {
@@ -129,8 +146,8 @@ contract IdeaSubCoin is IdeaBasicCoin {
         }
 
         totalSupply = totalSupply.add(_amount);
-        balances[msg.sender] = balances[msg.sender].add(_amount);
-        tryCreateAccount(msg.sender);
+        balances[_account] = balances[_account].add(_amount);
+        tryCreateAccount(_account);
     }
 
     /**
