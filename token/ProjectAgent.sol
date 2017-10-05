@@ -162,11 +162,17 @@ contract ProjectAgent {
 
     /**
      * @notice Покупка указанного продукта для покупателя.
+     * Покупка возможна только в случае если проект находится в состоянии сбора инвестиций.
      * @param _product Продукт.
      * @param _account Аккаунт.
      * @param _amount Количество.
      **/
     function buyProduct(address _product, address _account, uint _amount) public onlyCoin {
-        IdeaSubCoin(_product).buy(_account, _amount);
+        IdeaSubCoin _productContract = IdeaSubCoin(_product);
+        IdeaProject _projectContract = IdeaProject(_productContract.project());
+
+        require(_projectContract.isFundingState());
+
+        _productContract.buy(_account, _amount);
     }
 }
