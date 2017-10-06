@@ -23,7 +23,7 @@ block body
                 .cs-details-block
                     h3 332 IDEA
                         small!= ' ' + erb('l.project.earned')
-                    h3 122%
+                    h3 75%
                         small!= ' ' + erb('l.project.sum')
                     h3#some-sponsors 485
                         small!= ' ' + erb('l.project.sponsors')
@@ -59,12 +59,6 @@ block body
                             p!= erb('l.demo.project_desc_5')
                             p!= erb('l.demo.project_desc_6')
                             br
-                            br
-                            img(src='/img/book-demo.png' width='50%')
-
-                            br
-                            br
-                            br
                             p!= erb('l.demo.project_desc_7')
                             ul
                                 li!= erb('l.demo.project_desc_8')
@@ -81,23 +75,7 @@ block body
                                     +button('exchange-link-btn', 'Обменник').btn-primary.btn-block
                             //-hr
                             .well.cs-project-item
-                                span.label.label-primary.pull-right!= erb('l.project.product_bought') + ' ' + 25
-                                h4 1 IDEA
-                                hr
-                                p!= erb('l.demo.product_1_desc')
-                                strong!= erb('l.project.product_include')
-                                ul
-                                    li!= erb('l.demo.product_1_include')
-                                strong!= erb('l.project.product_delivery')
-                                ul
-                                    li!= erb('l.demo.product_1_delivery')
-                                hr
-                                +button('buy-1', erb('l.project.buy')).btn-primary.btn-block
-                                //-hr                                                             TODO - exchange
-                                //-em Сбор средст завершился, но, возможно, что-то ещё осталось в
-                                    a(href='#')  обменнике.
-                            .well.cs-project-item
-                                span.label.label-primary.pull-right!= erb('l.project.product_bought') + ' ' + 18
+                                span.label.label-primary.pull-right!= erb('l.project.product_bought') + ' ' + 26
                                 h4 1.1 IDEA
                                 hr
                                 p!= erb('l.demo.product_2_desc')
@@ -109,8 +87,11 @@ block body
                                     li!= erb('l.demo.product_2_delivery')
                                 hr
                                 +button('buy-2', erb('l.project.buy')).btn-primary.btn-block
+                                //-hr                                                             TODO - exchange
+                                //-em Сбор средст завершился, но, возможно, что-то ещё осталось в
+                                    a(href='#')  обменнике.
                             .well.cs-project-item
-                                span.label.label-primary.pull-right!= erb('l.project.product_bought') + ' ' + 2
+                                span.label.label-primary.pull-right!= erb('l.project.product_bought') + ' ' + 8
                                 h4 2 IDEA
                                 hr
                                 p!= erb('l.demo.product_3_desc')
@@ -124,7 +105,7 @@ block body
                                 hr
                                 .cs-limit
                                     span.label.label-warning
-                                        != erb('l.project.product_left') + ' 8 '
+                                        != erb('l.project.product_left') + ' 2 '
                                         != erb('l.project.product_left_divider') + ' 10'
                                 +button('buy-3', erb('l.project.buy')).btn-primary.btn-block
                             .well.cs-project-item
