@@ -53,14 +53,22 @@
     "smart_load": "Код"
   },
   "team": {
-    "oleg_name": "Олег Павлов",
+    "oleg_name": "Oleg<br> Pavlov",
     "oleg_description": "_EMPTY_",
-    "alex_name": "Александр Музыченко",
+    "alex_name": "Alexander Musichen",
     "alex_description": "_EMPTY_",
-    "gregor_name": "Грегор Штайнер",
+    "gregor_name": "Gregor Steiner",
     "gregor_description": "_EMPTY_",
-    "ostap_name": "Остап Червак",
-    "ostap_description": "_EMPTY_"
+    "ostap_name": "Ostap Chervak",
+    "ostap_description": "_EMPTY_",
+    "oliver_name": "Oliver Tatzber",
+    "oliver_description": "_EMPTY_",
+    "diego_name": "Diego Williams",
+    "diego_description": "_EMPTY_",
+    "vladislav_name": "Vladislav Dyachenko",
+    "vladislav_description": "_EMPTY_",
+    "sergey_name": "Sergey Antonov",
+    "sergey_description": "_EMPTY_"
   },
   "roadmap": {
     "start": {
