@@ -64,25 +64,7 @@
       "step_6": "Click Generate Transaction"
     },
     "instruction_footer": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "faq": {
-      "title_1": "_EMPTY_",
-      "text_1": "_EMPTY_",
-      "title_2": "_EMPTY_",
-      "text_2": "_EMPTY_",
-      "title_3": "_EMPTY_",
-      "text_3": "_EMPTY_",
-      "title_4": "_EMPTY_",
-      "text_4": "_EMPTY_",
-      "title_5": "_EMPTY_",
-      "text_5": "_EMPTY_",
-      "title_6": "_EMPTY_",
-      "text_6": "_EMPTY_",
-      "title_7": "_EMPTY_",
-      "text_7": "_EMPTY_",
-      "title_8": "_EMPTY_",
-      "text_8": "_EMPTY_"
-    }
+    "invested": "_EMPTY_"
   },
   "docs": {
     "wp_title": "_EMPTY_",
