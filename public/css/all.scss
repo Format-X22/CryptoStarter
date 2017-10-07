@@ -245,12 +245,6 @@ h2.cs-title {
 		background-size: 85px;
 	}
 
-	&.cs-social-small {
-		width: 40px;
-		height: 40px;
-		background-size: 40px;
-	}
-
 	&.cs-bitcointalk {
 		background: url('../img/social/bitcointalk.svg') no-repeat;
 		background-size: 85px;
@@ -259,6 +253,19 @@ h2.cs-title {
 	&.cs-github {
 		background: url('../img/social/github.svg') no-repeat;
 		background-size: 85px;
+	}
+
+	&.cs-xing {
+		background: url('../img/social/xing.svg') no-repeat;
+		background-size: 85px;
+	}
+
+	&.cs-social-small {
+		width: 40px;
+		height: 40px;
+		background-size: 40px;
+		margin-left: 5px;
+		margin-right: 5px;
 	}
 }
 
