@@ -236,6 +236,15 @@ h2.cs-title {
     .cs-team-row img {
       width: 50%; }
     .cs-team-row .cs-column {
-      padding-bottom: 25px; } }
+      padding-bottom: 25px; }
+
+  .cs-docs .btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px; }
+
+  .cs-contract-address {
+    font-size: 70%; } }
 
 /*# sourceMappingURL=all.css.map */
