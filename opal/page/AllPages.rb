@@ -16,7 +16,7 @@ class AllPages < AbstractPage
 		@js_window      = e[`window`]
 		@body_and_html  = e['body, html']
 		@to_top         = e['#to-top']
-		@main_langs     = e['#main-langs .main-lang']
+		@main_langs     = e['#top-menu .main-lang']
 	end
 
 	def expose_plugins

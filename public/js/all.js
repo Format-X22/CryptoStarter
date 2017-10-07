@@ -22533,7 +22533,7 @@ Opal.modules["page/AllPages"] = function(Opal) {
       self.js_window = e['$[]'](window);
       self.body_and_html = e['$[]']("body, html");
       self.to_top = e['$[]']("#to-top");
-      return self.main_langs = e['$[]']("#main-langs .main-lang");
+      return self.main_langs = e['$[]']("#top-menu .main-lang");
     }, TMP_2.$$arity = 0);
 
     Opal.defn(self, '$expose_plugins', TMP_3 = function $$expose_plugins() {
