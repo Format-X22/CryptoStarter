@@ -48,7 +48,6 @@ mixin ico-block
                                 span!= erb('l.ico.agreement_no_usa')
 
                     #ico-data.collapse
-                        h5!= erb('l.ico.address_list')
                         .form-horizontal
                             .form-group
                                 label.col-sm-3.control-label!= erb('l.ico.contract_title')
@@ -61,51 +60,10 @@ mixin ico-block
                                     )(
                                         data-clipboard-text='0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf'
                                     )
-                            .form-group
-                                label.col-sm-3.control-label!= erb('l.ico.abi_json_title')
-                                .col-sm-6
-                                    p.form-control-static [{"constant":true,"inputs":[{"name":"","type":"uint256"},
-                                .col-sm-2
-                                    +button(
-                                        'copy-abi',
-                                        erb('l.ico.copy')
-                                    )(
-                                        data-clipboard-text='[{"constant":true,"inputs":[{"name":"","type":"uint256"},'
-                                    )
                         hr
-                        h5!= erb('l.ico.instruction_title')
-                        hr
-
-                        p.cs-ico-instruction-logo
-                            img(src='/img/ico/eth-wallet.svg')
-                            strong.title Ethereum Foundation Wallet
-
-                        p!= erb('l.ico.by_eth_wallet.title')
-                            ul
-                                li!= erb('l.ico.by_eth_wallet.step_1')
-                                li!= erb('l.ico.by_eth_wallet.step_2')
-                                li!= erb('l.ico.by_eth_wallet.step_3')
-                                li!= erb('l.ico.by_eth_wallet.step_4')
-                                li!= erb('l.ico.by_eth_wallet.step_5')
-                                li!= erb('l.ico.by_eth_wallet.step_6')
-                                li!= erb('l.ico.by_eth_wallet.step_7')
-
-                        hr
-                        p.cs-ico-instruction-logo
-                            img(src='/img/ico/meth.svg')
-                            strong.title MyEtherWallet
-
-                        p!= erb('l.ico.by_meth.title')
-                            ul
-                                li!= erb('l.ico.by_meth.step_1')
-                                li!= erb('l.ico.by_meth.step_2')
-                                li!= erb('l.ico.by_meth.step_3')
-                                li!= erb('l.ico.by_meth.step_4')
-                                li!= erb('l.ico.by_meth.step_5')
-                                li!= erb('l.ico.by_meth.step_6')
-
-                        hr
-                        p!= erb('l.ico.instruction_footer')
+                        p: em!= erb('l.ico.instruction_1')
+                        p: em!= erb('l.ico.instruction_2')
+                        p: em!= erb('l.ico.instruction_3')
 
         .row
             .col-md-6.col-md-offset-3

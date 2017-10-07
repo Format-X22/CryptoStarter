@@ -39,38 +39,18 @@
     "buy_button": "_EMPTY_",
     "agreement_title": "_EMPTY_",
     "agreement_no_usa": "_EMPTY_",
-    "address_list": "_EMPTY_",
     "contract_title": "_EMPTY_",
-    "abi_json_title": "_EMPTY_",
     "copy": "_EMPTY_",
-    "instruction_title": "_EMPTY_",
-    "by_eth_wallet": {
-      "title": "_EMPTY_",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_",
-      "step_7": "_EMPTY_"
-    },
-    "by_meth": {
-      "title": "_EMPTY_",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_"
-    },
-    "instruction_footer": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "smart_title": "_EMPTY_",
-    "smart_load": "_EMPTY_"
+    "instruction_1": "_EMPTY_",
+    "instruction_2": "_EMPTY_",
+    "instruction_3": "_EMPTY_",
+    "invested": "_EMPTY_"
   },
   "docs": {
     "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_"
+    "wp_download": "_EMPTY_",
+    "smart_title": "_EMPTY_",
+    "smart_load": "_EMPTY_"
   },
   "team": {
     "oleg_name": "Oleg Pavlov",

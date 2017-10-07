@@ -130,7 +130,6 @@
               </label>
             </div>
             <div class="collapse" id="ico-data">
-              <h5><%= l.ico.address_list %></h5>
               <div class="form-horizontal">
                 <div class="form-group">
                   <label class="col-sm-3 control-label"><%= l.ico.contract_title %></label>
@@ -142,46 +141,11 @@
                     </button>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label"><%= l.ico.abi_json_title %></label>
-                  <div class="col-sm-6">
-                    <p class="form-control-static">[{"constant":true,"inputs":[{"name":"","type":"uint256"},</p>
-                  </div>
-                  <div class="col-sm-2">
-                    <button class="btn btn-default" id="copy-abi" data-clipboard-text="[{&quot;constant&quot;:true,&quot;inputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;},"><%= l.ico.copy %>
-                    </button>
-                  </div>
-                </div>
               </div>
               <hr/>
-              <h5><%= l.ico.instruction_title %></h5>
-              <hr/>
-              <p class="cs-ico-instruction-logo"><img src="/img/ico/eth-wallet.svg"/><strong class="title">Ethereum Foundation Wallet</strong></p>
-              <p><%= l.ico.by_eth_wallet.title %>
-                <ul>
-                  <li><%= l.ico.by_eth_wallet.step_1 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_2 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_3 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_4 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_5 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_6 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_7 %></li>
-                </ul>
-              </p>
-              <hr/>
-              <p class="cs-ico-instruction-logo"><img src="/img/ico/meth.svg"/><strong class="title">MyEtherWallet</strong></p>
-              <p><%= l.ico.by_meth.title %>
-                <ul>
-                  <li><%= l.ico.by_meth.step_1 %></li>
-                  <li><%= l.ico.by_meth.step_2 %></li>
-                  <li><%= l.ico.by_meth.step_3 %></li>
-                  <li><%= l.ico.by_meth.step_4 %></li>
-                  <li><%= l.ico.by_meth.step_5 %></li>
-                  <li><%= l.ico.by_meth.step_6 %></li>
-                </ul>
-              </p>
-              <hr/>
-              <p><%= l.ico.instruction_footer %></p>
+              <p><em><%= l.ico.instruction_1 %></em></p>
+              <p><em><%= l.ico.instruction_2 %></em></p>
+              <p><em><%= l.ico.instruction_3 %></em></p>
             </div>
           </div>
         </div>

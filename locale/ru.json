@@ -38,32 +38,12 @@
     "info_after": "_EMPTY_",
     "buy_button": "Купить",
     "agreement_title": "Соглашение",
-    "agreement_no_usa": "_EMPTY_",
-    "address_list": "Адреса",
+    "agreement_no_usa": "Я подтверждаю что не являюсь гражданином, резидентом или юридическим лицом США (“U.S. Person”) и не покупаю IdeaCoin токены от имени “U.S. Person”.",
     "contract_title": "Контракт",
-    "abi_json_title": "ABI / JSON",
     "copy": "Копировать",
-    "instruction_title": "Инструкция",
-    "by_eth_wallet": {
-      "title": "Если вы хотите купить через Ethereum Foundation Wallet:",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_",
-      "step_7": "_EMPTY_"
-    },
-    "by_meth": {
-      "title": "Если вы хотите купить через MyEtherWallet:",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_"
-    },
-    "instruction_footer": "Теперь IdeaCoin токены на вашем счету.",
+    "instruction_1": "Отправьте на указанный адрес токены ETH с любого удобного вам кошелька, токены IDEA будут зачислены на ваш счет автоматически.",
+    "instruction_2": "Не отправляйте токены с бирж - в этом случае токены будут зачислены не на ваш счет, а на счет биржи и вы не сможете получить к ним доступ.",
+    "instruction_3": "Купив 10 000 и более токенов вы получаете право на получение дивидендов от доходов сервиса.",
     "invested": "Инвестированно"
   },
   "docs": {

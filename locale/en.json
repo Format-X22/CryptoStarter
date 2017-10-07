@@ -38,32 +38,12 @@
     "info_after": "_EMPTY_",
     "buy_button": "_EMPTY_",
     "agreement_title": "_EMPTY_",
-    "agreement_no_usa": "Check here to confirm that you are not a U.S. citizen, resident or entity (a “U.S. Person”) nor are you purchasing IdeaCoin Tokens or signing on behalf of a U.S. Person.",
-    "address_list": "_EMPTY_",
+    "agreement_no_usa": "_EMPTY_",
     "contract_title": "_EMPTY_",
-    "abi_json_title": "_EMPTY_",
     "copy": "_EMPTY_",
-    "instruction_title": "_EMPTY_",
-    "by_eth_wallet": {
-      "title": "_EMPTY_",
-      "step_1": "Click Contracts",
-      "step_2": "Click Watch Contract",
-      "step_3": "For name, enter IdeaCoin",
-      "step_4": "For address and JSON Interface, enter the information above and click OK",
-      "step_5": "Click on your new contract",
-      "step_6": "Click ClaimAll from the function dropdown",
-      "step_7": "Click Execute and confirm transaction"
-    },
-    "by_meth": {
-      "title": "_EMPTY_",
-      "step_1": "For address and ABI / JSON Interface, enter the information above and click Access",
-      "step_2": "Click ClaimAll from the function dropdown",
-      "step_3": "Load in your wallet file and unlock it",
-      "step_4": "Click Write",
-      "step_5": "Set Amount to Send to 0 and Gas Limit to 3141592",
-      "step_6": "Click Generate Transaction"
-    },
-    "instruction_footer": "_EMPTY_",
+    "instruction_1": "_EMPTY_",
+    "instruction_2": "_EMPTY_",
+    "instruction_3": "_EMPTY_",
     "invested": "_EMPTY_"
   },
   "docs": {
