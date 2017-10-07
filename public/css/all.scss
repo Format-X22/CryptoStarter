@@ -250,6 +250,16 @@ h2.cs-title {
 		height: 40px;
 		background-size: 40px;
 	}
+
+	&.cs-bitcointalk {
+		background: url('../img/social/bitcointalk.svg') no-repeat;
+		background-size: 85px;
+	}
+
+	&.cs-github {
+		background: url('../img/social/github.svg') no-repeat;
+		background-size: 85px;
+	}
 }
 
 .cs-social-bright .cs-social {
