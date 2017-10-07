@@ -229,4 +229,13 @@ h2.cs-title {
 .cs-team-row {
   margin-bottom: 35px; }
 
+@media (max-width: 767px) {
+  .cs-team-row {
+    text-align: center;
+    margin-bottom: 0; }
+    .cs-team-row img {
+      width: 50%; }
+    .cs-team-row .cs-column {
+      padding-bottom: 25px; } }
+
 /*# sourceMappingURL=all.css.map */
