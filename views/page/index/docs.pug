@@ -14,6 +14,24 @@ mixin docs-block
                     a.btn.btn-primary.btn-lg(href='/docs/whitepaper.pdf' target='_BLANK' role='button')
                         +icon('save-file')
                         | &nbsp;
-                        != erb('l.docs.wp_download')
+                        != erb('l.docs.wp_download') + ' | PDF'
                 br
-                p.text-center PDF
+                .text-center
+                    a.btn.btn-primary.btn-lg(href='/docs/whitepaper.docx' target='_BLANK' role='button')
+                        +icon('save-file')
+                        | &nbsp;
+                        != erb('l.docs.wp_download') + ' | DOC'
+                hr
+                h4.text-center!= erb('l.docs.smart_title')
+                br
+                .text-center
+                    a.btn.btn-primary.btn-lg(href='http://etherscan.io' target='_BLANK' role='button')
+                        +icon('list-alt')
+                        | &nbsp;
+                        != erb('l.docs.smart_load') + ' | Etherscan'
+                br
+                .text-center
+                    a.btn.btn-primary.btn-lg(href='http://github.com' target='_BLANK' role='button')
+                        +icon('list-alt')
+                        | &nbsp;
+                        != erb('l.docs.smart_load') + ' | GitHub'

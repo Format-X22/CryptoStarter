@@ -68,7 +68,9 @@
   },
   "docs": {
     "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_"
+    "wp_download": "_EMPTY_",
+    "smart_title": "_EMPTY_",
+    "smart_load": "_EMPTY_"
   },
   "team": {
     "oleg_name": "Oleg Pavlov",

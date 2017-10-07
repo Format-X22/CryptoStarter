@@ -67,8 +67,10 @@
     "invested": "Инвестированно"
   },
   "docs": {
-    "wp_title": "Документ, описывающий CryptoStarter и IdeaCoin",
-    "wp_download": "Скачать White Paper"
+    "wp_title": "Описание CryptoStarter и IdeaCoin",
+    "wp_download": "Скачать White Paper",
+    "smart_title": "Верифицированный смарт-контракт",
+    "smart_load": "Код"
   },
   "team": {
     "oleg_name": "Олег Павлов",
