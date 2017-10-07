@@ -107,55 +107,10 @@
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-2">
-          <p><%= l.ico.info_in %></p>
+          <p><%= l.ico.info_before %></p>
         </div>
         <div class="col-md-4"><img class="cs-ico-img center-block" src="/img/logo/origin.svg"/>
           <h2 class="text-center">IdeaCoin</h2>
-          <div class="cs-buy-button">
-            <button class="btn btn-default btn-primary btn-block btn-lg" id="buy" data-toggle="collapse" data-target="#buy-dialog" aria-expanded="false" aria-controls="buy-dialog"><%= l.ico.buy_button %>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="row collapse" id="buy-dialog">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="well">
-            <div id="ico-confirm">
-              <h5><%= l.ico.agreement_title %></h5>
-              <label class="cs-pointer">
-                <div class="col-md-1">
-                  <input class="pull-right" id="no-usa" type="checkbox"/>
-                </div>
-                <div class="col-md-11"><span><%= l.ico.agreement_no_usa %></span></div>
-              </label>
-            </div>
-            <div class="collapse" id="ico-data">
-              <div class="form-horizontal">
-                <div class="form-group">
-                  <label class="col-sm-3 control-label"><%= l.ico.contract_title %></label>
-                  <div class="col-sm-6">
-                    <p class="form-control-static cs-contract-address">0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf</p>
-                  </div>
-                  <div class="col-sm-2">
-                    <button class="btn btn-default" id="copy-contract" data-clipboard-text="0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf"><%= l.ico.copy %>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <hr/>
-              <p><em><%= l.ico.instruction_1 %></em></p>
-              <p><em><%= l.ico.instruction_2 %></em></p>
-              <p><em><%= l.ico.instruction_3 %></em></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h6><%= l.ico.invested %></h6>
-          <div class="progress cs-ico-progress">
-            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" id="earned"></div>
-          </div><span class="text-left pull-left">~$1 400 000</span><span class="text-right pull-right">~$15 000 000</span>
         </div>
       </div>
       <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="buy-title">
