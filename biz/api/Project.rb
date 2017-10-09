@@ -22,11 +22,11 @@ helpers do
 	end
 
 	def active_projects
-		projects_demo(10, 0)
+		projects_demo(6, 0)
 	end
 
 	def prepared_projects
-		projects_demo(5, 10)
+		projects_demo(3, 10)
 	end
 
 	def done_projects
