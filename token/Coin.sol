@@ -1,6 +1,7 @@
 pragma solidity ^0.4.17;
 
 import './BasicCoin.sol';
+import './ProjectAgent.sol';
 
 /**
  * @notice IdeaCoin (IDEA) - непосредственно сама монета.
@@ -424,20 +425,9 @@ contract IdeaCoin is IdeaBasicCoin {
     function buyProduct(address _product, uint _amount) public {
         ProjectAgent _agent = ProjectAgent(projectAgent);
 
-        uint _price = _agent.getProductPrice(_product);
+        uint _price = IdeaSubCoin(_product).price();
     
         balances[msg.sender] = balances[msg.sender].sub(_price * _amount);
         _agent.buyProduct(_product, msg.sender, _amount);
     }
 }
-
-interface ProjectAgent {
-    function makeProject(address a, string b, uint c, uint d) public returns (address e);
-    function withdrawFromProject(address f, address g, uint8 h) public returns (bool i, uint j);
-    function cashBackFromProject(address k, address l) public returns (bool m, uint n);
-    function getProductPrice(address o) public returns (uint p);
-    function buyProduct(address q, address r, uint s) public;
-}
-
-// (Etherscan hint)
-// See projects engine part on our github or site (cryptostarter.io)

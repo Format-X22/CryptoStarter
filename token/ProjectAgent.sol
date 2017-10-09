@@ -152,15 +152,6 @@ contract ProjectAgent {
     }
 
     /**
-     * @notice Получение цены указанного продукта.
-     * @param _product Продукт.
-     * @return _price Цена.
-     **/
-    function getProductPrice(address _product) public constant onlyCoin returns (uint _price) {
-        return IdeaSubCoin(_product).price();
-    }
-
-    /**
      * @notice Покупка указанного продукта для покупателя.
      * Покупка возможна только в случае если проект находится в состоянии сбора инвестиций.
      * @param _product Продукт.
@@ -174,5 +165,6 @@ contract ProjectAgent {
         require(_projectContract.isFundingState());
 
         _productContract.buy(_account, _amount);
+        _projectContract.addEarned(_amount * _productContract.price());
     }
 }

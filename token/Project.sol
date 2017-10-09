@@ -49,7 +49,6 @@ contract IdeaProject {
      **/
     mapping(address => bool) public isCashBack;
 
-
     /**
      * @notice Конструктор.
      * @param _owner Владелец проекта.
@@ -91,6 +90,13 @@ contract IdeaProject {
     modifier onlyEngine() {
         require(msg.sender == engine);
         _;
+    }
+
+    /**
+     * @notice Увеличивает показатель собранных монет.
+     **/
+    function addEarned(uint _earned) public onlyEngine {
+        earned = earned.add(_earned);
     }
 
     // ===                ===
