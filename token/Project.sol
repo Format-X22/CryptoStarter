@@ -230,7 +230,7 @@ contract IdeaProject {
     function startFunding() public onlyState(States.Coming) onlyOwner {
         state = States.Funding;
 
-        fundingEndTime = uint64(now + requiredDays * 1 days);
+        fundingEndTime = uint64(now + requiredDays * 1 minutes);
         calcLastWorkStageStart();
     }
 
@@ -268,7 +268,7 @@ contract IdeaProject {
         state = States.WorkFail;
 
         for (uint8 i; i < workStages.length; i += 1) {
-            failTime = failTime.add(workStages[i].stageDays * 1 days);
+            failTime = failTime.add(workStages[i].stageDays * 1 minutes);
             failInvestPercents = failInvestPercents.add(workStages[i].percent);
 
             if (failTime > now) {
@@ -356,7 +356,7 @@ contract IdeaProject {
 
         // (length - 1) not a bug
         for (uint8 i; i < workStages.length - 1; i += 1) {
-            lastWorkStageStartTimestamp += workStages[i].stageDays * 1 days;
+            lastWorkStageStartTimestamp += workStages[i].stageDays * 1 minutes;
         }
     }
 
