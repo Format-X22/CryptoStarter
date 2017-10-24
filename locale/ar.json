@@ -86,6 +86,16 @@
       "title": "_EMPTY_",
       "description": "_EMPTY_"
     },
+    "demo": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
+    "smart": {
+      "date": "_EMPTY_",
+      "title": "_EMPTY_",
+      "description": "_EMPTY_"
+    },
     "beta_1": {
       "date": "_EMPTY_",
       "title": "_EMPTY_",
@@ -106,12 +116,7 @@
       "title": "_EMPTY_",
       "description": "_EMPTY_"
     },
-    "v1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "post_ico": {
+    "release": {
       "date": "_EMPTY_",
       "title": "_EMPTY_",
       "description": "_EMPTY_"
@@ -121,22 +126,7 @@
       "title": "_EMPTY_",
       "description": "_EMPTY_"
     },
-    "v2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v3": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
     "frame": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v4": {
       "date": "_EMPTY_",
       "title": "_EMPTY_",
       "description": "_EMPTY_"
