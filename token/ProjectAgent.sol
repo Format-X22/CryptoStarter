@@ -5,47 +5,23 @@ import './SubCoin.sol';
 
 contract ProjectAgent {
 
-    /**
-     * @notice Владелец агента.
-     **/
     address public owner;
-
-    /**
-     * @notice Монета агента.
-     **/
     address public coin;
 
-    /**
-     * @notice Разрешить действие только владельцу агента.
-     **/
     modifier onlyOwner() {
         require(msg.sender == owner);
         _;
     }
 
-    /**
-     * @notice Разрешить действие только монете агента.
-     **/
     modifier onlyCoin() {
         require(msg.sender == coin);
         _;
     }
 
-    /**
-     * @notice Конструктор.
-     **/
     function ProjectAgent() {
         owner = msg.sender;
     }
 
-    /**
-     * @notice Создание проекта в системе IdeaCoin.
-     * @param _owner Владелец проекта.
-     * @param _name Имя проекта.
-     * @param _required Необходимое количество инвестиций в IDEA.
-     * @param _requiredDays Количество дней сбора инвестиций.
-     * Должно быть в диапазоне от 10 до 100.
-     **/
     function makeProject(
         address _owner,
         string _name,
@@ -62,22 +38,10 @@ contract ProjectAgent {
         );
     }
 
-    /**
-     * @notice Установка монеты агента.
-     * @param _coin Монета агента.
-     **/
     function setCoin(address _coin) public onlyOwner {
         coin = _coin;
     }
 
-    /**
-     * @notice Вывести средства, полученные на текущий этап работы.
-     * Средства поступят на счет владельца проекта.
-     * @param _owner Владелец проекта.
-     * @param _project Проект.
-     * @param _stage Этап.
-     * @return _value Значение для вывода в случае успеха.
-     **/
     function withdrawFromProject(
         address _owner,
         address _project,
@@ -104,15 +68,6 @@ contract ProjectAgent {
         }
     }
 
-    /**
-     * @notice Вывести средства назад в случае провала проекта.
-     * Если проект был провален на одном из этапов - средства вернуться
-     * в соответствии с оставшимся процентом.
-     * @param _owner Владелец проекта.
-     * @param _project Проект.
-     * @return _success Успешность запроса.
-     * @return _value Значение для вывода в случае успеха.
-     **/
     function cashBackFromProject(
         address _owner,
         address _project
@@ -132,10 +87,6 @@ contract ProjectAgent {
         }
     }
 
-    /**
-     * @notice При необходимости обновить состояние проекта относительно сбора инвестиций.
-     * @param _project Проект.
-     **/
     function updateFundingStateIfNeed(address _project) internal {
         IdeaProject project = IdeaProject(_project);
 
@@ -151,13 +102,6 @@ contract ProjectAgent {
         }
     }
 
-    /**
-     * @notice Покупка указанного продукта для покупателя.
-     * Покупка возможна только в случае если проект находится в состоянии сбора инвестиций.
-     * @param _product Продукт.
-     * @param _account Аккаунт.
-     * @param _amount Количество.
-     **/
     function buyProduct(address _product, address _account, uint _amount) public onlyCoin {
         IdeaSubCoin _productContract = IdeaSubCoin(_product);
         IdeaProject _projectContract = IdeaProject(_productContract.project());

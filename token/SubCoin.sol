@@ -3,68 +3,27 @@ pragma solidity ^0.4.17;
 import './BasicCoin.sol';
 import './Project.sol';
 
-/**
- * @notice Контракт саб-монеты IdeaCoin.
- * Подобные монеты создаются под каждый тип товара каждого проекта CryptoStarter.
- * Это полноценная ERC20 монета c дополнительными свойствами, присущими Idea инфраструктуре.
- **/
 contract IdeaSubCoin is IdeaBasicCoin {
 
-    /**
-     * @notice Названия продукта (название монеты).
-     **/
     string public name;
-
-    /**
-     * @notice Аббривеатура продукта (аббривеатура монеты).
-     **/
     string public symbol;
-
-    /**
-     * @notice Мультипликатор размерности монеты.
-     * (В нашем случае нулевая так как дробление не уместно).
-     **/
     uint8 public constant decimals = 0;
-
-    /**
-     * @notice Максимальный лимит продаж.
-     * Значение равное нулю (0) означает что лимита нет.
-     **/
     uint public limit;
-
-    /**
-     * @notice Цена за продукт в IDEA токенах в размерности WEI,
-     * установленная владельцем проекта. Значение используется
-     * только в момент первичной продажи и при голосовании.
-     **/
     uint public price;
-
-    /**
-     * @notice Адрес контракта проекта, которому принадлежат продукты.
-     **/
     address public project;
-
-    /**
-     * @notice Адрес движка-инициатора.
-     **/
     address public engine;
-
-    /**
-     * @notice Хранилище соответствий между адресом аккаунта и физическим
-     * адресом доставки. Может отстутствовать.
-     **/
     mapping(address => string) public shipping;
 
-    /**
-     * @notice Конструктор.
-     * @param _owner Владелец продуктов.
-     * @param _name Имя продукта.
-     * @param _symbol Символ продукта.
-     * @param _price Цена продукта в IDEA токенах.
-     * @param _limit Лимит количества продуктов, 0 установит безлимитный режим.
-     * @param _engine Адрес движка-инициатора.
-     * Лимиты можно изменить в любой момент.
-     **/
+    modifier onlyProject() {
+        require(msg.sender == project);
+        _;
+    }
+
+    modifier onlyEngine() {
+        require(msg.sender == engine);
+        _;
+    }
+
     function IdeaSubCoin(
         address _owner,
         string _name,
@@ -84,28 +43,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
         engine = _engine;
     }
 
-    /**
-     * @notice Ограничивает возможность исполнения метода только контрактом-проектом.
-     **/
-    modifier onlyProject() {
-        require(msg.sender == project);
-        _;
-    }
-
-    /**
-     * @notice Ограничивает возможность исполнения метода только контрактом-движком.
-     **/
-    modifier onlyEngine() {
-        require(msg.sender == engine);
-        _;
-    }
-
-    /**
-     * @notice Совершить перевод на указанный адрес.
-     * @param _to Получатель.
-     * @param _value Количество.
-     * @return success Результат.
-     **/
     function transfer(address _to, uint _value) public returns (bool success) {
         bool result = super.transfer(_to, _value);
 
@@ -116,13 +53,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
         return result;
     }
 
-    /**
-     * @notice Совершить перевод с одного адреса на другой.
-     * @param _from Отправитель.
-     * @param _to Получатель.
-     * @param _value Количество.
-     * @return success Результат.
-     **/
     function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
         bool result = super.transferFrom(_from, _to, _value);
 
@@ -133,11 +63,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
         return result;
     }
 
-    /**
-     * @notice Производит покупку токенов продукта.
-     * @param _account Аккаунт.
-     * @param _amount Количество токенов.
-     **/
     function buy(address _account, uint _amount) public onlyEngine {
         uint total = totalSupply.add(_amount);
 
@@ -150,10 +75,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
         tryCreateAccount(_account);
     }
 
-    /**
-     * @notice Устанавливает адрес физической доставки товара.
-     * @param _shipping Адрес физической доставки.
-     **/
     function setShipping(string _shipping) public {
         require(bytes(_shipping).length > 0);
     
