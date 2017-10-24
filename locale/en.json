@@ -11,152 +11,6 @@
     "main_text": "Crowdfunding",
     "sub_text": "Decentralized.Borderless.Tokenizable."
   },
-  "title": {
-    "ico": "ICO",
-    "docs": "White paper and documents",
-    "roadmap": "Project roadmap",
-    "media": "Media about us",
-    "team": "Team",
-    "register": "Pre-register your project"
-  },
-  "ico": {
-    "info_before": "_EMPTY_",
-    "info_in": "_EMPTY_",
-    "info_after": "_EMPTY_",
-    "buy_button": "_EMPTY_",
-    "agreement_title": "_EMPTY_",
-    "agreement_no_usa": "Check here to confirm that you are not a U.S. citizen, resident or entity (a “U.S. Person”) nor are you purchasing IdeaCoin Tokens or signing on behalf of a U.S. Person.",
-    "address_list": "_EMPTY_",
-    "contract_title": "_EMPTY_",
-    "abi_json_title": "_EMPTY_",
-    "copy": "_EMPTY_",
-    "instruction_title": "_EMPTY_",
-    "by_eth_wallet": {
-      "title": "_EMPTY_",
-      "step_1": "Click Contracts",
-      "step_2": "Click Watch Contract",
-      "step_3": "For name, enter IdeaCoin",
-      "step_4": "For address and JSON Interface, enter the information above and click OK",
-      "step_5": "Click on your new contract",
-      "step_6": "Click ClaimAll from the function dropdown",
-      "step_7": "Click Execute and confirm transaction"
-    },
-    "by_meth": {
-      "title": "_EMPTY_",
-      "step_1": "For address and ABI / JSON Interface, enter the information above and click Access",
-      "step_2": "Click ClaimAll from the function dropdown",
-      "step_3": "Load in your wallet file and unlock it",
-      "step_4": "Click Write",
-      "step_5": "Set Amount to Send to 0 and Gas Limit to 3141592",
-      "step_6": "Click Generate Transaction"
-    },
-    "instruction_footer": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "faq": {
-      "title_1": "_EMPTY_",
-      "text_1": "_EMPTY_",
-      "title_2": "_EMPTY_",
-      "text_2": "_EMPTY_",
-      "title_3": "_EMPTY_",
-      "text_3": "_EMPTY_",
-      "title_4": "_EMPTY_",
-      "text_4": "_EMPTY_",
-      "title_5": "_EMPTY_",
-      "text_5": "_EMPTY_",
-      "title_6": "_EMPTY_",
-      "text_6": "_EMPTY_",
-      "title_7": "_EMPTY_",
-      "text_7": "_EMPTY_",
-      "title_8": "_EMPTY_",
-      "text_8": "_EMPTY_"
-    }
-  },
-  "docs": {
-    "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_"
-  },
-  "team": {
-    "oleg_name": "Oleg<br> Pavlov",
-    "oleg_description": "Founder, Software Engineer.<br> Actively participated in blockchain projects for the last 3 years.",
-    "alex_name": "Alexander Musichen",
-    "alex_description": "Founder, Software Engineer.<br> Participated in blockchain apps development for the last 3 years.",
-    "gregor_name": "Gregor Steiner",
-    "gregor_description": "Software Engineer.<br> Expert in scalable systems architecture and in embedded systems. Blockchain enthusiast.",
-    "ostap_name": "Ostap Chervak",
-    "ostap_description": "Software Engineer.<br> Python JS expert, systems architect. Decentralized tech enthusiast."
-  },
-  "roadmap": {
-    "start": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "alpha_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "alpha_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "beta_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "beta_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "early": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "post_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "stock": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v3": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "frame": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v4": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    }
-  },
   "component": {
     "ok": "Ok",
     "cancel": "Cancel"
@@ -167,8 +21,11 @@
     "header": "_EMPTY_",
     "to_main": "_EMPTY_"
   },
-  "about": {},
+  "about": {
+    "page_title": "_EMPTY_"
+  },
   "index": {
+    "page_title": "CryptoStarter",
     "active_projects": "_EMPTY_",
     "prepared_projects": "_EMPTY_",
     "done_projects": "_EMPTY_",
@@ -178,6 +35,10 @@
     "left": "_EMPTY_"
   },
   "auth": {
+    "login_page_title": "_EMPTY_",
+    "register_page_title": "_EMPTY_",
+    "register_project_page_title": "_EMPTY_",
+    "restore_page_title": "_EMPTY_",
     "login_total_form_title": "_EMPTY_",
     "login_form_title": "_EMPTY_",
     "email": "_EMPTY_",
@@ -204,6 +65,7 @@
     "register_project": "_EMPTY_"
   },
   "profile": {
+    "page_title": "_EMPTY_",
     "edit_profile": "_EMPTY_",
     "edit_security": "_EMPTY_",
     "create_project": "_EMPTY_",
@@ -229,6 +91,7 @@
     "address": "_EMPTY_"
   },
   "project": {
+    "page_title": "_EMPTY_",
     "progress": "_EMPTY_",
     "earned": "_EMPTY_",
     "sum": "_EMPTY_",
@@ -252,6 +115,7 @@
     "comment_send": "_EMPTY_"
   },
   "constructor": {
+    "page_title": "_EMPTY_",
     "title": "_EMPTY_",
     "publish_all": "_EMPTY_",
     "dont_use_lang": "_EMPTY_",
@@ -274,7 +138,9 @@
     "save_no_public": "_EMPTY_",
     "publish": "_EMPTY_"
   },
-  "term": {},
+  "term": {
+    "page_title": "_EMPTY_"
+  },
   "demo": {
     "profile_about": "_EMPTY_",
     "two_fa": "_EMPTY_",

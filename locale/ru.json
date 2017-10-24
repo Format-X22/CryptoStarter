@@ -11,152 +11,6 @@
     "main_text": "Crowdfunding",
     "sub_text": "Децентрализованный. Токинезированный. Без границ."
   },
-  "title": {
-    "ico": "ICO",
-    "docs": "Документы",
-    "roadmap": "Роадмап",
-    "media": "Пресса о нас",
-    "team": "Команда",
-    "register": "Регистрация проекта"
-  },
-  "ico": {
-    "info_before": "_EMPTY_",
-    "info_in": "_EMPTY_",
-    "info_after": "_EMPTY_",
-    "buy_button": "Купить",
-    "agreement_title": "Соглашение",
-    "agreement_no_usa": "_EMPTY_",
-    "address_list": "Адреса",
-    "contract_title": "Контракт",
-    "abi_json_title": "ABI / JSON",
-    "copy": "Копировать",
-    "instruction_title": "Инструкция",
-    "by_eth_wallet": {
-      "title": "Если вы хотите купить через Ethereum Foundation Wallet:",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_",
-      "step_7": "_EMPTY_"
-    },
-    "by_meth": {
-      "title": "Если вы хотите купить через MyEtherWallet:",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_"
-    },
-    "instruction_footer": "Теперь IdeaCoin токены на вашем счету.",
-    "invested": "Инвестированно",
-    "faq": {
-      "title_1": "_EMPTY_",
-      "text_1": "_EMPTY_",
-      "title_2": "_EMPTY_",
-      "text_2": "_EMPTY_",
-      "title_3": "_EMPTY_",
-      "text_3": "_EMPTY_",
-      "title_4": "_EMPTY_",
-      "text_4": "_EMPTY_",
-      "title_5": "_EMPTY_",
-      "text_5": "_EMPTY_",
-      "title_6": "_EMPTY_",
-      "text_6": "_EMPTY_",
-      "title_7": "_EMPTY_",
-      "text_7": "_EMPTY_",
-      "title_8": "_EMPTY_",
-      "text_8": "_EMPTY_"
-    }
-  },
-  "docs": {
-    "wp_title": "Документ, описывающий CryptoStarter и IdeaCoin",
-    "wp_download": "Скачать White Paper"
-  },
-  "team": {
-    "oleg_name": "Олег Павлов",
-    "oleg_description": "Основатель, разработчик web-части проекта. Активный участник блокчейн проектов в последние годы. ",
-    "alex_name": "Александр Музыченко",
-    "alex_description": "Основатель, разработчик blockchain-части проекта, смарт контрактов, участвовал в разработке блокчейн приложений в посление 3 года. ",
-    "gregor_name": "Грегор Штайнер",
-    "gregor_description": "Разработчик. Эксперт по масштабируемым системам, а также по embedded systems. Blockchain энтузиаст. ",
-    "ostap_name": "Остап Червак",
-    "ostap_description": "Разработчик. Python JS эксперт, архитектор масштабируемых систем. Энтузиаст децентрализированных технологий. "
-  },
-  "roadmap": {
-    "start": {
-      "date": "4 марта 2017",
-      "title": "Старт проекта",
-      "description": "Начало разработки платформы CryptoStarter."
-    },
-    "alpha_1": {
-      "date": "10 апреля 2017",
-      "title": "Альфа-версия",
-      "description": "Ядро платформы CryptoStarter, утверждение White Paper и MVP."
-    },
-    "alpha_2": {
-      "date": "11 мая 2017",
-      "title": "Альфа-версия 2",
-      "description": "Нестабильная версия платформы CryptoStarter с основным функционалом."
-    },
-    "beta_1": {
-      "date": "3 июля 2017",
-      "title": "Бета-версия",
-      "description": "Платформа CryptoStarter с основным функционалом."
-    },
-    "beta_2": {
-      "date": "4-18 сентября 2017",
-      "title": "Бета-версия 2",
-      "description": "Платформа CryptoStarter с полным MVP функционалом."
-    },
-    "ico": {
-      "date": "1-10 октября 2017",
-      "title": "ICO",
-      "description": "Предварительная продажа токенов."
-    },
-    "early": {
-      "date": "1 ноября 2017",
-      "title": "Ранний доступ",
-      "description": "К платформе получат доступ владельцы проектов, которые решили зарегистрировать свои проекты до публичного запуска платформы CryptoStarter."
-    },
-    "v1": {
-      "date": "15 ноября 2017",
-      "title": "Релиз версии 1.0",
-      "description": "Релиз платформы в MVP версии."
-    },
-    "post_ico": {
-      "date": "15 ноября 2017",
-      "title": "Post-ICO",
-      "description": "Продажа токенов с сайта до момента выхода на первую биржу. Стоимость монет на post-ICO будет удвоена относительно цены ICO."
-    },
-    "stock": {
-      "date": "ноябрь-декабрь 2017",
-      "title": "Выход на биржи",
-      "description": "Старт торгов токенов на биржах. Завершение post-ICO."
-    },
-    "v2": {
-      "date": "декабрь 2017",
-      "title": "Релиз версии 2.0",
-      "description": "В этой версии добавится поэтапное инвестирование и возрат средств через смарт-контракт."
-    },
-    "v3": {
-      "date": "февраль-март 2018",
-      "title": "Релиз версии 3.0",
-      "description": "В этой версии добавятся перепродаваемые токены-фьючерсы для каждого зарегистрированного проекта, а также возможность обмена и торговли ими внутри платформы CryptoStarter."
-    },
-    "frame": {
-      "date": "апрель 2018",
-      "title": "CryptoStarter Frame",
-      "description": "Специальный виджет CryptoStarter для установки на любой сайт, позволяющий собирать платежи и выводить информацию по проекту где угодно."
-    },
-    "v4": {
-      "date": "июнь 2018",
-      "title": "Релиз версии 4.0",
-      "description": "В этой версии платформа приобретет полную децентрализацию, включая все данные сайта."
-    }
-  },
   "component": {
     "ok": "Ок",
     "cancel": "Отмена"
@@ -167,8 +21,11 @@
     "header": "Такой страницы не существует",
     "to_main": "Перейти на главную"
   },
-  "about": {},
+  "about": {
+    "page_title": "О нас"
+  },
   "index": {
+    "page_title": "CryptoStarter",
     "active_projects": "Активные проекты",
     "prepared_projects": "Скоро стартуют",
     "done_projects": "Завершенные проекты",
@@ -178,6 +35,10 @@
     "left": "осталось"
   },
   "auth": {
+    "login_page_title": "Вход",
+    "register_page_title": "Регистрация",
+    "register_project_page_title": "Регистрация проекта",
+    "restore_page_title": "Восстановление пароля",
     "login_total_form_title": "Вход в CryptoStarter",
     "login_form_title": "Войти",
     "email": "Адрес вашей электронной почты",
@@ -204,6 +65,7 @@
     "register_project": "Зарегистрировать проект"
   },
   "profile": {
+    "page_title": "Профиль",
     "edit_profile": "Редактировать профиль",
     "edit_security": "Настройки безопасности",
     "create_project": "Создать проект",
@@ -229,6 +91,7 @@
     "address": "Адрес"
   },
   "project": {
+    "page_title": "Проект",
     "progress": "Прогресс",
     "earned": "собрано",
     "sum": "от минимальной суммы",
@@ -252,6 +115,7 @@
     "comment_send": "Отправить"
   },
   "constructor": {
+    "page_title": "Проект на CryptoStarter",
     "title": "Проект на CryptoStarter",
     "publish_all": "Опубликовать сразу все языки",
     "dont_use_lang": "Не использовать этот язык",
@@ -274,7 +138,9 @@
     "save_no_public": "Сохранить без публикации",
     "publish": "Опубликовать"
   },
-  "term": {},
+  "term": {
+    "page_title": "Соглашение"
+  },
   "demo": {
     "profile_about": "Короткое или не очень короткое описание о себе. Может и полностью отсутствовать.",
     "two_fa": "Здесь будет возможность активировать 2х-факторную авторизацию от Google.",
