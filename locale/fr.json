@@ -30,15 +30,15 @@
     "prepared_projects": "Bientôt commencer",
     "done_projects": "Projets complets",
     "earned": "Recueilli",
-    "sum": "du montant",
+    "sum": "montant",
     "days": "jours",
     "left": "il reste"
   },
   "auth": {
-    "login_page_title": "_EMPTY_",
-    "register_page_title": "_EMPTY_",
-    "register_project_page_title": "_EMPTY_",
-    "restore_page_title": "_EMPTY_",
+    "login_page_title": "Identification",
+    "register_page_title": "Formulaire d'inscription",
+    "register_project_page_title": "Enregistrement du projet en CryptoStarter",
+    "restore_page_title": "Réinitialiser l'accès",
     "login_total_form_title": "Introduction en CryptoStarter",
     "login_form_title": "Identification",
     "email": "Votre adresse e-mail",
@@ -47,7 +47,7 @@
     "restore_q": "Vous avez oublié votre passe-parole ?",
     "no_acc_q_title": "Pas encore de compte ?",
     "no_acc_q_desc": "Pas encore enregistré ? Vous pouvez le faire maintenant.",
-    "register": "_EMPTY_",
+    "register": "S’inscrire",
     "restore_title": "Réinitialisation votre passe-parole",
     "restore_email": "Adresse e-mail du compte",
     "restore_send": "Réinitialiser l'accès",
@@ -91,7 +91,7 @@
     "address": "Adresse"
   },
   "project": {
-    "page_title": "_EMPTY_",
+    "page_title": "Projet",
     "progress": "Progrès",
     "earned": "Recueilli",
     "sum": "du montant minimum",
@@ -115,7 +115,7 @@
     "comment_send": "Envoyer"
   },
   "constructor": {
-    "page_title": "_EMPTY_",
+    "page_title": "Projet sur CryptoStarter",
     "title": "Projet sur CryptoStarter",
     "publish_all": "Publier en toutes les langues à la fois",
     "dont_use_lang": "Ne pas utiliser cette langue",
@@ -133,13 +133,13 @@
     "news": "Actualités",
     "news_header": "En-tête",
     "products": "Produits",
-    "address": "_EMPTY_",
+    "address": "Adresse",
     "product_name": "Nom",
     "save_no_public": "Enregistrer sans publier",
     "publish": "Publier"
   },
   "term": {
-    "page_title": "_EMPTY_"
+    "page_title": "Accord"
   },
   "demo": {
     "profile_about": "Courte ou très courte auto-présentation. Peut-être complètement absente.",

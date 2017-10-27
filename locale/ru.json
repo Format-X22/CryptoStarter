@@ -37,8 +37,8 @@
   "auth": {
     "login_page_title": "Вход",
     "register_page_title": "Регистрация",
-    "register_project_page_title": "Регистрация проекта",
-    "restore_page_title": "Восстановление пароля",
+    "register_project_page_title": "Регистрация в CryptoStarter",
+    "restore_page_title": "Восстановить доступ",
     "login_total_form_title": "Вход в CryptoStarter",
     "login_form_title": "Войти",
     "email": "Адрес вашей электронной почты",
@@ -65,7 +65,7 @@
     "register_project": "Зарегистрировать проект"
   },
   "profile": {
-    "page_title": "Профиль",
+    "page_title": "Профиль пользователя",
     "edit_profile": "Редактировать профиль",
     "edit_security": "Настройки безопасности",
     "create_project": "Создать проект",

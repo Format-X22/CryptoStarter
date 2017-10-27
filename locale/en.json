@@ -30,15 +30,15 @@
     "prepared_projects": "Starting Soon",
     "done_projects": "Finished Projects",
     "earned": "collected",
-    "sum": "of the amount",
+    "sum": "amount",
     "days": "days",
     "left": "remaining"
   },
   "auth": {
-    "login_page_title": "_EMPTY_",
-    "register_page_title": "_EMPTY_",
-    "register_project_page_title": "_EMPTY_",
-    "restore_page_title": "_EMPTY_",
+    "login_page_title": "Sign in",
+    "register_page_title": "Registration",
+    "register_project_page_title": "Register a Project in CryptoStarter",
+    "restore_page_title": "Restore access",
     "login_total_form_title": "CryptoStarter Login",
     "login_form_title": "Sign in",
     "email": "Your E-mail",
@@ -47,7 +47,7 @@
     "restore_q": "Forgot your password?",
     "no_acc_q_title": "No account yet?",
     "no_acc_q_desc": "Not registered yet? Register now.",
-    "register": "_EMPTY_",
+    "register": "Sign up",
     "restore_title": "Password reset",
     "restore_email": "Account E-mail",
     "restore_send": "Restore access",
@@ -91,7 +91,7 @@
     "address": "E-wallet address"
   },
   "project": {
-    "page_title": "_EMPTY_",
+    "page_title": "Project",
     "progress": "Money collected",
     "earned": "collected",
     "sum": "of the minimal amount",
@@ -115,7 +115,7 @@
     "comment_send": "Send"
   },
   "constructor": {
-    "page_title": "_EMPTY_",
+    "page_title": "CryptoStarter Project",
     "title": "CryptoStarter Project",
     "publish_all": "Publish in all languages at once",
     "dont_use_lang": "Do not use this language",
@@ -133,13 +133,13 @@
     "news": "News",
     "news_header": "Title",
     "products": "Products",
-    "address": "_EMPTY_",
+    "address": "E-wallet address",
     "product_name": "Name",
     "save_no_public": "Save without publishing",
     "publish": "Publish"
   },
   "term": {
-    "page_title": "_EMPTY_"
+    "page_title": "Agreement"
   },
   "demo": {
     "profile_about": "Short or not very short description about yourself. May be completely absent.",

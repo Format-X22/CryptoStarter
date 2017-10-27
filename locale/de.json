@@ -30,15 +30,15 @@
     "prepared_projects": "Bald starten",
     "done_projects": "Vollendete Projekte",
     "earned": "gesammelt",
-    "sum": "von der Summe",
+    "sum": "summe",
     "days": "Tage",
     "left": "geblieben"
   },
   "auth": {
-    "login_page_title": "_EMPTY_",
-    "register_page_title": "_EMPTY_",
-    "register_project_page_title": "_EMPTY_",
-    "restore_page_title": "_EMPTY_",
+    "login_page_title": "Einloggen",
+    "register_page_title": "Registrierung",
+    "register_project_page_title": "Projekt in CryptoStarter registrieren",
+    "restore_page_title": "Zugang wiederherstellen",
     "login_total_form_title": "In CryptoStarter einloggen",
     "login_form_title": "Einloggen",
     "email": "Ihre E-Mail-Adresse",
@@ -47,7 +47,7 @@
     "restore_q": "Password vergessen?",
     "no_acc_q_title": "Kein Account?",
     "no_acc_q_desc": "Noch nicht registriert? Sie können es jetzt machen.",
-    "register": "_EMPTY_",
+    "register": "Registrieren",
     "restore_title": "Zurücksetzen des Passworts",
     "restore_email": "E-Mail-Adresse des Accounts",
     "restore_send": "Zugang wiederherstellen",
@@ -91,7 +91,7 @@
     "address": "Adresse"
   },
   "project": {
-    "page_title": "_EMPTY_",
+    "page_title": "Projekt",
     "progress": "Fortschritt",
     "earned": "gesammelt",
     "sum": "von der minimalen Summe",
@@ -115,7 +115,7 @@
     "comment_send": "Senden"
   },
   "constructor": {
-    "page_title": "_EMPTY_",
+    "page_title": "Projekt auf CryptoStarter",
     "title": "Projekt auf CryptoStarter",
     "publish_all": "In allen Sprachen veröffentlichen",
     "dont_use_lang": "Diese Sprache nicht benutzen",
@@ -133,13 +133,13 @@
     "news": "Nachrichten",
     "news_header": "Überschrift",
     "products": "Waren",
-    "address": "_EMPTY_",
+    "address": "Adresse",
     "product_name": "Veröffentlichen",
     "save_no_public": "Ohne Veröffentlichung speichern",
     "publish": "Veröffentlichen"
   },
   "term": {
-    "page_title": "_EMPTY_"
+    "page_title": "Vereinbarung"
   },
   "demo": {
     "profile_about": "Beschreiben Sie sich kurz oder ausführlich. Sie können es auch nicht machen.",
