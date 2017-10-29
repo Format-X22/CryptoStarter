@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity 0.4.17;
 
 import './SubCoin.sol';
 import './Uint.sol';
