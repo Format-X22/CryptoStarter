@@ -22505,12 +22505,12 @@ Opal.modules["page/AllPages"] = function(Opal) {
   }
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $gvars = Opal.gvars, $hash2 = Opal.hash2;
 
-  Opal.add_stubs(['$map_elements', '$make_handlers', '$expose_plugins', '$init_scroll_to_top', '$[]', '$expose', '$on', '$children', '$current_target', '$sub', '$attr', '$cookie=', '$document', '$reload', '$location', '$remove_class', '$>', '$scroll_top', '$effect', '$animate']);
+  Opal.add_stubs(['$map_elements', '$make_handlers', '$expose_plugins', '$init_rtl', '$init_scroll_to_top', '$[]', '$expose', '$on', '$children', '$current_target', '$sub', '$attr', '$cookie=', '$document', '$reload', '$location', '$remove_class', '$>', '$scroll_top', '$effect', '$animate', '$new', '$cookie', '$each', '$split', '$==', '$add_class']);
   return (function($base, $super) {
     function $AllPages(){};
     var self = $AllPages = $klass($base, $super, 'AllPages', $AllPages);
 
-    var def = self.$$proto, $scope = self.$$scope, TMP_1, TMP_2, TMP_3, TMP_5, TMP_8;
+    var def = self.$$proto, $scope = self.$$scope, TMP_1, TMP_2, TMP_3, TMP_5, TMP_8, TMP_10;
 
     def.main_langs = def.js_window = def.to_top = nil;
     Opal.cdecl($scope, 'TO_TOP_EDGE', 100);
@@ -22523,6 +22523,7 @@ Opal.modules["page/AllPages"] = function(Opal) {
       self.$map_elements();
       self.$make_handlers();
       self.$expose_plugins();
+      self.$init_rtl();
       return self.$init_scroll_to_top();
     }, TMP_1.$$arity = 0);
 
@@ -22554,7 +22555,7 @@ if (event == null) event = nil;
         return $gvars.$.$location().$reload();}, TMP_4.$$s = self, TMP_4.$$arity = 1, TMP_4), $a).call($b, "click");
     }, TMP_5.$$arity = 0);
 
-    return (Opal.defn(self, '$init_scroll_to_top', TMP_8 = function $$init_scroll_to_top() {
+    Opal.defn(self, '$init_scroll_to_top', TMP_8 = function $$init_scroll_to_top() {
       var $a, $b, TMP_6, $c, TMP_7, self = this;
 
       ($a = ($b = self.js_window).$on, $a.$$p = (TMP_6 = function(){var self = TMP_6.$$s || this, $c;
@@ -22571,7 +22572,23 @@ if (event == null) event = nil;
         if (self.body_and_html == null) self.body_and_html = nil;
 
       return self.body_and_html.$animate($hash2(["scrollTop"], {"scrollTop": 0}), $scope.get('TO_TOP_SPEED'))}, TMP_7.$$s = self, TMP_7.$$arity = 0, TMP_7), $a).call($c, "click");
-    }, TMP_8.$$arity = 0), nil) && 'init_scroll_to_top';
+    }, TMP_8.$$arity = 0);
+
+    return (Opal.defn(self, '$init_rtl', TMP_10 = function $$init_rtl() {
+      var $a, $b, TMP_9, self = this, cookie = nil;
+      if ($gvars.$ == null) $gvars.$ = nil;
+
+      cookie = $scope.get('String').$new($gvars.$.$document().$cookie());
+      return ($a = ($b = cookie.$split(" ")).$each, $a.$$p = (TMP_9 = function(pair){var self = TMP_9.$$s || this, $c, $d, key = nil, value = nil;
+        if (self.body_and_html == null) self.body_and_html = nil;
+if (pair == null) pair = nil;
+      $d = pair.$split("="), $c = Opal.to_ary($d), key = ($c[0] == null ? nil : $c[0]), value = ($c[1] == null ? nil : $c[1]), $d;
+        if ((($c = (($d = key['$==']("lang")) ? value['$==']("ar") : key['$==']("lang"))) !== nil && $c != null && (!$c.$$is_boolean || $c == true))) {
+          return self.body_and_html.$add_class("rtl")
+          } else {
+          return nil
+        };}, TMP_9.$$s = self, TMP_9.$$arity = 1, TMP_9), $a).call($b);
+    }, TMP_10.$$arity = 0), nil) && 'init_rtl';
   })($scope.base, $scope.get('AbstractPage'))
 };
 

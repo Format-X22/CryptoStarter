@@ -7,6 +7,7 @@ class AllPages < AbstractPage
 		map_elements
 		make_handlers
 		expose_plugins
+		init_rtl
 		init_scroll_to_top
 	end
 
@@ -46,6 +47,18 @@ class AllPages < AbstractPage
 
 		@to_top.on :click do
 			@body_and_html.animate({scrollTop: 0}, TO_TOP_SPEED)
+		end
+	end
+
+	def init_rtl
+		cookie = String.new($$.document.cookie)
+
+		cookie.split(' ').each do |pair|
+			key, value = pair.split('=')
+
+			if key == 'lang' and value == 'ar'
+				@body_and_html.add_class('rtl')
+			end
 		end
 	end
 end

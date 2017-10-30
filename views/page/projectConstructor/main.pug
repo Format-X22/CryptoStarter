@@ -119,10 +119,10 @@ block body
                 .tab-content
                     each lang, index in ['en', 'de', 'fr', 'ru', 'ch', 'ar']
                         if index == 0
-                            +tab-panel('lang-'+lang).active
+                            +tab-panel('lang-'+lang).active.cs-constructor
                                 +project-constructor(lang)
                         else
-                            +tab-panel('lang-'+lang)
+                            +tab-panel('lang-'+lang).cs-constructor
                                 +project-constructor(lang)
 
         .row.cs-form-all
