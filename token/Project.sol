@@ -208,30 +208,26 @@ contract IdeaProject {
         workStages[_stage].sum = 0;
     }
 
-    function voteForCashBack(address _account) public onlyState(States.Workflow) onlyEngine {
-        voteForCashBackInPercentOfWeight(_account, 100);
+    function voteForCashBack() public onlyState(States.Workflow) {
+        voteForCashBackInPercentOfWeight(msg.sender, 100);
     }
 
-    function cancelVoteForCashBack(address _account) public onlyState(States.Workflow) onlyEngine {
-        voteForCashBackInPercentOfWeight(_account, 0);
+    function cancelVoteForCashBack() public onlyState(States.Workflow) {
+        voteForCashBackInPercentOfWeight(msg.sender, 0);
     }
 
-    function voteForCashBackInPercentOfWeight(
-        address _account,
-        uint8 _percent
-    ) public onlyState(States.Workflow) {
-
-        uint8 currentWeight = cashBackWeight[_account];
+    function voteForCashBackInPercentOfWeight(uint8 _percent) public onlyState(States.Workflow) {
+        uint8 currentWeight = cashBackWeight[msg.sender];
         uint supply;
         uint part;
 
         for (uint8 i; i < products.length; i += 1) {
             supply += IdeaSubCoin(products[i]).totalSupply();
-            part += IdeaSubCoin(products[i]).balanceOf(_account);
+            part += IdeaSubCoin(products[i]).balanceOf(msg.sender);
         }
 
         cashBackVotes += ((part ** 10) / supply) * (_percent - currentWeight);
-        cashBackWeight[_account] = _percent;
+        cashBackWeight[msg.sender] = _percent;
 
         if (cashBackVotes > 50 ** 10) {
             projectWorkFail();
