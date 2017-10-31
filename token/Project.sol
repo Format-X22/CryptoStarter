@@ -220,7 +220,7 @@ contract IdeaProject {
     function withdraw(uint _stage) public onlyEngine returns (uint _sum) {
         WorkStage memory stageStruct = workStages[_stage];
 
-        if (stageStruct.withdrawTime >= now) {
+        if (stageStruct.withdrawTime <= now) {
             _sum = stageStruct.sum;
 
             workStages[_stage].sum = 0;
@@ -249,10 +249,10 @@ contract IdeaProject {
             part += IdeaSubCoin(products[i]).balanceOf(_account);
         }
 
-        cashBackVotes += ((part ** 10) / supply) * (_percent - currentWeight);
+        cashBackVotes += ((part * (10 ** 10)) / supply) * (_percent - currentWeight);
         cashBackWeight[_account] = _percent;
 
-        if (cashBackVotes > 50 ** 10) {
+        if (cashBackVotes > 50 * (10 ** 10)) {
             projectWorkFail();
         }
     }
