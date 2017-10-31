@@ -57,11 +57,14 @@ contract ProjectAgent {
         if (project.isWorkflowState() || project.isSuccessDoneState()) {
             sum = project.withdraw(_stage);
 
-            if (sum > 0) {
+            if (sum <= 0) {
+                _success = false;
+            } else {
+
+                // TODO Fix
+
                 _value = sum;
                 _success = true;
-            } else {
-                _success = false;
             }
         } else {
             _success = false;
@@ -104,8 +107,10 @@ contract ProjectAgent {
 
     function buyProduct(address _product, address _account, uint _amount) public onlyCoin {
         IdeaSubCoin _productContract = IdeaSubCoin(_product);
-        IdeaProject _projectContract = IdeaProject(_productContract.project());
+        address _project = _productContract.project();
+        IdeaProject _projectContract = IdeaProject(_project);
 
+        updateFundingStateIfNeed(_project);
         require(_projectContract.isFundingState());
 
         _productContract.buy(_account, _amount);
