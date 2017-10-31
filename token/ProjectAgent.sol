@@ -45,7 +45,7 @@ contract ProjectAgent {
     function withdrawFromProject(
         address _owner,
         address _project,
-        uint8 _stage
+        uint _stage
     ) public onlyCoin returns (bool _success, uint _value) {
         require(_owner == IdeaProject(_project).owner());
 

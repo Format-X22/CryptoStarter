@@ -214,7 +214,7 @@ contract IdeaCoin is IdeaBasicCoin {
         projects.push(_address);
     }
 
-    function withdrawFromProject(address _project, uint8 _stage) public returns (bool _success) {
+    function withdrawFromProject(address _project, uint _stage) public returns (bool _success) {
         uint _value;
         (_success, _value) = ProjectAgent(projectAgent).withdrawFromProject(msg.sender, _project, _stage);
 

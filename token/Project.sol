@@ -20,7 +20,7 @@ contract IdeaProject {
     uint public failInvestPercents;
     address[] public products;
     uint public cashBackVotes;
-    mapping(address => uint8) public cashBackWeight;
+    mapping(address => uint) public cashBackWeight;
 
     enum States {
         Initial,
@@ -35,8 +35,8 @@ contract IdeaProject {
     States public state = States.Initial;
 
     struct WorkStage {
-        uint8 percent;
-        uint8 stageDays;
+        uint percent;
+        uint stageDays;
         uint sum;
         uint withdrawTime;
     }
@@ -176,8 +176,8 @@ contract IdeaProject {
     }
 
     function makeWorkStage(
-        uint8 _percent,
-        uint8 _stageDays
+        uint _percent,
+        uint _stageDays
     ) public onlyState(States.Initial) {
         require(workStages.length <= 10);
         require(_stageDays >= 10);
@@ -192,6 +192,7 @@ contract IdeaProject {
         workStages.push(WorkStage(
             _percent,
             _stageDays,
+            0,
             0
         ));
     }
@@ -216,8 +217,8 @@ contract IdeaProject {
         }
     }
 
-    function withdraw(uint8 _stage) public onlyEngine returns (uint _sum) {
-        WorkStage stageStruct = workStages[_stage];
+    function withdraw(uint _stage) public onlyEngine returns (uint _sum) {
+        WorkStage memory stageStruct = workStages[_stage];
 
         if (stageStruct.withdrawTime >= now) {
             _sum = stageStruct.sum;
@@ -234,12 +235,12 @@ contract IdeaProject {
         voteForCashBackInPercentOfWeight(0);
     }
 
-    function voteForCashBackInPercentOfWeight(uint8 _percent) public onlyState(States.Workflow) {
+    function voteForCashBackInPercentOfWeight(uint _percent) public onlyState(States.Workflow) {
     voteForCashBackInPercentOfWeightForAccount(msg.sender, _percent);
     }
 
-    function voteForCashBackInPercentOfWeightForAccount(address _account, uint8 _percent) internal {
-        uint8 currentWeight = cashBackWeight[_account];
+    function voteForCashBackInPercentOfWeightForAccount(address _account, uint _percent) internal {
+        uint currentWeight = cashBackWeight[_account];
         uint supply;
         uint part;
 
