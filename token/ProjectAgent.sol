@@ -50,21 +50,15 @@ contract ProjectAgent {
         require(_owner == IdeaProject(_project).owner());
 
         IdeaProject project = IdeaProject(_project);
-        uint sum;
-
         updateFundingStateIfNeed(_project);
 
         if (project.isWorkflowState() || project.isSuccessDoneState()) {
-            sum = project.withdraw(_stage);
+            _value = project.withdraw(_stage);
 
-            if (sum <= 0) {
-                _success = false;
-            } else {
-
-                // TODO Fix
-
-                _value = sum;
+            if (_value > 0) {
                 _success = true;
+            } else {
+                _success = false;
             }
         } else {
             _success = false;

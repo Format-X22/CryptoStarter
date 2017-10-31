@@ -38,6 +38,7 @@ contract IdeaProject {
         uint8 percent;
         uint8 stageDays;
         uint sum;
+        uint withdrawTime;
     }
 
     WorkStage[] public workStages;
@@ -142,6 +143,7 @@ contract IdeaProject {
 
         fundingEndTime = uint64(now + requiredDays * 1 minutes);
         calcLastWorkStageStart();
+        calcWithdrawTime();
     }
 
     function projectWorkStarted() public onlyState(States.Funding) onlyEngine {
@@ -202,10 +204,26 @@ contract IdeaProject {
         }
     }
 
-    function withdraw(uint8 _stage) public onlyEngine returns (uint _sum) {
-        _sum = workStages[_stage].sum;
+    function calcWithdrawTime() internal {
+        for (uint8 i; i < workStages.length; i += 1) {
+            uint time = workStages[i].stageDays * 1 minutes;
+            
+            if (i == 0) {
+                workStages[i].withdrawTime = now + time;
+            } else {
+                workStages[i].withdrawTime = workStages[i - 1].withdrawTime + time;
+            }
+        }
+    }
 
-        workStages[_stage].sum = 0;
+    function withdraw(uint8 _stage) public onlyEngine returns (uint _sum) {
+        WorkStage stageStruct = workStages[_stage];
+
+        if (stageStruct.withdrawTime >= now) {
+            _sum = stageStruct.sum;
+
+            workStages[_stage].sum = 0;
+        }
     }
 
     function voteForCashBack() public onlyState(States.Workflow) {
