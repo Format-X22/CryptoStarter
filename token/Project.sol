@@ -207,12 +207,10 @@ contract IdeaProject {
 
     function calcWithdrawTime() internal {
         for (uint8 i; i < workStages.length; i += 1) {
-            uint time = workStages[i].stageDays * 1 minutes;
-            
             if (i == 0) {
-                workStages[i].withdrawTime = now + time;
+                workStages[i].withdrawTime = now + requiredDays * 1 minutes;
             } else {
-                workStages[i].withdrawTime = workStages[i - 1].withdrawTime + time;
+                workStages[i].withdrawTime = workStages[i - 1].withdrawTime + workStages[i - 1].stageDays * 1 minutes;
             }
         }
     }
