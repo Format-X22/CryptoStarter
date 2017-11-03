@@ -161,17 +161,21 @@ contract IdeaProject {
     }
 
     function projectWorkFail() internal {
-        uint failTime = fundingEndTime;
-
         state = States.WorkFail;
 
-        for (uint8 i; i < workStages.length; i += 1) {
-            failTime = failTime.add(workStages[i].stageDays * 1 minutes);
-            failInvestPercents = failInvestPercents.add(workStages[i].percent);
+        for (uint8 i = 1; i < workStages.length; i += 1) {
+            failInvestPercents += workStages[i - 1].percent;
 
-            if (failTime > now) {
-                failStage = int8(i);
+            if (workStages[i].withdrawTime > now) {
+                failStage = int8(i - 1);
+
+                i = uint8(workStages.length);
             }
+        }
+        
+        if (failStage == -1) {
+            failStage = int8(workStages.length - 1);
+            failInvestPercents = 100;
         }
     }
 
@@ -225,40 +229,46 @@ contract IdeaProject {
         }
     }
 
-    function voteForCashBack() public onlyState(States.Workflow) {
+    function voteForCashBack() public {
         voteForCashBackInPercentOfWeight(100);
     }
 
-    function cancelVoteForCashBack() public onlyState(States.Workflow) {
+    function cancelVoteForCashBack() public {
         voteForCashBackInPercentOfWeight(0);
     }
 
-    function voteForCashBackInPercentOfWeight(uint _percent) public onlyState(States.Workflow) {
-    voteForCashBackInPercentOfWeightForAccount(msg.sender, _percent);
+    function voteForCashBackInPercentOfWeight(uint _percent) public {
+        voteForCashBackInPercentOfWeightForAccount(msg.sender, _percent);
     }
 
     function voteForCashBackInPercentOfWeightForAccount(address _account, uint _percent) internal {
-        uint currentWeight = cashBackWeight[_account];
-        uint supply;
-        uint part;
+        require(_percent <= 100);
 
-        for (uint8 i; i < products.length; i += 1) {
-            supply += IdeaSubCoin(products[i]).totalSupply();
-            part += IdeaSubCoin(products[i]).balanceOf(_account);
-        }
+        updateFundingStateIfNeed();
 
-        cashBackVotes += ((part * (10 ** 10)) / supply) * (_percent - currentWeight);
-        cashBackWeight[_account] = _percent;
+        if (state == States.Workflow) {
+            uint currentWeight = cashBackWeight[_account];
+            uint supply;
+            uint part;
 
-        if (cashBackVotes > 50 * (10 ** 10)) {
-            projectWorkFail();
+            for (uint8 i; i < products.length; i += 1) {
+                supply += IdeaSubCoin(products[i]).totalSupply();
+                part += IdeaSubCoin(products[i]).balanceOf(_account);
+            }
+
+            cashBackVotes += ((part * (10 ** 10)) / supply) * (_percent - currentWeight);
+            cashBackWeight[_account] = _percent;
+
+            if (cashBackVotes > 50 * (10 ** 10)) {
+                projectWorkFail();
+            }
         }
     }
 
     function updateVotesOnTransfer(address _from, address _to) public onlyProduct {
         if (isWorkflowState()) {
-            voteForCashBackInPercentOfWeightForAccount(_from, cashBackWeight[_from]);
-            voteForCashBackInPercentOfWeightForAccount(_to, cashBackWeight[_to]);
+            voteForCashBackInPercentOfWeightForAccount(_from, 0);
+            voteForCashBackInPercentOfWeightForAccount(_to, 0);
         }
     }
 
@@ -291,5 +301,15 @@ contract IdeaProject {
         }
 
         isCashBack[_account] = true;
+    }
+
+    function updateFundingStateIfNeed() internal {
+        if (isFundingState() && now > fundingEndTime) {
+            if (earned >= required) {
+                state = States.Workflow;
+            } else {
+                state = States.FundingFail;
+            }
+        }
     }
 }

@@ -44,20 +44,24 @@ contract IdeaSubCoin is IdeaBasicCoin {
     }
 
     function transfer(address _to, uint _value) public returns (bool success) {
+        IdeaProject(project).updateVotesOnTransfer(msg.sender, _to);
+
         bool result = super.transfer(_to, _value);
 
-        if (result) {
-            IdeaProject(project).updateVotesOnTransfer(msg.sender, _to);
+        if (!result) {
+            revert();
         }
 
         return result;
     }
 
     function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
+        IdeaProject(project).updateVotesOnTransfer(_from, _to);
+
         bool result = super.transferFrom(_from, _to, _value);
 
-        if (result) {
-            IdeaProject(project).updateVotesOnTransfer(_from, _to);
+        if (!result) {
+            revert();
         }
 
         return result;
