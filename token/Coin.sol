@@ -52,22 +52,22 @@ contract IdeaCoin is IdeaBasicCoin {
         } else if (icoState == IcoStates.Ico && soldIdeaWeiIco <= 35000000 ether) {
             uint elapsed = now - icoStartTimestamp;
 
-            if (elapsed <= 1 days) {
+            if (elapsed <= 1 minutes) {
 
                 tokens = msg.value * 1250;
                 balances[msg.sender] += tokens;
 
-            } else if (elapsed <= 6 days && elapsed > 1 days) {
+            } else if (elapsed <= 6 minutes && elapsed > 1 minutes) {
 
                 tokens = msg.value * 1150;                          
                 balances[msg.sender] += tokens;
 
-            } else if (elapsed <= 11 days && elapsed > 6 days) {
+            } else if (elapsed <= 11 minutes && elapsed > 6 minutes) {
 
                 tokens = msg.value * 1100;
                 balances[msg.sender] += tokens;
 
-            } else if (elapsed <= 16 days && elapsed > 11 days) {
+            } else if (elapsed <= 16 minutes && elapsed > 11 minutes) {
 
                 tokens = msg.value * 1050;
                 balances[msg.sender] += tokens;
