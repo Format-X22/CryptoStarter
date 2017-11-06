@@ -49,53 +49,5 @@ Dir['locale/*'].each do |path|
 end
 
 get '/' do
-	page 'index', locale.en
-end
-
-get '/de' do
-	page 'index', locale.de
-end
-
-get '/fr' do
-	page 'index', locale.fr
-end
-
-get '/ch' do
-	page 'index', locale.ch
-end
-
-get '/ar' do
-	page 'index', locale.ar
-end
-
-get '/ru' do
-	page 'index', locale.ru
-end
-
-post '/api/pre-register' do
-	data = get_data
-
-	if data['message'].length > 0
-		# Silent ban
-		success
-		return
-	end
-
-	user_mail = send_mail(
-		data['email'],
-		'Success CryptoStarter pre-registration!',
-		'Your project successful registered in CryptoStarter project list!'
-	)
-
-	if user_mail.body.length == 0
-		send_mail(
-			ENV['TEAM_EMAIL'],
-			'CryptoStarter pre-register',
-			"Project data:\n\n#{data['project']}\n\n#{data['email']}\n\n#{data['description']}"
-		)
-
-		success
-	else
-		failure 'Invalid Email address.'
-	end
+	page 'coming', locale.en
 end
