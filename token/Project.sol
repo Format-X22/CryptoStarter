@@ -121,21 +121,7 @@ contract IdeaProject {
         require(products.length > 0);
         require(currentWorkStagePercent == 100);
 
-        uint raw;
-        uint reserve;
-        uint reserveTotal;
-
         state = States.Coming;
-
-        for (uint8 i; i < workStages.length; i += 1) {
-            raw = required.mul(workStages[i].percent);
-            reserve = raw % 100;
-            reserveTotal = reserveTotal.add(reserve);
-
-            workStages[i].sum = raw.sub(reserve).div(100);
-        }
-    
-        workStages[workStages.length - 1].sum = workStages[workStages.length - 1].sum.add(reserveTotal);
     }
 
     function startFunding() public onlyState(States.Coming) onlyOwner {
@@ -147,7 +133,23 @@ contract IdeaProject {
     }
 
     function projectWorkStarted() public onlyState(States.Funding) onlyEngine {
+        startWorkflow();
+    }
+
+    function startWorkflow() internal {
+        uint used;
+        uint current;
+        uint len = workStages.length;
+
         state = States.Workflow;
+
+        for (uint8 i; i < len; i += 1) {
+            current = earned.mul(workStages[i].percent).div(100);
+            workStages[i].sum = current;
+            used = used.add(current);
+        }
+
+        workStages[len - 1].sum = workStages[len - 1].sum.add(earned.sub(used));
     }
 
     function projectDone() public onlyState(States.Workflow) onlyOwner {
@@ -306,7 +308,7 @@ contract IdeaProject {
     function updateFundingStateIfNeed() internal {
         if (isFundingState() && now > fundingEndTime) {
             if (earned >= required) {
-                state = States.Workflow;
+                startWorkflow();
             } else {
                 state = States.FundingFail;
             }

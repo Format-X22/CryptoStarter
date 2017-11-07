@@ -24,12 +24,6 @@ contract IdeaSubCoin is IdeaBasicCoin {
         _;
     }
 
-    modifier blockCashBacked(_from, _to) {
-        require(!IdeaProject(project).isCashBack(_from));
-        require(!IdeaProject(project).isCashBack(_to));
-        _;
-    }
-
     function IdeaSubCoin(
         address _owner,
         string _name,
@@ -49,10 +43,10 @@ contract IdeaSubCoin is IdeaBasicCoin {
         engine = _engine;
     }
 
-    function transfer(
-        address _to,
-        uint _value
-    ) public blockCashBacked(msg.sender, _to) returns (bool success) {
+    function transfer(address _to, uint _value) public returns (bool success) {
+        require(!IdeaProject(project).isCashBack(msg.sender));
+        require(!IdeaProject(project).isCashBack(_to));
+
         IdeaProject(project).updateVotesOnTransfer(msg.sender, _to);
 
         bool result = super.transfer(_to, _value);
@@ -64,11 +58,10 @@ contract IdeaSubCoin is IdeaBasicCoin {
         return result;
     }
 
-    function transferFrom(
-        address _from,
-        address _to,
-        uint _value
-    ) public blockCashBacked(_from, _to) returns (bool success) {
+    function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
+        require(!IdeaProject(project).isCashBack(_from));
+        require(!IdeaProject(project).isCashBack(_to));
+
         IdeaProject(project).updateVotesOnTransfer(_from, _to);
 
         bool result = super.transferFrom(_from, _to, _value);
