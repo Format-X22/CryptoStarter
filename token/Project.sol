@@ -127,7 +127,7 @@ contract IdeaProject {
     function startFunding() public onlyState(States.Coming) onlyOwner {
         state = States.Funding;
 
-        fundingEndTime = uint64(now + requiredDays * 1 minutes);
+        fundingEndTime = uint64(now + requiredDays * 1 days);
         calcLastWorkStageStart();
         calcWithdrawTime();
     }
@@ -207,16 +207,16 @@ contract IdeaProject {
         lastWorkStageStartTimestamp = fundingEndTime;
 
         for (uint8 i; i < workStages.length - 1; i += 1) {
-            lastWorkStageStartTimestamp += workStages[i].stageDays * 1 minutes;
+            lastWorkStageStartTimestamp += workStages[i].stageDays * 1 days;
         }
     }
 
     function calcWithdrawTime() internal {
         for (uint8 i; i < workStages.length; i += 1) {
             if (i == 0) {
-                workStages[i].withdrawTime = now + requiredDays * 1 minutes;
+                workStages[i].withdrawTime = now + requiredDays * 1 days;
             } else {
-                workStages[i].withdrawTime = workStages[i - 1].withdrawTime + workStages[i - 1].stageDays * 1 minutes;
+                workStages[i].withdrawTime = workStages[i - 1].withdrawTime + workStages[i - 1].stageDays * 1 days;
             }
         }
     }
