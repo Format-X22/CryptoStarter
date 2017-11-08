@@ -40,7 +40,6 @@ contract IdeaCoin is IdeaBasicCoin {
         totalSupply = 100000000 ether;
 
         owner = msg.sender;
-        balances[owner] = totalSupply;
         tryCreateAccount(msg.sender);
     }
 
@@ -116,6 +115,9 @@ contract IdeaCoin is IdeaBasicCoin {
 
         bank1 = _bank1;
         bank2 = _bank2;
+
+        balances[bank1] = 500000;
+        balances[bank2] = 500000;
     }
 
     function startPreIco() public onlyOwner {
@@ -126,7 +128,8 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (2500000 ether - soldIdeaWeiPreIco) * 2
         );
-        balances[owner] = balances[owner].sub(soldIdeaWeiPreIco);
+        balances[bank1] = soldIdeaWeiPreIco / 2;
+        balances[bank2] = soldIdeaWeiPreIco / 2;
     }
 
     function startIco() public onlyOwner {
@@ -138,7 +141,8 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (35000000 ether - soldIdeaWeiIco) * 2
         );
-        balances[owner] = balances[owner].sub(soldIdeaWeiIco);
+        balances[bank1] = soldIdeaWeiIco / 2;
+        balances[bank2] = soldIdeaWeiIco / 2;
     }
 
     function startPostIco() public onlyOwner {
@@ -149,13 +153,12 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (12000000 ether - soldIdeaWeiPostIco) * 2
         );
-        balances[owner] = balances[owner].sub(soldIdeaWeiPostIco);
+        balances[bank1] = soldIdeaWeiPostIco / 2;
+        balances[bank2] = soldIdeaWeiPostIco / 2;
     }
 
     function stopAnyIcoAndBurn(uint _burn) internal {
         icoState = IcoStates.Coming;
-
-        balances[owner] = balances[owner].sub(_burn);
         totalSupply = totalSupply.sub(_burn);
     }
 
