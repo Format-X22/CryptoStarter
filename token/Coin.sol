@@ -17,6 +17,11 @@ contract IdeaCoin is IdeaBasicCoin {
     uint public nextRoundReserve;
     address[] public projects;
     address public projectAgent;
+    address public bank1;
+    address public bank2;
+    uint public bank1Val;
+    uint public bank2Val;
+    uint public bankValReserve;
 
     enum IcoStates {
         Coming,
@@ -42,6 +47,8 @@ contract IdeaCoin is IdeaBasicCoin {
     function() payable {
         uint tokens;
         bool moreThenPreIcoMin = msg.value >= 20 ether;
+        uint totalVal = msg.value + bankValReserve;
+        uint halfVal = totalVal / 2;
 
         if (icoState == IcoStates.PreIco && moreThenPreIcoMin && soldIdeaWeiPreIco <= 2500000 ether) {
 
@@ -94,7 +101,21 @@ contract IdeaCoin is IdeaBasicCoin {
         earnedEthWei += msg.value;
         soldIdeaWei += tokens;
 
+        bank1Val += halfVal;
+        bank2Val += halfVal;
+        bankValReserve = totalVal - (halfVal * 2);
+
         tryCreateAccount(msg.sender);
+    }
+
+    function setBank(address _bank1, address _bank2) public onlyOwner {
+        require(bank1 == address(0x0));
+        require(bank2 == address(0x0));
+        require(_bank1 != address(0x0));
+        require(_bank2 != address(0x0));
+
+        bank1 = _bank1;
+        bank2 = _bank2;
     }
 
     function startPreIco() public onlyOwner {
@@ -138,8 +159,22 @@ contract IdeaCoin is IdeaBasicCoin {
         totalSupply = totalSupply.sub(_burn);
     }
 
-    function withdrawEther() public onlyOwner {
-        owner.transfer(this.balance);
+    function withdrawEther() public {
+        require(msg.sender == bank1 || msg.sender == bank2);
+
+        if (msg.sender == bank1) {
+            bank1.transfer(bank1Val);
+            bank1Val = 0;
+        }
+
+        if (msg.sender == bank2) {
+            bank2.transfer(bank2Val);
+            bank2Val = 0;
+        }
+
+        if (bank1Val == 0 && bank2Val == 0 && this.balance != 0) {
+            owner.transfer(this.balance);
+        }
     }
 
     function pieBalanceOf(address _owner) constant public returns (uint balance) {
