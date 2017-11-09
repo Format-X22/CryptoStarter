@@ -116,8 +116,8 @@ contract IdeaCoin is IdeaBasicCoin {
         bank1 = _bank1;
         bank2 = _bank2;
 
-        balances[bank1] = 500000;
-        balances[bank2] = 500000;
+        balances[bank1] = 500000 ether;
+        balances[bank2] = 500000 ether;
     }
 
     function startPreIco() public onlyOwner {
