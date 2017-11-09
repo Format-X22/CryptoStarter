@@ -9,6 +9,14 @@ html
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
 
+        //- Google
+        script(async src='https://www.googletagmanager.com/gtag/js?id=UA-109290418-2')
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109290418-2');
+
         block head
 
         link(href='css/theme.css' rel='stylesheet')
