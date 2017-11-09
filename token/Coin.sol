@@ -128,8 +128,8 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (2500000 ether - soldIdeaWeiPreIco) * 2
         );
-        balances[bank1] = soldIdeaWeiPreIco / 2;
-        balances[bank2] = soldIdeaWeiPreIco / 2;
+        balances[bank1] += soldIdeaWeiPreIco / 2;
+        balances[bank2] += soldIdeaWeiPreIco / 2;
     }
 
     function startIco() public onlyOwner {
@@ -141,8 +141,8 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (35000000 ether - soldIdeaWeiIco) * 2
         );
-        balances[bank1] = soldIdeaWeiIco / 2;
-        balances[bank2] = soldIdeaWeiIco / 2;
+        balances[bank1] += soldIdeaWeiIco / 2;
+        balances[bank2] += soldIdeaWeiIco / 2;
     }
 
     function startPostIco() public onlyOwner {
@@ -153,8 +153,8 @@ contract IdeaCoin is IdeaBasicCoin {
         stopAnyIcoAndBurn(
             (12000000 ether - soldIdeaWeiPostIco) * 2
         );
-        balances[bank1] = soldIdeaWeiPostIco / 2;
-        balances[bank2] = soldIdeaWeiPostIco / 2;
+        balances[bank1] += soldIdeaWeiPostIco / 2;
+        balances[bank2] += soldIdeaWeiPostIco / 2;
     }
 
     function stopAnyIcoAndBurn(uint _burn) internal {
