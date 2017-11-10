@@ -17,6 +17,18 @@
     <link rel="apple-touch-icon" href="img/logo/180.png" sizes="180x180">
     <link rel="apple-touch-icon" href="img/logo/152.png" sizes="152x152">
     <link rel="apple-touch-icon" href="img/logo/167.png" sizes="167x167">
+    <script type="text/javascript">
+      //<![CDATA[
+      var tlJsHost = ((window.location.protocol == "https:") ?
+          "https://secure.comodo.com/" :
+          "http://www.trustlogo.com/");
+      document.write(unescape(
+          "%3Cscript src='" +
+          tlJsHost +
+          "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"
+      ));
+      //]]>
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -108,10 +120,66 @@
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-2">
-          <p><%= l.ico.info_before %></p>
+          <p><%= l.ico.info_in %></p>
+          <hr/>
+          <p><em><%= l.ico.comodo %></em></p>
+          <div class="text-center center-block cs-comodo">
+            <script language="JavaScript" type="text/javascript">
+              TrustLogo(
+                  'https://idea-cs-prod.herokuapp.com/img/comodo/comodo_secure_seal_100x85_transp.png',
+                  'CL1',
+                  'none'
+              );
+            </script><a class="cs-positive-ssl" id="comodoTL" href="https://www.positivessl.com/" target="_BLANK">Positive SSL</a>
+          </div>
         </div>
         <div class="col-md-4"><img class="cs-ico-img center-block" src="/img/logo/origin.svg"/>
           <h2 class="text-center">IdeaCoin</h2>
+          <div class="cs-buy-button">
+            <button class="btn btn-default btn-primary btn-block btn-lg" id="buy" data-toggle="collapse" data-target="#buy-dialog" aria-expanded="false" aria-controls="buy-dialog"><%= l.ico.buy_button %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row collapse" id="buy-dialog">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="well">
+            <div id="ico-confirm">
+              <h5><%= l.ico.agreement_title %></h5>
+              <label class="cs-pointer">
+                <div class="col-md-1">
+                  <input class="pull-right" id="no-usa" type="checkbox"/>
+                </div>
+                <div class="col-md-11"><span><%= l.ico.agreement_no_usa %></span></div>
+              </label>
+            </div>
+            <div class="collapse" id="ico-data"><br/>
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label"><%= l.ico.contract_title %></label>
+                  <div class="col-sm-6">
+                    <p class="form-control-static cs-contract-address">0xa6047765e275522bFA0Ef6638cBc402DE023aA86</p>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-default" id="copy-contract" data-clipboard-text="0xa6047765e275522bFA0Ef6638cBc402DE023aA86"><%= l.ico.copy %>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <hr/>
+              <p><em><%= l.ico.instruction_1 %></em></p><br/>
+              <p><em><%= l.ico.instruction_2 %></em></p><br/>
+              <p><em><%= l.ico.instruction_3 %></em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row cs-progress-row">
+        <div class="col-md-6 col-md-offset-3">
+          <h6><%= l.ico.invested %></h6>
+          <div class="progress cs-ico-progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" id="earned"></div>
+          </div><br/><span class="text-left pull-left">$0</span><span class="text-right pull-right">$500 000</span>
         </div>
       </div>
       <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="buy-title">

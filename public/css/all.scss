@@ -320,8 +320,21 @@ h2.cs-title {
 	padding: 15px 50px;
 }
 
-.cs-ico-progress {
-	margin-bottom: 0;
+.cs-progress-row {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	.cs-ico-progress {
+		margin-bottom: 0;
+	}
+}
+
+.cs-comodo {
+	margin-top: -30px;
+
+	.cs-positive-ssl {
+		margin-top: -10px;
+	}
 }
 
 .cs-ico-instruction-logo {
