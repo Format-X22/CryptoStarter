@@ -29,6 +29,7 @@ class Landing
 		@email          = e['#email']
 		@description    = e['#description']
 		@message        = e['#message']
+		@captcha        = e['#g-recaptcha-response']
 		@send           = e['#send']
 		@slider         = e['#wow-slider']
 		@slider_loader  = e['#wow-fix-loader']
@@ -103,7 +104,8 @@ class Landing
 			project:     @project.value,
 			email:       @email.value,
 			description: @description.value,
-			message:     @message.value
+			message:     @message.value,
+			captcha:     @captcha.value
 		} do |request|
 			handle_registration(request)
 		end

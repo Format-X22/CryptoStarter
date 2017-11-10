@@ -1,3 +1,4 @@
+require 'http'
 require 'recursive-open-struct'
 require 'sinatra'
 require 'sendgrid-ruby'
@@ -79,6 +80,18 @@ post '/api/pre-register' do
 		# Silent ban
 		success
 		return
+	end
+
+	captcha_request = HTTP.post('https://www.google.com/recaptcha/api/siteverify', form: {
+		secret: ENV['CAPTCHA'],
+		response: data['captcha'],
+		remoteip: request.ip
+	})
+
+	captcha_data = JSON.parse captcha_request.body.readpartial
+
+	unless captcha_data[:success]
+		failure 'Bad Google captcha.'
 	end
 
 	user_mail = send_mail(
