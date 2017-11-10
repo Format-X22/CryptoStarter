@@ -11,6 +11,10 @@ body {
 	padding-top: 88px;
 }
 
+.rtl {
+	direction: rtl;
+}
+
 @media (max-width: 767px) {
 	.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
 		box-shadow: 0 -20px 20px -20px rgba(142, 142, 142, 0.95) inset;

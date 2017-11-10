@@ -22444,17 +22444,17 @@ Opal.modules["Landing"] = function(Opal) {
   function $rb_gt(lhs, rhs) {
     return (typeof(lhs) === 'number' && typeof(rhs) === 'number') ? lhs > rhs : lhs['$>'](rhs);
   }
-  var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $hash2 = Opal.hash2, $gvars = Opal.gvars;
+  var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $gvars = Opal.gvars, $hash2 = Opal.hash2;
 
-  Opal.add_stubs(['$require', '$include', '$map_elements', '$expose_plugins', '$init_scroll_to_top', '$init_pre_register', '$init_ico', '$after', '$init_slider', '$[]', '$expose', '$on', '$remove_class', '$>', '$scroll_top', '$effect', '$animate', '$valid_tracker', '$length', '$value', '$try_send_registration', '$==', '$mark_invalid', '$post', '$handle_registration', '$ok?', '$json', '$modal', '$show_error', '$to_n', '$revolution', '$show', '$hide', '$init_copy_button', '$js_new', '$lambda', '$add_class']);
+  Opal.add_stubs(['$require', '$include', '$map_elements', '$expose_plugins', '$init_rtl', '$init_scroll_to_top', '$init_pre_register', '$init_ico', '$after', '$init_slider', '$[]', '$expose', '$==', '$pathname', '$location', '$window', '$add_class', '$on', '$remove_class', '$>', '$scroll_top', '$effect', '$animate', '$valid_tracker', '$length', '$value', '$try_send_registration', '$mark_invalid', '$post', '$handle_registration', '$ok?', '$json', '$modal', '$show_error', '$to_n', '$revolution', '$show', '$hide', '$init_copy_button', '$js_new', '$lambda']);
   self.$require("UtilsPack");
   return (function($base, $super) {
     function $Landing(){};
     var self = $Landing = $klass($base, $super, 'Landing', $Landing);
 
-    var def = self.$$proto, $scope = self.$$scope, TMP_2, TMP_3, TMP_4, TMP_7, TMP_12, TMP_14, TMP_15, TMP_16, TMP_19, TMP_23;
+    var def = self.$$proto, $scope = self.$$scope, TMP_2, TMP_3, TMP_4, TMP_5, TMP_8, TMP_13, TMP_15, TMP_16, TMP_17, TMP_20, TMP_24;
 
-    def.js_window = def.to_top = def.project = def.email = def.description = def.send = def.message = def.register_modal = def.slider = def.slider_loader = def.no_usa = nil;
+    def.body_and_html = def.js_window = def.to_top = def.project = def.email = def.description = def.send = def.message = def.register_modal = def.slider = def.slider_loader = def.no_usa = nil;
     self.$include($scope.get('UtilsPack'));
 
     Opal.cdecl($scope, 'TO_TOP_EDGE', 100);
@@ -22466,6 +22466,7 @@ Opal.modules["Landing"] = function(Opal) {
 
       self.$map_elements();
       self.$expose_plugins();
+      self.$init_rtl();
       self.$init_scroll_to_top();
       self.$init_pre_register();
       self.$init_ico();
@@ -22501,10 +22502,21 @@ Opal.modules["Landing"] = function(Opal) {
       return $scope.get('Element').$expose("revolution");
     }, TMP_4.$$arity = 0);
 
-    Opal.defn(self, '$init_scroll_to_top', TMP_7 = function $$init_scroll_to_top() {
-      var $a, $b, TMP_5, $c, TMP_6, self = this;
+    Opal.defn(self, '$init_rtl', TMP_5 = function $$init_rtl() {
+      var self = this;
+      if ($gvars.$ == null) $gvars.$ = nil;
 
-      ($a = ($b = self.js_window).$on, $a.$$p = (TMP_5 = function(){var self = TMP_5.$$s || this, $c;
+      if ($gvars.$.$window().$location().$pathname()['$==']("/ar")) {
+        return self.body_and_html.$add_class("rtl")
+        } else {
+        return nil
+      };
+    }, TMP_5.$$arity = 0);
+
+    Opal.defn(self, '$init_scroll_to_top', TMP_8 = function $$init_scroll_to_top() {
+      var $a, $b, TMP_6, $c, TMP_7, self = this;
+
+      ($a = ($b = self.js_window).$on, $a.$$p = (TMP_6 = function(){var self = TMP_6.$$s || this, $c;
         if (self.to_top == null) self.to_top = nil;
         if (self.js_window == null) self.js_window = nil;
 
@@ -22513,35 +22525,35 @@ Opal.modules["Landing"] = function(Opal) {
           return self.to_top.$effect("fade_in")
           } else {
           return self.to_top.$effect("fade_out")
-        };}, TMP_5.$$s = self, TMP_5.$$arity = 0, TMP_5), $a).call($b, "scroll");
-      return ($a = ($c = self.to_top).$on, $a.$$p = (TMP_6 = function(){var self = TMP_6.$$s || this;
+        };}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($b, "scroll");
+      return ($a = ($c = self.to_top).$on, $a.$$p = (TMP_7 = function(){var self = TMP_7.$$s || this;
         if (self.body_and_html == null) self.body_and_html = nil;
 
-      return self.body_and_html.$animate($hash2(["scrollTop"], {"scrollTop": 0}), $scope.get('TO_TOP_SPEED'))}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($c, "click");
-    }, TMP_7.$$arity = 0);
+      return self.body_and_html.$animate($hash2(["scrollTop"], {"scrollTop": 0}), $scope.get('TO_TOP_SPEED'))}, TMP_7.$$s = self, TMP_7.$$arity = 0, TMP_7), $a).call($c, "click");
+    }, TMP_8.$$arity = 0);
 
-    Opal.defn(self, '$init_pre_register', TMP_12 = function $$init_pre_register() {
-      var $a, $b, TMP_8, $c, TMP_9, $d, TMP_10, $e, TMP_11, self = this;
+    Opal.defn(self, '$init_pre_register', TMP_13 = function $$init_pre_register() {
+      var $a, $b, TMP_9, $c, TMP_10, $d, TMP_11, $e, TMP_12, self = this;
 
-      ($a = ($b = self).$valid_tracker, $a.$$p = (TMP_8 = function(){var self = TMP_8.$$s || this;
+      ($a = ($b = self).$valid_tracker, $a.$$p = (TMP_9 = function(){var self = TMP_9.$$s || this;
         if (self.project == null) self.project = nil;
 
-      return $rb_gt(self.project.$value().$length(), 0)}, TMP_8.$$s = self, TMP_8.$$arity = 0, TMP_8), $a).call($b, self.project, "change");
-      ($a = ($c = self).$valid_tracker, $a.$$p = (TMP_9 = function(){var self = TMP_9.$$s || this;
+      return $rb_gt(self.project.$value().$length(), 0)}, TMP_9.$$s = self, TMP_9.$$arity = 0, TMP_9), $a).call($b, self.project, "change");
+      ($a = ($c = self).$valid_tracker, $a.$$p = (TMP_10 = function(){var self = TMP_10.$$s || this;
         if (self.email == null) self.email = nil;
 
-      return $rb_gt(self.email.$value().$length(), 0)}, TMP_9.$$s = self, TMP_9.$$arity = 0, TMP_9), $a).call($c, self.email, "change");
-      ($a = ($d = self).$valid_tracker, $a.$$p = (TMP_10 = function(){var self = TMP_10.$$s || this;
+      return $rb_gt(self.email.$value().$length(), 0)}, TMP_10.$$s = self, TMP_10.$$arity = 0, TMP_10), $a).call($c, self.email, "change");
+      ($a = ($d = self).$valid_tracker, $a.$$p = (TMP_11 = function(){var self = TMP_11.$$s || this;
         if (self.description == null) self.description = nil;
 
-      return $rb_gt(self.description.$value().$length(), 0)}, TMP_10.$$s = self, TMP_10.$$arity = 0, TMP_10), $a).call($d, self.description, "change");
-      return ($a = ($e = self.send).$on, $a.$$p = (TMP_11 = function(){var self = TMP_11.$$s || this;
+      return $rb_gt(self.description.$value().$length(), 0)}, TMP_11.$$s = self, TMP_11.$$arity = 0, TMP_11), $a).call($d, self.description, "change");
+      return ($a = ($e = self.send).$on, $a.$$p = (TMP_12 = function(){var self = TMP_12.$$s || this;
 
-      return self.$try_send_registration()}, TMP_11.$$s = self, TMP_11.$$arity = 0, TMP_11), $a).call($e, "click");
-    }, TMP_12.$$arity = 0);
+      return self.$try_send_registration()}, TMP_12.$$s = self, TMP_12.$$arity = 0, TMP_12), $a).call($e, "click");
+    }, TMP_13.$$arity = 0);
 
-    Opal.defn(self, '$try_send_registration', TMP_14 = function $$try_send_registration() {
-      var $a, $b, TMP_13, self = this;
+    Opal.defn(self, '$try_send_registration', TMP_15 = function $$try_send_registration() {
+      var $a, $b, TMP_14, self = this;
 
       if (self.project.$value().$length()['$=='](0)) {
         self.$mark_invalid(self.project);
@@ -22552,12 +22564,12 @@ Opal.modules["Landing"] = function(Opal) {
       if (self.description.$value().$length()['$=='](0)) {
         self.$mark_invalid(self.description);
         return nil;};
-      return ($a = ($b = $scope.get('HTTP')).$post, $a.$$p = (TMP_13 = function(request){var self = TMP_13.$$s || this;
+      return ($a = ($b = $scope.get('HTTP')).$post, $a.$$p = (TMP_14 = function(request){var self = TMP_14.$$s || this;
 if (request == null) request = nil;
-      return self.$handle_registration(request)}, TMP_13.$$s = self, TMP_13.$$arity = 1, TMP_13), $a).call($b, "/api/pre-register", $hash2(["payload"], {"payload": $hash2(["project", "email", "description", "message"], {"project": self.project.$value(), "email": self.email.$value(), "description": self.description.$value(), "message": self.message.$value()})}));
-    }, TMP_14.$$arity = 0);
+      return self.$handle_registration(request)}, TMP_14.$$s = self, TMP_14.$$arity = 1, TMP_14), $a).call($b, "/api/pre-register", $hash2(["payload"], {"payload": $hash2(["project", "email", "description", "message"], {"project": self.project.$value(), "email": self.email.$value(), "description": self.description.$value(), "message": self.message.$value()})}));
+    }, TMP_15.$$arity = 0);
 
-    Opal.defn(self, '$handle_registration', TMP_15 = function $$handle_registration(request) {
+    Opal.defn(self, '$handle_registration', TMP_16 = function $$handle_registration(request) {
       var $a, $b, self = this;
 
       if ((($a = ($b = request['$ok?'](), $b !== false && $b !== nil && $b != null ?request.$json()['$[]']("success") : $b)) !== nil && $a != null && (!$a.$$is_boolean || $a == true))) {
@@ -22565,47 +22577,47 @@ if (request == null) request = nil;
         } else {
         return self.$show_error("Request error - " + (request.$json()['$[]']("message")))
       };
-    }, TMP_15.$$arity = 1);
+    }, TMP_16.$$arity = 1);
 
-    Opal.defn(self, '$init_slider', TMP_16 = function $$init_slider() {
+    Opal.defn(self, '$init_slider', TMP_17 = function $$init_slider() {
       var self = this, config = nil;
 
       config = $hash2(["dottedOverlay", "delay", "startwidth", "startheight", "hideThumbs", "thumbWidth", "thumbHeight", "thumbAmount", "navigationType", "touchenabled", "onHoverStop", "shadow", "fullWidth", "fullScreen", "spinner", "stopLoop", "stopAfterLoops", "stopAtSlide", "shuffle", "autoHeight", "forceFullWidth", "hideThumbsOnMobile", "hideBulletsOnMobile", "hideArrowsOnMobile", "hideThumbsUnderResolution", "hideSliderAtLimit", "hideCaptionAtLimit", "hideAllCaptionAtLilmit", "startWithSlide", "fullScreenOffsetContainer"], {"dottedOverlay": "none", "delay": 9000, "startwidth": 1170, "startheight": 700, "hideThumbs": 200, "thumbWidth": 100, "thumbHeight": 50, "thumbAmount": 1, "navigationType": "none", "touchenabled": "on", "onHoverStop": "on", "shadow": 0, "fullWidth": "on", "fullScreen": "off", "spinner": "spinner3", "stopLoop": "off", "stopAfterLoops": -1, "stopAtSlide": -1, "shuffle": "off", "autoHeight": "off", "forceFullWidth": "off", "hideThumbsOnMobile": "off", "hideBulletsOnMobile": "off", "hideArrowsOnMobile": "off", "hideThumbsUnderResolution": 0, "hideSliderAtLimit": 0, "hideCaptionAtLimit": 0, "hideAllCaptionAtLilmit": 0, "startWithSlide": 0, "fullScreenOffsetContainer": ""}).$to_n();
       self.slider.$show().$revolution(config);
       return self.slider_loader.$hide();
-    }, TMP_16.$$arity = 0);
+    }, TMP_17.$$arity = 0);
 
-    Opal.defn(self, '$init_ico', TMP_19 = function $$init_ico() {
-      var $a, $b, TMP_17, self = this;
+    Opal.defn(self, '$init_ico', TMP_20 = function $$init_ico() {
+      var $a, $b, TMP_18, self = this;
 
-      ($a = ($b = self.no_usa).$on, $a.$$p = (TMP_17 = function(){var self = TMP_17.$$s || this, $c, $d, TMP_18;
+      ($a = ($b = self.no_usa).$on, $a.$$p = (TMP_18 = function(){var self = TMP_18.$$s || this, $c, $d, TMP_19;
         if (self.ico_confirm == null) self.ico_confirm = nil;
 
-      return ($c = ($d = self.ico_confirm).$effect, $c.$$p = (TMP_18 = function(){var self = TMP_18.$$s || this;
+      return ($c = ($d = self.ico_confirm).$effect, $c.$$p = (TMP_19 = function(){var self = TMP_19.$$s || this;
           if (self.ico_data == null) self.ico_data = nil;
 
-        return self.ico_data.$effect("fade_in")}, TMP_18.$$s = self, TMP_18.$$arity = 0, TMP_18), $c).call($d, "fade_out")}, TMP_17.$$s = self, TMP_17.$$arity = 0, TMP_17), $a).call($b, "click");
+        return self.ico_data.$effect("fade_in")}, TMP_19.$$s = self, TMP_19.$$arity = 0, TMP_19), $c).call($d, "fade_out")}, TMP_18.$$s = self, TMP_18.$$arity = 0, TMP_18), $a).call($b, "click");
       self.$init_copy_button("copy-contract");
       return self.$init_copy_button("copy-abi");
-    }, TMP_19.$$arity = 0);
+    }, TMP_20.$$arity = 0);
 
-    return (Opal.defn(self, '$init_copy_button', TMP_23 = function $$init_copy_button(id) {
-      var $a, $b, TMP_20, $c, TMP_22, self = this, selector = nil, button = nil, button_clip = nil;
+    return (Opal.defn(self, '$init_copy_button', TMP_24 = function $$init_copy_button(id) {
+      var $a, $b, TMP_21, $c, TMP_23, self = this, selector = nil, button = nil, button_clip = nil;
       if ($gvars.$ == null) $gvars.$ = nil;
 
       selector = "#" + (id);
       button = $scope.get('Element')['$[]'](selector);
       button_clip = self.$js_new($gvars.$['$[]']("Clipboard"), selector);
-      button_clip.$on("success", ($a = ($b = self).$lambda, $a.$$p = (TMP_20 = function(){var self = TMP_20.$$s || this, $c, $d, TMP_21;
+      button_clip.$on("success", ($a = ($b = self).$lambda, $a.$$p = (TMP_21 = function(){var self = TMP_21.$$s || this, $c, $d, TMP_22;
 
       button.$add_class("btn-success");
-        return ($c = ($d = self).$after, $c.$$p = (TMP_21 = function(){var self = TMP_21.$$s || this;
+        return ($c = ($d = self).$after, $c.$$p = (TMP_22 = function(){var self = TMP_22.$$s || this;
 
-        return button.$remove_class("btn-success")}, TMP_21.$$s = self, TMP_21.$$arity = 0, TMP_21), $c).call($d, 0.25);}, TMP_20.$$s = self, TMP_20.$$arity = 0, TMP_20), $a).call($b));
-      return button_clip.$on("error", ($a = ($c = self).$lambda, $a.$$p = (TMP_22 = function(){var self = TMP_22.$$s || this;
+        return button.$remove_class("btn-success")}, TMP_22.$$s = self, TMP_22.$$arity = 0, TMP_22), $c).call($d, 0.25);}, TMP_21.$$s = self, TMP_21.$$arity = 0, TMP_21), $a).call($b));
+      return button_clip.$on("error", ($a = ($c = self).$lambda, $a.$$p = (TMP_23 = function(){var self = TMP_23.$$s || this;
 
-      return button.$add_class("btn-danger")}, TMP_22.$$s = self, TMP_22.$$arity = 0, TMP_22), $a).call($c));
-    }, TMP_23.$$arity = 1), nil) && 'init_copy_button';
+      return button.$add_class("btn-danger")}, TMP_23.$$s = self, TMP_23.$$arity = 0, TMP_23), $a).call($c));
+    }, TMP_24.$$arity = 1), nil) && 'init_copy_button';
   })($scope.base, null);
 };
 

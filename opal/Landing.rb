@@ -9,6 +9,7 @@ class Landing
 	def initialize
 		map_elements
 		expose_plugins
+		init_rtl
 		init_scroll_to_top
 		init_pre_register
 		init_ico
@@ -40,6 +41,12 @@ class Landing
 	def expose_plugins
 		Element.expose :modal
 		Element.expose :revolution
+	end
+
+	def init_rtl
+		if $$.window.location.pathname == '/ar'
+			@body_and_html.add_class('rtl')
+		end
 	end
 
 	def init_scroll_to_top
