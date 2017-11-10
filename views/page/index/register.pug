@@ -37,7 +37,7 @@ mixin register-block
                 // Spam honey pot
                 +input('message').hidden
 
-            .g-recaptcha(data-sitekey='6LdUADgUAAAAAD0glHZgZldl0qyz3KSdCBWutdD5')
+            #g-recaptcha.g-recaptcha(data-sitekey='6LdUADgUAAAAAD0glHZgZldl0qyz3KSdCBWutdD5')
             hr
             .form-group
                 +button('send', erb('l.register.register_project_button')).btn-primary.pull-right

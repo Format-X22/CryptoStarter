@@ -29,7 +29,6 @@ class Landing
 		@email          = e['#email']
 		@description    = e['#description']
 		@message        = e['#message']
-		@captcha        = e['#g-recaptcha-response']
 		@send           = e['#send']
 		@slider         = e['#wow-slider']
 		@slider_loader  = e['#wow-fix-loader']
@@ -100,12 +99,15 @@ class Landing
 			return
 		end
 
+		# dynamic load
+		captcha = Element['#g-recaptcha-response'].value
+
 		HTTP.post '/api/pre-register', payload: {
 			project:     @project.value,
 			email:       @email.value,
 			description: @description.value,
 			message:     @message.value,
-			captcha:     @captcha.value
+			captcha:     captcha
 		} do |request|
 			handle_registration(request)
 		end
@@ -185,5 +187,4 @@ class Landing
 			button.add_class('btn-danger')
 		end
 	end
-
 end

@@ -22454,7 +22454,7 @@ Opal.modules["Landing"] = function(Opal) {
 
     var def = self.$$proto, $scope = self.$$scope, TMP_2, TMP_3, TMP_4, TMP_5, TMP_8, TMP_13, TMP_15, TMP_16, TMP_17, TMP_20, TMP_24;
 
-    def.body_and_html = def.js_window = def.to_top = def.project = def.email = def.description = def.send = def.message = def.captcha = def.register_modal = def.slider = def.slider_loader = def.no_usa = nil;
+    def.body_and_html = def.js_window = def.to_top = def.project = def.email = def.description = def.send = def.message = def.register_modal = def.slider = def.slider_loader = def.no_usa = nil;
     self.$include($scope.get('UtilsPack'));
 
     Opal.cdecl($scope, 'TO_TOP_EDGE', 100);
@@ -22486,7 +22486,6 @@ Opal.modules["Landing"] = function(Opal) {
       self.email = e['$[]']("#email");
       self.description = e['$[]']("#description");
       self.message = e['$[]']("#message");
-      self.captcha = e['$[]']("#g-recaptcha-response");
       self.send = e['$[]']("#send");
       self.slider = e['$[]']("#wow-slider");
       self.slider_loader = e['$[]']("#wow-fix-loader");
@@ -22554,7 +22553,7 @@ Opal.modules["Landing"] = function(Opal) {
     }, TMP_13.$$arity = 0);
 
     Opal.defn(self, '$try_send_registration', TMP_15 = function $$try_send_registration() {
-      var $a, $b, TMP_14, self = this;
+      var $a, $b, TMP_14, self = this, captcha = nil;
 
       if (self.project.$value().$length()['$=='](0)) {
         self.$mark_invalid(self.project);
@@ -22565,9 +22564,10 @@ Opal.modules["Landing"] = function(Opal) {
       if (self.description.$value().$length()['$=='](0)) {
         self.$mark_invalid(self.description);
         return nil;};
+      captcha = $scope.get('Element')['$[]']("#g-recaptcha-response").$value();
       return ($a = ($b = $scope.get('HTTP')).$post, $a.$$p = (TMP_14 = function(request){var self = TMP_14.$$s || this;
 if (request == null) request = nil;
-      return self.$handle_registration(request)}, TMP_14.$$s = self, TMP_14.$$arity = 1, TMP_14), $a).call($b, "/api/pre-register", $hash2(["payload"], {"payload": $hash2(["project", "email", "description", "message", "captcha"], {"project": self.project.$value(), "email": self.email.$value(), "description": self.description.$value(), "message": self.message.$value(), "captcha": self.captcha.$value()})}));
+      return self.$handle_registration(request)}, TMP_14.$$s = self, TMP_14.$$arity = 1, TMP_14), $a).call($b, "/api/pre-register", $hash2(["payload"], {"payload": $hash2(["project", "email", "description", "message", "captcha"], {"project": self.project.$value(), "email": self.email.$value(), "description": self.description.$value(), "message": self.message.$value(), "captcha": captcha})}));
     }, TMP_15.$$arity = 0);
 
     Opal.defn(self, '$handle_registration', TMP_16 = function $$handle_registration(request) {

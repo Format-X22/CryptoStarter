@@ -90,7 +90,7 @@ post '/api/pre-register' do
 
 	captcha_data = JSON.parse captcha_request.body.readpartial
 
-	unless captcha_data[:success]
+	unless captcha_data['success']
 		failure 'Bad Google captcha.'
 	end
 
