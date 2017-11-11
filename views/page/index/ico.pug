@@ -84,9 +84,9 @@ mixin ico-block
 
         .row.cs-progress-row
             .col-md-6.col-md-offset-3
-                +characteristic('earned', erb('l.ico.invested')).cs-ico-progress
+                +characteristic('earned', erb('l.ico.invested'), erb('earned * 100 / 500000')).cs-ico-progress
                 br
-                span.text-left.pull-left $0
+                span.text-left.pull-left!= erb('earned_to_readable(earned)')
                 span.text-right.pull-right $500 000
 
     if ico_status == 'after'

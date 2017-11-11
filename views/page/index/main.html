@@ -179,8 +179,8 @@
         <div class="col-md-6 col-md-offset-3">
           <h6><%= l.ico.invested %></h6>
           <div class="progress cs-ico-progress">
-            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" id="earned"></div>
-          </div><br/><span class="text-left pull-left">$0</span><span class="text-right pull-right">$500 000</span>
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%= earned * 100 / 500000 %>%;" id="earned"></div>
+          </div><br/><span class="text-left pull-left"><%= earned_to_readable(earned) %></span><span class="text-right pull-right">$500 000</span>
         </div>
       </div>
       <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="buy-title">

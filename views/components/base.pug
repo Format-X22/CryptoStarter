@@ -162,13 +162,13 @@ mixin mobile-top-menu-toggle(id)
         span.icon-bar
         span.icon-bar
 
-mixin characteristic-bar
-    .progress-bar.progress-bar-striped(role='progressbar' style='width: 100%')&attributes(attributes)
+mixin characteristic-bar(width)
+    .progress-bar.progress-bar-striped(role='progressbar' style!='width: ' + (width || 100) + '%')&attributes(attributes)
 
-mixin characteristic(id, name)
+mixin characteristic(id, name, width)
     h6!=name
     .progress&attributes(attributes)
-        +characteristic-bar()(id=id)
+        +characteristic-bar(width)(id=id)
 
 mixin characteristic-large(id, name, type)
     - type = type || 'info'

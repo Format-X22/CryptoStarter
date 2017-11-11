@@ -16,7 +16,7 @@ helpers do
 	end
 
 	def page(path, locale)
-		erb(File.read("views/page/#{path}/main.html"), locals: {l: locale})
+		erb(File.read("views/page/#{path}/main.html"), locals: {l: locale, earned: earned})
 	end
 
 	def success(data = {})
@@ -38,6 +38,31 @@ helpers do
 				Content.new(type: 'text/plain', value: text)
 			).to_json
 		)
+	end
+
+	def earned
+		contract = '0xa6047765e275522bfa0ef6638cbc402de023aa86'
+		link = "https://etherscan.io/readContract?a=#{contract}"
+		raw = HTTP.get(link).to_s
+
+		re = /earnedEthWei.*?<\/i>(.*?)<i>/
+		parsed = raw.match(re)[1]
+
+		wei = parsed.strip.to_f
+		ether = wei * 10 ** -18
+		dollar = ether * 300
+
+		dollar.to_i
+	rescue
+		0
+	end
+
+	def earned_to_readable(earned)
+		formed = '%6d' % earned
+		left = formed[0..2].strip
+		right = formed[3..5]
+
+		"$#{left} #{right}"
 	end
 end
 
