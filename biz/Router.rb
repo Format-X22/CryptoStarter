@@ -42,13 +42,31 @@ get '/projectConstructor-:id' do
 	inner_page 'projectConstructor', 'login'
 end
 
-not_found do
-	status 404
-	page 'error404'
-end
-
-post '/api' do
+post '/api/login' do
 	# TODO
 
 	success
+end
+
+post '/api/register' do
+	data = parse_data
+
+	new_user(data['email'], data['pass'])
+end
+
+post '/api/register-project' do
+	# TODO
+
+	success
+end
+
+post '/api/restore-pass' do
+	# TODO
+
+	success
+end
+
+not_found do
+	status 404
+	page 'error404'
 end

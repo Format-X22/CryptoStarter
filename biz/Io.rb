@@ -30,7 +30,7 @@ helpers do
 		halt 200, {success: false, message: message}.to_json
 	end
 
-	def data
+	def parse_data
 		JSON.parse request.body.read
 	end
 end
