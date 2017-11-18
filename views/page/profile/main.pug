@@ -12,7 +12,15 @@ block body
                 h1!= erb('u.name')
         .row
             .col-md-3.col-md-offset-2
-                img.cs-photo(src='img/team/oleg.jpg')
+                != erb_cond('if u.photo == "none"')
+
+                img.cs-photo(src='img/logo/origin.svg')
+
+                != erb_cond('else')
+
+                //- TODO
+                
+                != erb_cond('end')
             .col-md-5
                 p.cs-about!= erb('u.desc')
         .row.cs-main-controls
@@ -63,7 +71,8 @@ block body
                         th!= erb('l.profile.address')
                         th!= erb('l.profile.project_th')
                         th!= erb('l.profile.project_description_th')
-                        th
+                        th: +icon('pencil')
+
                     != erb_cond('u.projects.each do |project|')
                     tr
                         td.cs-num!= erb('project.address')
@@ -79,6 +88,7 @@ block body
                         th!= erb('l.profile.address')
                         th!= erb('l.profile.project_th')
                         th!= erb('l.profile.project_description_th')
+
                     != erb_cond('u.invested.each do |project|')
                     tr
                         td.cs-num!= erb('project.address')

@@ -6,7 +6,7 @@ class User
 	field :session, type: String
 
 	field :name,  type: String, default: 'CryptoStarter User'
-	field :desc,  type: String, default: '-'
+	field :desc,  type: String, default: ''
 	field :photo, type: String, default: 'none'
 
 	field :projects, type: Array, default: []
