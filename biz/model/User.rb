@@ -5,9 +5,9 @@ class User
 	field :pass,    type: String
 	field :session, type: String
 
-	field :name,  type: String
-	field :desc,  type: String
-	field :photo, type: String
+	field :name,  type: String, default: 'CryptoStarter User'
+	field :desc,  type: String, default: '-'
+	field :photo, type: String, default: 'none'
 
 	field :projects, type: Array, default: []
 	field :invested, type: Array, default: []

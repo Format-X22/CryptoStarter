@@ -9,12 +9,12 @@ block body
     .container.cs-profile
         .row
             .col-md-8.col-md-offset-2
-                h1 Oleg Pavlov
+                h1!= erb('u.name')
         .row
             .col-md-3.col-md-offset-2
                 img.cs-photo(src='img/team/oleg.jpg')
             .col-md-5
-                p.cs-about!= erb('l.demo.profile_about')
+                p.cs-about!= erb('u.desc')
         .row.cs-main-controls
             .col-md-8.col-md-offset-2
                 hr
@@ -64,24 +64,14 @@ block body
                         th!= erb('l.profile.project_th')
                         th!= erb('l.profile.project_description_th')
                         th
+                    != erb_cond('u.projects.each do |project|')
                     tr
-                        td.cs-num 0x374...
-                        td!= erb('l.demo.project_title')
-                        td!= erb('l.demo.project_desc')
+                        td.cs-num!= erb('project.address')
+                        td!= erb('project.title')
+                        td!= erb('project.desc')
                         td
-                            +button-icon('edit-project-1', 'pencil').btn-primary.cs-edit
-                    tr
-                        td.cs-num 0x374...
-                        td!= erb('l.demo.project_title')
-                        td!= erb('l.demo.project_desc')
-                        td
-                            +button-icon('edit-project-2', 'pencil').btn-primary.cs-edit
-                    tr
-                        td.cs-num 0x374...
-                        td!= erb('l.demo.project_title')
-                        td!= erb('l.demo.project_desc')
-                        td
-                            +button-icon('edit-project-3', 'pencil').btn-primary.cs-edit
+                            +button-icon('edit-project-' + erb('project.address'), 'pencil').btn-primary.cs-edit
+                    != erb_cond('end')
 
                 h3!= erb('l.profile.sponsored')
                 table.table
@@ -89,26 +79,12 @@ block body
                         th!= erb('l.profile.address')
                         th!= erb('l.profile.project_th')
                         th!= erb('l.profile.project_description_th')
+                    != erb_cond('u.invested.each do |project|')
                     tr
-                        td.cs-num 0x374...
-                        td!= erb('l.demo.project_title')
-                        td!= erb('l.demo.project_desc')
-                    tr
-                        td.cs-num 0x374...
-                        td!= erb('l.demo.project_title')
-                        td!= erb('l.demo.project_desc')
-                    tr
-                        td.cs-num 0x374...
-                        td!= erb('l.demo.project_title')
-                        td!= erb('l.demo.project_desc')
-                    tr
-                        td.cs-num 0x374...
-                        td!= erb('l.demo.project_title')
-                        td!= erb('l.demo.project_desc')
-                    tr
-                        td.cs-num 0x374...
-                        td!= erb('l.demo.project_title')
-                        td!= erb('l.demo.project_desc')
+                        td.cs-num!= erb('project.address')
+                        td!= erb('project.title')
+                        td!= erb('project.desc')
+                    != erb_cond('end')
                         
 block scripts
     //- no scripts
