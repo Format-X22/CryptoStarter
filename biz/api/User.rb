@@ -4,6 +4,7 @@ helpers do
 		model = User.new(email: email, pass: pass)
 
 		if model.valid?
+			model.session = make_session
 			model.save!
 			success
 		else
