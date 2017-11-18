@@ -7,8 +7,7 @@ helpers do
 
 		erb(page, locals: {
 			l: lang,
-			d: OpenStruct.new(data),
-			a: auth_data
+			d: OpenStruct.new(data)
 		})
 	end
 
