@@ -1,9 +1,11 @@
+require 'ostruct'
+
 get '/' do
-	page 'index', {
+	page 'index', OpenStruct.new({
 		active_projects: active_projects,
 		prepared_projects: prepared_projects,
 		done_projects: done_projects
-	}
+	})
 end
 
 get '/about' do
