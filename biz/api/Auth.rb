@@ -4,9 +4,13 @@ helpers do
 		criteria = User.where(email: email, pass: pass)
 
 		if criteria.exists?
+			session = make_session
+
 			model = criteria.first
-			model.session = make_session
+			model.session = session
 			model.save!
+
+			cookies[:session] = session
 
 			success
 		else

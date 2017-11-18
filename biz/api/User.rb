@@ -4,8 +4,13 @@ helpers do
 		model = User.new(email: email, pass: pass)
 
 		if model.valid?
-			model.session = make_session
+			session = make_session
+
+			model.session = session
 			model.save!
+
+			cookies[:session] = session
+
 			success
 		else
 			failure 'Invalid data'

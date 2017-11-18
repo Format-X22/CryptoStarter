@@ -1,7 +1,9 @@
 helpers do
 
 	def logged_in?
-		true # TODO
+		session = cookies[:session]
+
+		!!session and User.where(session: session).exists?
 	end
 
 	def auth_data
