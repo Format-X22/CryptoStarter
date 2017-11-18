@@ -8,8 +8,8 @@ class User
 	field :name, type: String
 	field :desc, type: String
 
-	field :projects, type: Array
-	field :invested, type: Array
+	field :projects, type: Array, default: []
+	field :invested, type: Array, default: []
 
 	index({email:   1}, {unique: true})
 	index({session: 1}, {sparse: true})
