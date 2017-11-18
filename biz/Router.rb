@@ -35,7 +35,7 @@ get '/term' do
 end
 
 get '/profile-:id' do
-	inner_page 'profile', 'login'
+	inner_page 'profile', 'login', user(params[:id])
 end
 
 get '/projectConstructor-:id' do

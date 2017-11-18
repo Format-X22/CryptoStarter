@@ -1,5 +1,3 @@
-require 'ostruct'
-
 helpers do
 
 	def page(path, data = {})
@@ -7,7 +5,8 @@ helpers do
 
 		erb(page, locals: {
 			l: lang,
-			d: OpenStruct.new(data)
+			d: data,
+			u: user
 		})
 	end
 

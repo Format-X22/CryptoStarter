@@ -1,5 +1,13 @@
 helpers do
 
+	def user(id = 'self')
+		if id == 'self'
+			User.where(session: cookies[:session]).first
+		else
+			User.find(id)
+		end
+	end
+
 	def new_user(email, pass)
 		if User.where(email: email).exists?
 			failure 'Email already registered'
