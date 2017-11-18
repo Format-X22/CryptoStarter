@@ -43,9 +43,9 @@ get '/projectConstructor-:id' do
 end
 
 post '/api/login' do
-	# TODO
+	data = parse_data
 
-	success
+	auth(data['email'], data['pass'])
 end
 
 post '/api/register' do
