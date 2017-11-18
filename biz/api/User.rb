@@ -1,3 +1,5 @@
+require 'digest'
+
 helpers do
 
 	def user(id = 'self')
@@ -18,6 +20,7 @@ helpers do
 		if model.valid?
 			session = make_session
 
+			model.pass = Digest::SHA256.hexdigest(model.pass)
 			model.session = session
 			model.save!
 
@@ -30,6 +33,7 @@ helpers do
 	end
 
 	def auth(email, pass)
+		pass = Digest::SHA256.hexdigest(pass)
 		criteria = User.where(email: email, pass: pass)
 
 		if criteria.exists?
