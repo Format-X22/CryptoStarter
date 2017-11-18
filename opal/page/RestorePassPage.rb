@@ -31,8 +31,7 @@ class RestorePassPage < AbstractPage
 
 	def try_restore
 		if email_valid
-			call_api({
-				action: 'restore_pass',
+			call_api('restore-pass', {
 				email: @email.value
 			}) do
 				$$.location.href = '/login'

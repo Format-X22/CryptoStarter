@@ -27,8 +27,7 @@ class RegisterPage < AbstractPage
 
 	def try_register
 		if email_valid and pass_valid and term_valid
-			call_api({
-				action: 'register',
+			call_api('register', {
 				email: @email.value,
 				pass: @pass.value
 			}) do

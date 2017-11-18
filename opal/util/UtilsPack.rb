@@ -69,8 +69,8 @@ module UtilsPack
 		end
 	end
 
-	def call_api(payload, &callback)
-		HTTP.post '/api', payload: payload do |request|
+	def call_api(point, payload, &callback)
+		HTTP.post "/api/#{point}", payload: payload do |request|
 			if request.ok? and request.json['success']
 				callback.call request.json
 			else

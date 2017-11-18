@@ -22451,7 +22451,7 @@ if (event == null) event = nil;
           }}, TMP_10.$$s = self, TMP_10.$$arity = 1, TMP_10), $a).call($d, "keypress")}, TMP_9.$$s = self, TMP_9.$$arity = 1, TMP_9), $b).call($c);
     }, TMP_8.$$arity = -1);
 
-    Opal.defn(self, '$call_api', TMP_11 = function $$call_api(payload) {
+    Opal.defn(self, '$call_api', TMP_11 = function $$call_api(point, payload) {
       var $a, $b, TMP_12, self = this, $iter = TMP_11.$$p, callback = $iter || nil;
 
       TMP_11.$$p = null;
@@ -22461,8 +22461,8 @@ if (request == null) request = nil;
           return callback.$call(request.$json())
           } else {
           return self.$show_error("Request error - " + (((($c = request.$json()['$[]']("message")) !== false && $c !== nil && $c != null) ? $c : "Connection or Server internal")))
-        }}, TMP_12.$$s = self, TMP_12.$$arity = 1, TMP_12), $a).call($b, "/api", $hash2(["payload"], {"payload": payload}));
-    }, TMP_11.$$arity = 1);
+        }}, TMP_12.$$s = self, TMP_12.$$arity = 1, TMP_12), $a).call($b, "/api/" + (point), $hash2(["payload"], {"payload": payload}));
+    }, TMP_11.$$arity = 2);
 
     Opal.defn(self, '$js_new', TMP_13 = function $$js_new(func, $a_rest) {
       var self = this, args, $iter = TMP_13.$$p, block = $iter || nil;
@@ -22697,7 +22697,7 @@ Opal.modules["page/LoginPage"] = function(Opal) {
         return ($a = ($b = self).$call_api, $a.$$p = (TMP_6 = function(){var self = TMP_6.$$s || this, $c, $d;
           if ($gvars.$ == null) $gvars.$ = nil;
 
-        return (($c = ["/profile-self"]), $d = $gvars.$.$location(), $d['$href='].apply($d, $c), $c[$c.length-1])}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($b, $hash2(["action", "email", "pass"], {"action": "login", "email": self.email.$value(), "pass": self.pass.$value()}))
+        return (($c = ["/profile-self"]), $d = $gvars.$.$location(), $d['$href='].apply($d, $c), $c[$c.length-1])}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($b, "login", $hash2(["email", "pass"], {"email": self.email.$value(), "pass": self.pass.$value()}))
         } else {
         return nil
       };
@@ -22892,7 +22892,7 @@ Opal.modules["page/RegisterPage"] = function(Opal) {
         return ($a = ($b = self).$call_api, $a.$$p = (TMP_6 = function(){var self = TMP_6.$$s || this, $d, $e;
           if ($gvars.$ == null) $gvars.$ = nil;
 
-        return (($d = ["/profile-self"]), $e = $gvars.$.$location(), $e['$href='].apply($e, $d), $d[$d.length-1])}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($b, $hash2(["action", "email", "pass"], {"action": "register", "email": self.email.$value(), "pass": self.pass.$value()}))
+        return (($d = ["/profile-self"]), $e = $gvars.$.$location(), $e['$href='].apply($e, $d), $d[$d.length-1])}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($b, "register", $hash2(["email", "pass"], {"email": self.email.$value(), "pass": self.pass.$value()}))
         } else {
         return nil
       };
@@ -22982,7 +22982,7 @@ Opal.modules["page/RegisterProjectPage"] = function(Opal) {
         return ($a = ($b = self).$call_api, $a.$$p = (TMP_6 = function(){var self = TMP_6.$$s || this, $f, $g;
           if ($gvars.$ == null) $gvars.$ = nil;
 
-        return (($f = ["/projectConstructor-first"]), $g = $gvars.$.$location(), $g['$href='].apply($g, $f), $f[$f.length-1])}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($b, $hash2(["action", "name", "short", "email", "pass"], {"action": "registerProject", "name": self.name.$value(), "short": self["short"].$value(), "email": self.email.$value(), "pass": self.pass.$value()}))
+        return (($f = ["/projectConstructor-first"]), $g = $gvars.$.$location(), $g['$href='].apply($g, $f), $f[$f.length-1])}, TMP_6.$$s = self, TMP_6.$$arity = 0, TMP_6), $a).call($b, "register-project", $hash2(["name", "short", "email", "pass"], {"name": self.name.$value(), "short": self["short"].$value(), "email": self.email.$value(), "pass": self.pass.$value()}))
         } else {
         return nil
       };
@@ -23094,7 +23094,7 @@ Opal.modules["page/RestorePassPage"] = function(Opal) {
         return ($a = ($b = self).$call_api, $a.$$p = (TMP_8 = function(){var self = TMP_8.$$s || this, $c, $d;
           if ($gvars.$ == null) $gvars.$ = nil;
 
-        return (($c = ["/login"]), $d = $gvars.$.$location(), $d['$href='].apply($d, $c), $c[$c.length-1])}, TMP_8.$$s = self, TMP_8.$$arity = 0, TMP_8), $a).call($b, $hash2(["action", "email"], {"action": "restore_pass", "email": self.email.$value()}))
+        return (($c = ["/login"]), $d = $gvars.$.$location(), $d['$href='].apply($d, $c), $c[$c.length-1])}, TMP_8.$$s = self, TMP_8.$$arity = 0, TMP_8), $a).call($b, "restore-pass", $hash2(["email"], {"email": self.email.$value()}))
         } else {
         return nil
       };

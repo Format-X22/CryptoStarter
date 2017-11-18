@@ -29,8 +29,7 @@ class RegisterProjectPage < AbstractPage
 
 	def try_register
 		if name_valid and short_valid and email_valid and pass_valid and term_valid
-			call_api({
-				action: 'registerProject',
+			call_api('register-project', {
 				name: @name.value,
 				short: @short.value,
 				email: @email.value,

@@ -25,8 +25,7 @@ class LoginPage < AbstractPage
 
 	def try_login
 		if email_valid and pass_valid
-			call_api({
-				action: 'login',
+			call_api('login', {
 				email: @email.value,
 				pass: @pass.value
 			}) do
