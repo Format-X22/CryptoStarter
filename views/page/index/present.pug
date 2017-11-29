@@ -1,8 +1,17 @@
 mixin present-block
-    #home.row
+    #home.row.cs-presentation
         .col-md-12
-            //- TODO About project
-    .row
-        .col-md-12
-            hr
+            .cs-title-line
+            h2.cs-title Presentation
+
+            iframe(
+                width='854'
+                height='480'
+                src='https://www.youtube.com/embed/FSX3r4RVBxg'
+                frameborder='0'
+                gesture='media'
+                allow='encrypted-media'
+                allowfullscreen
+            ).center-block.cs-video
+            
             +social-icons.cs-social-bright
