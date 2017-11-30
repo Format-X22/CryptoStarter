@@ -1,78 +1,50 @@
 extends ../../components/skeleton
+include ../../components/social-icons
 
 include wow-slider
-include footer
-include social-icons
-include langs
-
-include present
-include ico
-include docs
-include roadmap
-include media
-include team
-include register
+include project
 
 block head
-    meta(name='keywords'    content='CryptoStarter, crowdfunding, blockchain, IdeaCoin')
-    meta(name='description' content='CryptoStarter landing')
-    meta(name='author'      content='CryptoStarter')
+    title!= erb('l.index.page_title')
 
+    link(href='css/index.css' rel='stylesheet')
     link(href='css/wow-slider.css' rel='stylesheet')
 
-    title CryptoStarter
-
 block body
-    - var mediaBlock = false 
-
-    nav.navbar.navbar-default.navbar-fixed-top
-        .container
-            .navbar-header
-                a(href='#')
-                    img.cs-main_menu-logo(src='img/logo/origin.svg')
-                +mobile-top-menu-toggle('top-menu-toggle')
-            #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
-                ul.nav.navbar-nav.navbar-right
-                    +menu-item('#home',     erb('l.main_menu.home'))
-                    +menu-item('#ico',      erb('l.main_menu.ico'))
-                    +menu-item('#docs',     erb('l.main_menu.docs'))
-                    +menu-item('#roadmap',  erb('l.main_menu.timeline'))
-                    if mediaBlock
-                        +menu-item('#media',    erb('l.main_menu.media'))
-                    +menu-item('#team',     erb('l.main_menu.team'))
-                    +menu-item('#register', erb('l.main_menu.register'))
-                    +langs.visible-xs
-                    li.dropdown.hidden-xs
-                        a.dropdown-toggle(
-                            href='#'
-                            data-toggle='dropdown'
-                            role='button'
-                            aria-haspopup='true'
-                            aria-expanded='false'
-                        )
-                            +icon('text-background')
-                            span.caret
-                        ul.dropdown-menu
-                            +langs
-                            
     +wow-slider
 
     .container
-        +present-block
-        +ico-block
-        +docs-block
-        +roadmap-block
-        if mediaBlock
-            +media-block
-        +team-block
-        +register-block
+        ul.cs-project-tabs.nav.nav-pills
+            +tab('active-projects', erb('l.index.active_projects'), 'flash').active
+            +tab('prepared-projects', erb('l.index.prepared_projects'), 'time')
+            +tab('done-projects', erb('l.index.done_projects'), 'ok-circle')
+            
+        .tab-content.cs-project-tabs-content
+            mixin projects-area(collection)
+                .row
+                    != erb_cond('d.' + collection + '.each do |project|')
+                    .col-md-4
+                        +project(
+                            erb('project.id'),
+                            erb('project.img'),
+                            erb('project.title'),
+                            erb('project.description'),
+                            erb('project.progress'),
+                            erb('project.count'),
+                            erb('project.percent'),
+                            erb('project.days')
+                        )
+                    != erb_cond('end')
 
-    +footer
+            +tab-panel('active-projects').hidden.active
+                +projects-area('active_projects')
 
-    #to-top.to-top.hidden: +icon('chevron-up')
+            +tab-panel('prepared-projects').hidden
+                +projects-area('prepared_projects')
+
+            +tab-panel('done-projects').hidden
+                +projects-area('done_projects')
 
 block scripts
     script(src='js/lib/wow-slider-tools.js')
     script(src='js/lib/wow-slider.js')
-    script(src='js/lib/clipboard.js')
-    script(src='js/all.js')

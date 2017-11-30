@@ -1,0 +1,199 @@
+extends ../../components/skeleton
+
+block head
+    title!= erb('l.project.page_title')
+
+    link(href='css/project.css' rel='stylesheet')
+
+block body
+    .container.cs-company
+        .row.cs-title
+            .col-md-12
+                h1!= erb('l.demo.project_title')
+                a(href='/profile-1') by Oleg Pavlov
+        .row.cs-header
+            .col-md-8.cs-image-col
+                img.cs-image(src='/img/project_stub.jpeg')
+
+            .col-md-4.cs-info-col
+                .cs-title-block
+                    hr.visible-xs
+                    h2.cs-title!= erb('l.project.progress')
+                    +characteristic('earned')
+                .cs-details-block
+                    h3 332 IDEA
+                        small!= ' ' + erb('l.project.earned')
+                    h3 75%
+                        small!= ' ' + erb('l.project.sum')
+                    h3#some-sponsors 485
+                        small!= ' ' + erb('l.project.sponsors')
+                    h3!= '20 ' + erb('l.project.days')
+                        small!= ' ' + erb('l.project.left')
+                .cs-button-block
+                    +button('invest', erb('l.project.support')).btn-lg.btn-primary.btn-block
+
+        .row.cs-info
+            .col-md-12
+                hr
+                ul#project-tabs.cs-tabs.nav.nav-pills
+                    +tab('present', erb('l.project.presentation'), 'text-color').active
+                    +tab('faq', erb('l.project.faq'), 'info-sign')
+                    +tab('news', erb('l.project.news'), 'certificate')
+                    +tab('comments', erb('l.project.comments'), 'comment')
+                    +tab('exchange', erb('l.project.exchange'), 'retweet')
+
+            // TODO hidden on start
+            .tab-content.cs-content
+                +tab-panel('present').cs-content-inner.active
+                    .row
+                        .col-md-7
+                            p(style='padding-left: 20px; color: gray;')
+                                em!= erb('l.demo.project_desc_1')
+                                br
+                                br
+                                em!= erb('l.demo.project_desc_2')
+                            br
+                            p!= erb('l.demo.project_desc_3')
+                            br
+                            h4!= erb('l.demo.project_desc_4')
+                            p!= erb('l.demo.project_desc_5')
+                            p!= erb('l.demo.project_desc_6')
+                            br
+                            p!= erb('l.demo.project_desc_7')
+                            ul
+                                li!= erb('l.demo.project_desc_8')
+                                li!= erb('l.demo.project_desc_9')
+                                li!= erb('l.demo.project_desc_10')
+
+                        .col-md-4.col-md-offset-1.cs-products
+                            //-.well.cs-project-item  TODO - exchange
+                                p
+                                    strong.
+                                        Проект завершил сбор средств, но вы всё ещё можете получить один из товаров,
+                                        воспользуйтесь обменником.
+                                    hr
+                                    +button('exchange-link-btn', 'Обменник').btn-primary.btn-block
+                            //-hr
+                            .well.cs-project-item
+                                span.label.label-primary.pull-right!= erb('l.project.product_bought') + ' ' + 26
+                                h4 1.1 IDEA
+                                hr
+                                p!= erb('l.demo.product_2_desc')
+                                strong!= erb('l.project.product_include')
+                                ul
+                                    li!= erb('l.demo.product_2_include')
+                                strong!= erb('l.project.product_delivery')
+                                ul
+                                    li!= erb('l.demo.product_2_delivery')
+                                hr
+                                +button('buy-2', erb('l.project.buy')).btn-primary.btn-block
+                                //-hr                                                             TODO - exchange
+                                //-em Сбор средст завершился, но, возможно, что-то ещё осталось в
+                                    a(href='#')  обменнике.
+                            .well.cs-project-item
+                                span.label.label-primary.pull-right!= erb('l.project.product_bought') + ' ' + 8
+                                h4 2 IDEA
+                                hr
+                                p!= erb('l.demo.product_3_desc')
+                                strong!= erb('l.project.product_include')
+                                ul
+                                    li!= erb('l.demo.product_3_include')
+                                    li!= erb('l.demo.product_3_include_2')
+                                strong!= erb('l.project.product_delivery')
+                                ul
+                                    li!= erb('l.demo.product_3_delivery')
+                                hr
+                                .cs-limit
+                                    span.label.label-warning
+                                        != erb('l.project.product_left') + ' 2 '
+                                        != erb('l.project.product_left_divider') + ' 10'
+                                +button('buy-3', erb('l.project.buy')).btn-primary.btn-block
+                            .well.cs-project-item
+                                span.label.label-primary.pull-right!= erb('l.project.product_bought') + ' ' + 6
+                                h4 8 IDEA
+                                hr
+                                p!= erb('l.demo.product_4_desc')
+                                strong!= erb('l.project.product_include')
+                                ul
+                                    li!= erb('l.demo.product_4_include')
+                                strong!= erb('l.project.product_delivery')
+                                ul
+                                    li!= erb('l.demo.product_4_delivery')
+                                hr
+                                +button('buy-4', erb('l.project.buy')).btn-primary.btn-block
+                                    
+
+                +tab-panel('faq').cs-content-inner
+                    .row
+                        .col-md-5
+                            ul.nav.nav-pills.nav-stacked
+                                +tab('q1', erb('l.demo.faq_q_1'), null, true).active
+                                +tab('q2', erb('l.demo.faq_q_2'), null, true)
+                                +tab('q3', erb('l.demo.faq_q_3'), null, true)
+                                +tab('q4', erb('l.demo.faq_q_4'), null, true)
+                        .col-md-7.cs-faq-res-col
+                            .tab-content.cs-faq-res
+                                +tab-panel('q1').active
+                                    p.cs-faq!= erb('l.demo.faq_a_1')
+                                +tab-panel('q2')
+                                    p.cs-faq!= erb('l.demo.faq_a_2')
+                                +tab-panel('q3')
+                                    p.cs-faq!= erb('l.demo.faq_a_3')
+                                +tab-panel('q4')
+                                    p.cs-faq!= erb('l.demo.faq_a_4')
+                                    
+
+                +tab-panel('news').cs-content-inner
+                    .row
+                        .col-md-6.col-md-offset-3
+                            .cs-news-item
+                                span.label.label-primary.pull-right 10.10.2017
+                                h3!= erb('l.demo.news_title')
+                                p!= erb('l.demo.news_desc')
+
+                            .cs-news-item
+                                span.label.label-primary.pull-right 10.10.2017
+                                h3!= erb('l.demo.news_title')
+                                p!= erb('l.demo.news_desc')
+
+                            .cs-news-item
+                                span.label.label-primary.pull-right 10.10.2017
+                                h3!= erb('l.demo.news_title')
+                                p!= erb('l.demo.news_desc')
+
+                +tab-panel('comments').cs-content-inner
+                    .row
+                        .col-md-8.col-md-offset-2
+                            .panel.panel-warning
+                                .panel-heading!= erb('l.project.comments_only_for_backers')
+
+                            .cs-send-comment-block.hidden
+                                +textarea('comment', erb('l.project.comment_title')).cs-comment-area
+                                +button('send-comment', erb('l.project.comment_send')).pull-right.btn-primary.btn-sm
+                                .clearfix
+
+                            .panel.panel-primary.cs-comment
+                                .panel-body
+                                    span.label.label-primary.pull-right 10.10.2017
+                                    h5 Oleg Pavlov
+                                    p!= erb('l.demo.project_desc')
+
+                            .panel.panel-primary.cs-comment
+                                .panel-body
+                                    span.label.label-primary.pull-right 10.10.2017
+                                    h5 Oleg Pavlov
+                                    p!= erb('l.demo.project_desc')
+
+                            .panel.panel-primary.cs-comment
+                                .panel-body
+                                    span.label.label-primary.pull-right 10.10.2017
+                                    h5 Oleg Pavlov
+                                    p!= erb('l.demo.project_desc')
+
+                +tab-panel('exchange').cs-content-inner
+                    .row
+                        .col-md-12
+                            h3!= erb('l.demo.no_exchange')
+
+block scripts
+    //- no scripts

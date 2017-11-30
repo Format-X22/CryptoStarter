@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'recursive-open-struct'
 gem 'opal'
 gem 'opal-jquery'
 gem 'sendgrid-ruby'
+gem 'mongoid'
+gem 'require_all'

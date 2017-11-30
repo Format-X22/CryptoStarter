@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109290418-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-109290418-2');
+      
+    </script>
+    <title><%= l.about.page_title %></title>
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/logo/32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/logo/96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="img/logo/120.png">
+    <link rel="apple-touch-icon" href="img/logo/180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="img/logo/152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="img/logo/167.png" sizes="167x167">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header"><a href="/"><img class="cs-main_menu-logo" src="img/logo/origin.svg"></a>
+          <button class="btn btn-default navbar-toggle collapsed" id="top-menu-toggle" data-toggle="collapse" data-target="#top-menu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse" id="top-menu">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/"><%= l.main_menu.home %></a></li>
+            <li><a href="/registerProject"><%= l.main_menu.register_project %></a></li>
+            <li><a href="/login"><%= l.main_menu.login %></a></li>
+            <li><a href="/register"><%= l.main_menu.register %></a></li>
+            <li class="main-lang visible-xs"><a href="#en">ENG</a></li>
+            <li class="main-lang visible-xs"><a href="#de">DE</a></li>
+            <li class="main-lang visible-xs"><a href="#fr">FR</a></li>
+            <li class="main-lang visible-xs"><a href="#ru">РУС</a></li>
+            <li class="main-lang visible-xs"><a href="#ch">中文</a></li>
+            <li class="main-lang visible-xs"><a href="#ar">لعربية</a></li>
+            <li class="dropdown hidden-xs"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/img/flag.png" height="18px"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="main-lang"><a href="#en">ENG</a></li>
+                <li class="main-lang"><a href="#de">DE</a></li>
+                <li class="main-lang"><a href="#fr">FR</a></li>
+                <li class="main-lang"><a href="#ru">РУС</a></li>
+                <li class="main-lang"><a href="#ch">中文</a></li>
+                <li class="main-lang"><a href="#ar">لعربية</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <h3>...здесь будет расположено описание, аналогичное описанию сайта ICO, вместе с видео...</h3>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/fixes.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="error-modal-title"><%= l.error %>
+            </h4>
+          </div>
+          <div class="modal-body" id="error-modal-body">
+          </div>
+          <div class="modal-footer" id="error-modal-footer">
+            <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="cs-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center"><a class="cs-social cs-bitcointalk" href="#"></a><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-github" href="#"></a></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 cs-copyright-col"><span class="cs-copyright">Copyright Crypto<span class="cs-brand-main-color">Starter</span></span></div>
+        </div>
+      </div>
+    </footer>
+    <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    </div>
+    <script src="js/all.js"></script>
+  </body>
+</html>

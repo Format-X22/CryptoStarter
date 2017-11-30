@@ -1,10 +1,21 @@
 include base
+include global
+include langs
+include social-icons
 
 doctype html
 html
     head
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+
+        //- Google
+        script(async src='https://www.googletagmanager.com/gtag/js?id=UA-109290418-2')
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109290418-2');
 
         block head
 
@@ -20,6 +31,35 @@ html
         link(rel='apple-touch-icon' href='img/logo/152.png' sizes='152x152')
         link(rel='apple-touch-icon' href='img/logo/167.png' sizes='167x167')
     body
+        nav.navbar.navbar-default.navbar-fixed-top
+            .container
+                .navbar-header
+                    a(href='/')
+                        img.cs-main_menu-logo(src='img/logo/origin.svg')
+                    +mobile-top-menu-toggle('top-menu-toggle')
+                #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
+                    ul.nav.navbar-nav.navbar-right
+                        +menu-item('/',                erb('l.main_menu.home'))
+                        +menu-item('/registerProject', erb('l.main_menu.register_project'))
+                        //- Removed for demo
+                        //- +menu-item('/about',           erb('l.main_menu.about'))
+                        //- +menu-item('/term',            erb('l.main_menu.term'))
+                        +menu-item('/login',           erb('l.main_menu.login'))
+                        +menu-item('/register',        erb('l.main_menu.register'))
+                        +langs.visible-xs
+                        li.dropdown.hidden-xs
+                            a.dropdown-toggle(
+                                href='#'
+                                data-toggle='dropdown'
+                                role='button'
+                                aria-haspopup='true'
+                                aria-expanded='false'
+                            )
+                                img(src='/img/flag.png' height='18px')
+                                span.caret
+                            ul.dropdown-menu
+                                +langs
+
         block body
 
         script(src='js/lib/fixes.js')
@@ -33,4 +73,19 @@ html
             +window-footer(id)
                 +window-button-ok
 
+        footer.cs-footer
+            .container
+                .row
+                    .col-md-12
+                        +social-icons
+                .row
+                    .col-md-12.cs-copyright-col
+                        span.cs-copyright Copyright Crypto
+                            span.cs-brand-main-color Starter
+
+        #to-top.to-top.hidden
+            +icon('chevron-up')
+
         block scripts
+            
+        script(src='js/all.js')

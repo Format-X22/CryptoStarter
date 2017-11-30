@@ -1,172 +1,186 @@
 {
   "main_menu": {
-    "home": "_EMPTY_",
-    "ico": "ICO",
-    "docs": "_EMPTY_",
-    "timeline": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "home": "Accueil",
+    "about": "À propos de nous",
+    "login": "Identification",
+    "register": "Formulaire d'inscription",
+    "register_project": "Enregistrement de projet",
+    "term": "Accord"
   },
   "wow_slider": {
     "main_text": "Crowdfunding",
-    "sub_text": "_EMPTY_"
-  },
-  "title": {
-    "ico": "_EMPTY_",
-    "docs": "_EMPTY_",
-    "roadmap": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
-  },
-  "register": {
-    "hint": "_EMPTY_",
-    "project_name_label": "_EMPTY_",
-    "project_name_placeholder": "_EMPTY_",
-    "email_label": "_EMPTY_",
-    "email_placeholder": "_EMPTY_",
-    "description_label": "_EMPTY_",
-    "description_placeholder": "_EMPTY_",
-    "register_project_button": "_EMPTY_",
-    "success_modal_title": "_EMPTY_",
-    "success_modal_text": "_EMPTY_"
-  },
-  "ico": {
-    "info_before": "_EMPTY_",
-    "info_in": "_EMPTY_",
-    "info_after": "_EMPTY_",
-    "buy_button": "_EMPTY_",
-    "agreement_title": "_EMPTY_",
-    "agreement_no_usa": "_EMPTY_",
-    "address_list": "_EMPTY_",
-    "contract_title": "_EMPTY_",
-    "abi_json_title": "_EMPTY_",
-    "copy": "_EMPTY_",
-    "instruction_title": "_EMPTY_",
-    "by_eth_wallet": {
-      "title": "_EMPTY_",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_",
-      "step_7": "_EMPTY_"
-    },
-    "by_meth": {
-      "title": "_EMPTY_",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_"
-    },
-    "instruction_footer": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "faq": {
-      "title_1": "_EMPTY_",
-      "text_1": "_EMPTY_",
-      "title_2": "_EMPTY_",
-      "text_2": "_EMPTY_",
-      "title_3": "_EMPTY_",
-      "text_3": "_EMPTY_",
-      "title_4": "_EMPTY_",
-      "text_4": "_EMPTY_",
-      "title_5": "_EMPTY_",
-      "text_5": "_EMPTY_",
-      "title_6": "_EMPTY_",
-      "text_6": "_EMPTY_",
-      "title_7": "_EMPTY_",
-      "text_7": "_EMPTY_",
-      "title_8": "_EMPTY_",
-      "text_8": "_EMPTY_"
-    }
-  },
-  "docs": {
-    "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_"
-  },
-  "team": {
-    "oleg_name": "Oleg Pavlov",
-    "oleg_description": "_EMPTY_"
-  },
-  "roadmap": {
-    "start": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "alpha_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "alpha_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "beta_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "beta_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "early": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "post_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "stock": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v3": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "frame": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v4": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    }
+    "sub_text": "Décentralisé. Illimité. Tokinisé."
   },
   "component": {
-    "ok": "_EMPTY_",
-    "cancel": "_EMPTY_"
+    "ok": "Ok",
+    "cancel": "Annuler"
   },
-  "error": "_EMPTY_"
+  "error": "Erreur",
+  "error404": {
+    "page_title": "Erreur 404",
+    "header": "Cette page n'existe pas",
+    "to_main": "Aller à la page d'accueil"
+  },
+  "about": {
+    "page_title": "À propos de nous"
+  },
+  "index": {
+    "page_title": "CryptoStarter",
+    "active_projects": "Projets actifs",
+    "prepared_projects": "Bientôt commencer",
+    "done_projects": "Projets complets",
+    "earned": "Recueilli",
+    "sum": "montant",
+    "days": "jours",
+    "left": "il reste"
+  },
+  "auth": {
+    "login_page_title": "Identification",
+    "register_page_title": "Formulaire d'inscription",
+    "register_project_page_title": "Enregistrement du projet en CryptoStarter",
+    "restore_page_title": "Réinitialiser l'accès",
+    "login_total_form_title": "Introduction en CryptoStarter",
+    "login_form_title": "Identification",
+    "email": "Votre adresse e-mail",
+    "pass": "Votre passe-parole",
+    "login": "S’identifier",
+    "restore_q": "Vous avez oublié votre passe-parole ?",
+    "no_acc_q_title": "Pas encore de compte ?",
+    "no_acc_q_desc": "Pas encore enregistré ? Vous pouvez le faire maintenant.",
+    "register": "S’inscrire",
+    "restore_title": "Réinitialisation votre passe-parole",
+    "restore_email": "Adresse e-mail du compte",
+    "restore_send": "Réinitialiser l'accès",
+    "register_total_form_title": "Inscription à CryptoStarter",
+    "register_form_title": "Formulaire d'inscription",
+    "pass_again": "Retapez votre passe-parole",
+    "term_accept": "J'accepte",
+    "terms": "les conditions d'utilisation",
+    "register_send": "S’inscrire",
+    "already_acc": "Vous avez déjà un compte ?",
+    "can_login": "Vous pouvez s’identifier",
+    "register_project_total_form_title": "Enregistrement du projet en CryptoStarter",
+    "project_name": "Nom du projet",
+    "project_desc": "Résumé du projet",
+    "register_project": "Enregistrer le projet"
+  },
+  "profile": {
+    "page_title": "_EMPTY_",
+    "edit_profile": "Modifier le profil",
+    "edit_security": "Configurations de sécurité",
+    "create_project": "Créer un projet",
+    "user_name_cap": "Nom",
+    "user_name_label": "Votre nom",
+    "user_description_cap": "Si l'amour de l'anonymat - laisser en blanc",
+    "user_description_label": "Votre histoire à propos de vous",
+    "user_photo": "Votre photo",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "change_email_title": "Changer votre e-mail",
+    "new_email": "Nouvelle e-mail",
+    "change_pass_title": "Changer votre passe-parole",
+    "current_pass": "Passe-parole actuel",
+    "new_pass": "Nouveau passe-parole",
+    "new_pass_again": "Retapez votre nouveau passe-parole",
+    "two_fa_title": "Autorisation à deux facteurs",
+    "close": "Fermer",
+    "projects": "Projets",
+    "project_th": "Projet",
+    "project_description_th": "Description",
+    "sponsored": "Sponsorisé",
+    "address": "Adresse"
+  },
+  "project": {
+    "page_title": "Projet",
+    "progress": "Progrès",
+    "earned": "Recueilli",
+    "sum": "du montant minimum",
+    "sponsors": "des sponsors",
+    "days": "jours",
+    "left": "il reste",
+    "support": "Soutenir",
+    "presentation": "Présentation",
+    "faq": "Question-Réponse",
+    "news": "Actualités",
+    "comments": "Commentaires",
+    "exchange": "Echangeur",
+    "product_bought": "Acheté",
+    "product_include": "Comprend :",
+    "product_delivery": "Livraison :",
+    "product_left": "Il reste",
+    "product_left_divider": "de la",
+    "buy": "Acheter",
+    "comments_only_for_backers": "Les commentaires ne sont disponibles que pour ceux qui soutiennent le projet.",
+    "comment_title": "Commentaire ...",
+    "comment_send": "Envoyer"
+  },
+  "constructor": {
+    "page_title": "Projet sur CryptoStarter",
+    "title": "Projet sur CryptoStarter",
+    "publish_all": "Publier en toutes les langues à la fois",
+    "dont_use_lang": "Ne pas utiliser cette langue",
+    "main_info": "Généralités",
+    "project_name": "Nom du projet",
+    "short_desc": "Résumé du projet",
+    "logo": "Logo de la page de recherche",
+    "details": "Informations détaillées",
+    "video": "Vidéo (optionnel)",
+    "presentation": "Présentation du projet",
+    "faq": "Question-Réponse",
+    "dont_use_faq": "Ne pas utiliser",
+    "faq_q": "Question",
+    "faq_a": "Réponse",
+    "news": "Actualités",
+    "news_header": "En-tête",
+    "products": "Produits",
+    "address": "Adresse",
+    "product_name": "Nom",
+    "save_no_public": "Enregistrer sans publier",
+    "publish": "Publier"
+  },
+  "term": {
+    "page_title": "Accord"
+  },
+  "demo": {
+    "profile_about": "Courte ou très courte auto-présentation. Peut-être complètement absente.",
+    "two_fa": "Il y aura une possibilité d'activer l'authentification à 2 facteurs de Google.",
+    "project_title": "Atlas mondial du café",
+    "project_desc": "C’est un livre remarquable sur le café de l'un des professionnels les plus célèbres et les plus avancés de l'industrie.",
+    "terms": ".. il y aura un accord sur les droits des parties ...",
+    "project_desc_1": "Toutes ces années que je suis dans l'industrie du café, je voudrais trouver un manuel qui me donnerait toutes les informations nécessaires sur le café, son origine, son goût, en général, sur tout ce que me pousserait à l'acheter. Je veux aider les gens à comprendre. La forte popularisation de la spécialité du café n'a pas donné une compréhension claire de ceci pour le consommateur moyen. Les gens achètent du café cher, l’infusent à la maison de manière spéciale, paient beaucoup d'argent pour une tasse dans les cafés, mais ne comprennent toujours pas les différences. Dans le domaine du café, tout est tellement compliqué, et je veux que le livre clarifie un peu la situation.",
+    "project_desc_2": "Auteur",
+    "project_desc_3": "Ici vous pouvez précommander le livre « Atlas mondial du café » à bas prix et de contribuer au développement de l'industrie du café dans le monde. Plus les livres sera commandé dans ce projet, plus le tirage du livre sera publié. Et donc les connaissances selon le monde du café d'un des professionnels principaux de l'industrie seront plus accessibles.",
+    "project_desc_4": "Sur le livre",
+    "project_desc_5": "« L'Atlas mondial du café » invite le lecteur au voyage autour du monde du café.  Vous apprenez tout : son origine, les pays-producteurs et les cultures, où le café est devenu un mode de vie. Atlas découvrira l'expérience universelle de la consommation de café - les moyens du traitement de ses grains et les méthodes de la préparation des boissons.",
+    "project_desc_6": "Les plantes du genre Coffea sont cultivées dans plus de 70 pays. La zone du café embrasse l'Amérique latine équatoriale, l'Asie du Sud-Est et l'Afrique. En Colombie, en Éthiopie et au Honduras, le café prend la première place dans les exportations et est d'une importance vitale pour l'économie des pays.",
+    "project_desc_7": "« L'Atlas mondial du café » est structuré autour de trois aspects principaux :",
+    "project_desc_8": "La voie de la production du café - d'un petit grain de café jeté à la terre, jusqu'à la récolte recueillie, les traitements, le brûlage et l'obtention d'une boisson prête à l'emploi.",
+    "project_desc_9": "L'histoire de la consommation de café - les moyens de son brassage, les subtilités particulières du choix du broyage et de l'eau.",
+    "project_desc_10": "L'information sur les producteurs - l'histoire de la culture du café caractéristique de chaque pays, l'organisation des plantations, e moyen du traitement des grains et le profil gustatif.",
+    "product_2_desc": "Le livre « Atlas mondial du café » avec la livraison autour du monde.",
+    "product_2_include": "Un livre en 1 copie",
+    "product_2_delivery": "Autour du monde - 10/10/2018",
+    "product_3_desc": "Le livre « Atlas mondial du café » avec la livraison autour du monde.",
+    "product_3_include": "Un livre en 1 copie",
+    "product_3_include_2": "Signature de l'auteur sur le livre",
+    "product_3_delivery": "Autour du monde - 10/10/2018",
+    "product_4_desc": "10 livres « Atlas mondial du café » à un prix de gros spécial.",
+    "product_4_include": "Le livre en 10 exemplaires",
+    "product_4_delivery": "Autour du monde - 10/10/2018",
+    "faq_q_1": "Question 1",
+    "faq_q_2": "Question 2",
+    "faq_q_3": "Question 3",
+    "faq_q_4": "Question 4",
+    "faq_a_1": "La réponse à la question 1 peut être longue.",
+    "faq_a_2": "La réponse à la question 2 peut être longue.",
+    "faq_a_3": "La réponse à la question 3 peut être longue.",
+    "faq_a_4": "La réponse à la question 4 peut être longue.",
+    "news_title": "100 000 $ pour la publication du livre ont déjà recueilli, mais ce n'est pas la limite !",
+    "news_desc": "Les amis, nous avons recueilli les premiers cent mille dollars ! Merci pour le soutien ! Mais s’arrêter tôt ! On peut précommander le livre jusqu'à la fin du projet, et plus les livres sera commandé dans ce projet, plus le tirage du livre sera publié. Et donc les connaissances selon le monde du café d'un des professionnels principaux de l'industrie seront plus accessibles ! Racontez de notre projet dans les réseaux sociaux.",
+    "no_exchange": "Dans la version de démonstration l'échangeur n'est pas disponible.",
+    "constructor_presentation": "... il y aura un éditeur de texte multifonctionnel ...",
+    "constructor_news_1": "Titre de la première nouvelle",
+    "constructor_news_2": "Titre de la deuxième nouvelle",
+    "constructor_news_3": "Titre de la troisième nouvelle"
+  }
 }

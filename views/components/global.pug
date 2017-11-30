@@ -1,0 +1,12 @@
+mixin lang-tabs(id)
+    ul.nav.nav-pills(id=id)&attributes(attributes)
+        +tab(id + '-en', 'ENG', null, true).active
+        +tab(id + '-de', 'DE', null, true)
+        +tab(id + '-fr', 'FR', null, true)
+        +tab(id + '-ru', 'РУС', null, true)
+        +tab(id + '-ch', '中文', null, true)
+        +tab(id + '-ar', 'لعربية', null, true)
+
+mixin lang-tabs-column(id)
+    .col-md-1
+        +lang-tabs(id, prefix).nav-stacked

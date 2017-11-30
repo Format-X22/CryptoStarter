@@ -1,0 +1,135 @@
+extends ../../components/skeleton
+
+mixin project-constructor(lang)
+    +chechbox('no-use-lang-' + lang).cs-no-lang
+        em!= erb('l.constructor.dont_use_lang')
+    hr
+    .panel.panel-primary
+        .panel-heading!= erb('l.constructor.main_info')
+        .panel-body
+            // TODO Количество символов как ограничение
+            +input('name-'+lang, 'text', '', erb('l.constructor.project_name'))
+            +textarea('short-'+lang, '', erb('l.constructor.short_desc'))
+            +input('logo-'+lang, 'file', '', erb('l.constructor.logo'))
+
+    .panel.panel-primary
+        .panel-heading!= erb('l.constructor.details')
+        .panel-body
+            +input('video-'+lang, 'file', '', erb('l.constructor.video')).cs-video-input
+            br
+            h5: strong!= erb('l.constructor.presentation')
+            em!= erb('l.demo.constructor_presentation')
+
+    .panel.panel-primary
+        .panel-heading
+            .form-inline
+                != erb('l.constructor.faq')
+                +chechbox('faq-use-'+lang, true).pull-right.cs-faq-use
+                    em!= erb('l.constructor.dont_use_faq')
+        .panel-body
+            table.table.cs-faq-table
+                tr
+                    th #
+                    th!= erb('l.constructor.faq_q')
+                    th!= erb('l.constructor.faq_a')
+                    th: +button-icon('add-faq-'+lang, 'plus').btn-primary.pull-right
+                tr
+                    td: span.cs-num 1
+                    td: +input('faq-q-'+lang+'-1', 'text', erb('l.constructor.faq_q'))
+                    td: +input('faq-r-'+lang+'-1', 'text', erb('l.constructor.faq_a'))
+                    td: +button-icon('faq-d-'+lang+'-1', 'remove').btn-primary.pull-right
+                tr
+                    td: span.cs-num 2
+                    td: +input('faq-q-'+lang+'-2', 'text', erb('l.constructor.faq_q'))
+                    td: +input('faq-r-'+lang+'-2', 'text', erb('l.constructor.faq_a'))
+                    td: +button-icon('faq-d-'+lang+'-2', 'remove').btn-primary.pull-right
+                tr
+                    td: span.cs-num 3
+                    td: +input('faq-q-'+lang+'-3', 'text', erb('l.constructor.faq_q'))
+                    td: +input('faq-r-'+lang+'-3', 'text', erb('l.constructor.faq_a'))
+                    td: +button-icon('faq-d-'+lang+'-3', 'remove').btn-primary.pull-right
+
+    .panel.panel-primary
+        .panel-heading!= erb('l.constructor.news')
+        .panel-body
+            table.table.cs-news-table
+                tr
+                    th #
+                    th!= erb('l.constructor.news_header')
+                    th: +button-icon('add-faq-' + lang, 'plus').btn-primary.pull-right
+                tr
+                    td: span.cs-num 1
+                    td: span!= erb('l.demo.constructor_news_1')
+                    td: +button-icon('faq-d-' + lang + '-1', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 2
+                    td: span!= erb('l.demo.constructor_news_2')
+                    td: +button-icon('faq-d-' + lang + '-2', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 3
+                    td: span!= erb('l.demo.constructor_news_3')
+                    td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
+
+    .panel.panel-primary
+        .panel-heading!= erb('l.constructor.products')
+        .panel-body
+            table.table.cs-products-table
+                tr
+                    th!= erb('l.constructor.address')
+                    th!= erb('l.constructor.product_name')
+                    th: +button-icon('add-faq-' + lang, 'plus').btn-primary.pull-right
+                tr
+                    td: span.cs-num 0x374...
+                    td: span!= erb('l.demo.product_1_desc')
+                    td: +button-icon('faq-d-' + lang + '-1', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 0x374...
+                    td: span!= erb('l.demo.product_2_desc')
+                    td: +button-icon('faq-d-' + lang + '-2', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 0x374...
+                    td: span!= erb('l.demo.product_3_desc')
+                    td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
+                tr
+                    td: span.cs-num 0x374...
+                    td: span!= erb('l.demo.product_4_desc')
+                    td: +button-icon('faq-d-' + lang + '-3', 'pencil').btn-primary.pull-right
+
+    hr
+    .cs-save-buttons
+        +button('save-'+lang, erb('l.constructor.save_no_public')).btn-primary
+        +button('pub-'+lang, erb('l.constructor.publish')).btn-primary.pull-right
+        .clearfix
+
+block head
+    title!= erb('l.constructor.page_title')
+
+    link(href='css/project-constructor.css' rel='stylesheet')
+
+block body
+    .container
+        .row.cs-form
+            .col-md-8.col-md-offset-2
+                img(src='img/logo/origin.svg').cs-top-logo.center-block
+                h1.text-center!= erb('l.constructor.title')
+
+        .row.cs-form
+            .col-md-8.col-md-offset-2
+                +lang-tabs('lang')
+                .tab-content
+                    each lang, index in ['en', 'de', 'fr', 'ru', 'ch', 'ar']
+                        if index == 0
+                            +tab-panel('lang-'+lang).active.cs-constructor
+                                +project-constructor(lang)
+                        else
+                            +tab-panel('lang-'+lang).cs-constructor
+                                +project-constructor(lang)
+
+        .row.cs-form-all
+            .col-md-8.col-md-offset-2
+                hr
+                +button('pub-all', erb('l.constructor.publish_all')).btn-xs.btn-primary.pull-right
+                .clearfix
+                    
+block scripts
+    //- no scripts

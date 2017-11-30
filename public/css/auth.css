@@ -1,0 +1,34 @@
+.cs-auth-form, .cs-login-form, .cs-restore-form, .cs-register-form, .cs-register-project-form {
+  margin-top: 30px;
+  margin-bottom: 90px; }
+
+.cs-login-form .cs-login-block {
+  padding-right: 50px;
+  border-right: 1px solid #eeeeee; }
+.cs-login-form .cs-register-block {
+  padding-left: 50px; }
+
+.cs-register-form .cs-register-block {
+  padding-right: 50px;
+  border-right: 1px solid #eeeeee; }
+.cs-register-form .cs-login-block {
+  padding-left: 50px; }
+
+.cs-register-form .cs-term,
+.cs-register-project-form .cs-term {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+  .cs-register-form .cs-term .cs-term-link,
+  .cs-register-project-form .cs-term .cs-term-link {
+    color: #333333;
+    text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .cs-login-form .cs-register-block,
+  .cs-login-form .cs-login-block,
+  .cs-register-form .cs-login-block,
+  .cs-register-form .cs-register-block {
+    padding-left: 15px;
+    padding-right: 15px; } }
+
+/*# sourceMappingURL=auth.css.map */

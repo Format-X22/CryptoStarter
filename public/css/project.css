@@ -1,0 +1,73 @@
+.cs-company {
+  padding-top: 20px;
+  padding-bottom: 50px; }
+  .cs-company .cs-title {
+    padding-bottom: 20px; }
+    .cs-company .cs-title h1 {
+      margin-bottom: 0; }
+  .cs-company .cs-header {
+    height: 460px; }
+    .cs-company .cs-header .cs-image-col {
+      padding-right: 50px; }
+      .cs-company .cs-header .cs-image-col .cs-image {
+        width: 100%;
+        max-height: 460px; }
+    .cs-company .cs-header .cs-info-col {
+      border-left: 2px solid #0dbff2;
+      height: 100%;
+      padding-left: 20px; }
+      .cs-company .cs-header .cs-info-col .cs-title-block {
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 20px; }
+        .cs-company .cs-header .cs-info-col .cs-title-block .cs-title {
+          margin-top: 0;
+          margin-bottom: 0; }
+      .cs-company .cs-header .cs-info-col .cs-details-block {
+        border-bottom: 1px solid #eeeeee;
+        padding-top: 15px;
+        padding-bottom: 25px; }
+      .cs-company .cs-header .cs-info-col .cs-button-block {
+        margin-top: 35px; }
+  .cs-company .cs-info {
+    margin-top: 35px; }
+    .cs-company .cs-info .cs-tabs li span {
+      padding-left: 15px;
+      padding-right: 15px; }
+    .cs-company .cs-info .cs-content .cs-content-inner {
+      margin-top: 125px; }
+    .cs-company .cs-info .cs-content .cs-faq-res {
+      padding-top: 10px;
+      border-left: 2px solid #0dbff2; }
+    .cs-company .cs-info .cs-content .cs-news-item {
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 15px;
+      margin-bottom: 35px; }
+    .cs-company .cs-info .cs-content .cs-send-comment-block {
+      padding-bottom: 25px; }
+      .cs-company .cs-info .cs-content .cs-send-comment-block .cs-comment-area {
+        margin-bottom: 5px; }
+    .cs-company .cs-info .cs-content .cs-limit {
+      margin-bottom: 10px; }
+
+@media (max-width: 767px) {
+  .cs-company .cs-header {
+    height: auto; }
+    .cs-company .cs-header .cs-info-col {
+      margin-top: 20px;
+      border-left: 0; }
+  .cs-company .cs-info {
+    margin-top: 15px; }
+    .cs-company .cs-info .cs-tabs li {
+      width: 19%;
+      text-align: center; }
+      .cs-company .cs-info .cs-tabs li span {
+        padding-left: 0;
+        padding-right: 0; }
+    .cs-company .cs-info .cs-content .cs-content-inner {
+      margin-top: 25px; }
+      .cs-company .cs-info .cs-content .cs-content-inner .cs-faq-res-col {
+        padding-top: 10px; }
+    .cs-company .cs-info .cs-products {
+      margin-top: 50px; } }
+
+/*# sourceMappingURL=project.css.map */

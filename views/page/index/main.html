@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="CryptoStarter, crowdfunding, blockchain, IdeaCoin">
-    <meta name="description" content="CryptoStarter landing">
-    <meta name="author" content="CryptoStarter">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109290418-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-109290418-2');
+      
+    </script>
+    <title><%= l.index.page_title %></title>
+    <link href="css/index.css" rel="stylesheet">
     <link href="css/wow-slider.css" rel="stylesheet">
-    <title>CryptoStarter</title>
     <link href="css/theme.css" rel="stylesheet">
     <link href="css/all.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
@@ -21,32 +27,30 @@
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <div class="navbar-header"><a href="#"><img class="cs-main_menu-logo" src="img/logo/origin.svg"></a>
+        <div class="navbar-header"><a href="/"><img class="cs-main_menu-logo" src="img/logo/origin.svg"></a>
           <button class="btn btn-default navbar-toggle collapsed" id="top-menu-toggle" data-toggle="collapse" data-target="#top-menu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
         </div>
         <div class="navbar-collapse collapse navbar-responsive-collapse" id="top-menu">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#home"><%= l.main_menu.home %></a></li>
-            <li><a href="#ico"><%= l.main_menu.ico %></a></li>
-            <li><a href="#docs"><%= l.main_menu.docs %></a></li>
-            <li><a href="#roadmap"><%= l.main_menu.timeline %></a></li>
-            <li><a href="#team"><%= l.main_menu.team %></a></li>
-            <li><a href="#register"><%= l.main_menu.register %></a></li>
-            <li class="visible-xs"><a href="/">ENG</a></li>
-            <li class="visible-xs"><a href="/de">DE</a></li>
-            <li class="visible-xs"><a href="/fr">FR</a></li>
-            <li class="visible-xs"><a href="/ru">РУС</a></li>
-            <li class="visible-xs"><a href="/ch">中文</a></li>
-            <li class="visible-xs"><a href="/ar">لعربية</a></li>
-            <li class="dropdown hidden-xs"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-text-background" aria-hidden="true"></span><span class="caret"></span></a>
+            <li><a href="/"><%= l.main_menu.home %></a></li>
+            <li><a href="/registerProject"><%= l.main_menu.register_project %></a></li>
+            <li><a href="/login"><%= l.main_menu.login %></a></li>
+            <li><a href="/register"><%= l.main_menu.register %></a></li>
+            <li class="main-lang visible-xs"><a href="#en">ENG</a></li>
+            <li class="main-lang visible-xs"><a href="#de">DE</a></li>
+            <li class="main-lang visible-xs"><a href="#fr">FR</a></li>
+            <li class="main-lang visible-xs"><a href="#ru">РУС</a></li>
+            <li class="main-lang visible-xs"><a href="#ch">中文</a></li>
+            <li class="main-lang visible-xs"><a href="#ar">لعربية</a></li>
+            <li class="dropdown hidden-xs"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/img/flag.png" height="18px"><span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/">ENG</a></li>
-                <li><a href="/de">DE</a></li>
-                <li><a href="/fr">FR</a></li>
-                <li><a href="/ru">РУС</a></li>
-                <li><a href="/ch">中文</a></li>
-                <li><a href="/ar">لعربية</a></li>
+                <li class="main-lang"><a href="#en">ENG</a></li>
+                <li class="main-lang"><a href="#de">DE</a></li>
+                <li class="main-lang"><a href="#fr">FR</a></li>
+                <li class="main-lang"><a href="#ru">РУС</a></li>
+                <li class="main-lang"><a href="#ch">中文</a></li>
+                <li class="main-lang"><a href="#ar">لعربية</a></li>
               </ul>
             </li>
           </ul>
@@ -88,369 +92,85 @@
       </div>
     </div>
     <div class="container">
-      <div class="row" id="home">
-        <div class="col-md-12"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <hr/>
-          <div class="text-center cs-social-bright"><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-telegram" href="#"></a></div>
-        </div>
-      </div>
-      <div class="row" id="ico">
-        <div class="col-md-12">
-          <div class="text-center"><span class="glyphicon glyphicon-briefcase cs-block-title-icon" aria-hidden="true"></span>
+      <ul class="cs-project-tabs nav nav-pills">
+        <li class="active" role="presentation"><a href="#active-projects" aria-controls="active-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-flash"></span><span class="hidden-xs"><%= l.index.active_projects %></span></a></li>
+        <li role="presentation"><a href="#prepared-projects" aria-controls="prepared-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-time"></span><span class="hidden-xs"><%= l.index.prepared_projects %></span></a></li>
+        <li role="presentation"><a href="#done-projects" aria-controls="done-projects" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-ok-circle"></span><span class="hidden-xs"><%= l.index.done_projects %></span></a></li>
+      </ul>
+      <div class="tab-content cs-project-tabs-content">
+        <div class="tab-pane hidden active" id="active-projects">
+          <div class="container-fluid">
+                    <div class="row"><% d.active_projects.each do |project| %>
+                      <div class="col-md-4">
+                        <div class="well cs-project" id="<%= project.id %>"><a class="cs-link-wrap" href="/project-<%= project.id %>"><img class="cs-image" src="<%= project.img %>"/>
+                            <div class="cs-info">
+                              <h4 class="cs-title"><%= project.title %></h4>
+                              <p class="cs-description"><%= project.description %></p>
+                              <div class="cs-earned">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span><%= l.index.earned %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span><%= l.index.sum %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> <%= l.index.days %></b><br/><span><%= l.index.left %></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div></a></div>
+                      </div><% end %>
+                    </div>
           </div>
-          <div class="cs-title-line"></div>
-          <h2 class="cs-title"><%= l.title.ico %></h2>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-md-offset-2">
-          <p><%= l.ico.info_in %></p>
-        </div>
-        <div class="col-md-4"><img class="cs-ico-img center-block" src="/img/logo/origin.svg"/>
-          <h2 class="text-center">IdeaCoin</h2>
-          <div class="cs-buy-button">
-            <button class="btn btn-default btn-primary btn-block btn-lg" id="buy" data-toggle="collapse" data-target="#buy-dialog" aria-expanded="false" aria-controls="buy-dialog"><%= l.ico.buy_button %>
-            </button>
+        <div class="tab-pane hidden" id="prepared-projects">
+          <div class="container-fluid">
+                    <div class="row"><% d.prepared_projects.each do |project| %>
+                      <div class="col-md-4">
+                        <div class="well cs-project" id="<%= project.id %>"><a class="cs-link-wrap" href="/project-<%= project.id %>"><img class="cs-image" src="<%= project.img %>"/>
+                            <div class="cs-info">
+                              <h4 class="cs-title"><%= project.title %></h4>
+                              <p class="cs-description"><%= project.description %></p>
+                              <div class="cs-earned">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span><%= l.index.earned %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span><%= l.index.sum %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> <%= l.index.days %></b><br/><span><%= l.index.left %></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div></a></div>
+                      </div><% end %>
+                    </div>
           </div>
         </div>
-      </div>
-      <div class="row collapse" id="buy-dialog">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="well">
-            <div id="ico-confirm">
-              <h5><%= l.ico.agreement_title %></h5>
-              <label class="cs-pointer">
-                <div class="col-md-1">
-                  <input class="pull-right" id="no-usa" type="checkbox"/>
-                </div>
-                <div class="col-md-11"><span><%= l.ico.agreement_no_usa %></span></div>
-              </label>
-            </div>
-            <div class="collapse" id="ico-data">
-              <h5><%= l.ico.address_list %></h5>
-              <div class="form-horizontal">
-                <div class="form-group">
-                  <label class="col-sm-3 control-label"><%= l.ico.contract_title %></label>
-                  <div class="col-sm-6">
-                    <p class="form-control-static">0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf</p>
-                  </div>
-                  <div class="col-sm-2">
-                    <button class="btn btn-default" id="copy-contract" data-clipboard-text="0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf"><%= l.ico.copy %>
-                    </button>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label"><%= l.ico.abi_json_title %></label>
-                  <div class="col-sm-6">
-                    <p class="form-control-static">[{"constant":true,"inputs":[{"name":"","type":"uint256"},</p>
-                  </div>
-                  <div class="col-sm-2">
-                    <button class="btn btn-default" id="copy-abi" data-clipboard-text="[{&quot;constant&quot;:true,&quot;inputs&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;uint256&quot;},"><%= l.ico.copy %>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <hr/>
-              <h5><%= l.ico.instruction_title %></h5>
-              <hr/>
-              <p class="cs-ico-instruction-logo"><img src="/img/ico/eth-wallet.svg"/><strong class="title">Ethereum Foundation Wallet</strong></p>
-              <p><%= l.ico.by_eth_wallet.title %>
-                <ul>
-                  <li><%= l.ico.by_eth_wallet.step_1 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_2 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_3 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_4 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_5 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_6 %></li>
-                  <li><%= l.ico.by_eth_wallet.step_7 %></li>
-                </ul>
-              </p>
-              <hr/>
-              <p class="cs-ico-instruction-logo"><img src="/img/ico/meth.svg"/><strong class="title">MyEtherWallet</strong></p>
-              <p><%= l.ico.by_meth.title %>
-                <ul>
-                  <li><%= l.ico.by_meth.step_1 %></li>
-                  <li><%= l.ico.by_meth.step_2 %></li>
-                  <li><%= l.ico.by_meth.step_3 %></li>
-                  <li><%= l.ico.by_meth.step_4 %></li>
-                  <li><%= l.ico.by_meth.step_5 %></li>
-                  <li><%= l.ico.by_meth.step_6 %></li>
-                </ul>
-              </p>
-              <hr/>
-              <p><%= l.ico.instruction_footer %></p>
-            </div>
+        <div class="tab-pane hidden" id="done-projects">
+          <div class="container-fluid">
+                    <div class="row"><% d.done_projects.each do |project| %>
+                      <div class="col-md-4">
+                        <div class="well cs-project" id="<%= project.id %>"><a class="cs-link-wrap" href="/project-<%= project.id %>"><img class="cs-image" src="<%= project.img %>"/>
+                            <div class="cs-info">
+                              <h4 class="cs-title"><%= project.title %></h4>
+                              <p class="cs-description"><%= project.description %></p>
+                              <div class="cs-earned">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" style="width: <%= project.progress %>%;" id="progress-<%= project.id %>-bar"></div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4 text-center"><b><%= project.count %> IDEA</b><br/><span><%= l.index.earned %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.percent %>%</b><br/><span><%= l.index.sum %></span></div>
+                                  <div class="col-md-4 text-center"><b><%= project.days %> <%= l.index.days %></b><br/><span><%= l.index.left %></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div></a></div>
+                      </div><% end %>
+                    </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h6><%= l.ico.invested %></h6>
-          <div class="progress cs-ico-progress">
-            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%;" id="earned"></div>
-          </div><span class="text-left pull-left">~$1 400 000</span><span class="text-right pull-right">~$15 000 000</span>
-        </div>
-      </div>
-      <div class="row cs-ico-faq-line">
-        <div class="col-md-8 col-md-offset-2">
-          <hr/>
-        </div>
-      </div>
-      <div class="row cs-ico-faq">
-        <div class="col-md-4 col-md-offset-2">
-          <h5><%= l.ico.faq.title_1 %></h5>
-          <p><%= l.ico.faq.text_1 %></p>
-          <h5><%= l.ico.faq.title_2 %></h5>
-          <p><%= l.ico.faq.text_2 %></p>
-          <h5><%= l.ico.faq.title_3 %></h5>
-          <p><%= l.ico.faq.text_3 %></p>
-          <h5><%= l.ico.faq.title_4 %></h5>
-          <p><%= l.ico.faq.text_4 %></p>
-        </div>
-        <div class="col-md-4">
-          <h5><%= l.ico.faq.title_5 %></h5>
-          <p><%= l.ico.faq.text_5 %></p>
-          <h5><%= l.ico.faq.title_6 %></h5>
-          <p><%= l.ico.faq.text_6 %></p>
-          <h5><%= l.ico.faq.title_7 %></h5>
-          <p><%= l.ico.faq.text_7 %></p>
-          <h5><%= l.ico.faq.title_8 %></h5>
-          <p><%= l.ico.faq.text_8 %></p>
-        </div>
-      </div>
-      <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="buy-title">
-        <div class="modal-dialog" role="dialog">
-          <div class="modal-content">
-          </div>
-        </div>
-      </div>
-      <div class="row" id="docs">
-        <div class="col-md-12">
-          <div class="text-center"><span class="glyphicon glyphicon-book cs-block-title-icon" aria-hidden="true"></span>
-          </div>
-          <div class="cs-title-line"></div>
-          <h2 class="cs-title"><%= l.title.docs %></h2>
-          <div class="well">
-            <h4 class="text-center"><%= l.docs.wp_title %></h4><br/>
-            <div class="text-center"><a class="btn btn-primary btn-lg" href="/docs/whitepaper.pdf" target="_BLANK" role="button"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>&nbsp;<%= l.docs.wp_download %></a></div><br/>
-            <p class="text-center">PDF</p>
-          </div>
-        </div>
-      </div>
-      <div class="row" id="roadmap">
-        <div class="col-md-12">
-          <div class="text-center"><span class="glyphicon glyphicon-map-marker cs-block-title-icon" aria-hidden="true"></span>
-          </div>
-          <div class="cs-title-line"></div>
-          <h2 class="cs-title"><%= l.title.roadmap %></h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.start.date %></span>
-            <h4><%= l.roadmap.start.title %></h4>
-            <p><%= l.roadmap.start.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.alpha_1.date %></span>
-            <h4><%= l.roadmap.alpha_1.title %></h4>
-            <p><%= l.roadmap.alpha_1.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.alpha_2.date %></span>
-            <h4><%= l.roadmap.alpha_2.title %></h4>
-            <p><%= l.roadmap.alpha_2.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point cs-roadmap-marked"><span class="label label-info pull-right"><%= l.roadmap.beta_1.date %></span>
-            <h4><%= l.roadmap.beta_1.title %></h4>
-            <p><%= l.roadmap.beta_1.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.beta_2.date %></span>
-            <h4><%= l.roadmap.beta_2.title %></h4>
-            <p><%= l.roadmap.beta_2.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point cs-roadmap-important"><span class="label label-info pull-right"><%= l.roadmap.ico.date %></span>
-            <h4><%= l.roadmap.ico.title %></h4>
-            <p><%= l.roadmap.ico.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.early.date %></span>
-            <h4><%= l.roadmap.early.title %></h4>
-            <p><%= l.roadmap.early.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v1.date %></span>
-            <h4><%= l.roadmap.v1.title %></h4>
-            <p><%= l.roadmap.v1.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.post_ico.date %></span>
-            <h4><%= l.roadmap.post_ico.title %></h4>
-            <p><%= l.roadmap.post_ico.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.stock.date %></span>
-            <h4><%= l.roadmap.stock.title %></h4>
-            <p><%= l.roadmap.stock.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v2.date %></span>
-            <h4><%= l.roadmap.v2.title %></h4>
-            <p><%= l.roadmap.v2.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v3.date %></span>
-            <h4><%= l.roadmap.v3.title %></h4>
-            <p><%= l.roadmap.v3.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.frame.date %></span>
-            <h4><%= l.roadmap.frame.title %></h4>
-            <p><%= l.roadmap.frame.description %></p>
-          </div>
-          <div class="text-center"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-          </div>
-          <div class="cs-roadmap-point"><span class="label label-info pull-right"><%= l.roadmap.v4.date %></span>
-            <h4><%= l.roadmap.v4.title %></h4>
-            <p><%= l.roadmap.v4.description %></p>
-          </div>
-          <div class="text-center">
-          </div>
-        </div>
-      </div>
-      <div class="row" id="team">
-        <div class="col-md-12">
-          <div class="text-center"><span class="glyphicon glyphicon-user cs-block-title-icon" aria-hidden="true"></span>
-          </div>
-          <div class="cs-title-line"></div>
-          <h2 class="cs-title"><%= l.title.team %></h2>
-        </div>
-      </div>
-      <div class="row cs-team-row">
-        <div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/oleg.jpg"/>
-          <h2 class="text-center"><%= l.team.oleg_name %></h2>
-          <p class="text-center"><%= l.team.oleg_description %></p>
-          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="https://www.linkedin.com/in/oleg-pavlov-8802a3113/"></a>
-          </div>
-        </div>
-        <div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/alex.jpg"/>
-          <h2 class="text-center"><%= l.team.alex_name %></h2>
-          <p class="text-center"><%= l.team.alex_description %></p>
-          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="#"></a>
-          </div>
-        </div>
-      </div>
-      <div class="row cs-team-row">
-        <div class="col-md-2 col-md-offset-3"><img class="img-thumbnail" src="img/team/gregor.jpg"/>
-          <h2 class="text-center"><%= l.team.gregor_name %></h2>
-          <p class="text-center"><%= l.team.gregor_description %></p>
-          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="#"></a>
-          </div>
-        </div>
-        <div class="col-md-2 col-md-offset-2"><img class="img-thumbnail" src="img/team/ostap.jpg"/>
-          <h2 class="text-center"><%= l.team.ostap_name %></h2>
-          <p class="text-center"><%= l.team.ostap_description %></p>
-          <div class="cs-social-bright text-center"><a class="cs-social cs-social-small cs-linked-in" href="#"></a>
-          </div>
-        </div>
-      </div>
-      <div class="row" id="register">
-        <div class="col-md-12">
-          <div class="text-center"><span class="glyphicon glyphicon-th-large cs-block-title-icon" aria-hidden="true"></span>
-          </div>
-          <div class="cs-title-line"></div>
-          <h2 class="cs-title"><%= l.title.register %></h2>
-        </div>
-      </div>
-      <div class="row">       
-        <div class="col-md-6 col-md-offset-3">
-          <p><%= l.register.hint %></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <hr/>
-          <div class="form-group">
-            <div class="form-group">
-              <label for="project"><%= l.register.project_name_label %></label>
-              <input class="form-control" id="project" type="text" placeholder="<%= l.register.project_name_placeholder %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-group">
-              <label for="email"><%= l.register.email_label %></label>
-              <input class="form-control" id="email" type="email" placeholder="<%= l.register.email_placeholder %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-group">
-              <label for="description"><%= l.register.description_label %></label>
-              <textarea class="form-control" id="description" rows="6" placeholder="<%= l.register.description_placeholder %>"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <!-- Spam honey pot-->
-            <div class="form-group hidden">
-              <input class="form-control" id="message"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
-            </div>
-          </div>
-          <hr/>
-          <div class="form-group">
-            <button class="btn btn-default btn-primary pull-right" id="send"><%= l.register.register_project_button %>
-            </button>
-          </div>
-        </div>
-        <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="register-modal-title">
-          <div class="modal-dialog" role="dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 id="register-modal-title"><%= l.register.success_modal_title %>
-                </h4>
-              </div>
-              <div class="modal-body" id="register-modal-body">
-                <p><%= l.register.success_modal_text %></p>
-              </div>
-              <div class="modal-footer" id="register-modal-footer">
-                <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="cs-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="text-center"><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-telegram" href="#"></a></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 cs-copyright-col"><span class="cs-copyright">Copyright Crypto<span class="cs-brand-main-color">Starter</span></span></div>
-        </div>
-      </div>
-    </footer>
-    <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
     </div>
     <script src="js/lib/fixes.js"></script>
     <script src="js/lib/jquery.js"></script>
@@ -472,9 +192,22 @@
         </div>
       </div>
     </div>
+    <footer class="cs-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center"><a class="cs-social cs-bitcointalk" href="#"></a><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-github" href="#"></a></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 cs-copyright-col"><span class="cs-copyright">Copyright Crypto<span class="cs-brand-main-color">Starter</span></span></div>
+        </div>
+      </div>
+    </footer>
+    <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    </div>
     <script src="js/lib/wow-slider-tools.js"></script>
     <script src="js/lib/wow-slider.js"></script>
-    <script src="js/lib/clipboard.js"></script>
     <script src="js/all.js"></script>
   </body>
 </html>

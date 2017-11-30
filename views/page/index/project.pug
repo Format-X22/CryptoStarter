@@ -1,0 +1,24 @@
+mixin project(id, img, title, description, progress, count, percent, days)
+    .well.cs-project(id!=id)
+        a(href!='/project-' + id).cs-link-wrap
+            img.cs-image(src!=img)
+            .cs-info
+                h4.cs-title!= title
+                p.cs-description!= description
+                .cs-earned
+                    +characteristic('progress-' + id, progress)
+                    .row
+                        .col-md-4.text-center
+                            b!= count + ' IDEA'
+                            br
+                            span!= erb('l.index.earned')
+                        .col-md-4.text-center
+                            b!= percent + '%'
+                            br
+                            span!= erb('l.index.sum')
+                        .col-md-4.text-center
+                            if days !== '0'
+                                b!= days + ' ' + erb('l.index.days')
+                                br
+                                span!= erb('l.index.left')
+                                

@@ -1,0 +1,100 @@
+extends ../../components/skeleton
+
+block head
+    title!= erb('l.profile.page_title')
+
+    link(href='css/profile.css' rel='stylesheet')
+
+block body
+    .container.cs-profile
+        .row
+            .col-md-8.col-md-offset-2
+                h1!= erb('u.name')
+        .row
+            .col-md-3.col-md-offset-2
+                != erb_cond('if u.photo == "none"')
+
+                img.cs-photo(src='img/logo/origin.svg')
+
+                != erb_cond('else')
+
+                //- TODO
+                
+                != erb_cond('end')
+            .col-md-5
+                p.cs-about!= erb('u.desc')
+        .row.cs-main-controls
+            .col-md-8.col-md-offset-2
+                hr
+                .text-center
+                    +button-with-icon('edit-profile', erb('l.profile.edit_profile'), 'user').btn-primary
+                    +button-with-icon('edit-security', erb('l.profile.edit_security'), 'lock').btn-primary
+                    +button-with-icon('create-project', erb('l.profile.create_project'), 'plus').btn-primary
+                hr
+        .row#main-edit-forms
+            .col-md-8.col-md-offset-2
+                #edit-profile-form.well.hidden
+                    +input('user-name', 'text', erb('l.profile.user_name_cap'), erb('l.profile.user_name_label'))
+                    +textarea(
+                        'user-description',
+                        erb('l.profile.user_description_cap'),
+                        erb('l.profile.user_description_label')
+                    )
+                    +input('user-photo', 'file', '', erb('l.profile.user_photo'))
+                    hr
+                    +button('save-about', erb('l.profile.save')).pull-right.btn-primary
+                    +button('cancel-about', erb('l.profile.cancel')).pull-right.cs-global-fix-btn-margin
+                    .clearfix
+                #edit-security-form.well.hidden
+                    h5: strong!= erb('l.profile.change_email_title')
+                    +input('new-email', 'email', erb('l.profile.new_email'))
+                    +button('change-email', erb('l.profile.save')).pull-right.btn-primary
+                    .clearfix
+                    hr
+                    h5: strong!= erb('l.profile.change_pass_title')
+                    +input('current-pass', 'password', erb('l.profile.current_pass'))
+                    +input('new-pass', 'password', erb('l.profile.new_pass'))
+                    +input('new-pass2', 'password', erb('l.profile.new_pass_again'))
+                    +button('change-password', erb('l.profile.save')).pull-right.btn-primary
+                    .clearfix
+                    hr
+                    h5: strong!= erb('l.profile.two_fa_title')
+                    p!= erb('l.demo.two_fa')
+                    hr
+                    +button('close-security', erb('l.profile.close')).pull-right
+                    .clearfix
+        .row
+            .col-md-8.col-md-offset-2
+                h3!= erb('l.profile.projects')
+                table#projects-table.table
+                    tr
+                        th!= erb('l.profile.address')
+                        th!= erb('l.profile.project_th')
+                        th!= erb('l.profile.project_description_th')
+                        th: +icon('pencil')
+
+                    != erb_cond('u.projects.each do |project|')
+                    tr
+                        td.cs-num!= erb('project.address')
+                        td!= erb('project.title')
+                        td!= erb('project.desc')
+                        td
+                            +button-icon('edit-project-' + erb('project.address'), 'pencil').btn-primary.cs-edit
+                    != erb_cond('end')
+
+                h3!= erb('l.profile.sponsored')
+                table.table
+                    tr
+                        th!= erb('l.profile.address')
+                        th!= erb('l.profile.project_th')
+                        th!= erb('l.profile.project_description_th')
+
+                    != erb_cond('u.invested.each do |project|')
+                    tr
+                        td.cs-num!= erb('project.address')
+                        td!= erb('project.title')
+                        td!= erb('project.desc')
+                    != erb_cond('end')
+                        
+block scripts
+    //- no scripts

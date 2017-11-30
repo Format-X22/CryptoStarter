@@ -1,172 +1,186 @@
 {
   "main_menu": {
-    "home": "_EMPTY_",
-    "ico": "ICO",
-    "docs": "_EMPTY_",
-    "timeline": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "home": "首页",
+    "about": "关于我们",
+    "login": "登录",
+    "register": "注册",
+    "register_project": "项目注册",
+    "term": "协议"
   },
   "wow_slider": {
     "main_text": "Crowdfunding",
-    "sub_text": "_EMPTY_"
-  },
-  "title": {
-    "ico": "_EMPTY_",
-    "docs": "_EMPTY_",
-    "roadmap": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
-  },
-  "register": {
-    "hint": "_EMPTY_",
-    "project_name_label": "_EMPTY_",
-    "project_name_placeholder": "_EMPTY_",
-    "email_label": "_EMPTY_",
-    "email_placeholder": "_EMPTY_",
-    "description_label": "_EMPTY_",
-    "description_placeholder": "_EMPTY_",
-    "register_project_button": "_EMPTY_",
-    "success_modal_title": "_EMPTY_",
-    "success_modal_text": "_EMPTY_"
-  },
-  "ico": {
-    "info_before": "_EMPTY_",
-    "info_in": "_EMPTY_",
-    "info_after": "_EMPTY_",
-    "buy_button": "_EMPTY_",
-    "agreement_title": "_EMPTY_",
-    "agreement_no_usa": "_EMPTY_",
-    "address_list": "_EMPTY_",
-    "contract_title": "_EMPTY_",
-    "abi_json_title": "_EMPTY_",
-    "copy": "_EMPTY_",
-    "instruction_title": "_EMPTY_",
-    "by_eth_wallet": {
-      "title": "_EMPTY_",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_",
-      "step_7": "_EMPTY_"
-    },
-    "by_meth": {
-      "title": "_EMPTY_",
-      "step_1": "_EMPTY_",
-      "step_2": "_EMPTY_",
-      "step_3": "_EMPTY_",
-      "step_4": "_EMPTY_",
-      "step_5": "_EMPTY_",
-      "step_6": "_EMPTY_"
-    },
-    "instruction_footer": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "faq": {
-      "title_1": "_EMPTY_",
-      "text_1": "_EMPTY_",
-      "title_2": "_EMPTY_",
-      "text_2": "_EMPTY_",
-      "title_3": "_EMPTY_",
-      "text_3": "_EMPTY_",
-      "title_4": "_EMPTY_",
-      "text_4": "_EMPTY_",
-      "title_5": "_EMPTY_",
-      "text_5": "_EMPTY_",
-      "title_6": "_EMPTY_",
-      "text_6": "_EMPTY_",
-      "title_7": "_EMPTY_",
-      "text_7": "_EMPTY_",
-      "title_8": "_EMPTY_",
-      "text_8": "_EMPTY_"
-    }
-  },
-  "docs": {
-    "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_"
-  },
-  "team": {
-    "oleg_name": "Oleg Pavlov",
-    "oleg_description": "_EMPTY_"
-  },
-  "roadmap": {
-    "start": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "alpha_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "alpha_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "beta_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "beta_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "early": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "post_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "stock": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v3": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "frame": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    },
-    "v4": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
-    }
+    "sub_text": "无限、分散式、代币利用"
   },
   "component": {
-    "ok": "_EMPTY_",
-    "cancel": "_EMPTY_"
+    "ok": "确认",
+    "cancel": "取消"
   },
-  "error": "_EMPTY_"
+  "error": "错误",
+  "error404": {
+    "page_title": "404错误",
+    "header": "网页不存在",
+    "to_main": "转到主页"
+  },
+  "about": {
+    "page_title": "关于我们"
+  },
+  "index": {
+    "page_title": "CryptoStarter",
+    "active_projects": "正在进行的项目",
+    "prepared_projects": "快开始的项目",
+    "done_projects": "已完成的项目",
+    "earned": "已收集",
+    "sum": "占合计",
+    "days": "天",
+    "left": "留下"
+  },
+  "auth": {
+    "login_page_title": "登录",
+    "register_page_title": "注册",
+    "register_project_page_title": "CryptoStarter项目注册",
+    "restore_page_title": "恢复访问",
+    "login_total_form_title": "CryptoStarter登录",
+    "login_form_title": "登录",
+    "email": "您的邮件地址",
+    "pass": "您的密码",
+    "login": "登录",
+    "restore_q": "忘记密码？",
+    "no_acc_q_title": "还没有账号吗？",
+    "no_acc_q_desc": "还没有注册吗？现在就可以开始。",
+    "register": "注册",
+    "restore_title": "重置密码",
+    "restore_email": "账号的邮件地址",
+    "restore_send": "恢复访问",
+    "register_total_form_title": "CryptoStarter注册",
+    "register_form_title": "注册",
+    "pass_again": "请重新输入密码",
+    "term_accept": "我同意",
+    "terms": "用户协议",
+    "register_send": "注册",
+    "already_acc": "已有账号吗？",
+    "can_login": "您可以登录。",
+    "register_project_total_form_title": "CryptoStarter项目注册",
+    "project_name": "项目名称",
+    "project_desc": "项目描述",
+    "register_project": "注册项目"
+  },
+  "profile": {
+    "page_title": "_EMPTY_",
+    "edit_profile": "编辑个人资料",
+    "edit_security": "安全设置",
+    "create_project": "创建项目",
+    "user_name_cap": "姓名",
+    "user_name_label": "您的姓名",
+    "user_description_cap": "匿名身份 ： 请将此字段留空",
+    "user_description_label": "关于您自己的故事 ",
+    "user_photo": "您的相片",
+    "save": "保存",
+    "cancel": "取消",
+    "change_email_title": "修改邮箱",
+    "new_email": "新的邮箱",
+    "change_pass_title": "修改密码",
+    "current_pass": "当前密码",
+    "new_pass": "新的密码",
+    "new_pass_again": "请再次输入新的密码",
+    "two_fa_title": "双因素认证",
+    "close": "关闭",
+    "projects": "项目",
+    "project_th": "项目",
+    "project_description_th": "描述",
+    "sponsored": "筹资方式",
+    "address": "地址"
+  },
+  "project": {
+    "page_title": "项目",
+    "progress": "进度",
+    "earned": "已收集",
+    "sum": "最小金额的",
+    "sponsors": "投资人",
+    "days": "天",
+    "left": "留下",
+    "support": "支持",
+    "presentation": "介绍",
+    "faq": "问答",
+    "news": "新信息",
+    "comments": "评论",
+    "exchange": "兑换",
+    "product_bought": "已购买",
+    "product_include": "包括：",
+    "product_delivery": "送货：",
+    "product_left": "剩下",
+    "product_left_divider": "还有",
+    "buy": "购买",
+    "comments_only_for_backers": "只有项目支持用户才能留下评论",
+    "comment_title": "评论",
+    "comment_send": "发送"
+  },
+  "constructor": {
+    "page_title": "CryptoStarter项目",
+    "title": "CryptoStarter项目",
+    "publish_all": "用所有语言发布",
+    "dont_use_lang": "不用这种语言",
+    "main_info": "基本信息",
+    "project_name": "项目名称",
+    "short_desc": "项目描述",
+    "logo": "搜索页的LOGO",
+    "details": "详情",
+    "video": "视频（如有）",
+    "presentation": "项目介绍",
+    "faq": "问答",
+    "dont_use_faq": "不用",
+    "faq_q": "问题",
+    "faq_a": "解答",
+    "news": "新信息",
+    "news_header": "标题",
+    "products": "产品",
+    "address": "地址",
+    "product_name": "名称",
+    "save_no_public": "保存但不发布",
+    "publish": "发布"
+  },
+  "term": {
+    "page_title": "协议"
+  },
+  "demo": {
+    "profile_about": "关于您自己的故事或描述。允许为空。",
+    "two_fa": "在这里可以激活谷歌双因素认证。",
+    "project_title": "世界咖啡地图",
+    "project_desc": "咖啡行业介绍，本书作者为最著名和行业内高级专业人才之一。",
+    "terms": "...在这里可以查看用户协议...",
+    "project_desc_1": "在咖啡行业工作时，我一直想找到一本书，介绍咖啡各方面信息，如：起源、风味等。就是说，购买咖啡时，所有需要知道的信息。我想帮助人们了解咖啡。购买咖啡时，普通买家并不了解不同咖啡的特点。消费者购买最贵咖啡后，在家里用特殊方法酿造或在咖啡厅里喝，还是不明白有什么区别。目前咖啡行业中的信息比较乱，所以我想在本书里解释清楚。",
+    "project_desc_2": "作者",
+    "project_desc_3": "在这里可以按特价预购“世界咖啡地图”，为世界咖啡产业发展做出贡献。本书预购越多，发行量越大。因此，行业领先专业人士关于咖啡世界的知识将变得更加易于使用。",
+    "project_desc_4": "内容简介",
+    "project_desc_5": "“世界咖啡地图”欢迎读者进入一场环游咖啡产地的世界之旅。您可以了解咖啡起源、生产国家和咖啡已成为生活方式的文化。丰富内容包括全球不同国家喝咖啡经验：咖啡豆加工和酿造方法。",
+    "project_desc_6": "世界上约有七十多个国家种植咖啡。咖啡主要种植区为中南美洲、非洲和东南亚洲。在哥伦比亚、埃塞俄比亚和洪都拉斯，咖啡出口量占首位，对国家经济发展很重要。",
+    "project_desc_7": "“世界咖啡地图”详细的介绍三个重要方面：",
+    "project_desc_8": "生产流程：从一颗生豆到一杯咖啡。",
+    "project_desc_9": "喝咖啡的历史：酿造方法、水和粉细度选择特点。",
+    "project_desc_10": "产地信息：每一个国家咖啡文化历史、种植园特点、咖啡豆加工方法和风味。",
+    "product_2_desc": "“世界咖啡地图”— 全世界送书",
+    "product_2_include": "1本书",
+    "product_2_delivery": "全世界送书 — 2018年10月10日",
+    "product_3_desc": "“世界咖啡地图”— 全世界送书",
+    "product_3_include": "1本书",
+    "product_3_include_2": "作者签名书",
+    "product_3_delivery": "全世界送书 — 2018年10月10日",
+    "product_4_desc": "特价“世界咖啡地图”10本书",
+    "product_4_include": "10本书",
+    "product_4_delivery": "全世界送书 — 2018年10月10日",
+    "faq_q_1": "问题1",
+    "faq_q_2": "问题2",
+    "faq_q_3": "问题3",
+    "faq_q_4": "问题4",
+    "faq_a_1": "问题1的解答，字数未受限制。",
+    "faq_a_2": "问题2的解答，字数未受限制。",
+    "faq_a_3": "问题3的解答，字数未受限制。",
+    "faq_a_4": "问题4的解答，字数未受限制。",
+    "news_title": "我们已经筹集$100 000出版本书，并继续筹集！",
+    "news_desc": "网上朋友们，我们已筹集10万美元！谢谢你们的支持！但是不能停！项目结束前，可以预购本书。本书预购越多，发行量越大。因此，行业领先专业人士关于咖啡世界的知识将变得更加易于使用。请在社交网络中发布我们项目的信息。",
+    "no_exchange": "在演示版本中兑换不可用",
+    "constructor_presentation": "...这里可以使用多功能文本编辑器...",
+    "constructor_news_1": "第一个信息标题",
+    "constructor_news_2": "第二个信息标题",
+    "constructor_news_3": "第三个信息标题"
+  }
 }

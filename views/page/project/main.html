@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109290418-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-109290418-2');
+      
+    </script>
+    <title><%= l.project.page_title %></title>
+    <link href="css/project.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/logo/32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/logo/96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="img/logo/120.png">
+    <link rel="apple-touch-icon" href="img/logo/180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="img/logo/152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="img/logo/167.png" sizes="167x167">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header"><a href="/"><img class="cs-main_menu-logo" src="img/logo/origin.svg"></a>
+          <button class="btn btn-default navbar-toggle collapsed" id="top-menu-toggle" data-toggle="collapse" data-target="#top-menu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse" id="top-menu">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/"><%= l.main_menu.home %></a></li>
+            <li><a href="/registerProject"><%= l.main_menu.register_project %></a></li>
+            <li><a href="/login"><%= l.main_menu.login %></a></li>
+            <li><a href="/register"><%= l.main_menu.register %></a></li>
+            <li class="main-lang visible-xs"><a href="#en">ENG</a></li>
+            <li class="main-lang visible-xs"><a href="#de">DE</a></li>
+            <li class="main-lang visible-xs"><a href="#fr">FR</a></li>
+            <li class="main-lang visible-xs"><a href="#ru">РУС</a></li>
+            <li class="main-lang visible-xs"><a href="#ch">中文</a></li>
+            <li class="main-lang visible-xs"><a href="#ar">لعربية</a></li>
+            <li class="dropdown hidden-xs"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/img/flag.png" height="18px"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="main-lang"><a href="#en">ENG</a></li>
+                <li class="main-lang"><a href="#de">DE</a></li>
+                <li class="main-lang"><a href="#fr">FR</a></li>
+                <li class="main-lang"><a href="#ru">РУС</a></li>
+                <li class="main-lang"><a href="#ch">中文</a></li>
+                <li class="main-lang"><a href="#ar">لعربية</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container cs-company">
+      <div class="row cs-title">
+        <div class="col-md-12">
+          <h1><%= l.demo.project_title %></h1><a href="/profile-1">by Oleg Pavlov</a>
+        </div>
+      </div>
+      <div class="row cs-header">
+        <div class="col-md-8 cs-image-col"><img class="cs-image" src="/img/project_stub.jpeg"></div>
+        <div class="col-md-4 cs-info-col">
+          <div class="cs-title-block">
+            <hr class="visible-xs">
+            <h2 class="cs-title"><%= l.project.progress %></h2>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 75%;" id="earned-bar"></div>
+            </div>
+          </div>
+          <div class="cs-details-block">
+            <h3>332 IDEA<small> <%= l.project.earned %></small></h3>
+            <h3>75%<small> <%= l.project.sum %></small></h3>
+            <h3 id="some-sponsors">485<small> <%= l.project.sponsors %></small></h3>
+            <h3>20 <%= l.project.days %><small> <%= l.project.left %></small></h3>
+          </div>
+          <div class="cs-button-block">
+            <button class="btn btn-default btn-lg btn-primary btn-block" id="invest"><%= l.project.support %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row cs-info">
+        <div class="col-md-12">
+          <hr>
+          <ul class="cs-tabs nav nav-pills" id="project-tabs">
+            <li class="active" role="presentation"><a href="#present" aria-controls="present" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-text-color"></span><span class="hidden-xs"><%= l.project.presentation %></span></a></li>
+            <li role="presentation"><a href="#faq" aria-controls="faq" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-info-sign"></span><span class="hidden-xs"><%= l.project.faq %></span></a></li>
+            <li role="presentation"><a href="#news" aria-controls="news" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-certificate"></span><span class="hidden-xs"><%= l.project.news %></span></a></li>
+            <li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-comment"></span><span class="hidden-xs"><%= l.project.comments %></span></a></li>
+            <li role="presentation"><a href="#exchange" aria-controls="exchange" role="tab" data-toggle="tab"><span class="visible-xs glyphicon glyphicon-retweet"></span><span class="hidden-xs"><%= l.project.exchange %></span></a></li>
+          </ul>
+        </div>
+        <!-- TODO hidden on start-->
+        <div class="tab-content cs-content">
+          <div class="tab-pane cs-content-inner active" id="present">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-7">
+                  <p style="padding-left: 20px; color: gray;"><em><%= l.demo.project_desc_1 %></em><br><br><em><%= l.demo.project_desc_2 %></em></p><br>
+                  <p><%= l.demo.project_desc_3 %></p><br>
+                  <h4><%= l.demo.project_desc_4 %></h4>
+                  <p><%= l.demo.project_desc_5 %></p>
+                  <p><%= l.demo.project_desc_6 %></p><br>
+                  <p><%= l.demo.project_desc_7 %></p>
+                  <ul>
+                    <li><%= l.demo.project_desc_8 %></li>
+                    <li><%= l.demo.project_desc_9 %></li>
+                    <li><%= l.demo.project_desc_10 %></li>
+                  </ul>
+                </div>
+                <div class="col-md-4 col-md-offset-1 cs-products">
+                  <div class="well cs-project-item"><span class="label label-primary pull-right"><%= l.project.product_bought %> 26</span>
+                    <h4>1.1 IDEA</h4>
+                    <hr>
+                    <p><%= l.demo.product_2_desc %></p><strong><%= l.project.product_include %></strong>
+                    <ul>
+                      <li><%= l.demo.product_2_include %></li>
+                    </ul><strong><%= l.project.product_delivery %></strong>
+                    <ul>
+                      <li><%= l.demo.product_2_delivery %></li>
+                    </ul>
+                    <hr>
+                    <button class="btn btn-default btn-primary btn-block" id="buy-2"><%= l.project.buy %>
+                    </button>
+                  </div>
+                  <div class="well cs-project-item"><span class="label label-primary pull-right"><%= l.project.product_bought %> 8</span>
+                    <h4>2 IDEA</h4>
+                    <hr>
+                    <p><%= l.demo.product_3_desc %></p><strong><%= l.project.product_include %></strong>
+                    <ul>
+                      <li><%= l.demo.product_3_include %></li>
+                      <li><%= l.demo.product_3_include_2 %></li>
+                    </ul><strong><%= l.project.product_delivery %></strong>
+                    <ul>
+                      <li><%= l.demo.product_3_delivery %></li>
+                    </ul>
+                    <hr>
+                    <div class="cs-limit"><span class="label label-warning"><%= l.project.product_left %> 2 <%= l.project.product_left_divider %> 10</span></div>
+                    <button class="btn btn-default btn-primary btn-block" id="buy-3"><%= l.project.buy %>
+                    </button>
+                  </div>
+                  <div class="well cs-project-item"><span class="label label-primary pull-right"><%= l.project.product_bought %> 6</span>
+                    <h4>8 IDEA</h4>
+                    <hr>
+                    <p><%= l.demo.product_4_desc %></p><strong><%= l.project.product_include %></strong>
+                    <ul>
+                      <li><%= l.demo.product_4_include %></li>
+                    </ul><strong><%= l.project.product_delivery %></strong>
+                    <ul>
+                      <li><%= l.demo.product_4_delivery %></li>
+                    </ul>
+                    <hr>
+                    <button class="btn btn-default btn-primary btn-block" id="buy-4"><%= l.project.buy %>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane cs-content-inner" id="faq">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5">
+                  <ul class="nav nav-pills nav-stacked">
+                    <li class="active" role="presentation"><a href="#q1" aria-controls="q1" role="tab" data-toggle="tab"><span><%= l.demo.faq_q_1 %></span></a></li>
+                    <li role="presentation"><a href="#q2" aria-controls="q2" role="tab" data-toggle="tab"><span><%= l.demo.faq_q_2 %></span></a></li>
+                    <li role="presentation"><a href="#q3" aria-controls="q3" role="tab" data-toggle="tab"><span><%= l.demo.faq_q_3 %></span></a></li>
+                    <li role="presentation"><a href="#q4" aria-controls="q4" role="tab" data-toggle="tab"><span><%= l.demo.faq_q_4 %></span></a></li>
+                  </ul>
+                </div>
+                <div class="col-md-7 cs-faq-res-col">
+                  <div class="tab-content cs-faq-res">
+                    <div class="tab-pane active" id="q1">
+                      <div class="container-fluid">
+                        <p class="cs-faq"><%= l.demo.faq_a_1 %></p>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="q2">
+                      <div class="container-fluid">
+                        <p class="cs-faq"><%= l.demo.faq_a_2 %></p>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="q3">
+                      <div class="container-fluid">
+                        <p class="cs-faq"><%= l.demo.faq_a_3 %></p>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="q4">
+                      <div class="container-fluid">
+                        <p class="cs-faq"><%= l.demo.faq_a_4 %></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane cs-content-inner" id="news">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                  <div class="cs-news-item"><span class="label label-primary pull-right">10.10.2017</span>
+                    <h3><%= l.demo.news_title %></h3>
+                    <p><%= l.demo.news_desc %></p>
+                  </div>
+                  <div class="cs-news-item"><span class="label label-primary pull-right">10.10.2017</span>
+                    <h3><%= l.demo.news_title %></h3>
+                    <p><%= l.demo.news_desc %></p>
+                  </div>
+                  <div class="cs-news-item"><span class="label label-primary pull-right">10.10.2017</span>
+                    <h3><%= l.demo.news_title %></h3>
+                    <p><%= l.demo.news_desc %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane cs-content-inner" id="comments">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="panel panel-warning">
+                    <div class="panel-heading"><%= l.project.comments_only_for_backers %></div>
+                  </div>
+                  <div class="cs-send-comment-block hidden">
+                    <div class="form-group cs-comment-area">
+                      <textarea class="form-control" id="comment" rows="3" placeholder="<%= l.project.comment_title %>"></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <button class="btn btn-default pull-right btn-primary btn-sm" id="send-comment"><%= l.project.comment_send %>
+                    </button>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="panel panel-primary cs-comment">
+                    <div class="panel-body"><span class="label label-primary pull-right">10.10.2017</span>
+                      <h5>Oleg Pavlov</h5>
+                      <p><%= l.demo.project_desc %></p>
+                    </div>
+                  </div>
+                  <div class="panel panel-primary cs-comment">
+                    <div class="panel-body"><span class="label label-primary pull-right">10.10.2017</span>
+                      <h5>Oleg Pavlov</h5>
+                      <p><%= l.demo.project_desc %></p>
+                    </div>
+                  </div>
+                  <div class="panel panel-primary cs-comment">
+                    <div class="panel-body"><span class="label label-primary pull-right">10.10.2017</span>
+                      <h5>Oleg Pavlov</h5>
+                      <p><%= l.demo.project_desc %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane cs-content-inner" id="exchange">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <h3><%= l.demo.no_exchange %></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/fixes.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="error-modal-title"><%= l.error %>
+            </h4>
+          </div>
+          <div class="modal-body" id="error-modal-body">
+          </div>
+          <div class="modal-footer" id="error-modal-footer">
+            <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="cs-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center"><a class="cs-social cs-bitcointalk" href="#"></a><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-github" href="#"></a></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 cs-copyright-col"><span class="cs-copyright">Copyright Crypto<span class="cs-brand-main-color">Starter</span></span></div>
+        </div>
+      </div>
+    </footer>
+    <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    </div>
+    <script src="js/all.js"></script>
+  </body>
+</html>

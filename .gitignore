@@ -2,3 +2,4 @@
 *.html
 !views/page/**/main.html
 token/build
+localdb

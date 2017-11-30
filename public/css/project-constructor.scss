@@ -1,0 +1,81 @@
+.cs-no-lang.checkbox {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.cs-form {
+	padding-top: 50px;
+
+	.cs-top-logo {
+		width: 25%;
+	}
+
+	.cs-video-input {
+		margin-bottom: 0;
+	}
+
+	.cs-faq-table {
+		
+		.form-group {
+			margin-bottom: 0;
+		}
+	}
+
+	.cs-news-table {
+		td {
+			vertical-align: middle;
+		}
+	}
+
+	.cs-products-table {
+		td {
+			vertical-align: middle;
+		}
+	}
+
+	.cs-faq-table,
+	.cs-news-table,
+	.cs-products-table {
+		margin-bottom: 0;
+
+		th {
+			vertical-align: bottom;
+		}
+
+		.cs-num {
+			font-weight: bold;
+			line-height: 250%;
+			cursor: pointer;
+		}
+	}
+}
+
+.cs-form-all {
+	padding-top: 35px;
+
+	hr {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 767px) {
+	.cs-form {
+		.cs-save-buttons {
+
+			.btn {
+				width: 100%;
+				margin-top: 25px;
+			}
+
+		}
+
+		.cs-faq-use {
+			margin-top: 0;
+
+			input {
+				position: relative !important;
+				margin-left: 10px !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+extends ../../components/skeleton
+
+include ../../components/auth
+
+block head
+    title!= erb('l.auth.restore_page_title')
+
+    link(href='css/auth.css' rel='stylesheet')
+
+block body
+    .container.cs-restore-form
+         +auth-form-header(erb('l.auth.restore_title'))
+         .row
+             .col-md-4.col-md-offset-4
+                 +input('email', 'email', erb('l.auth.restore_email'))
+                 +button('restore', erb('l.auth.restore_send')).btn-block.btn-primary
+
+block scripts
+    //- no scripts

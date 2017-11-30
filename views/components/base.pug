@@ -5,6 +5,10 @@
         return '<%= ' + code + ' %>';
     }
 
+    function erb_cond(cond) {
+        return '<% ' + cond + ' %>';
+    }
+
     function make_locale_shortcut(prefix) {
         return function () {
             var args = Array.prototype.slice.call(arguments);
@@ -19,6 +23,10 @@
 mixin button(id, text)
     button.btn.btn-default(id=id)&attributes(attributes)!= text
         block
+
+mixin button-link(id, href, text)
+    a.btn.btn-default(id=id, href=href)&attributes(attributes)!= text
+    block
 
 mixin button-icon(id, icon)
     button.btn.btn-default(id=id)&attributes(attributes)
@@ -85,17 +93,33 @@ mixin textarea(id, placeholder, label, rows)
         textarea.form-control(id=id rows=rows placeholder!=placeholder)
         span.glyphicon.glyphicon-remove.form-control-feedback.hidden(aria-hidden='true')
 
+mixin chechbox(id, invert)
+    .checkbox&attributes(attributes)
+        label
+            if invert
+                span
+                    block
+                input(id=id type='checkbox')
+            else
+                input(id=id type='checkbox')
+                span
+                    block
+
 //- MENUS AND TABS
 
 mixin menu-item(href, title)
     li&attributes(attributes)
         a(href=href)!= title
 
-mixin tab(target, name, icon)
+mixin tab(target, name, icon, alwaysText)
     li(role='presentation')&attributes(attributes)
         a(href='#'+target aria-controls=target role='tab' data-toggle='tab')
-            span.visible-xs.glyphicon(class='glyphicon-' + icon)
-            span.hidden-xs!= name
+            if icon
+                span.visible-xs.glyphicon(class='glyphicon-' + icon)
+            if alwaysText
+                span!= name
+            else
+                span.hidden-xs!= name
 
 mixin tab-mobile(target, icon)
     li.visible-xs(role='presentation')&attributes(attributes)
@@ -162,13 +186,14 @@ mixin mobile-top-menu-toggle(id)
         span.icon-bar
         span.icon-bar
 
-mixin characteristic-bar
-    .progress-bar.progress-bar-striped(role='progressbar' style='width: 100%')&attributes(attributes)
+mixin characteristic-bar(size)
+    .progress-bar(role='progressbar' style!='width: '+(size || 75)+'%')&attributes(attributes)
 
-mixin characteristic(id, name)
-    h6!=name
+mixin characteristic(id, size, name)
+    if name
+        h6!=name
     .progress&attributes(attributes)
-        +characteristic-bar()(id=id)
+        +characteristic-bar(size)(id!=id + '-bar')
 
 mixin characteristic-large(id, name, type)
     - type = type || 'info'

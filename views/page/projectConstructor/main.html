@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109290418-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-109290418-2');
+      
+    </script>
+    <title><%= l.constructor.page_title %></title>
+    <link href="css/project-constructor.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo/16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/logo/32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/logo/96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="img/logo/120.png">
+    <link rel="apple-touch-icon" href="img/logo/180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="img/logo/152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="img/logo/167.png" sizes="167x167">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header"><a href="/"><img class="cs-main_menu-logo" src="img/logo/origin.svg"></a>
+          <button class="btn btn-default navbar-toggle collapsed" id="top-menu-toggle" data-toggle="collapse" data-target="#top-menu"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse" id="top-menu">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/"><%= l.main_menu.home %></a></li>
+            <li><a href="/registerProject"><%= l.main_menu.register_project %></a></li>
+            <li><a href="/login"><%= l.main_menu.login %></a></li>
+            <li><a href="/register"><%= l.main_menu.register %></a></li>
+            <li class="main-lang visible-xs"><a href="#en">ENG</a></li>
+            <li class="main-lang visible-xs"><a href="#de">DE</a></li>
+            <li class="main-lang visible-xs"><a href="#fr">FR</a></li>
+            <li class="main-lang visible-xs"><a href="#ru">РУС</a></li>
+            <li class="main-lang visible-xs"><a href="#ch">中文</a></li>
+            <li class="main-lang visible-xs"><a href="#ar">لعربية</a></li>
+            <li class="dropdown hidden-xs"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/img/flag.png" height="18px"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="main-lang"><a href="#en">ENG</a></li>
+                <li class="main-lang"><a href="#de">DE</a></li>
+                <li class="main-lang"><a href="#fr">FR</a></li>
+                <li class="main-lang"><a href="#ru">РУС</a></li>
+                <li class="main-lang"><a href="#ch">中文</a></li>
+                <li class="main-lang"><a href="#ar">لعربية</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row cs-form">
+        <div class="col-md-8 col-md-offset-2"><img class="cs-top-logo center-block" src="img/logo/origin.svg">
+          <h1 class="text-center"><%= l.constructor.title %></h1>
+        </div>
+      </div>
+      <div class="row cs-form">
+        <div class="col-md-8 col-md-offset-2">
+          <ul class="nav nav-pills" id="lang">
+            <li class="active" role="presentation"><a href="#lang-en" aria-controls="lang-en" role="tab" data-toggle="tab"><span>ENG</span></a></li>
+            <li role="presentation"><a href="#lang-de" aria-controls="lang-de" role="tab" data-toggle="tab"><span>DE</span></a></li>
+            <li role="presentation"><a href="#lang-fr" aria-controls="lang-fr" role="tab" data-toggle="tab"><span>FR</span></a></li>
+            <li role="presentation"><a href="#lang-ru" aria-controls="lang-ru" role="tab" data-toggle="tab"><span>РУС</span></a></li>
+            <li role="presentation"><a href="#lang-ch" aria-controls="lang-ch" role="tab" data-toggle="tab"><span>中文</span></a></li>
+            <li role="presentation"><a href="#lang-ar" aria-controls="lang-ar" role="tab" data-toggle="tab"><span>لعربية</span></a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active cs-constructor" id="lang-en">
+              <div class="container-fluid">
+                <div class="checkbox cs-no-lang">
+                  <label>
+                    <input id="no-use-lang-en" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
+                  </label>
+                </div>
+                <hr/>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-en"><%= l.constructor.project_name %></label>
+                      <input class="form-control" id="name-en" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-en"><%= l.constructor.short_desc %></label>
+                      <textarea class="form-control" id="short-en" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-en"><%= l.constructor.logo %></label>
+                      <input class="form-control" id="logo-en" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.details %></div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-en"><%= l.constructor.video %></label>
+                      <input class="form-control" id="video-en" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline"><%= l.constructor.faq %>
+                      <div class="checkbox pull-right cs-faq-use">
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
+                          <input id="faq-use-en" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-en"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-en-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-en-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-en-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-en-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-en-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-en-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.news %></div>
+                  <div class="panel-body">
+                    <table class="table cs-news-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.news_header %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-en"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.products %></div>
+                  <div class="panel-body">
+                    <table class="table cs-products-table">
+                      <tr>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-en"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-en-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <div class="cs-save-buttons">
+                  <button class="btn btn-default btn-primary" id="save-en"><%= l.constructor.save_no_public %>
+                  </button>
+                  <button class="btn btn-default btn-primary pull-right" id="pub-en"><%= l.constructor.publish %>
+                  </button>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane cs-constructor" id="lang-de">
+              <div class="container-fluid">
+                <div class="checkbox cs-no-lang">
+                  <label>
+                    <input id="no-use-lang-de" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
+                  </label>
+                </div>
+                <hr/>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-de"><%= l.constructor.project_name %></label>
+                      <input class="form-control" id="name-de" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-de"><%= l.constructor.short_desc %></label>
+                      <textarea class="form-control" id="short-de" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-de"><%= l.constructor.logo %></label>
+                      <input class="form-control" id="logo-de" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.details %></div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-de"><%= l.constructor.video %></label>
+                      <input class="form-control" id="video-de" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline"><%= l.constructor.faq %>
+                      <div class="checkbox pull-right cs-faq-use">
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
+                          <input id="faq-use-de" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-de"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-de-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-de-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-de-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-de-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-de-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-de-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.news %></div>
+                  <div class="panel-body">
+                    <table class="table cs-news-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.news_header %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-de"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.products %></div>
+                  <div class="panel-body">
+                    <table class="table cs-products-table">
+                      <tr>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-de"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-de-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <div class="cs-save-buttons">
+                  <button class="btn btn-default btn-primary" id="save-de"><%= l.constructor.save_no_public %>
+                  </button>
+                  <button class="btn btn-default btn-primary pull-right" id="pub-de"><%= l.constructor.publish %>
+                  </button>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane cs-constructor" id="lang-fr">
+              <div class="container-fluid">
+                <div class="checkbox cs-no-lang">
+                  <label>
+                    <input id="no-use-lang-fr" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
+                  </label>
+                </div>
+                <hr/>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-fr"><%= l.constructor.project_name %></label>
+                      <input class="form-control" id="name-fr" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-fr"><%= l.constructor.short_desc %></label>
+                      <textarea class="form-control" id="short-fr" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-fr"><%= l.constructor.logo %></label>
+                      <input class="form-control" id="logo-fr" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.details %></div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-fr"><%= l.constructor.video %></label>
+                      <input class="form-control" id="video-fr" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline"><%= l.constructor.faq %>
+                      <div class="checkbox pull-right cs-faq-use">
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
+                          <input id="faq-use-fr" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-fr"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-fr-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-fr-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-fr-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-fr-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-fr-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-fr-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.news %></div>
+                  <div class="panel-body">
+                    <table class="table cs-news-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.news_header %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-fr"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.products %></div>
+                  <div class="panel-body">
+                    <table class="table cs-products-table">
+                      <tr>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-fr"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-fr-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <div class="cs-save-buttons">
+                  <button class="btn btn-default btn-primary" id="save-fr"><%= l.constructor.save_no_public %>
+                  </button>
+                  <button class="btn btn-default btn-primary pull-right" id="pub-fr"><%= l.constructor.publish %>
+                  </button>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane cs-constructor" id="lang-ru">
+              <div class="container-fluid">
+                <div class="checkbox cs-no-lang">
+                  <label>
+                    <input id="no-use-lang-ru" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
+                  </label>
+                </div>
+                <hr/>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-ru"><%= l.constructor.project_name %></label>
+                      <input class="form-control" id="name-ru" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-ru"><%= l.constructor.short_desc %></label>
+                      <textarea class="form-control" id="short-ru" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-ru"><%= l.constructor.logo %></label>
+                      <input class="form-control" id="logo-ru" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.details %></div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-ru"><%= l.constructor.video %></label>
+                      <input class="form-control" id="video-ru" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline"><%= l.constructor.faq %>
+                      <div class="checkbox pull-right cs-faq-use">
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
+                          <input id="faq-use-ru" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ru"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ru-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ru-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ru-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ru-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ru-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ru-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.news %></div>
+                  <div class="panel-body">
+                    <table class="table cs-news-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.news_header %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ru"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.products %></div>
+                  <div class="panel-body">
+                    <table class="table cs-products-table">
+                      <tr>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ru"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ru-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <div class="cs-save-buttons">
+                  <button class="btn btn-default btn-primary" id="save-ru"><%= l.constructor.save_no_public %>
+                  </button>
+                  <button class="btn btn-default btn-primary pull-right" id="pub-ru"><%= l.constructor.publish %>
+                  </button>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane cs-constructor" id="lang-ch">
+              <div class="container-fluid">
+                <div class="checkbox cs-no-lang">
+                  <label>
+                    <input id="no-use-lang-ch" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
+                  </label>
+                </div>
+                <hr/>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-ch"><%= l.constructor.project_name %></label>
+                      <input class="form-control" id="name-ch" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-ch"><%= l.constructor.short_desc %></label>
+                      <textarea class="form-control" id="short-ch" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-ch"><%= l.constructor.logo %></label>
+                      <input class="form-control" id="logo-ch" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.details %></div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-ch"><%= l.constructor.video %></label>
+                      <input class="form-control" id="video-ch" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline"><%= l.constructor.faq %>
+                      <div class="checkbox pull-right cs-faq-use">
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
+                          <input id="faq-use-ch" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ch"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ch-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ch-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ch-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ch-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ch-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ch-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.news %></div>
+                  <div class="panel-body">
+                    <table class="table cs-news-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.news_header %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ch"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.products %></div>
+                  <div class="panel-body">
+                    <table class="table cs-products-table">
+                      <tr>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ch"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ch-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <div class="cs-save-buttons">
+                  <button class="btn btn-default btn-primary" id="save-ch"><%= l.constructor.save_no_public %>
+                  </button>
+                  <button class="btn btn-default btn-primary pull-right" id="pub-ch"><%= l.constructor.publish %>
+                  </button>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane cs-constructor" id="lang-ar">
+              <div class="container-fluid">
+                <div class="checkbox cs-no-lang">
+                  <label>
+                    <input id="no-use-lang-ar" type="checkbox"/><span><em><%= l.constructor.dont_use_lang %></em></span>
+                  </label>
+                </div>
+                <hr/>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.main_info %></div>
+                  <div class="panel-body">
+                    <!-- TODO Количество символов как ограничение-->
+                    <div class="form-group">
+                      <label for="name-ar"><%= l.constructor.project_name %></label>
+                      <input class="form-control" id="name-ar" type="text" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="short-ar"><%= l.constructor.short_desc %></label>
+                      <textarea class="form-control" id="short-ar" rows="3" placeholder=""></textarea><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="logo-ar"><%= l.constructor.logo %></label>
+                      <input class="form-control" id="logo-ar" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.details %></div>
+                  <div class="panel-body">
+                    <div class="form-group cs-video-input">
+                      <label for="video-ar"><%= l.constructor.video %></label>
+                      <input class="form-control" id="video-ar" type="file" placeholder=""/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                    </div><br/>
+                    <h5><strong><%= l.constructor.presentation %></strong></h5><em><%= l.demo.constructor_presentation %></em>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <div class="form-inline"><%= l.constructor.faq %>
+                      <div class="checkbox pull-right cs-faq-use">
+                        <label><span><em><%= l.constructor.dont_use_faq %></em></span>
+                          <input id="faq-use-ar" type="checkbox"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <table class="table cs-faq-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.faq_q %></th>
+                        <th><%= l.constructor.faq_a %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ar-1" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ar-1" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ar-2" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ar-2" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-2"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-q-ar-3" type="text" placeholder="<%= l.constructor.faq_q %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <input class="form-control" id="faq-r-ar-3" type="text" placeholder="<%= l.constructor.faq_a %>"/><span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-3"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.news %></div>
+                  <div class="panel-body">
+                    <table class="table cs-news-table">
+                      <tr>
+                        <th>#</th>
+                        <th><%= l.constructor.news_header %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">1</span></td>
+                        <td><span><%= l.demo.constructor_news_1 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">2</span></td>
+                        <td><span><%= l.demo.constructor_news_2 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">3</span></td>
+                        <td><span><%= l.demo.constructor_news_3 %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= l.constructor.products %></div>
+                  <div class="panel-body">
+                    <table class="table cs-products-table">
+                      <tr>
+                        <th><%= l.constructor.address %></th>
+                        <th><%= l.constructor.product_name %></th>
+                        <th>
+                          <button class="btn btn-default btn-primary pull-right" id="add-faq-ar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                          </button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_1_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_2_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_3_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><span class="cs-num">0x374...</span></td>
+                        <td><span><%= l.demo.product_4_desc %></span></td>
+                        <td>
+                          <button class="btn btn-default btn-primary pull-right" id="faq-d-ar-3"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <hr/>
+                <div class="cs-save-buttons">
+                  <button class="btn btn-default btn-primary" id="save-ar"><%= l.constructor.save_no_public %>
+                  </button>
+                  <button class="btn btn-default btn-primary pull-right" id="pub-ar"><%= l.constructor.publish %>
+                  </button>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row cs-form-all">
+        <div class="col-md-8 col-md-offset-2">
+          <hr>
+          <button class="btn btn-default btn-xs btn-primary pull-right" id="pub-all"><%= l.constructor.publish_all %>
+          </button>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/fixes.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-title">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="error-modal-title"><%= l.error %>
+            </h4>
+          </div>
+          <div class="modal-body" id="error-modal-body">
+          </div>
+          <div class="modal-footer" id="error-modal-footer">
+            <button class="btn btn-default" id="undefined-ok" data-dismiss="modal"><%= l.component.ok %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="cs-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center"><a class="cs-social cs-bitcointalk" href="#"></a><a class="cs-social cs-mail" href="#"></a><a class="cs-social cs-linked-in" href="#"></a><a class="cs-social cs-facebook" href="#"></a><a class="cs-social cs-twitter" href="#"></a><a class="cs-social cs-github" href="#"></a></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 cs-copyright-col"><span class="cs-copyright">Copyright Crypto<span class="cs-brand-main-color">Starter</span></span></div>
+        </div>
+      </div>
+    </footer>
+    <div class="to-top hidden" id="to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    </div>
+    <script src="js/all.js"></script>
+  </body>
+</html>

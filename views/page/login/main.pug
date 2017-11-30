@@ -1,0 +1,29 @@
+extends ../../components/skeleton
+
+include ../../components/auth
+
+block head
+    title!= erb('l.auth.login_page_title')
+
+    link(href='css/auth.css' rel='stylesheet')
+
+block body
+    .container.cs-login-form
+        +auth-form-header(erb('l.auth.login_total_form_title'))
+        .row
+            .col-md-4.col-md-offset-2.cs-login-block
+                h2!= erb('l.auth.login_form_title')
+                +input('email',  'email',    erb('l.auth.email'))
+                +input('pass',   'password', erb('l.auth.pass'))
+                +button('login', erb('l.auth.login')).btn-lg.btn-block.btn-primary
+                p.pull-right
+                    +button-link('forget', '/restorePass', erb('l.auth.restore_q')).btn-link
+            .clearfix.visible-xs
+            hr.visible-xs
+            .col-md-4.cs-register-block
+                h2!= erb('l.auth.no_acc_q_title')
+                p!= erb('l.auth.no_acc_q_desc')
+                +button-link('register', '/register', erb('l.auth.register')).btn-lg.btn-block.btn-primary
+
+block scripts
+    //- no scripts

@@ -1,18 +1,41 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic,700,700italic,900,900italic|PT+Sans:400,700,400italic,700italic|Roboto+Condensed:300,400,700,300italic,400italic,700italic");
+html {
+  background-color: #070825; }
+
 body {
   padding-top: 88px; }
 
-.tparrows {
-  display: none; }
-
-.tp-bannertimer {
-  display: none; }
+@media (max-width: 767px) {
+  .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+    box-shadow: 0 -20px 20px -20px rgba(142, 142, 142, 0.95) inset;
+    max-height: 320px; } }
+.rtl {
+  direction: rtl; }
+  .rtl th {
+    text-align: right; }
+  .rtl .cs-products .cs-project-item h4 {
+    text-align: left; }
+  .rtl .cs-comment .label {
+    float: left !important; }
+  .rtl .cs-news-item .label {
+    float: left !important; }
+  .rtl table .btn {
+    float: left !important; }
+  .rtl .cs-constructor .cs-no-lang em {
+    padding-right: 20px; }
+  .rtl .cs-constructor .panel-heading .checkbox {
+    float: left !important; }
+  .rtl .cs-constructor .cs-save-buttons .btn:first-child {
+    margin-right: 5px; }
 
 .cs-pointer {
   cursor: pointer; }
 
-.cs-brand-main-color, .cs-block-title-icon {
+.cs-brand-main-color {
   color: #0dbff2; }
+
+.cs-global-fix-btn-margin {
+  margin-right: 4px; }
 
 .cs-main_menu-logo {
   width: 70px;
@@ -32,89 +55,6 @@ body {
   .btn.navbar-toggle {
     margin-top: 10px;
     margin-bottom: 10px; } }
-.cs-wow-header .cs-wow-fix-loader {
-  width: 100%;
-  height: 700px;
-  position: absolute;
-  background-color: #070825;
-  z-index: 20000; }
-.cs-wow-header .cs-wow-slider {
-  height: 700px;
-  overflow: hidden; }
-  .cs-wow-header .cs-wow-slider .cs-wow-logo-name {
-    font-size: 72px;
-    line-height: 80px;
-    font-weight: 700;
-    font-family: 'PT Sans';
-    color: white;
-    text-decoration: none;
-    background-color: transparent;
-    padding: 0 25px 0 23px;
-    border-radius: 5px 5px 5px 5px;
-    border: 1px solid white; }
-  .cs-wow-header .cs-wow-slider .cs-wow-main-text {
-    font-size: 48px;
-    line-height: 60px;
-    font-weight: 700;
-    font-family: 'Roboto Condensed';
-    color: white;
-    text-decoration: none;
-    background-color: transparent;
-    padding: 0 40px;
-    border: 0 none white; }
-  .cs-wow-header .cs-wow-slider .cs-wow-sub-text {
-    font-size: 36px;
-    line-height: 60px;
-    font-weight: 300;
-    font-family: 'Roboto Condensed';
-    color: white;
-    text-decoration: none;
-    background-color: transparent;
-    padding: 0 40px;
-    border: 0 none white; }
-.cs-wow-header .cs-wow-mobile-container {
-  background-color: #070825; }
-  .cs-wow-header .cs-wow-mobile-container .cs-wow-logo-name-mobile {
-    font-family: 'PT Sans';
-    font-weight: 700;
-    font-size: 300%;
-    padding: 30px 0 0;
-    color: white; }
-  .cs-wow-header .cs-wow-mobile-container .cs-wow-main-text-mobile {
-    font-family: 'Roboto Condensed';
-    font-weight: 700;
-    font-size: 200%;
-    padding: 10px 0;
-    color: white; }
-  .cs-wow-header .cs-wow-mobile-container .cs-wow-sub-text-mobile {
-    font-family: 'Roboto Condensed';
-    font-weight: 300;
-    font-size: 130%;
-    padding: 0 0 50px;
-    color: white; }
-
-.cs-title-line {
-  display: block;
-  width: 100%;
-  height: 10px;
-  margin: 9px 0 15px;
-  background: url(../img/title-line-label.png) center top no-repeat;
-  border-bottom: 1px solid #f0f0f0; }
-
-h2.cs-title {
-  font-size: 48px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  text-align: center;
-  text-transform: uppercase; }
-
-.cs-block-title-icon {
-  font-size: 48px;
-  padding-top: 48px; }
-
-@media (max-width: 767px) {
-  h2.cs-title {
-    font-size: 24px; } }
 .cs-footer {
   background-color: #070825;
   margin-top: 50px;
@@ -174,10 +114,12 @@ h2.cs-title {
   .cs-social.cs-mail {
     background: url("../img/social/mail.svg") no-repeat;
     background-size: 85px; }
-  .cs-social.cs-social-small {
-    width: 40px;
-    height: 40px;
-    background-size: 40px; }
+  .cs-social.cs-bitcointalk {
+    background: url("../img/social/bitcointalk.svg") no-repeat;
+    background-size: 85px; }
+  .cs-social.cs-github {
+    background: url("../img/social/github.svg") no-repeat;
+    background-size: 85px; }
 
 .cs-social-bright .cs-social {
   opacity: 0.6;
@@ -188,45 +130,5 @@ h2.cs-title {
 @media (max-width: 767px) {
   .cs-footer .cs-social {
     opacity: 0.8; } }
-.cs-roadmap-point {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 5px solid #f0f0f0;
-  border-radius: 20px;
-  padding: 18px 28px; }
-  .cs-roadmap-point.cs-roadmap-marked {
-    border: 5px solid #0dbff2; }
-  .cs-roadmap-point.cs-roadmap-important {
-    border-color: #a6a6a6; }
-
-.cs-media-item {
-  margin-bottom: 30px; }
-
-.cs-ico-img {
-  width: 200px;
-  height: 200px; }
-
-.cs-buy-button {
-  padding: 15px 50px; }
-
-.cs-ico-faq-line {
-  padding-top: 50px; }
-
-.cs-ico-faq {
-  padding-top: 50px; }
-
-.cs-ico-progress {
-  margin-bottom: 0; }
-
-.cs-ico-instruction-logo {
-  margin-top: 25px; }
-  .cs-ico-instruction-logo img {
-    width: 50px;
-    height: 50px; }
-  .cs-ico-instruction-logo .title {
-    padding-left: 10px; }
-
-.cs-team-row {
-  margin-bottom: 35px; }
 
 /*# sourceMappingURL=all.css.map */

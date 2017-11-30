@@ -1,0 +1,47 @@
+.cs-no-lang.checkbox {
+  margin-top: 20px;
+  margin-left: 20px; }
+
+.cs-form {
+  padding-top: 50px; }
+  .cs-form .cs-top-logo {
+    width: 25%; }
+  .cs-form .cs-video-input {
+    margin-bottom: 0; }
+  .cs-form .cs-faq-table .form-group {
+    margin-bottom: 0; }
+  .cs-form .cs-news-table td {
+    vertical-align: middle; }
+  .cs-form .cs-products-table td {
+    vertical-align: middle; }
+  .cs-form .cs-faq-table,
+  .cs-form .cs-news-table,
+  .cs-form .cs-products-table {
+    margin-bottom: 0; }
+    .cs-form .cs-faq-table th,
+    .cs-form .cs-news-table th,
+    .cs-form .cs-products-table th {
+      vertical-align: bottom; }
+    .cs-form .cs-faq-table .cs-num,
+    .cs-form .cs-news-table .cs-num,
+    .cs-form .cs-products-table .cs-num {
+      font-weight: bold;
+      line-height: 250%;
+      cursor: pointer; }
+
+.cs-form-all {
+  padding-top: 35px; }
+  .cs-form-all hr {
+    margin-bottom: 10px; }
+
+@media (max-width: 767px) {
+  .cs-form .cs-save-buttons .btn {
+    width: 100%;
+    margin-top: 25px; }
+  .cs-form .cs-faq-use {
+    margin-top: 0; }
+    .cs-form .cs-faq-use input {
+      position: relative !important;
+      margin-left: 10px !important; } }
+
+/*# sourceMappingURL=project-constructor.css.map */
