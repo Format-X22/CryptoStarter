@@ -238,6 +238,10 @@ h2.cs-title {
 .cs-media-item {
   margin-bottom: 30px; }
 
+.cs-ico-date {
+  font-size: 570%;
+  font-family: 'Roboto Condensed'; }
+
 .cs-ico-img {
   width: 200px;
   height: 200px; }
