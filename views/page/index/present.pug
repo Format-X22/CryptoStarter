@@ -2,7 +2,7 @@ mixin present-block
     #home.row.cs-presentation
         .col-md-12
             .cs-title-line
-            h2.cs-title Presentation
+            h2.cs-title!= erb('l.present.presentation_title')
 
             iframe(
                 width='854'
@@ -20,108 +20,108 @@ mixin present-block
     .row.cs-comics-row
         .col-md-4
             img(src='img/present/1.png').cs-present-img.center-block
-            p Have you ever felt like you had a great idea? Some cool idea for anything: movie, app, video game, startup?
+            p!= erb('l.present.slide_1')
         .col-md-4
             img(src='img/present/2.png').cs-present-img.center-block
-            p But how to finance your startup project? Who's going to invest in your idea?
+            p!= erb('l.present.slide_2')
         .col-md-4
             img(src='img/present/3.png').cs-present-img.center-block
-            p You probably heard of crowdfunding. platforms like Kickstarter, Indigogo, etc.
+            p!= erb('l.present.slide_3')
     hr        
     .row.cs-comics-row
         .col-md-4
             img(src='img/present/4.png').cs-present-img.center-block
-            p What are the benefits of crowdfunding? Crowdfunding helps raise money by selling a product directly to your customers before product creation.
+            p!= erb('l.present.slide_4')
         .col-md-4
             img(src='img/present/5.png').cs-present-img.center-block
-            p This allows validation of an idea by your customers.
+            p!= erb('l.present.slide_5')
         .col-md-4
             img(src='img/present/6.png').cs-present-img.center-block
-            p This also creates a relationship with your future customers instantly, alowing a quick communication channel and feedback.
+            p!= erb('l.present.slide_6')
     hr
     .row.cs-comics-row
         .col-md-4
             img(src='img/present/7.png').cs-present-img.center-block
-            p Campaigners have nothing more than a promise to give to their backers.
+            p!= erb('l.present.slide_7')
         .col-md-4
             img(src='img/present/8.png').cs-present-img.center-block
-            p Ownership of a future product can not be transferred to others.
+            p!= erb('l.present.slide_8')
         .col-md-4
             img(src='img/present/9.png').cs-present-img.center-block
-            p Setting up a crowdfunding campaign to accept crypto currency is complicated.
+            p!= erb('l.present.slide_9')
     hr
     .row.cs-comics-row
         .col-md-4
             img(src='img/present/10.png').cs-present-img.center-block
-            p Say hello to CryptoStarter.io. 
+            p!= erb('l.present.slide_10')
         .col-md-4
             img(src='img/present/11.png').cs-present-img.center-block
-            p With CryptoStarter campaigners can create their own project tokens, which can be redeemed for a product, can be used as a digital share of a future company, or be traded.
+            p!= erb('l.present.slide_11')
         .col-md-4
             img(src='img/present/12.png').cs-present-img.center-block
-            p Cryptostarter creates an instant marketplace for project tokens. Since the amount of project tokens is set to be limited, the price changes. Buy or Sell project tokens right beforeproduct release.
+            p!= erb('l.present.slide_12')
     hr
-    .row.cs-comics-row
+    .row.cs-comics-row.cs-single-slide
         .col-md-6.col-md-offset-3
             img(src='img/present/13.png').cs-present-img.cs-present-img-double.center-block
-            p Anyone holding a cryptostarter token IDEA-coin, receives 3.5% Rewards from every crowdfunding campgain on the platform.
+            p!= erb('l.present.slide_13')
     hr
     .row.cs-comics-row
         .col-md-4
             img(src='img/present/14.png').cs-present-img.center-block
-            p Lets see how it works. Meet Alice. Alice wants to launch a crowdfunding campaign - AliceSmartGadget. She submits new project.
+            p!= erb('l.present.slide_14')
         .col-md-4
             img(src='img/present/15.png').cs-present-img.center-block
-            p Sets the number of Tokens to 1000. 1 product is 1 token.
+            p!= erb('l.present.slide_15')
         .col-md-4
             img(src='img/present/16.png').cs-present-img.center-block
-            p Sets planned delivery to 6 month. Launched! That's it!
+            p!= erb('l.present.slide_16')
     hr
     .row.cs-comics-row
         .col-md-4
             img(src='img/present/17.png').cs-present-img.center-block
-            p Meet Bob! Bob finds a cool project from Alice listed in project Library.
+            p!= erb('l.present.slide_17')
         .col-md-4
             img(src='img/present/18.png').cs-present-img.center-block
-            p Bob buys 5 Alice's Tokens with FIAT or Cryptocurrency.
+            p!= erb('l.present.slide_18')
         .col-md-4
             img(src='img/present/19.png').cs-present-img.center-block
-            p And keeps them in CS-Wallet.
+            p!= erb('l.present.slide_19')
     hr
     .row.cs-comics-row
         .col-md-6
             img(src='img/present/20.png').cs-present-img.cs-present-img-double.center-block
-            p After 3 month Bob decides to sell 4 tokens to investor - Chester, who just discovered the project.
+            p!= erb('l.present.slide_20')
         .col-md-6
             img(src='img/present/21.png').cs-present-img.cs-present-img-double.center-block
-            p Chester buys 4 tokens from Bob, using CS.
+            p!= erb('l.present.slide_21')
     hr
     .row.cs-comics-row
         .col-md-4
             img(src='img/present/22.png').cs-present-img.center-block
-            p After 6 month Alice releases the product.
+            p!= erb('l.present.slide_22')
         .col-md-4
             img(src='img/present/23.png').cs-present-img.center-block
-            p Meanwhile more people got interested. Chester sells 3 tokens for a higher price.
+            p!= erb('l.present.slide_23')
         .col-md-4
             img(src='img/present/24.png').cs-present-img.center-block
-            p Bob and Chester redeem their tokens to get the product.
+            p!= erb('l.present.slide_24')
     hr
-    .row.cs-comics-row
+    .row.cs-comics-row.cs-single-slide
         .col-md-6.col-md-offset-3
             img(src='img/present/25.png').cs-present-img.cs-present-img-double.center-block
-            p Cryptostarter has IDEA token and gives reward distribution for all holders. 3.5% of each project gets distributed proportionally to all IDEA token holders.
+            p!= erb('l.present.slide_25')
     hr
     .row.cs-comics-row
         .col-md-6
             img(src='img/present/26.png').cs-present-img.cs-present-img-double.center-block
-            p Let’s recap how Cryptostarter works in 4 simple steps. Step 1 Submit the project. Step 2. Project tokens get generated and listed on exchange.
+            p!= erb('l.present.slide_26')
         .col-md-6
             img(src='img/present/27.png').cs-present-img.cs-present-img-double.center-block
-            p Step 3. Tokens get bought and sold before product release. Step 4. Tokens get redeemed with a product upon release.
+            p!= erb('l.present.slide_27')
     hr
-    .row.cs-comics-row
+    .row.cs-comics-row.cs-single-slide
         .col-md-6.col-md-offset-3
             img(src='img/present/28.svg').cs-present-img.cs-present-img-double.center-block
-            p CryptoStarter.io
+            p!= erb('l.present.slide_28')
     hr        

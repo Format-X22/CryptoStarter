@@ -13,6 +13,10 @@ body {
 
 .rtl {
 	direction: rtl;
+
+	.cs-comics-row:not(.cs-single-slide) > div {
+		float: right;
+	}
 }
 
 @media (max-width: 767px) {

@@ -4,6 +4,8 @@ body {
 
 .rtl {
   direction: rtl; }
+  .rtl .cs-comics-row:not(.cs-single-slide) > div {
+    float: right; }
 
 @media (max-width: 767px) {
   .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
