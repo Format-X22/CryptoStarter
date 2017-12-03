@@ -307,14 +307,18 @@ h2.cs-title {
 	.cs-present-img {
 		width: 360px;
 		height: 240px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		box-shadow: 0 0 30px #dedede;
 
 		&-double {
 			width: 500px;
+			height: 340px;
 		}
+	}
 
-		&-triple {
-			width: 700px;
-		}
+	p {
+		text-align: center;
 	}
 }
 

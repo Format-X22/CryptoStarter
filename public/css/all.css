@@ -212,11 +212,15 @@ h2.cs-title {
 
 .cs-comics-row .cs-present-img {
   width: 360px;
-  height: 240px; }
+  height: 240px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 30px #dedede; }
   .cs-comics-row .cs-present-img-double {
-    width: 500px; }
-  .cs-comics-row .cs-present-img-triple {
-    width: 700px; }
+    width: 500px;
+    height: 340px; }
+.cs-comics-row p {
+  text-align: center; }
 
 .cs-roadmap-point {
   margin-top: 20px;
