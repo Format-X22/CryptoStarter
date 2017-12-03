@@ -208,10 +208,17 @@ h2.cs-title {
 @media (max-width: 767px) {
   .cs-footer .cs-social {
     opacity: 0.8; } }
+.cs-presentation .cs-video {
+  width: 854px;
+  height: 480px; }
 .cs-presentation .cs-social-bright {
   margin-top: 40px;
   margin-bottom: 40px; }
 
+@media (max-width: 900px) {
+  .cs-presentation .cs-video {
+    width: 100%;
+    height: auto; } }
 .cs-comics-row .cs-present-img {
   width: 360px;
   height: 240px;
@@ -224,6 +231,10 @@ h2.cs-title {
 .cs-comics-row p {
   text-align: center; }
 
+@media (max-width: 767px) {
+  .cs-comics-row .cs-present-img {
+    width: 100%;
+    height: auto; } }
 .cs-roadmap-point {
   margin-top: 20px;
   margin-bottom: 20px;

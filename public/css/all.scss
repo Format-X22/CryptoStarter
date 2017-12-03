@@ -300,10 +300,21 @@ h2.cs-title {
 }
 
 .cs-presentation {
+	.cs-video {
+		width: 854px;
+		height: 480px;
+	}
 
 	.cs-social-bright {
 		margin-top: 40px;
 		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 900px) {
+	.cs-presentation .cs-video {
+		width: 100%;
+		height: auto;
 	}
 }
 
@@ -325,6 +336,14 @@ h2.cs-title {
 		text-align: center;
 	}
 }
+
+@media (max-width: 767px) {
+	.cs-comics-row .cs-present-img  {
+		width: 100%;
+		height: auto;
+	}
+}
+
 
 .cs-roadmap-point {
 	margin-top: 20px;
