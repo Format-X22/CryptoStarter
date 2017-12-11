@@ -88,7 +88,7 @@
     "project_th": "Project",
     "project_description_th": "Description",
     "sponsored": "Sponsored using",
-    "address": "E-wallet address"
+    "address": "Address"
   },
   "project": {
     "page_title": "Project",
@@ -133,7 +133,7 @@
     "news": "News",
     "news_header": "Title",
     "products": "Products",
-    "address": "E-wallet address",
+    "address": "Address",
     "product_name": "Name",
     "save_no_public": "Save without publishing",
     "publish": "Publish"

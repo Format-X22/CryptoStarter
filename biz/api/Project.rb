@@ -9,8 +9,8 @@ helpers do
 			result.push OpenStruct.new({
 				id: i + offset,
 				img: '/img/project_stub.jpeg',
-				title: $locale[cookies[:lang] || 'ru'].demo.project_title, # TODO - en
-				description: $locale[cookies[:lang] || 'ru'].demo.project_desc, # TODO - en,
+				title: $locale[cookies[:lang] || 'en'].demo.project_title,
+				description: $locale[cookies[:lang] || 'en'].demo.project_desc,
 				progress: '75',
 				count: '332',
 				percent: '75',
