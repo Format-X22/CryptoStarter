@@ -86,21 +86,21 @@
   },
   "team": {
     "oleg_name": "Oleg<br> Pavlov",
-    "oleg_description": "Основатель, разработчик ПО, активно участвовал в проектах блокчейнав течение последних 3 лет.",
+    "oleg_description": "Основатель, разработчик ПО, активно участвовал в блокчейн-проектах в течение последних 3 лет.",
     "alex_name": "Alexander<br> Musichen",
-    "alex_description": "Основатель, разработчик ПО, участвовал в разработке приложений блокчейна в течение последних 3 лет.",
+    "alex_description": "Основатель, разработчик ПО, участвовал в разработке блокчейн-приложений в течение последних 3 лет.",
     "gregor_name": "Gregor<br> Steiner",
-    "gregor_description": "Разработчик ПО. Эксперт по структуре наращиваемых сетей и по встроенным сетям. Любитель блокчейнов.",
+    "gregor_description": "Разработчик ПО. Эксперт по структуре наращиваемых сетей и по встроенным сетям. Блокчейн-энтузиаст.",
     "ostap_name": "Ostap<br> Chervak",
-    "ostap_description": "Разработчик ПО, специалист по программированию на Pythonи JavaScript, любитель децентрализованных технологий.",
+    "ostap_description": "Разработчик ПО, специалист по программированию на Python и JavaScript, фанат децентрализованных технологий.",
     "oliver_name": "Oliver<br> Tatzber",
     "oliver_description": "Тестировщик, QA-инженер, специалист по QA продукта.",
     "diego_name": "Diego<br> Williams",
     "diego_description": "UX-консультант, дизайнер, разработчик, UI и UX-специалист, frontend-разработчик.",
     "vladislav_name": "Vladislav<br> Dyachenko",
-    "vladislav_description": "Разработчик ПО, специалист по Python и Ethereum/Solidity, разработчик децентрализованных приложений, любитель децентрализованных технологий.",
+    "vladislav_description": "Разработчик ПО, специалист по Python и Ethereum/Solidity, разработчик децентрализованных приложений, фанат децентрализованных технологий.",
     "sergey_name": "Sergey<br> Antonov",
-    "sergey_description": "Разработчик ПО, специалист по работе с JS, Elixir, Phoenix, Ethereum/Solidity, любитель децентрализованных технологий."
+    "sergey_description": "Разработчик ПО, специалист по работе с JS, Elixir, Phoenix, Ethereum/Solidity, фанат децентрализованных технологий."
   },
   "roadmap": {
     "start": {
