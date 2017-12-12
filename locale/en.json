@@ -21,7 +21,7 @@
     "register": "Pre-register your project"
   },
   "register": {
-    "hint": "_EMPTY_",
+    "hint": "You can register your project before the final launch of Cryptostarter. We will inform you and give you the access to the website beforehand, and you will be able to make your project which will appear at the website on the day of the Cryptostarter launch.",
     "project_name_label": "Project name",
     "project_name_placeholder": "Your project name",
     "email_label": "Contact email",
@@ -30,7 +30,7 @@
     "description_placeholder": "Your project description",
     "register_project_button": "Register",
     "success_modal_title": "Success!",
-    "success_modal_text": "_EMPTY_"
+    "success_modal_text": "Your project has been registered. We will send all the necessary information to your e-mail address within a day."
   },
   "present": {
     "presentation_title": "Presentation",
@@ -67,22 +67,22 @@
     "info_before": "_EMPTY_",
     "info_in": "_EMPTY_",
     "info_after": "_EMPTY_",
-    "buy_button": "_EMPTY_",
-    "agreement_title": "_EMPTY_",
-    "agreement_no_usa": "_EMPTY_",
-    "contract_title": "_EMPTY_",
-    "copy": "_EMPTY_",
-    "instruction_1": "_EMPTY_",
-    "instruction_2": "_EMPTY_",
-    "instruction_3": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "comodo": "_EMPTY_"
+    "buy_button": "Buy",
+    "agreement_title": "Agreement",
+    "agreement_no_usa": "I confirm that I am not a citizen, resident or a legal entity of the United States (“U.S. Person”) and I do not buy IdeaCoin tokens on behalf of a U.S. Person.",
+    "contract_title": "Contract",
+    "copy": "Copy",
+    "instruction_1": "Send ETH tokens to the indicated e-mail from any wallet, and IDEA tokens will be credited to your account automatically.",
+    "instruction_2": "Do not send tokens from exchanges — your tokens will be сredited to the exchange’s account and you will not be able to access them.",
+    "instruction_3": "If you buy 10,000 tokens or more, you acquire the right to get dividends from the service’s revenue.",
+    "invested": "Invested",
+    "comodo": "Comodo CA Limited guarantees the safety of your connection."
   },
   "docs": {
-    "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_",
-    "smart_title": "_EMPTY_",
-    "smart_load": "_EMPTY_"
+    "wp_title": "CryptoStarter and IdeaCoin Description",
+    "wp_download": "Download White Paper",
+    "smart_title": "Verified smart contract",
+    "smart_load": "Code"
   },
   "team": {
     "oleg_name": "Oleg<br> Pavlov",
@@ -104,74 +104,74 @@
   },
   "roadmap": {
     "start": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "March 4, 2017",
+      "title": "Beginning of the project",
+      "description": "Beginning of the development of CryptoStarter platform."
     },
     "alpha_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "July 3, 2017",
+      "title": "Alpha version",
+      "description": "The core of CryptoStarter."
     },
     "alpha_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "August 7, 2017",
+      "title": "Alpha version 2",
+      "description": "Unstable version of CryptoStarter with main features."
     },
     "demo": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "October 2, 2017",
+      "title": "Demo version",
+      "description": "Public demo version for the domain demo.cryptostarter.io. The connection with the server and blockchain is off, but all the elements of the interface are functioning which allows to demonstrate the features of the platform."
     },
     "smart": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "October 16, 2017",
+      "title": "Final smart contract version",
+      "description": "Full final version of IdeaCoin smartcontract.Includes main token, project containers, product token, connection agent, dividends and voting software engines and various utility parts, as well as Ethereum blockchain size optimization."
     },
     "beta_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "October 23, 2017",
+      "title": "Cryptostarter Beta",
+      "description": "CryptoStarter with final features."
     },
     "pre_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "January 22, 2017 — February 22, 2018",
+      "title": "pre-ICO",
+      "description": "Presale of a part of the tokens with a 50% bonus."
     },
     "beta_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "March 5-12, 2018",
+      "title": "Beta version 2",
+      "description": "CryptoStarter with final features in full."
     },
     "ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "April 9, 2018 — May 9, 2018",
+      "title": "ICO",
+      "description": "Presale of the main part of the tokens with a bonus at the beginning."
     },
     "early": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "April 9, 2018",
+      "title": "Early access",
+      "description": "The project owners who decided to register their projects before the public launch of Cryptostarter will receive access to the platform."
     },
     "release": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "May 14-21, 2018",
+      "title": "Version 1.0 release",
+      "description": "CryptoStarter release."
     },
     "post_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "May 14-21, 2018 — June 17, 2018",
+      "title": "post-ICO",
+      "description": "Sale of coins for the users directly from the website before the release to exchanges. The price will be doubled relative to the ICO price, which means the rate will increase 100%."
     },
     "stock": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "June 17, 2017",
+      "title": "Release to exchanges",
+      "description": "Start of token trade at exchanges."
     },
     "frame": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "September 2018",
+      "title": "CryptoStarter Frame",
+      "description": "Special CryptoStarter widget to set up at any website which allows to accept payments and receive information on the project everywhere."
     }
   },
   "component": {

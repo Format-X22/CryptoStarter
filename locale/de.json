@@ -1,181 +1,181 @@
 {
   "main_menu": {
-    "home": "_EMPTY_",
+    "home": "Hauptseite",
     "ico": "ICO",
-    "docs": "_EMPTY_",
-    "timeline": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "docs": "Dokumente",
+    "timeline": "Fahrplan",
+    "media": "Medien",
+    "team": "Team",
+    "register": "Registrieren Sie Ihr Projekt"
   },
   "wow_slider": {
     "main_text": "Crowdfunding",
-    "sub_text": "_EMPTY_"
+    "sub_text": "Dezentralisiert. Tokenisiert. Grenzenlos."
   },
   "title": {
-    "ico": "_EMPTY_",
-    "docs": "_EMPTY_",
-    "roadmap": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "ico": "ICO",
+    "docs": "Weißbuch und Dokumente",
+    "roadmap": "Projektfahrplan",
+    "media": "Medien über uns",
+    "team": "Team",
+    "register": "Registrieren Sie Ihr Projekt vorab"
   },
   "register": {
-    "hint": "_EMPTY_",
-    "project_name_label": "_EMPTY_",
-    "project_name_placeholder": "_EMPTY_",
-    "email_label": "_EMPTY_",
-    "email_placeholder": "_EMPTY_",
-    "description_label": "_EMPTY_",
-    "description_placeholder": "_EMPTY_",
-    "register_project_button": "_EMPTY_",
-    "success_modal_title": "_EMPTY_",
-    "success_modal_text": "_EMPTY_"
+    "hint": "Sie können Ihr Projekt bereits vor dem offiziellen Launch von CryptoStarter registrieren. Vor dem Launch benachrichtigen wir Sie und übermitteln Ihnen Zugriffsdaten für die Webseite. Sie können dann Ihr Projekt erstellen, und am Lounch-Tag von CryptoStarter wird es an den obersten Positionen der Seite erscheinen.",
+    "project_name_label": "Projektname",
+    "project_name_placeholder": "Ihr Projektname",
+    "email_label": "E-Mail-Kontaktadresse",
+    "email_placeholder": "E-Mail-Kontaktadresse für Ihr Projekt",
+    "description_label": "Projektbeschreibung",
+    "description_placeholder": "Ihre Projektbeschreibung",
+    "register_project_button": "Registrieren",
+    "success_modal_title": "Erfolgreich! ",
+    "success_modal_text": "Ihr Projekt wurde erfolgreich registriert. Im Laufe von 24 Stunden senden wir an die von Ihnen angegebene E-Mail-Adresse eine Mail mit allen erforderlichen Daten."
   },
   "present": {
-    "presentation_title": "_EMPTY_",
-    "slide_1": "_EMPTY_",
-    "slide_2": "_EMPTY_",
-    "slide_3": "_EMPTY_",
-    "slide_4": "_EMPTY_",
-    "slide_5": "_EMPTY_",
-    "slide_6": "_EMPTY_",
-    "slide_7": "_EMPTY_",
-    "slide_8": "_EMPTY_",
-    "slide_9": "_EMPTY_",
-    "slide_10": "_EMPTY_",
-    "slide_11": "_EMPTY_",
-    "slide_12": "_EMPTY_",
-    "slide_13": "_EMPTY_",
-    "slide_14": "_EMPTY_",
-    "slide_15": "_EMPTY_",
-    "slide_16": "_EMPTY_",
-    "slide_17": "_EMPTY_",
-    "slide_18": "_EMPTY_",
-    "slide_19": "_EMPTY_",
-    "slide_20": "_EMPTY_",
-    "slide_21": "_EMPTY_",
-    "slide_22": "_EMPTY_",
-    "slide_23": "_EMPTY_",
-    "slide_24": "_EMPTY_",
-    "slide_25": "_EMPTY_",
-    "slide_26": "_EMPTY_",
-    "slide_27": "_EMPTY_"
+    "presentation_title": "Präsentation",
+    "slide_1": "Hatten Sie jemals das Gefühl, dass Sie auf eine tolle Idee zu irgendetwas gekommen sind? Eine coole Film-, App-, Videospiel-Idee?",
+    "slide_2": "Wie finanziert man aber solch ein Start-up? Wer investiert in Ihre Idee?",
+    "slide_3": "Wahrscheinlich haben Sie schon von Crowdfunding-Plattformen wie Kickstarter, Indigogo usw. gehört.",
+    "slide_4": "Was sind die Vorteile des Crowdfunding? Crowdfunding macht es möglich, Geld zu sammeln, indem man ein Produkt direkt an interessierte Kunden verkauft, noch bevor das Produkt hergestellt wird.",
+    "slide_5": "So können die Kunden Ihre Idee validieren.",
+    "slide_6": "Darüber hinaus stellen Sie dadurch gleich eine Beziehung zu Ihren Kunden her, die eine schnelle Kommunikation und ein unkompliziertes Feedback ermöglicht.",
+    "slide_7": "nitiatoren können ihre Unterstützer mit nichts anderem als einem Versprechen überzeugen.",
+    "slide_8": "Das Eigentum am künftigen Produkt kann nicht auf die anderen übertragen werden.",
+    "slide_9": "Es ist kompliziert, eine Crowdfunding-Kampagne zu starten, die Kryptowährungen akzeptieren würde.",
+    "slide_10": "Sagen Sie Hallo zu CryptoStarter.io",
+    "slide_11": "Mit CryptoStarter können Initiatoren ihre eigenen Projekt-Tokens anbieten, die gegen ein Produkt getauscht werden, als ein digitaler Anteil am künftigen Unternehmen dienen können, und mit denen gehandelt werden kann.",
+    "slide_12": "CryptoStarter stellt einen Marktplatz für unmittelbare Transaktionen mit Projekt-Tokens dar. Da die Menge von Projekt-Tokens immer begrenzt ist, ändert sich ihr Preis. Kaufen oder verkaufen Sie Projekt-Tokens direkt vor dem Produktrelease.",
+    "slide_13": "Jeder, der einen „IDEA-Coin“-CryptoStarter-Token besitzt, erhält 3.5% von jeder auf der Plattform durchgeführten Crowdfunding-Kampagne.",
+    "slide_14": "Ein Beispiel zur Veranschaulichung. Darf ich bekannt machen: Alice. Alice möchte die Crowdfunding-Kampagne „AliceSmartGadget” starten. Sie erstellt ein neues Projekt.",
+    "slide_15": "Alice legt die Anzahl der Tokens fest – 1000. 1 Produkt = 1 Token.",
+    "slide_16": "Sie gibt auch die voraussichtliche Lieferzeit an – 6 Monate. Gelauncht! Das war's!",
+    "slide_17": "Und das ist Bob! Bob findet das tolle Projekt von Alice in der Projektbibliothek.",
+    "slide_18": "Bob kauft 5 Alices Tokens und bezahlt sie mit Fiat-Geld oder mit einer Kryptowährung.",
+    "slide_19": "Die gekauften Tokens werden in einer CS-Wallet aufbewahrt.",
+    "slide_20": "Nach 3 Monaten beschließt Bob, 4 Tokens an den Investor Chester zu verkaufen, der vom Projekt eben erst erfahren hat.",
+    "slide_21": "Chester kauft 4 Tokens bei Bob. Dabei verwendet Chester CS.",
+    "slide_22": "Nach 6 Monaten veröffentlicht Alice das Produkt.",
+    "slide_23": "Inzwischen interessieren sich viele Menschen für das Projekt. Chester verkauft 3 Tokens zu einem höheren Preis.",
+    "slide_24": "Bob und Chester lösen ihre Tokens ein und bekommen das Produkt.",
+    "slide_25": "CryptoStarter hat IDEA-Tokens und verschüttet an alle Besitzer davon Gewinne aus. 3.5% von jedem Projekt werden anteilsmäßig an alle IDEA-Token-Besitzer verteilt.",
+    "slide_26": "Fassen wir die Funktionsweise von CryptoStarter in 4 einfachen Schritten kurz zusammen. Schritt 1. Projekt erstellen. Schritt 2. Projekt-Tokens werden generiert und an der Börse notiert.",
+    "slide_27": "Schritt 3. Tokens werden gekauft und verkauft, bevor das Produkt veröffentlicht wird. Schritt 4. Nach der Produktveröffentlichung werden Tokens gegen das Produkt eingelöst."
   },
   "ico": {
     "info_before": "_EMPTY_",
     "info_in": "_EMPTY_",
     "info_after": "_EMPTY_",
-    "buy_button": "_EMPTY_",
-    "agreement_title": "_EMPTY_",
-    "agreement_no_usa": "_EMPTY_",
-    "contract_title": "_EMPTY_",
-    "copy": "_EMPTY_",
-    "instruction_1": "_EMPTY_",
-    "instruction_2": "_EMPTY_",
-    "instruction_3": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "comodo": "_EMPTY_"
+    "buy_button": "Kaufen",
+    "agreement_title": "Vereinbarung",
+    "agreement_no_usa": "Hiermit bestätige ich, dass ich kein(e) US-Staatsangehörige(r) („U.S. Person“) bin und keine IdeaCoin-Tokens im Namen einer „U.S. Person” kaufe.",
+    "contract_title": "Vertrag",
+    "copy": "Kopieren",
+    "instruction_1": "Senden Sie an die angegebene Adresse ETH-Tokens von jeder beliebigen Wallet Ihrer Wahl, und IDEA-Tokens werden automatisch auf Ihrem Konto gutgeschrieben.",
+    "instruction_2": "Senden Sie keine Tokens von den Börsen – in diesem Fall werden die Tokens nicht auf Ihrem Konto, sondern dem jeweiligen Börsenkonto gutgeschrieben und Sie können darauf nicht zugreifen.",
+    "instruction_3": "Wenn Sie ab 10.000 Tokens kaufen, haben Sie Anspruch auf die Beteiligung am Gewinn unseres Services.",
+    "invested": "Investiert insgesamt",
+    "comodo": "Für eine sichere Verbindung sorgt Comodo CA Limited."
   },
   "docs": {
-    "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_",
-    "smart_title": "_EMPTY_",
-    "smart_load": "_EMPTY_"
+    "wp_title": "Beschreibung von CryptoStarter und IdeaCoin",
+    "wp_download": "Das Weißbuch herunterladen",
+    "smart_title": "Verifizierter Smart-Vertrag",
+    "smart_load": "Kode"
   },
   "team": {
     "oleg_name": "Oleg<br> Pavlov",
-    "oleg_description": "_EMPTY_",
+    "oleg_description": "Gründer, Softwareentwickler. Aktiver Teilnehmer an diversen Blockchain-Projekten während der letzten 3 Jahre.",
     "alex_name": "Alexander<br> Musichen",
-    "alex_description": "_EMPTY_",
+    "alex_description": "Gründer, Softwareentwickler. Teilnahme an der Entwicklung von Blockchain-Apps während der letzten 3 Jahre.",
     "gregor_name": "Gregor<br> Steiner",
-    "gregor_description": "_EMPTY_",
+    "gregor_description": "Softwareentwickler. Experte für skalierbare Systemarchitektur und eingebettete Systeme. Blockchain-Begeisterter.",
     "ostap_name": "Ostap<br> Chervak",
-    "ostap_description": "_EMPTY_",
+    "ostap_description": "Softwareentwickler. Experte für Python JS, Systemarchitekt. Enthusiast für dezentrale Technik.",
     "oliver_name": "Oliver<br> Tatzber",
-    "oliver_description": "_EMPTY_",
+    "oliver_description": "Test- und QA-Ingenieur. Produkt-Qualitätssicherer.",
     "diego_name": "Diego<br> Williams",
-    "diego_description": "_EMPTY_",
+    "diego_description": "UX-Berater, Gestalter, Entwickler. Experte für UI und User Experience, Frontend-Entwickler.",
     "vladislav_name": "Vladislav<br> Dyachenko",
-    "vladislav_description": "_EMPTY_",
+    "vladislav_description": "Softwareentwickler. Experte für Python, Ethereum/Solidity, DApp-Entwickler, Enthusiast für dezentrale Technik.",
     "sergey_name": "Sergey<br> Antonov",
-    "sergey_description": "_EMPTY_"
+    "sergey_description": "Softwareentwickler. Experte für JS, Elixir, Phoenix, Ethereum/Solidity, Enthusiast für dezentrale Technik."
   },
   "roadmap": {
     "start": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "4. März 2017",
+      "title": "Projektstart",
+      "description": "Es wird mit der Entwicklung der CryptoStarter-Plattform begonnen."
     },
     "alpha_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "3. Juli 2017",
+      "title": "Alpha-Version",
+      "description": "Kern der CryptoStarter-Plattform."
     },
     "alpha_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "7. August 2017",
+      "title": "Alpha-Version 2",
+      "description": "Instabile Version der CryptoStarter-Plattform mit den wichtigsten Funktionen."
     },
     "demo": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2. Oktober 2017",
+      "title": "Demoversion",
+      "description": "Öffentliche Demoversion der Plattform für die demo.cryptostarter.io.-Domain. In dieser Version ist die Kommunikation mit dem Server und der Blockhain deaktiviert, allerdings sind alle Elemente der Benutzeroberfläche freigeschaltet, so dass die künftigen Funktionen der Plattform demonstriert werden können."
     },
     "smart": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "16. Oktober 2017",
+      "title": "Endgültige Version des Smart-Vertrags",
+      "description": "Volle endgültige Version des Smart-Vertrags über IdeaCoin. Sie beinhaltet das Haupt-Token, Container-Projekte, das Produkt-Token, einen Kommunikationsagenten, eine Dividenden-Engine, eine Engine für Abstimmungen und zahlreiche Utility-Komponenten. Anpassung an die Blockgröße der Ethereum-Blockchain."
     },
     "beta_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "23. Oktober 2017",
+      "title": "Beta-Version von CryptoStarter",
+      "description": "CryptoStarter-Plattform mit den wichtigsten Funktionen in der endgültigen Form."
     },
     "pre_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "22. Januar 2017 – 22. Februar 2018",
+      "title": "pre-ICO",
+      "description": "Vorläufiger Verkauf eines geringen Teils der Tokens mit einem 50%-Bonus."
     },
     "beta_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "5.-12. März 2018",
+      "title": "Beta-Version 2",
+      "description": "CryptoStarter-Plattform mit allen Funktionen in der endgültigen Form."
     },
     "ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "9. April 2018 – 9. Mai 2018",
+      "title": "ICO",
+      "description": "Vorläufiger Verkauf des Hauptteils der Tokens mit einem Bonus an den ersten Tagen."
     },
     "early": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "9. April 2018",
+      "title": "Früher Zugriff",
+      "description": "Zugriffseröffnung für Projektinhaber, die ihre Projekte vor dem öffentlichen Launch der CryptoStarter-Plattform registriert haben."
     },
     "release": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "14.-21. Mai 2018",
+      "title": "Release der 1.0-Version",
+      "description": "Release der CryptoStarter-Plattform."
     },
     "post_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "14.-21. Mai 2018 – 17. Juni 2018",
+      "title": "post-ICO",
+      "description": "Coinverkauf an die Seitennutzer direkt über die Seite vor der Börsennotierung. Der Preis wird gegenüber dem ICO-Preis verdoppelt, d. h. der Kurs wird sich um 100% erhöhen."
     },
     "stock": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "17. Juni 2017",
+      "title": "Börsennotierung",
+      "description": "Beginn des Börsenhandels mit den Tokens."
     },
     "frame": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "September 2018",
+      "title": "CryptoStarter Frame",
+      "description": "Ein spezielles Widget der CryptoStarter-Plattform zur Zahlungsannahme und Herausgabe von Projektinformationen. Das Widget kann in eine beliebige Seite eingebettet werden."
     }
   },
   "component": {
-    "ok": "_EMPTY_",
-    "cancel": "_EMPTY_"
+    "ok": "OK",
+    "cancel": "Abbrechen"
   },
-  "error": "_EMPTY_"
+  "error": "Fehler"
 }
