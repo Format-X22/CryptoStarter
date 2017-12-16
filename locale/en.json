@@ -104,89 +104,74 @@
   },
   "roadmap": {
     "start": {
-      "date": "April 2017",
-      "title": "Project start",
-      "description": "The development of the CryptoStarter platform starts."
+      "date": "March 4, 2017",
+      "title": "Beginning of the project",
+      "description": "Beginning of the development of CryptoStarter platform."
     },
     "alpha_1": {
-      "date": "May 2017",
-      "title": "Alfa version 1",
-      "description": "Development of initial features of the CryptoStarter platform, the approval of White Paper and MVP."
+      "date": "July 3, 2017",
+      "title": "Alpha version",
+      "description": "The core of CryptoStarter."
     },
     "alpha_2": {
-      "date": "July 2017",
-      "title": "Alfa version 2",
-      "description": "Unstable version of the CryptoStarter, development of core features of the platform, core functionality."
+      "date": "August 7, 2017",
+      "title": "Alpha version 2",
+      "description": "Unstable version of CryptoStarter with main features."
     },
     "demo": {
-      "date": "August 2017",
-      "title": "Platform Demo (MVP)",
-      "description": "Public demo version demo.cryptostarter.io. Developing of MVP as the platform demo, that shows the UI views of core functionality: publishing the project and the library of projects, login/registration, etc. At this stage no connection to blockchain or backend API. "
+      "date": "October 2, 2017",
+      "title": "Demo version",
+      "description": "Public demo version for the domain demo.cryptostarter.io. The connection with the server and blockchain is off, but all the elements of the interface are functioning which allows to demonstrate the features of the platform."
     },
     "smart": {
-      "date": "September 2017",
-      "title": "Smart Contracts and IDEA Token",
-      "description": "Final version of the source code of IDEA Coin and final version of core Cryptostarter platform  Smart Contracts, main token, project containers, product tokens, connection agent, dividends and voting software engines, various utilities, Ethereum blockchain size optimization."
+      "date": "October 16, 2017",
+      "title": "Final smart contract version",
+      "description": "Full final version of IdeaCoin smartcontract.Includes main token, project containers, product token, connection agent, dividends and voting software engines and various utility parts, as well as Ethereum blockchain size optimization."
     },
     "beta_1": {
-      "date": "October 2017",
-      "title": "Beta 1",
-      "description": "Platform CryptoStarter with the basic functionality, login/signup of authors, projects can be registered."
+      "date": "October 23, 2017",
+      "title": "Cryptostarter Beta",
+      "description": "CryptoStarter with final features."
     },
     "pre_ico": {
-      "date": "January 2018",
-      "title": "Pre-ICO",
-      "description": "Pre-ICO with limited tokens offer will take place. Partial presale of tokens with a 50% bonus. "
+      "date": "January 22, 2017 — February 22, 2018",
+      "title": "pre-ICO",
+      "description": "Presale of a part of the tokens with a 50% bonus."
     },
     "beta_2": {
-      "date": "February 2018",
-      "title": "Beta 2",
-      "description": "Platform CryptoStarter with the full MVP functionality, projects can be registered and published to project library. "
+      "date": "March 5-12, 2018",
+      "title": "Beta version 2",
+      "description": "CryptoStarter with final features in full."
     },
     "ico": {
-      "date": "April 2018",
+      "date": "April 9, 2018 — May 9, 2018",
       "title": "ICO",
-      "description": "Full ICO will take place in April 2018. Presale of the main part of the tokens with a bonus at the beginning."
+      "description": "Presale of the main part of the tokens with a bonus at the beginning."
     },
     "early": {
-      "date": "May 2018",
-      "title": "Early Access",
-      "description": "The owners of projects who have decided to register their projects before the public launch of the CryptoStarter platform will get access to the platform."
+      "date": "April 9, 2018",
+      "title": "Early access",
+      "description": "The project owners who decided to register their projects before the public launch of Cryptostarter will receive access to the platform."
     },
-    "release1": {
-      "date": "June 2018",
-      "title": "Release 1.0",
-      "description": "Platform release in the MVP version."
+    "release": {
+      "date": "May 14-21, 2018",
+      "title": "Version 1.0 release",
+      "description": "CryptoStarter release."
     },
     "post_ico": {
-      "date": "July 2018",
-      "title": "Post-ICO",
-      "description": "Selling tokens from the site until the moment they enter the first exchange. The cost of coins for post-ICO will be doubled relative to the ICO price. "
+      "date": "May 14-21, 2018 — June 17, 2018",
+      "title": "post-ICO",
+      "description": "Sale of coins for the users directly from the website before the release to exchanges. The price will be doubled relative to the ICO price, which means the rate will increase 100%."
     },
-    "listing": {
-      "date": "August 2018",
-      "title": "Listing in popular crypto-currency exchanges",
-      "description": "Start trading tokens on stock exchanges. Completion of post-ICO. "
-    },
-    "release2": {
-      "date": "September 2018",
-      "title": "Release 2.0",
-      "description": "In this version, incremental investment will be added and the funds will be returned through a smart contract."
-    },
-    "release3": {
-      "date": "October 2018",
-      "title": "Release 3.0",
-      "description": "In this version, the project tokens (futures) for each registered project will be added, the project tokens at this point can be traded within the CryptoStarter exchange. "
+    "stock": {
+      "date": "June 17, 2017",
+      "title": "Release to exchanges",
+      "description": "Start of token trade at exchanges."
     },
     "frame": {
-      "date": "November 2018",
-      "title": "CryptoStarter crowdfunding Widget",
-      "description": "Introducing of special  CryptoStarter widget for embedding in any site, the widget allows collecting payments and displaying information about the project anywhere."
-    },
-    "release4": {
-      "date": "December 2018",
-      "title": "Release 4.0",
-      "description": "In this version, the platform will introduce full decentralization, including all the storage data. "
+      "date": "September 2018",
+      "title": "CryptoStarter Frame",
+      "description": "Special CryptoStarter widget to set up at any website which allows to accept payments and receive information on the project everywhere."
     }
   },
   "component": {
