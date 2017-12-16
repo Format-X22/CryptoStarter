@@ -65,7 +65,7 @@
     "register_project": "Enregistrer le projet"
   },
   "profile": {
-    "page_title": "_EMPTY_",
+    "page_title": "Profil",
     "edit_profile": "Modifier le profil",
     "edit_security": "Configurations de sécurité",
     "create_project": "Créer un projet",
