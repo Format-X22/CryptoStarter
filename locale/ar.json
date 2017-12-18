@@ -50,11 +50,11 @@
     "slide_14": "لدينا مثال جيد: أليس تريد تشغيل حملة التمويل الجماعي مع اسم AliceSmartGadget وتقدم مشروعا جديدا.",
     "slide_15": "تحدد عدد رموز وهو 1000: منتج واحد – رمز واحد.",
     "slide_16": "تحدد أيضا مدة 6 أشهر لتخطيط إنتاج المنتج. بدء! هذا كل شىء. ",
-    "slide_17": "Meet Bob! Bob finds a cool project from Alice listed in project Library.",
-    "slide_18": "Bob buys 5 Alice's Tokens with FIAT or Cryptocurrency.",
-    "slide_19": "And keeps them in CS-Wallet.",
+    "slide_17": "يجد بوب مشروع أليس في مكتبة المشروعات.",
+    "slide_18": "ويشتري رموز أليس مع مساعدة العملة المعماة أو FIAT",
+    "slide_19": "يحفظ عليها في نظام WaIIet-CS",
     "slide_20": "بعد 3 أشهر يريد بوب بيع 4 رموز لتشيستير وهو المستثمر الذي اكتشف هذا المشروع الآن. يشتري تشيستير 4 رموز من بوب باستخدام CS.",
-    "slide_21": "Chester buys 4 tokens from Bob, using CS.",
+    "slide_21": "",
     "slide_22": "وبعد 6 أشهر تنتج أليس منتجا.",
     "slide_23": "في نفس الوقت يبدأ المزيد من الناس الاهتمام بالمشروع ويبيع تشيستير 3 رموز بأعلى سعر.",
     "slide_24": "يحصل بوب وتشيستير المنتج لرموزهما.",
@@ -104,23 +104,23 @@
   },
   "roadmap": {
     "start": {
-      "date": "March 4, 2017",
-      "title": "Beginning of the project",
+      "date": "4 مارس 2017 م ",
+      "title": "بداية المشروع",
       "description": "بداية تطوير منصة CryptoStarter."
     },
     "alpha_1": {
-      "date": "July 3, 2017",
-      "title": "Alpha version",
+      "date": "3 يولو 2017 م ",
+      "title": "إصدار ألفا",
       "description": "مركز المنصة CryptoStarter."
     },
     "alpha_2": {
-      "date": "August 7, 2017",
-      "title": "Alpha version 2",
+      "date": "7 أغسطس 2017 م ",
+      "title": "إصدار ألفا 2",
       "description": "النسخة غير المستقرة لمنصة CryptoStarter مع الوظائف الرئيسية"
     },
     "demo": {
-      "date": "October 2, 2017",
-      "title": "Demo version",
+      "date": "2 أكتوبر 2017 م ",
+      "title": "اصدار العرض التوضيحي",
       "description": "اصدارة العرض التوضيحي العام للمنصة للمجال demo.cryptostarter.io. يتم تعطيل التفاعل مع الخادم وسلسلة الكتل ولكن جميع عناصر الواجهة مفتوحة وهو مناسب لعرض وظائف المنصة المستقبلية."
     },
     "smart": {
@@ -139,8 +139,8 @@
       "description": "ما قبل البيع العام لجزء الرموز مع مكافأة 50%."
     },
     "beta_2": {
-      "date": "March 5-12, 2018",
-      "title": "Beta version 2",
+      "date": "5-12 مارس 2018 م ",
+      "title": "إصدار بيتا 2",
       "description": "المنصة CryptoStarter مع الوظيفة الرئيسية في الشكل النهائي."
     },
     "ico": {
@@ -149,7 +149,7 @@
       "description": "ما قبل البيع العام لجزء الرموز الرئيسي مع مكافأة في الأيام الأولى."
     },
     "early": {
-      "date": "April 9, 2018",
+      "date": "9 أبريل 2018 م",
       "title": "الوصول المبكر",
       "description": "إن أصحاب المشاريع الذين قرروا تسجيل مشاريعهم قبل إطلاق العام ل CryptoStarter يحصلون على الوصول إلى المنصة."
     },
