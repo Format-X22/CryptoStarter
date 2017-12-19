@@ -1,182 +1,182 @@
 {
   "main_menu": {
-    "home": "_EMPTY_",
+    "home": "الصفحة الرئيسية",
     "ico": "ICO",
-    "docs": "_EMPTY_",
-    "timeline": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "docs": "الوثائق",
+    "timeline": "خارطة الطريق",
+    "media": "وسائل الإعلام",
+    "team": "الفريق",
+    "register": "تسجيل المشروع"
   },
   "wow_slider": {
     "main_text": "Crowdfunding",
-    "sub_text": "_EMPTY_"
+    "sub_text": "لامركزي.مناسب لوضع رموز. بلا حدود."
   },
   "title": {
-    "ico": "_EMPTY_",
-    "docs": "_EMPTY_",
-    "roadmap": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "ico": "ICO",
+    "docs": "الوثائق",
+    "roadmap": "خارطة الطريق",
+    "media": "وسائل الإعلام عنا",
+    "team": "الفريق",
+    "register": "تسجيل المشروع"
   },
   "register": {
-    "hint": "_EMPTY_",
-    "project_name_label": "_EMPTY_",
-    "project_name_placeholder": "_EMPTY_",
-    "email_label": "_EMPTY_",
-    "email_placeholder": "_EMPTY_",
-    "description_label": "_EMPTY_",
-    "description_placeholder": "_EMPTY_",
-    "register_project_button": "_EMPTY_",
-    "success_modal_title": "_EMPTY_",
-    "success_modal_text": "_EMPTY_"
+    "hint": "يمكنك تسجيل مشروعك قبل الإطلاق النهائي ل CryptoStarter. قبل الإطلاق نبلغك ونعطي الوصول إلى الموقع مقدما ويمكنك تنفيذ المشروع الذي يظهر على الموقع في يوم إطلاق CryptoStarter. ",
+    "project_name_label": "اسم المشروع",
+    "project_name_placeholder": "اسم مشروعك",
+    "email_label": "البريد الإلكتروني للاتصال",
+    "email_placeholder": "البريد الإلكتروني لمشروعك للاتصال",
+    "description_label": "وصف المشروع",
+    "description_placeholder": "وصف مشروعك",
+    "register_project_button": "التسجيل",
+    "success_modal_title": "بنجاح!",
+    "success_modal_text": "تم تسجيل مشروعك بنجاح. خلال أبرع وعشرين ساعة تحصل على رسالة مع جميع البيانات اللازمة إلى البريد المشار إليه."
   },
   "present": {
-    "presentation_title": "_EMPTY_",
-    "slide_1": "_EMPTY_",
-    "slide_2": "_EMPTY_",
-    "slide_3": "_EMPTY_",
-    "slide_4": "_EMPTY_",
-    "slide_5": "_EMPTY_",
-    "slide_6": "_EMPTY_",
-    "slide_7": "_EMPTY_",
-    "slide_8": "_EMPTY_",
-    "slide_9": "_EMPTY_",
-    "slide_10": "_EMPTY_",
-    "slide_11": "_EMPTY_",
-    "slide_12": "_EMPTY_",
-    "slide_13": "_EMPTY_",
-    "slide_14": "_EMPTY_",
-    "slide_15": "_EMPTY_",
-    "slide_16": "_EMPTY_",
-    "slide_17": "_EMPTY_",
-    "slide_18": "_EMPTY_",
-    "slide_19": "_EMPTY_",
-    "slide_20": "_EMPTY_",
-    "slide_21": "_EMPTY_",
-    "slide_22": "_EMPTY_",
-    "slide_23": "_EMPTY_",
-    "slide_24": "_EMPTY_",
-    "slide_25": "_EMPTY_",
-    "slide_26": "_EMPTY_",
-    "slide_27": "_EMPTY_",
+    "presentation_title": "العرض",
+    "slide_1": "هل يوما ما خطرت ببالك فكرة رائعة؟ شيء عظيم: فيلم، تطبيق، لعبة فيديو، بدء المشروع؟",
+    "slide_2": "ولكن بعد ذلك تفكر: كيف سيتم تمويل هذا المشروع؟ من سيستثمر في فكرتي؟",
+    "slide_3": "ربما تعرف عن التمويل الجماعي: هذه هي منصات مثل Kickstarter، Indigogo، الخ.",
+    "slide_4": "إن تفوق التمويل الجماعي هو المساعدة على جمع الأموال عن طريق بيع المنتج المباشر للعملاء حتى قبل إنشاء المنتج.",
+    "slide_5": "مثل هذا يمكن للعملاء تقدير فكرتك.",
+    "slide_6": "كما أنه يساعدك على الفور بناء علاقات مع العملاء المستقبليين وخلق قناة سريعة للاتصال وردود الفع",
+    "slide_7": "يمكن للمنشئين فقط أن يعدوا عملائهم بمنتج مستقبلي.",
+    "slide_8": "لا يمكن نقل ملكية المنتج المستقبلي إلى شخص آخر.",
+    "slide_9": "و من الصعب تأسيس حملة التمويل الجماعي لقبول العملة المعماة. ",
+    "slide_10": "ولكن يساعدك هنا CryptoStarter.io.",
+    "slide_11": "بمساعدة CryptoStarter يمكن للمبدعين إنتاج رموزهم التي يمكنهم شراء المنتج بها والتي يمكن استخدامها كالأسهم الرقمية للشركة المستقبلية أو بيعها.",
+    "slide_12": "ينشئ CryptoStarter فورا سوق رموز المشروع. بما أن عددها محدود والسعر تختلف. يمكنك بيع أو شراء الرموز مباشرة قبل انتاج المنتج.",
+    "slide_13": "إن أي شخص لديه رمز coin-IDEA يحصل على مكافأة 3.5٪ من كل حملة التمويل الجماعي على المنصة. ",
+    "slide_14": "لدينا مثال جيد: أليس تريد تشغيل حملة التمويل الجماعي مع اسم AliceSmartGadget وتقدم مشروعا جديدا.",
+    "slide_15": "تحدد عدد رموز وهو 1000: منتج واحد – رمز واحد.",
+    "slide_16": "تحدد أيضا مدة 6 أشهر لتخطيط إنتاج المنتج. بدء! هذا كل شىء. ",
+    "slide_17": "يجد بوب مشروع أليس في مكتبة المشروعات.",
+    "slide_18": "ويشتري رموز أليس مع مساعدة العملة المعماة أو FIAT",
+    "slide_19": "يحفظ عليها في نظام WaIIet-CS",
+    "slide_20": "بعد 3 أشهر يريد بوب بيع 4 رموز لتشيستير وهو المستثمر الذي اكتشف هذا المشروع الآن. يشتري تشيستير 4 رموز من بوب باستخدام CS.",
+    "slide_21": "",
+    "slide_22": "وبعد 6 أشهر تنتج أليس منتجا.",
+    "slide_23": "في نفس الوقت يبدأ المزيد من الناس الاهتمام بالمشروع ويبيع تشيستير 3 رموز بأعلى سعر.",
+    "slide_24": "يحصل بوب وتشيستير المنتج لرموزهما.",
+    "slide_25": "باستخدام الرمز IDEA، يمكن لجميع الأصحاب الحصول على ربح المشروع بنسبة 3.5٪.",
+    "slide_26": "ولذلك تتضمن العملية كلها 4 خطوات. الخطوة 1: تقيدم المشروع. الخطوة 2: يتم إنشاء رموز المشروع ووضع في البورصة. ",
+    "slide_27": "الخطوة 3: يتم شراء وبيع الرموز قبل انتاج المنتج. الخطوة 4: يتم شراء المنتج المصنوع باستخدام الرموز. ",
     "slide_28": "CryptoStarter.io"
   },
   "ico": {
     "info_before": "_EMPTY_",
     "info_in": "_EMPTY_",
     "info_after": "_EMPTY_",
-    "buy_button": "_EMPTY_",
-    "agreement_title": "_EMPTY_",
-    "agreement_no_usa": "_EMPTY_",
-    "contract_title": "_EMPTY_",
-    "copy": "_EMPTY_",
-    "instruction_1": "_EMPTY_",
-    "instruction_2": "_EMPTY_",
-    "instruction_3": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "comodo": "_EMPTY_"
+    "buy_button": "الشراء",
+    "agreement_title": "الاتفاقية",
+    "agreement_no_usa": "أؤكد أنني لست مواطنا أو مقيما أو كيانا قانونيا للولايات المتحدة («U.S.Person») ولا أشتري الرموز IdeaCoin باسم «U.S.Person».",
+    "contract_title": "العقد",
+    "copy": "النسخ",
+    "instruction_1": "ارسل الرموز ETH إلى العنوان المحدد من أي محفظة، ويتم قيد الرموز IDEA لحسابك تلقائيا.",
+    "instruction_2": "لا ترسل الرموز من البورصة - في هذه الحالة، سيتم قيد الرموز لحساب البورصة وليس لحسابك، وأنك لن تكون قادرا على الوصول إليها. ",
+    "instruction_3": "ذا كنت تشتري 10000 رموز أو أكثر ستكنسب حق الحصول على فوائد من دخل الخدمة.",
+    "invested": "تم الاستثمار",
+    "comodo": "تضمن Limited CA Comodo أمن الاتصال."
   },
   "docs": {
-    "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_",
-    "smart_title": "_EMPTY_",
-    "smart_load": "_EMPTY_"
+    "wp_title": "وصف CryptoStarter و coin-IDEA",
+    "wp_download": "تحميل WhitePaper",
+    "smart_title": "العقد الذكي المحقق",
+    "smart_load": "رمز"
   },
   "team": {
     "oleg_name": "Oleg<br> Pavlov",
-    "oleg_description": "_EMPTY_",
+    "oleg_description": "شارك المؤسس ومهندس البرمجيات بنشاط في مشارع سلسلة الكتل على مدى السنوات الثلاث الماضية.",
     "alex_name": "Alexander<br> Musichen",
-    "alex_description": "_EMPTY_",
+    "alex_description": "شارك المؤسس ومهندس البرمجيات في تطوير تطبيقات سلسلة الكتل على مدى السنوات الثلاث الماضية.",
     "gregor_name": "Gregor<br> Steiner",
-    "gregor_description": "_EMPTY_",
+    "gregor_description": "مهندس البرمجيات. الخبير في بنية الأنظمة القابلة للتسلق والأنظمة المغمورة. متحمس سلسلة الكتل.",
     "ostap_name": "Ostap<br> Chervak",
-    "ostap_description": "_EMPTY_",
+    "ostap_description": "مهندس البرمجيات. الخبير في البرمجة Python وJavaScript، متحمس التكنولوجيات اللامركزية.",
     "oliver_name": "Oliver<br> Tatzber",
-    "oliver_description": "_EMPTY_",
+    "oliver_description": "الفاحص والمهندس QA. خبير المنتج QA.",
     "diego_name": "Diego<br> Williams",
-    "diego_description": "_EMPTY_",
+    "diego_description": "المستشار UX، المصمم، المطور. الخبير UI وخبير تجربة المستخدم. مطور الواجهة الأمامية.",
     "vladislav_name": "Vladislav<br> Dyachenko",
-    "vladislav_description": "_EMPTY_",
+    "vladislav_description": "مهندس البرمجيات. الخبير في Python وEthereum/Solidity، مطور التطبيقات اللامركزية، متحمس التكنولوجيات اللامركزية",
     "sergey_name": "Sergey<br> Antonov",
-    "sergey_description": "_EMPTY_"
+    "sergey_description": "مهندس البرمجيات. الخبير في العمل مع JS، Elixir، Phoenix،  Ethereum/Solidity، مطور التطبيقات اللامركزية، متحمس التكنولوجيات اللامركزية"
   },
   "roadmap": {
     "start": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "4 مارس 2017 م ",
+      "title": "بداية المشروع",
+      "description": "بداية تطوير منصة CryptoStarter."
     },
     "alpha_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "3 يولو 2017 م ",
+      "title": "إصدار ألفا",
+      "description": "مركز المنصة CryptoStarter."
     },
     "alpha_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "7 أغسطس 2017 م ",
+      "title": "إصدار ألفا 2",
+      "description": "النسخة غير المستقرة لمنصة CryptoStarter مع الوظائف الرئيسية"
     },
     "demo": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2 أكتوبر 2017 م ",
+      "title": "اصدار العرض التوضيحي",
+      "description": "اصدارة العرض التوضيحي العام للمنصة للمجال demo.cryptostarter.io. يتم تعطيل التفاعل مع الخادم وسلسلة الكتل ولكن جميع عناصر الواجهة مفتوحة وهو مناسب لعرض وظائف المنصة المستقبلية."
     },
     "smart": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "16 أكتوبر 2017 م ",
+      "title": "النسخة النهائية للعقد الذكية",
+      "description": "لنسخة النهائية الكاملة للعقد الذكية IdeaCoin تشمل الرمز الرئيسي، حاويات المشروع، رمز المنتج، عامل التوصيل، محركات الفوائد وبرمجيات التصويت، الأجزاء الوسيلة المختلفة وأيضا تحسين حجم سلسلة الكتل Ethereum. "
     },
     "beta_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "23 أكتوبر 2017 م",
+      "title": "بيتا CryptoStarter",
+      "description": "المنصة CryptoStarter مع الوظيفة الرئيسية في الشكل النهائي."
     },
     "pre_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "22 يناير 2017  م – 22 فبراير 2018 م",
+      "title": "pre-ICO",
+      "description": "ما قبل البيع العام لجزء الرموز مع مكافأة 50%."
     },
     "beta_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "5-12 مارس 2018 م ",
+      "title": "إصدار بيتا 2",
+      "description": "المنصة CryptoStarter مع الوظيفة الرئيسية في الشكل النهائي."
     },
     "ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "9 أبريل 2018 م – 9 مايو 2018 م",
+      "title": "ICO",
+      "description": "ما قبل البيع العام لجزء الرموز الرئيسي مع مكافأة في الأيام الأولى."
     },
     "early": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "9 أبريل 2018 م",
+      "title": "الوصول المبكر",
+      "description": "إن أصحاب المشاريع الذين قرروا تسجيل مشاريعهم قبل إطلاق العام ل CryptoStarter يحصلون على الوصول إلى المنصة."
     },
     "release": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "14-21 مايو 2018 م",
+      "title": "إصدار النسخة 1.0",
+      "description": "إصدار المنصة CryptoStarter"
     },
     "post_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "14- 21 مايو 2018 م – 17 يونيو 2018 م",
+      "title": "post-ICO",
+      "description": "بيع النقود لمستخدمي الموقع مبشارة من الموقع قبل دخول إلى البورصة. سيتم مضاعفة السعر بالنسبة للسعر ICO وهو يعنى زيادة المعدل على 100%."
     },
     "stock": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "17 يونيو 2017 م",
+      "title": "الدخول إلى البورصات",
+      "description": "بدء تداول الرموز في البورصات"
     },
     "frame": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "سبتمبر 2018 م",
+      "title": "CryptoStarter Frame",
+      "description": "الأداة الخاصة للمنصة CryptoStarter للتجهيز على أي موقع والذي يسمح بقبول المدفوعات والحصول على معلومات عن المشروع في أي مكان."
     }
   },
   "component": {
-    "ok": "_EMPTY_",
-    "cancel": "_EMPTY_"
+    "ok": "موافق",
+    "cancel": "إلغاء"
   },
-  "error": "_EMPTY_"
+  "error": "خطأ"
 }

@@ -1,182 +1,182 @@
 {
   "main_menu": {
-    "home": "_EMPTY_",
+    "home": "首页",
     "ico": "ICO",
-    "docs": "_EMPTY_",
-    "timeline": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "docs": "文件",
+    "timeline": "发展路线图",
+    "media": "消息",
+    "team": "团队",
+    "register": "项目注册"
   },
   "wow_slider": {
     "main_text": "Crowdfunding",
-    "sub_text": "_EMPTY_"
+    "sub_text": "无限、分散式、代币利用"
   },
   "title": {
-    "ico": "_EMPTY_",
-    "docs": "_EMPTY_",
-    "roadmap": "_EMPTY_",
-    "media": "_EMPTY_",
-    "team": "_EMPTY_",
-    "register": "_EMPTY_"
+    "ico": "ICO",
+    "docs": "白皮书和文件",
+    "roadmap": "发展路线图",
+    "media": "公司消息",
+    "team": "团队",
+    "register": "项目注册"
   },
   "register": {
-    "hint": "_EMPTY_",
-    "project_name_label": "_EMPTY_",
-    "project_name_placeholder": "_EMPTY_",
-    "email_label": "_EMPTY_",
-    "email_placeholder": "_EMPTY_",
-    "description_label": "_EMPTY_",
-    "description_placeholder": "_EMPTY_",
-    "register_project_button": "_EMPTY_",
-    "success_modal_title": "_EMPTY_",
-    "success_modal_text": "_EMPTY_"
+    "hint": "请注意， CryptoStarter开始运作前，可以完成项目注册。 开始运作之前，我们会通知您并提供网站访问。您可以完成项目注册，以及确保项目信息在CryptoStarter运作开始日可以在网页第一行显示。",
+    "project_name_label": "项目名称",
+    "project_name_placeholder": "您的项目名称",
+    "email_label": "电子邮件地址",
+    "email_placeholder": "您项目的电子邮件地址",
+    "description_label": "项目简介",
+    "description_placeholder": "您的项目简介",
+    "register_project_button": "注册",
+    "success_modal_title": "成功！",
+    "success_modal_text": "您的项目注册已成功。一天时间内您可以收到包含所有需要信息的邮件。"
   },
   "present": {
-    "presentation_title": "_EMPTY_",
-    "slide_1": "_EMPTY_",
-    "slide_2": "_EMPTY_",
-    "slide_3": "_EMPTY_",
-    "slide_4": "_EMPTY_",
-    "slide_5": "_EMPTY_",
-    "slide_6": "_EMPTY_",
-    "slide_7": "_EMPTY_",
-    "slide_8": "_EMPTY_",
-    "slide_9": "_EMPTY_",
-    "slide_10": "_EMPTY_",
-    "slide_11": "_EMPTY_",
-    "slide_12": "_EMPTY_",
-    "slide_13": "_EMPTY_",
-    "slide_14": "_EMPTY_",
-    "slide_15": "_EMPTY_",
-    "slide_16": "_EMPTY_",
-    "slide_17": "_EMPTY_",
-    "slide_18": "_EMPTY_",
-    "slide_19": "_EMPTY_",
-    "slide_20": "_EMPTY_",
-    "slide_21": "_EMPTY_",
-    "slide_22": "_EMPTY_",
-    "slide_23": "_EMPTY_",
-    "slide_24": "_EMPTY_",
-    "slide_25": "_EMPTY_",
-    "slide_26": "_EMPTY_",
-    "slide_27": "_EMPTY_",
+    "presentation_title": "项目简介",
+    "slide_1": "有没有感觉您的想法很好？ 任何很酷的想法：电影、应用程序、游戏，初创公司？",
+    "slide_2": " 您的项目如何供给资金？您的项目谁能投资？",
+    "slide_3": "您可能听说过众包平台，如：Kickstarter，Indigogo等等。",
+    "slide_4": "众包有什么好处？ 众包利用在产品创建前直接向客户销售产品来筹集资金。",
+    "slide_5": "使用这种方法客户可以评估您的想法。",
+    "slide_6": "众包可以帮助与未来客户建立关系，并高效沟通反馈机制的建立。",
+    "slide_7": "产品创始人只能向支持人做出承诺。",
+    "slide_8": "未来产品所有权不能转让给别人。",
+    "slide_9": "接受加密货币的众包活动很难安排。",
+    "slide_10": "欢迎加入CryptoStarter.io.",
+    "slide_11": "利用CryptoStarter平台产品创始人可以创建自己的项目代币，上述代币可以换成产品、作为未来公司的数字股份或出售。",
+    "slide_12": "CryptoStarter平台即时创建项目代币市场。 因为项目代币数量有限，所以价格会发生变化。 在产品推出之前，可以购买或出售项目代币。",
+    "slide_13": "平台代币IDEA-coin买家可以获得平台上每个众包活动3.5％的奖励。",
+    "slide_14": "平台使用例子：爱丽丝想发起众包活动 ——AliceSmartGadget。 她提交了新项目。",
+    "slide_15": "她确认代币数量为1000代币：一个产品等于一个代币。",
+    "slide_16": "确认交货时间为6个月。发布了！可以了！",
+    "slide_17": "巴布在项目库中查出来爱丽丝很酷的项目。",
+    "slide_18": "他使用法定货币或加密货币购买5个爱丽丝代币。",
+    "slide_19": "购买的代币在CS-Wallet中存款。",
+    "slide_20": "三个月后，巴布决定出售4个代币给项目刚发现的投资人切斯特。",
+    "slide_21": "他使用CS-Wallet购买巴布的代币。",
+    "slide_22": "6个月后，爱丽丝推出产品。",
+    "slide_23": "同时更多人对项目感兴趣。 切斯特按更高的价格出售3个代币。",
+    "slide_24": "巴布和切斯特把自己的代币换成产品。",
+    "slide_25": "并向代币买家分配奖励。 每个项目的3.5％按比例分配给所有IDEA代币持有者。",
+    "slide_26": "平台使用流程包括4个步骤。步骤1：项目提交。步骤2：项目代表生成及上市。",
+    "slide_27": "步骤3：产品推出前，代币购买和出售。步骤4：产品推出时，代币换成产品。",
     "slide_28": "CryptoStarter.io"
   },
   "ico": {
     "info_before": "_EMPTY_",
     "info_in": "_EMPTY_",
     "info_after": "_EMPTY_",
-    "buy_button": "_EMPTY_",
-    "agreement_title": "_EMPTY_",
-    "agreement_no_usa": "_EMPTY_",
-    "contract_title": "_EMPTY_",
-    "copy": "_EMPTY_",
-    "instruction_1": "_EMPTY_",
-    "instruction_2": "_EMPTY_",
-    "instruction_3": "_EMPTY_",
-    "invested": "_EMPTY_",
-    "comodo": "_EMPTY_"
+    "buy_button": "购买",
+    "agreement_title": "协议",
+    "agreement_no_usa": "此确认，我不是美国公民、居民或法人（“U.S. Person”），也不代表“U.S. Person”购买IdeaCoin代币。",
+    "contract_title": "合同",
+    "copy": "复制",
+    "instruction_1": "请使用任何方便的钱包支付ETH代币到指出的账户。IDEA代币自动转入您的账户。",
+    "instruction_2": "不需要通过交易所执行代币汇款。在这种情况下，代币转入交易所账户，您无法使用购买的代币。",
+    "instruction_3": "购买一万以上的代币后，您有权利获得股息。",
+    "invested": "投资金额",
+    "comodo": "Comodo CA Limited保证连接安全。"
   },
   "docs": {
-    "wp_title": "_EMPTY_",
-    "wp_download": "_EMPTY_",
-    "smart_title": "_EMPTY_",
-    "smart_load": "_EMPTY_"
+    "wp_title": "CryptoStarter 和IdeaCoin简介 ",
+    "wp_download": "白皮书下载",
+    "smart_title": "验证的智能合约",
+    "smart_load": "代码"
   },
   "team": {
     "oleg_name": "Oleg<br> Pavlov",
-    "oleg_description": "_EMPTY_",
+    "oleg_description": "公司创始人，软件工程师，在过去的三年里积极参与区块链项目。",
     "alex_name": "Alexander<br> Musichen",
-    "alex_description": "_EMPTY_",
+    "alex_description": "公司创始人，软件工程师，在过去的三年里参与区块链应用程序开发。",
     "gregor_name": "Gregor<br> Steiner",
-    "gregor_description": "_EMPTY_",
+    "gregor_description": "软件工程师，可扩展系统架构和嵌入式系统专家，区块链爱好者。",
     "ostap_name": "Ostap<br> Chervak",
-    "ostap_description": "_EMPTY_",
+    "ostap_description": "软件工程师，Python JS专家，系统架构师， 分散技术爱好者。",
     "oliver_name": "Oliver<br> Tatzber",
-    "oliver_description": "_EMPTY_",
+    "oliver_description": "质量保证与测试工程师，产品质量保证专家。",
     "diego_name": "Diego<br> Williams",
-    "diego_description": "_EMPTY_",
+    "diego_description": "UX顾问、设计师、开发者， UI和User Experience专家，前端开发者。",
     "vladislav_name": "Vladislav<br> Dyachenko",
-    "vladislav_description": "_EMPTY_",
+    "vladislav_description": "软件工程师，Python，以太坊/ Solidity专家，分散式软件开发者，分散技术爱好者。",
     "sergey_name": "Sergey<br> Antonov",
-    "sergey_description": "_EMPTY_"
+    "sergey_description": "软件工程师， JS、Elixir、Phoenix、以太坊/ Solidity专家，分散技术爱好者。"
   },
   "roadmap": {
     "start": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2017年03月04日",
+      "title": "项目开始",
+      "description": "CryptoStarter平台开发开始"
     },
     "alpha_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2017年07月03日",
+      "title": "Alpha版",
+      "description": "CryptoStarter平台核心"
     },
     "alpha_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2017年08月07日",
+      "title": "Alpha版2",
+      "description": "具有基本功能的CryptoStarter平台不稳定版。"
     },
     "demo": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2017年10月02日",
+      "title": "演示版",
+      "description": "demo.cryptostarter.io.网站的平台公开演示版。演示版禁止与服务器和区块链联系，但是界面上可以查看所有未来可用功能。"
     },
     "smart": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2017年10月16日",
+      "title": "智能合约最终版",
+      "description": "IdeaCoin智能合约完全最终版。智能合约包括主要代币，项目，代币产品，通信工具，股息分配，投票和许多实用功能。以及与以太坊区块链的区块大小优化。"
     },
     "beta_1": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2017年10月23日",
+      "title": "CryptoStarter平台Beta版",
+      "description": "具有基本功能的CryptoStarter平台最终版。"
     },
     "pre_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2017年01月22日至2018年02月22日",
+      "title": "pre-ICO",
+      "description": "小部分代币预售，奖金为50%。"
     },
     "beta_2": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2—2018年03月05日之12日",
+      "title": "Beta版2",
+      "description": "具有完整功能的CryptoStarter平台最终版。"
     },
     "ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2018年04月09日之05月09日",
+      "title": "ICO",
+      "description": "大部分代币预售，头几天可以获得奖金。"
     },
     "early": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2018年04月09日",
+      "title": "早期访问",
+      "description": "CryptoStarter平台公开推出之前，在平台上完成注册项目的项目所有者可以访问平台。"
     },
     "release": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2018年05月14日至21日",
+      "title": "1.0版推出",
+      "description": "CryptoStarter平台推出。"
     },
     "post_ico": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2018年05月14日至21日- 06月17日",
+      "title": "post-ICO",
+      "description": "上市前，直接为网站用户出售代币。 价格会相对于!^,的价格翻倍。也就是说，价格上涨100％。"
     },
     "stock": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2018年06月17日",
+      "title": "上市",
+      "description": "在交易所开始出售代币。"
     },
     "frame": {
-      "date": "_EMPTY_",
-      "title": "_EMPTY_",
-      "description": "_EMPTY_"
+      "date": "2018年09月",
+      "title": "CryptoStarter Frame",
+      "description": "CryptoStarter平台特殊小部件，可以在随时随地进行支付的网站上安装，并显示项目有关信息。"
     }
   },
   "component": {
-    "ok": "_EMPTY_",
-    "cancel": "_EMPTY_"
+    "ok": "确认",
+    "cancel": "取消"
   },
-  "error": "_EMPTY_"
+  "error": "错误"
 }
