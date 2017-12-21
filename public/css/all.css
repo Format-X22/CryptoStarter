@@ -248,6 +248,11 @@ h2.cs-title {
     border: 5px solid #0dbff2; }
   .cs-roadmap-point.cs-roadmap-important {
     border-color: #a6a6a6; }
+  .cs-roadmap-point .label-info {
+    background-color: #00bef6;
+    border-radius: 10px;
+    padding-bottom: 4px;
+    padding-top: 5px; }
 
 .cs-media-item {
   margin-bottom: 30px; }
