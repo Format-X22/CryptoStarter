@@ -1,7 +1,7 @@
 {
   "main_menu": {
     "home": "Home",
-    "ico": "ICO",
+    "ico": "pre-ICO",
     "docs": "Documents",
     "timeline": "Roadmap",
     "media": "Media",
@@ -13,7 +13,7 @@
     "sub_text": "Decentralized.Borderless.Tokenizable."
   },
   "title": {
-    "ico": "ICO",
+    "ico": "pre-ICO",
     "docs": "White paper and documents",
     "roadmap": "Project roadmap",
     "media": "Media about us",

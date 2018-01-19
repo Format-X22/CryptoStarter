@@ -1,7 +1,7 @@
 {
   "main_menu": {
     "home": "首页",
-    "ico": "ICO",
+    "ico": "pre-ICO",
     "docs": "文件",
     "timeline": "发展路线图",
     "media": "消息",
@@ -13,7 +13,7 @@
     "sub_text": "无限、分散式、代币利用"
   },
   "title": {
-    "ico": "ICO",
+    "ico": "pre-ICO",
     "docs": "白皮书和文件",
     "roadmap": "发展路线图",
     "media": "公司消息",

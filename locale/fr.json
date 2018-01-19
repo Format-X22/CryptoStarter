@@ -1,7 +1,7 @@
 {
   "main_menu": {
     "home": "Accueil",
-    "ico": "ICO",
+    "ico": "pre-ICO",
     "docs": "Documents",
     "timeline": "Feuille de route",
     "media": "Médias",
@@ -13,7 +13,7 @@
     "sub_text": "Décentralisé. Illimité. Tokinisé"
   },
   "title": {
-    "ico": "ICO",
+    "ico": "pre-ICO",
     "docs": "Livre blanc et documents",
     "roadmap": "Feuille de route du projet",
     "media": "Médias à propos de nous ",
