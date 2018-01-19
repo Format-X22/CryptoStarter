@@ -1,9 +1,11 @@
 require 'http'
 require 'recursive-open-struct'
 require 'sinatra'
+require "sinatra/reloader"
 require 'sendgrid-ruby'
 
 include SendGrid
+
 
 helpers do
 
