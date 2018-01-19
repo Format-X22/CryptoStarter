@@ -2,6 +2,7 @@ require 'http'
 require 'recursive-open-struct'
 require 'sinatra'
 require "sinatra/reloader"
+require "sinatra/multi_route"
 require 'sendgrid-ruby'
 
 include SendGrid
@@ -99,6 +100,11 @@ end
 get '/ru' do
 	page 'index', locale.ru
 end
+
+get '/whitepaper', ['/wp', '/whitepaper/whitepaper.pdf', '/docs/whitepaper.pdf'] do
+  send_file File.join(settings.public_folder, '/docs/whitepaper.pdf')
+end
+
 
 post '/api/pre-register' do
 	data = get_data
