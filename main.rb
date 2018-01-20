@@ -105,6 +105,14 @@ get '/whitepaper', ['/wp', '/whitepaper/whitepaper.pdf', '/docs/whitepaper.pdf']
   send_file File.join(settings.public_folder, '/docs/whitepaper.pdf')
 end
 
+get '/logo', ['/presskit/logo', '/artassets/logo', '/cslogo.png', '/logo.png'] do
+  send_file File.join(settings.public_folder, '/img/logo/origin.png')
+end
+
+get '/svglogo', ['/presskit/svglogo', '/artassets/svglogo', '/cslogo.svg', '/logo.svg'] do
+  send_file File.join(settings.public_folder, '/img/logo/origin.svg')
+end
+
 
 post '/api/pre-register' do
 	data = get_data
