@@ -167,13 +167,13 @@ contract IdeaCoin is IdeaBasicCoin {
 
     function() payable {
         uint tokens;
-        bool moreThenPreIcoMin = msg.value >= 20 ether;
+        bool moreThenPreIcoMin = msg.value >= 0 ether;
         uint totalVal = msg.value + bankValReserve;
         uint halfVal = totalVal / 2;
 
         if (icoState == IcoStates.PreIco && moreThenPreIcoMin && soldIdeaWeiPreIco <= 2500000 ether) {
 
-            tokens = msg.value * 1500;
+            tokens = msg.value * 15000;
             balances[msg.sender] += tokens;
             soldIdeaWeiPreIco += tokens;
 
@@ -182,27 +182,27 @@ contract IdeaCoin is IdeaBasicCoin {
 
             if (elapsed <= 1 days) {
 
-                tokens = msg.value * 1250;
+                tokens = msg.value * 12500;
                 balances[msg.sender] += tokens;
 
             } else if (elapsed <= 6 days && elapsed > 1 days) {
 
-                tokens = msg.value * 1150;
+                tokens = msg.value * 11500;
                 balances[msg.sender] += tokens;
 
             } else if (elapsed <= 11 days && elapsed > 6 days) {
 
-                tokens = msg.value * 1100;
+                tokens = msg.value * 11000;
                 balances[msg.sender] += tokens;
 
             } else if (elapsed <= 16 days && elapsed > 11 days) {
 
-                tokens = msg.value * 1050;
+                tokens = msg.value * 10500;
                 balances[msg.sender] += tokens;
 
             } else {
 
-                tokens = msg.value * 1000;
+                tokens = msg.value * 10000;
                 balances[msg.sender] += tokens;
 
             }
@@ -211,7 +211,7 @@ contract IdeaCoin is IdeaBasicCoin {
 
         } else if (icoState == IcoStates.PostIco && soldIdeaWeiPostIco <= 12000000 ether) {
 
-            tokens = msg.value * 500;
+            tokens = msg.value * 5000;
             balances[msg.sender] += tokens;
             soldIdeaWeiPostIco += tokens;
 
