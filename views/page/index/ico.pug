@@ -67,13 +67,13 @@ mixin ico-block
                                 label.col-sm-3.control-label!= erb('l.ico.contract_title')
                                 .col-sm-6
                                     p.form-control-static.cs-contract-address.
-                                        0xa6047765e275522bFA0Ef6638cBc402DE023aA86
+                                        0x63fe23703fca6fa38c4dc9a6d0f5f28477575c77
                                 .col-sm-2
                                     +button(
                                         'copy-contract',
                                         erb('l.ico.copy')
                                     )(
-                                        data-clipboard-text='0xa6047765e275522bFA0Ef6638cBc402DE023aA86'
+                                        data-clipboard-text='0x63fe23703fca6fa38c4dc9a6d0f5f28477575c77'
                                     )
                         hr
                         p: em!= erb('l.ico.instruction_1')
@@ -87,7 +87,7 @@ mixin ico-block
                 +characteristic('earned', erb('l.ico.invested'), erb('earned * 100 / 500000')).cs-ico-progress
                 br
                 span.text-left.pull-left!= erb('earned_to_readable(earned)')
-                span.text-right.pull-right $500 000
+                span.text-right.pull-right $200 000
 
     if ico_status == 'after'
         .row

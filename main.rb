@@ -35,7 +35,7 @@ helpers do
 	def send_mail(to, title, text)
 		SEND_GRID.client.mail._('send').post(
 			request_body: Mail.new(
-				Email.new(email: 'no-reply@cryptostarter.io'),
+				Email.new(email: 'oleg.pav.m@gmail.com'),
 				title,
 				Email.new(email: to),
 				Content.new(type: 'text/plain', value: text)
@@ -44,7 +44,7 @@ helpers do
 	end
 
 	def earned
-		contract = '0xa6047765e275522bfa0ef6638cbc402de023aa86'
+		contract = '0x63fe23703fca6fa38c4dc9a6d0f5f28477575c77'
 		link = "https://etherscan.io/readContract?a=#{contract}"
 		raw = HTTP.get(link).to_s
 
@@ -53,11 +53,11 @@ helpers do
 
 		wei = parsed.strip.to_f
 		ether = wei * 10 ** -18
-		dollar = ether * 300
+		dollar = ether * 1200
 
 		dollar.to_i
 	rescue
-		0
+		100000
 	end
 
 	def earned_to_readable(earned)
