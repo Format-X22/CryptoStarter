@@ -7,7 +7,7 @@ mixin ico-faq-item(title, text)
     p!= text
 
 mixin ico-block
-    - var ico_status = 'before' // before, in, after
+    - var ico_status = 'in' // before, in, after
 
     #ico.row
         .col-md-12
@@ -25,21 +25,7 @@ mixin ico-block
 
     if ico_status == 'in'
         .row
-            .col-md-4.col-md-offset-2
-                p!= erb('l.ico.info_in')
-                hr
-                p: em!= erb('l.ico.comodo')
-                .text-center.center-block.cs-comodo
-                    script(language="JavaScript" type="text/javascript").
-                        TrustLogo(
-                            'https://idea-cs-prod.herokuapp.com/img/comodo/comodo_secure_seal_100x85_transp.png',
-                            'CL1',
-                            'none'
-                        );
-                    a#comodoTL.cs-positive-ssl(href='https://www.positivessl.com/' target='_BLANK') Positive SSL
-                hr.visible-xs
-                    
-            .col-md-4
+            .col-md-4.col-md-offset-4
                 +ico-block-logo
                 .cs-buy-button
                     +button('buy', erb('l.ico.buy_button'))(
@@ -84,7 +70,7 @@ mixin ico-block
 
         .row.cs-progress-row
             .col-md-6.col-md-offset-3
-                +characteristic('earned', erb('l.ico.invested'), erb('earned * 100 / 500000')).cs-ico-progress
+                +characteristic('earned', erb('l.ico.invested'), erb('earned * 100 / 200000')).cs-ico-progress
                 br
                 span.text-left.pull-left!= erb('earned_to_readable(earned)')
                 span.text-right.pull-right $200 000
