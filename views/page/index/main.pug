@@ -34,7 +34,7 @@ block body
             #top-menu.navbar-collapse.collapse.navbar-responsive-collapse
                 ul.nav.navbar-nav.navbar-right
                     +menu-item('#home', erb('l.main_menu.home'))
-                    +menu-item('#ico', erb('l.main_menu.ico'))
+                    //-- +menu-item('#ico', erb('l.main_menu.ico'))
                     +menu-item('https://demo.cryptostarter.io', 'DEMO')
                     +menu-item('#docs', erb('l.main_menu.docs'))
                     +menu-item('#roadmap', erb('l.main_menu.timeline'))
@@ -62,7 +62,7 @@ block body
         +present-block
         +docs-block
         +roadmap-block
-        +ico-block
+        //-- +ico-block
         if mediaBlock
             +media-block
         +team-block
